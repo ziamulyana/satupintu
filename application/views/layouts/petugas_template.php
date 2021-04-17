@@ -21,7 +21,7 @@
 		<!-- header -->
 		<?php require_once('_header.php') ;?>
 		<!-- sidebar -->
-		<?php require_once('admin_sidebar.php') ;?>
+		<?php require_once('petugas_sidebar.php') ;?>
 		<!-- content -->
 		<div class="content-wrapper">
 			<!-- Main content -->

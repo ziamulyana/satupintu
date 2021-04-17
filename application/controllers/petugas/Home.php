@@ -2,6 +2,23 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
+/*
+ * |==============================================================|
+ * | Please DO NOT modify this information :                      |
+ * |--------------------------------------------------------------|
+ * | Author          : Susantokun
+ * | Email           : admin@susantokun.com
+ * | Filename        : Home.php
+ * | Instagram       : @susantokun
+ * | Blog            : http://www.susantokun.com
+ * | Info            : http://info.susantokun.com
+ * | Demo            : http://demo.susantokun.com
+ * | Youtube         : http://youtube.com/susantokun
+ * | File Created    : Friday, 13th March 2020 3:37:45 am
+ * | Last Modified   : Friday, 13th March 2020 3:40:38 am
+ * |==============================================================|
+ */
+
 class Home extends MY_Controller
 {
     public function __construct()
@@ -15,7 +32,7 @@ class Home extends MY_Controller
 
     public function index()
     {
-        $data = konfigurasi('Dashboard');
+        $data = konfigurasi('dashboard');
         $this->template->load('layouts/petugas_template', 'petugas/dashboard', $data);
     }
 }
