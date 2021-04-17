@@ -43,7 +43,7 @@
         </a>
         <ul class="treeview-menu" style="display: none;">
           <li><a href="#"><i class="fa fa-circle-o"></i>Pembinaan</a></li>
-          <li><a href="<?=base_url('surat_peringatan/home')?>"><i class="fa fa-circle-o"></i>Peringatan</a></li>
+          <li><a href="<?=base_url('petugas/surat_peringatan/home')?>"><i class="fa fa-circle-o"></i>Peringatan</a></li>
           <li><a href="#"><i class="fa fa-circle-o"></i>Peringatan Keras</a></li>
           <li><a href="#"><i class="fa fa-circle-o"></i>PSK</a></li>
           <li><a href="#"><i class="fa fa-circle-o"></i>Penghentian Kegiatan</a></li>
