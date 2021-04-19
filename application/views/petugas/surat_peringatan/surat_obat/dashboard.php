@@ -1,4 +1,5 @@
-  <section class="content-header">
+
+<section class="content-header">
   <h1>
     Buat Surat Peringatan Sarana Obat
   </h1>
@@ -13,7 +14,7 @@
 <section class="content">
   <div class="row">
    <div class="col-md-12">
-     <form role="form" action="<?php echo base_url('petugas/surat_peringatan/surat_obat/surat')?>" method="post">
+     <form role="form">
       <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">Form Pembuatan Surat Peringatan</h3>
@@ -204,54 +205,35 @@
         
 
         <!-- Pelanggaran -->
-        <div class="form-group row">
-          <label for="pilihPasal" class="col-sm-3 col-form-label">Pasal Pelanggaran<span class="wajib"> *</span></label>
-          <div class="col-md-9">
-            <select class="category related-post form-control" name="pilihPasal[]" id= "pilihPasal" multiple="multiple" data-placeholder="Pilih Pasal" style="width: 100%;" required>
-              <?php
-              foreach ($temuan_obat as $temuan) {
-                echo "<option value=".$temuan->id.">".$temuan->temuan."</option>";
-              }
-              ?>
-
-            </select>
-          </div>
+        <div class="form-group">
+          <label>Category :</label>
+          <select class="category related-post form-control" name="category[]" multiple>
+            <option value="1"> Laravel</option>
+            <option value="2"> Jquery</option>
+            <option value="3"> React</option>
+            <option value="4"> Jquery ui</option>
+            <option value="5"> Android</option>
+            <option value="6"> React Native</option>
+            <option value="7"> Vue js</option>
+            <option value="8"> Bootstrap 4</option>
+          </select>
         </div>
-
-
-        <div class="box-footer">
-         <button type="submit" value="submit" onclick="return chk_date()" class="btn btn-info"><i class="fa fa-print"></i> Save Document</button>
-         <button type="reset"  value ="reset" class="btn btn-danger"><i class="fa fa-refresh" aria-hidden="true"></i> Reset Form</button>
-       </div>
-     </form>
-
-   </div>
+      </div>
+      
 
 
 
- </div>
+      <div class="box-footer">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+
+  </div>
+
+
+
 </div>
-<style>
-  .select2-container--default .select2-selection--multiple .select2-selection__choice {
-    background-color: #ca2e2e;
-    border: 1px solid #aaa;
-    border-radius: 4px;
-    box-sizing: border-box;
-    display: inline-block;
-    margin-left: 5px;
-    margin-top: 5px;
-    padding: 0;
-    padding-left: 20px;
-    position: relative;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    vertical-align: bottom;
-    white-space: nowrap;
-    font-size: 15px;
-  }
-</style>
-
+</div>
 <!-- /.row -->
 </section>
 <!-- /.content -->
