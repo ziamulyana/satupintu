@@ -2,8 +2,8 @@
 <script src="<?php echo base_url('assets');?>/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url('assets');?>/vendor/iCheck/icheck.min.js"></script>
 <script src="<?php echo base_url('assets');?>/vendor/AdminLTE-2.4.3/js/adminlte.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
 <script>
 	window.onload = function() {
 		<?php if ($this->session->flashdata('msg') != '') {
@@ -43,14 +43,15 @@
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url('assets');?>/vendor/dist/js/demo.js"></script>
 <!-- CK Editor -->
-<script src="<?php echo base_url('assets');?>/vendor/bower_components/ckeditor/ckeditor.js"></script>
+
 <!-- Bootstrap WYSIHTML5 -->
-<script src="<?php echo base_url('assets');?>/vendor/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<script src="<?php echo base_url('assets');?>/vendor/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <script>
   $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
+    
     //bootstrap WYSIHTML5 - text editor
-    $('.textarea').wysihtml5()
-  })
+    $(".textarea").wysihtml5();
+  });
 </script>
