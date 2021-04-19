@@ -28,7 +28,7 @@
             <label for="noSurat" class="col-sm-4 col-form-label">Nomor Surat Tugas<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <span class="input-group-addon"><i class="fa fa-align-left"></i></span>
                 <select class="form-control" id="#" name="#" required>
                       <option value="" disabled selected>- No. Surat Tugas -</option>
                       <option value="#">10.10.10.10</option>
