@@ -3,33 +3,14 @@
 
 	class Surat_obat extends CI_Controller {
 	// main page
-		// 	public function __construct()
-		// {
-		// 	parent::__construct();
-		// 	$this->load->database();
-		// 	$this->load->helper('url');
-		// 	$this->load->model('m_tem_rs');
-		// }
-
-		// public function index()
-		// {
-		// 	$data_rs['data'] = $this->m_tem_rs->getTemuanRs();
-		// 	$data = array('title'=>'Buat Surat Tugas', 'isi' => 'surat_obat/list', 'data_rs'=> $data_rs);
-
-		// 	$this->load->view('layout/wrapper', $data, FALSE);
-			
-		// }
 
 		public function index()
 		{
-			$data = konfigurasi('Dashboard');
-        $this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/surat_obat/dashboard', $data);
+			$data = konfigurasi('Form Surat Peringatan Obat');
+        	$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/surat_obat/dashboard', $data);
 			
 		}
-
-
 		
-
 		public function surat()
 		{
 			$tanggal =  $this->input->post('tanggal');
@@ -50,11 +31,11 @@
 			$pilihPasal = $this->input->post('pilihPasal');
 
 
-			$pasal_rs = array();
-			foreach ($pilihPasal as $num) {
-				$pasal['data'] = $this->m_tem_rs->getPasalRs($num);
-				array_push($pasal_rs,$pasal);
-			}
+			// $pasal_rs = array();
+			// foreach ($pilihPasal as $num) {
+			// 	$pasal['data'] = $this->m_tem_rs->getPasalRs($num);
+			// 	array_push($pasal_rs,$pasal);
+			// }
 
 
 			$data = array('title'=>'Cetak surat tugas',
@@ -73,10 +54,11 @@
 				'noHp' => $noHp,
 				// detil temuan
 				'detailTemuan' => $detailTemuan,
-				'pilihPasal' => $pasal_rs
+				// ganti ke db
+				'pilihPasal' => $pilihPasal
 				);			
 
-			$this->load->view('surat_obat/wrapper', $data, FALSE);
+			$this->load->view('petugas/surat_peringatan/surat_obat/isiSurat', $data, FALSE);
 		}
 
 	}

@@ -5,8 +5,10 @@ function konfigurasi($title, $c_des=null)
     $CI = get_instance();
     $CI->load->model('Konfigurasi_model');
     $CI->load->model('Auth_model');
+    $CI->load->model('SuratObat_model');
     $auth = $CI->Auth_model->get_by_id('id');
     $site = $CI->Konfigurasi_model->listing();
+    $temuan_obat= $CI->SuratObat_model->getTemuanObat();
     $data = array(
         'title' => $title.' | '.$site['nama_website'],
         'logo' => $site['logo'],
@@ -23,6 +25,7 @@ function konfigurasi($title, $c_des=null)
         'c_judul' => $title,
         'c_des' => $c_des,
         'userdata' => $auth,
+        'temuan_obat' => $temuan_obat
     );
 
     return $data;
