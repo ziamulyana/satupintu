@@ -32,7 +32,7 @@ class Home extends MY_Controller
 
     public function index()
     {
-        $data = konfigurasi('dashboard');
-        $this->template->load('layouts/petugas_template', 'petugas/dashboard', $data);
+        
+        $this->template->load('layouts/petugas_template', 'petugas/dashboard');
     }
 }

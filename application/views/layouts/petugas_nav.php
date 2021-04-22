@@ -53,22 +53,22 @@
 			<!-- User Account: style can be found in dropdown.less -->
 			<li class="dropdown user user-menu">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="<?= base_url('assets/uploads/images/foto_profil/'.$userdata->photo); ?>" class="user-image">
-                <span class="hidden-xs"><?= $userdata->first_name; ?> <?= $userdata->last_name; ?></span>
+                <img src="<?= base_url('assets/uploads/images/foto_profil/1583991814826.png'); ?>" class="user-image">
+                <span class="hidden-xs"></span>
             </a>
 				<ul class="dropdown-menu">
 					<!-- User image -->
 					<li class="user-header">
-						<img src="<?= base_url('assets/uploads/images/foto_profil/'.$userdata->photo); ?>" class="img-circle">
+						<img src="<?= base_url('assets/uploads/images/foto_profil/1583991814826.png'); ?>" class="img-circle">
 						<p>
-							<?= $userdata->email; ?>
-							<small>Terakhir Masuk , <?= $userdata->last_login; ?></small>
+							
+							<small>Anda Masuk Sebagai Petugas</small>
 						</p>
 					</li>
 					<!-- Menu Footer-->
 					<li class="user-footer">
 						<div class="pull-left">
-							<a href="<?php echo base_url() ?>auth/profile/<?php echo $this->session->userdata('id_user'); ?>" class="btn btn-default btn-flat"><i class="fa fa-user" aria-hidden="true"></i> Profil</a>
+							<a href="<?php echo base_url() ?>auth/profile" class="btn btn-default btn-flat"><i class="fa fa-user" aria-hidden="true"></i> Profil</a>
 						</div>
 						<div class="pull-right">
 							<a href="<?php echo base_url() ?>auth/logout" class="btn btn-default btn-flat"><i class="fa fa-sign-out" aria-hidden="true"></i> Keluar</a>

@@ -22,8 +22,8 @@
 
 		public function index()
 		{
-			$data = konfigurasi('Dashboard');
-        $this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/surat_obat/dashboard', $data);
+			
+        $this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/surat_obat/dashboard');
 			
 		}
 

@@ -15,7 +15,7 @@ class Tes extends MY_Controller
 
     public function index()
     {
-        $data = konfigurasi('Dashboard');
-        $this->template->load('layouts/admin_template', 'admin/tes', $data);
+     
+        $this->template->load('layouts/admin_template', 'admin/tes');
     }
 }

@@ -2,8 +2,6 @@
 <script src="<?php echo base_url('assets');?>/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url('assets');?>/vendor/iCheck/icheck.min.js"></script>
 <script src="<?php echo base_url('assets');?>/vendor/AdminLTE-2.4.3/js/adminlte.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-<script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
 <script>
 	window.onload = function() {
 		<?php if ($this->session->flashdata('msg') != '') {
@@ -31,9 +29,14 @@
 		$('.category').select2();
 	});
 </script>
+<script>
+  $(function () {
+    $("#tbl").DataTable();
+  });
+</script>
 
-	<!-- jQuery 3 -->
-<script src="<?php echo base_url('assets');?>/vendor/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- jQuery 3 -->
+<script src="<?php echo base_url('assets');?>/vendor/jquery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo base_url('assets');?>/vendor/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- FastClick -->
@@ -42,7 +45,11 @@
 <script src="<?php echo base_url('assets');?>/vendor/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url('assets');?>/vendor/dist/js/demo.js"></script>
-<!-- CK Editor -->
+<!-- DataTables -->
+<script src="<?php echo base_url('assets');?>/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url('assets');?>/vendor/datatables/dataTables.bootstrap.min.js"></script>
+<!-- Select2 -->
+<script src="<?php echo base_url('assets');?>/vendor/select2/js/select2.full.min.js"></script>
 
 <!-- Bootstrap WYSIHTML5 -->
 <script src="<?php echo base_url('assets');?>/vendor/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>

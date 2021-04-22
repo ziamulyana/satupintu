@@ -7,7 +7,7 @@
     <span class="logo-lg"><b>E - SatuPintu</b></span>
   </a>
   <!-- nav -->
-  <?php require_once('_nav.php') ;?>
+  <?php require_once('petugas_nav.php') ;?>
 </header>
 <style>
 .skin-blue .main-header .logo {

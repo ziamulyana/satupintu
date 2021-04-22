@@ -15,7 +15,7 @@ class Lhk extends MY_Controller
 
     public function index()
     {
-        $data = konfigurasi('Dashboard');
-        $this->template->load('layouts/petugas_template', 'petugas/lhk', $data);
+        
+        $this->template->load('layouts/petugas_template', 'petugas/lhk');
     }
 }

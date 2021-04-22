@@ -3,9 +3,9 @@
 
 <head>
 	<title>
-		<?php echo $title ?>
+		e-Satupintu | BPOM Batam
 	</title>
-	<link href='<?php echo base_url("assets/uploads/images/$favicon"); ?>' rel='shortcut icon' type='image/x-icon' />
+	<link href='<?php echo base_url("assets/uploads/images/bpom.png"); ?>' rel='shortcut icon' type='image/x-icon' />
 	<!-- meta -->
 	<?php require_once('_meta.php') ;?>
 
@@ -19,7 +19,7 @@
 <body class="hold-transition skin-blue fixed sidebar-mini">
 	<div class="wrapper">
 		<!-- header -->
-		<?php require_once('_header.php') ;?>
+		<?php require_once('petugas_header.php') ;?>
 		<!-- sidebar -->
 		<?php require_once('petugas_sidebar.php') ;?>
 		<!-- content -->

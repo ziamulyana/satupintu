@@ -22,6 +22,9 @@
 <!-- Theme style -->
 <!-- bootstrap wysihtml5 - text editor -->
 <link rel="stylesheet" href="<?php echo base_url('assets');?>/vendor/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-
+<!-- DataTables -->
+<link rel="stylesheet" href="<?php echo base_url('assets');?>/vendor/datatables/dataTables.bootstrap.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="<?php echo base_url('assets');?>/vendor/select2/css/select2.min.css">
 <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">

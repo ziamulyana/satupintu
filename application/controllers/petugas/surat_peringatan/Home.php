@@ -5,8 +5,8 @@
 	// main page
 		public function index()
 		{
-			$data = konfigurasi('dashboard');
-        $this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/home/dashboard', $data);
+			
+        $this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/home/dashboard');
 			
 		}
 

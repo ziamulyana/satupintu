@@ -219,21 +219,32 @@
           </select>
         </div>
       </div>
-      
-
-
-
       <div class="box-footer">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
     </form>
-
   </div>
-
-
-
 </div>
 </div>
 <!-- /.row -->
 </section>
 <!-- /.content -->
+<style>
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+        background-color: #3c8dbc;
+        
+        border-radius: 4px;
+        cursor: default;
+        float: left;
+        margin-right: 5px;
+        margin-top: 5px;
+        padding: 0 5px;
+    }
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+        color: #151515;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: bold;
+        margin-right: 2px;
+    }
+</style>
