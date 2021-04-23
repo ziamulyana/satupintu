@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class tbl_timeline_model extends CI_Model
+class tbl_timeline_m extends CI_Model
 {
   private $_table   = 'view_notif';
   
@@ -17,10 +17,16 @@ class tbl_timeline_model extends CI_Model
       parent::__construct();
   }
 
-  public function getAll()
+  public function tampil_timeline()
     { 
-      return $this->db->get($this->_table)->result();
+      
+      $this->db->select('*');
+      $this->db->from('view_notif');
+      $this->db->where('timeline <=',6);
+      $query = $this->db->get();
+  
+      return $query;
+      
     }
-    
-
-}
+  
+  }

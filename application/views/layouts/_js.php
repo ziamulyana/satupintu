@@ -35,6 +35,7 @@
   });
 </script>
 
+
 <!-- jQuery 3 -->
 <script src="<?php echo base_url('assets');?>/vendor/jquery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
@@ -50,7 +51,8 @@
 <script src="<?php echo base_url('assets');?>/vendor/datatables/dataTables.bootstrap.min.js"></script>
 <!-- Select2 -->
 <script src="<?php echo base_url('assets');?>/vendor/select2/js/select2.full.min.js"></script>
-
+<!-- Idle Auto Logout -->
+<script src="<?php echo base_url('assets');?>/vendor/jquery/jquery.idle.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="<?php echo base_url('assets');?>/vendor/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <script>
@@ -61,4 +63,13 @@
     //bootstrap WYSIHTML5 - text editor
     $(".textarea").wysihtml5();
   });
+</script>
+<script>
+    $(document).idle({
+        onIdle: function(){
+            alert('Silahkan Login Kembali');
+			window.location.href='<?php echo base_url() ?>auth/logout';               
+        },
+        idle: 900000
+    });
 </script>

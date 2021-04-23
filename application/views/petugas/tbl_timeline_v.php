@@ -1,3 +1,4 @@
+
 <section class="content">
       <div class="row">
         <div class="col-xs-12">
@@ -17,9 +18,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?php 
-                 if(isset($oke)){
-                 foreach ($oke as $row){
+                <?php     
+                 if(isset($timeline)){
+                 foreach ($timeline->result() as $row){
                   echo "<tr>";
                   echo "<td>".$row->no_surat."</td>";
                   echo "<td>".$row->sarana."</td>";
@@ -30,7 +31,6 @@
                  }else{
                   echo "no record found";
                  }
-
                 ?>
                 </tbody>
               </table>

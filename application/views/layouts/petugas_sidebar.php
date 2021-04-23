@@ -33,7 +33,7 @@
       <li class="header">HEADER</li>
       <!-- Optionally, you can add icons to the links -->
       <li class="active"><a href="<?=base_url()?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-      <li><a href="<?php echo base_url('petugas/lhk')?>"><i class="fa fa-link"></i> <span>LHK</span></a></li>
+      <li><a href="<?php echo base_url('petugas/lhk_c')?>"><i class="fa fa-link"></i> <span>LHK</span></a></li>
       <li class="treeview" style="height: auto;">
         <a href="#">
           <i class="fa fa-share"></i> <span>Tindak Lanjut</span>
