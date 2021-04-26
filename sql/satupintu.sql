@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2021 at 11:16 AM
+-- Generation Time: Apr 26, 2021 at 03:25 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -113,6 +113,30 @@ CREATE TABLE `lhk` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `notif`
+--
+
+CREATE TABLE `notif` (
+  `no_surat` int(11) NOT NULL,
+  `sarana` text NOT NULL,
+  `tgl_surat` date NOT NULL,
+  `tanggal_timeline` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `notif`
+--
+
+INSERT INTO `notif` (`no_surat`, `sarana`, `tgl_surat`, `tanggal_timeline`) VALUES
+(1, 'Apotek A', '2021-04-01', '2021-04-27'),
+(2, 'Komplek Sarana 3', '2021-04-01', '2021-04-27'),
+(3, 'Apotek B', '2021-04-01', '2021-04-30'),
+(4, 'Komplek Sarana 4', '2021-04-01', '2021-04-30'),
+(5, 'Apotek C', '2021-04-01', '2021-05-09');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pegawai`
 --
 
@@ -132,10 +156,10 @@ CREATE TABLE `pegawai` (
 --
 
 CREATE TABLE `peringatan` (
-  `namaSarana` int(11) NOT NULL,
-  `tglPeringatan` int(11) NOT NULL,
+  `namaSarana` varchar(20) NOT NULL,
+  `tglPeringatan` date NOT NULL,
   `noSuratPeringatan` int(11) NOT NULL,
-  `perihal` int(11) NOT NULL,
+  `perihal` varchar(20) NOT NULL,
   `tanggal` date NOT NULL,
   `noTl` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -238,19 +262,6 @@ CREATE TABLE `surattugas` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tabel`
---
-
-CREATE TABLE `tabel` (
-  `id_user` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `level` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbl_konfigurasi`
 --
 
@@ -324,8 +335,31 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id`, `id_role`, `username`, `password`, `password_reset_key`, `first_name`, `last_name`, `email`, `phone`, `photo`, `activated`, `last_login`, `created_at`, `updated_at`) VALUES
-(1, 1, 'admin', '$2y$05$8GdJw3BVbmhN6x2t0MNise7O0xqLMCNAN1cmP6fkhy0DZl4SxB5iO', '', 'Admin', 'E-SaTu', 'admin@mail.com', '081906515912', '1526456245974.png', 1, '2020-03-14 22:34:49', '2020-03-14 21:58:17', NULL),
-(2, 2, 'petugas', '$2y$05$8GdJw3BVbmhN6x2t0MNise7O0xqLMCNAN1cmP6fkhy0DZl4SxB5iO', '', 'Petugas', 'E-SaTu', 'member@mail.com', '081906515912', '1583991814826.png', 1, '2020-03-14 22:32:04', '2020-03-14 22:00:32', NULL);
+(1, 1, 'admin', '$2a$04$ibcmcj/R1dVzFpUIjiOiEeNqTgtk3FRAZxzuAA6a9KRCAkBppXdiG', '', 'Admin', 'E-SaTu', 'admin@mail.com', '081906515912', '1526456245974.png', 1, '2020-03-14 22:34:49', '2020-03-14 21:58:17', NULL),
+(2, 2, 'petugas', '$2a$04$HInAaNmE/o40PBjHWIwnQuKCAg2cPYm4dE72SBAiiOxaZSpcSRsMi', '', 'Petugas', 'E-SaTu', 'member@mail.com', '081906515912', '1583991814826.png', 1, '2020-03-14 22:32:04', '2020-03-14 22:00:32', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `view_notif`
+-- (See below for the actual view)
+--
+CREATE TABLE `view_notif` (
+`no_surat` int(11)
+,`sarana` text
+,`tgl_surat` date
+,`tanggal_timeline` date
+,`timeline` int(7)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `view_notif`
+--
+DROP TABLE IF EXISTS `view_notif`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_notif`  AS SELECT `notif`.`no_surat` AS `no_surat`, `notif`.`sarana` AS `sarana`, `notif`.`tgl_surat` AS `tgl_surat`, `notif`.`tanggal_timeline` AS `tanggal_timeline`, to_days(`notif`.`tanggal_timeline`) - to_days(current_timestamp()) AS `timeline` FROM `notif` ;
 
 --
 -- Indexes for dumped tables
@@ -369,6 +403,12 @@ ALTER TABLE `kota`
 ALTER TABLE `lhk`
   ADD PRIMARY KEY (`noSuratTugas`),
   ADD KEY `idSarana` (`idSarana`);
+
+--
+-- Indexes for table `notif`
+--
+ALTER TABLE `notif`
+  ADD PRIMARY KEY (`no_surat`);
 
 --
 -- Indexes for table `pegawai`
@@ -432,12 +472,6 @@ ALTER TABLE `surattugas`
   ADD KEY `noKwitansi` (`noKwitansi`);
 
 --
--- Indexes for table `tabel`
---
-ALTER TABLE `tabel`
-  ADD PRIMARY KEY (`id_user`);
-
---
 -- Indexes for table `tbl_konfigurasi`
 --
 ALTER TABLE `tbl_konfigurasi`
@@ -460,10 +494,10 @@ ALTER TABLE `tbl_user`
 --
 
 --
--- AUTO_INCREMENT for table `tabel`
+-- AUTO_INCREMENT for table `notif`
 --
-ALTER TABLE `tabel`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `notif`
+  MODIFY `no_surat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4312558;
 
 --
 -- AUTO_INCREMENT for table `tbl_konfigurasi`
@@ -481,7 +515,7 @@ ALTER TABLE `tbl_role`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
