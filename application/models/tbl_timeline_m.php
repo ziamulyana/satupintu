@@ -22,7 +22,17 @@ class tbl_timeline_m extends CI_Model
       
       $this->db->select('*');
       $this->db->from('view_notif');
-      $this->db->where('timeline <=',6);
+      $this->db->where('timeline <=',3);
+      $query = $this->db->get();
+  
+      return $query;
+      
+    }
+    public function tampil_total()
+    { 
+      
+      $this->db->select('*');
+      $this->db->from('view_notif');
       $query = $this->db->get();
   
       return $query;

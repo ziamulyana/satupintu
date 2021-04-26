@@ -51,7 +51,7 @@
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3> <?php echo $this->db->where('timeline <=',6)->from("view_notif")->count_all_results(); ?></h3>
+              <h3> <?php echo $this->db->where('timeline <=',3)->from("view_notif")->count_all_results(); ?></h3>
 
               <p>Timeline</p>
             </div>

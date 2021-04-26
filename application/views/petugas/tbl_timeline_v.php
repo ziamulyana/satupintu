@@ -1,4 +1,13 @@
-
+<section class="content-header">
+  <h1 small class="label label-primary">
+    Data Timeline &nbsp <i class="fa fa-server"></i>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="#">Petugas</a></li>
+    <li><a href="#">Timeline</a></li>
+  </ol>
+</section>
 <section class="content">
       <div class="row">
         <div class="col-xs-12">
@@ -9,28 +18,32 @@
               <table id="tbl" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Nomor Surat</th>
-                  <th>Sarana</th>
-                  <th>Tanggal Surat</th>
-                  <th>Tanggal Timeline</th>
-                  <th>Timeline</th>
-                  
+                  <th class="dt-center">Nomor Surat</th>
+                  <th class="dt-center">Sarana</th>
+                  <th class="dt-center">Tanggal Surat</th>
+                  <th class="dt-center">Tanggal Timeline</th>
+                  <th class="dt-center">Timeline</th>
+                  <th class="dt-center">Status</th> 
                 </tr>
                 </thead>
                 <tbody>
                 <?php     
                  if(isset($timeline)){
-                 foreach ($timeline->result() as $row){
-                  echo "<tr>";
-                  echo "<td>".$row->no_surat."</td>";
-                  echo "<td>".$row->sarana."</td>";
-                  echo "<td>".$row->tgl_surat."</td>";
-                  echo "<td>".$row->tanggal_timeline."</td>";
-                  echo "<td>".$row->timeline." Hari Tersisa</td>";
-                 }
-                 }else{
-                  echo "no record found";
-                 }
+                  foreach ($timeline->result() as $row){
+                
+                  $status='<small class="label label-danger"><i class="fa fa-exclamation-triangle"></i> TIMELINE</small>';
+                 
+                   echo "<tr>";
+                   echo "<td class='dt-center'>".$row->no_surat."</td>";      
+                   echo "<td class='dt-center'>".$row->sarana."</td>";
+                   echo "<td class='dt-center'>".$row->tgl_surat."</td>";
+                   echo "<td class='dt-center'>".$row->tanggal_timeline."</td>";
+                   echo "<td class='dt-center'>".$row->timeline." Hari Tersisa</td>";
+                   echo "<td class='dt-center'>".$status."</td>";
+                  }
+                  }else{
+                   echo "no record found";
+                  }
                 ?>
                 </tbody>
               </table>
@@ -45,3 +58,6 @@
     </section>
     <!-- /.content -->
   </div>
+  <style>
+    th.dt-center, td.dt-center { text-align: center; }
+  </style>
