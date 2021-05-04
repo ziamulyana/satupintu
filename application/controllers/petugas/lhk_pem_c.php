@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Lhk_c extends MY_Controller
+class Lhk_pem_c extends MY_Controller
 {
     public function __construct()
     {
@@ -16,6 +16,6 @@ class Lhk_c extends MY_Controller
     public function index()
     {
         
-        $this->template->load('layouts/petugas_template', 'petugas/lhk_v');
+        $this->template->load('layouts/petugas_template', 'petugas/lhk_pem_v');
     }
 }

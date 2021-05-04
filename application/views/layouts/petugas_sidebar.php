@@ -33,7 +33,20 @@
       <li class="header">HEADER</li>
       <!-- Optionally, you can add icons to the links -->
       <li class="active"><a href="<?=base_url()?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-      <li><a href="<?php echo base_url('petugas/lhk_c')?>"><i class="fa fa-link"></i> <span>LHK</span></a></li>
+      <li class="treeview" style="height: auto;">
+        <a href="#">
+          <i class="fa fa-book"></i> <span>LHK</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu" style="display: none;">
+          <li><a href="<?php echo base_url('petugas/lhk_pem_c')?>"><i class="fa fa-circle-o"></i>LHK Pemeriksaan</a></li>
+          <li><a href=""><i class="fa fa-circle-o"></i>LHK Iklan Dll</a></li>
+          <li><a href="#"><i class="fa fa-circle-o"></i>LHK Sertifikasi</a></li>
+          <li><a href="#"><i class="fa fa-circle-o"></i>LHK Sampling</a></li>
+        </ul>
+      </li>
       <li class="treeview" style="height: auto;">
         <a href="#">
           <i class="fa fa-share"></i> <span>Tindak Lanjut</span>
@@ -49,28 +62,6 @@
           <li><a href="#"><i class="fa fa-circle-o"></i>Penghentian Kegiatan</a></li>
           <li><a href="#"><i class="fa fa-circle-o"></i>TL Ke Penyidikan</a></li>
           <li><a href="#"><i class="fa fa-circle-o"></i>CAPA</a></li>
-          <!-- <li class="treeview" style="height: auto;">
-            <a href="#"><i class="fa fa-circle-o"></i> Level One
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu" style="display: none;">
-              <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-              <li class="treeview">
-                <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                  <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </span>
-                </a>
-                <ul class="treeview-menu" style="display: none;">
-                  <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                  <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li> -->
-
         </ul>
       </li>
       <li><a href="#"><i class="fa fa-link"></i> <span>Lihat Umpan Balik</span></a></li>

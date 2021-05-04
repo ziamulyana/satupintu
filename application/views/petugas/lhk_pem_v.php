@@ -100,11 +100,11 @@
                 <input type="text" class="form-control" name="#" id="#" placeholder="Petugas 2" required>
               </div>
             </div>
-          </div>
-
-
+          </div>        
         </div>
-
+        
+                      
+                      
         <div class="col-md-12">
             <h4>Pointer Hasil Kegiatan</h4>
           <hr>
@@ -226,19 +226,11 @@
           <br>
               <fieldset class="kotak">
                   <legend class="scheduler-border">--</legend>
-                  <div class="form-group">
-                    <label>
-                      <input type="checkbox" class="minimal">
-                    MK
-                    </label>
-                  </div>
-                  <div class="form-group">
-                    <label>
-                      <input type="checkbox" class="minimal">
-                    TMK
-                    </label>
-                  </div>                  
-                </fieldset>
+                  <input type="radio" name="status" value="MK">
+                    <label> MK</label><br>
+                  <input type="radio" name="status" value="TMK">
+                    <label> TMK</label>
+              </fieldset>
               
         </div>
         <div class="col-md-3">
@@ -247,43 +239,43 @@
                   <legend class="scheduler-border">Tindak Lanjut</legend>
                   <div class="form-group">
                     <label>
-                      <input type="checkbox" class="minimal">
+                      <input type="radio" name="tindak_lanjut" value="Pembinaan" class="minimal">
                     Pembinaan
                     </label>
                   </div>
                   <div class="form-group">
                     <label>
-                      <input type="checkbox" class="minimal">
+                      <input type="radio" name="tindak_lanjut" value="Peringatan" class="minimal">
                     Peringatan
                     </label>
                   </div>
                   <div class="form-group">
                     <label>
-                      <input type="checkbox" class="minimal">
+                      <input type="radio" name="tindak_lanjut" value="Peringatan Keras" class="minimal">
                     Peringatan Keras
                     </label>
                   </div>
                   <div class="form-group">
                     <label>
-                      <input type="checkbox" class="minimal">
+                      <input type="radio" name="tindak_lanjut" value="PSK" class="minimal">
                     PSK
                     </label>
                   </div>
                   <div class="form-group">
                     <label>
-                      <input type="checkbox" class="minimal">
+                      <input type="radio" name="tindak_lanjut" value="Penghentian" class="minimal">
                     Penghentian
                     </label>
                   </div>
                   <div class="form-group">
                     <label>
-                      <input type="checkbox" class="minimal">
+                      <input type="radio" name="tindak_lanjut" value="TL Ke Penyidikan" class="minimal">
                     TL ke Penyidikan
                     </label>
                   </div>
                   <div class="form-group">
                     <label>
-                      <input type="checkbox" class="minimal">
+                      <input type="radio" name="tindak_lanjut" value="Capa" class="minimal">
                     CAPA
                     </label>
                   </div>
@@ -295,13 +287,13 @@
                   <legend class="scheduler-border">Alasan Tidak Diperiksa</legend>
                   <div class="form-group">
                     <label>
-                      <input type="checkbox" class="minimal">
+                      <input type="radio" name="alasan_tidakperiksa" value="Tutup" class="minimal">
                     Tutup
                     </label>
                   </div>
                   <div class="form-group">
                     <label>
-                      <input type="checkbox" class="minimal">
+                      <input type="radio" name="alasan_tidakperiksa" value="Tidak Aktif" class="minimal">
                     Tidak Aktif
                     </label>
                   </div>                  
@@ -319,10 +311,234 @@
                 <textarea class="textarea" placeholder="Keterangan." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
               </form>
             </div>    
-                
-          <div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-md-12">
+        <div class="box box-primary collapsed-box box-solid">
+            <div class="box-header with-border">
+              <h3 class="box-title">Tambah Pointer Hasil Kegiatan</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                </button>
+              </div>
+              <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+            <div class="col-md-12">
+            <h4>Pointer Hasil Kegiatan</h4>
+          <hr>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label for="noSurat" class="col-sm-4 col-form-label">Jenis Pemeriksaan<span class="wajib"> *</span></label>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-tasks"></i></span>
+                <select class="form-control" id="#" name="#" required>
+                      <option value="" disabled selected>- Jenis Kegiatan Pemeriksaan -</option>
+                      <option value="#">Natuna</option>
+                      <option value="#">Pinang</option>
+                      <option value="#">Karimun</option>
+              </select>
+              </div>
+            </div>
           </div>
+
+          <div class="form-group row">
+            <label for="noSurat" class="col-sm-4 col-form-label">Sarana<span class="wajib"> </span></label>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                <input type="text" class="form-control" name="#" id="#" placeholder="Sarana" required>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label for="noSurat" class="col-sm-4 col-form-label">Jumlah Sampel<span class="wajib"> </span></label>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-list-alt"></i></span>
+                <input type="text" class="form-control" name="#" id="#" placeholder="Jumlah Sampel" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="noSurat" class="col-sm-4 col-form-label">Jumlah Harga (Rp)<span class="wajib"> </span></label>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-usd"></i></span>
+                <input type="text" class="form-control" name="#" id="#" placeholder="Jumlah Harga" required>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+   
+        <div class="col-md-3">
+          <br>
+              <fieldset class="kotak">
+                  <legend class="scheduler-border">Temuan (RHPK)</legend>
+                  <div class="form-group">
+                    <label>
+                      <input type="checkbox" class="minimal">
+                    Perizinan
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input type="checkbox" class="minimal">
+                    Pengadaan
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input type="checkbox" class="minimal">
+                    CODB
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input type="checkbox" class="minimal">
+                    Produk TIE
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input type="checkbox" class="minimal">
+                    Mutu/Label
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input type="checkbox" class="minimal">
+                    Produk Dilarang
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input type="checkbox" class="minimal">
+                    Hygiene/Sanit
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input type="checkbox" class="minimal">
+                    CPPB
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input type="checkbox" class="minimal">
+                    Lain-lain
+                    </label>
+                  </div>
+                </fieldset>
+              
+        </div>
+        <div class="col-md-3">
+          <br>
+              <fieldset class="kotak">
+                  <legend class="scheduler-border">--</legend>
+                  <input type="radio" name="status" value="MK">
+                    <label> MK</label><br>
+                  <input type="radio" name="status" value="TMK">
+                    <label> TMK</label>
+              </fieldset>
+              
+        </div>
+        <div class="col-md-3">
+          <br>
+              <fieldset class="kotak">
+                  <legend class="scheduler-border">Tindak Lanjut</legend>
+                  <div class="form-group">
+                    <label>
+                      <input type="radio" name="tindak_lanjut" value="Pembinaan" class="minimal">
+                    Pembinaan
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input type="radio" name="tindak_lanjut" value="Peringatan" class="minimal">
+                    Peringatan
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input type="radio" name="tindak_lanjut" value="Peringatan Keras" class="minimal">
+                    Peringatan Keras
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input type="radio" name="tindak_lanjut" value="PSK" class="minimal">
+                    PSK
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input type="radio" name="tindak_lanjut" value="Penghentian" class="minimal">
+                    Penghentian
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input type="radio" name="tindak_lanjut" value="TL Ke Penyidikan" class="minimal">
+                    TL ke Penyidikan
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input type="radio" name="tindak_lanjut" value="Capa" class="minimal">
+                    CAPA
+                    </label>
+                  </div>
+                </fieldset>            
+        </div>
+        <div class="col-md-3">
+          <br>
+              <fieldset class="kotak">
+                  <legend class="scheduler-border">Alasan Tidak Diperiksa</legend>
+                  <div class="form-group">
+                    <label>
+                      <input type="radio" name="alasan_tidakperiksa" value="Tutup" class="minimal">
+                    Tutup
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input type="radio" name="alasan_tidakperiksa" value="Tidak Aktif" class="minimal">
+                    Tidak Aktif
+                    </label>
+                  </div>                  
+                </fieldset>
+              
+        </div>
+        <div class="col-md-12">
+          <br>
+              
+              <legend>Keterangan</legend>
+               
+              
+            <div class="box-body pad">
+              <form>
+                <textarea class="textarea" placeholder="Keterangan." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+              </form>
+            </div>    
+        </div>
+            </div>
+            </div>
+            <button type="submit" class="btn btn-success"><i class="fa fa-share"></i>&nbsp Save</button>
+          </div>
+            <!-- /.box-body -->
+          </div>
+          
         </div>
 
         <div class="box-footer">
