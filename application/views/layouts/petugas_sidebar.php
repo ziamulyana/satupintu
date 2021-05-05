@@ -42,9 +42,9 @@
         </a>
         <ul class="treeview-menu" style="display: none;">
           <li><a href="<?php echo base_url('petugas/lhk_pem_c')?>"><i class="fa fa-circle-o"></i>LHK Pemeriksaan</a></li>
-          <li><a href=""><i class="fa fa-circle-o"></i>LHK Iklan Dll</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i>LHK Sertifikasi</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i>LHK Sampling</a></li>
+          <li><a href="<?php echo base_url('petugas/lhk_iklan_c')?>"><i class="fa fa-circle-o"></i>LHK Iklan Dll</a></li>
+          <li><a href="<?php echo base_url('petugas/lhk_sertifikasi_c')?>"><i class="fa fa-circle-o"></i>LHK Sertifikasi</a></li>
+          <li><a href="<?php echo base_url('petugas/lhk_sampling_c')?>"><i class="fa fa-circle-o"></i>LHK Sampling</a></li>
         </ul>
       </li>
       <li class="treeview" style="height: auto;">
