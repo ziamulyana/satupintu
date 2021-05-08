@@ -91,9 +91,9 @@
 
 	function addField() {
 		fieldId++;
-		var html = '<br/><div class="input-group"> <span class="input-group-addon"><i class="fa fa-list-alt"></i></span> <select class="calc" value="" name="komoditi" required> <option value="" disabled selected>- Komoditi -</option> <option value="#">SK</option> <option value="#">Obat</option> <option value="#">Kos</option> <option value="#">OT</option> <option value="#">Pangan</option> </select> </div> <br>' +
-			'<div class="input-group"> <span class="input-group-addon"><i class="fa fa-flask"></i></span> <input type="text" class="calc" value="" placeholder="Jumlah Sampel" required> </div> <br>' +
-			'<div class="input-group"> <span class="input-group-addon"><b>Rp.</b></span> <input type="text" class="form-control" name="harga" id="#" placeholder="Harga" required> </div> </br>' +
+		var html = '<br/><div class="input-group"> <span class="input-group-addon"><i class="fa fa-list-alt"></i></span> <select class="form-control" value="" name="komoditi" required> <option value="" disabled selected>- Komoditi -</option> <option value="#">SK</option> <option value="#">Obat</option> <option value="#">Kos</option> <option value="#">OT</option> <option value="#">Pangan</option> </select> </div> <br>' +
+			'<div class="input-group"> <span class="input-group-addon"><i class="fa fa-flask"></i></span> <input onkeyup="findTotal1()" type="text" name="sampel" id="qty1" class="form-control" value="" placeholder="Jumlah Sampel" required> </div> <br>' +
+			'<div class="input-group"> <span class="input-group-addon"><b>Rp.</b></span> <input onkeyup="findTotal2()" type="text" name="harga" id="qty2" class="form-control" value="" placeholder="Harga" required> </div> </br>' +
 			'<div class="b" ><button class="btn btn-danger" onclick="removeField(' + fieldId + ');"><span class="glyphicon glyphicon-remove"></span></button> </div> ';
 		addElement('forms', 'div', 'field-' + fieldId, html);
 	}
@@ -101,22 +101,35 @@
 	function addField2() {
 		fieldId++;
 		var html = '<br/><div class="input-group"> <span class="input-group-addon"><i class="fa fa-list-alt"></i></span> <select class="form-control" id="#" name="komoditi" required> <option value="" disabled selected>- Komoditi -</option> <option value="#">SK</option> <option value="#">Obat</option> <option value="#">Kos</option> <option value="#">OT</option> <option value="#">Pangan</option> </select> </div> <br>' +
-			'<div class="input-group"> <span class="input-group-addon"><i class="fa fa-flask"></i></span> <input type="text" class="form-control" name="jumlah_sampel" id="#" placeholder="Jumlah Sampel" required> </div> <br>' +
-			'<div class="input-group"> <span class="input-group-addon"><b>Rp.</b></span> <input type="text" class="form-control" name="harga" id="#" placeholder="Harga" required> </div> </br>' +
+			'<div class="input-group"> <span class="input-group-addon"><i class="fa fa-flask"></i></span> <input onkeyup="findTotal1()" type="text" name="sampel" id="qty1" class="form-control" value="" placeholder="Jumlah Sampel" required> </div> <br>' +
+			'<div class="input-group"> <span class="input-group-addon"><b>Rp.</b></span> <input onkeyup="findTotal2()" type="text" name="harga" id="qty2" class="form-control" value="" placeholder="Harga" required> </div> </br>' +
 			'<button class="btn btn-danger" onclick="removeField(' + fieldId + ');"><span class="glyphicon glyphicon-remove"></span></button> ';
 		addElement('forms1', 'div', 'field-' + fieldId, html);
 	}
 </script>
 <script>
-	$(document).ready(function() {
-		$('.calc').change(function() {
-			var total = 0;
-			$('.calc').each(function() {
-				if ($(this).val() != '') {
-					total += parseInt($(this).val());
-				}
-			});
-			$('#total').html(total);
-		});
-	})(jQuery);
+function findTotal1(){
+		var arr = document.getElementsByName('sampel');
+		var tot=0;
+		for(var i=0;i<arr.length;i++){
+			if(parseInt(arr[i].value))
+				tot += parseInt(arr[i].value);
+		}
+		document.getElementById('total_sampel').value = tot;
+	};
+   document.addEventListener("DOMContentLoaded", function(event) {
+       findTotal();
+    });
+function findTotal2(){
+		var arr = document.getElementsByName('harga');
+		var tot=0;
+		for(var i=0;i<arr.length;i++){
+			if(parseInt(arr[i].value))
+				tot += parseInt(arr[i].value);
+		}
+		document.getElementById('total_harga').value = tot;
+	};
+   document.addEventListener("DOMContentLoaded", function(event) {
+       findTotal();
+    });
 </script>

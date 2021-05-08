@@ -213,7 +213,7 @@
               <div class="col-sm-12">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-flask"> Total Sampel</i></span>
-                  <input type="text" class="form-control" id="total" disabled>
+                  <input type="text" class="form-control" name="total_sampel" id="total_sampel" placeholder="0" disabled>
                 </div>
               </div>
             </div>
@@ -224,8 +224,8 @@
               <label for="noSurat" class="col-sm-4 col-form-label"><span class="wajib"> </span></label>
               <div class="col-sm-12">
                 <div class="input-group">
-                  <span class="input-group-addon"><b>Rp.</b>Total Harga</span>
-                  <input type="text" class="form-control" id="total" disabled>
+                  <span class="input-group-addon"><b>Rp.</b> Total Harga</span>
+                  <input type="text" class="form-control" name="total_harga" id="total_harga" placeholder="0" disabled>
                 </div>
               </div>
             </div>
