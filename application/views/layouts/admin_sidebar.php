@@ -32,7 +32,7 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">HEADER</li>
       <!-- Optionally, you can add icons to the links -->
-      <li class="active"><a href="<?=base_url()?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+      <li class="active"><a href="<?php echo base_url('admin/entry_capa_c')?>"><i class="fa fa-dashboard"></i> <span>Entry CAPA</span></a></li>
       <li><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
      <li class="treeview" style="height: auto;">
           <a href="#">
