@@ -155,24 +155,34 @@
 		var areaChartData = {
 			labels: ["January", "February", "March", "April", "May", "June", "July", "Agustus", "September", "Oktober", "November", "Desember",],
 			datasets: [{
-					label: "Electronics",
-					fillColor: "rgba(210, 214, 222, 1)",
-					strokeColor: "rgba(210, 214, 222, 1)",
-					pointColor: "rgba(210, 214, 222, 1)",
-					pointStrokeColor: "#c1c7d1",
+					label: "Timeline",
+					fillColor: "#dd4b39",
+					strokeColor: "#dd4b39",
+					pointColor: "#dd4b39",
+					pointStrokeColor: "#dd4b39",
 					pointHighlightFill: "#fff",
-					pointHighlightStroke: "rgba(220,220,220,1)",
-					data: [65, 59, 80, 81, 56, 55, 40]
+					pointHighlightStroke: "#dd4b39",
+					data: [65, 59, 80, 81, 56, 55, 40, 80]
 				},
 				{
-					label: "Digital Goods",
-					fillColor: "rgba(60,141,188,0.9)",
-					strokeColor: "rgba(60,141,188,0.8)",
-					pointColor: "#3b8bba",
-					pointStrokeColor: "rgba(60,141,188,1)",
+					label: "Warning",
+					fillColor: "#f39c12",
+					strokeColor: "#f39c12",
+					pointColor: "#f39c12",
+					pointStrokeColor: "#f39c12",
 					pointHighlightFill: "#fff",
-					pointHighlightStroke: "rgba(60,141,188,1)",
-					data: [28, 48, 40, 19, 86, 27, 90]
+					pointHighlightStroke: "#f39c12",
+					data: [28, 48, 40, 19, 86, 27, 90, 100]
+				},
+				{
+					label: "New Capa",
+					fillColor: "#00a65a",
+					strokeColor: "#00a65a",
+					pointColor: "#00a65a",
+					pointStrokeColor: "#00a65a",
+					pointHighlightFill: "#fff",
+					pointHighlightStroke: "#00a65a",
+					data: [28, 48, 40, 19, 86, 27, 90, 100]
 				}
 			]
 		};
@@ -182,9 +192,7 @@
 		var barChartCanvas = $("#barChart").get(0).getContext("2d");
 		var barChart = new Chart(barChartCanvas);
 		var barChartData = areaChartData;
-		barChartData.datasets[1].fillColor = "#00a65a";
-		barChartData.datasets[1].strokeColor = "#00a65a";
-		barChartData.datasets[1].pointColor = "#00a65a";
+		
 		var barChartOptions = {
 			//Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
 			scaleBeginAtZero: true,
@@ -212,6 +220,8 @@
 			responsive: true,
 			maintainAspectRatio: true
 		};
+
+		
 
 		barChartOptions.datasetFill = false;
 		barChart.Bar(barChartData, barChartOptions);
