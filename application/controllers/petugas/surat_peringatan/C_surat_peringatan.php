@@ -14,7 +14,7 @@
 		public function index()
 		{
 
-			$data = konfigurasi('Pilih Surat Peringatan','');
+			
 			$data['list_peringatan']= $this->SuratPeringatan_model->getSuratPeringatan();
         $this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/surat_peringatan', $data);
 		}

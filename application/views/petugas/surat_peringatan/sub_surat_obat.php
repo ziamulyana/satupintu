@@ -23,87 +23,110 @@
 
         <div class="box-body">
          <div class="row">
+          <!-- obat -->
           <div class="col-lg-3 col-xs-5">
             <!-- small box -->
-            <div class="small-box bg-aqua">
+            <div class="small-box bg-teal">
               <div class="inner">
                 <h3>1</h3>
-
-                <h2><b>Obat</b></h2>
-              </div>
-              <div class="icon">
-                <i class="fa fa-plus-square"></i>
-              </div>
-              <a href="<?php echo base_url('petugas/surat_peringatan/surat_obat')?>" class="small-box-footer">
-                Buat Surat Peringatan <i class="fa fa-arrow-circle-right"></i>
-              </a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-xs-5">
-            <!-- small box -->
-            <div class="small-box bg-green">
-              <div class="inner">
-                <h3>2</h3>
 
                 <h2><b>PBF</b></h2>
               </div>
               <div class="icon">
-                <i class="fa fa-heart"></i>
+                <i class="fa fa-lightbulb-o"></i>
               </div>
-              <a href="#" class="small-box-footer">
+              <a href="<?php echo base_url('petugas/surat_peringatan/surat_pbf')?>" class="small-box-footer">
                 Buat Surat Peringatan <i class="fa fa-arrow-circle-right"></i>
               </a>
             </div>
           </div>
-          <!-- ./col -->
+
+          <!-- pangan -->
             <div class="col-lg-3 col-xs-5">
+            <!-- small box -->
+            <div class="small-box bg-maroon">
+              <div class="inner">
+                <h3>2</h3>
+
+                <h2><b>Apotek</b></h2>
+              </div>
+              <div class="icon">
+                <i class="fa fa-drupal"></i>
+              </div>
+              <a href="<?php echo base_url('petugas/surat_peringatan/surat_apotek')?>" class="small-box-footer">
+                Buat Surat Peringatan <i class="fa fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          
+          <!-- kosmetik -->
+          <div class="col-lg-3 col-xs-5">
             <!-- small box -->
             <div class="small-box bg-yellow">
               <div class="inner">
                 <h3>3</h3>
 
-                <h2><b>Pangan</b></h2>
+                <h2><b>Rumah Sakit</b></h2>
               </div>
               <div class="icon">
-                <i class="fa fa-magic"></i>
+                <i class="fa fa-stethoscope"></i>
               </div>
-              <a href="#" class="small-box-footer">
-                Buat Surat Peringatan <i class="fa fa-arrow-circle-right"></i>
-              </a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-xs-5">
-            <!-- small box -->
-            <div class="small-box bg-red">
-              <div class="inner">
-                <h3>4</h3>
-
-                <h2><b>Kosmetik</b></h2>
-              </div>
-              <div class="icon">
-                <i class="fa fa-briefcase"></i>
-              </div>
-              <a href="#" class="small-box-footer">
+              <a href="<?php echo base_url('petugas/surat_peringatan/surat_rs')?>" class="small-box-footer">
                 Buat Surat Peringatan <i class="fa fa-arrow-circle-right"></i>
               </a>
             </div>
           </div>
           <!-- ./col -->
 
+            <!-- kemasan pangan -->
             <div class="col-lg-3 col-xs-5">
             <!-- small box -->
             <div class="small-box bg-purple">
               <div class="inner">
-                <h3>5</h3>
+                <h3>4</h3>
 
-                <h2><b>Kemasan Pangan</b></h2>
+                <h2><b>Klinik</b></h2>
               </div>
               <div class="icon">
                 <i class="fa fa-building"></i>
               </div>
-              <a href="#" class="small-box-footer">
+              <a href="<?php echo base_url('petugas/surat_peringatan/surat_klinik')?>" class="small-box-footer">
+                Buat Surat Peringatan <i class="fa fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+
+                      <!-- kemasan pangan -->
+            <div class="col-lg-3 col-xs-5">
+            <!-- small box -->
+            <div class="small-box bg-orange">
+              <div class="inner">
+                <h3>5</h3>
+
+                <h2><b>Puskesmas</b></h2>
+              </div>
+              <div class="icon">
+                <i class="fa fa-heartbeat"></i>
+              </div>
+              <a href="<?php echo base_url('petugas/surat_peringatan/surat_puskesmas')?>" class="small-box-footer">
+                Buat Surat Peringatan <i class="fa fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+
+                                <!-- kemasan pangan -->
+            <div class="col-lg-3 col-xs-5">
+            <!-- small box -->
+            <div class="small-box bg-green">
+              <div class="inner">
+                <h3>6</h3>
+
+                <h2><b>Toko Obat</b></h2>
+              </div>
+              <div class="icon">
+                <i class="fa fa-star"></i>
+              </div>
+              <a href="<?php echo base_url('petugas/surat_peringatan/surat_obat')?>" class="small-box-footer">
                 Buat Surat Peringatan <i class="fa fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -115,11 +138,6 @@
   </form>
 </div>
 <!-- /.box -->
-
-
-
-
-
 </div>
 
 </div>
