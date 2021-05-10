@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 <section class="content-header">
 <h1 small class="label label-primary">
-    Data Total &nbsp<i class="fa fa-server"></i>
+    Welcome
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -10,12 +9,42 @@
   </ol>
 </section>
 <section class="content">
+<div class="row">
+<!-- BAR CHART -->
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="box-title"><b>Grafik Capa</b></h3>
+    <div class="box-body">
+      
+
+      <div class="box-body">
+        <div class="chart">
+          <canvas id="barChart" style="height:230px"></canvas>
+        </div>
+        <br>
+        <div class="center">
+          <small class="label label-danger"></i> TIMELINE</small>
+          <small class="label label-warning"></i> WARNING</small>
+          <small class="label label-success"></i> NEW CAPA</small>
+        </div>
+      </div>
+      <div class="chart1">
+        <canvas id="areaChart"></canvas>
+      </div>
+      <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+
+  </div>
+  <!-- /.col (RIGHT) -->
+</div>
+<!-- /.row -->
       <div class="row">
         <div class="col-xs-12">
        
           <div class="box box-primary collapsed-box box-solid">
               <div class="box-header with-border">
-                <h3 class="box-title">Tabel Total</h3>
+                <h3 class="box-title">Tabel CAPA</h3>
 
                 <div class="box-tools pull-right">
                   <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
@@ -77,40 +106,6 @@
   <style>
     th.dt-center, td.dt-center { text-align: center; }
   </style>
-
-<section class="content">
-  <div class="row">
-
-
-    <!-- BAR CHART -->
-    <div class="box box-primary">
-      <div class="box-header with-border">
-        <h3 class="box-title"><b>Grafik Capa</b></h3>
-        <div class="box-body">
-          
-
-          <div class="box-body">
-            <div class="chart">
-              <canvas id="barChart" style="height:230px"></canvas>
-            </div>
-            <br>
-            <div class="center">
-              <small class="label label-danger"></i> TIMELINE</small>
-              <small class="label label-warning"></i> WARNING</small>
-              <small class="label label-success"></i> NEW CAPA</small>
-            </div>
-          </div>
-          <div class="chart1">
-            <canvas id="areaChart"></canvas>
-          </div>
-          <!-- /.box-body -->
-        </div>
-        <!-- /.box -->
-
-      </div>
-      <!-- /.col (RIGHT) -->
-    </div>
-    <!-- /.row -->
 </section>
 <style>
   .chart1{
@@ -121,4 +116,3 @@
   width: 30%;
 }
 </style>
->>>>>>> ec5adad4a6d296ef021ce6efdc12b1d8750ad821
