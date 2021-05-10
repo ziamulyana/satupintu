@@ -121,7 +121,7 @@
                         <th class="dt-center">Nomor Surat Peringatan</th>
                         <th class="dt-center">Tanggal Surat</th>
                         <th class="dt-center">Soft File</th>
-                        <th class="dt-center">Aksi</th>
+                        <th class="dt-center">Edit</th>
 
                       </tr>
                     </thead>

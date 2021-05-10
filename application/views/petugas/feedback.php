@@ -51,6 +51,7 @@
                       <th>Tgl Feedback </th>
                       <th>File</th>
                       <th>Closed</th>
+                      <th>Edit</th>
 
                     </tr>
                   </thead>
@@ -88,6 +89,12 @@
                       <?php
                     }
                     echo "</td>";
+                    echo "<td>" ?>
+
+                    <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editFeedback" data-id = "<?= $row->id ?>" data-closed="<?= $row->closed ?>" data-toggle="modal" data-target="" ><i class="fa fa-edit"></i></a>
+
+
+                   <?php echo "</td>";
                   }
                 }else{
                   echo "no record found";

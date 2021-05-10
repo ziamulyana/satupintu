@@ -12,7 +12,7 @@ class Feedback_model extends CI_Model{
     public function getFeedback()
     { 
       
-    $this->db->select('noSuratFeedback, tbl_surattl.namaSarana , tglFeedback,  file_feedback, closed');
+    $this->db->select('tbl_feedback.id,noSuratFeedback, tbl_surattl.namaSarana , tglFeedback,  file_feedback, closed');
     $this->db->from('tbl_feedback');
     $this->db->join('tbl_peringatan', 'tbl_feedback.idSuratPeringatan = tbl_peringatan.id');
      $this->db->join('tbl_surattl', 'tbl_peringatan.idTl = tbl_surattl.id');
