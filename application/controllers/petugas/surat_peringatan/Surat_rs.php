@@ -1,7 +1,7 @@
 	<?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
-	class Surat_obat extends CI_Controller {
+	class Surat_rs extends CI_Controller {
 	// main page
 
 
@@ -10,22 +10,24 @@
         parent::__construct();
         $this->load->database();
         $this->load->model('SuratObat_model');
-                $this->load->model('SuratPeringatan_model');
+        $this->load->model('SuratPeringatan_model');
+        $this->load->model('SuratTl_model');
     }
 
 
 		public function index()
 		{
-			$data = konfigurasi('Form Surat Peringatan Toko Obat',"ap");
+			$data = konfigurasi('Form Surat Peringatan Rumah Sakit','rs');
 			$data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
-        	$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/surat_obat/form', $data);
+        	$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/surat_rs/form', $data);
 			
 		}
 		
 		public function surat()
 		{
 
-				function convertMonths($month){
+
+			function convertMonths($month){
 				$month = date('m',$month);
 				return $month;
 			}
@@ -34,6 +36,7 @@
 				$year = date('y',$year);
 				return $year;
 			}
+
 
 			$tanggal =  $this->input->post('tanggal');
 			$noSurat =  $this->input->post('noSurat');
@@ -53,7 +56,7 @@
 			$detailTemuan =  $this->input->post('detailTemuan');
 			$pilihPasal = $this->input->post('pilihPasal');
 
-				$tanggalolah  = strtotime($tanggal);
+			$tanggalolah  = strtotime($tanggal);
 
 			echo $tanggal;
 
@@ -71,7 +74,7 @@
 
 			$data = array('title'=>'Cetak surat tugas',
 				'tanggal' => $tanggal,
-				'noSurat' => $noSurat,
+				'noSurat' => $noSuratFix,
 				'penerimaSurat' => $penerimaSurat,
 				'kotaSurat' => $kotaSurat,
 				// detil sarana
@@ -89,6 +92,7 @@
 				'pilihPasal' => $pasal_peringatan
 				);		
 
+				
 
 				$data_db = array(
 
@@ -99,18 +103,18 @@
 
 			);
 
-			$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
+
+				$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
 			if($checkvalidation == true){
 				$this->db->insert('tbl_peringatan',$data_db);
 				$this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
-				$this->load->view('petugas/surat_peringatan/surat_obat/isiSurat', $data, FALSE);
+				$this->load->view('petugas/surat_peringatan/surat_rs/isiSurat', $data, FALSE);
 			}else{
 				$this->session->set_flashdata('failed', 'Data Duplikat');
-				redirect('petugas/surat_peringatan/Surat_obat', 'refresh');
+				redirect('petugas/surat_peringatan/Surat_rs', 'refresh');
 			}	
-
 			
-		}
+			}
 
 	}
 

@@ -1,7 +1,7 @@
 	<?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
-	class Surat_obat extends CI_Controller {
+	class Surat_puskesmas extends CI_Controller {
 	// main page
 
 
@@ -10,15 +10,15 @@
         parent::__construct();
         $this->load->database();
         $this->load->model('SuratObat_model');
-                $this->load->model('SuratPeringatan_model');
+         $this->load->model('SuratPeringatan_model');
     }
 
 
 		public function index()
 		{
-			$data = konfigurasi('Form Surat Peringatan Toko Obat',"ap");
+			$data = konfigurasi('Form Surat Peringatan Puskesmas',"ap");
 			$data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
-        	$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/surat_obat/form', $data);
+        	$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/Surat_puskesmas/form', $data);
 			
 		}
 		
@@ -71,7 +71,7 @@
 
 			$data = array('title'=>'Cetak surat tugas',
 				'tanggal' => $tanggal,
-				'noSurat' => $noSurat,
+				'noSurat' => $noSuratFix,
 				'penerimaSurat' => $penerimaSurat,
 				'kotaSurat' => $kotaSurat,
 				// detil sarana
@@ -90,6 +90,7 @@
 				);		
 
 
+
 				$data_db = array(
 
 				'tglSuratPeringatan' => $tanggal,
@@ -99,16 +100,17 @@
 
 			);
 
+	
+
 			$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
 			if($checkvalidation == true){
 				$this->db->insert('tbl_peringatan',$data_db);
 				$this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
-				$this->load->view('petugas/surat_peringatan/surat_obat/isiSurat', $data, FALSE);
+				$this->load->view('petugas/surat_peringatan/Surat_puskesmas/isiSurat', $data, FALSE);
 			}else{
 				$this->session->set_flashdata('failed', 'Data Duplikat');
-				redirect('petugas/surat_peringatan/Surat_obat', 'refresh');
+				redirect('petugas/surat_peringatan/Surat_puskesmas', 'refresh');
 			}	
-
 			
 		}
 
