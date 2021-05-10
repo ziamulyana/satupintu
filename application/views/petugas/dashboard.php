@@ -1,65 +1,78 @@
-<!-- Main content -->
+<section class="content-header">
+<h1 small class="label label-primary">
+    Data Total &nbsp<i class="fa fa-server"></i>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="#">Petugas</a></li>
+    <li><a href="#">Total</a></li>
+  </ol>
+</section>
 <section class="content">
-      <!-- Small boxes (Stat box) -->
       <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h3><?php echo $this->db->count_all('view_notif'); ?></h3>
+        <div class="col-xs-12">
+       
+          <div class="box box-primary collapsed-box box-solid">
+              <div class="box-header with-border">
+                <h3 class="box-title">Tabel Total</h3>
 
-              <p>Total Data</p>
+                <div class="box-tools pull-right">
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <!-- /.box-tools -->
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                
+                <table id="tbl" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th class="dt-center">Nomor Surat</th>
+                  <th class="dt-center">Sarana</th>
+                  <th class="dt-center">Tanggal Surat</th>
+                  <th class="dt-center">Tanggal Timeline</th>
+                  <th class="dt-center">Timeline</th>
+                  <th class="dt-center">Status</th>
+                  
+                </tr>
+                </thead>
+                <tbody>
+                <?php     
+                 if(isset($total)){
+                 foreach ($total->result() as $row){
+                  if($row->timeline <= 3) {
+                    $status='<small class="label label-danger"><i class="fa fa-exclamation-triangle"></i> TIMELINE</small>';
+                } else if($row->timeline <= 7) {
+                    $status='<small class="label label-warning"><i class="fa fa-clock-o"></i>&nbsp WARNING</small>';
+                } else {
+                    $status='<small class="label label-success"><i class="fa fa-check-circle"></i>&nbsp NEW CAPA</small>';
+                }
+                  echo "<tr>";
+                  echo "<td class='dt-center'>".$row->no_surat."</td>";      
+                  echo "<td class='dt-center'>".$row->sarana."</td>";
+                  echo "<td class='dt-center'>".$row->tgl_surat."</td>";
+                  echo "<td class='dt-center'>".$row->tanggal_timeline."</td>";
+                  echo "<td class='dt-center'>".$row->timeline." Hari Tersisa</td>";
+                  echo "<td class='dt-center'>".$status."</td>";
+                 }
+                 }else{
+                  echo "no record found";
+                 }
+                ?>
+                </tbody>
+              </table>
+              </div>
             </div>
-            <div class="icon">
-              <i class="ion ion-clipboard"></i>
-            </div>
-            <a href="<?php echo base_url('petugas/tbl_total_c')?>" class="small-box-footer">Lihat Total <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
+  
+          <!-- /.box -->
         </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3>belum</h3>
-
-              <p>Green Zone</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-checkmark"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3>belum</h3>
-
-              <p>Warning</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-alert"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3> <?php echo $this->db->where('timeline <=',3)->from("view_notif")->count_all_results(); ?></h3>
-
-              <p>Timeline</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-alert-circled"></i>
-            </div>
-            <a href="<?php echo base_url('petugas/tbl_timeline_c')?>" class="small-box-footer">Lihat Timeline <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-      </div> 
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <style>
+    th.dt-center, td.dt-center { text-align: center; }
+  </style>
