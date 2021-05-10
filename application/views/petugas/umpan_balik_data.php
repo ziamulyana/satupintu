@@ -31,12 +31,12 @@
  									foreach ($tracking_result->result() as $row) {
 
  										if($row->closed == 0) {
- 											$status='<small class="label label-danger"><i class="fa fa-exclamation-triangle"></i> !CLOSED</small>';
- 										}else if($row->closed == null){
+ 											$status='<small class="label label-danger"><i class="fa fa-exclamation-triangle"></i> No</small>';
+ 										}else if($row->closed == -1){
  											$status='<small class="label label-warning"><i class="  fa fa-question-circle"></i> VERIF</small>';
  										}
  										else {
- 											$status='<small class="label label-success"><i class="fa fa-check-circle"></i>&nbsp    CLOSED</small>';
+ 											$status='<small class="label label-success"><i class="fa fa-check-circle"></i>&nbsp    Yes</small>';
  										}
 
 
