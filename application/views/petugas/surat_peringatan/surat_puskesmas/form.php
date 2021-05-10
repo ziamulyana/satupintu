@@ -1,7 +1,6 @@
-
-<section class="content-header">
+  <section class="content-header">
   <h1>
-    Buat Surat Peringatan Sarana Obat
+    Buat Surat Peringatan
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -14,18 +13,34 @@
 <section class="content">
   <div class="row">
    <div class="col-md-12">
-     <form role="form">
+     <form role="form" action="<?php echo base_url('petugas/surat_peringatan/surat_puskesmas/surat')?>" method="post">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Form Pembuatan Surat Peringatan</h3>
+          <h3 class="box-title"><?php echo $title; ?></h3>
           <p><span class="wajib">* wajib diisi</span></p>
-        </div>
 
-        <div class="col-md-6">
+          <div class="col-md-6">
           <h4>Informasi Kepala Surat</h4>
           <hr>
           
-
+  <!-- nomor surat tugas -->
+                <div class="form-group row">
+                  <label for="kendaraan" class="col-sm-4 col-form-label">No.Surat Tugas<span class="wajib"> *</span></label>
+                  <div class="col-sm-12">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-newspaper-o"></i></span>
+                      <select name="suratTugas" id= "suratTugas" class="selectpicker form-control" data-live-search="true" required>
+                          <?php
+                        foreach ($surat_tugas as $surat) {
+                          echo "<option value=".$surat->idSurattl.">".$surat->noSuratTugas."</option>";
+                        }
+                        ?>
+                        <option selected="selected">- Pilih Surat Tugas -</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                
           <!-- tanggal surat -->
           <div class="form-group row">
             <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal Surat<span class="wajib"> *</span></label>
@@ -186,7 +201,7 @@
           <h4>Detail Temuan</h4>
           <hr>
 
-          <div class="form-group row">
+     <div class="form-group row">
            <label for="detailTemuan" class="col-sm-3 col-form-label">Detail Temuan<span class="wajib"> *</span></label>
            <div class="col-md-12">
             <!-- /.card-header -->
@@ -203,32 +218,39 @@
         <h4>Detail Pasal Pelanggaran</h4>
         <hr>
         
+ <!-- Pelanggaran -->
+        <div class="form-group row">
+          <label for="pilihPasal" class="col-sm-3 col-form-label">Pasal Pelanggaran<span class="wajib"> *</span></label>
+          <div class="col-md-12">
+            <select class="category related-post form-control" name="pilihPasal[]" id= "pilihPasal" multiple="multiple" data-placeholder="Pilih Pasal" style="width: 100%;" required>
+              <?php
+              foreach ($temuan_obat as $temuan) {
+                echo "<option value=".$temuan->id.">".$temuan->temuan."</option>";
+              }
+              ?>
 
-        <!-- Pelanggaran -->
-        <div class="form-group">
-          <label>Category :</label>
-          <select class="category related-post form-control" name="category[]" multiple>
-            <option value="1"> Laravel</option>
-            <option value="2"> Jquery</option>
-            <option value="3"> React</option>
-            <option value="4"> Jquery ui</option>
-            <option value="5"> Android</option>
-            <option value="6"> React Native</option>
-            <option value="7"> Vue js</option>
-            <option value="8"> Bootstrap 4</option>
-          </select>
+            </select>
+          </div>
         </div>
-      </div>
-      <div class="box-footer">
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-    </form>
-  </div>
+
+
+        <div class="box-footer">
+         <button type="submit" value="submit" onclick="return chk_date()" class="btn btn-info"><i class="fa fa-print"></i> Save Document</button>
+         <button type="reset"  value ="reset" class="btn btn-danger"><i class="fa fa-refresh" aria-hidden="true"></i> Reset Form</button>
+       </div>
+          </div>
+        </div>
+
+         
+     </form>
+
+   </div>
+
+
+
+ </div>
 </div>
-</div>
-<!-- /.row -->
-</section>
-<!-- /.content -->
+
 <style>
     .select2-container--default .select2-selection--multiple .select2-selection__choice {
         background-color: #3c8dbc;
@@ -248,3 +270,6 @@
         margin-right: 2px;
     }
 </style>
+<!-- /.row -->
+</section>
+<!-- /.content -->

@@ -1,31 +1,32 @@
 	<?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
-	class Surat_obat extends CI_Controller {
+	class Surat_apotek extends CI_Controller {
 	// main page
 
 
 		public function __construct()
-    {
-        parent::__construct();
-        $this->load->database();
-        $this->load->model('SuratObat_model');
-                $this->load->model('SuratPeringatan_model');
-    }
+		{
+			parent::__construct();
+			$this->load->database();
+			$this->load->model('SuratObat_model');
+			$this->load->model('SuratPeringatan_model');
+		}
 
 
 		public function index()
 		{
-			$data = konfigurasi('Form Surat Peringatan Toko Obat',"ap");
-			$data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
-        	$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/surat_obat/form', $data);
+			$data = konfigurasi('Form Surat Peringatan Obat',"ap");
+$data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
+			$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/surat_apotek/form', $data);
 			
 		}
 		
 		public function surat()
 		{
 
-				function convertMonths($month){
+
+			function convertMonths($month){
 				$month = date('m',$month);
 				return $month;
 			}
@@ -53,13 +54,12 @@
 			$detailTemuan =  $this->input->post('detailTemuan');
 			$pilihPasal = $this->input->post('pilihPasal');
 
-				$tanggalolah  = strtotime($tanggal);
+			$tanggalolah  = strtotime($tanggal);
 
 			echo $tanggal;
 
 			$noSuratFix = "T-PW.01.12.9A2.".convertMonths($tanggalolah).".".convertYears($tanggalolah).".".$noSurat;
 			echo $noSuratFix;
-
 
 
 			$pasal_peringatan = array();
@@ -69,9 +69,10 @@
 			}
 
 
+
 			$data = array('title'=>'Cetak surat tugas',
 				'tanggal' => $tanggal,
-				'noSurat' => $noSurat,
+				'noSurat' => $noSuratFix,
 				'penerimaSurat' => $penerimaSurat,
 				'kotaSurat' => $kotaSurat,
 				// detil sarana
@@ -87,10 +88,9 @@
 				'detailTemuan' => $detailTemuan,
 				// ganti ke db
 				'pilihPasal' => $pasal_peringatan
-				);		
+			);	
 
-
-				$data_db = array(
+			$data_db = array(
 
 				'tglSuratPeringatan' => $tanggal,
 				'noSuratPeringatan' => $noSuratFix,
@@ -99,17 +99,18 @@
 
 			);
 
+
 			$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
 			if($checkvalidation == true){
 				$this->db->insert('tbl_peringatan',$data_db);
 				$this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
-				$this->load->view('petugas/surat_peringatan/surat_obat/isiSurat', $data, FALSE);
+				$this->load->view('petugas/surat_peringatan/surat_apotek/isiSurat', $data, FALSE);
 			}else{
 				$this->session->set_flashdata('failed', 'Data Duplikat');
-				redirect('petugas/surat_peringatan/Surat_obat', 'refresh');
+				redirect('petugas/surat_peringatan/Surat_apotek', 'refresh');
 			}	
 
-			
+
 		}
 
 	}

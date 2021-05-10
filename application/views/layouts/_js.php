@@ -49,6 +49,8 @@
 <script src="<?php echo base_url('assets'); ?>/vendor/datatables/dataTables.bootstrap.min.js"></script>
 <!-- Select2 -->
 <script src="<?php echo base_url('assets'); ?>/vendor/select2/js/select2.full.min.js"></script>
+<!-- ChartJs -->
+<script src="<?php echo base_url('assets'); ?>/vendor/chartjs/Chart.js"></script>
 <!-- Idle Auto Logout -->
 <script src="<?php echo base_url('assets'); ?>/vendor/jquery/jquery.idle.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
@@ -108,28 +110,120 @@
 	}
 </script>
 <script>
-function findTotal1(){
+	function findTotal1() {
 		var arr = document.getElementsByName('sampel');
-		var tot=0;
-		for(var i=0;i<arr.length;i++){
-			if(parseInt(arr[i].value))
+		var tot = 0;
+		for (var i = 0; i < arr.length; i++) {
+			if (parseInt(arr[i].value))
 				tot += parseInt(arr[i].value);
 		}
 		document.getElementById('total_sampel').value = tot;
 	};
-   document.addEventListener("DOMContentLoaded", function(event) {
-       findTotal();
-    });
-function findTotal2(){
+	document.addEventListener("DOMContentLoaded", function(event) {
+		findTotal();
+	});
+
+	function findTotal2() {
 		var arr = document.getElementsByName('harga');
-		var tot=0;
-		for(var i=0;i<arr.length;i++){
-			if(parseInt(arr[i].value))
+		var tot = 0;
+		for (var i = 0; i < arr.length; i++) {
+			if (parseInt(arr[i].value))
 				tot += parseInt(arr[i].value);
 		}
 		document.getElementById('total_harga').value = tot;
 	};
-   document.addEventListener("DOMContentLoaded", function(event) {
-       findTotal();
-    });
+	document.addEventListener("DOMContentLoaded", function(event) {
+		findTotal();
+	});
+</script>
+<script>
+	$(function() {
+		/* ChartJS
+		 * -------
+		 * Here we will create a few charts using ChartJS
+		 */
+
+		//--------------
+		//- AREA CHART -
+		//--------------
+
+		// Get context with jQuery - using jQuery's .get() method.
+		var areaChartCanvas = $("#areaChart").get(0).getContext("2d");
+		// This will get the first returned node in the jQuery collection.
+		var areaChart = new Chart(areaChartCanvas);
+
+		var areaChartData = {
+			labels: ["January", "February", "March", "April", "May", "June", "July", "Agustus", "September", "Oktober", "November", "Desember",],
+			datasets: [{
+					label: "Timeline",
+					fillColor: "#dd4b39",
+					strokeColor: "#dd4b39",
+					pointColor: "#dd4b39",
+					pointStrokeColor: "#dd4b39",
+					pointHighlightFill: "#fff",
+					pointHighlightStroke: "#dd4b39",
+					data: [65, 59, 80, 81, 56, 55, 40, 80]
+				},
+				{
+					label: "Warning",
+					fillColor: "#f39c12",
+					strokeColor: "#f39c12",
+					pointColor: "#f39c12",
+					pointStrokeColor: "#f39c12",
+					pointHighlightFill: "#fff",
+					pointHighlightStroke: "#f39c12",
+					data: [28, 48, 40, 19, 86, 27, 90, 100]
+				},
+				{
+					label: "New Capa",
+					fillColor: "#00a65a",
+					strokeColor: "#00a65a",
+					pointColor: "#00a65a",
+					pointStrokeColor: "#00a65a",
+					pointHighlightFill: "#fff",
+					pointHighlightStroke: "#00a65a",
+					data: [28, 48, 40, 19, 86, 27, 90, 100]
+				}
+			]
+		};
+		//-------------
+		//- BAR CHART -
+		//-------------
+		var barChartCanvas = $("#barChart").get(0).getContext("2d");
+		var barChart = new Chart(barChartCanvas);
+		var barChartData = areaChartData;
+		
+		var barChartOptions = {
+			//Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+			scaleBeginAtZero: true,
+			//Boolean - Whether grid lines are shown across the chart
+			scaleShowGridLines: true,
+			//String - Colour of the grid lines
+			scaleGridLineColor: "rgba(0,0,0,.05)",
+			//Number - Width of the grid lines
+			scaleGridLineWidth: 1,
+			//Boolean - Whether to show horizontal lines (except X axis)
+			scaleShowHorizontalLines: true,
+			//Boolean - Whether to show vertical lines (except Y axis)
+			scaleShowVerticalLines: true,
+			//Boolean - If there is a stroke on each bar
+			barShowStroke: true,
+			//Number - Pixel width of the bar stroke
+			barStrokeWidth: 2,
+			//Number - Spacing between each of the X value sets
+			barValueSpacing: 5,
+			//Number - Spacing between data sets within X values
+			barDatasetSpacing: 1,
+			//String - A legend template
+			legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>",
+			//Boolean - whether to make the chart responsive
+			responsive: true,
+			maintainAspectRatio: true
+		};
+
+		
+
+		barChartOptions.datasetFill = false;
+		barChart.Bar(barChartData, barChartOptions);
+	});
 </script>

@@ -56,7 +56,7 @@
         </a>
         <ul class="treeview-menu" style="display: none;">
           <li><a href="#"><i class="fa fa-circle-o"></i>Pembinaan</a></li>
-          <li><a href="<?=base_url('petugas/surat_peringatan/home')?>"><i class="fa fa-circle-o"></i>Peringatan</a></li>
+          <li><a href="<?=base_url('petugas/surat_peringatan/c_surat_peringatan')?>"><i class="fa fa-circle-o"></i>Peringatan</a></li>
           <li><a href="#"><i class="fa fa-circle-o"></i>Peringatan Keras</a></li>
           <li><a href="#"><i class="fa fa-circle-o"></i>PSK</a></li>
           <li><a href="#"><i class="fa fa-circle-o"></i>Penghentian Kegiatan</a></li>
@@ -64,7 +64,22 @@
           <li><a href="#"><i class="fa fa-circle-o"></i>CAPA</a></li>
         </ul>
       </li>
-      <li><a href="#"><i class="fa fa-link"></i> <span>Lihat Umpan Balik</span></a></li>
+
+       <!-- sub 5 -->
+       <li class="treeview" style="height: auto;">
+        <a href="#">
+          <i class="fa fa-history"></i> <span>UMPAN BALIK</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu" style="display: none;">
+          <li><a href="<?=base_url('petugas/feedback')?>"><i class="fa fa-circle-o"></i>Lihat Feedback</a></li>
+          <li><a href="<?=base_url('petugas/umpan_balik')?>"><i class="fa fa-circle-o"></i>Lihat Riwayat CAPA</a></li>
+ 
+        </ul>
+      </li>
+
        <li class="treeview" style="height: auto;">
         <a href="#">
           <i class="fa fa-share"></i> <span>REPORT</span>
