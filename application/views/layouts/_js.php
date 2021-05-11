@@ -153,7 +153,7 @@
 		var areaChart = new Chart(areaChartCanvas);
 
 		var areaChartData = {
-			labels: ["January", "February", "March", "April", "May", "June", "July", "Agustus", "September", "Oktober", "November", "Desember",],
+			labels: ["January", "February", "March", "April", "May", "June", "July", "Agustus", "September", "Oktober", "November", "Desember"],
 			datasets: [{
 					label: "Timeline",
 					fillColor: "#dd4b39",
@@ -162,7 +162,20 @@
 					pointStrokeColor: "#dd4b39",
 					pointHighlightFill: "#fff",
 					pointHighlightStroke: "#dd4b39",
-					data: [65, 59, 80, 81, 56, 55, 40, 80]
+					data: [
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',1)->where('timeline <=',3)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',2)->where('timeline <=',3)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',3)->where('timeline <=',3)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',4)->where('timeline <=',3)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',5)->where('timeline <=',3)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',6)->where('timeline <=',3)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',7)->where('timeline <=',3)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',8)->where('timeline <=',3)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',9)->where('timeline <=',3)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',10)->where('timeline <=',3)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',11)->where('timeline <=',3)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',12)->where('timeline <=',3)->from("view_notif")->count_all_results(); ?>			
+					]
 				},
 				{
 					label: "Warning",
@@ -172,7 +185,20 @@
 					pointStrokeColor: "#f39c12",
 					pointHighlightFill: "#fff",
 					pointHighlightStroke: "#f39c12",
-					data: [28, 48, 40, 19, 86, 27, 90, 100]
+					data: [
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',1)->where('timeline >=',4)->where('timeline <=',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',2)->where('timeline >=',4)->where('timeline <=',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',3)->where('timeline >=',4)->where('timeline <=',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',4)->where('timeline >=',4)->where('timeline <=',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',5)->where('timeline >=',4)->where('timeline <=',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',6)->where('timeline >=',4)->where('timeline <=',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',7)->where('timeline >=',4)->where('timeline <=',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',8)->where('timeline >=',4)->where('timeline <=',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',9)->where('timeline >=',4)->where('timeline <=',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',10)->where('timeline >=',4)->where('timeline <=',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',11)->where('timeline >=',4)->where('timeline <=',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',12)->where('timeline >=',4)->where('timeline <=',7)->from("view_notif")->count_all_results(); ?>
+					]
 				},
 				{
 					label: "New Capa",
@@ -182,7 +208,20 @@
 					pointStrokeColor: "#00a65a",
 					pointHighlightFill: "#fff",
 					pointHighlightStroke: "#00a65a",
-					data: [28, 48, 40, 19, 86, 27, 90, 100]
+					data: [
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',1)->where('timeline >',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',2)->where('timeline >',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',3)->where('timeline >',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',4)->where('timeline >',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',5)->where('timeline >',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',6)->where('timeline >',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',7)->where('timeline >',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',8)->where('timeline >',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',9)->where('timeline >',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',10)->where('timeline >',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',11)->where('timeline >',7)->from("view_notif")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tanggal_timeline)=',12)->where('timeline >',7)->from("view_notif")->count_all_results(); ?>
+					]
 				}
 			]
 		};
