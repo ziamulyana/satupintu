@@ -25,6 +25,7 @@
 		{
 			$tanggal =  $this->input->post('tanggal');
 			$noSurat =  $this->input->post('noSurat');
+			$idTl= $this->input->post('suratTugas');
 			$penerimaSurat =  $this->input->post('penerimaSurat');
 			$kotaSurat =  $this->input->post('kotaSurat');
 
@@ -41,6 +42,14 @@
 
 			$detailTemuan =  $this->input->post('detailTemuan');
 			$pilihPasal = $this->input->post('pilihPasal');
+
+			$tanggalolah  = strtotime($tanggal);
+
+			echo $tanggal;
+
+			$noSuratFix = "T-PW.01.12.9A2.".convertMonths($tanggalolah).".".convertYears($tanggalolah).".".$noSurat;
+			echo $noSuratFix;
+
 			
 
 			$pasal_peringatan = array();
@@ -72,7 +81,26 @@
 					'pilihPasal' => $pasal_peringatan
 				);			
 
+				$data_db = array(
+
+					'tglSuratPeringatan' => $tanggal,
+					'noSuratPeringatan' => $noSuratFix,
+					'jenisPeringatan' => "Kemasan Pangan",
+					'idTl' => $idTl
+
+				);
+
+				$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
+			if($checkvalidation == true){
+				$this->db->insert('tbl_peringatan',$data_db);
+				$this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
 				$this->load->view('petugas/surat_peringatan/surat_kemasan/isiSurat', $data, FALSE);
+			}else{
+				$this->session->set_flashdata('failed', 'Data Duplikat');
+				redirect('petugas/surat_peringatan/surat_kemasan', 'refresh');
+			}	
+
+				
 			
 		}
 

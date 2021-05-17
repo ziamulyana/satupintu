@@ -90,12 +90,12 @@
 
 			$data_db = array(
 
-				'tglSuratPeringatan' => $tanggal,
-				'noSuratPeringatan' => $noSuratFix,
-				'perihal' => $detailTemuan,
-				'idTl' => $idTl
+					'tglSuratPeringatan' => $tanggal,
+					'noSuratPeringatan' => $noSuratFix,
+					'jenisPeringatan' => "Klinik",
+					'idTl' => $idTl
 
-			);
+				);
 
 				$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
 			if($checkvalidation == true){

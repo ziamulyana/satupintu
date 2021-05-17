@@ -91,10 +91,22 @@
                     echo "</td>";
                     echo "<td>" ?>
 
-                    <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editFeedback" data-id = "<?= $row->id ?>" data-closed="<?= $row->closed ?>" data-toggle="modal" data-target="#editClosed" ><i class="fa fa-edit"></i></a>
+                    <?php if($row->closed == -1){
+
+                      ?>
+
+                    <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editFeedback" disabled="disabled" ><i class="fa fa-edit"></i> </a>
+                  <?php } else if ($row->closed == 0) { ?>
+                    <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="acceptClosed" data-id = "<?= $row->id ?>" data-closed="1" data-toggle="modal" data-target="#accept" ><i class="fa fa-edit"></i></a>
+
+                  <?php } else{ ?>
+
+                      <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="rejectClosed" data-id = "<?= $row->id ?>" data-closed= "0"  data-toggle="modal" data-target="#reject" ><i class="fa fa-edit"></i></a>
 
 
                    <?php echo "</td>";
+                  }
+
                   }
                 }else{
                   echo "no record found";
@@ -148,7 +160,9 @@
         $("#acceptData #editclosed").val(closed);
       });
     </script>
-    <!-- /. Hapus Modal -->
+
+
+    <!-- /. reject -->
 
     <div id= "reject" class="modal fade" role="dialog">
       <div class="modal-dialog">
@@ -189,42 +203,4 @@
     <!-- /. Hapus Modal -->
 
 
-    <!-- edit Feedback -->
-
-    <div id= "editClosed" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title"><i class="icon fa fa-ban"></i>  ALert !</h4>
-          </div>
-          <div class="modal-body" id="acceptData">
-            <form action="<?=base_url('petugas/feedback/updateClosed') ?>" method="post">
-              <div class="box-body">
-                <div class="form-group" style="text-align:center">
-                  Ini akan mengubah status feedback menjadi <b>closed</b>, apakah anda yakin ?</label>
-                  <input type="hidden" class="form-control" name="id" id="id"> 
-                  <input type="hidden" class="form-control" name="editclosed" id="editclosed" value="nonaktif"> 
-
-                </div>                                                  
-              </div><!-- /.box-body -->                        
-              <div class="modal-footer">
-                <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                <button type="submit" name="hapus" class="btn btn-success"><i class="fa fa-check"></i> Accept</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script src="<?php echo base_url();?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
-    <script type="text/javascript" >
-      $(document).on("click","#acceptClosed",function(){
-        var id = $(this).data('id');
-        var closed = $(this).data('closed');
-
-        $("#acceptData #id").val(id);
-        $("#acceptData #editclosed").val(closed);
-      });
-    </script>
   </section>

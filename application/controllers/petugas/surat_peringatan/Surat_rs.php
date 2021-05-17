@@ -98,7 +98,7 @@
 
 				'tglSuratPeringatan' => $tanggal,
 				'noSuratPeringatan' => $noSuratFix,
-				'perihal' => $detailTemuan,
+				'jenisPeringatan' => "RS",
 				'idTl' => $idTl
 
 			);

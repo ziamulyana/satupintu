@@ -18,12 +18,12 @@ class SuratTl_model extends CI_Model{
     }
 
 	public function getSuratTugas(){
-		$this->db->select('tbl_surattl.noSuratTugas, tbl_surattl.namaSarana,max(tbl_feedback.closed) as closed');
+		$this->db->select('tbl_surattl.noSuratTugas, tbl_surattl.id, tbl_surattl.namaSarana,max(tbl_feedback.closed) as closed');
 		$this->db->from('tbl_surattl');
-		$this->db->join('tbl_peringatan', 'tbl_surattl.id = tbl_peringatan.idTl');
-		$this->db->join('tbl_feedback', 'tbl_peringatan.id = tbl_feedback.idSuratPeringatan');
+		$this->db->join('tbl_peringatan', 'tbl_surattl.id = tbl_peringatan.idTl', 'left');
+		$this->db->join('tbl_feedback', 'tbl_peringatan.id = tbl_feedback.idSuratPeringatan', 'left');
 		$this->db->group_by('tbl_surattl.noSuratTugas'); 
-		$this->db->having('closed < 1');
+		$this->db->having('sum(closed) < 1 or sum(closed) is null' );
 		$query = $this->db->get();
 		return $query->result();
 	}
