@@ -71,7 +71,7 @@
 
 			$data = array('title'=>'Cetak surat tugas',
 				'tanggal' => $tanggal,
-				'noSurat' => $noSurat,
+				'noSurat' => $noSuratFix,
 				'penerimaSurat' => $penerimaSurat,
 				'kotaSurat' => $kotaSurat,
 				// detil sarana

@@ -78,7 +78,7 @@ header("Content-Disposition: attachment; Filename=word.docx".$filename)
 		<table style="width:100%">
 			<tr>
 				<!-- nomor surat -->
-				<th class="satu"><p>Nomor	: T-PW.04.01.954.<?php echo convertMonthA($tanggal)?>.<?php echo convertDay($tanggal) ?>.<?php echo $noSurat ?></p></th>
+				<th class="satu"><p>Nomor	: <?php echo $noSurat ?></p></th>
 				<!-- tanggal pembuatan surat -->
 				<th class="dua"><p>Batam, <?php echo convertDay($tanggal)." ".convertMonthB(convertMonthA($tanggal))." ".convertYear($tanggal) ?></p></th> 
 			</tr>

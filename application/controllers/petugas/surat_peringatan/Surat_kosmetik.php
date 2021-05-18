@@ -10,6 +10,7 @@
         parent::__construct();
         $this->load->database();
         $this->load->model('SuratKosmetik_model');
+         $this->load->model('SuratPeringatan_model');
     }
 
 
@@ -23,6 +24,18 @@
 		
 		public function surat()
 		{
+
+				function convertMonths($month){
+				$month = date('m',$month);
+				return $month;
+			}
+
+			function convertYears($year){
+				$year = date('y',$year);
+				return $year;
+			}
+
+			
 			$tanggal =  $this->input->post('tanggal');
 			$noSurat =  $this->input->post('noSurat');
 			$idTl= $this->input->post('suratTugas');
@@ -44,7 +57,7 @@
 
 				echo $tanggal;
 
-				$noSuratFix = "T-PW.01.12.9A2.".convertMonths($tanggalolah).".".convertYears($tanggalolah).".".$noSurat;
+				$noSuratFix = "T-PW.03.02.9A2.".convertMonths($tanggalolah).".".convertYears($tanggalolah).".".$noSurat;
 				echo $noSuratFix;
 
 
@@ -57,7 +70,7 @@
 
 			$data = array('title'=>'Cetak surat tugas',
 				'tanggal' => $tanggal,
-				'noSurat' => $noSurat,
+				'noSurat' => $noSuratFix,
 				'penerimaSurat' => $penerimaSurat,
 				'kotaSurat' => $kotaSurat,
 				'namaSarana' => $namaSarana,
