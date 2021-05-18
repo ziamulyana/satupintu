@@ -1,7 +1,7 @@
 <?php
 header("Content-type:application/vnd.ms-word");
-$filename = "suratTes.doc";
-header("Content-Disposition: attachment; Filename=word.docx".$filename)
+$filename = $noSurat.".doc";
+header("Content-Disposition: attachment; Filename=SuratPeringatan-".$filename)
 
 ?>
 

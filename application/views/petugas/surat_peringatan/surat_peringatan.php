@@ -1,11 +1,11 @@
  <section class="content-header">
- <h1>
-   Menu Surat Peringatan
- </h1>
- <ol class="breadcrumb">
-  <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-  <li><a href="#">Peringatan</a></li>
-</ol>
+   <h1>
+     Menu Surat Peringatan
+   </h1>
+   <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="#">Peringatan</a></li>
+  </ol>
 </section>
 <!-- Main content -->
 <section class="content">
@@ -17,7 +17,7 @@
       <div class="box box-primary">
         <div class="box-header with-border">
 
-          <h3 class="box-title">Buat Surat Peringatan
+          <h3 class="box-title"><i class="fa fa-file"></i> Buat Surat Peringatan
           </h3>
 
         </div>
@@ -105,7 +105,7 @@
     <div class="box box-primary">
       <div class="box-header with-border">
 
-        <h3 class="box-title">Daftar Surat Peringatan
+        <h3 class="box-title"><i class="fa fa-list"></i> Daftar Surat Peringatan
         </h3>
 
         <section class="content">
@@ -129,43 +129,43 @@
                       <?php     
                       if(isset($list_peringatan)){
                        foreach ($list_peringatan->result() as $row){
-                        
+
                         echo "<tr>";
                         echo "<td class='dt-center'>".$row->noSuratPeringatan."</td>";      
                         echo "<td class='dt-center'>".$row->tglSuratPeringatan."</td>";
                         echo "<td class='dt-center'>".$row->filePeringatan."</td>";
                         echo "<td class='dt-center'>"?>                             
-                            <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editDataPeringatan"
-                            data-id = "<?= $row->id ?>" data-tglPeringatan="<?= $row->tglSuratPeringatan ?>" data-noSuratPeringatan="<?=  $row->noSuratPeringatan ?>" data-filePeringatan ="<?=  $row->filePeringatan ?>" data-toggle="modal" data-target="#editModal" ><i class="fa fa-edit"></i></a>
+                        <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editPer"
+                        data-id =  "<?=$row->id ?>" data-tgl="<?=$row->tglSuratPeringatan ?>" data-nomor="<?= $row->noSuratPeringatan ?>" data-toggle="modal" data-target="#editPeringatan" ><i class="fa fa-edit"></i></a>
 
-                            </td>
-                            
-                            <?php 
-                      }
-                    }else{
-                      echo "no record found";
+                      </td>
+
+                      <?php 
                     }
-                    ?>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.box-body -->
+                  }else{
+                    echo "no record found";
+                  }
+                  ?>
+                </tbody>
+              </table>
             </div>
-            <!-- /.box -->
+            <!-- /.box-body -->
           </div>
-          <!-- /.col -->
+          <!-- /.box -->
         </div>
-        <!-- /.row -->
-      </section>
-      <!-- /.content -->
-    </div>
-    <style>
-      th.dt-center, td.dt-center { text-align: center; }
-    </style>
-
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
   </div>
-  <!-- /.box-header -->
-  <!-- form start -->
+  <style>
+    th.dt-center, td.dt-center { text-align: center; }
+  </style>
+
+</div>
+<!-- /.box-header -->
+<!-- form start -->
 
 
 </div>
@@ -179,63 +179,64 @@
 <!-- /.row -->
 
 <!-- Edit Modal -->
-    <div id= "editModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"><i class="icon fa fa-edit"></i>  Form Edit Data Surat Peringatan</h4>
-                </div>
-                <div class="modal-body" id=#editData >
-                    <form action="<?= base_url('petugas/surat_peringatan/c_surat_peringatan/ubah_suratPeringatan')?>" method="post">
-                    <div class="box box-success">
-                        <div class="box-body">
-                           <div class="form-group">
-                                
-                                <input type="hidden" class="form-control" name="id" id="id" >
-                            </div>
+<div id= "editPeringatan" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><i class="icon fa fa-edit"></i>  Edit Data Surat Peringatan</h4>
+      </div>
+      <div class="modal-body" id=editData >
+        <form action="<?= base_url('petugas/surat_peringatan/c_surat_peringatan/ubah_suratPeringatan')?>" method="post" enctype="multipart/form-data">
+          <div class="box box-success">
+            <div class="box-body">
 
-                            <div class="form-group">
-                                <label for="tglEdit">Tanggal Surat Peringatan</label> <small class="text-danger">*</small>
-                                <input type="text" class="form-control" name="tglEdit" id="tglEdit" placeholder="Tanggal Surat Peringatan" required>
-                            </div>
-                          <div class="form-group">
-                                <label for="noEdit">No. Surat Peringatan</label> <small class="text-danger">*</small>
-                                <input type="text" class="form-control" name="noEdit" id="noEdit" placeholder="Tanggal Surat Peringatan" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="fileEdit">File Peringatan</label> <small class="text-danger">*</small>
-                                <input type="text" class="form-control" name="fileEdit" id="fileEdit" placeholder="" required>
-                            </div>
-                                   
-                        </div><!-- /.box-body -->                        
-                        <div class="modal-footer">
-                            <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                            <button type="submit" name="update" class="btn btn-success"><i class="fa fa-edit"></i> Update</button>
-                        </div>
-                    </div>
-                    </form>
-                </div>
+             <div class="form-group">
+              <input type="hidden" class="form-control" name="idPeringatan" id="idPeringatan" >
             </div>
-        </div>
-    </div>
-    <script src="<?php echo base_url();?>assets/vendor/jquery/jquery-1.10.0.min.js" type="text/javascript"></script>
-    <script type="text/javascript" >
-        $(document).on("click","#editDataPeringatan",function(){
-            var id = $(this).data('id');
-            var tglEdit = $(this).data('tglPeringatan');
-            var noEdit = $(this).data('noSuratPeringatan');
-            var fileEdit = $(this).data('filePeringatan');
 
-      
-            $("#editData #id").val(id);
-            $("#editData #tglEdit").val(tglEdit);
-            $("#editData #noEdit").val(noEdit);
-            $("#editData #fileEdit").val(fileEdit);
-          
-        });
-    </script>
+            <div class="form-group">
+              <label for="noEdit">No. Surat Peringatan</label> <small class="text-danger">*</small>
+              <input type="text" class="form-control" name="noEdit" id="noEdit" required >
+            </div>
+
+            <!-- tanggal surat -->
+            <div class="form-group ">
+             <label for="tglEdit"><i class="fa fa-calendar"></i> Tanggal Surat Peringatan</label> <small class="text-danger">*</small>
+             <input class="form-control" type="date" name="tglEdit" id="tglEdit" required >
+
+           </div>
+
+
+           <div class="mb-3">
+            <label for="fileEdit">Soft File Surat Peringatan</label> <small class="text-danger">*</small>
+            <input class="form-control" type="file" id="formFile" name="fileEdit" id="fileEdit" required>
+          </div>
+
+        </div><!-- /.box-body -->                        
+        <div class="modal-footer">
+          <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+          <button type="submit" name="update" class="btn btn-success"><i class="fa fa-edit"></i> Update</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+<script src="<?php echo base_url();?>assets/vendor/jquery/jquery-1.10.0.min.js" type="text/javascript"></script>
+<script type="text/javascript" >
+  $(document).on("click","#editPer",function(){
+    var idPer = $(this).data('id');
+    var tglPer = $(this).data('tgl');
+    var noPer = $(this).data('nomor');
+
+    $("#editData #idPeringatan").val(idPer);
+    $("#editData #noEdit").val(noPer);
+    $("#editData #tglEdit").val(tglPer);
+
+  });
+</script>
 <!-- /. Edit Modal -->
 </section>
 
