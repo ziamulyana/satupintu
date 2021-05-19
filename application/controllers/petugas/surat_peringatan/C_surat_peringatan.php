@@ -9,6 +9,7 @@
 			parent::__construct();
 			$this->load->model("SuratPeringatan_model");
 
+
 		}
 
 		public function index()
@@ -31,29 +32,30 @@
 
 			$config['upload_path'] = './assets/uploads/files/peringatan';
 			$config['allowed_types'] = 'pdf';
-			$config['file_name'] = 'suratPeringatan'.$id;
+			$config['file_name'] = 'suratPeringatan-'.$id;
 			$config['overwrite'] = true;
 			$config['max_size'] = 4096;
 			
 
-		
+
 			$this->load->library("upload",$config);
+			$this->upload->initialize($config);
 
 			if(!$this->upload->do_upload('fileEdit')){
 				echo $this->upload->display_errors();
 			}else{
 				$fd=$this->upload->data();
-				$fn=$fd['file_name'];
+				$file=$fd['file_name'];
 
 				$data_peringatan = array (
 					'id' => $id,
 					'tglSuratPeringatan' => $tglEdit,
 					'noSuratPeringatan' => $noEdit,
-					'jenisPeringatan' => "Hello World",
-					'filePeringatan' => $fn	
+					'filePeringatan' => $file	
 				);
 
-				  print_r($data_peringatan);
+				$this->SuratPeringatan_model->updateSuratPeringatan($data_peringatan);
+				redirect('petugas/surat_peringatan/C_surat_peringatan');
 			}
 
 

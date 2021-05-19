@@ -34,8 +34,11 @@ class SuratPeringatan_model extends CI_Model
     }
 
     public function updateSuratPeringatan($data){
+      $this->db->set('tglSuratPeringatan', $data['tglSuratPeringatan']); 
+      $this->db->set('noSuratPeringatan', $data['noSuratPeringatan']); 
+      $this->db->set('filePeringatan', $data['filePeringatan']);
       $this->db->where('id', $data['id']);
-      $query = $this->db->update($data,'tbl_peringatan');
+      $query = $this->db->update('tbl_peringatan');
  
   }
       }
