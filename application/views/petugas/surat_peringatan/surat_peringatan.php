@@ -137,7 +137,7 @@
                         <th class="dt-center">Tanggal Surat</th>
                         <th class="dt-center">Nama Sarana</th>
                         <th class="dt-center">Soft File</th>
-                        <th class="dt-center">Edit</th>
+                        <th class="dt-center">Aksi</th>
 
                       </tr>
                     </thead>
@@ -165,6 +165,8 @@
                         echo "<td class='dt-center'>"?>                             
                         <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editPer"
                         data-id =  "<?=$row->id ?>" data-tgl="<?=$row->tglSuratPeringatan ?>" data-nomor="<?= $row->noSuratPeringatan ?>" data-toggle="modal" data-target="#editPeringatan" ><i class="fa fa-edit"></i></a>
+
+                         <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusPer" data-id =  "<?=$row->id ?>" data-toggle="modal" data-target="#hapusPeringatan"><i class="fa fa-trash"></i></a>
 
                       </td>
 
@@ -206,7 +208,7 @@
 </div>
 <!-- /.row -->
 
-<!-- Edit Modal -->
+<!-- Edit Peringatan -->
 <div id= "editPeringatan" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -266,7 +268,42 @@
 
   });
 </script>
-<!-- /. Edit Modal -->
+<!-- /. Edit Peringatan -->
+
+    <!-- Hapus Peringatan -->
+ <div id= "hapusPeringatan" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
+                </div>
+                <div class="modal-body" id="hapusData">
+                    <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/c_surat_peringatan/hapus_suratPeringatan') ?>">
+                        <div class="box-body">
+                            <div class="form-group" style="text-align:center">Anda yakin akan menghapus Surat Peringatan ini ?</label>
+                                <input type="hidden" id="idPeringatan" name="idPeringatan">
+                              
+                            </div>                        
+                        </div><!-- /.box-body -->
+                        <div class="modal-footer">
+                            <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+                            <button type="submit" class="btn btn-danger" name="delete"><i class="fa fa-check"></i> Hapus</button>
+                        </div>
+                    </form>             
+                        <script src="<?php echo base_url();?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
+                        <script type="text/javascript" >
+                            $(document).on("click","#hapusPer",function(){
+                                var id = $(this).data('id');
+                                $("#hapusData #idPeringatan").val(id);
+                            });
+                        </script>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Hapus Peringatan -->
 </section>
 
 

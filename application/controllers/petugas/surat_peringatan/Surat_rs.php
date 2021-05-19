@@ -6,20 +6,20 @@
 
 
 		public function __construct()
-    {
-        parent::__construct();
-        $this->load->database();
-        $this->load->model('SuratObat_model');
-        $this->load->model('SuratPeringatan_model');
-        $this->load->model('SuratTl_model');
-    }
+		{
+			parent::__construct();
+			$this->load->database();
+			$this->load->model('SuratObat_model');
+			$this->load->model('SuratPeringatan_model');
+			$this->load->model('SuratTl_model');
+		}
 
 
 		public function index()
 		{
 			$data = konfigurasi('Form Surat Peringatan Rumah Sakit','rs');
 			$data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
-        	$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/surat_rs/form', $data);
+			$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/surat_rs/form', $data);
 			
 		}
 		
@@ -90,22 +90,21 @@
 				'detailTemuan' => $detailTemuan,
 				// ganti ke db
 				'pilihPasal' => $pasal_peringatan
-				);		
+			);		
 
-				
-
-				$data_db = array(
+			
+			$data_db = array(
 
 				'tglSuratPeringatan' => $tanggal,
 				'noSuratPeringatan' => $noSuratFix,
-				'jenisPeringatan' => "RS",
+				'jenisPeringatan' => "Apotek",
+				'isiPeringatan' => $detailTemuan,
 				'filePeringatan' => '0',
 				'idTl' => $idTl
 
 			);
 
-
-				$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
+			$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
 			if($checkvalidation == true){
 				$this->db->insert('tbl_peringatan',$data_db);
 				$this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
@@ -115,7 +114,7 @@
 				redirect('petugas/surat_peringatan/Surat_rs', 'refresh');
 			}	
 			
-			}
+		}
 
 	}
 

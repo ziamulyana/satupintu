@@ -95,6 +95,7 @@ $data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
 					'jenisPeringatan' => "Apotek",
+					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',
 					'idTl' => $idTl
 

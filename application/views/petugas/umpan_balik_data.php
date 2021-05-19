@@ -1,93 +1,136 @@
- <section>
- 	<div class="box box-primary">
- 		<div class="box-header with-border">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Timeline
+            <small>example</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">UI</a></li>
+            <li class="active">Timeline</li>
+          </ol>
+        </section>
 
- 			<h3 class="box-title">Riwayat Umpan Balik CAPA
- 			</h3>
+        <!-- Main content -->
+        <section class="content">
 
- 			<section class="content">
- 				<div class="row">
- 					<div class="col-xs-12">
- 						<div class="box">
- 							<?php 
- 							if(isset($tracking_result)){
- 								$jumlah =0;
- 								foreach ($tracking_result->result() as $row) {
- 									echo "<h5><b>No.Surat Tugas : ".$row ->noSuratTugas."</b></h5>";
- 									echo "<h5><b>Nama Sarana :".$row->namaSarana."</b></h5>";	
- 									$jumlah+=1;
- 									if($jumlah==1) break;
- 								}
- 							}
- 							else{
- 								echo "Data tidak ditemukan";
- 							}
-
- 							?>
- 							<div class="box-body">
- 								
- 								<?php     
- 								if(isset($tracking_result)){
- 									foreach ($tracking_result->result() as $row) {
-
- 										if($row->closed == 0) {
- 											$status='<small class="label label-danger"><i class="fa fa-exclamation-triangle"></i> No</small>';
- 										}else if($row->closed == -1){
- 											$status='<small class="label label-warning"><i class="  fa fa-question-circle"></i> VERIF</small>';
- 										}
- 										else {
- 											$status='<small class="label label-success"><i class="fa fa-check-circle"></i>&nbsp    Yes</small>';
- 										}
+          <!-- row -->
+          <div class="row">
+            <div class="col-md-12">
+              <!-- The time line -->
 
 
- 										echo "<table class='table table-bordered'>";
- 										echo "<thead>";
- 										echo	"<tr>";
- 										echo "<th >No.Surat TL</th>";
- 										echo "<th >Tgl Surat TL </th>";
- 										echo "<th >File Surat TL </th>";
- 										echo "<th >No.Surat Feedback</th>";
- 										echo "<th >Tgl Surat Feedback</th>";
- 										echo "<th >File Surat Feedback</th>";
- 										echo "<th >Status</th>";
- 										echo "</tr>";
- 										echo "</thead>";
- 										echo "<tbody>";
+              <div class="box">
+               <div class="box-header with-border">
 
- 										echo "<tr>";
- 										echo "<td >".$row ->noSuratPeringatan."</td>";
- 										echo "<td >".$row->tglSuratPeringatan."</td>";
- 										echo "<td >".$row->filePeringatan."</td>";
- 										echo "<td >".$row->noSuratFeedback."</td>";
- 										echo "<td>".$row->tglFeedback."</td>";
- 										echo "<td>".$row->file_feedback."</td>";
- 										echo "<td >".$status."</td>";
- 										echo "</tbody>";
- 										echo "</table>";
+                 <h4>Hai <b>Petugas!!</b> </h4>
+                 <?php 
+                 if(isset($tracking_result)){
+                  $jumlah =0;
+                  foreach ($tracking_result->result() as $row) {
+                    ?>
+                    <h5>Berikut hasil riwayat feedback CAPA dengan Nomor Surat Tugas <b> <?php echo  $row ->noSuratTugas ?> </b> </h5>
 
- 									}
- 								}else{
- 									echo "<h4>no record found</h4>";
- 								}
- 								?>
+                    <?php 
+ 
+                    $jumlah+=1;
+                    if($jumlah==1) break;
+                  }
 
+                  ?>
 
- 							</div>
- 							<!-- /.box-body -->
- 						</div>
- 						<!-- /.box -->
- 					</div>
- 					<!-- /.col -->
- 				</div>
- 				<!-- /.row -->
- 			</section>
- 			<!-- /.content -->
- 		</div>
+                  <div class="box-body">
+                    <ul class="timeline">
 
- 	</div>
- 	<!-- /.box-header -->
- 	<!-- form start -->
+              <?php     
+                if(isset($tracking_result)){
+                  foreach ($tracking_result->result() as $row) {
+
+                    if($row->closed == 0) {
+                      $status='<span class="bg-red"><i class="fa fa-exclamation-triangle"></i> CAPA ditolak </span>';
+                    }else if($row->closed == -1){
+                      $status='<span class="bg-yellow"><i class="  fa fa-question-circle"></i> Menunggu verifikasi</span> ';
+                    }
+                    else {
+                      $status='<span class="bg-green"><i class="fa fa-check-circle"></i> CAPA diterima</span>';
+                    }
 
 
 
- </section>
+                    ?>
+
+              <!-- timeline item -->
+              <li>
+                <i class="fa fa-envelope bg-blue"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fa fa-clock-o"></i> <?php echo $row->tglSuratPeringatan ?></span>
+                  <h3 class="timeline-header"><a href="#">Anda</a> mengirim Surat Peringatan dengan nomor <?php echo $row ->noSuratPeringatan ?></h3>
+                  <div class="timeline-body">
+                  <?php echo $row ->isiPeringatan ?> 
+                  </div>
+                  <div class="timeline-footer">
+                    <a class="btn btn-primary btn-xs">Lihat File</a>
+                  </div>
+                </div>
+              </li>
+
+              <?php
+
+              if(isset($row->tglFeedback)){
+                ?>
+                  <li>
+                <i class="fa fa-comments bg-yellow"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fa fa-clock-o"></i> <?php echo $row->tglFeedback ?></span>
+                  <h3 class="timeline-header "><a href="#"><?php echo $row->namaSarana  ?></a> memberi feedback</h3>
+                  <div class="timeline-body">
+                  <?php echo $row->isiFeedback?>
+                  </div>
+                  <div class="timeline-footer">
+                    <a class="btn btn-primary btn-xs">Lihat File</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="time-label">
+               <?php echo $status ?>
+              </li>
+
+              <?php 
+              }
+
+              ?>
+
+            
+
+            <?php }
+          }?>
+              <!-- END timeline item -->
+
+
+
+              
+            </ul>
+
+                  </div>
+                  <?php
+                }
+                else{
+                  echo "Data tidak ditemukan";
+                }
+
+                ?>
+
+              
+
+              </div>
+
+
+            </div>
+
+            
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+
+
+        </section><!-- /.content -->

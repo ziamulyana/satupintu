@@ -95,11 +95,12 @@
 					'pilihPasal' => $pasal_peringatan
 					);		
 
-				$data_db = array(
+			$data_db = array(
 
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
-					'jenisPeringatan' => "PBF",
+					'jenisPeringatan' => "Apotek",
+					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',
 					'idTl' => $idTl
 

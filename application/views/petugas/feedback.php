@@ -51,7 +51,7 @@
                       <th>Tgl Feedback </th>
                       <th>File</th>
                       <th>Closed</th>
-                      <th>Edit</th>
+                      <th>Aksi</th>
 
                     </tr>
                   </thead>
