@@ -95,6 +95,7 @@
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
 					'jenisPeringatan' => "Toko Obat",
+					'filePeringatan' => '0',
 					'idTl' => $idTl
 
 				);

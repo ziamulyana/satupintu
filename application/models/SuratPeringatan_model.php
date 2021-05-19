@@ -27,9 +27,10 @@ class SuratPeringatan_model extends CI_Model
    public function getSuratPeringatan()
     { 
       
-      $this->db->select('*');
+      $this->db->select('tbl_peringatan.id, tbl_peringatan.tglSuratPeringatan, tbl_peringatan.noSuratPeringatan, tbl_peringatan.filePeringatan, tbl_surattl.namaSarana');
       $this->db->from('tbl_peringatan');
-      $query = $this->db->get();
+      $this->db->join('tbl_surattl', 'tbl_peringatan.idTl = tbl_surattl.id');
+      $query = $this->db->get('');
       return $query;
     }
 
@@ -40,5 +41,12 @@ class SuratPeringatan_model extends CI_Model
       $this->db->where('id', $data['id']);
       $query = $this->db->update('tbl_peringatan');
  
+  }
+
+  public function getFile(){
+        $this->db->select('filePeringatan');
+        $this->db->where('filePeringatan = ', "0");
+        $query = $this->db->get('tbl_peringatan');
+        return $query->num_rows();
   }
       }

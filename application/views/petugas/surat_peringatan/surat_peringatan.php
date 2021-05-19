@@ -108,6 +108,21 @@
         <h3 class="box-title"><i class="fa fa-list"></i> Daftar Surat Peringatan
         </h3>
 
+        <br>
+
+        <?php if($upload_file>0){
+          ?>
+
+
+          <div class="alert alert-danger alert-dismissable" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4><i class="icon fa fa-exclamation"></i> Alert!</h4>
+            Hallo Petugas ! Terdapat <strong><?php echo $upload_file ?></strong> surat peringatan  <?= $this->session->flashdata('flash_error'); ?> yang butuh upload soft file Surat Peringatan. Silahkan cek pada tabel!  
+
+          <?php  }; ?>  
+        </div>
+
+
         <section class="content">
           <div class="row">
             <div class="col-xs-12">
@@ -120,6 +135,7 @@
                       <tr>
                         <th class="dt-center">Nomor Surat Peringatan</th>
                         <th class="dt-center">Tanggal Surat</th>
+                        <th class="dt-center">Nama Sarana</th>
                         <th class="dt-center">Soft File</th>
                         <th class="dt-center">Edit</th>
 
@@ -127,13 +143,25 @@
                     </thead>
                     <tbody>
                       <?php     
+
+                      $attr = array(
+                        'target'=>'_blank',
+                      );
                       if(isset($list_peringatan)){
                        foreach ($list_peringatan->result() as $row){
 
                         echo "<tr>";
                         echo "<td class='dt-center'>".$row->noSuratPeringatan."</td>";      
                         echo "<td class='dt-center'>".$row->tglSuratPeringatan."</td>";
-                        echo "<td class='dt-center'>".$row->filePeringatan."</td>";
+                        echo "<td class='dt-center'>".$row->namaSarana."</td>";
+                        if($row->filePeringatan !=0){
+                          echo "<td class='dt-center'>".anchor('./assets/uploads/files/peringatan/'.$row->filePeringatan, 'Lihat PDF', $attr)."</td>";
+
+                          // echo "<td class='dt-center'><a href=./assets/uploads/files/peringatan/" .$row->filePeringatan . " target='_blank' >Lihat PDF</a></td>";
+
+                        }else{
+                          echo "<td class='dt-center'>".""."</td>";
+                        }
                         echo "<td class='dt-center'>"?>                             
                         <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editPer"
                         data-id =  "<?=$row->id ?>" data-tgl="<?=$row->tglSuratPeringatan ?>" data-nomor="<?= $row->noSuratPeringatan ?>" data-toggle="modal" data-target="#editPeringatan" ><i class="fa fa-edit"></i></a>
@@ -234,6 +262,7 @@
     $("#editData #idPeringatan").val(idPer);
     $("#editData #noEdit").val(noPer);
     $("#editData #tglEdit").val(tglPer);
+
 
   });
 </script>

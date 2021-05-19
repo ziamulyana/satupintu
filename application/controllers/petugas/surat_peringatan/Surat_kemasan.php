@@ -98,6 +98,7 @@
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
 					'jenisPeringatan' => "Kemasan Pangan",
+					'filePeringatan' => '0',
 					'idTl' => $idTl
 
 				);

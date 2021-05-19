@@ -96,6 +96,7 @@
 				'tglSuratPeringatan' => $tanggal,
 				'noSuratPeringatan' => $noSuratFix,
 				'jenisPeringatan' => "Puskesmas",
+				'filePeringatan' => '0',
 				'idTl' => $idTl
 
 			);

@@ -89,6 +89,7 @@
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
 					'jenisPeringatan' => "Kosmetik",
+					'filePeringatan' => '0',
 					'idTl' => $idTl
 
 				);

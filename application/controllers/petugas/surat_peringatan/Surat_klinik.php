@@ -93,6 +93,7 @@
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
 					'jenisPeringatan' => "Klinik",
+					'filePeringatan' => '0',
 					'idTl' => $idTl
 
 				);

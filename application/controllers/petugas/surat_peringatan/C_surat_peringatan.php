@@ -17,6 +17,7 @@
 
 			$data = konfigurasi('Pilih Surat Peringatan','');
 			$data['list_peringatan']= $this->SuratPeringatan_model->getSuratPeringatan();
+			$data['upload_file'] = $this->SuratPeringatan_model->getFile();
 			$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/surat_peringatan', $data);
 		}
 
@@ -34,9 +35,8 @@
 			$config['allowed_types'] = 'pdf';
 			$config['file_name'] = 'suratPeringatan-'.$id;
 			$config['overwrite'] = true;
-			$config['max_size'] = 4096;
+			$config['max_size'] = 0;
 			
-
 
 			$this->load->library("upload",$config);
 			$this->upload->initialize($config);
@@ -57,10 +57,6 @@
 				$this->SuratPeringatan_model->updateSuratPeringatan($data_peringatan);
 				redirect('petugas/surat_peringatan/C_surat_peringatan');
 			}
-
-
-
-			
 
 	   // $this->SuratPeringatan_model->updateSuratPeringatan($data_peringatan);
 	   // $this->session->set_flashdata('flash','Diubah');	
