@@ -32,7 +32,7 @@
                     <h5>Berikut hasil riwayat feedback CAPA dengan Nomor Surat Tugas <b> <?php echo  $row ->noSuratTugas ?> </b> </h5>
 
                     <?php 
- 
+
                     $jumlah+=1;
                     if($jumlah==1) break;
                   }
@@ -42,95 +42,103 @@
                   <div class="box-body">
                     <ul class="timeline">
 
-              <?php     
-                if(isset($tracking_result)){
-                  foreach ($tracking_result->result() as $row) {
+                      <?php     
+                      if(isset($tracking_result)){
+                        foreach ($tracking_result->result() as $row) {
 
-                    if($row->closed == 0) {
-                      $status='<span class="bg-red"><i class="fa fa-exclamation-triangle"></i> CAPA ditolak </span>';
-                    }else if($row->closed == -1){
-                      $status='<span class="bg-yellow"><i class="  fa fa-question-circle"></i> Menunggu verifikasi</span> ';
-                    }
-                    else {
-                      $status='<span class="bg-green"><i class="fa fa-check-circle"></i> CAPA diterima</span>';
-                    }
+                          if($row->closed == 0) {
+                            $status='<span class="bg-red"><i class="fa fa-exclamation-triangle"></i> CAPA ditolak </span>';
+                          }else if($row->closed == -1){
+                            $status='<span class="bg-yellow"><i class="  fa fa-question-circle"></i> Menunggu verifikasi</span> ';
+                          }
+                          else {
+                            $status='<span class="bg-green"><i class="fa fa-check-circle"></i> CAPA diterima</span>';
+                          }
+
+                          $attr = array(
+                            'target'=>'_blank',
+                          );
 
 
 
-                    ?>
+                          ?>
 
-              <!-- timeline item -->
-              <li>
-                <i class="fa fa-envelope bg-blue"></i>
-                <div class="timeline-item">
-                  <span class="time"><i class="fa fa-clock-o"></i> <?php echo $row->tglSuratPeringatan ?></span>
-                  <h3 class="timeline-header"><a href="#">Anda</a> mengirim Surat Peringatan dengan nomor <?php echo $row ->noSuratPeringatan ?></h3>
-                  <div class="timeline-body">
-                  <?php echo $row ->isiPeringatan ?> 
-                  </div>
-                  <div class="timeline-footer">
-                    <a class="btn btn-primary btn-xs">Lihat File</a>
-                  </div>
-                </div>
-              </li>
+                          <!-- timeline item -->
+                          <li>
+                            <i class="fa fa-envelope bg-blue"></i>
+                            <div class="timeline-item">
+                              <span class="time"><i class="fa fa-clock-o"></i> <?php echo $row->tglSuratPeringatan ?></span>
+                              <h3 class="timeline-header"><a href="#">Anda</a> mengirim Surat Peringatan dengan nomor <?php echo $row ->noSuratPeringatan ?></h3>
+                              <div class="timeline-body">
+                                <?php echo $row ->isiPeringatan ?> 
+                              </div>
+                              <div class="timeline-footer">
+                                <!-- <?php anchor('./assets/uploads/files/peringatan/'.$row->filePeringatan, 'Lihat File', $attr)?> -->
 
-              <?php
+                                <!-- feedback masih gagal -->
 
-              if(isset($row->tglFeedback)){
-                ?>
-                  <li>
-                <i class="fa fa-comments bg-yellow"></i>
-                <div class="timeline-item">
-                  <span class="time"><i class="fa fa-clock-o"></i> <?php echo $row->tglFeedback ?></span>
-                  <h3 class="timeline-header "><a href="#"><?php echo $row->namaSarana  ?></a> memberi feedback</h3>
-                  <div class="timeline-body">
-                  <?php echo $row->isiFeedback?>
-                  </div>
-                  <div class="timeline-footer">
-                    <a class="btn btn-primary btn-xs">Lihat File</a>
-                  </div>
-                </div>
-              </li>
+                                <a class="btn btn-primary btn-xs" href="../../assets/uploads/files/peringatan/suratPeringatan-<?php echo $row ->id ?>.pdf " target="_blank" >Lihat File</a>
+                              </div>
+                            </div>
+                          </li>
 
-              <li class="time-label">
-               <?php echo $status ?>
-              </li>
+                          <?php
 
-              <?php 
+                          if(isset($row->tglFeedback)){
+                            ?>
+                            <li>
+                              <i class="fa fa-comments bg-yellow"></i>
+                              <div class="timeline-item">
+                                <span class="time"><i class="fa fa-clock-o"></i> <?php echo $row->tglFeedback ?></span>
+                                <h3 class="timeline-header "><a href="#"><?php echo $row->namaSarana  ?></a> memberi feedback</h3>
+                                <div class="timeline-body">
+                                  <?php echo $row->isiFeedback?>
+                                </div>
+                                <div class="timeline-footer">
+                                  <a class="btn btn-primary btn-xs" href="../../assets/uploads/files/peringatan/suratPeringatan-<?php echo $row ->id  ?>.pdf " target="_blank" >Lihat File</a>
+                                </div>
+                              </div>
+                            </li>
+
+                            <li class="time-label">
+                             <?php echo $status ?>
+                           </li>
+
+                           <?php 
+                         }
+
+                         ?>
+
+
+
+                       <?php }
+                     }?>
+                     <!-- END timeline item -->
+
+
+
+
+                   </ul>
+
+                 </div>
+                 <?php
+               }
+               else{
+                echo "Data tidak ditemukan";
               }
 
               ?>
 
-            
-
-            <?php }
-          }?>
-              <!-- END timeline item -->
-
-
-
               
-            </ul>
-
-                  </div>
-                  <?php
-                }
-                else{
-                  echo "Data tidak ditemukan";
-                }
-
-                ?>
-
-              
-
-              </div>
-
 
             </div>
 
-            
-          </div><!-- /.col -->
-        </div><!-- /.row -->
+
+          </div>
+
+
+        </div><!-- /.col -->
+      </div><!-- /.row -->
 
 
         </section><!-- /.content -->
