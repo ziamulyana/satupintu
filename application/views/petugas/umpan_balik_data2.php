@@ -13,10 +13,7 @@
  							if(isset($tracking_result)){
  								$jumlah =0;
  								foreach ($tracking_result->result() as $row) {
- 									echo "<h5><b>No.Surat Tugas : ".$row ->noSuratTugas."</b></h5>";
- 									echo "<h5><b>Nama Sarana :".$row->namaSarana."</b></h5>";	
- 									$jumlah+=1;
- 									if($jumlah==1) break;
+ 									print_r($tracking_result);
  								}
  							}
  							else{
