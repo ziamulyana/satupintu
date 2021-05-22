@@ -101,7 +101,32 @@
                 </div>
               </div>
             </div>
+
+            <!-- petugas 3 -->
+            <div class="form-group row">
+              <label for="noSurat" class="col-sm-4 col-form-label">Petugas 3<span class="wajib"> </span></label>
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
+                  <input type="text" class="form-control" name="#" id="#" placeholder="Petugas 3" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- petugas 4 -->
+            <div class="form-group row">
+              <label for="noSurat" class="col-sm-4 col-form-label">Petugas 4<span class="wajib"> </span></label>
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
+                  <input type="text" class="form-control" name="#" id="#" placeholder="Petugas 4" required>
+                </div>
+              </div>
+            </div>
+
           </div>
+
+          
 
 
 
@@ -240,6 +265,12 @@
               <div class="form-group">
                 <label>
                   <input type="radio" name="tindak_lanjut" value="Pembinaan" class="minimal">
+                  Tidak TL
+                </label>
+              </div>
+              <div class="form-group">
+                <label>
+                  <input type="radio" name="tindak_lanjut" value="Pembinaan" class="minimal">
                   Pembinaan
                 </label>
               </div>
@@ -297,6 +328,7 @@
                   Tidak Aktif
                 </label>
               </div>
+              <i class="wajib">*Jika diperiksa, kosongkan.</i>
             </fieldset>
 
           </div>

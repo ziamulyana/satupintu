@@ -155,7 +155,7 @@
 		var areaChartData = {
 			labels: ["January", "February", "March", "April", "May", "June", "July", "Agustus", "September", "Oktober", "November", "Desember"],
 			datasets: [{
-					label: "Timeline",
+					label: "Expired",
 					fillColor: "#dd4b39",
 					strokeColor: "#dd4b39",
 					pointColor: "#dd4b39",
@@ -178,7 +178,7 @@
 					]
 				},
 				{
-					label: "Warning",
+					label: "Tenggang",
 					fillColor: "#f39c12",
 					strokeColor: "#f39c12",
 					pointColor: "#f39c12",
@@ -201,7 +201,7 @@
 					]
 				},
 				{
-					label: "New Capa",
+					label: "Aktif",
 					fillColor: "#00a65a",
 					strokeColor: "#00a65a",
 					pointColor: "#00a65a",

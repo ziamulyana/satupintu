@@ -18,9 +18,9 @@
             </div>
             <br>
             <div class="center">
-              <small class="label label-danger"></i> TIMELINE</small>
-              <small class="label label-warning"></i> WARNING</small>
-              <small class="label label-success"></i> NEW CAPA</small>
+              <small class="label label-danger"></i> EXPIRED</small>
+              <small class="label label-warning"></i> TENGGANG</small>
+              <small class="label label-success"></i> AKTIF</small>
             </div>
           </div>
           <div class="chart1">
@@ -67,11 +67,11 @@
                 if (isset($total)) {
                   foreach ($total->result() as $row) {
                     if ($row->timeline <= 3) {
-                      $status = '<small class="label label-danger"><i class="fa fa-exclamation-triangle"></i> TIMELINE</small>';
+                      $status = '<small class="label label-danger"><i class="fa fa-exclamation-triangle"></i> EXPIRED</small>';
                     } else if ($row->timeline <= 7) {
-                      $status = '<small class="label label-warning"><i class="fa fa-clock-o"></i>&nbsp WARNING</small>';
+                      $status = '<small class="label label-warning"><i class="fa fa-clock-o"></i>&nbsp TENGGANG</small>';
                     } else {
-                      $status = '<small class="label label-success"><i class="fa fa-check-circle"></i>&nbsp NEW CAPA</small>';
+                      $status = '<small class="label label-success"><i class="fa fa-check-circle"></i>&nbsp AKTIF</small>';
                     }
                     echo "<tr>";
                     echo "<td class='dt-center'>" . $row->no_surat . "</td>";
