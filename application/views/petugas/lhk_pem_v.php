@@ -52,7 +52,7 @@
 
             <!-- tanggal kegiatan -->
             <div class="form-group row">
-              <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal Kegiatan<span class="wajib"> *</span></label>
+              <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal Pemeriksaan<span class="wajib"> *</span></label>
               <div class="col-sm-12">
                 <input class="form-control" type="date" name="#" id="#" required>
               </div>
@@ -65,7 +65,7 @@
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-location-arrow"></i></span>
                   <select class="form-control" id="#" name="#" required>
-                    <option value="" disabled selected>- Tempat Kegiatan -</option>
+                    <option value="" disabled selected>- Kota -</option>
                     <option value="#">Natuna</option>
                     <option value="#">Pinang</option>
                     <option value="#">Karimun</option>
@@ -126,10 +126,6 @@
 
           </div>
 
-          
-
-
-
           <div class="col-md-12">
             <h4>Hasil Pemeriksaan</h4>
             <hr>
@@ -137,16 +133,11 @@
 
           <div class="col-md-6">
             <div class="form-group row">
-              <label for="noSurat" class="col-sm-4 col-form-label">Jenis Pemeriksaan<span class="wajib"> *</span></label>
+              <label for="noSurat" class="col-sm-4 col-form-label">Jenis Pemeriksaan<span class="wajib"> </span></label>
               <div class="col-sm-12">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-tasks"></i></span>
-                  <select class="form-control" id="#" name="#" required>
-                    <option value="" disabled selected>- Jenis Kegiatan Pemeriksaan -</option>
-                    <option value="#">Natuna</option>
-                    <option value="#">Pinang</option>
-                    <option value="#">Karimun</option>
-                  </select>
+                  <input type="text" class="form-control" name="#" id="#" placeholder="Sarana" required>
                 </div>
               </div>
             </div>

@@ -85,10 +85,3 @@
     background-color: #00537d;
 }
 </style>
-<script>
-$(document).ready(function(){
-  $(".not").click(function(){
-    $('<span class="label label-danger">').hide();
-  });
-});
-</script>
