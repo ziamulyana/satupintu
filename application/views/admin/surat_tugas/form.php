@@ -219,66 +219,42 @@
             </div>
           </div>
 
-        </div>
+        </div> 
+
 
         <div class="row">
     <!-- left column -->
-    <div class="col-md-12">
+    <div class="col-xs-12">
       <!-- general form elements -->
 
     <div class="box box-primary">
       <div class="box-header with-border">
 
-        <h3 class="box-title">Daftar Surat Tugas</h3>
-          <div class="pull-right">
-            <ul>
-              <a class= "btn btn-primary" href="<?php echo base_url('admin/surat_tugas/form_surattugas')?>">
-                  <i class="fa fa-plus"></i>&nbsp; Tambah Data 
-                </a> </span>
-            </ul>
-                  </div>
+      <hr>
+      <h4>Petugas</h4>
+      <hr>
 
         <section class="content">
           <div class="row">
             <div class="col-xs-12">
               <div class="box">
 
-                <!-- /.box-header -->
-                <div class="box-body">
-                  <table id="tbl" class="table table-bordered table-striped">
-                    <thead>
-                      <tr>
-                        <th class="dt-center">No</th>
-                        <th class="dt-center">Nama Petugas</th>
-                        <th class="dt-center">Aksi</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php $no = 1;     
-                      if(isset($list_surattugas)){
-                       foreach ($list_surattugas->result() as $row){
-                        
-                        echo "<tr>";
-                        echo "<td class='dt-center'>".$no++."</td>"; 
-                        echo "<td class='dt-center'>".$row->noSuratTugas."</td>";      
-                        echo "<td class='dt-center'>".$row->tglSurat."</td>";
-                        echo "<td class='dt-center'>".$row->maksud."</td>";
-                         echo "<td class='dt-center'>".$row->kota."</td>";
-                        echo "<td class='dt-center'>"?>                             
-                            <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editDataSuratTugas"
-                            " data-noSuratTugas="<?= $row->noSuratTugas ?>" data-tglSurat="<?=  $row->tglSurat ?>" data-maksud="<?=  $row->maksud ?>" data-kota="<?=  $row->kota ?>" data-toggle="modal" data-target="#editModal" ><i class="fa fa-edit"></i></a>
-
-                            </td>
-                            
-                            <?php 
-                      }
-                    }else{
-                      echo "no record found";
+              <!-- Pelanggaran -->
+              <div class="form-group row">
+                <label for="pilihPetugas" class="col-sm-3 col-form-label">Pilih Petugas<span class="wajib"> *</span></label>
+                <div class="col-md-12">
+                  <select class="category related-post form-control" name="pilihPetugas" id= "pilihPetugas" multiple="multiple" data-placeholder="Pilih Petugas" style="width: 100%;" required>
+                    <?php
+                    foreach ($pegawai as $pegawai) {
+                      echo "<option value=".$pegawai->idPegawai.">".$pegawai->nama."</option>";
                     }
                     ?>
-                  </tbody>
-                </table>
+
+                  </select>
+                </div>
               </div>
+
+
               <!-- /.box-body -->
             </div>
             <!-- /.box -->
@@ -294,7 +270,6 @@
     </style>
 
   </div>
- 
 
         <div class="box-footer">
          <button type="submit" value="submit" onclick="return chk_date()" class="btn btn-info"><i class="fa fa-print"></i> Save Document</button>
