@@ -171,12 +171,11 @@
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-taxi"></i></span>
                 <select class="form-control" name="kendaraan" id="kendaraan" required>
-                <?php
-                foreach ($nama_kendaraan as $kendaraan) {
-                  echo "<option value=".$kendaraan->idKendaraan.">".$kendaraan->nama."</option>";
-                }
-                ?>
-                      <option selected="selected">- Select -</option>
+                  <option selected="selected">- Select -</option>
+                  <option>Pesawat</option>
+                  <option>Kapal laut</option>
+                  <option>Roda empat</option>
+                  <option>Kendaraan umum</option>
                 </select>
               </div>
             </div>
@@ -189,12 +188,13 @@
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                 <select class="form-control" name="namaPenandatanganst" id="namaPenandatanganst" required>
-                <?php
-                foreach ($nama_pejabat as $pejabat) {
-                  echo "<option value=".$pejabat->id_pejabat.">".$pejabat->nama."</option>";
-                }
-                ?>
-                      <option selected="selected">- Select -</option>
+                  <option selected="selected">- Select -</option>
+                  <option>Bagus Heri Purnomo, S.Si., Apt</option>
+                  <option>Larasati Setyaningtyas, S.Farm., Apt</option>
+                  <option>Dyah Ayu Novi Hapsari, S.Farm., Apt</option>
+                  <option>Ruth Deseyanti Purba, S.Si., Apt</option>
+                  <option>Irdiansyah, SH</option>
+                  <option>Paniyati, S.Farm., Apt
                 </select>
               </div>
             </div>
@@ -207,12 +207,13 @@
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                 <select class="form-control" name="jabatanPenandantanganst" id="jabatanPenandantanganst" required>
-                <?php
-                foreach ($nama_pejabat as $pejabat) {
-                  echo "<option value=".$pejabat->id_pejabat.">".$pejabat->jabatan."</option>";
-                }
-                ?>
                       <option selected="selected">- Select -</option>
+                      <option>Kepala Balai POM di Batam</option>
+                      <option>PLH Kepala Balai POM di Batam Koordinator Substansi Informasi dan Komunikasi</option>
+                      <option>PLH Kepala Balai POM di Batam Koordinatitor Substansi Pengujian</option>
+                      <option>PLH Kepala Balai POM di Batam Koordinator Substansi Pemeriksaan</option>
+                      <option>PLH Kepala Balai POM di Batam Koordinator Substansi Penindakan</option>
+                      <option>PLH Kepala Balai POM di Batam Kepala SUB Bagian Tata Usaha</option>
                 </select>
               </div>
             </div>
@@ -220,68 +221,80 @@
 
         </div>
 
-        <div class="col-md-12">
-          <h4>Petugas</h4>
-          <hr>
+        <div class="row">
+    <!-- left column -->
+    <div class="col-md-12">
+      <!-- general form elements -->
 
-          <div class="form-group row">
-           <label for="petugas" class="col-sm-3 col-form-label">Petugas<span class="wajib"> *</span></label>
-           <div class="col-md-12">
-            <!-- /.card-header -->
-            <div class="box box-danger">
-                <div class="box-header">
-                  <h3 class="box-title"> Daftar Petugas</h3>
-                  <div class="pull-right">
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addJadwal"><i class="fa fa-plus"></i>
-                          Tambah Data</button>
+    <div class="box box-primary">
+      <div class="box-header with-border">
+
+        <h3 class="box-title">Daftar Surat Tugas</h3>
+          <div class="pull-right">
+            <ul>
+              <a class= "btn btn-primary" href="<?php echo base_url('admin/surat_tugas/form_surattugas')?>">
+                  <i class="fa fa-plus"></i>&nbsp; Tambah Data 
+                </a> </span>
+            </ul>
                   </div>
 
-                </div>
-              <div class="box-body">
-                <table id="tablepetugas" class="table table-bordered table-striped">
+        <section class="content">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+
+                <!-- /.box-header -->
+                <div class="box-body">
+                  <table id="tbl" class="table table-bordered table-striped">
                     <thead>
-                        <tr>
-                        <th class="text-center" width="50px">No</th>
-                        <th>Nama Petugas</th>
-                        <th class="text-center" width="100px">Aksi</th>
-                        </tr>
+                      <tr>
+                        <th class="dt-center">No</th>
+                        <th class="dt-center">Nama Petugas</th>
+                        <th class="dt-center">Aksi</th>
+                      </tr>
                     </thead>
+                    <tbody>
+                      <?php $no = 1;     
+                      if(isset($list_surattugas)){
+                       foreach ($list_surattugas->result() as $row){
+                        
+                        echo "<tr>";
+                        echo "<td class='dt-center'>".$no++."</td>"; 
+                        echo "<td class='dt-center'>".$row->noSuratTugas."</td>";      
+                        echo "<td class='dt-center'>".$row->tglSurat."</td>";
+                        echo "<td class='dt-center'>".$row->maksud."</td>";
+                         echo "<td class='dt-center'>".$row->kota."</td>";
+                        echo "<td class='dt-center'>"?>                             
+                            <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editDataSuratTugas"
+                            " data-noSuratTugas="<?= $row->noSuratTugas ?>" data-tglSurat="<?=  $row->tglSurat ?>" data-maksud="<?=  $row->maksud ?>" data-kota="<?=  $row->kota ?>" data-toggle="modal" data-target="#editModal" ><i class="fa fa-edit"></i></a>
+
+                            </td>
+                            
+                            <?php 
+                      }
+                    }else{
+                      echo "no record found";
+                    }
+                    ?>
+                  </tbody>
                 </table>
               </div>
-        </div>
-
-        <div id= "addJadwal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Form Tambah Petugas</h4>
-                </div>
-                <div class="modal-body">
-                    <form role="form" method="post" action="<?= site_url('admin/surat_tugas/surat_tugas') ?>">
-                            <div class="form-group">
-                                <label for="user">Nama Pegawai</label> <small class="text-danger">*</small>
-                                <select name="namaPegawai" id="namaPegawai" class="form-control" required>
-                                <?php
-                                foreach ($nama_pegawai as $pegawai) {
-                                echo "<option value=".$pegawai->id_pegawai.">".$pegawai->nama."</option>";
-                                }
-                                ?>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <!-- /.box-body -->
-                        <div class="modal-footer">
-                            <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                            <button type="submit" name="save" class="btn btn-primary"><i class="fa fa-check"></i> Simpan</button>
-                        </div>
-                    </form>             
-                </div>
-                
+              <!-- /.box-body -->
             </div>
+            <!-- /.box -->
+          </div>
+          <!-- /.col -->
         </div>
+        <!-- /.row -->
+      </section>
+      <!-- /.content -->
     </div>
+    <style>
+      th.dt-center, td.dt-center { text-align: center; }
+    </style>
+
+  </div>
+ 
 
         <div class="box-footer">
          <button type="submit" value="submit" onclick="return chk_date()" class="btn btn-info"><i class="fa fa-print"></i> Save Document</button>
@@ -290,6 +303,8 @@
      </form>
 
    </div>
+
+
 
 
 

@@ -1,4 +1,4 @@
- <section class="content-header">
+<section class="content-header">
  <h1>
    Surat Pertanggung Jawaban Luar Kota
  </h1>
