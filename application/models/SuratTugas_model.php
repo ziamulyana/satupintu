@@ -24,6 +24,15 @@ class SuratTugas_model extends CI_Model
       }
   }
 
+  public function getNamaPegawai()
+  { 
+      
+    $this->db->select('*');
+    $this->db->from('tbl_pegawai');
+    $query = $this->db->get();
+    return $query->result();
+  }
+
    public function getSuratTugas()
     { 
       
