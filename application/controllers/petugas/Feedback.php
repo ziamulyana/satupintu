@@ -18,14 +18,7 @@
 			$data = konfigurasi('Lihat Feedback','');
 			$data['list_feedback']= $this->Feedback_model->getFeedback();
 			$data['jumlah_confirm'] = $this->Feedback_model->getChecklist();
-			// foreach ($data['list_feedback']->result() as $row){
-   //                echo "<tr>";
-   //                echo "<td>".$row->noSuratFeedback."</td>";
-   //                echo "<td>".$row->tglFeedback."</td>";
-   //                echo "<td>".$row->isiFeedback."</td>";
-   //                echo "<td>".$row->file_feedback."</td>";
-   //                echo "<td>".$row->closed."</td>";
-   //            }
+			
        		 $this->template->load('layouts/petugas_template', 'petugas/feedback', $data);
 			
 		}

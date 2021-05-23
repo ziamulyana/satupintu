@@ -67,9 +67,9 @@
                       if($row->closed == -1) { ?>
                        <td> 
 
-                         <a href="#" class="btn btn-success btn-sm" id="acceptClosed" data-tooltip="tooltip" title="Accept" data-id = "<?=$row->id ?>" data-closed = "1" data-toggle="modal" data-target="#accept"  ><i class="fa fa-check"></i></a> 
+                         <a href="#" class="btn btn-success btn-sm" id="acceptClosed" data-tooltip="tooltip" title="Accept" data-id = "<?=$row->idFeedback ?>" data-closed = "1" data-toggle="modal" data-target="#accept"  ><i class="fa fa-check"></i></a> 
 
-                         <a href="#" class="btn btn-danger btn-sm" id="rejectClosed" data-tooltip="tooltip" title="Reject" data-id = "<?=$row->id ?>" data-closed = "0"  data-toggle="modal" data-target="#reject" ><i class="fa fa-close "></i></a>
+                         <a href="#" class="btn btn-danger btn-sm" id="rejectClosed" data-tooltip="tooltip" title="Reject" data-id = "<?=$row->idFeedback ?>" data-closed = "0"  data-toggle="modal" data-target="#reject" ><i class="fa fa-close "></i></a>
 
                        </td>
 
@@ -97,11 +97,11 @@
 
                     <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editFeedback" disabled="disabled" ><i class="fa fa-edit"></i> </a>
                   <?php } else if ($row->closed == 0) { ?>
-                    <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="acceptClosed" data-id = "<?= $row->id ?>" data-closed="1" data-toggle="modal" data-target="#accept" ><i class="fa fa-edit"></i></a>
+                    <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="acceptClosed" data-id = "<?= $row->idFeedback ?>" data-closed="1" data-toggle="modal" data-target="#accept" ><i class="fa fa-edit"></i></a>
 
                   <?php } else{ ?>
 
-                      <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="rejectClosed" data-id = "<?= $row->id ?>" data-closed= "0"  data-toggle="modal" data-target="#reject" ><i class="fa fa-edit"></i></a>
+                      <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="rejectClosed" data-id = "<?= $row->idFeedback ?>" data-closed= "0"  data-toggle="modal" data-target="#reject" ><i class="fa fa-edit"></i></a>
 
 
                    <?php echo "</td>";

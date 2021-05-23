@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: May 23, 2021 at 06:34 AM
+=======
+-- Generation Time: May 23, 2021 at 08:59 AM
+>>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -18,7 +22,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `satupintu`
+-- Database: `satupintu2`
 --
 
 -- --------------------------------------------------------
@@ -214,7 +218,7 @@ CREATE TABLE `tbl_closedcapa` (
 --
 
 CREATE TABLE `tbl_feedback` (
-  `id` int(11) NOT NULL,
+  `idFeedback` int(11) NOT NULL,
   `noSuratFeedback` varchar(255) NOT NULL,
   `tglFeedback` varchar(255) NOT NULL,
   `isiFeedback` text NOT NULL,
@@ -227,11 +231,15 @@ CREATE TABLE `tbl_feedback` (
 -- Dumping data for table `tbl_feedback`
 --
 
-INSERT INTO `tbl_feedback` (`id`, `noSuratFeedback`, `tglFeedback`, `isiFeedback`, `closed`, `file_feedback`, `idSuratPeringatan`) VALUES
+INSERT INTO `tbl_feedback` (`idFeedback`, `noSuratFeedback`, `tglFeedback`, `isiFeedback`, `closed`, `file_feedback`, `idSuratPeringatan`) VALUES
 (1, '111', '2021-05-03', 'testing', '0', '', 4),
 (2, '113', '2021-05-07', 'testingggg lah', '0', '', 5),
 (3, '114', '2020-05-20', 'tes', '0', '', 6),
+<<<<<<< HEAD
 (4, '115', '2020-05-30', 'okkkkkkk', '1', '', 7),
+=======
+(4, '115', '2020-05-30', 'okkkkkkk', '0', '', 7),
+>>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
 (5, '116', '2020-05-21', 'hello', '1', '', 9),
 (9, '118', '2020-05-22', 'coba lah ya', '0', '', 19),
 (10, '11111', '2021-05-22', 'hello', '0', '', 19),
@@ -316,21 +324,29 @@ INSERT INTO `tbl_kota` (`id_kota`, `nama`) VALUES
 --
 
 CREATE TABLE `tbl_lhk` (
-  `noSuratTugas` int(11) NOT NULL,
-  `anggaran` int(11) NOT NULL,
-  `kota` int(11) NOT NULL,
-  `jlhSaranaDiperiksaOleh` int(11) NOT NULL,
-  `sppdDisahkanOleh` int(11) NOT NULL,
-  `kwitansiDisahkanOleh` int(11) NOT NULL,
-  `form8JamDisahkanOleh` int(11) NOT NULL,
-  `urutanSarana` int(11) NOT NULL,
-  `namaSarana` int(11) NOT NULL,
-  `tglPemeriksaan` int(11) NOT NULL,
-  `keterangan` int(11) NOT NULL,
-  `alasanTidakDiperiksa` int(11) NOT NULL,
-  `isMk` int(11) DEFAULT NULL,
-  `idSarana` int(11) NOT NULL
+  `idLhk` int(255) NOT NULL,
+  `anggaran` varchar(255) NOT NULL,
+  `kota` varchar(255) NOT NULL,
+  `jlhSaranaDiperiksaOleh` varchar(11) NOT NULL,
+  `sppdDisahkanOleh` varchar(255) NOT NULL,
+  `kwitansiDisahkanOleh` varchar(255) NOT NULL,
+  `form8JamDisahkanOleh` varchar(255) NOT NULL,
+  `tglPemeriksaan` date NOT NULL,
+  `keterangan` text NOT NULL,
+  `alasanTidakDiperiksa` varchar(255) NOT NULL,
+  `isMk` varchar(1) DEFAULT NULL,
+  `idSarana` int(11) NOT NULL,
+  `idSuratTugas` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_lhk`
+--
+
+INSERT INTO `tbl_lhk` (`idLhk`, `anggaran`, `kota`, `jlhSaranaDiperiksaOleh`, `sppdDisahkanOleh`, `kwitansiDisahkanOleh`, `form8JamDisahkanOleh`, `tglPemeriksaan`, `keterangan`, `alasanTidakDiperiksa`, `isMk`, `idSarana`, `idSuratTugas`) VALUES
+(1, 'DIPA', 'batam', 'nana', 'nana', 'nana', 'nana', '2021-05-24', 'baik', 'gatau', 'n', 1, 1),
+(2, 'dipa', 'batam', '3', 'nana', 'nana', 'nana', '2021-05-26', 'baik', 'baik', 'n', 3, 2),
+(3, 'dipa', 'batm', 'nana', 'nana', 'nana', 'nana', '2021-05-23', 'nana', 'nana', 'y', 5, 3);
 
 -- --------------------------------------------------------
 
@@ -572,7 +588,7 @@ INSERT INTO `tbl_pegawai` (`idPegawai`, `nama`, `jabatan`, `nip`, `pangkat`, `go
 --
 
 CREATE TABLE `tbl_peringatan` (
-  `id` int(11) NOT NULL,
+  `idPeringatan` int(11) NOT NULL,
   `tglSuratPeringatan` date NOT NULL,
   `noSuratPeringatan` varchar(255) NOT NULL,
   `jenisPeringatan` varchar(255) NOT NULL,
@@ -585,17 +601,33 @@ CREATE TABLE `tbl_peringatan` (
 -- Dumping data for table `tbl_peringatan`
 --
 
+<<<<<<< HEAD
 INSERT INTO `tbl_peringatan` (`id`, `tglSuratPeringatan`, `noSuratPeringatan`, `jenisPeringatan`, `isiPeringatan`, `filePeringatan`, `idTl`) VALUES
+=======
+INSERT INTO `tbl_peringatan` (`idPeringatan`, `tglSuratPeringatan`, `noSuratPeringatan`, `jenisPeringatan`, `isiPeringatan`, `filePeringatan`, `idTl`) VALUES
+>>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
 (4, '2021-05-01', 'T-PW.01.12.9A2.05.21.12', 'PBF', '<b>Hello World</b>', '0', 3),
 (5, '2021-05-04', 'T-PW.01.12.9A2.05.21.113', 'PBF\r\n', '<b>Hello World</b>', 'suratPeringatan-5.pdf', 2),
 (6, '2021-05-04', 'T-PW.01.12.9A2.05.21.114', 'PBF', '<b>Hello World</b>', 'suratPeringatan-6.pdf', 2),
 (7, '2021-05-04', 'T-PW.01.12.9A2.05.21.115', 'PBF', '<b>Hello World</b>', 'suratPeringatan-7.pdf', 2),
 (9, '2021-05-04', 'T-PW.01.12.9A2.05.21.117', 'PBF', '<b>Hello World</b>', '0', 2),
+<<<<<<< HEAD
 (19, '2021-05-04', 'T-PW.01.12.9A2.05.21.128', 'PBF', '<b>Hello World</b>', '0', 1),
 (22, '2021-05-17', 'T-PW.01.12.9A2.05.21.129', 'PBF', '<b>Hello World</b>', '0', 5),
 (23, '2021-05-17', 'T-PW.01.12.9A2.05.21.130', 'PBF', '<b>Hello World</b>', '0', 5),
 (24, '2021-05-17', 'T-PW.01.12.9A2.05.21.131', 'PBF', '<b>Hello World</b>', '0', 5),
 (50, '2021-05-19', 'T-PW.01.12.9A2.05.21.134', 'PBF', '<b>Hello World</b>', '0', 3);
+=======
+(22, '2021-05-17', 'T-PW.01.12.9A2.05.21.129', 'PBF', '<b>Hello World</b>', '0', 1),
+(23, '2021-05-17', 'T-PW.01.12.9A2.05.21.130', 'PBF', '<b>Hello World</b>', '0', 2),
+(24, '2021-05-17', 'T-PW.01.12.9A2.05.21.131', 'PBF', '<b>Hello World</b>', '0', 2),
+(26, '2021-05-17', 'T-PW.01.12.9A2.05.21.133', 'Apotek', '<b>Hello World</b>', '0', 3),
+(50, '2021-05-19', 'T-PW.01.12.9A2.05.21.134', 'PBF', '<b>Hello World</b>', '0', 3),
+(51, '2021-05-23', 'T-PW.01.12.9A2.05.21.112', 'Apotek', '<p>nana?</p>', '0', 0),
+(52, '2021-05-23', 'T-PW.01.12.9A2.05.21.135', 'Apotek', '<p>nana?</p>', '0', 0),
+(53, '2021-05-23', 'T-PW.01.12.9A2.05.21.136', 'PBF', '<p>nana?</p>', '0', 1),
+(54, '2021-05-23', 'T-PW.01.12.9A2.05.21.137', 'PBF', '<p>nana?</p>', '0', 3);
+>>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
 
 -- --------------------------------------------------------
 
@@ -889,21 +921,27 @@ INSERT INTO `tbl_sarana` (`idSarana`, `namaSarana`, `alamatSarana`, `pemilik`, `
 --
 
 CREATE TABLE `tbl_surattl` (
-  `id` int(11) NOT NULL,
-  `noSuratTugas` varchar(255) NOT NULL,
-  `namaSarana` varchar(255) NOT NULL,
-  `jenisTl` varchar(255) NOT NULL
+  `idTl` int(11) NOT NULL,
+  `jenisTl` varchar(255) NOT NULL,
+  `idLhk` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_surattl`
 --
 
+<<<<<<< HEAD
 INSERT INTO `tbl_surattl` (`id`, `noSuratTugas`, `namaSarana`, `jenisTl`) VALUES
 (1, 'T-PW.01.12.9A2.04.21.1', 'ABC', 'Peringatan'),
 (2, 'T-PW.01.12.9A2.04.21.2', 'DEF', 'Peringatan'),
 (3, 'T-PW.01.12.9A2.04.21.3', 'GHI', 'Peringatan'),
 (5, 'T-PW.01.12.9A2.04.21.4', 'HIJ', 'Peringatan');
+=======
+INSERT INTO `tbl_surattl` (`idTl`, `jenisTl`, `idLhk`) VALUES
+(1, 'Peringatan', 1),
+(2, 'Peringatan', 2),
+(3, 'Peringatan', 3);
+>>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
 
 -- --------------------------------------------------------
 
@@ -912,24 +950,29 @@ INSERT INTO `tbl_surattl` (`id`, `noSuratTugas`, `namaSarana`, `jenisTl`) VALUES
 --
 
 CREATE TABLE `tbl_surattugas` (
-  `noSuratTugas` int(11) NOT NULL,
-  `tglMulai` int(11) NOT NULL,
-  `bebanBiaya` int(11) NOT NULL,
-  `kendaraan` int(11) NOT NULL,
-  `kota` int(11) NOT NULL,
-  `namaAnggaran` int(11) NOT NULL,
-  `tglSelesai` int(11) NOT NULL,
-  `maksud` int(11) NOT NULL,
-  `namaPenandatangan` int(11) NOT NULL,
-  `jabatanPenandatangan` int(11) NOT NULL,
-  `idPetugas` int(11) NOT NULL,
-  `namaPetugas` varchar(250) NOT NULL,
-  `idPegawai` int(11) NOT NULL,
-  `idKota` int(11) NOT NULL,
-  `idKendaraan` int(11) NOT NULL,
-  `mak` int(11) NOT NULL,
-  `noKwitansi` int(11) NOT NULL
+  `idSurat` int(255) NOT NULL,
+  `noSuratTugas` varchar(255) NOT NULL,
+  `tglSurat` date NOT NULL,
+  `tglMulai` date NOT NULL,
+  `bebanBiaya` varchar(11) NOT NULL,
+  `kendaraan` varchar(255) NOT NULL,
+  `kota` varchar(255) NOT NULL,
+  `idAnggaran` int(255) NOT NULL,
+  `tglSelesai` date NOT NULL,
+  `maksud` varchar(255) NOT NULL,
+  `namaPenandatangan` varchar(255) NOT NULL,
+  `jabatanPenandatangan` varchar(255) NOT NULL,
+  `namaPetugas` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_surattugas`
+--
+
+INSERT INTO `tbl_surattugas` (`idSurat`, `noSuratTugas`, `tglSurat`, `tglMulai`, `bebanBiaya`, `kendaraan`, `kota`, `idAnggaran`, `tglSelesai`, `maksud`, `namaPenandatangan`, `jabatanPenandatangan`, `namaPetugas`) VALUES
+(1, 'RT-02.01.9A2.03.21.1100', '2021-05-22', '2021-05-23', 'DIPA', 'Motor', 'Batam', 2, '2021-05-26', 'Pengen kesana aja', 'Nana', 'Nana', 'Nana'),
+(2, 'RT-02.01.9A2.03.21.1101', '2021-05-23', '2021-05-24', 'DIPA', 'mobil', 'batam', 3, '2021-05-26', 'jalan3', 'nana', 'nana', 'nana'),
+(3, 'RT-02.01.9A2.03.21.1102', '2021-05-25', '2021-05-26', 'DIPA', 'kapal', 'batam', 4, '2021-05-28', 'JALAN3', 'NANA', 'NANA', 'NANA');
 
 -- --------------------------------------------------------
 
@@ -1171,7 +1214,11 @@ ALTER TABLE `tbl_anggaran`
 -- Indexes for table `tbl_feedback`
 --
 ALTER TABLE `tbl_feedback`
+<<<<<<< HEAD
   ADD PRIMARY KEY (`id`),
+=======
+  ADD PRIMARY KEY (`idFeedback`),
+>>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
   ADD UNIQUE KEY `noSuratFeedback` (`noSuratFeedback`),
   ADD KEY `idSuratPeringatan` (`idSuratPeringatan`);
 
@@ -1192,6 +1239,12 @@ ALTER TABLE `tbl_konfigurasi`
 --
 ALTER TABLE `tbl_kota`
   ADD PRIMARY KEY (`id_kota`);
+
+--
+-- Indexes for table `tbl_lhk`
+--
+ALTER TABLE `tbl_lhk`
+  ADD PRIMARY KEY (`idLhk`);
 
 --
 -- Indexes for table `tbl_pasal_kemasan`
@@ -1234,7 +1287,7 @@ ALTER TABLE `tbl_pegawai`
 -- Indexes for table `tbl_peringatan`
 --
 ALTER TABLE `tbl_peringatan`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`idPeringatan`),
   ADD UNIQUE KEY `noSuratPeringatan` (`noSuratPeringatan`);
 
 --
@@ -1253,7 +1306,13 @@ ALTER TABLE `tbl_sarana`
 -- Indexes for table `tbl_surattl`
 --
 ALTER TABLE `tbl_surattl`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`idTl`);
+
+--
+-- Indexes for table `tbl_surattugas`
+--
+ALTER TABLE `tbl_surattugas`
+  ADD PRIMARY KEY (`idSurat`);
 
 --
 -- Indexes for table `tbl_temuan_kemasan`
@@ -1324,7 +1383,11 @@ ALTER TABLE `tabel`
 -- AUTO_INCREMENT for table `tbl_feedback`
 --
 ALTER TABLE `tbl_feedback`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+=======
+  MODIFY `idFeedback` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+>>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
 
 --
 -- AUTO_INCREMENT for table `tbl_kendaraan`
@@ -1343,6 +1406,12 @@ ALTER TABLE `tbl_konfigurasi`
 --
 ALTER TABLE `tbl_kota`
   MODIFY `id_kota` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `tbl_lhk`
+--
+ALTER TABLE `tbl_lhk`
+  MODIFY `idLhk` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_pasal_kemasan`
@@ -1384,7 +1453,11 @@ ALTER TABLE `tbl_pegawai`
 -- AUTO_INCREMENT for table `tbl_peringatan`
 --
 ALTER TABLE `tbl_peringatan`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+=======
+  MODIFY `idPeringatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+>>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
 
 --
 -- AUTO_INCREMENT for table `tbl_role`
@@ -1402,7 +1475,17 @@ ALTER TABLE `tbl_sarana`
 -- AUTO_INCREMENT for table `tbl_surattl`
 --
 ALTER TABLE `tbl_surattl`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+=======
+  MODIFY `idTl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tbl_surattugas`
+--
+ALTER TABLE `tbl_surattugas`
+  MODIFY `idSurat` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+>>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
 
 --
 -- AUTO_INCREMENT for table `tbl_temuan_kemasan`

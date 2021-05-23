@@ -77,7 +77,7 @@
 
                                 <!-- feedback masih gagal -->
 
-                                <a class="btn btn-primary btn-xs" href="../../assets/uploads/files/peringatan/suratPeringatan-<?php echo $row ->id ?>.pdf " target="_blank" >Lihat File</a>
+                                <a class="btn btn-primary btn-xs" href="../../assets/uploads/files/peringatan/suratPeringatan-<?php echo $row ->idPeringatan ?>.pdf " target="_blank" >Lihat File</a>
                               </div>
                             </div>
                           </li>
@@ -95,7 +95,7 @@
                                   <?php echo $row->isiFeedback?>
                                 </div>
                                 <div class="timeline-footer">
-                                  <a class="btn btn-primary btn-xs" href="../../assets/uploads/files/peringatan/suratPeringatan-<?php echo $row ->id  ?>.pdf " target="_blank" >Lihat File</a>
+                                  <a class="btn btn-primary btn-xs" href="../../assets/uploads/files/peringatan/suratPeringatan-<?php echo $row ->idFeedback  ?>.pdf " target="_blank" >Lihat File</a>
                                 </div>
                               </div>
                             </li>
