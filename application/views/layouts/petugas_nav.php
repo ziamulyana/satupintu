@@ -8,45 +8,45 @@
 		<ul class="nav navbar-nav">
 			<!-- Notifications: style can be found in dropdown.less -->
 			<li class="dropdown notifications-menu">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				<a href="" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
-              <span class="label label-danger" id="notif"></span>
+              <span class="label label-danger">
+			  <?php echo $this->db->from("notif")->count_all_results(); ?>
+			  </span>
             </a>
-				<ul id="pesan" class="dropdown-menu">
-					<li class="header">You have 10 notifications</li>
-					<li>
-						<!-- inner menu: contains the actual data -->
-						<ul class="menu">
-							<li>
-								<a href="#">
-                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                    </a>
-							</li>
-							<li>
-								<a href="#">
-                      <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                      page and may cause design problems
-                    </a>
-							</li>
-							<li>
-								<a href="#">
-                      <i class="fa fa-users text-red"></i> 5 new members joined
-                    </a>
-							</li>
-							<li>
-								<a href="#">
-                      <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                    </a>
-							</li>
-							<li>
-								<a href="#">
-                      <i class="fa fa-user text-red"></i> You changed your username
-                    </a>
-							</li>
-						</ul>
-					</li>
-					<li class="footer"><a href="#">View all</a></li>
-				</ul>
+			<ul class="dropdown-menu">
+              <li class="header">Anda Memiliki <?php echo $this->db->from("notif")->count_all_results(); ?>  Notifikasi</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li>
+				  	<?php
+
+					  $this->db->select('*'); 
+					  $this->db->from('notif');
+					 
+					  $query = $this->db->get();
+
+					  ?>
+                      
+					  <?php
+					  
+					  if (isset($query)) {
+						foreach ($query->result() as $row) {
+						  
+						  echo "<a href=''><i class='fa fa-check-circle text-green'></i>" . $row->sarana . '</a>';
+						   
+						}
+					  } else {
+						echo "no record found";
+					  }
+
+					  ?>
+                    
+                  </li>
+                </ul>
+              </li>
+            </ul>
 			</li>
 			<!-- Tasks: style can be found in dropdown.less -->
 
@@ -85,3 +85,10 @@
     background-color: #00537d;
 }
 </style>
+<script>
+$(document).ready(function(){
+  $(".not").click(function(){
+    $("span").hide();
+  });
+});
+</script>
