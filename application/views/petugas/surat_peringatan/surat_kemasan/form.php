@@ -31,7 +31,7 @@
                       <select name="suratTugas" id= "suratTugas" class="selectpicker form-control" data-live-search="true" required>
                         <?php
                         foreach ($surat_tugas as $surat) {
-                          echo "<option value=".$surat->id.">".$surat->noSuratTugas."</option>";
+                          echo "<option value=".$surat->idSurat.">".$surat->noSuratTugas."</option>";
                         }
                         ?>
                         <option selected="selected">- Pilih Surat Tugas -</option>
