@@ -83,15 +83,20 @@
 
 			);	
 
-		$data_db = array(
+					$idTl = $this->SuratTl_model->getTl($idSurat);
+				foreach ($idTl as $id) {
+					$idTl = $id->idTl;
+				}
+
+
+			$data_db = array(
 
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
-					'jenisPeringatan' => "Apotek",
+					'jenisPeringatan' => "Pangan",
 					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',
 					'idTl' => $idTl
-
 				);
 
 			$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);

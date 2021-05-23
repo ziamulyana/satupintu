@@ -5,7 +5,7 @@
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
     <li><a href="#">Admin</a></li>
-    <li><a href="#">Entry CAPA</a></li>
+    <li><a href="#">Feedback CAPA</a></li>
   </ol>
 </section>
 
@@ -16,20 +16,39 @@
       <form role="form">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Form Entry CAPA</h3>
+            <h3 class="box-title">Form Feedback CAPA</h3>
           </div>
 
           <div class="col-md-6">
 
             <br>
-            <!-- nomor surat tugas -->
+
+          <!-- nomor surat tugas -->
+          <div class="form-group row">
+                  <label for="kendaraan" class="col-sm-4 col-form-label">No.Surat Tugas<span class="wajib"> *</span></label>
+                  <div class="col-sm-12">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-newspaper-o"></i></span>
+                      <select name="suratTugas" id= "suratTugas" class="selectpicker form-control" data-live-search="true" required>
+                        <?php
+                        foreach ($surat_tugas as $surat) {
+                          echo "<option value=".$surat->id.">".$surat->noSuratTugas."</option>";
+                        }
+                        ?>
+                        <option selected="selected">- Pilih Surat Tugas -</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+            <!-- nomor Surat Peringatan -->
             <div class="form-group row">
-              <label for="noSurat" class="col-sm-4 col-form-label">Nomor Surat Tugas<span class="wajib"> *</span></label>
+              <label for="noSurat" class="col-sm-4 col-form-label">Surat Peringatan<span class="wajib"> *</span></label>
               <div class="col-sm-12">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-align-left"></i></span>
                   <select class="form-control" id="#" name="#" required>
-                    <option value="" disabled selected>- No. Surat Tugas -</option>
+                    <option value="" disabled selected>- No. Surat Peringatan -</option>
                     <option value="#">10.10.10.10</option>
                     <option value="#">11.11.11.11</option>
                     <option value="#">12.12.12.12</option>
@@ -42,11 +61,11 @@
 
             <!-- Nomor Surat CAPA -->
             <div class="form-group row">
-                <label for="noSurat" class="col-sm-4 col-form-label">Nomor Surat CAPA<span class="wajib"> *</span></label>
+                <label for="noSurat" class="col-sm-4 col-form-label">Nomor Feedback CAPA<span class="wajib"> *</span></label>
                 <div class="col-sm-12">
                     <div class="input-group">
                      <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                     <input type="text" class="form-control" name="#" id="#" placeholder="Nomor Surat CAPA" required>
+                     <input type="text" class="form-control" name="#" id="#" placeholder="Nomor Feedback CAPA" required>
                     </div>
                  </div>
             </div>
@@ -59,18 +78,24 @@
               </div>
             </div>
 
-            <!-- Perihal Surat CAPA -->
+            <!-- Perihal Feedback CAPA -->
             <div class="form-group row">
-                <label for="noSurat" class="col-sm-4 col-form-label">Perihal Surat CAPA<span class="wajib"> *</span></label>
+                <label for="noSurat" class="col-sm-4 col-form-label">Perihal Feedback CAPA<span class="wajib"> *</span></label>
                 <div class="col-sm-12">
                     <div class="input-group">
                      <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                     <input type="text" class="form-control" name="#" id="#" placeholder="Perihal Surat CAPA" required>
+                     <input type="text" class="form-control" name="#" id="#" placeholder="Perihal Feedback CAPA" required>
                     </div>
                  </div>
             </div>
-
             
+            <!-- Upload File -->
+            <div class="form-group">
+                  <label for="exampleInputFile">Lampiran Feedback CAPA<span class="wajib"> *</span></label>
+                  <input type="file" id="exampleInputFile">
+            </div>
+
+            <br>
 
                         
           </div>

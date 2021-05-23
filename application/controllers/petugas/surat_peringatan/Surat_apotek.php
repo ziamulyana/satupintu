@@ -90,15 +90,20 @@ $data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
 				'pilihPasal' => $pasal_peringatan
 			);	
 
+			$idTl = $this->SuratTl_model->getTl($idSurat);
+				foreach ($idTl as $id) {
+					$idTl = $id->idTl;
+				}
+
+
 			$data_db = array(
 
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
-					'jenisPeringatan' => "Apotek",
+					'jenisPeringatan' => "apotek",
 					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',
 					'idTl' => $idTl
-
 				);
 
 			$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);

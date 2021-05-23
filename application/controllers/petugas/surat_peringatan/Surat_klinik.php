@@ -88,16 +88,22 @@
 				'pilihPasal' => $pasal_peringatan
 				);			
 
-	$data_db = array(
+				$idTl = $this->SuratTl_model->getTl($idSurat);
+				foreach ($idTl as $id) {
+					$idTl = $id->idTl;
+				}
+
+
+			$data_db = array(
 
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
-					'jenisPeringatan' => "Apotek",
+					'jenisPeringatan' => "klinik",
 					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',
 					'idTl' => $idTl
-
 				);
+
 				$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
 			if($checkvalidation == true){
 				$this->db->insert('tbl_peringatan',$data_db);

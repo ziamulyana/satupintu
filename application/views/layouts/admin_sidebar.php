@@ -32,42 +32,41 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">HEADER</li>
       <!-- Optionally, you can add icons to the links -->
-      <li class="active"><a href="<?php echo base_url('admin/entry_capa_c')?>"><i class="fa fa-dashboard"></i> <span>Entry CAPA</span></a></li>
-      <li><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-     <li class="treeview" style="height: auto;">
+      <li class="active"><a href="<?php echo base_url('admin/Feedback')?>"><i class="fa fa-dashboard"></i> <span>Feedback CAPA</span></a></li>
+
+          <li class="treeview" style="height: auto;">
           <a href="#">
-            <i class="fa fa-share"></i> <span>Admin</span>
+            <i class="fa fa-envelope"></i> <span>Create Surat Tugas</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu" style="display: none;">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+            <li><a href="<?php echo base_url('admin/surat_tugas/surat_tugas')?>"><i class="fa fa-circle-o"></i> Surat Tugas</a></li>
             <li class="treeview" style="height: auto;">
-              <a href="#"><i class="fa fa-circle-o"></i> Level One
+              <a href="#"><i class="fa fa-circle-o"></i> Luar Kota
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
               </a>
               <ul class="treeview-menu" style="display: none;">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                <li class="treeview">
-                  <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu" style="display: none;">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                  </ul>
-                </li>
+                <li><a href="<?php echo base_url('admin/surat_tugaslukota/surat_perjadin')?>"><i class="fa fa-circle-o"></i> Surat Perjalanan Dinas</a></li>
+                <li><a href="<?php echo base_url('admin/surat_tugaslukota/surat_pj')?>"><i class="fa fa-circle-o"></i> Pertangung Jawaban</a></li>
               </ul>
             </li>
-            <li><a href="<?php echo base_url('admin/tes')?>"><i class="fa fa-circle-o"></i> Level One</a></li>
+            <li class="treeview" style="height: auto;">
+              <a href="#"><i class="fa fa-circle-o"></i> Dalam Kota
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu" style="display: none;">
+                <li><a href="<?php echo base_url('admin/surat_tugasdakota/surat_pjdakota')?>"><i class="fa fa-circle-o"></i> Pertangung Jawaban</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
-    </ul>
+
     <!-- /.sidebar-menu -->
   </section>
   <!-- /.sidebar -->
