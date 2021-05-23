@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
+-- Generation Time: May 23, 2021 at 06:34 AM
+=======
 -- Generation Time: May 23, 2021 at 08:59 AM
+>>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -231,7 +235,11 @@ INSERT INTO `tbl_feedback` (`idFeedback`, `noSuratFeedback`, `tglFeedback`, `isi
 (1, '111', '2021-05-03', 'testing', '0', '', 4),
 (2, '113', '2021-05-07', 'testingggg lah', '0', '', 5),
 (3, '114', '2020-05-20', 'tes', '0', '', 6),
+<<<<<<< HEAD
+(4, '115', '2020-05-30', 'okkkkkkk', '1', '', 7),
+=======
 (4, '115', '2020-05-30', 'okkkkkkk', '0', '', 7),
+>>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
 (5, '116', '2020-05-21', 'hello', '1', '', 9),
 (9, '118', '2020-05-22', 'coba lah ya', '0', '', 19),
 (10, '11111', '2021-05-22', 'hello', '0', '', 19),
@@ -593,12 +601,23 @@ CREATE TABLE `tbl_peringatan` (
 -- Dumping data for table `tbl_peringatan`
 --
 
+<<<<<<< HEAD
+INSERT INTO `tbl_peringatan` (`id`, `tglSuratPeringatan`, `noSuratPeringatan`, `jenisPeringatan`, `isiPeringatan`, `filePeringatan`, `idTl`) VALUES
+=======
 INSERT INTO `tbl_peringatan` (`idPeringatan`, `tglSuratPeringatan`, `noSuratPeringatan`, `jenisPeringatan`, `isiPeringatan`, `filePeringatan`, `idTl`) VALUES
+>>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
 (4, '2021-05-01', 'T-PW.01.12.9A2.05.21.12', 'PBF', '<b>Hello World</b>', '0', 3),
 (5, '2021-05-04', 'T-PW.01.12.9A2.05.21.113', 'PBF\r\n', '<b>Hello World</b>', 'suratPeringatan-5.pdf', 2),
 (6, '2021-05-04', 'T-PW.01.12.9A2.05.21.114', 'PBF', '<b>Hello World</b>', 'suratPeringatan-6.pdf', 2),
 (7, '2021-05-04', 'T-PW.01.12.9A2.05.21.115', 'PBF', '<b>Hello World</b>', 'suratPeringatan-7.pdf', 2),
 (9, '2021-05-04', 'T-PW.01.12.9A2.05.21.117', 'PBF', '<b>Hello World</b>', '0', 2),
+<<<<<<< HEAD
+(19, '2021-05-04', 'T-PW.01.12.9A2.05.21.128', 'PBF', '<b>Hello World</b>', '0', 1),
+(22, '2021-05-17', 'T-PW.01.12.9A2.05.21.129', 'PBF', '<b>Hello World</b>', '0', 5),
+(23, '2021-05-17', 'T-PW.01.12.9A2.05.21.130', 'PBF', '<b>Hello World</b>', '0', 5),
+(24, '2021-05-17', 'T-PW.01.12.9A2.05.21.131', 'PBF', '<b>Hello World</b>', '0', 5),
+(50, '2021-05-19', 'T-PW.01.12.9A2.05.21.134', 'PBF', '<b>Hello World</b>', '0', 3);
+=======
 (22, '2021-05-17', 'T-PW.01.12.9A2.05.21.129', 'PBF', '<b>Hello World</b>', '0', 1),
 (23, '2021-05-17', 'T-PW.01.12.9A2.05.21.130', 'PBF', '<b>Hello World</b>', '0', 2),
 (24, '2021-05-17', 'T-PW.01.12.9A2.05.21.131', 'PBF', '<b>Hello World</b>', '0', 2),
@@ -608,6 +627,7 @@ INSERT INTO `tbl_peringatan` (`idPeringatan`, `tglSuratPeringatan`, `noSuratPeri
 (52, '2021-05-23', 'T-PW.01.12.9A2.05.21.135', 'Apotek', '<p>nana?</p>', '0', 0),
 (53, '2021-05-23', 'T-PW.01.12.9A2.05.21.136', 'PBF', '<p>nana?</p>', '0', 1),
 (54, '2021-05-23', 'T-PW.01.12.9A2.05.21.137', 'PBF', '<p>nana?</p>', '0', 3);
+>>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
 
 -- --------------------------------------------------------
 
@@ -910,10 +930,18 @@ CREATE TABLE `tbl_surattl` (
 -- Dumping data for table `tbl_surattl`
 --
 
+<<<<<<< HEAD
+INSERT INTO `tbl_surattl` (`id`, `noSuratTugas`, `namaSarana`, `jenisTl`) VALUES
+(1, 'T-PW.01.12.9A2.04.21.1', 'ABC', 'Peringatan'),
+(2, 'T-PW.01.12.9A2.04.21.2', 'DEF', 'Peringatan'),
+(3, 'T-PW.01.12.9A2.04.21.3', 'GHI', 'Peringatan'),
+(5, 'T-PW.01.12.9A2.04.21.4', 'HIJ', 'Peringatan');
+=======
 INSERT INTO `tbl_surattl` (`idTl`, `jenisTl`, `idLhk`) VALUES
 (1, 'Peringatan', 1),
 (2, 'Peringatan', 2),
 (3, 'Peringatan', 3);
+>>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
 
 -- --------------------------------------------------------
 
@@ -1186,7 +1214,11 @@ ALTER TABLE `tbl_anggaran`
 -- Indexes for table `tbl_feedback`
 --
 ALTER TABLE `tbl_feedback`
+<<<<<<< HEAD
+  ADD PRIMARY KEY (`id`),
+=======
   ADD PRIMARY KEY (`idFeedback`),
+>>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
   ADD UNIQUE KEY `noSuratFeedback` (`noSuratFeedback`),
   ADD KEY `idSuratPeringatan` (`idSuratPeringatan`);
 
@@ -1351,7 +1383,11 @@ ALTER TABLE `tabel`
 -- AUTO_INCREMENT for table `tbl_feedback`
 --
 ALTER TABLE `tbl_feedback`
+<<<<<<< HEAD
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+=======
   MODIFY `idFeedback` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+>>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
 
 --
 -- AUTO_INCREMENT for table `tbl_kendaraan`
@@ -1417,7 +1453,11 @@ ALTER TABLE `tbl_pegawai`
 -- AUTO_INCREMENT for table `tbl_peringatan`
 --
 ALTER TABLE `tbl_peringatan`
+<<<<<<< HEAD
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+=======
   MODIFY `idPeringatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+>>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
 
 --
 -- AUTO_INCREMENT for table `tbl_role`
@@ -1435,6 +1475,9 @@ ALTER TABLE `tbl_sarana`
 -- AUTO_INCREMENT for table `tbl_surattl`
 --
 ALTER TABLE `tbl_surattl`
+<<<<<<< HEAD
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+=======
   MODIFY `idTl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
@@ -1442,6 +1485,7 @@ ALTER TABLE `tbl_surattl`
 --
 ALTER TABLE `tbl_surattugas`
   MODIFY `idSurat` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+>>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
 
 --
 -- AUTO_INCREMENT for table `tbl_temuan_kemasan`
@@ -1494,6 +1538,12 @@ ALTER TABLE `peraturan_pom`
 --
 ALTER TABLE `peraturan_pom_bab`
   ADD CONSTRAINT `peraturan_pom_bab_ibfk_1` FOREIGN KEY (`id_isbab`) REFERENCES `peraturan_pom` (`id_isbab`);
+
+--
+-- Constraints for table `tbl_feedback`
+--
+ALTER TABLE `tbl_feedback`
+  ADD CONSTRAINT `tbl_feedback_ibfk_1` FOREIGN KEY (`idSuratPeringatan`) REFERENCES `tbl_peringatan` (`id`);
 
 --
 -- Constraints for table `tbl_pasal_kemasan`
