@@ -175,7 +175,7 @@
             <form action="<?=base_url('petugas/feedback/updateClosed') ?>" method="post">
               <div class="box-body">
                 <div class="form-group" style="text-align:center">
-                  Ini akan mengubah status feedback menjadi <b>tidak closed</b>, apakah anda yakin ?</label>
+                  Ini akan mengubah status feedback menjadi <b>open</b>, apakah anda yakin ?</label>
                   <input type="hidden" class="form-control" name="id" id="id"> 
                   <input type="hidden" class="form-control" name="editclosed" id="editclosed" value="nonaktif"> 
 
@@ -183,7 +183,7 @@
               </div><!-- /.box-body -->                        
               <div class="modal-footer">
                 <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                <button type="submit" name="hapus" class="btn btn-danger"><i class="fa fa-close"></i> Reject</button>
+                <button type="submit" name="hapus" class="btn btn-danger"><i class="fa fa-check"></i> Accept</button>
               </div>
             </form>
           </div>
