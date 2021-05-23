@@ -9,14 +9,14 @@
     {
         parent::__construct();
         $this->load->database();
-                $this->load->model('SuratTugas_model');
+        $this->load->model('SuratTugas_model');
     }
 
 
 		public function index()
 		{
 			$data = konfigurasi('Form Surat Tugas',"ap");
-			$data['surat_tugas'] = $this->SuratTugas_model->getSuratTugas();
+			$data['pegawai'] = $this->SuratTugas_model->getNamaPegawai();
         	$this->template->load('layouts/admin_template', 'admin/surat_tugas/form', $data);
 			
 		}
