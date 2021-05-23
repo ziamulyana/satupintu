@@ -24,7 +24,7 @@
 
 					  $this->db->select('*'); 
 					  $this->db->from('notif');
-					 
+					  $this->db->order_by('no_surat', 'DESC');
 					  $query = $this->db->get();
 
 					  ?>
@@ -88,7 +88,7 @@
 <script>
 $(document).ready(function(){
   $(".not").click(function(){
-    $("span").hide();
+    $('<span class="label label-danger">').hide();
   });
 });
 </script>
