@@ -1,4 +1,4 @@
- <section class="content-header">
+<section class="content-header">
  <h1>
    Surat Tugas
  </h1>
@@ -49,23 +49,27 @@
                       <tr>
                         <th class="dt-center">No</th>
                         <th class="dt-center">No Surat Tugas</th>
-                        <th class="dt-center">Tanggal Pergi</th>
-                        <th class="dt-center">Tanggal Pulang</th>
+                        <th class="dt-center">Tgl Surat Tugas</th>
+                        <th class="dt-center">
+                        Maksud & Tujuan</th>
+                        <th class="dt-center">Kota</th>
                         <th class="dt-center">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <?php     
-                      if(isset($list_peringatan)){
-                       foreach ($list_peringatan->result() as $row){
+                      <?php $no = 1;     
+                      if(isset($list_surattugas)){
+                       foreach ($list_surattugas->result() as $row){
                         
                         echo "<tr>";
-                        echo "<td class='dt-center'>".$row->noSuratPeringatan."</td>";      
-                        echo "<td class='dt-center'>".$row->tglSuratPeringatan."</td>";
-                        echo "<td class='dt-center'>".$row->filePeringatan."</td>";
+                        echo "<td class='dt-center'>".$no++."</td>"; 
+                        echo "<td class='dt-center'>".$row->noSuratTugas."</td>";      
+                        echo "<td class='dt-center'>".$row->tglSurat."</td>";
+                        echo "<td class='dt-center'>".$row->maksud."</td>";
+                         echo "<td class='dt-center'>".$row->kota."</td>";
                         echo "<td class='dt-center'>"?>                             
-                            <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editDataPeringatan"
-                            data-id = "<?= $row->id ?>" data-tglPeringatan="<?= $row->tglSuratPeringatan ?>" data-noSuratPeringatan="<?=  $row->noSuratPeringatan ?>" data-filePeringatan ="<?=  $row->filePeringatan ?>" data-toggle="modal" data-target="#editModal" ><i class="fa fa-edit"></i></a>
+                            <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editDataSuratTugas"
+                            " data-noSuratTugas="<?= $row->noSuratTugas ?>" data-tglSurat="<?=  $row->tglSurat ?>" data-maksud="<?=  $row->maksud ?>" data-kota="<?=  $row->kota ?>" data-toggle="modal" data-target="#editModal" ><i class="fa fa-edit"></i></a>
 
                             </td>
                             
@@ -113,7 +117,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"><i class="icon fa fa-edit"></i>  Form Edit Data Surat Peringatan</h4>
+                    <h4 class="modal-title"><i class="icon fa fa-edit"></i>  Form Edit Data Surat Tugas</h4>
                 </div>
                 <div class="modal-body" id=#editData >
                     <form action="<?= base_url('petugas/surat_peringatan/c_surat_peringatan/ubah_suratPeringatan')?>" method="post">
@@ -125,18 +129,15 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="tglEdit">Tanggal Surat Peringatan</label> <small class="text-danger">*</small>
-                                <input type="text" class="form-control" name="tglEdit" id="tglEdit" placeholder="Tanggal Surat Peringatan" required>
-                            </div>
-                          <div class="form-group">
-                                <label for="noEdit">No. Surat Peringatan</label> <small class="text-danger">*</small>
+                                <label for="noEdit">No. Surat Tugas</label> <small class="text-danger">*</small>
                                 <input type="text" class="form-control" name="noEdit" id="noEdit" placeholder="Tanggal Surat Peringatan" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="fileEdit">File Peringatan</label> <small class="text-danger">*</small>
-                                <input type="text" class="form-control" name="fileEdit" id="fileEdit" placeholder="" required>
+                                <label for="tglEdit">Tanggal Surat Tugas</label> <small class="text-danger">*</small>
+                                <input type="text" class="form-control" name="tglEdit" id="tglEdit" placeholder="Tanggal Surat Peringatan" required>
                             </div>
+                          
                                    
                         </div><!-- /.box-body -->                        
                         <div class="modal-footer">

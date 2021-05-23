@@ -1,4 +1,4 @@
- <section class="content-header">
+<section class="content-header">
  <h1>
    Surat Pertanggung Jawaban Dalam Kota
  </h1>
@@ -156,5 +156,3 @@
     </script>
 <!-- /. Edit Modal -->
 </section>
-
-
