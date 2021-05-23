@@ -8,9 +8,9 @@
 		<ul class="nav navbar-nav">
 			<!-- Notifications: style can be found in dropdown.less -->
 			<li class="dropdown notifications-menu">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				<a href="" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
-              <span class="label label-danger count">
+              <span class="label label-danger">
 			  <?php echo $this->db->from("notif")->count_all_results(); ?>
 			  </span>
             </a>
@@ -20,21 +20,21 @@
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
                   <li>
-                    <a href="">
-                      
-					  <?php
-					  
-					  $icon = '<i class="fa fa-check-circle text-green"></i>';	
+				  	<?php
 
 					  $this->db->select('*'); 
 					  $this->db->from('notif');
 					 
 					  $query = $this->db->get();
+
+					  ?>
+                      
+					  <?php
 					  
 					  if (isset($query)) {
 						foreach ($query->result() as $row) {
 						  
-						  echo "<li> $icon" . $row->sarana . "</li>";
+						  echo "<a href=''><i class='fa fa-check-circle text-green'></i>" . $row->sarana . '</a>';
 						   
 						}
 					  } else {
@@ -42,7 +42,7 @@
 					  }
 
 					  ?>
-                    </a>
+                    
                   </li>
                 </ul>
               </li>
@@ -87,35 +87,8 @@
 </style>
 <script>
 $(document).ready(function(){
- 
- function load_unseen_notification(view = '')
- {
-  $.ajax({
-   url:site_url('fetch/fetch_notif'),
-   method:"POST",
-   data:{view:view},
-   dataType:"json",
-   success:function(data)
-   {
-    $('.dropdown-menu').html(data.notification);
-    if(data.unseen_notification > 0)
-    {
-     $('.count').html(data.unseen_notification);
-    }
-   }
+  $(".not").click(function(){
+    $("span").hide();
   });
- }
- 
- load_unseen_notification();
- 
- $(document).on('click', '.dropdown-toggle', function(){
-  $('.count').html('');
-  load_unseen_notification('yes');
- });
- 
- setInterval(function(){ 
-  load_unseen_notification();; 
- }, 5000);
- 
 });
 </script>
