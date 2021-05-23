@@ -50,7 +50,7 @@
                       <th>Nama Sarana</th>
                       <th>Tgl Feedback </th>
                       <th>File</th>
-                      <th>Closed</th>
+                      <th>Status</th>
                       <th>Aksi</th>
 
                     </tr>
@@ -77,13 +77,13 @@
                      }else if ($row->closed == 0) {
                       ?> 
                        <td> 
-                      <small class="label label-danger"><i class="fa fa-exclamation-triangle"></i> No</small>
+                      <small class="label label-danger"><i class="fa fa-exclamation-triangle"></i> Open</small>
                     </td>
                       <?php
                     }else{
                       ?>
                       <td>
-                      <small class="label label-success"><i class="fa fa-check-circle"></i>&nbsp Yes   </small>
+                      <small class="label label-success"><i class="fa fa-check-circle"></i>&nbsp Closed   </small>
                       </td>
 
                       <?php
@@ -129,7 +129,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title"><i class="icon fa fa-ban"></i>  ALert !</h4>
+            <h4 class="modal-title"><i class="icon fa fa-ban"></i>  Alert !</h4>
           </div>
           <div class="modal-body" id="acceptData">
             <form action="<?=base_url('petugas/feedback/updateClosed') ?>" method="post">
