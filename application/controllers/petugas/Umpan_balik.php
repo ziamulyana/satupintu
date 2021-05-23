@@ -29,7 +29,7 @@
 
 			$data['tracking_result']= $this->UmpanBalik_model->getHistory($noSuratTugas, $namaSarana);
 
-			$this->template->load('layouts/petugas_template', 'petugas/umpan_balik_data2', $data);
+			$this->template->load('layouts/petugas_template', 'petugas/umpan_balik_data', $data);
 
 
 

@@ -41,7 +41,7 @@
 
 				$tanggal =  $this->input->post('tanggal');
 				$noSurat =  $this->input->post('noSurat');
-				$idTl= $this->input->post('suratTugas');
+				$idSurat= $this->input->post('suratTugas');
 				$penerimaSurat =  $this->input->post('penerimaSurat');
 				$kotaSurat =  $this->input->post('kotaSurat');
 				// detil sarana
@@ -93,17 +93,22 @@
 					'detailTemuan' => $detailTemuan,
 					// ganti ke db
 					'pilihPasal' => $pasal_peringatan
-					);		
+					);	
+
+				$idTl = $this->SuratTl_model->getTl($idSurat);
+				foreach ($idTl as $id) {
+					$idTl = $id->idTl;
+				}
+
 
 			$data_db = array(
 
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
-					'jenisPeringatan' => "Apotek",
+					'jenisPeringatan' => "PBF",
 					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',
 					'idTl' => $idTl
-
 				);
 
 				$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);

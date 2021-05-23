@@ -27,9 +27,11 @@ class SuratPeringatan_model extends CI_Model
   public function getSuratPeringatan()
   { 
 
-    $this->db->select('tbl_peringatan.id, tbl_peringatan.tglSuratPeringatan, tbl_peringatan.noSuratPeringatan, tbl_peringatan.filePeringatan, tbl_surattl.namaSarana');
+    $this->db->select('tbl_peringatan.idPeringatan, tbl_peringatan.tglSuratPeringatan, tbl_peringatan.noSuratPeringatan, tbl_peringatan.filePeringatan, tbl_sarana.namaSarana');
     $this->db->from('tbl_peringatan');
-    $this->db->join('tbl_surattl', 'tbl_peringatan.idTl = tbl_surattl.id');
+    $this->db->join('tbl_surattl', 'tbl_surattl.idTl = tbl_peringatan.idTl');
+    $this->db->join('tbl_lhk', 'tbl_surattl.idLhk = tbl_lhk.idLhk');
+    $this->db->join('tbl_sarana', 'tbl_lhk.idSarana = tbl_sarana.idSarana');
     $query = $this->db->get('');
     return $query;
   }
@@ -38,7 +40,7 @@ class SuratPeringatan_model extends CI_Model
     $this->db->set('tglSuratPeringatan', $data['tglSuratPeringatan']); 
     $this->db->set('noSuratPeringatan', $data['noSuratPeringatan']); 
     $this->db->set('filePeringatan', $data['filePeringatan']);
-    $this->db->where('id', $data['id']);
+    $this->db->where('idPeringatan', $data['id']);
     $query = $this->db->update('tbl_peringatan');
 
   }
@@ -51,6 +53,6 @@ class SuratPeringatan_model extends CI_Model
   }
 
   public function hapusSuratPeringatan($id){
-   $this->db->delete("tbl_peringatan",array("id"=>$id));
+   $this->db->delete("tbl_peringatan",array("idPeringatan"=>$id));
  }
 }
