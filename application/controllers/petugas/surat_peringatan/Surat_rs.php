@@ -40,7 +40,7 @@
 
 			$tanggal =  $this->input->post('tanggal');
 			$noSurat =  $this->input->post('noSurat');
-			$idTl= $this->input->post('suratTugas');
+			$idSurat= $this->input->post('suratTugas');
 			$penerimaSurat =  $this->input->post('penerimaSurat');
 			$kotaSurat =  $this->input->post('kotaSurat');
 			// detil sarana
@@ -113,10 +113,9 @@
 			$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
 			if($checkvalidation == true){
 				$this->db->insert('tbl_peringatan',$data_db);
-				$this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
 				$this->load->view('petugas/surat_peringatan/surat_rs/isiSurat', $data, FALSE);
 			}else{
-				$this->session->set_flashdata('failed', 'Data Duplikat');
+				 $this->session->set_flashdata('failed', 'Maaf, Data tidak diprocess karena duplikat');
 				redirect('petugas/surat_peringatan/Surat_rs', 'refresh');
 			}	
 			
