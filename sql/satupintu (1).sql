@@ -3,12 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
--- Generation Time: May 23, 2021 at 06:34 AM
-=======
--- Generation Time: May 23, 2021 at 08:59 AM
->>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
--- Server version: 10.4.17-MariaDB
+-- Generation Time: May 25, 2021 at 09:47 AM
+-- Server version: 10.4.17-MariaDB-log
 -- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -22,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `satupintu2`
+-- Database: `satupintu`
 --
 
 -- --------------------------------------------------------
@@ -220,7 +216,7 @@ CREATE TABLE `tbl_closedcapa` (
 CREATE TABLE `tbl_feedback` (
   `idFeedback` int(11) NOT NULL,
   `noSuratFeedback` varchar(255) NOT NULL,
-  `tglFeedback` varchar(255) NOT NULL,
+  `tglFeedback` date NOT NULL,
   `isiFeedback` text NOT NULL,
   `closed` char(2) NOT NULL,
   `file_feedback` text NOT NULL,
@@ -235,15 +231,14 @@ INSERT INTO `tbl_feedback` (`idFeedback`, `noSuratFeedback`, `tglFeedback`, `isi
 (1, '111', '2021-05-03', 'testing', '0', '', 4),
 (2, '113', '2021-05-07', 'testingggg lah', '0', '', 5),
 (3, '114', '2020-05-20', 'tes', '0', '', 6),
-<<<<<<< HEAD
 (4, '115', '2020-05-30', 'okkkkkkk', '1', '', 7),
-=======
-(4, '115', '2020-05-30', 'okkkkkkk', '0', '', 7),
->>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
 (5, '116', '2020-05-21', 'hello', '1', '', 9),
 (9, '118', '2020-05-22', 'coba lah ya', '0', '', 19),
 (10, '11111', '2021-05-22', 'hello', '0', '', 19),
-(11, '123245', '2021-05-30', 'fvc', '1', '', 19);
+(11, '123245', '2021-05-30', 'fvc', '1', '', 19),
+(12, '1122', '2021-05-11', 'saya tidak ngerti', '0', '', 55),
+(13, '1123', '2021-05-18', 'i dont know', '1', '', 56),
+(14, '1125', '2021-05-25', 'hello world', '-1', '', 58);
 
 -- --------------------------------------------------------
 
@@ -346,7 +341,8 @@ CREATE TABLE `tbl_lhk` (
 INSERT INTO `tbl_lhk` (`idLhk`, `anggaran`, `kota`, `jlhSaranaDiperiksaOleh`, `sppdDisahkanOleh`, `kwitansiDisahkanOleh`, `form8JamDisahkanOleh`, `tglPemeriksaan`, `keterangan`, `alasanTidakDiperiksa`, `isMk`, `idSarana`, `idSuratTugas`) VALUES
 (1, 'DIPA', 'batam', 'nana', 'nana', 'nana', 'nana', '2021-05-24', 'baik', 'gatau', 'n', 1, 1),
 (2, 'dipa', 'batam', '3', 'nana', 'nana', 'nana', '2021-05-26', 'baik', 'baik', 'n', 3, 2),
-(3, 'dipa', 'batm', 'nana', 'nana', 'nana', 'nana', '2021-05-23', 'nana', 'nana', 'y', 5, 3);
+(3, 'dipa', 'batm', 'nana', 'nana', 'nana', 'nana', '2021-05-23', 'nana', 'nana', 'y', 5, 3),
+(4, 'DIPA', 'batam, singapura', 'nana', 'nana', 'nana', 'nana', '2021-05-16', 'nana', 'tersesat niat', 'n', 10, 4);
 
 -- --------------------------------------------------------
 
@@ -601,23 +597,12 @@ CREATE TABLE `tbl_peringatan` (
 -- Dumping data for table `tbl_peringatan`
 --
 
-<<<<<<< HEAD
-INSERT INTO `tbl_peringatan` (`id`, `tglSuratPeringatan`, `noSuratPeringatan`, `jenisPeringatan`, `isiPeringatan`, `filePeringatan`, `idTl`) VALUES
-=======
 INSERT INTO `tbl_peringatan` (`idPeringatan`, `tglSuratPeringatan`, `noSuratPeringatan`, `jenisPeringatan`, `isiPeringatan`, `filePeringatan`, `idTl`) VALUES
->>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
 (4, '2021-05-01', 'T-PW.01.12.9A2.05.21.12', 'PBF', '<b>Hello World</b>', '0', 3),
 (5, '2021-05-04', 'T-PW.01.12.9A2.05.21.113', 'PBF\r\n', '<b>Hello World</b>', 'suratPeringatan-5.pdf', 2),
 (6, '2021-05-04', 'T-PW.01.12.9A2.05.21.114', 'PBF', '<b>Hello World</b>', 'suratPeringatan-6.pdf', 2),
 (7, '2021-05-04', 'T-PW.01.12.9A2.05.21.115', 'PBF', '<b>Hello World</b>', 'suratPeringatan-7.pdf', 2),
 (9, '2021-05-04', 'T-PW.01.12.9A2.05.21.117', 'PBF', '<b>Hello World</b>', '0', 2),
-<<<<<<< HEAD
-(19, '2021-05-04', 'T-PW.01.12.9A2.05.21.128', 'PBF', '<b>Hello World</b>', '0', 1),
-(22, '2021-05-17', 'T-PW.01.12.9A2.05.21.129', 'PBF', '<b>Hello World</b>', '0', 5),
-(23, '2021-05-17', 'T-PW.01.12.9A2.05.21.130', 'PBF', '<b>Hello World</b>', '0', 5),
-(24, '2021-05-17', 'T-PW.01.12.9A2.05.21.131', 'PBF', '<b>Hello World</b>', '0', 5),
-(50, '2021-05-19', 'T-PW.01.12.9A2.05.21.134', 'PBF', '<b>Hello World</b>', '0', 3);
-=======
 (22, '2021-05-17', 'T-PW.01.12.9A2.05.21.129', 'PBF', '<b>Hello World</b>', '0', 1),
 (23, '2021-05-17', 'T-PW.01.12.9A2.05.21.130', 'PBF', '<b>Hello World</b>', '0', 2),
 (24, '2021-05-17', 'T-PW.01.12.9A2.05.21.131', 'PBF', '<b>Hello World</b>', '0', 2),
@@ -626,8 +611,12 @@ INSERT INTO `tbl_peringatan` (`idPeringatan`, `tglSuratPeringatan`, `noSuratPeri
 (51, '2021-05-23', 'T-PW.01.12.9A2.05.21.112', 'Apotek', '<p>nana?</p>', '0', 0),
 (52, '2021-05-23', 'T-PW.01.12.9A2.05.21.135', 'Apotek', '<p>nana?</p>', '0', 0),
 (53, '2021-05-23', 'T-PW.01.12.9A2.05.21.136', 'PBF', '<p>nana?</p>', '0', 1),
-(54, '2021-05-23', 'T-PW.01.12.9A2.05.21.137', 'PBF', '<p>nana?</p>', '0', 3);
->>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
+(54, '2021-05-23', 'T-PW.01.12.9A2.05.21.137', 'PBF', '<p>nana?</p>', '0', 3),
+(55, '2021-05-24', 'T-PW.01.12.9A2.05.21.138', 'PBF', '<p>nanna</p>', '0', 6),
+(56, '2021-05-24', 'T-PW.01.12.9A2.05.21.139', 'PBF', '<p>nanna</p>', '0', 6),
+(57, '2021-05-24', 'T-PW.01.12.9A2.05.21.140', 'apotek', '<p>nqnq</p>', '0', 3),
+(58, '2021-05-24', 'T-PW.01.12.9A2.05.21.141', 'rs', '<p>nana</p>', '0', 6),
+(63, '2021-05-24', 'T-PW.04.02.9A2.05.21.145', 'pangan', '<p>nana</p>', '0', 3);
 
 -- --------------------------------------------------------
 
@@ -930,18 +919,11 @@ CREATE TABLE `tbl_surattl` (
 -- Dumping data for table `tbl_surattl`
 --
 
-<<<<<<< HEAD
-INSERT INTO `tbl_surattl` (`id`, `noSuratTugas`, `namaSarana`, `jenisTl`) VALUES
-(1, 'T-PW.01.12.9A2.04.21.1', 'ABC', 'Peringatan'),
-(2, 'T-PW.01.12.9A2.04.21.2', 'DEF', 'Peringatan'),
-(3, 'T-PW.01.12.9A2.04.21.3', 'GHI', 'Peringatan'),
-(5, 'T-PW.01.12.9A2.04.21.4', 'HIJ', 'Peringatan');
-=======
 INSERT INTO `tbl_surattl` (`idTl`, `jenisTl`, `idLhk`) VALUES
 (1, 'Peringatan', 1),
 (2, 'Peringatan', 2),
-(3, 'Peringatan', 3);
->>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
+(3, 'Peringatan', 3),
+(6, 'Peringatan', 4);
 
 -- --------------------------------------------------------
 
@@ -962,17 +944,18 @@ CREATE TABLE `tbl_surattugas` (
   `maksud` varchar(255) NOT NULL,
   `namaPenandatangan` varchar(255) NOT NULL,
   `jabatanPenandatangan` varchar(255) NOT NULL,
-  `namaPetugas` varchar(255) NOT NULL
+  `idPetugas` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_surattugas`
 --
 
-INSERT INTO `tbl_surattugas` (`idSurat`, `noSuratTugas`, `tglSurat`, `tglMulai`, `bebanBiaya`, `kendaraan`, `kota`, `idAnggaran`, `tglSelesai`, `maksud`, `namaPenandatangan`, `jabatanPenandatangan`, `namaPetugas`) VALUES
+INSERT INTO `tbl_surattugas` (`idSurat`, `noSuratTugas`, `tglSurat`, `tglMulai`, `bebanBiaya`, `kendaraan`, `kota`, `idAnggaran`, `tglSelesai`, `maksud`, `namaPenandatangan`, `jabatanPenandatangan`, `idPetugas`) VALUES
 (1, 'RT-02.01.9A2.03.21.1100', '2021-05-22', '2021-05-23', 'DIPA', 'Motor', 'Batam', 2, '2021-05-26', 'Pengen kesana aja', 'Nana', 'Nana', 'Nana'),
 (2, 'RT-02.01.9A2.03.21.1101', '2021-05-23', '2021-05-24', 'DIPA', 'mobil', 'batam', 3, '2021-05-26', 'jalan3', 'nana', 'nana', 'nana'),
-(3, 'RT-02.01.9A2.03.21.1102', '2021-05-25', '2021-05-26', 'DIPA', 'kapal', 'batam', 4, '2021-05-28', 'JALAN3', 'NANA', 'NANA', 'NANA');
+(3, 'RT-02.01.9A2.03.21.1102', '2021-05-25', '2021-05-26', 'DIPA', 'kapal', 'batam', 4, '2021-05-28', 'JALAN3', 'NANA', 'NANA', 'NANA'),
+(4, 'RT-02.01.9A2.03.21.1103', '2021-05-15', '2021-05-16', 'DIPA', 'pesawat', 'batam kelurahan singapura', 3, '2021-05-18', 'jalan2 dongg', 'nana', 'kaichou', 'nana');
 
 -- --------------------------------------------------------
 
@@ -1214,11 +1197,7 @@ ALTER TABLE `tbl_anggaran`
 -- Indexes for table `tbl_feedback`
 --
 ALTER TABLE `tbl_feedback`
-<<<<<<< HEAD
-  ADD PRIMARY KEY (`id`),
-=======
   ADD PRIMARY KEY (`idFeedback`),
->>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
   ADD UNIQUE KEY `noSuratFeedback` (`noSuratFeedback`),
   ADD KEY `idSuratPeringatan` (`idSuratPeringatan`);
 
@@ -1383,11 +1362,7 @@ ALTER TABLE `tabel`
 -- AUTO_INCREMENT for table `tbl_feedback`
 --
 ALTER TABLE `tbl_feedback`
-<<<<<<< HEAD
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-=======
-  MODIFY `idFeedback` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
->>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
+  MODIFY `idFeedback` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `tbl_kendaraan`
@@ -1411,7 +1386,7 @@ ALTER TABLE `tbl_kota`
 -- AUTO_INCREMENT for table `tbl_lhk`
 --
 ALTER TABLE `tbl_lhk`
-  MODIFY `idLhk` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idLhk` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_pasal_kemasan`
@@ -1453,11 +1428,7 @@ ALTER TABLE `tbl_pegawai`
 -- AUTO_INCREMENT for table `tbl_peringatan`
 --
 ALTER TABLE `tbl_peringatan`
-<<<<<<< HEAD
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
-=======
-  MODIFY `idPeringatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
->>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
+  MODIFY `idPeringatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `tbl_role`
@@ -1475,17 +1446,13 @@ ALTER TABLE `tbl_sarana`
 -- AUTO_INCREMENT for table `tbl_surattl`
 --
 ALTER TABLE `tbl_surattl`
-<<<<<<< HEAD
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-=======
-  MODIFY `idTl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idTl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_surattugas`
 --
 ALTER TABLE `tbl_surattugas`
-  MODIFY `idSurat` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
->>>>>>> 4c0b25263da991f6e9f1b19b3894a5da611456ca
+  MODIFY `idSurat` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_temuan_kemasan`
@@ -1538,12 +1505,6 @@ ALTER TABLE `peraturan_pom`
 --
 ALTER TABLE `peraturan_pom_bab`
   ADD CONSTRAINT `peraturan_pom_bab_ibfk_1` FOREIGN KEY (`id_isbab`) REFERENCES `peraturan_pom` (`id_isbab`);
-
---
--- Constraints for table `tbl_feedback`
---
-ALTER TABLE `tbl_feedback`
-  ADD CONSTRAINT `tbl_feedback_ibfk_1` FOREIGN KEY (`idSuratPeringatan`) REFERENCES `tbl_peringatan` (`id`);
 
 --
 -- Constraints for table `tbl_pasal_kemasan`
