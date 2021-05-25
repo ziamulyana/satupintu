@@ -136,7 +136,6 @@
                         <th class="dt-center">Nomor Surat Peringatan</th>
                         <th class="dt-center">Tanggal Surat</th>
                         <th class="dt-center">Nama Sarana</th>
-                        <th class="dt-center">Soft File</th>
                         <th class="dt-center">Aksi</th>
 
                       </tr>
@@ -154,19 +153,21 @@
                         echo "<td class='dt-center'>".$row->noSuratPeringatan."</td>";      
                         echo "<td class='dt-center'>".$row->tglSuratPeringatan."</td>";
                         echo "<td class='dt-center'>".$row->namaSarana."</td>";
-                        if($row->filePeringatan !=0){
-                          echo "<td class='dt-center'>".anchor('./assets/uploads/files/peringatan/'.$row->filePeringatan, 'Lihat PDF', $attr)."</td>";
-
-                          // echo "<td class='dt-center'><a href=./assets/uploads/files/peringatan/" .$row->filePeringatan . " target='_blank' >Lihat PDF</a></td>";
-
-                        }else{
-                          echo "<td class='dt-center'>".""."</td>";
-                        }
+                       
                         echo "<td class='dt-center'>"?>                             
                         <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editPer"
                         data-id =  "<?=$row->idPeringatan ?>" data-tgl="<?=$row->tglSuratPeringatan ?>" data-nomor="<?= $row->noSuratPeringatan ?>" data-toggle="modal" data-target="#editPeringatan" ><i class="fa fa-edit"></i></a>
 
                          <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusPer" data-id =  "<?=$row->idPeringatan ?>" data-toggle="modal" data-target="#hapusPeringatan"><i class="fa fa-trash"></i></a>
+
+                        <?php if($row->filePeringatan !=0){ ?>
+                        <a href="../../assets/uploads/files/peringatan/suratPeringatan-<?php echo $row ->idPeringatan ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" ><i class="fa fa-eye"></i></a>
+
+                        <?php  } else{
+                          ?>
+                          <a href="#" data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" disabled><i class="fa fa-eye"></i></a>
+                       <?php } ?>
+
 
                       </td>
 

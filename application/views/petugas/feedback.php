@@ -49,7 +49,6 @@
                       <th>Nomor Surat Feedback</th>
                       <th>Nama Sarana</th>
                       <th>Tgl Feedback </th>
-                      <th>File</th>
                       <th>Status</th>
                       <th>Aksi</th>
 
@@ -63,7 +62,6 @@
                       echo "<td>".$row->noSuratFeedback."</td>";
                       echo "<td>".$row->namaSarana."</td>";
                       echo "<td>".$row->tglFeedback."</td>";
-                      echo "<td>".$row->file_feedback."</td>";
                       if($row->closed == -1) { ?>
                        <td> 
 
@@ -104,8 +102,17 @@
                       <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="rejectClosed" data-id = "<?= $row->idFeedback ?>" data-closed= "0"  data-toggle="modal" data-target="#reject" ><i class="fa fa-edit"></i></a>
 
 
+                 <?php  } 
+
+                 if($row->file_feedback !=0){ ?>
+                        <a href="../../assets/uploads/files/peringatan/suratPeringatan-<?php echo $row ->idPeringatan ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" ><i class="fa fa-eye"></i></a>
+
+                        <?php  } else{
+                          ?>
+                          <a href="#" data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" disabled><i class="fa fa-eye"></i></a>
+                       <?php } ?>
+
                    <?php echo "</td>";
-                  }
 
                   }
                 }else{
