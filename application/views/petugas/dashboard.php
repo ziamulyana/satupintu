@@ -10,19 +10,21 @@
       <div class="box-header with-border">
         <h3 class="box-title"><b>Grafik Capa</b></h3>
         <div class="box-body">
+
+
           <div class="box-body">
             <div class="chart">
-              <canvas id="barChart" style="height:200px"></canvas>
+              <canvas id="barChart" style="height:230px"></canvas>
             </div>
             <br>
+            <div class="center">
+              <small class="label label-danger"></i> EXPIRED</small>
+              <small class="label label-warning"></i> TENGGANG</small>
+              <small class="label label-success"></i> AKTIF</small>
+            </div>
           </div>
           <div class="chart1">
             <canvas id="areaChart"></canvas>
-          </div>
-          <div class="mid">
-            <small class="label label-danger"></i> EXPIRED</small>
-            <small class="label label-warning"></i> TENGGANG</small>
-            <small class="label label-success"></i> AKTIF</small>
           </div>
           <!-- /.box-body -->
         </div>
@@ -108,7 +110,7 @@
     height: 0px;
   }
 
-  .mid {
+  .center {
     margin: auto;
     width: 30%;
   }
