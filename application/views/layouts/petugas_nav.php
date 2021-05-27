@@ -10,9 +10,7 @@
 			<li class="dropdown notifications-menu">
 				<a id="noti_Button" href="" class="dropdown-toggle" data-toggle="dropdown">
 					<i class="fa fa-bell-o"></i>
-					<span id="noti_Counter" class="label label-danger">
-					<div ></div>
-					</span>
+					<span id="noti_Counter" class="badge bg-red"></span>
 				</a>
 				<div ></div>
 				<ul id="notifications" class="dropdown-menu">

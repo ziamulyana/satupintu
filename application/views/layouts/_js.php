@@ -142,9 +142,6 @@
 
 		// ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
 		$('#noti_Counter')
-			.css({
-				opacity: 0
-			})
 			.text('<?php echo $this->db->from("notif")->count_all_results(); ?>') // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
 			.css({
 				top: '0px'
@@ -165,7 +162,7 @@
 				else $('#noti_Button').css('background-color', '#00537d');
 			});
 
-			$('#noti_Counter').fadeOut('fast'); // HIDE THE COUNTER.
+			$('#noti_Counter').fadeOut('slow'); // HIDE THE COUNTER.
 
 			return false;
 		});
