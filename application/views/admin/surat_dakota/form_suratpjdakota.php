@@ -18,33 +18,23 @@
         <div class="box-header with-border">
           <h3 class="box-title">Form Pembuatan Surat Pertangung Jawaban Dalam Kota</h3>
           <p><span class="wajib">* wajib diisi</span></p>
-        </div>
-
+    
         <div class="col-md-6">
           <hr>
           
-          <!-- nomor surat -->
-          <div class="form-group row">
-            <label for="noSurat" class="col-sm-4 col-form-label">Nomor Surat Tugas<span class="wajib"> *</span></label>
-            <div class="col-sm-12">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                <input type="text" class="form-control" placeholder="Nomor Surat Tugas" name="noSurat" id="noSurat" required>
-              </div>
-            </div>
-          </div>
+      
+          <div class="form-group">
+            <label>Surat Tugas</label><span class="wajib"> *</span></label>
+            <select name="category_item" id="category_item" class="form-control input-sm" data-live-search="true" title="Select Category">
 
-          <!-- nama pegawai -->
-          <div class="form-group row">
-            <label for="namaPegawai" class="col-sm-4 col-form-label">Nama Pegawai<span class="wajib"> *</span></label>
-            <div class="col-sm-12">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                <input type="text" class="form-control" name="namaPegawai" id="namaPegawai" placeholder="Nama Pegawai" required>
-              </div>
-            </div>
+            </select>
           </div>
-
+          <div class="form-group">
+            <label>Nama Petugas</label><span class="wajib"> *</span></label>
+            <select name="sub_category_item" id="sub_category_item" class="form-control input-sm" data-live-search="true" title="Select Sub Category">
+            </select>
+          </div>
+    
           <!-- jumlah biaya -->
           <div class="form-group row">
             <label for="jumlahBiaya" class="col-sm-4 col-form-label">Jumlah Biaya<span class="wajib"> *</span></label>
@@ -56,16 +46,7 @@
             </div>
           </div>
 
-          <!-- Nominal terbilang -->
-          <div class="form-group row">
-            <label for="nominalTerbilang" class="col-sm-6 col-form-label">Terbilang<span class="wajib"> *</span></label>
-            <div class="col-sm-12">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <input type="text" class="form-control" name="nominalTerbilang" id="nominalTerbilang" placeholder="Terbilang" required>
-              </div>
-            </div>
-          </div>
+   
         </div>
 
 
@@ -80,73 +61,47 @@
             </div>
           </div>
 
-          <!-- Nomor SPPD -->
+                 <!-- Nominal terbilang -->
           <div class="form-group row">
-            <label for="nomorSPPD" class="col-sm-6 col-form-label">Nomor SPPD<span class="wajib"> *</span></label>
+            <label for="nominalTerbilang" class="col-sm-6 col-form-label">Terbilang<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
-                <input type="text" class="form-control" name="nomorSPPD" id="nomorSPPD" placeholder="nomorSPPD" required>
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input type="text" class="form-control" name="nominalTerbilang" id="nominalTerbilang" placeholder="Terbilang" required>
               </div>
             </div>
-          </div>
+          </div>`
 
         </div>
+           
 
         <div class="col-md-12">
               <div class="box box-primary">
       <div class="box-header with-border">
 
         <h3 class="box-title">Rincian Biaya</h3>
-          <div class="pull-right">
-            <ul>
-              <a class= "btn btn-primary" href="<?php echo base_url('admin/surat_tugas/form_surattugas')?>">
-                  <i class="fa fa-plus"></i>&nbsp; Tambah Data 
-                </a> </span>
-            </ul>
-                  </div>
-
-        <section class="content">
+         
           <div class="row">
             <div class="col-xs-12">
-              <div class="box">
+              
+               <hr>
+                  <table class="table table-bordered table-hover" id="dynamic_field">
+              <tr>
+                <td><input type="text" name="name[]" placeholder="Uraian Biaya" class="form-control name_list" /></td>
+                 <td><select name="sub_category_item" id="sub_category_item" class="form-control input-sm" data-live-search="true" title="Kategori">
+                  <option>Pilih Kategori</option>
+                    <option>UH</option>
+      <option>TR</option>
+      <option>RL</option>
+      <option>HT</option>
 
-                <!-- /.box-header -->
-                <div class="box-body">
-                  <table id="tbl" class="table table-bordered table-striped">
-                    <thead>
-                      <tr>
-                        <th class="dt-center">No</th>
-                        <th class="dt-center">Uraian Biaya</th>
-                        <th class="dt-center">Jenis Biaya</th>
-                        <th class="dt-center">Nominal Biaya</th>
-                        <th class="dt-center">Aksi</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php     
-                      if(isset($list_peringatan)){
-                       foreach ($list_peringatan->result() as $row){
-                        
-                        echo "<tr>";
-                        echo "<td class='dt-center'>".$row->noSuratPeringatan."</td>";      
-                        echo "<td class='dt-center'>".$row->tglSuratPeringatan."</td>";
-                        echo "<td class='dt-center'>".$row->filePeringatan."</td>";
-                        echo "<td class='dt-center'>"?>                             
-                            <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editDataPeringatan"
-                            data-id = "<?= $row->id ?>" data-tglPeringatan="<?= $row->tglSuratPeringatan ?>" data-noSuratPeringatan="<?=  $row->noSuratPeringatan ?>" data-filePeringatan ="<?=  $row->filePeringatan ?>" data-toggle="modal" data-target="#editModal" ><i class="fa fa-edit"></i></a>
-
-                            </td>
-                            
-                            <?php 
-                      }
-                    }else{
-                      echo "no record found";
-                    }
-                    ?>
-                  </tbody>
-                </table>
-              </div>
+            </select></td>
+                 <td><input type="text" name="email[]" placeholder="Jumlah Biaya" class="form-control name_email"/></td>
+             
+                <td><button type="button" name="add" id="add" class="btn btn-primary">Add More</button></td>  
+              </tr>
+            </table>
+     
               <!-- /.box-body -->
             </div>
             <!-- /.box -->
@@ -154,19 +109,18 @@
           <!-- /.col -->
         </div>
         <!-- /.row -->
-      </section>
-      <!-- /.content -->
-    </div>
-    <style>
-      th.dt-center, td.dt-center { text-align: center; }
-    </style>
+  
 
-  </div>
+
+
+
   <!-- /.box-header -->
 
         <div class="box-footer">
          <button type="submit" value="submit" onclick="return chk_date()" class="btn btn-info"><i class="fa fa-print"></i> Save Document</button>
          <button type="reset"  value ="reset" class="btn btn-danger"><i class="fa fa-refresh" aria-hidden="true"></i> Reset Form</button>
+       </div>
+
        </div>
      </form>
 
@@ -201,3 +155,41 @@
 <!-- /.row -->
 </section>
 <!-- /.content -->
+
+<!-- dynamic form -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    var i = 1;
+
+    $("#add").click(function(){
+      i++;
+      $('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list"/></td>  <td><select name="sub_category_item" id="sub_category_item" class="form-control input-sm" data-live-search="true" title="Select Sub Category">  <option>Pilih Kategori</option>  <option>UH</option> <option>TR</option><option>RL</option><option>HT</option></select></td><td><input type="text" name="email[]" placeholder="Enter your Email" class="form-control name_email"/></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
+    });
+
+    $(document).on('click', '.btn_remove', function(){  
+      var button_id = $(this).attr("id");   
+      $('#row'+button_id+'').remove();  
+    });
+
+    // $("#submit").on('click',function(){
+    //   var formdata = $("#add_name").serialize();
+    //   $.ajax({
+    //     url   :"coba2.php",
+    //     type  :"POST",
+    //     data  :formdata,
+    //     cache :false,
+    //     success:function(result){
+    //       alert(result);
+    //       $("#add_name")[0].reset();
+    //     }
+    //   });
+    // });
+  });
+</script>
