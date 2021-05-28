@@ -98,7 +98,7 @@
                       </select></td>
                       <td><input type="text" name="jumlah[]" placeholder="Jumlah Biaya" class="form-control name_email"/></td>
 
-                      <td><button type="button" name="add" id="add" class="btn btn-primary">Add More</button></td>  
+                      <td><button type="button" name="add" id="add" class="btn btn-primary">Tambah</button></td>  
                     </tr>
                   </table>
 

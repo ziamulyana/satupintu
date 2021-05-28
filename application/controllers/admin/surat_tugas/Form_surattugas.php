@@ -10,6 +10,7 @@
         parent::__construct();
         $this->load->database();
         $this->load->model('SuratTugas_model');
+       
     }
 
 

@@ -37,25 +37,25 @@
                   <table id="tbl" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th class="dt-center">No</th>
                         <th class="dt-center">No Surat Tugas</th>
-                        <th class="dt-center">No SPPD</th>
+                        <th class="dt-center">Petugas</th>
+                         <th class="dt-center">Tgl Kwitansi</th>
+                          <th class="dt-center">File Kwitansi</th>
                         <th class="dt-center">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
                       <?php     
-                      if(isset($list_peringatan)){
-                       foreach ($list_peringatan->result() as $row){
+                      if(isset($kwitansi)){
+                       foreach ($kwitansi->result() as $row){
                         
                         echo "<tr>";
-                        echo "<td class='dt-center'>".$row->noSuratPeringatan."</td>";      
-                        echo "<td class='dt-center'>".$row->tglSuratPeringatan."</td>";
-                        echo "<td class='dt-center'>".$row->filePeringatan."</td>";
+                        echo "<td class='dt-center'>".$row->noSuratTugas."</td>";      
+                        echo "<td class='dt-center'>".$row->nama."</td>";
+                        echo "<td class='dt-center'>".$row->tglKwitansi."</td>";
+                         echo "<td class='dt-center'>".$row->fileKwitansi."</td>";
                         echo "<td class='dt-center'>"?>                             
-                            <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editDataPeringatan"
-                            data-id = "<?= $row->id ?>" data-tglPeringatan="<?= $row->tglSuratPeringatan ?>" data-noSuratPeringatan="<?=  $row->noSuratPeringatan ?>" data-filePeringatan ="<?=  $row->filePeringatan ?>" data-toggle="modal" data-target="#editModal" ><i class="fa fa-edit"></i></a>
-
+                           
                             </td>
                             
                             <?php 

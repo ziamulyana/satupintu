@@ -45,7 +45,7 @@
               <a href="#"><i class="fa fa-circle-o"></i> Luar Kota
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
-                </span>
+                </span>   
               </a>
               <ul class="treeview-menu" style="display: none;">
                 <li><a href="<?php echo base_url('admin/surat_tugaslukota/surat_perjadin')?>"><i class="fa fa-circle-o"></i> Surat Perjalanan Dinas</a></li>
@@ -61,7 +61,7 @@
           </ul>
         </li>
 
-         <li class="active"><a href="<?php echo base_url('admin/surat_tugasdakota/surat_pjdakota')?>"><i class="fa fa-money"></i> <span>Pertanggung Jawaban</span></a></li>
+         <li class="active"><a href="<?php echo base_url('admin/surat_pj')?>"><i class="fa fa-money"></i> <span>Pertanggung Jawaban</span></a></li>
 
         <li class="active"><a href="<?php echo base_url('admin/Feedback')?>"><i class="fa fa-dashboard"></i> <span>Feedback CAPA</span></a></li>
 
