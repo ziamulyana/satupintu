@@ -52,7 +52,7 @@
             <div class="col-sm-12">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                <input type="text" class="form-control" name="sarana" placeholder="Sarana" required>
+                <input type="text" class="form-control" name="sarana" placeholder="Sarana" >
                 <div class="invalid-feedback">
 									
 								</div>
@@ -64,7 +64,7 @@
           <div class="form-group row">
             <label class="col-sm-4 col-form-label">Tanggal Surat<span class="wajib"> *</span></label>
             <div class="col-sm-12">
-              <input class="form-control" type="date" name ="tgl_surat" required>
+              <input class="form-control" type="date" name ="tgl_surat">
               <div class="invalid-feedback">
 								
 								</div>

@@ -23,7 +23,7 @@
 
 								$this->db->select('*');
 								$this->db->from('notif');
-								$this->db->order_by('no_surat', 'DESC');
+								$this->db->order_by('tanggal_timeline', 'DESC');
 								$query = $this->db->get();
 
 								?>
