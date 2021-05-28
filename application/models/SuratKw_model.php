@@ -21,4 +21,12 @@ public function getKw(){
 }
 
 
+public function updateKw($data){
+   $this->db->set('tglKwitansi', $data['tglKwitansi']); 
+    $this->db->set('fileKwitansi', $data['fileKwitansi']);
+    $this->db->where('idKwitansi', $data['idKwitansi']);
+    $query = $this->db->update('tbl_kwitansi');
+}
+
+
 }

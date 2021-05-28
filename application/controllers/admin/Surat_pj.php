@@ -23,94 +23,35 @@ class Surat_PJ extends CI_Controller {
 
 
 
-	public function surat()
-	{
+	public function ubahPj(){
+		$id = $this->input->post('idkW');
+		$tglEdit = $this->input->post('tglEdit');
+	
+		$config['upload_path'] = './assets/uploads/files/kwitansi';
+		$config['allowed_types'] = 'pdf';
+		$config['file_name'] = 'kw-'.$id;
+		$config['overwrite'] = true;
+		$config['max_size'] = 0;
+		
 
-		function convertMonths($month){
-			$month = date('m',$month);
-			return $month;
-		}
+		$this->load->library("upload",$config);
+		$this->upload->initialize($config);
 
-		function convertYears($year){
-			$year = date('y',$year);
-			return $year;
-		}
-
-		$tanggal =  $this->input->post('tanggal');
-		$noSurat =  $this->input->post('noSurat');
-		$idTl= $this->input->post('suratTugas');
-		$penerimaSurat =  $this->input->post('penerimaSurat');
-		$kotaSurat =  $this->input->post('kotaSurat');
-			// detil sarana
-		$namaSarana =  $this->input->post('namaSarana');
-		$alamatSarana = $this->input->post('alamatSarana');
-		$tglMulaiperiksa = $this->input->post('tglMulaiperiksa');
-		$tglSelesaiperiksa = $this->input->post('tglSelesaiperiksa');
-		$noIzin =  $this->input->post('noIzin');
-		$namaPj =  $this->input->post('namaPj');
-		$noSip =  $this->input->post('noSip');
-		$noHp =  $this->input->post('noHp');
-			// detil temuan
-		$detailTemuan =  $this->input->post('detailTemuan');
-		$pilihPasal = $this->input->post('pilihPasal');
-
-		$tanggalolah  = strtotime($tanggal);
-
-		echo $tanggal;
-
-		$noSuratFix = "T-PW.01.12.9A2.".convertMonths($tanggalolah).".".convertYears($tanggalolah).".".$noSurat;
-		echo $noSuratFix;
-
-
-
-		$pasal_peringatan = array();
-		foreach ($pilihPasal as $num) {
-			$pasal['data'] = $this->SuratObat_model->getPasal($num);
-			array_push($pasal_peringatan,$pasal);
-		}
-
-
-		$data = array('title'=>'Cetak surat tugas',
-			'tanggal' => $tanggal,
-			'noSurat' => $noSuratFix,
-			'penerimaSurat' => $penerimaSurat,
-			'kotaSurat' => $kotaSurat,
-				// detil sarana
-			'namaSarana' => $namaSarana,
-			'alamatSarana' =>$alamatSarana,
-			'tglMulaiperiksa' => $tglMulaiperiksa,
-			'tglSelesaiperiksa' => $tglSelesaiperiksa,
-			'noIzin' => $noIzin,
-			'namaPj' => $namaPj,
-			'noSip' => $noSip, 
-			'noHp' => $noHp,
-				// detil temuan
-			'detailTemuan' => $detailTemuan,
-				// ganti ke db
-			'pilihPasal' => $pasal_peringatan
-		);		
-
-
-		$data_db = array(
-
-			'tglSuratPeringatan' => $tanggal,
-			'noSuratPeringatan' => $noSuratFix,
-			'jenisPeringatan' => "Toko Obat",
-			'idTl' => $idTl
-
-		);
-
-		$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
-		if($checkvalidation == true){
-			$this->db->insert('tbl_peringatan',$data_db);
-			$this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
-			$this->load->view('petugas/surat_peringatan/surat_obat/isiSurat', $data, FALSE);
+		if(!$this->upload->do_upload('fileEdit')){
+			echo $this->upload->display_errors();
 		}else{
-			$this->session->set_flashdata('failed', 'Data Duplikat');
-			redirect('petugas/surat_peringatan/Surat_obat', 'refresh');
-		}	
+			$fd=$this->upload->data();
+			$file=$fd['file_name'];
 
+			$data_kw = array (
+				'idKwitansi' => $id,
+				'tglKwitansi' => $tglEdit,
+				'fileKwitansi' => $file	
+			);
 
+			$this->SuratKw_model->updateKw($data_kw);
+			redirect('admin/surat_pj');
+		}
 	}
 
 }

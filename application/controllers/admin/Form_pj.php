@@ -67,7 +67,7 @@
 		}
 
 		$this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
-		redirect('admin/form_pj', 'refresh');
+		redirect('admin/surat_pj', 'refresh');
 
 
 
