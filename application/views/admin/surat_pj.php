@@ -116,7 +116,7 @@
         <h4 class="modal-title"><i class="icon fa fa-edit"></i>  Form Edit Kwitansi</h4>
       </div>
       <div class="modal-body" id=editData >
-        <form action="<?= base_url('admin/surat_pj/ubahPj')?>" method="post">
+        <form action="<?= base_url('admin/surat_pj/ubahPj')?>" method="post" enctype="multipart/form-data">
           <div class="box box-success">
             <div class="box-body">
              <div class="form-group">

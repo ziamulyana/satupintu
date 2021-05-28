@@ -49,6 +49,9 @@ class Surat_PJ extends CI_Controller {
 				'fileKwitansi' => $file	
 			);
 
+
+
+
 			$this->SuratKw_model->updateKw($data_kw);
 			redirect('admin/surat_pj');
 		}
