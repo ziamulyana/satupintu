@@ -23,7 +23,7 @@
 
 								$this->db->select('*');
 								$this->db->from('notif');
-								$this->db->order_by('tanggal_timeline', 'DESC');
+								$this->db->order_by('created_date', 'DESC');
 								$query = $this->db->get();
 
 								?>
