@@ -260,6 +260,9 @@
         <div class="box-footer">
          <button type="submit" value="submit" onclick="return chk_date()" class="btn btn-info"><i class="fa fa-print"></i> Save Document</button>
          <button type="reset"  value ="reset" class="btn btn-danger"><i class="fa fa-refresh" aria-hidden="true"></i> Reset Form</button>
+
+         
+               <a class="btn btn-primary pull-right" href=<?php echo base_url()."petugas/surat_peringatan/c_surat_peringatan"?> > <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali ke daftar peringatan</a>
        </div>
           </div>
         </div>

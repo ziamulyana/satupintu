@@ -11,6 +11,7 @@
         $this->load->database();
         $this->load->model('SuratKosmetik_model');
          $this->load->model('SuratPeringatan_model');
+            $this->load->model('SuratTl_model');
     }
 
 
@@ -38,7 +39,7 @@
 			
 			$tanggal =  $this->input->post('tanggal');
 			$noSurat =  $this->input->post('noSurat');
-			$idTl= $this->input->post('suratTugas');
+			$idSurat= $this->input->post('suratTugas');
 			$penerimaSurat =  $this->input->post('penerimaSurat');
 			$kotaSurat =  $this->input->post('kotaSurat');
 			// detil sarana
@@ -107,7 +108,7 @@
 	                $this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
 	                $this->load->view('petugas/surat_peringatan/surat_kosmetik/isiSurat', $data, FALSE);
 	            }else{
-	            $this->session->set_flashdata('failed', 'Data Duplikat');
+	            $this->session->set_flashdata('failed', 'Maaf, Data tidak diproses karena duplikat');
 	            redirect('petugas/surat_peringatan/surat_kosmetik', 'refresh');
 	            }	
 

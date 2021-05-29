@@ -11,6 +11,7 @@
 			$this->load->database();
 			$this->load->model('SuratObat_model');
 			$this->load->model('SuratPeringatan_model');
+			$this->load->model('SuratTl_model');
 		}
 
 
@@ -38,7 +39,7 @@ $data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
 
 			$tanggal =  $this->input->post('tanggal');
 			$noSurat =  $this->input->post('noSurat');
-			$idTl= $this->input->post('suratTugas');
+			$idSurat= $this->input->post('suratTugas');
 			$penerimaSurat =  $this->input->post('penerimaSurat');
 			$kotaSurat =  $this->input->post('kotaSurat');
 			// detil sarana
@@ -112,7 +113,7 @@ $data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
 				$this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
 				$this->load->view('petugas/surat_peringatan/surat_apotek/isiSurat', $data, FALSE);
 			}else{
-				$this->session->set_flashdata('failed', 'Data Duplikat');
+				 $this->session->set_flashdata('failed', 'Maaf, Data tidak diprocess karena duplikat');
 				redirect('petugas/surat_peringatan/Surat_apotek', 'refresh');
 			}	
 

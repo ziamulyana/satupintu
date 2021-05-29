@@ -105,7 +105,7 @@
 
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
-					'jenisPeringatan' => "PBF",
+					'jenisPeringatan' => "pbf",
 					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',
 					'idTl' => $idTl
@@ -114,10 +114,9 @@
 				$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
 	            if($checkvalidation == true){
 	                $this->db->insert('tbl_peringatan',$data_db);
-	                $this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
 	                $this->load->view('petugas/surat_peringatan/surat_pbf/isiSurat', $data, FALSE);
 	            }else{
-	            $this->session->set_flashdata('failed', 'Data Duplikat');
+	            $this->session->set_flashdata('failed', 'Maaf, Data tidak diproses karena duplikat');
 	            redirect('petugas/surat_peringatan/Surat_pbf', 'refresh');
 	            }	
 

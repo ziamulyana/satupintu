@@ -1,67 +1,65 @@
 <nav class="navbar navbar-static-top">
 	<!-- Sidebar toggle button-->
 	<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
+		<span class="sr-only">Toggle navigation</span>
+	</a>
 
 	<div class="navbar-custom-menu">
 		<ul class="nav navbar-nav">
 			<!-- Notifications: style can be found in dropdown.less -->
 			<li class="dropdown notifications-menu">
-				<a href="" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
-              <span class="label label-danger">
-			  <?php echo $this->db->from("notif")->count_all_results(); ?>
-			  </span>
-            </a>
-			<ul class="dropdown-menu">
-              <li class="header">Anda Memiliki <?php echo $this->db->from("notif")->count_all_results(); ?>  Notifikasi</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu">
-                  <li>
-				  	<?php
+				<a id="noti_Button" href="" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-bell-o"></i>
+					<span id="noti_Counter" class="badge bg-red"></span>
+				</a>
+				<div ></div>
+				<ul id="notifications" class="dropdown-menu">
+					<li class="header">Anda Memiliki <?php echo $this->db->from("notif")->count_all_results(); ?> Notifikasi</li>
+					<li>
+						<!-- inner menu: contains the actual data -->
+						<ul class="menu">
+							<li >
+								<?php
 
-					  $this->db->select('*'); 
-					  $this->db->from('notif');
-					  $this->db->order_by('no_surat', 'DESC');
-					  $query = $this->db->get();
+								$this->db->select('*');
+								$this->db->from('notif');
+								$this->db->order_by('tanggal_timeline', 'DESC');
+								$query = $this->db->get();
 
-					  ?>
-                      
-					  <?php
-					  
-					  if (isset($query)) {
-						foreach ($query->result() as $row) {
-						  
-						  echo "<a href=''><i class='fa fa-check-circle text-green'></i>" . $row->sarana . '</a>';
-						   
-						}
-					  } else {
-						echo "no record found";
-					  }
+								?>
 
-					  ?>
-                    
-                  </li>
-                </ul>
-              </li>
-            </ul>
+								<?php
+
+								if (isset($query)) {
+									foreach ($query->result() as $row) {
+
+										echo "<a href=''><i class='fa fa-envelope text-green'></i>" . $row->sarana . '</a>';
+									}
+								} else {
+									echo "no record found";
+								}
+
+								?>
+
+							</li>
+						</ul>
+					</li>
+				</ul>
 			</li>
 			<!-- Tasks: style can be found in dropdown.less -->
 
 			<!-- User Account: style can be found in dropdown.less -->
 			<li class="dropdown user user-menu">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="<?= base_url('assets/uploads/images/foto_profil/1583991814826.png'); ?>" class="user-image">
-                <span class="hidden-xs"></span>
-            </a>
+					<img src="<?= base_url('assets/uploads/images/foto_profil/1583991814826.png'); ?>" class="user-image">
+					<span class="hidden-xs"></span>
+				</a>
 				<ul class="dropdown-menu">
 					<!-- User image -->
 					<li class="user-header">
 						<img src="<?= base_url('assets/uploads/images/foto_profil/1583991814826.png'); ?>" class="img-circle">
 						<p>
-							
+
 							<small>Anda Masuk Sebagai Petugas</small>
 						</p>
 					</li>
@@ -81,14 +79,7 @@
 	</div>
 </nav>
 <style>
-.skin-blue .main-header .navbar {
-    background-color: #00537d;
-}
+	.skin-blue .main-header .navbar {
+		background-color: #00537d;
+	}
 </style>
-<script>
-$(document).ready(function(){
-  $(".not").click(function(){
-    $('<span class="label label-danger">').hide();
-  });
-});
-</script>

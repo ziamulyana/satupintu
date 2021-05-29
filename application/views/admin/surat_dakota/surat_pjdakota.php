@@ -1,10 +1,10 @@
 <section class="content-header">
  <h1>
-   Surat Pertanggung Jawaban Dalam Kota
+   Surat Pertanggung Jawaban 
  </h1>
  <ol class="breadcrumb">
   <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-  <li><a href="#">Surat Pertanggung Jawaban Dalam Kota</a></li>
+  <li><a href="#">Surat Pertanggung Jawaban</a></li>
 </ol>
 </section>
 <!-- Main content -->
@@ -18,10 +18,10 @@
     <div class="box box-primary">
       <div class="box-header with-border">
 
-        <h3 class="box-title">Daftar Surat Pertanggung Jawaban Dalam Kota</h3>
+        <h3 class="box-title">Daftar Surat Pertanggung Jawaban </h3>
           <div class="pull-right">
             <ul>
-              <a class= "btn btn-primary" href="<?php echo base_url('admin/surat_tugasdakota/form_suratPJdakota')?>">
+              <a class= "btn btn-primary" href="<?php echo base_url('admin/form_pj')?>">
                   <i class="fa fa-plus"></i>&nbsp; Tambah Data 
                 </a> </span>
             </ul>
