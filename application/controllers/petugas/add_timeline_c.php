@@ -30,7 +30,9 @@ class add_timeline_c extends MY_Controller
             'no_surat'          =>$this->input->post('no_surat'),
             'sarana'            =>$this->input->post('sarana'),
             'tgl_surat'         =>$this->input->post('tgl_surat'),
-            'tanggal_timeline'  =>$this->input->post('tanggal_timeline')
+            'tanggal_timeline'  =>$this->input->post('tanggal_timeline'),
+            'created_date'      =>$this->input->post('created_date')
+            
         );
         $checkvalidation = $this->add_timeline_m->checkDuplicate($post_no_surat);
             if($checkvalidation == true){

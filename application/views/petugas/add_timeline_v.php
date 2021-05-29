@@ -81,14 +81,7 @@
 								</div>
             </div>
           </div>
-
-        
-        
-
-        
-
-        
-                
+          <input class="form-control" type="hidden" name="created_date" value="<?php echo date("y-m-d"); ?>">
           <div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>

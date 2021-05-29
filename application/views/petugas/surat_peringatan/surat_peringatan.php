@@ -143,9 +143,7 @@
                     <tbody>
                       <?php     
 
-                      $attr = array(
-                        'target'=>'_blank',
-                      );
+                    
                       if(isset($list_peringatan)){
                        foreach ($list_peringatan->result() as $row){
 

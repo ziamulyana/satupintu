@@ -22,14 +22,13 @@ class Surat_PJ extends CI_Controller {
 	}
 
 
-
 	public function ubahPj(){
-		$id = $this->input->post('idkW');
+		$id = $this->input->post('idKw');
 		$tglEdit = $this->input->post('tglEdit');
 	
 		$config['upload_path'] = './assets/uploads/files/kwitansi';
 		$config['allowed_types'] = 'pdf';
-		$config['file_name'] = 'kw-'.$id;
+		$config['file_name'] = 'kwitansi-'.$id;
 		$config['overwrite'] = true;
 		$config['max_size'] = 0;
 		
@@ -50,11 +49,25 @@ class Surat_PJ extends CI_Controller {
 			);
 
 
-
-
 			$this->SuratKw_model->updateKw($data_kw);
 			redirect('admin/surat_pj');
 		}
+	}
+
+	public function printDk(){
+		$id = $this->input->post('idKwin');
+		// $data['kwDakota'] = $this->SuratKw_model->dataDakota($id);
+		// $this->template->view('layouts/admin_template', 'admin/pjDakota', $data);
+		echo $id;
+
+	}
+
+	public function printLk(){
+		$id = $this->input->post('idKwin');
+		// $data['kwDakota'] = $this->SuratKw_model->dataDakota($id);
+		// $this->template->view('layouts/admin_template', 'admin/pjDakota', $data);
+		echo $id;
+
 	}
 
 }
