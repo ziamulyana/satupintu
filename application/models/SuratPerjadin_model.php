@@ -9,12 +9,13 @@ class SuratPerjadin_model extends CI_Model{
         parent::__construct();
     }
 
-
-	public function getid_surat($id_surat){
-        $this->db->select('*');
-		$this->db->where('id_surat', $id_surat);
-		$query = $this->db->get('tbl_surattugas');
-		return $query->result();
+    public function getTugas(){
+        $this->db->select('tbl_tugas.idTugas, tbl_tugas.idSuratTugas, tbl_surattugas.noSuratTugas');
+        $this->db->from('tbl_tugas');
+        $this->db->join('tbl_surattugas', 'tbl_tugas.idSuratTugas = tbl_surattugas.idSurat');
+        $this->db->group_by('tbl_tugas.idSuratTugas');
+        $query = $this->db->get('');
+        return $query->result();
     }
 
 
