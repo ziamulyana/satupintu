@@ -18,21 +18,26 @@
         <div class="box-header with-border">
           <h3 class="box-title">Form Pembuatan Surat Perjalanan Dinas Luar Kota</h3>
           <p><span class="wajib">* wajib diisi</span></p>
-        </div>
+       
 
         <div class="col-md-6">
           <hr>
           
           <!-- nomor surat -->
-          <div class="form-group row">
-            <label for="noSurat" class="col-sm-4 col-form-label">Nomor Surat Tugas<span class="wajib"> *</span></label>
-            <div class="col-sm-12">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                <input type="text" class="form-control" placeholder="Nomor Surat Tugas" name="noSurat" id="noSurat" required>
-              </div>
+          <div class="form-group">
+              <label>Surat Tugas</label><span class="wajib"> *</span></label>
+              <select name="surattugas" id="surattugas" class="form-control input-sm" data-live-search="true" title="Select Category" required>
+
+                <option value="">Pilih Surat Tugas</option>
+
+                <?php
+                foreach ($tugas as $tg) {
+                  echo "<option value=".$tg->idSuratTugas.">".$tg->noSuratTugas."</option>";
+                }
+                ?>
+
+              </select>
             </div>
-          </div>
 
           <!-- nama pegawai -->
           <div class="form-group row">

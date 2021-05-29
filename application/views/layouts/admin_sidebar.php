@@ -35,7 +35,7 @@
 
         <li class="active"><a href="<?php echo base_url('admin/surat_tugas/surat_tugas')?>"><i class="fa fa-envelope"></i> <span>Surat Tugas</span></a></li>
 
-        <li class="active"><a href="<?php echo base_url('admin/surat_perjadin/surat_perjadin')?>"><i class="fa fa-envelope"></i> <span>Surat Perjalanan Dinas</span></a></li>
+        <li class="active"><a href="<?php echo base_url('admin/surat_perjadin/surat_perjadin')?>"><i class="fa fa-plane"></i> <span>Surat Perjalanan Dinas</span></a></li>
 
          <li class="active"><a href="<?php echo base_url('admin/surat_pj')?>"><i class="fa fa-money"></i> <span>Pertanggung Jawaban</span></a></li>
 

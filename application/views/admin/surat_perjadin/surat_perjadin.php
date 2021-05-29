@@ -21,7 +21,7 @@
         <h3 class="box-title">Daftar Surat Perjalanan Dinas</h3>
           <div class="pull-right">
             <ul>
-              <a class= "btn btn-primary" href="<?php echo base_url('admin/surat_tugaslukota/form_suratperjadin')?>">
+              <a class= "btn btn-primary" href="<?php echo base_url('admin/surat_perjadin/form_suratperjadin')?>">
                   <i class="fa fa-plus"></i>&nbsp; Tambah Data 
                 </a> </span>
             </ul>
