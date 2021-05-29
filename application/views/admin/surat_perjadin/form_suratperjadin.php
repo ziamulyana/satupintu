@@ -1,3 +1,7 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 <section class="content-header">
   <h1>
     Buat Surat Perjalanan Dinas Luar Kota
@@ -40,68 +44,16 @@
             </div>
 
           <!-- nama pegawai -->
-          <div class="form-group row">
-            <label for="namaPegawai" class="col-sm-4 col-form-label">Nama Pegawai<span class="wajib"> *</span></label>
-            <div class="col-sm-12">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                <input type="text" class="form-control" name="namaPegawai" id="namaPegawai" placeholder="Nama Pegawai" required>
-              </div>
+          <div class="form-group">
+              <label>Nama Petugas</label><span class="wajib"> *</span></label>
+              <select name="petugas" id="petugas" class="form-control input-sm" data-live-search="true" title="Pilih Petugas">
+
+                   <option value="">Pilih Petugas</option>
+              </select> 
             </div>
+
           </div>
-
-          <!-- NIP -->
-          <div class="form-group row">
-            <label for="nip" class="col-sm-4 col-form-label">NIP<span class="wajib"> *</span></label>
-            <div class="col-sm-12">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                <input type="text" class="form-control" name="nip" id="nip" placeholder="NIP" required>
-              </div>
-            </div>
-          </div>
-
-          <!-- pejabat pembuat komitmen -->
-          <div class="form-group row">
-            <label for="pejabatPembuatkomitmen" class="col-sm-6 col-form-label">Pejabat Pembuat Komitmen<span class="wajib"> *</span></label>
-            <div class="col-sm-12">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <select class="form-control" name="pejabatPembuatkomitmen" id="pejabatPembuatkomitmen" required>
-                      <option selected="selected">- Select -</option>
-                      <option>Paniyati, S.Farm,. Apt</option>
-                      <option>2</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-md-6">
-          <hr>
-
-          <!-- lama tugas -->
-          <div class="form-group row">
-            <label for="lamaTugas" class="col-sm-4 col-form-label">Instansi<span class="wajib"> *</span></label>
-            <div class="col-sm-12">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
-                <input type="text" class="form-control" name="instansi" id="instansi" placeholder="Instansi" required>
-              </div>
-            </div>
-          </div>
-
-          <!-- lama tugas -->
-          <div class="form-group row">
-            <label for="lamaTugas" class="col-sm-6 col-form-label">Kepala SUB Bagian TU<span class="wajib"> *</span></label>
-            <div class="col-sm-12">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
-                <input type="text" class="form-control" name="kepalaSUBbagiantu" id="kepalaSUBbagiantu" placeholder="Kepala SUB Bagian TU" required>
-              </div>
-            </div>
-          </div>
+          <div class="col-md-6">
 
           <!-- lama tugas -->
           <div class="form-group row">

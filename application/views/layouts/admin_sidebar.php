@@ -32,6 +32,7 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">HEADER</li>
       <!-- Optionally, you can add icons to the links -->
+      <li class="active"><a href="<?=base_url()?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
         <li class="active"><a href="<?php echo base_url('admin/surat_tugas/surat_tugas')?>"><i class="fa fa-envelope"></i> <span>Surat Tugas</span></a></li>
 
@@ -39,7 +40,7 @@
 
          <li class="active"><a href="<?php echo base_url('admin/surat_pj')?>"><i class="fa fa-money"></i> <span>Pertanggung Jawaban</span></a></li>
 
-        <li class="active"><a href="<?php echo base_url('admin/Feedback')?>"><i class="fa fa-dashboard"></i> <span>Feedback CAPA</span></a></li>
+        <li class="active"><a href="<?php echo base_url('admin/Feedback')?>"><i class="fa fa-share"></i> <span>Feedback CAPA</span></a></li>
   </ul>
     <!-- /.sidebar-menu -->
   </section>
