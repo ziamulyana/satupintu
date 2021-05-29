@@ -30,7 +30,7 @@
 
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li class="header">HEADER</li>
+      <li class="header">HEADE</li>
       <!-- Optionally, you can add icons to the links -->
 
         <li class="active"><a href="<?php echo base_url('admin/surat_tugas/surat_tugas')?>"><i class="fa fa-envelope"></i> <span>Surat Tugas</span></a></li>
