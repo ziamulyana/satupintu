@@ -32,39 +32,15 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">HEADER</li>
       <!-- Optionally, you can add icons to the links -->
-          <li class="treeview" style="height: auto;">
-          <a href="#">
-            <i class="fa fa-envelope"></i> <span>Surat Tugas</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu" style="display: none;">
-            <li><a href="<?php echo base_url('admin/surat_tugas/surat_tugas')?>"><i class="fa fa-circle-o"></i> Buat Surat Tugas</a></li>
-            <li class="treeview" style="height: auto;">
-              <a href="#"><i class="fa fa-circle-o"></i> Luar Kota
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>   
-              </a>
-              <ul class="treeview-menu" style="display: none;">
-                <li><a href="<?php echo base_url('admin/surat_tugaslukota/surat_perjadin')?>"><i class="fa fa-circle-o"></i> Surat Perjalanan Dinas</a></li>
-            </li>
-          </ul>
-            <li class="active" style="height: auto;">
-              <a href="#"><i class="fa fa-circle-o"></i> Dalam Kota
-                <span class="pull-right-container">
-                  </i>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </li>
+
+        <li class="active"><a href="<?php echo base_url('admin/surat_tugas/surat_tugas')?>"><i class="fa fa-envelope"></i> <span>Surat Tugas</span></a></li>
+
+        <li class="active"><a href="<?php echo base_url('admin/surat_perjadin/surat_perjadin')?>"><i class="fa fa-envelope"></i> <span>Surat Perjalanan Dinas</span></a></li>
 
          <li class="active"><a href="<?php echo base_url('admin/surat_pj')?>"><i class="fa fa-money"></i> <span>Pertanggung Jawaban</span></a></li>
 
         <li class="active"><a href="<?php echo base_url('admin/Feedback')?>"><i class="fa fa-dashboard"></i> <span>Feedback CAPA</span></a></li>
-
+  </ul>
     <!-- /.sidebar-menu -->
   </section>
   <!-- /.sidebar -->
