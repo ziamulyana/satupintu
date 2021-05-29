@@ -35,7 +35,7 @@
 			$editClosed = $this->input->post('editclosed');
 
 			$this->Feedback_model->updateClosed($id, $editClosed);
-			redirect('petugas/admFeedback_c');
+			redirect('admin/Feedback');
 		}
 		
 	
