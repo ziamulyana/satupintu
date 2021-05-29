@@ -55,9 +55,31 @@
           </div>
           <div class="col-md-6">
 
-          <!-- lama tugas -->
+          <!-- tempat berangkat -->
           <div class="form-group row">
-            <label for="lamaTugas" class="col-sm-4 col-form-label">Berangkat Dari<span class="wajib"> *</span></label>
+            <label for="tempatBerangkat" class="col-sm-4 col-form-label">Tempat Berangkat<span class="wajib"> *</span></label>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
+                <input type="text" class="form-control" name="tempatBerangkat" id="tempatBerangkat" placeholder="Tempat Berangkat" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- tempat tujuan -->
+          <div class="form-group row">
+            <label for="tempatTujuan" class="col-sm-4 col-form-label">Tempat Tujuan<span class="wajib"> *</span></label>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
+                <input type="text" class="form-control" name="tempatTujuan" id="tempatTujuan" placeholder="Tempat Tujuan" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- berangkat dari -->
+          <div class="form-group row">
+            <label for="berangkatDari" class="col-sm-4 col-form-label">Berangkat Dari<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
@@ -66,9 +88,9 @@
             </div>
           </div>
 
-          <!-- lama tugas -->
+          <!-- tiba di -->
           <div class="form-group row">
-            <label for="lamaTugas" class="col-sm-4 col-form-label">Tiba Di<span class="wajib"> *</span></label>
+            <label for="tibaDi" class="col-sm-4 col-form-label">Tiba Di<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
