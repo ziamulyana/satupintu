@@ -58,7 +58,7 @@
 
                             <a href="" class="btn btn-info btn-sm" data-tooltip="tooltip" title="Format DK" id="printDk" data-id = "<?=$row->idKwitansi ?>" data-toggle="modal" data-target="#printDakota"><i class="fa fa-print"></i></a>
 
-                            <a href="" class="btn btn-warning btn-sm" data-tooltip="tooltip" title="Format DK" id="printLk" data-id = "<?=$row->idKwitansi ?>" data-toggle="modal" data-target="#printLukota"><i class="fa fa-print"></i></a>
+                            <a href="" class="btn btn-warning btn-sm" data-tooltip="tooltip" title="Format LK" id="printLk" data-id = "<?=$row->idKwitansi ?>" data-toggle="modal" data-target="#printLukota"><i class="fa fa-print"></i></a>
 
                             <?php if($row->fileKwitansi !=0){ ?>
                               <a href="../assets/uploads/files/kwitansi/kwitansi-<?php echo $row ->idKwitansi ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" target="_blank" ><i class="fa fa-eye"></i></a>
@@ -171,7 +171,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
       </div>
-      <div class="modal-body" id="printDkt">
+      <div class="modal-body" id=printDkt>
         <form role="form" method="post" action="<?= base_url('admin/surat_pj/printDk') ?>">
           <div class="box-body">
             <div class="form-group" style="text-align:center">Cetak Surat Kwitansi Format Dalam Kota </label>
@@ -187,8 +187,8 @@
         <script src="<?php echo base_url();?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
         <script type="text/javascript" >
           $(document).on("click","#printDk",function(){
-            var idDk = $(this).data('id');
-            $("#printDkt #idKwitansi").val(idDk);
+            var id = $(this).data('id');
+            $("#printDkt #idKwitansi").val(id);
           });
         </script>
       </div>

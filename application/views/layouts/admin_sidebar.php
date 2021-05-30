@@ -34,6 +34,20 @@
       <!-- Optionally, you can add icons to the links -->
       <li class="active"><a href="<?=base_url()?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
+       <li class="treeview" style="height: auto;">
+        <a href="#">
+          <i class="fa fa-database"></i> <span>Master Data</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu" style="display: none;">
+          <li><a href="<?php echo base_url('admin/Master/data_pegawai')?>"><i class="fa fa-circle-o"></i>Data Pegawai</a></li>
+          <li><a href="<?php echo base_url('admin/Master/data_sarana')?>"><i class="fa fa-circle-o"></i>Data Sarana</a></li>
+        
+        </ul>
+      </li>
+
         <li class="active"><a href="<?php echo base_url('admin/surat_tugas/surat_tugas')?>"><i class="fa fa-envelope"></i> <span>Surat Tugas</span></a></li>
 
         <li class="active"><a href="<?php echo base_url('admin/surat_perjadin/surat_perjadin')?>"><i class="fa fa-plane"></i> <span>Surat Perjalanan Dinas</span></a></li>
