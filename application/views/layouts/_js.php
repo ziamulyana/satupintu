@@ -202,7 +202,7 @@
 	var areaChartData = {
 		labels: ["January", "February", "March", "April", "May", "June", "July", "Agustus", "September", "Oktober", "November", "Desember"],
 		datasets: [{
-				label: "Expired",
+				label: "OPEN",
 				fillColor: "#dd4b39",
 				strokeColor: "#dd4b39",
 				pointColor: "#dd4b39",
@@ -210,45 +210,22 @@
 				pointHighlightFill: "#fff",
 				pointHighlightStroke: "#dd4b39",
 				data: [
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 1)->where('timeline <=', 3)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 2)->where('timeline <=', 3)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 3)->where('timeline <=', 3)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 4)->where('timeline <=', 3)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 5)->where('timeline <=', 3)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 6)->where('timeline <=', 3)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 7)->where('timeline <=', 3)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 8)->where('timeline <=', 3)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 9)->where('timeline <=', 3)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 10)->where('timeline <=', 3)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 11)->where('timeline <=', 3)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 12)->where('timeline <=', 3)->from("view_notif")->count_all_results(); ?>
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 1)->where('closed =', 1)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 2)->where('closed =', 1)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 3)->where('closed =', 1)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 4)->where('closed =', 1)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 5)->where('closed =', 1)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 6)->where('closed =', 1)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 7)->where('closed =', 1)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 8)->where('closed =', 1)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 9)->where('closed =', 1)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 10)->where('closed =', 1)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 11)->where('closed =', 1)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 12)->where('closed =', 1)->from("tbl_feedback")->count_all_results(); ?>
 				]
 			},
 			{
-				label: "Tenggang",
-				fillColor: "#f39c12",
-				strokeColor: "#f39c12",
-				pointColor: "#f39c12",
-				pointStrokeColor: "#f39c12",
-				pointHighlightFill: "#fff",
-				pointHighlightStroke: "#f39c12",
-				data: [
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 1)->where('timeline >=', 4)->where('timeline <=', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 2)->where('timeline >=', 4)->where('timeline <=', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 3)->where('timeline >=', 4)->where('timeline <=', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 4)->where('timeline >=', 4)->where('timeline <=', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 5)->where('timeline >=', 4)->where('timeline <=', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 6)->where('timeline >=', 4)->where('timeline <=', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 7)->where('timeline >=', 4)->where('timeline <=', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 8)->where('timeline >=', 4)->where('timeline <=', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 9)->where('timeline >=', 4)->where('timeline <=', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 10)->where('timeline >=', 4)->where('timeline <=', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 11)->where('timeline >=', 4)->where('timeline <=', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 12)->where('timeline >=', 4)->where('timeline <=', 7)->from("view_notif")->count_all_results(); ?>
-				]
-			},
-			{
-				label: "Aktif",
+				label: "CLOSED",
 				fillColor: "#00a65a",
 				strokeColor: "#00a65a",
 				pointColor: "#00a65a",
@@ -256,18 +233,18 @@
 				pointHighlightFill: "#fff",
 				pointHighlightStroke: "#00a65a",
 				data: [
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 1)->where('timeline >', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 2)->where('timeline >', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 3)->where('timeline >', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 4)->where('timeline >', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 5)->where('timeline >', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 6)->where('timeline >', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 7)->where('timeline >', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 8)->where('timeline >', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 9)->where('timeline >', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 10)->where('timeline >', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 11)->where('timeline >', 7)->from("view_notif")->count_all_results(); ?>,
-					<?php echo $this->db->where('MONTH(tanggal_timeline)=', 12)->where('timeline >', 7)->from("view_notif")->count_all_results(); ?>
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 1)->where('closed =', 0)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 2)->where('closed =', 0)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 3)->where('closed =', 0)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 4)->where('closed =', 0)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 5)->where('closed =', 0)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 6)->where('closed =', 0)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 7)->where('closed =', 0)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 8)->where('closed =', 0)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 9)->where('closed =', 0)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 10)->where('closed =', 0)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 11)->where('closed =', 0)->from("tbl_feedback")->count_all_results(); ?>,
+					<?php echo $this->db->where('MONTH(tglFeedback)=', 12)->where('closed =', 0)->from("tbl_feedback")->count_all_results(); ?>
 				]
 			}
 		]
@@ -285,7 +262,7 @@
 		//Boolean - Whether grid lines are shown across the chart
 		scaleShowGridLines: true,
 		//String - Colour of the grid lines
-		scaleGridLineColor: "rgba(0,0,0,.05)",
+		scaleGridLineColor: "#e8e8e8",
 		//Number - Width of the grid lines
 		scaleGridLineWidth: 1,
 		//Boolean - Whether to show horizontal lines (except X axis)
