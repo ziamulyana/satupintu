@@ -22,12 +22,7 @@ header("Content-Disposition: attachment; Filename=kwDakota-".$filename)
 	<div class="page">
 		<?php
 
-		foreach($kwDakota->result() as $row){
-
-			$tanggal  = strtotime($row->tglSurat);
-			$tglKw =strtotime($row->tglKwitansi);
-
-			function convertDay($day){
+		function convertDay($day){
 				$day = date('d',$day);
 				return $day;
 			}
@@ -72,6 +67,11 @@ header("Content-Disposition: attachment; Filename=kwDakota-".$filename)
 			}
 
 
+		foreach($kwDakota->result() as $row){
+
+			$tanggal  = strtotime($row->tglSurat);
+			$tglKw =strtotime($row->tglKwitansi);
+
 			?>
 			<p align="center"><b>DAFTAR PENGELUARAN RILL</b></p>
 			<br>
@@ -106,29 +106,26 @@ header("Content-Disposition: attachment; Filename=kwDakota-".$filename)
 
 			<p>1. Biaya transpor pegawai dan/atau biaya penginapan di bawah ini yang tidak dapat diperoleh bukti-bukti pengeluarannya, meliputi:</p>
 
-				<table style="width:100%" border="1">
-					<tr>
-											<th ><p>Nama</p></th>
+			<table style="width:100%" border="1">
+				<tr>
+					<th ><p>Nama</p></th>
 					<th><p>Uraian Biaya</p></th>
 					<th><p>Jumlah</p></th>
-					</tr>
+				</tr>
 
-					<tr>
-						<td><p>1</p></td>
-						<td><p>Transport Dalam Kota 1 Hari </p></td>
-						<td><p>Rp 150.000 </p></td>
-					</tr>
+				<tr>
+					<td><p>1</p></td>
+					<td><p>Transport Dalam Kota 1 Hari </p></td>
+					<td><p>Rp 150.000 </p></td>
+				</tr>
 
-					<tr>
-						<td><p> </p></td>
-						<td><p>	Jumlah</p></td>
-						<td><p>Rp 150.000 </p></td>
-					</tr>
+				<tr>
+					<td><p> </p></td>
+					<td><p>	Jumlah</p></td>
+					<td><p>Rp 150.000 </p></td>
+				</tr>
 
-				</table>
-
-			
-
+			</table>
 
 			<p>2. Jumlah uang tersebut pada angka 1 diatas benar-benar dikeluarkan untuk pelaksanaan dinas dimaksud dan apabila di kemudian hari terdapat kelebihan atas pembayaran, kami bersedia untuk menyetorkan kelebihan tersebut ke Kas Negara.</p>
 			<br>
@@ -136,10 +133,10 @@ header("Content-Disposition: attachment; Filename=kwDakota-".$filename)
 			<p>Demikian pernyataan ini kami buat dengan sebenarnya, untuk dipergunakan sebagimana mestinya.</p>
 
 
-				<table style="width:100%">
+			<table style="width:100%">
 				<tr>
-					<th class="c"><p><b>Mengetahui/Menyetujui</b></p></th> 
-					<th class="c"><p class="satu"><b>Batam, <?php echo convertDay($tglKw)."-".convertMonthB(convertMonthA($tglKw))."-".convertYear($tglKw) ;?></b></p></th> 
+					<th><p><b>Mengetahui/Menyetujui</b></p></th> 
+					<th><p class="satu"><b>Batam, <?php echo convertDay($tglKw)."-".convertMonthB(convertMonthA($tglKw))."-".convertYear($tglKw) ;?></b></p></th> 
 				</tr>
 				<tr>
 					<td><p><b>Pejabat Pembuat Komitmen</b></p></td> 
@@ -162,7 +159,7 @@ header("Content-Disposition: attachment; Filename=kwDakota-".$filename)
 					<td><p><b><?php echo $row->nama ?></b></p></td> 
 				</tr>
 
-					<tr>
+				<tr>
 					<td><p><b>NIP. 19830820 200712 2 001</b></p></td> 
 					<td><p><b><?php echo $row->nip ?></b></p></td> 
 				</tr>
@@ -177,7 +174,7 @@ header("Content-Disposition: attachment; Filename=kwDakota-".$filename)
 
 
 
-	
 
-</body>
-</html>
+
+	</body>
+	</html>

@@ -58,7 +58,7 @@ class Surat_pj extends CI_Controller {
 		$id = $this->input->post('idKw');
 		$data['idKw'] = $id;
 		$data['kwDakota'] = $this->SuratKw_model->dataDakota($id);
-		$this->template->load('layouts/admin_template', 'admin/pjDakota', $data);
+		$this->load->view('admin/pjDakota', $data, false);
 		
 
 	}
