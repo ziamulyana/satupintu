@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Surat_PJ extends CI_Controller {
+class Surat_pj extends CI_Controller {
 	// main page
 
 
@@ -55,7 +55,7 @@ class Surat_PJ extends CI_Controller {
 	}
 
 	public function printDk(){
-		$id = $this->input->post('idKwin');
+		$id = $this->input->post('idKw');
 		// $data['kwDakota'] = $this->SuratKw_model->dataDakota($id);
 		// $this->template->view('layouts/admin_template', 'admin/pjDakota', $data);
 		echo $id;
@@ -63,7 +63,7 @@ class Surat_PJ extends CI_Controller {
 	}
 
 	public function printLk(){
-		$id = $this->input->post('idKwin');
+		$id = $this->input->post('idKw');
 		// $data['kwDakota'] = $this->SuratKw_model->dataDakota($id);
 		// $this->template->view('layouts/admin_template', 'admin/pjDakota', $data);
 		echo $id;
