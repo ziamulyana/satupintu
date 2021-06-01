@@ -8,6 +8,7 @@ class Entry_capa_c extends MY_Controller
     {
         parent::__construct();
         $this->check_login();
+        $this->load->model('feedbackCapa');
         if ($this->session->userdata('id_role') != "1") {
             redirect('', 'refresh');
         }
@@ -42,5 +43,10 @@ class Entry_capa_c extends MY_Controller
             }
      
         
+    }
+
+    // <!-- get data with ajax jquery -->
+    public function getData(){
+        $this->feedbackCapa->getList();
     }
 }

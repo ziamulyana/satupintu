@@ -23,24 +23,7 @@
 
             <br>
 
-          <!-- nomor surat tugas -->
-          <div class="form-group row">
-                  <label for="kendaraan" class="col-sm-4 col-form-label">No.Surat Tugas<span class="wajib"> *</span></label>
-                  <div class="col-sm-12">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-newspaper-o"></i></span>
-                      <select name="suratTugas" id= "suratTugas" class="selectpicker form-control" data-live-search="true" required>
-                        <?php
-                        foreach ($surat_tugas as $surat) {
-                          echo "<option value=".$surat->id.">".$surat->noSuratTugas."</option>";
-                        }
-                        ?>
-                        <option selected="selected">- Pilih Surat Tugas -</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-
+          
             <!-- nomor Surat Peringatan -->
             <div class="form-group row">
               <label for="noSurat" class="col-sm-4 col-form-label">Surat Peringatan<span class="wajib"> *</span></label>
@@ -163,3 +146,21 @@
     font-size: 16px;
   }
 </style>
+
+
+<!-- get data with ajax jquery -->
+<script>
+$(document).ready(function(){
+  getDataForm()
+})
+function getDataForm(){
+  $.ajax({
+    type: "GET",
+    url: "http://localhost/satupintu/admin/entry_capa_c/getData",
+    // success: function (url) {
+    //     alert(url);
+
+    // }
+});
+}
+</script>
