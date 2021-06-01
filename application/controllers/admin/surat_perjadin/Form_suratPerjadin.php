@@ -20,98 +20,45 @@
         	$this->template->load('layouts/admin_template', 'admin/surat_perjadin/Form_suratperjadin', $data);
 			
 		}
-		
-		public function surat()
+
+		function getPetugas()
 		{
-
-				function convertMonths($month){
-				$month = date('m',$month);
-				return $month;
+			if($this->input->post('idSuratTugas'))
+			{
+				echo $this->SuratPerjadin_model->getPetugas($this->input->post('idSuratTugas'));
 			}
-
-			function convertYears($year){
-				$year = date('y',$year);
-				return $year;
-			}
-
-			$tanggal =  $this->input->post('tanggal');
-			$noSurat =  $this->input->post('noSurat');
-			$idTl= $this->input->post('suratTugas');
-			$penerimaSurat =  $this->input->post('penerimaSurat');
-			$kotaSurat =  $this->input->post('kotaSurat');
-			// detil sarana
-			$namaSarana =  $this->input->post('namaSarana');
-			$alamatSarana = $this->input->post('alamatSarana');
-			$tglMulaiperiksa = $this->input->post('tglMulaiperiksa');
-			$tglSelesaiperiksa = $this->input->post('tglSelesaiperiksa');
-			$noIzin =  $this->input->post('noIzin');
-			$namaPj =  $this->input->post('namaPj');
-			$noSip =  $this->input->post('noSip');
-			$noHp =  $this->input->post('noHp');
-			// detil temuan
-			$detailTemuan =  $this->input->post('detailTemuan');
-			$pilihPasal = $this->input->post('pilihPasal');
-
-				$tanggalolah  = strtotime($tanggal);
-
-			echo $tanggal;
-
-			$noSuratFix = "T-PW.01.12.9A2.".convertMonths($tanggalolah).".".convertYears($tanggalolah).".".$noSurat;
-			echo $noSuratFix;
-
-
-
-			$pasal_peringatan = array();
-			foreach ($pilihPasal as $num) {
-				$pasal['data'] = $this->SuratObat_model->getPasal($num);
-				array_push($pasal_peringatan,$pasal);
-			}
-
-
-			$data = array('title'=>'Cetak surat tugas',
-				'tanggal' => $tanggal,
-				'noSurat' => $noSuratFix,
-				'penerimaSurat' => $penerimaSurat,
-				'kotaSurat' => $kotaSurat,
-				// detil sarana
-				'namaSarana' => $namaSarana,
-				'alamatSarana' =>$alamatSarana,
-				'tglMulaiperiksa' => $tglMulaiperiksa,
-				'tglSelesaiperiksa' => $tglSelesaiperiksa,
-				'noIzin' => $noIzin,
-				'namaPj' => $namaPj,
-				'noSip' => $noSip, 
-				'noHp' => $noHp,
-				// detil temuan
-				'detailTemuan' => $detailTemuan,
-				// ganti ke db
-				'pilihPasal' => $pasal_peringatan
-				);		
-
-
-			$data_db = array(
-
-					'tglSuratPeringatan' => $tanggal,
-					'noSuratPeringatan' => $noSuratFix,
-					'jenisPeringatan' => "Toko Obat",
-					'idTl' => $idTl
-
-				);
-
-			$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
-			if($checkvalidation == true){
-				$this->db->insert('tbl_peringatan',$data_db);
-				$this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
-				$this->load->view('petugas/surat_peringatan/surat_obat/isiSurat', $data, FALSE);
-			}else{
-				$this->session->set_flashdata('failed', 'Data Duplikat');
-				redirect('petugas/surat_peringatan/Surat_obat', 'refresh');
-			}	
-
-			
 		}
 
-	}
+		public function Perjadin()
+		{
+			$data = konfigurasi('Form Surat Perjadin',"ap");
+			$data ['perjadin'] = $this->SuratPerjadin_model->getperjadin();
+			$this->template->load('layouts/admin_template', 'admin/surat_perjadin/form_suratperjadin', $data);
+		}
 
-	/* End of file Home.php */
-	/* Location: ./application/controllers/Home.php */
+		public function addSpd()
+		{
+			$tempat_berangkat = $this->input->post('tempatberangkat');
+			$tempat_tujuan = $this->input->post('tempattujuan');
+			$berangkat_dari = $this->input->post('berangkatdari');
+			$tiba_di = $this->input->post('tibadi');
+
+			$data = array (
+				'tempat_berangkat' => $tempatberangkat,
+				'tempat_tujuan' => $tempattujuan,
+				'berangkat_dari' => $berangkatdari,
+				'tiba_di' => $tibadi
+			);
+			$cek = $this->db->query("SELECT * FROM tbl_perjadin WHERE tempatberangkat='$tempat_berangkat");
+			if($cek->num_rows() != 0){
+				$this->session->set_flashdata('flash_error', 'Ditambahkan');
+				redirect('admin/surat_perjadin/form_suratperjadin/perjadin');
+			}else{
+				$query = $this->SuratPerjadin_model->addSpd('tbl_perjadin', $data);
+				$this->session->set_flashdata('flash', 'Ditambahkan');
+				redirect('admin/surat_perjadin/form_suratperjadin/perjadin');
+			}
+
+		}
+		
+}

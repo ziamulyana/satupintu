@@ -10,41 +10,70 @@ class SuratTugas_model extends CI_Model
   {
       parent::__construct();
   }
-  
+
   public function checkDuplicate($no_surat)
   {
-      $this->db->where('noSuratTugas',$no_surat);
-      $query = $this->db->get('tbl_surattugas');
-      $count_row = $query->num_rows();
-      if ($count_row > 0){
-          return false;
-      }
-      else{
-          return true;
-      }
+    $this->db->where('noSuratTugas',$no_surat);
+    $query = $this->db->get('tbl_surattugas');
+    $count_row = $query->num_rows();
+    if ($count_row > 0){
+      return false;
+    }
+    else{
+      return true;
+    }
   }
 
-  public function getNamaPegawai()
-  { 
-      
-    $this->db->select('*');
-    $this->db->from('tbl_pegawai');
-    $query = $this->db->get();
+  public function getTugas()
+  {
+
+    $this->db->select('tbl_tugas.idTugas, tbl_tugas.idSuratTugas, tbl_surattugas.noSuratTugas');
+    $this->db->from('tbl_tugas');
+    $this->db->join('tbl_surattugas', 'tbl_tugas.idSuratTugas = tbl_surattugas.idSurat');
+    $this->db->group_by('tbl_tugas.idSuratTugas');
+    $query = $this->db->get('');
     return $query->result();
   }
 
-   public function getSuratTugas()
+  public function getPetugas($id){
+    $this->db->select('tbl_tugas.idTugas,tbl_pegawai.nama');
+    $this->db->from('tbl_tugas');
+    $this->db->join('tbl_pegawai', 'tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
+    $this->db->where('tbl_tugas.idSuratTugas', $id);
+    $query = $this->db->get('');
+    $output = '<option value="">Pilih Petugas</option>';
+    foreach($query->result() as $row)
+    {
+     $output .= '<option value="'.$row->idTugas.'">'.$row->nama.'</option>';
+ }
+ return $output;
+
+  }
+
+
+   public function getsurattugas()
     { 
       
       $this->db->select('*');
       $this->db->from('tbl_surattugas');
+      $this->db->order_by('idSurat','DESC');
       $query = $this->db->get();
-      return $query;
+      return $query->result_array();
     }
 
-    public function updateSuratTugas($data){
-      $this->db->where('id', $data['id']);
-      $query = $this->db->update($data,'tbl_surattugas');
- 
-  }
+    public function updatesurattugas($where,$data,$table)
+    {
+      $this->db->where($where);
+      $this->db->update($table,$data);
+    }
+
+    public function getPegawai()
+    {
+
+      $this->db->select('*');
+      $this->db->from('tbl_pegawai');
+      $query = $this->db->get();
+      return $query->result();
+    }
+
       }

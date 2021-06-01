@@ -139,3 +139,55 @@
 <!-- /.row -->
 </section>
 <!-- /.content -->
+
+<!-- dynamic form -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    $('#surattugas').change(function()
+    {
+      var idSuratTugas=$('#surattugas').val();
+      if(idSuratTugas!=''){
+        $.ajax({
+          url: "<?php echo base_url();?>admin/surat_perjadin/form_suratperjadin/getPetugas",    
+          method: "POST",
+          data: {idSuratTugas:idSuratTugas},
+          success: function(data)
+          {
+            $('#petugas').html(data);
+          } 
+        });
+      }else{
+        $('#petugas').html('<option value="">Pilih Petugas</option>');
+      }
+
+
+    });
+  });
+</script>
+
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    var i = 1;
+
+    $("#add").click(function(){
+      i++;
+      $('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="uraian[]" id="uraian[]" placeholder="Uraian Biaya" class="form-control name_list"/></td>  <td><select name="kategori[]" id="kategori[]"  class="form-control input-sm" data-live-search="true" title="Select Sub Category">  <option>Pilih Kategori</option>   <option value="uh">Uang Harian</option><option value="tr">Transport</option><option value="rl">Riil</option><option value="ht">Hotel</option></select></td><td><input type="text" name="biaya[]" id="biaya[]" placeholder="Jumlah Biaya" class="form-control name_email"/></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
+    });
+
+    $(document).on('click', '.btn_remove', function(){  
+      var button_id = $(this).attr("id");   
+      $('#row'+button_id+'').remove();  
+    });
+
+  });
+</script>

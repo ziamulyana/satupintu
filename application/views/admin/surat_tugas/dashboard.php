@@ -44,7 +44,7 @@
 
                 <!-- /.box-header -->
                 <div class="box-body">
-                  <table id="tbl" class="table table-bordered table-striped">
+                  <table id="tblsurat" class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th class="dt-center">No</th>
@@ -58,27 +58,20 @@
                     </thead>
                     <tbody>
                       <?php $no = 1;     
-                      if(isset($list_surattugas)){
-                       foreach ($list_surattugas->result() as $row){
-                        
-                        echo "<tr>";
-                        echo "<td class='dt-center'>".$no++."</td>"; 
-                        echo "<td class='dt-center'>".$row->noSuratTugas."</td>";      
-                        echo "<td class='dt-center'>".$row->tglSurat."</td>";
-                        echo "<td class='dt-center'>".$row->maksud."</td>";
-                         echo "<td class='dt-center'>".$row->kota."</td>";
-                        echo "<td class='dt-center'>"?>                             
-                            <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editDataSuratTugas"
-                            " data-noSuratTugas="<?= $row->noSuratTugas ?>" data-tglSurat="<?=  $row->tglSurat ?>" data-maksud="<?=  $row->maksud ?>" data-kota="<?=  $row->kota ?>" data-toggle="modal" data-target="#editModal" ><i class="fa fa-edit"></i></a>
-
+                       foreach($rowsurattugas as $data) { ?>
+                        <tr>
+                          <td><?= $no++ ?></td>
+                          <td><?= $data['noSuratTugas'] ?></td>
+                          <td><?= date("d F Y", strtotime($data['tglSurat'])); ?></td>
+                          <td><?= $data['maksud'] ?></td>
+                          <td><?= $data['kota'] ?></td>
+                            <td class="text-center" width="100px">
+                              <a href="#" class="btn btn-success btn-sm" id="edit_surat" data-tooltip="tooltip" data-toggle="modal" title="Edit" data-target="#editSurat" data-id="<?= $data['idSurat'] ?>" data-surat="<?= $data['noSuratTugas'] ?>" data-tgl="<?=date("d F Y", strtotime($data['tglSurat'])) ?>" data-maksud="<?= $data['maksud'] ?>" data-kota="<?= $data['kota'] ?>">
+                              <i class="fa fa-edit"></i></a>
                             </td>
-                            
-                            <?php 
-                      }
-                    }else{
-                      echo "no record found";
-                    }
-                    ?>
+                        </tr>
+                      <?php } ?>
+
                   </tbody>
                 </table>
               </div>
@@ -111,62 +104,72 @@
 </div>
 <!-- /.row -->
 
-<!-- Edit Modal -->
-    <div id= "editModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"><i class="icon fa fa-edit"></i>  Form Edit Data Surat Tugas</h4>
-                </div>
-                <div class="modal-body" id=#editData >
-                    <form action="<?= base_url('petugas/surat_peringatan/c_surat_peringatan/ubah_suratPeringatan')?>" method="post">
-                    <div class="box box-success">
-                        <div class="box-body">
-                           <div class="form-group">
-                                
-                                <input type="hidden" class="form-control" name="id" id="id" >
-                            </div>
-
-                            <div class="form-group">
-                                <label for="noEdit">No. Surat Tugas</label> <small class="text-danger">*</small>
-                                <input type="text" class="form-control" name="noEdit" id="noEdit" placeholder="Tanggal Surat Peringatan" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="tglEdit">Tanggal Surat Tugas</label> <small class="text-danger">*</small>
-                                <input type="text" class="form-control" name="tglEdit" id="tglEdit" placeholder="Tanggal Surat Peringatan" required>
-                            </div>
-                          
-                                   
-                        </div><!-- /.box-body -->                        
-                        <div class="modal-footer">
-                            <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                            <button type="submit" name="update" class="btn btn-success"><i class="fa fa-edit"></i> Update</button>
-                        </div>
-                    </div>
-                    </form>
-                </div>
-            </div>
+<!-- Edit Surat Tugas -->
+   <div id="editSurat" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Ubah Surat Tugas</h4>
         </div>
-    </div>
-    <script src="<?php echo base_url();?>assets/vendor/jquery/jquery-1.10.0.min.js" type="text/javascript"></script>
-    <script type="text/javascript" >
-        $(document).on("click","#editDataPeringatan",function(){
-            var id = $(this).data('id');
-            var tglEdit = $(this).data('tglPeringatan');
-            var noEdit = $(this).data('noSuratPeringatan');
-            var fileEdit = $(this).data('filePeringatan');
 
-      
-            $("#editData #id").val(id);
-            $("#editData #tglEdit").val(tglEdit);
-            $("#editData #noEdit").val(noEdit);
-            $("#editData #fileEdit").val(fileEdit);
-          
-        });
-    </script>
-<!-- /. Edit Modal -->
+        <form role="form" method="post" action="<?= site_url('admin/surat_tugas/surat_tugas/updatesurattugas') ?>">
+        <div class="modal-body" id="ubahSurat">
+          <div class="box-body">
+            <div class="form-group">
+              <label for="editnosurat">No Surat Tugas</label><span class="wajib"> *</span>
+              <input type="text" class="form-control" name="editnosurat" id="editnourat" placeholder="No Surat Tugas" required>
+            </div> 
+            
+            <div class="form-group" id="sandbox-container">
+              <input type="hidden" name="idsurat" id="idsurat">
+              <label for="edittanggal">Tanggal </label><span class="wajib"> *</span>
+              <div class="input-group date">
+                <input type="text" class="form-control" name="edittanggal" id="edittanggal" required>
+                <div class="input-group-addon">
+                  <i class="fa fa-calendar"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="maksud">Maksud</label><span class="wajib"> *</span>
+              <input type="text" class="form-control" name="maksud" id="maksud" placeholder="Maksud" required>
+            </div>
+
+            <div class="form-group">
+              <label for="kota">Kota</label><span class="wajib"> *</span>
+              <input type="text" class="form-control" name="kota" id="kota" placeholder="Kota" required>
+            </div>
+          </div>
+        </div><!-- /.box-body -->
+        <div class="modal-footer">
+          <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+          <button type="submit" name="update" class="btn btn-success"><i class="fa fa-check"></i> Update</button>
+        </div>
+
+        <script src="<?php echo base_url();?>assets/vendor/jquery/jquery-1.10.0.min.js" type="text/javascript">></script>
+        
+        <script type="text/javascript">
+            $(document).on("click","#editSurat",function(){
+              var id = $(this).data('id');
+              var nosurat = $(this).data('nosurat');
+              var tglsurat = $(this).data('tglsurat');
+              var maksud = $(this).data('maksud');
+              var kota = $(this).data('kota');
+              $("ubahsurat #idsurat").val(id);
+              $("ubahsurat #editnosurat").val(nosurat);
+              $("ubahsurat #edittglsurat").val(tglsurat);
+              $("ubahsurat #editmaksud").val(maksud);
+              $("ubahsurat #editkota").val(kota);
+              });
+          </script>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>            
+
 </section>
 
 
