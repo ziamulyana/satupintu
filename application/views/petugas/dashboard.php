@@ -6,57 +6,54 @@
       Elektronik Surat Tugas.
     </div>
     <div class="row">
-        <!-- ./col -->
-        <div class="col-lg-4 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3>53</sup></h3>
+      <!-- ./col -->
+      <div class="col-lg-4 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-green">
+          <div class="inner">
+            <h3><?php echo $this->db->where('timeline >', 7)->from("view_notif")->count_all_results(); ?></h3>
 
-              <p>AKTIF</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <p>AKTIF</p>
+          </div>
+          <div class="icon">
+            <i class="small fa fa-check-square-o"  style="font-size:70px;"></i>
           </div>
         </div>
-        <!-- ./col -->
-        <div class="col-lg-4 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3>44</h3>
-
-              <p>TENGGANG</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-4 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3>65</h3>
-
-              <p>EXPIRED</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
       </div>
+      <!-- ./col -->
+      <div class="col-lg-4 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-yellow">
+          <div class="inner">
+            <h3><?php echo $this->db->where('timeline >=', 4)->where('timeline <=', 7)->from("view_notif")->count_all_results(); ?></h3>
+
+            <p>TENGGANG</p>
+          </div>
+          <div class="icon">
+            <i class="fa  fa-clock-o" style="font-size:70px;"></i>
+          </div>
+        </div>
+      </div>
+      <!-- ./col -->
+      <div class="col-lg-4 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-red">
+          <div class="inner">
+            <h3><?php echo $this->db->where('timeline <=', 3)->from("view_notif")->count_all_results(); ?></h3>
+
+            <p>EXPIRED</p>
+          </div>
+          <div class="icon">
+            <i class="fa fa-exclamation-circle" style="font-size:70px;"></i>
+          </div>
+        </div>
+      </div>
+      <!-- ./col -->
+    </div>
     <!-- BAR CHART -->
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h3 class="box-title"><b>Grafik Closed Open</b></h3>
+        <h3 class="box-title"><b>Grafik Feedback</b></h3>
         <div class="box-body">
           <div class="box-body">
             <div class="chart">
@@ -68,9 +65,8 @@
             <canvas id="areaChart"></canvas>
           </div>
           <div class="mid">
-            <small class="label label-danger"></i> EXPIRED</small>
-            <small class="label label-warning"></i> TENGGANG</small>
-            <small class="label label-success"></i> AKTIF</small>
+            <small class="label label-danger"></i> OPEN</small>
+            <small class="label label-success"></i> CLOSED</small>
           </div>
           <!-- /.box-body -->
         </div>
@@ -158,6 +154,6 @@
 
   .mid {
     margin: auto;
-    width: 30%;
+    width: 17%;
   }
 </style>
