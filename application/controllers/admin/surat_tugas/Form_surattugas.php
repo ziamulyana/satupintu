@@ -17,9 +17,64 @@
 		public function index()
 		{
 			$data = konfigurasi('Form Surat Tugas',"ap");
-			$data['pegawai'] = $this->SuratTugas_model->getNamaPegawai();
+			$data['tugas'] = $this->SuratTugas_model->getTugas();
+			$data['pegawai'] = $this->SuratTugas_model->getPegawai();
         	$this->template->load('layouts/admin_template', 'admin/surat_tugas/form', $data);
 			
+		}
+
+		function getPetugas()
+		{
+			if($this->input->post('idSuratTugas'))
+			{
+				echo $this->SuratTugas_model->getPetugas($this->input->post('idSuratTugas'));
+			}
+		}
+
+		public function simpanSurat()
+		{
+			$noSuratTugas = $this->input->post('noSuratTugas');
+			$tglSurat = $this->input->post('tglSurat');
+			$tglMulai = $this->input->post('tglMulai');
+			$bebanBiaya = $this->input->post('bebanBiaya');
+			$kendaraan = $this->input-post('kendaraan');
+			$kota = $this->input->post('kota');
+			$idAnggaran = $this->input->post('idAnggaran');
+			$tglSelesai = $this->input->post('tglSelesai');
+			$maksud = $this->input->post('maksud');
+			$namaPenandatangan = $this->input->post('namaPenandatangan');
+			$jabatanPenandatangan = $this->input->post('jabatanPenandatangan');
+			$idPetugas = $this->input->post('idPetugas');
+
+			$data1 = array (
+				'noSuratTugas' => $noSuratTugas,
+				'tglSurat' => $tglSurat,
+				'tglMulai' => $tglMulai,
+				'bebanBiaya' => $bebanBiaya,
+				'kendaraan' => $kendaraan,
+				'kota' => $kota,
+				'idAnggaran' => $idAnggaran,
+				'tglSelesai' => $tglSelesai,
+				'maksud' => $maksud,
+				'namaPenandatangan' => $namaPenandatangan,
+				'jabatanPenandatangan' => $jabtanPenandatangan,
+				'idPetugas' => $idPetugas
+			);
+
+			$this->db->insert('tbl_surattugas',$data1);
+
+			
+
+			for ($i=0; $i <count($petugas) ; $i++) {
+				$data2 = array (
+					'nama' => $nama[$i]
+				);
+
+				$this->db->insert('tbl_pegawai',$data2);
+			}
+			$this->session->set_flashdata('success', 'Data Berhasil Dimasukan');
+			redirect('admin/Surat_tugas', 'refresh');
+
 		}
 		
 		public function surat()

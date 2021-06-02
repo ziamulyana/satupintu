@@ -252,9 +252,6 @@
 
                   </select>
                 </div>
-              </div>
-
-
               <!-- /.box-body -->
             </div>
             <!-- /.box -->
@@ -268,8 +265,6 @@
     <style>
       th.dt-center, td.dt-center { text-align: center; }
     </style>
-
-  </div>
 
         <div class="box-footer">
          <button type="submit" value="submit" onclick="return chk_date()" class="btn btn-info"><i class="fa fa-print"></i> Save Document</button>
