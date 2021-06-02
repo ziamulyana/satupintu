@@ -70,6 +70,25 @@ class Surat_pj extends CI_Controller {
 		$this->load->view('admin/pjLukota', $data, false);
 	}
 
+		public function list_nominatif(){
+		$data = konfigurasi('List Nominatif per Surat Tugas',"ap");
+		$data['tugas'] = $this->SuratKw_model->getTugas();
+		$this->template->load('layouts/admin_template', 'admin/list_nominatif', $data);
+	}
+
+	public function nominatifDk(){
+		$id = $this->input->post('idKw');
+		$data['idKw'] = $id;
+		$data['nomDakota'] = $this->SuratKw_model->getNomDk($id);
+		$this->load->view('admin/nomDk', $data, false);
+	}
+	public function nominatifLk(){
+		$id = $this->input->post('idKw');
+		$data['idKw'] = $id;
+		// $data['kwLukota'] = $this->SuratKw_model->dataKw($id);
+		$this->load->view('admin/nomLk', $data, false);
+	}
+
 }
 
 /* End of file Home.php */
