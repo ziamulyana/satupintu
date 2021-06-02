@@ -37,7 +37,7 @@
 			$tglSurat = $this->input->post('tglSurat');
 			$tglMulai = $this->input->post('tglMulai');
 			$bebanBiaya = $this->input->post('bebanBiaya');
-			$kendaraan = $this->input-post('kendaraan');
+			$kendaraan = $this->input->post('kendaraan');
 			$kota = $this->input->post('kota');
 			$idAnggaran = $this->input->post('idAnggaran');
 			$tglSelesai = $this->input->post('tglSelesai');
@@ -57,7 +57,7 @@
 				'tglSelesai' => $tglSelesai,
 				'maksud' => $maksud,
 				'namaPenandatangan' => $namaPenandatangan,
-				'jabatanPenandatangan' => $jabtanPenandatangan,
+				'jabatanPenandatangan' => $jabatanPenandatangan,
 				'idPetugas' => $idPetugas
 			);
 

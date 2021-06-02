@@ -34,6 +34,12 @@ class SuratTugas_model extends CI_Model
     return $query->result_array();
   }
 
+  public function addsurattugas()
+  {
+    $insert = $this->db->insert($table,$data);
+    return $data;
+  }
+
   public function delsurat($where,$data,$table)
   {
     $this->db->where($where);

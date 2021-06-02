@@ -13,7 +13,7 @@
 <section class="content">
   <div class="row">
    <div class="col-md-12">
-     <form role="form" action="<?php echo base_url('admin/surat_tugas/surat_tugas')?>" method="post">
+     <form role="form" action="<?php echo base_url('admin/surat_tugas/form_surattugas/simpanSurat')?>" method="post">
       <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">Form Pembuatan Surat Tugas</h3>
@@ -25,11 +25,11 @@
           
           <!-- nomor surat -->
           <div class="form-group row">
-            <label for="noSurat" class="col-sm-4 col-form-label">Nomor Surat Tugas<span class="wajib"> *</span></label>
+            <label for="noSuratTugas" class="col-sm-4 col-form-label">Nomor Surat Tugas<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                <input type="text" class="form-control" placeholder="Nomor Surat Tugas" name="noSurat" id="noSurat" required>
+                <input type="text" class="form-control" placeholder="Nomor Surat Tugas" name="noSuratTugas" id="noSuratTugas" required>
               </div>
             </div>
           </div>
@@ -38,7 +38,7 @@
           <div class="form-group row">
             <label for="example-date-input" class="col-sm-5 col-form-label">Tanggal Surat Tugas<span class="wajib"> *</span></label>
             <div class="col-sm-12"> 
-              <input class="form-control" type="date" name ="tanggalSurat" id="tanggalSurat" placeholder="Tanggal" required>
+              <input class="form-control" type="date" name ="tglSurat" id="tglSurat" placeholder="Tanggal" required>
             </div>
           </div>
 
@@ -48,7 +48,7 @@
             <div class="col-sm-12">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                <select class="form-control" name="kotaTujuan" id="kotaTujuan" required>
+                <select class="form-control" name="kota" id="kota" required>
                 <?php
                 foreach ($nama_kota as $kota) {
                   echo "<option value=".$kota->id_kota.">".$kota->nama."</option>";
@@ -60,32 +60,13 @@
             </div>
           </div>
 
-          <!-- jumlah petugas -->
-          <div class="form-group row">
-            <label for="jumlahPetugas" class="col-sm-4 col-form-label">Jumlah Petugas<span class="wajib"> *</span></label>
-            <div class="col-sm-12">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <select class="form-control" name="jumlahPetugas" id="jumlahPetugas" required>
-                      <option selected="selected">- Select -</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
           <!-- Anggaran -->
           <div class="form-group row">
             <label for="anggaran" class="col-sm-4 col-form-label">Anggaran<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                <input type="text" class="form-control" name="anggaran" id="anggaran" placeholder="Anggaran" required>
+                <input type="text" class="form-control" name="idAnggaran" id="idAnggaran" placeholder="Anggaran" required>
               </div>
             </div>
           </div>
@@ -111,7 +92,7 @@
           <div class="form-group row">
             <label for="example-date-input" class="col-sm-5 col-form-label">Tanggal Mulai Tugas<span class="wajib"> *</span></label>
             <div class="col-sm-12">
-              <input class="form-control" type="date" name ="tglMulaitugas" id="tglMulaitugas" placeholder="Tanggal Mulai Tugas" required>
+              <input class="form-control" type="date" name ="tglMulai" id="tglMulai" placeholder="Tanggal Mulai Tugas" required>
             </div>
           </div>
 
@@ -130,28 +111,9 @@
           <div class="form-group row">
             <label for="example-date-input" class="col-sm-5 col-form-label">Tanggal Selesai Tugas<span class="wajib"> *</span></label>
             <div class="col-sm-12">
-              <input class="form-control" type="date" name ="tglSelesaitugas" id="tglSelesaitugas" placeholder="Tanggal Selesai Tugasa" onclick="return chk_date()">
+              <input class="form-control" type="date" name ="tglSelesai" id="tglSelesai" placeholder="Tanggal Selesai Tugasa" onclick="return chk_date()">
             </div>
           </div>
-
-          <script>
-            function chk_date()
-            {
-              var durationstart = document.getElementById('tglMulaiperiksa').value;
-              var durationend = document.getElementById('tglSelesaiperiksa').value;
-              var st = durationstart.split("-");
-              var en = durationend.split("-");
-              var startDate = new Date(st[2], (+st[0] - 1), st[1]);                  
-              var endDate = new Date(en[2], (+en[0] - 1), en[1]);
-              if (startDate > endDate) {
-                alert("Please enter proper duration range");
-                return false;
-              } else {
-                return true;
-              }
-            }
-
-          </script>
 
           <!-- beban biaya -->
           <div class="form-group row">
@@ -187,7 +149,7 @@
             <div class="col-sm-12">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <select class="form-control" name="namaPenandatanganst" id="namaPenandatanganst" required>
+                <select class="form-control" name="namaPenandatangan" id="namaPenandatangan" required>
                   <option selected="selected">- Select -</option>
                   <option>Bagus Heri Purnomo, S.Si., Apt</option>
                   <option>Larasati Setyaningtyas, S.Farm., Apt</option>
@@ -206,7 +168,7 @@
             <div class="col-sm-12">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <select class="form-control" name="jabatanPenandantanganst" id="jabatanPenandantanganst" required>
+                <select class="form-control" name="jabatanPenandatangan" id="jabatanPenandatangan" required>
                       <option selected="selected">- Select -</option>
                       <option>Kepala Balai POM di Batam</option>
                       <option>PLH Kepala Balai POM di Batam Koordinator Substansi Informasi dan Komunikasi</option>
@@ -239,11 +201,11 @@
             <div class="col-xs-12">
               <div class="box">
 
-              <!-- Pelanggaran -->
+              <!-- Petugas -->
               <div class="form-group row">
                 <label for="pilihPetugas" class="col-sm-3 col-form-label">Pilih Petugas<span class="wajib"> *</span></label>
                 <div class="col-md-12">
-                  <select class="category related-post form-control" name="pilihPetugas" id= "pilihPetugas" multiple="multiple" data-placeholder="Pilih Petugas" style="width: 100%;" required>
+                  <select class="category related-post form-control" name="idPetugas" id= "idPetugas" multiple="multiple" data-placeholder="Pilih Petugas" style="width: 100%;" required>
                     <?php
                     foreach ($pegawai as $pegawai) {
                       echo "<option value=".$pegawai->idPegawai.">".$pegawai->nama."</option>";
