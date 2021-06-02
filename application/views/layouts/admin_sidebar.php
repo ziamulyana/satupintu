@@ -52,8 +52,20 @@
 
         <li class="active"><a href="<?php echo base_url('admin/surat_perjadin/surat_perjadin')?>"><i class="fa fa-plane"></i> <span>Surat Perjalanan Dinas</span></a></li>
 
-         <li class="active"><a href="<?php echo base_url('admin/surat_pj')?>"><i class="fa fa-money"></i> <span>Pertanggung Jawaban</span></a></li>
+         <li class="treeview" style="height: auto;">
+        <a href="#">
+          <i class="fa fa-money"></i> <span>Pertanggung Jawaban</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu" style="display: none;">
+          <li><a href="<?php echo base_url('admin/surat_pj')?>"><i class="fa fa-circle-o"></i>Surat PJ</a></li>
+          <li><a href="<?php echo base_url('admin/surat_pj/list_nominatif')?>"><i class="fa fa-circle-o"></i>Nominatif</a></li>
+        </ul>
+      </li>
 
+         
         <li class="active"><a href="<?php echo base_url('admin/Feedback')?>"><i class="fa fa-share"></i> <span>Feedback CAPA</span></a></li>
   </ul>
     <!-- /.sidebar-menu -->

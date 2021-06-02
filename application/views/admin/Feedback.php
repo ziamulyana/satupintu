@@ -13,30 +13,7 @@
 
   <section class="content">
 
-    <div class="box">
-      <div class="box-header with-border">
-       <h4>Hai <b>Admin!</b> </h4>
-       <div class="box-tools pull-right">
-        <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
-        <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
-      </div>
-    </div>
-    <div class="box-body">
-     <h5> Berikut laporan feedback CAPA Sarana. </h5>
-
-     <?php if($jumlah_confirm>0){
-      ?>
-
-      <div class="alert alert-danger alert-dismissable" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <h4><i class="icon fa fa-exclamation"></i> Alert!</h4>
-        Terdapat <strong><?php echo $jumlah_confirm ?></strong> feedback  <?= $this->session->flashdata('flash_error'); ?> yang butuh konfirmasi. Silahkan cek pada tabel!  
-
-      <?php  }; ?>  
-        </div>
-
-      </div>
-
+   
         <div class="row">
           <div class="col-xs-12">
             <div class="box">
@@ -117,17 +94,7 @@
 
                  <?php  } 
 
-                 if($row->file_feedback !=0){ ?>
-                        <a href="../../assets/uploads/files/peringatan/suratPeringatan-<?php echo $row ->idPeringatan ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" ><i class="fa fa-eye"></i></a>
 
-                        <?php  } else{
-                          ?>
-                          <a href="#" data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" disabled><i class="fa fa-eye"></i></a>
-                       <?php } ?>
-
-                   <?php echo "</td>";
-
-                  }
                 }else{
                   echo "no record found";
                 }

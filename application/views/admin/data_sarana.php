@@ -196,12 +196,12 @@
 		$("#editData #namasEdit").val(namaSar);
 		$("#editData #alamatsEdit").val(alamatSar);
 		$("#editData #pemiliksEdit").val(pemilikSar;
-			$("#editData #noISEdit").val(noIsar);
-			$("#editData #pJEdit").val(pjSar);
-			$("#editData #noIPJEdit").val(noIpsar);
-			$("#editData #kSEdit").val(kSar;
-				$("#editData #jSEdit").val(jSar);
-				$("#editData #kotasEdit").val(kotaSar);
+		$("#editData #noISEdit").val(noIsar);
+		$("#editData #pJEdit").val(pjSar);
+		$("#editData #noIPJEdit").val(noIpsar);
+		$("#editData #kSEdit").val(kSar);
+		$("#editData #jSEdit").val(jSar);
+		$("#editData #kotasEdit").val(kotaSar);
 			});
 		</script>
 

@@ -21,12 +21,12 @@ class SuratKw_model extends CI_Model{
   }
 
 
-  public function updateKw($data){
-   $this->db->set('tglKwitansi', $data['tglKwitansi']); 
-   $this->db->set('fileKwitansi', $data['fileKwitansi']);
-   $this->db->where('idKwitansi', $data['idKwitansi']);
-   $query = $this->db->update('tbl_kwitansi');
- }
+ //  public function updateKw($data){
+ //   $this->db->set('tglKwitansi', $data['tglKwitansi']); 
+ //   $this->db->set('fileKwitansi', $data['fileKwitansi']);
+ //   $this->db->where('idKwitansi', $data['idKwitansi']);
+ //   $query = $this->db->update('tbl_kwitansi');
+ // }
 
 
  public function dataKw($id){
@@ -39,6 +39,27 @@ class SuratKw_model extends CI_Model{
    $this->db->where('tbl_kwitansi.idKwitansi', $id);
    $query = $this->db->get('');
    return $query;
+ }
+
+
+ public function getFile(){
+   $this->db->select('fileKwitansi');
+   $this->db->where('fileKwitansi =','0');
+   $query = $this->db->get('tbl_kwitansi');
+   return $query->num_rows();
+
+ }
+
+ public function getTugas(){
+  $this->db->select('*');
+   $this->db->from('tbl_surattugas');
+   $query = $this->db->get('');
+   return $query;
+ }
+
+ public function getNomDk($id){
+  $this->db->select()
+
  }
 
 
