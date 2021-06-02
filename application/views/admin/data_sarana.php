@@ -217,7 +217,7 @@
                     <form role="form" method="post" action="<?= base_url('admin/Master/hapus_dataSarana') ?>">
                         <div class="box-body">
                             <div class="form-group" style="text-align:center">Anda yakin akan menghapus Data Sarana ini ?</label>
-                                <input type="hidden" id="idPg" name="idPg">
+                                <input type="hidden" id="idHapus" name="idHapus">
                               
                             </div>                        
                         </div><!-- /.box-body -->
@@ -228,9 +228,9 @@
                     </form>             
                         <script src="<?php echo base_url();?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
                         <script type="text/javascript" >
-                            $(document).on("click","#hapusPeg",function(){
+                            $(document).on("click","#hapusSr",function(){
                                 var id = $(this).data('id');
-                                $("#hapusData #idPg").val(id);
+                                $("#hapusData #idHapus").val(id);
                             });
                         </script>
                 </div>

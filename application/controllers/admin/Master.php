@@ -160,7 +160,7 @@ public function hapus_dataPegawai(){
     
 
         public function hapus_dataSarana(){
-        $id = $this->input->post('idSr');
+        $id = $this->input->post('idHapus');
         $this->Master_model->hapus_dataSarana($id);
         redirect('admin/Master/data_sarana');
         }
