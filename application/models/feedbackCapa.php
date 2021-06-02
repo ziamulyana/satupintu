@@ -4,45 +4,51 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class FeedbackCapa extends CI_Model{
 
 
-  function __construct()
-  {
-    parent::__construct();
-}
-
-
-public function getPeringatan(){
-    //$this->db->select('tbl_peringatan.idPeringatan, tbl_tugas.idSuratTugas, tbl_surattugas.noSuratTugas');
-    //$this->db->from('tbl_tugas');
-    //$this->db->join('tbl_surattugas', 'tbl_tugas.idSuratTugas = tbl_surattugas.idSurat');
-    //$this->db->group_by('tbl_tugas.idSuratTugas');
-    //$query = $this->db->get('');
-    //return $query->result();
-}
-
-public function getPetugas($id){
-    $this->db->select('tbl_tugas.idTugas,tbl_pegawai.nama');
-    $this->db->from('tbl_tugas');
-    $this->db->join('tbl_pegawai', 'tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
-    $this->db->where('tbl_tugas.idSuratTugas', $id);
-    $query = $this->db->get('');
-    $output = '<option value="">Pilih Petugas</option>';
-    foreach($query->result() as $row)
+      function __construct()
     {
-     $output .= '<option value="'.$row->idTugas.'">'.$row->nama.'</option>';
- }
- return $output;
+      parent::__construct();
+  }
+  
+  
+public function getPeringatan(){
+      $this->db->select('*');
+      $this->db->from('tbl_peringatan');
+      $this->db->where('status','0');      
+      $query = $this->db->get('');
+      return $query->result();
+  }
+  
+  
+//   function getSaranaModel(){
+//     $this->db->select('namaSarana');
+//     $this->db->from('tbl_sarana');
+//     $this->db->where('idSarana','3');      
+//     $query = $this->db->get('');
+//     return $query->result();
+//   }
+
+  function getSaranaModel($postData=array()){
+ 
+    $response = array();
+ 
+    if(isset($postData['username']) ){
+ 
+      // Select record
+      $this->db->select('namaSarana');
+      $this->db->where('idSarana', '3');
+      $records = $this->db->get('tbl_sarana');
+      $response = $records->result_array();
+ 
+    }
+ 
+    return $response;
+  }
 
 
-}
+  function saveData($params){
+	$this->db->insert('tbl_feedback',$params);
 
-public function getRowKwitansi(){
-    $this->db->select('idKwitansi');
-    $this->db->from('tbl_kwitansi');
-    $this->db->order_by('idKwitansi','desc');
-     $this->db->limit(1);  
-     $query = $this->db->get('');
-     return $query->row();
-}
-
-
+    $this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
+    redirect('/admin/Feedback', 'refresh');
+  }
 }

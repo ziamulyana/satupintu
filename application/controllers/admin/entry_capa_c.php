@@ -13,63 +13,42 @@
     }
 
 
-		public function index()
+		function index()
 		{
         	$data['peringatan'] = $this->feedbackCapa->getPeringatan();
             $this->template->load('layouts/admin_template', 'admin/entry_capa_v', $data);
 		}
 
-		function getSarana()
-		{
-			if($this->input->post('idSarana'))
-			{
-				echo $this->feedbackCapa->getPetugas($this->input->post('idSarana'));
-			}
+		function getSarana(){
+			// $data['namaSaranaV'] = $this->feedbackCapa->getSaranaModel();
+            // $this->template->load('layouts/admin_template', 'admin/entry_capa_v', $data);
+			$postData = $this->input->post();
+
+			// get data
+			$data = $this->feedbackCapa->getSaranaModel($postData);
+		
+			echo json_encode($data);
 		}
 
-		
-		public function simpanKwitansi()
-		{
+		function add_data(){
+			$this->feedbackCapa->saveData($this->inputFields());
+		}
 
-				
-			$noSurat =  $this->input->post('surattugas');
-			$petugas =  $this->input->post('petugas');
+		function inputFields(){
+			$idPeringatan =  $this->input->post('noSuratPeringatan');
+			$noFeedback =  $this->input->post('noFeedback');
 			$tanggal =  $this->input->post('tanggal');
-			$uraian =  $this->input->post('uraian');
-			$kategori =  $this->input->post('kategori');
-			$biaya =  $this->input->post('biaya');
+			$perihalFeedback =  $this->input->post('perihalFeedback');
 
-			$idKwitansi = $this->SuratPj_model->getRowKwitansi();
-			$idKw = $idKwitansi->idKwitansi + 1;
-
-		
-			$data1 = array(
-				'tglKwitansi' => $tanggal,
-				'fileKwitansi' => '0',
-				'idTugas' => $petugas
-				);	
-
-			$this->db->insert('tbl_kwitansi',$data1);
-
-		for ($i=0; $i <count($uraian) ; $i++) { 
-			$data2 = array(
-				'uraian' => $uraian[$i],
-				'kategori' => $kategori[$i],
-				'biaya' => $biaya[$i],
-				'idKwitansi' => $idKw
-
+			return array(
+				'idFeedback' => '',
+				'noSuratFeedback' => $noFeedback,
+				'tglFeedback' => $tanggal,
+				'isiFeedback' => $perihalFeedback,
+				'closed' => '0',
+				'file_feedback' => '0',
+				'idSuratPeringatan' => $idPeringatan
 			);
-
-			$this->db->insert('tbl_uraian',$data2);
-		
-		}
-
-		$this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
-		redirect('admin/surat_pj', 'refresh');
-
-
-
-			
 		}
 
 	}

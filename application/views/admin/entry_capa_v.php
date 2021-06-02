@@ -17,7 +17,7 @@
 <section class="content">
   <div class="row">
    <div class="col-md-12">
-     <form role="form" action="<?php echo base_url('admin/entry_capa_c/simpanFeedback')?>" method="post">
+     <form role="form" action="<?php echo base_url('admin/entry_capa_c/add_data')?>" method="post">
       <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">Form Feedback Capa</h3>
@@ -30,14 +30,15 @@
             <!-- nomor Surat Peringatan -->
             <div class="form-group">
               <label>Surat Surat Peringatan</label><span class="wajib"> *</span></label>
-              <select name="noSuratPeringatan" id="noSuratPeringatan" class="form-control input-sm" data-live-search="true" title="Select Category" required>
+              <select name="noSuratPeringatan"  id="noSuratPeringatan" class="form-control input-sm" data-live-search="true" title="Select Category" required>
 
                 <option value="">Pilih Surat Peringatan</option>
 
                 <?php
                 foreach ($peringatan as $pr) {
-                  echo "<option value=".$pr->noSuratPeringatan.">".$pr->noSuratPeringatan."</option>";
+                  echo "<option value=".$pr->idPeringatan.">".$pr->noSuratPeringatan."</option>";
                 }
+                
                 ?>
 
               </select>
@@ -49,7 +50,7 @@
                 <div class="col-sm-12">
                     <div class="input-group">
                      <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                     <input type="text" name="noFeedback[]" id="noFeedback[]"  placeholder="Nomor Surat Feedback" class="form-control name_list" />
+                     <input type="text" name="noFeedback" id="noFeedback"  placeholder="Nomor Surat Feedback" class="form-control name_list" />
                     </div>
                  </div>
             </div>
@@ -68,7 +69,7 @@
                 <div class="col-sm-12">
                     <div class="input-group">
                      <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                     <input type="text" name="perihalFeedback[]" id="perihalFeedback[]"  placeholder="Perihal Surat Feedback" class="form-control name_list" />
+                     <input type="text" name="perihalFeedback" id="perihalFeedback"  placeholder="Perihal Surat Feedback" class="form-control name_list" />
                     </div>
                  </div>
             </div>
@@ -86,17 +87,16 @@
 
 
           <div class="col-md-6">
-            <br><br>
+            <br>
+            <!-- <br> -->
 
            <!-- Sarana -->
            <div class="form-group">
-              <label>Sarana</label><span class="wajib"> *</span></label>
-              <select name="sarana" id="sarana" class="form-control input-sm" data-live-search="true" title="Pilih Sarana">
-
+              <label>Sarana</label>
+              <select name="sarana" id="sarana" class="form-control input-sm" data-live-search="true" title="Pilih Sarana" >
                    <option value="">Pilih Sarana</option>
               </select> 
             </div>
-              
             </div>
 
                 </div>
@@ -145,17 +145,43 @@
 
 <!-- get data with ajax jquery -->
 <script>
-$(document).ready(function(){
-  getDataForm()
-})
-function getDataForm(){
-  $.ajax({
-    type: "GET",
-    url: "http://localhost/satupintu/admin/entry_capa_c/getData",
-    // success: function (url) {
-    //     alert(url);
+// function getDataForm(){
+//   $.ajax({
+//     type: "GET",
+//     url: "http://localhost/satupintu/admin/entry_capa_c/getSarana",
+// });
+// console.log("tess")
+// }
 
-    // }
+
+$(document).ready(function(){
+ 
+ $('#noSuratPeringatan').change(function(){
+  var username = $(this).val();
+  console.log(username)
+  return
+  $.ajax({
+   url:'<?=base_url()?>"http://localhost/satupintu/admin/entry_capa_c/getSarana',
+   method: 'post',
+   data: {username: username},
+   dataType: 'json',
+   success: function(response){
+     var len = response.length;
+     $('#sarana').text('');
+     if(len > 0){
+       // Read values
+       var uname = response[0].namaSarana;
+      //  var name = response[0].name;
+      //  var email = response[0].email;
+
+       $('#sarana').text(uname);
+      //  $('#sname').text(name);
+      //  $('#semail').text(email);
+
+     }
+
+   }
+ });
 });
-}
+});
 </script>
