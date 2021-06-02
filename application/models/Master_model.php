@@ -40,17 +40,17 @@ public function getSarana(){
     return $query->result();
 }
 
- public function updateSarana($data){
-   $this->db->set('namaSarana', $data['namas']); 
-   $this->db->set('alamatSarana', $data['alamats']);
-   $this->db->set('pemilik', $data['pemiliks']); 
-   $this->db->set('noIzinSarana', $data['noIS']);
-   $this->db->set('penangungJawab', $data['pJ']); 
-   $this->db->set('noIzinPj', $data['noIPJ']);
-   $this->db->set('kategoriSarana', $data['kS']); 
-   $this->db->set('jenisSarana', $data['jS']); 
-   $this->db->set('kota', $data['kotas']);  
-   $this->db->where('idSarana', $data['idSarana']);
+ public function updateSarana($data1){
+   $this->db->set('namaSarana', $data1['namas']); 
+   $this->db->set('alamatSarana', $data1['alamats']);
+   $this->db->set('pemilik', $data1['pemiliks']); 
+   $this->db->set('noIzinSarana', $data1['noIS']);
+   $this->db->set('penangungJawab', $data1['pJ']); 
+   $this->db->set('noIzinPj', $data1['noIPJ']);
+   $this->db->set('kategoriSarana', $data1['kS']); 
+   $this->db->set('jenisSarana', $data1['jS']); 
+   $this->db->set('kota', $data1['kotas']);  
+   $this->db->where('idSarana', $data1['idSarana']);
    $query = $this->db->update('tbl_sarana');
 }
 

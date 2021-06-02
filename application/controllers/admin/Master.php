@@ -142,7 +142,7 @@ public function hapus_dataPegawai(){
             $kt =  $this->input->post('kotas');
             
             $data1 = array(
-                'idSarana' => $idSr,
+                'idSarana' => $id,
                 'namaSarana' => $ns,
                 'alamatSarana' => $als,
                 'pemilik' => $ps,

@@ -118,52 +118,52 @@
 						<div class="box-body">
 
 							<div class="form-group">
-								<input type="hidden" class="form-control" name="idSarEdit" id="idSarEdit" >
+								<input type="hidden" class="form-control" name="id" id="idSarEdit" >
 							</div>
 
 							<div class="form-group">
 								<label for="noEdit">Nama Sarana</label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="namasEdit" id="namasEdit" required >
+								<input type="text" class="form-control" name="namas" id="namasEdit" required >
 							</div>
 
 							<div class="form-group">
 								<label for="noEdit">Alamat Sarana</label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="alamatsEdit" id="alamatsEdit" required >
+								<input type="text" class="form-control" name="alamats" id="alamatsEdit" required >
 							</div>
 
 							<div class="form-group">
 								<label for="noEdit">Pemilik</label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="pemiliksEdit" id="pemiliksEdit" required >
+								<input type="text" class="form-control" name="pemiliks" id="pemiliksEdit" required >
 							</div>
 
 							<div class="form-group">
 								<label for="noEdit">noIzinSarana</label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="noISEdit" id="noISEdit" required >
+								<input type="text" class="form-control" name="noIS" id="noISEdit" required >
 							</div>
 
 							<div class="form-group">
 								<label for="noEdit">Penanggung Jawab</label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="pJEdit" id="pJEdit" required >
+								<input type="text" class="form-control" name="pJ" id="pJEdit" required >
 							</div>
 
 							<div class="form-group">
 								<label for="noEdit">Nomor Izin Penanggung Jawab</label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="noIPJEdit" id="noIPJEdit" required >
+								<input type="text" class="form-control" name="noIPJ" id="noIPJEdit" required >
 							</div>
 
 							<div class="form-group">
 								<label for="noEdit">Kategori Sarana</label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="kSEdit" id="kSEdit" required >
+								<input type="text" class="form-control" name="kS" id="kSEdit" required >
 							</div>
 
 							<div class="form-group">
 								<label for="noEdit">Jenis Sarana</label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="jSEdit" id="jSEdit" required >
+								<input type="text" class="form-control" name="jS" id="jSEdit" required >
 							</div>
 
 							<div class="form-group">
 								<label for="noEdit">Kota</label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="kotasEdit" id="kotasEdit" required >
+								<input type="text" class="form-control" name="kotas" id="kotasEdit" required >
 							</div>
 
 
@@ -195,7 +195,7 @@
 		$("#editData #idSarEdit").val(idSar);
 		$("#editData #namasEdit").val(namaSar);
 		$("#editData #alamatsEdit").val(alamatSar);
-		$("#editData #pemiliksEdit").val(pemilikSar;
+		$("#editData #pemiliksEdit").val(pemilikSar);
 		$("#editData #noISEdit").val(noIsar);
 		$("#editData #pJEdit").val(pjSar);
 		$("#editData #noIPJEdit").val(noIpsar);
@@ -213,7 +213,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
                 </div>
-                <div class="modal-body" id=hapusData>
+                <div class="modal-body" id="hapusData">
                     <form role="form" method="post" action="<?= base_url('admin/Master/hapus_dataSarana') ?>">
                         <div class="box-body">
                             <div class="form-group" style="text-align:center">Anda yakin akan menghapus Data Sarana ini ?</label>
