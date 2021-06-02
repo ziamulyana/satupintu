@@ -1,35 +1,48 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class feedbackCapa extends CI_Model{
+class FeedbackCapa extends CI_Model{
 
 
-      function __construct()
+  function __construct()
+  {
+    parent::__construct();
+}
+
+
+public function getPeringatan(){
+    //$this->db->select('tbl_peringatan.idPeringatan, tbl_tugas.idSuratTugas, tbl_surattugas.noSuratTugas');
+    //$this->db->from('tbl_tugas');
+    //$this->db->join('tbl_surattugas', 'tbl_tugas.idSuratTugas = tbl_surattugas.idSurat');
+    //$this->db->group_by('tbl_tugas.idSuratTugas');
+    //$query = $this->db->get('');
+    //return $query->result();
+}
+
+public function getPetugas($id){
+    $this->db->select('tbl_tugas.idTugas,tbl_pegawai.nama');
+    $this->db->from('tbl_tugas');
+    $this->db->join('tbl_pegawai', 'tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
+    $this->db->where('tbl_tugas.idSuratTugas', $id);
+    $query = $this->db->get('');
+    $output = '<option value="">Pilih Petugas</option>';
+    foreach($query->result() as $row)
     {
-        parent::__construct();
-        // $this->load->helper('common')
-    }
+     $output .= '<option value="'.$row->idTugas.'">'.$row->nama.'</option>';
+ }
+ return $output;
 
 
-	public function getFeedbackCapa(){
-        $query = $this->db->query("SELECT * FROM tbl_feedback");
-        return $query->result();
-    }
+}
 
-    // <!-- get data with ajax jquery -->
-    
-    public function getList(){
-        // echo "tes";
+public function getRowKwitansi(){
+    $this->db->select('idKwitansi');
+    $this->db->from('tbl_kwitansi');
+    $this->db->order_by('idKwitansi','desc');
+     $this->db->limit(1);  
+     $query = $this->db->get('');
+     return $query->row();
+}
 
-        $query = $this->db->query("SELECT * FROM tbl_sarana");
-        print_r($query);
-        return $query->result();
-        // $this->db->select('*');
-        // $this->db->from('tbl_sarana');
-        // $this->db->limit(1);
 
-        // $query = $this->db->get();
-        // print_r($query);
-        
-    }
 }
