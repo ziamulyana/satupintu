@@ -10,7 +10,6 @@ header("Content-Disposition: attachment; Filename=kwLukota-".$filename)
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title><?php echo $title; ?></title>
 	<link rel="stylesheet" href="">
 	<!-- CSS buatan sendiri -->
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/vendor/bootstrap/css/style.css">
@@ -68,8 +67,8 @@ header("Content-Disposition: attachment; Filename=kwLukota-".$filename)
 		$nama = "";
 		$nip = "";
 		$tujuan = "";
-		$tglMulai = "";
-		$tglSelesai = "";
+		$tgl1 = "";
+		$tgl2 = "";
 		$maksud = "";
 		$tglKw  = "";
 		$uraian_kw = array();
@@ -78,8 +77,8 @@ header("Content-Disposition: attachment; Filename=kwLukota-".$filename)
 			$nama = $row->nama;
 			$nip = $row->nip;
 			$tujuan = $row->kota;
-			$tglMulai =$row->tglMulai;
-			$tglSelesai = $row->tglSelesai;
+			$tgl1 =strtotime($row->tglMulai);
+			$tgl2 = strtotime($row->tglSelesai);
 			$maksud = $row->maksud;
 			$tglKw= strtotime($row->tglKwitansi);
 			array_push($uraian_kw,$row->uraian);
@@ -112,7 +111,7 @@ header("Content-Disposition: attachment; Filename=kwLukota-".$filename)
 
 			<tr>
 				<td><p id="space2">Waktu Pelaksanaan</p></td>
-				<td><p>: <?php echo $tglMulai."-".$tglSelesai; ?></p></td>
+				<td><p>: <?php echo convertDay($tgl1)."-".convertMonthB(convertMonthA($tgl1))."-".convertYear($tgl1) ." - ".convertDay($tgl2)."-".convertMonthB(convertMonthA($tgl2))."-".convertYear($tgl2); ?></p></td>
 			</tr>	
 
 			<tr>
@@ -147,15 +146,14 @@ header("Content-Disposition: attachment; Filename=kwLukota-".$filename)
 				</tr>
 
 			<?php }?>
-			<td><p><?php echo ""; ?></p></td>
-			<td><p><?php echo "Jumlah"; ?></p></td>
+			<td colspan="2"><p align="center"><?php echo "Jumlah"; ?></p></td>
 			<td><p><?php echo "Rp       ".array_sum($biaya_kw); ?></p></td>
 
 		</table>
 		<br>
 		<table style="width:100%">
 			<tr>
-				<th><p><b>Mengetahui/Menyetujui</b></p></th> 
+				<th><p class="satu"><b>Mengetahui/Menyetujui</b></p></th> 
 				<th><p class="satu"><b>Batam, <?php echo convertDay($tglKw)."-".convertMonthB(convertMonthA($tglKw))."-".convertYear($tglKw) ;?></b></p></th> 
 			</tr>
 			<tr>
