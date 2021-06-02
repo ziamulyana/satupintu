@@ -11,22 +11,22 @@
 <section class="content">
 
   <div class="box">
-      <div class="box-header with-border">
+    <div class="box-header with-border">
        <h4>Hai <b>Admin..</b> </h4>
-       <div class="box-tools pull-right">
+      <div class="box-tools pull-right">
         <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
         <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
       </div>
     </div>
   </div>
 
-  <div class="row">
+<div class="row">
     <!-- left column -->
     <div class="col-md-12">
       <!-- general form elements -->
 
-    <div class="box box-primary">
-      <div class="box-header with-border">
+      <div class="box box-primary">
+        <div class="box-header with-border">
 
         <h3 class="box-title">Daftar Surat Tugas</h3>
           <div class="pull-right">
@@ -35,7 +35,7 @@
                   <i class="fa fa-plus"></i>&nbsp; Tambah Data 
                 </a> </span>
             </ul>
-                  </div>
+          </div>
 
         <section class="content">
           <div class="row">
@@ -68,43 +68,35 @@
                             <td class="text-center" width="100px">
                               <a href="#" class="btn btn-success btn-sm" id="edit_surat" data-tooltip="tooltip" data-toggle="modal" title="Edit" data-target="#editSurat" data-id="<?= $data['idSurat'] ?>" data-surat="<?= $data['noSuratTugas'] ?>" data-tgl="<?=date("d F Y", strtotime($data['tglSurat'])) ?>" data-maksud="<?= $data['maksud'] ?>" data-kota="<?= $data['kota'] ?>">
                               <i class="fa fa-edit"></i></a>
+                              <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="del_surat" data-toggle="modal" data-target="#delSurat" data-id="<?= $data['idSurat'] ?>">
+                              <i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                       <?php } ?>
 
-                  </tbody>
-                </table>
-              </div>
+                    </tbody>
+                  </table>
+                </div>
               <!-- /.box-body -->
-            </div>
+              </div>
             <!-- /.box -->
-          </div>
+            </div>
           <!-- /.col -->
-        </div>
+          </div>
         <!-- /.row -->
-      </section>
-      <!-- /.content -->
-    </div>
-    <style>
-      th.dt-center, td.dt-center { text-align: center; }
-    </style>
+        </section>
+        <!-- /.content -->
+        </div>
+      <style>
+        th.dt-center, td.dt-center { text-align: center; }
+      </style>
 
-  </div>
+    </div>
+
   <!-- /.box-header -->
   <!-- form start -->
 
-
-</div>
-</div>
-
-</div>
-<!-- /.box -->
-</div>
-
-</div>
-<!-- /.row -->
-
-<!-- Edit Surat Tugas -->
+  <!-- Edit Surat Tugas -->
    <div id="editSurat" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -149,7 +141,6 @@
         </div>
 
         <script src="<?php echo base_url();?>assets/vendor/jquery/jquery-1.10.0.min.js" type="text/javascript">></script>
-        
         <script type="text/javascript">
             $(document).on("click","#editSurat",function(){
               var id = $(this).data('id');
@@ -168,8 +159,45 @@
       </form>
     </div>
   </div>
-  </div>            
+
+    <!-- Hapus Surat -->
+    <div id="delSurat" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times</button>
+            <h4 class="modal-title">
+              <i class="icon fa fa-ban"></i> Alert !</h4>
+          </div>
+
+          <div class="modal-body" id="delSurat">
+            <form role="form" method="post" action="<?= site_url('admin/surat_tugas/surat_tugas/delsurat') ?>">
+              <div class="box-body">
+                <div class="form-group" style="text-align:center">Anda yakin akan menghapus?</label>
+                  <input type="hidden" id="nosurat_del" name="nosurat_del">
+                </div>
+              </div>
+
+              <!-- /.box-body -->
+              <div class="modal-footer">
+                <button type="reset" class="btn btn-default pull-left" data-dismiss="modal">
+                  <i class="fa fa-times"></i>Tutup</button>
+                <button type="submit" class="btn btn-danger" name="delete">
+                  <i class="fa fa-check"></i>Hapus</button>
+              </div>
+            </form>
+              
+            <script src="<?php echo base_url();?>assets/vendor/jquery/jquery-1.10.0.min.js" type="text/javascript"></script>
+            <script type="text/javascript">
+              $(document).on("click","#del_surat",function(){
+                var nosurat = $(this).data('nosurat');
+                $("delsurat #nosurat_del").val(nosurat);
+              });
+              </script>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
 
 </section>
-
-

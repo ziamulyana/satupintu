@@ -36,8 +36,21 @@
             $query = $this->SuratTugas_model->updatesurattugas($where,$data,'tbl_surattugas');
             $$this->session->set_flashdata('flash','Diubah');
             redirect('admin/surat_tugas/surat_tugas/index');
-
         }
+
+        public function delsurat()
+        {
+        $id = $this->input->post('nosurat_del', true);
+
+        $data = array (
+            'noSuratTugas' => $noSurat
+        );
+
+        $query = $this->SuratTugas_model->delsurat($where,$data,'tbl_surattugas');
+        $this->session->set_flashdata('flash','Dihapus');
+        redirect ('admin/surat_tugas/surat_tugas/index');
+        }
+
 
         public function surattugas()
         {

@@ -24,6 +24,22 @@ class SuratTugas_model extends CI_Model
     }
   }
 
+  public function getsurattugas()
+  { 
+    
+    $this->db->select('*');
+    $this->db->from('tbl_surattugas');
+    $this->db->order_by('idSurat','DESC');
+    $query = $this->db->get();
+    return $query->result_array();
+  }
+
+  public function delsurat($where,$data,$table)
+  {
+    $this->db->where($where);
+    $this->db->update($table,$data);
+  }
+
   public function getTugas()
   {
 
@@ -51,15 +67,7 @@ class SuratTugas_model extends CI_Model
   }
 
 
-   public function getsurattugas()
-    { 
-      
-      $this->db->select('*');
-      $this->db->from('tbl_surattugas');
-      $this->db->order_by('idSurat','DESC');
-      $query = $this->db->get();
-      return $query->result_array();
-    }
+
 
     public function updatesurattugas($where,$data,$table)
     {
