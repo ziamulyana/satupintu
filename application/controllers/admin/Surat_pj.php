@@ -57,7 +57,7 @@ class Surat_pj extends CI_Controller {
 	public function printDk(){
 		$id = $this->input->post('idKw');
 		$data['idKw'] = $id;
-		$data['kwDakota'] = $this->SuratKw_model->dataDakota($id);
+		$data['kwDakota'] = $this->SuratKw_model->dataKw($id);
 		$this->load->view('admin/pjDakota', $data, false);
 		
 
@@ -65,10 +65,9 @@ class Surat_pj extends CI_Controller {
 
 	public function printLk(){
 		$id = $this->input->post('idKw');
-		// $data['kwDakota'] = $this->SuratKw_model->dataDakota($id);
-		// $this->template->view('layouts/admin_template', 'admin/pjDakota', $data);
-		echo $id;
-
+		$data['idKw'] = $id;
+		$data['kwLukota'] = $this->SuratKw_model->dataKw($id);
+		$this->load->view('admin/pjLukota', $data, false);
 	}
 
 }
