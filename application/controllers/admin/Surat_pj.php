@@ -55,11 +55,9 @@ class Surat_pj extends CI_Controller {
 		$this->load->view('admin/pjLukota', $data, false);
 	}
 
-<<<<<<< Updated upstream
-		public function list_nominatif(){
-=======
+
 	public function list_nominatif(){
->>>>>>> Stashed changes
+
 		$data = konfigurasi('List Nominatif per Surat Tugas',"ap");
 		$data['tugas'] = $this->SuratKw_model->getTugas();
 		$this->template->load('layouts/admin_template', 'admin/list_nominatif', $data);
@@ -68,7 +66,7 @@ class Surat_pj extends CI_Controller {
 	public function nominatifDk(){
 		$id = $this->input->post('idKw');
 		$data['idKw'] = $id;
-		$data['nomDakota'] = $this->SuratKw_model->getNomDk($id);
+		$data['nomDk'] = $this->SuratKw_model->getNomDk($id);
 		$this->load->view('admin/nomDk', $data, false);
 	}
 	public function nominatifLk(){
