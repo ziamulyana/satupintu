@@ -42,9 +42,9 @@ class SuratTugas_model extends CI_Model{
   {
     $this->db->set('noSuratTugas', $data['nosurat']);
     $this->db->set('tglSurat', $data['tglsurat']);
-    $this->db->set('tglMulai', $data['tglulai']);
+    $this->db->set('tglMulai', $data['tglmulai']);
     $this->db->set('bebanBiaya', $data['bebanbiaya']);
-    $this->db->set('kendaraan', $data['kendaraann']);
+    $this->db->set('kendaraan', $data['kendaraan']);
     $this->db->set('kota', $data['kendaraan']);
     $this->db->set('idAnggaran', $data['idanggaran']);
     $this->db->set('tglSelesai', $data['tglselesai']);
@@ -64,38 +64,4 @@ class SuratTugas_model extends CI_Model{
   }
 
 
-
-  public function addsurattugas()
-  {
-    $insert = $this->db->insert($table,$data);
-    return $data;
-  }
-
-  public function delsurat($where,$data,$table)
-  {
-    $this->db->where($where);
-    $this->db->update($table,$data);
-  }
-
-
-
-  
-
-
-
-    public function updatesurattugas($where,$data,$table)
-    {
-      $this->db->where($where);
-      $this->db->update($table,$data);
-    }
-
-    public function getPegawai()
-    {
-
-      $this->db->select('*');
-      $this->db->from('tbl_pegawai');
-      $query = $this->db->get();
-      return $query->result();
-    }
-
-      }
+}
