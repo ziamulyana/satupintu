@@ -99,14 +99,16 @@
 				}
 
 
+		
 			$data_db = array(
 
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
-					'jenisPeringatan' => "rs",
+					'jenisPeringatan' => "apotek",
 					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',
-					'idTl' => $idTl
+					'idTl' => $idTl,
+					'status' =>0
 				);
 
 

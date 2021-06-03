@@ -123,7 +123,7 @@
         <h4 class="modal-title">Ubah Surat Tugas</h4>
       </div>
       
-      <div class="modal-body" id="editData">
+      <div class="modal-body" id=editData>
         <form role="form" method="post" action="<?= base_url('admin/surat_tugas/Surat_tugas/ubah_surat') ?>" method="post">
           <div class="box box-success">
             <div class="box-body">
