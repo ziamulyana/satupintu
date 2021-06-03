@@ -58,9 +58,10 @@ class SuratKw_model extends CI_Model{
 }
 
 public function getNomDk($id){
-  $this->db->select("tbl_pegawai.nama,tbl_pegawai.nip,tbl_surattugas.noSuratTugas,tbl_surattugas.mak,tbl_surattugas.kota,tbl_surattugas.tglMulai,tbl_surattugas.tglSelesai,  tbl_surattugas.lamaPerjalanan");
+  $this->db->select("tbl_pegawai.nama,tbl_pegawai.nip,tbl_surattugas.noSuratTugas,tbl_surattugas.kota,tbl_surattugas.tglMulai,tbl_surattugas.tglSelesai,  tbl_surattugas.lamaPerjalanan, tbl_anggaran.mak");
   $this->db->from('tbl_tugas');
   $this->db->join('tbl_surattugas', 'tbl_tugas.idSuratTugas =tbl_surattugas.idSurat');
+  $this->db->join('tbl_anggaran', 'tbl_surattugas.idAnggaran = tbl_anggaran.idAnggaran');
   $this->db->join('tbl_pegawai', 'tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
   $this->db->where('tbl_tugas.idSuratTugas', $id);
   $query = $this->db->get('');
@@ -69,9 +70,10 @@ public function getNomDk($id){
 
 
 public function getNomLk($id){
-  $this->db->select("tbl_pegawai.nama,tbl_pegawai.nip,tbl_surattugas.noSuratTugas,tbl_surattugas.mak,tbl_surattugas.kota,tbl_surattugas.tglMulai,tbl_surattugas.tglSelesai,  tbl_surattugas.lamaPerjalanan");
+  $this->db->select("tbl_pegawai.nama,tbl_pegawai.nip,tbl_surattugas.noSuratTugas,tbl_surattugas.kota,tbl_surattugas.tglMulai,tbl_surattugas.tglSelesai, tbl_surattugas.lamaPerjalanan, tbl_anggaran.mak");
   $this->db->from('tbl_surattugas');
   $this->db->join('tbl_tugas', 'tbl_surattugas.idSurat = tbl_tugas.idSuratTugas');
+   $this->db->join('tbl_anggaran', 'tbl_surattugas.idAnggaran = tbl_anggaran.idAnggaran');
   $this->db->join('tbl_pegawai', 'tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
   $this->db->where('tbl_tugas.idSuratTugas', $id);
   $query = $this->db->get('');
