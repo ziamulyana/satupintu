@@ -93,8 +93,8 @@
            <!-- Sarana -->
            <div class="form-group">
               <label>Sarana</label>
-              <select name="sarana" id="sarana" class="form-control input-sm" data-live-search="true" title="Pilih Sarana" >
-                   <option value="">Pilih Sarana</option>
+              <select name="sarana" id="sarana" class="form-control input-sm" data-live-search="true" title="Pilih Sarana">
+                   <option value="">Pilih surat petugas dulu</option>
               </select> 
             </div>
             </div>
@@ -143,45 +143,27 @@
 </style>
 
 
-<!-- get data with ajax jquery -->
-<script>
-// function getDataForm(){
-//   $.ajax({
-//     type: "GET",
-//     url: "http://localhost/satupintu/admin/entry_capa_c/getSarana",
-// });
-// console.log("tess")
-// }
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    $('#noSuratPeringatan').change(function()
+    {
+      var idPer=$('#noSuratPeringatan').val();
+      if(idPer!=''){
+        $.ajax({
+          url: "<?php echo base_url();?>admin/Entry_capa_c/getSarana",    
+          method: "POST",
+          data: {idPer:idPer},
+          success: function(data)
+          {
+            $('#sarana').html(data);
+          } 
+        });
+      }else{
+        $('#sarana').html('<option value="">Pilih Surat Peringatan Doloe</option>');
+      }
 
 
-$(document).ready(function(){
- 
- $('#noSuratPeringatan').change(function(){
-  var username = $(this).val();
-  console.log(username)
-  return
-  $.ajax({
-   url:'<?=base_url()?>"http://localhost/satupintu/admin/entry_capa_c/getSarana',
-   method: 'post',
-   data: {username: username},
-   dataType: 'json',
-   success: function(response){
-     var len = response.length;
-     $('#sarana').text('');
-     if(len > 0){
-       // Read values
-       var uname = response[0].namaSarana;
-      //  var name = response[0].name;
-      //  var email = response[0].email;
-
-       $('#sarana').text(uname);
-      //  $('#sname').text(name);
-      //  $('#semail').text(email);
-
-     }
-
-   }
- });
-});
-});
+    });
+  });
 </script>

@@ -20,14 +20,11 @@
 		}
 
 		function getSarana(){
-			// $data['namaSaranaV'] = $this->feedbackCapa->getSaranaModel();
-            // $this->template->load('layouts/admin_template', 'admin/entry_capa_v', $data);
-			$postData = $this->input->post();
-
-			// get data
-			$data = $this->feedbackCapa->getSaranaModel($postData);
 		
-			echo json_encode($data);
+			if($this->input->post('idPer'))
+			{
+				echo $this->feedbackCapa->getSaranaModel($this->input->post('idPer'));
+			}
 		}
 
 		function add_data(){
