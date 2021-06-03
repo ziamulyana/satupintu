@@ -13,7 +13,7 @@
 <section class="content">
   <div class="row">
    <div class="col-md-12">
-     <form role="form" action="<?php echo base_url('admin/surat_tugas/form_surattugas/simpanSurat')?>" method="post">
+     <form role="form" action="<?php echo base_url('admin/surat_tugas/surat_tugas/simpan_surat')?>" method="post">
       <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">Form Pembuatan Surat Tugas</h3>
