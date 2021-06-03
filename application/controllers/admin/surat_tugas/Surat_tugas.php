@@ -14,36 +14,33 @@
 
         public function index()
         {
-
-            $data = konfigurasi('Pilih Surat Tugas','');
-            $data = array (
-                'rowsurattugas' => $this->SuratTugas_model->getsurattugas(),
-            );
+            $data = konfigurasi('Pilih Surat Tugas','ap');
+            $data['surattugas'] = $this->SuratTugas_model->getTugas();
             $this->template->load('layouts/admin_template', 'admin/surat_tugas/dashboard', $data);
+
         }
 
         public function updatesurattugas()
         {
-            $id = $this->input->post('idsurat');
-            $nosurat = $this->input->post('editnosurat');
+            $id = $this->input->post('idSurat');
+            $tglSurat = $this->input->post('tglSurat');
 
             $data = array(
-                'noSurat' => $nosurat
+                'idSurat' => $id,
+                'tglSurat' => $tglSurat
             );
 
-            $where = array('idSurat' => $id);
+            $this->SuratTugas_model->updatesurattugas($data);
+            redirect('admin/surat_tugas/dashboard');
 
-            $query = $this->SuratTugas_model->updatesurattugas($where,$data,'tbl_surattugas');
-            $$this->session->set_flashdata('flash','Diubah');
-            redirect('admin/surat_tugas/surat_tugas/index');
         }
 
         public function delsurat()
         {
-        $id = $this->input->post('nosurat_del', true);
+        $noSuratTugas = $this->input->post('delSurat', true);
 
         $data = array (
-            'noSuratTugas' => $noSurat
+            'noSuratTugas' => $noSuratTugas
         );
 
         $query = $this->SuratTugas_model->delsurat($where,$data,'tbl_surattugas');
@@ -83,7 +80,7 @@
 
         public function hapus_suratTugas(){
             $id = $this->input->post('idSurat');
-            $this->SuratTugas_model->hapusSuratTugas($id);
+            $this->SuratTugas_model->delsurat($id);
             redirect('admin/surat_tugas/Surat_tugas');
         }
 

@@ -29,9 +29,8 @@ class SuratTugas_model extends CI_Model
     
     $this->db->select('*');
     $this->db->from('tbl_surattugas');
-    $this->db->order_by('idSurat','DESC');
     $query = $this->db->get();
-    return $query->result_array();
+    return $query->result();
   }
 
   public function addsurattugas()
@@ -49,12 +48,10 @@ class SuratTugas_model extends CI_Model
   public function getTugas()
   {
 
-    $this->db->select('tbl_tugas.idTugas, tbl_tugas.idSuratTugas, tbl_surattugas.noSuratTugas');
-    $this->db->from('tbl_tugas');
-    $this->db->join('tbl_surattugas', 'tbl_tugas.idSuratTugas = tbl_surattugas.idSurat');
-    $this->db->group_by('tbl_tugas.idSuratTugas');
+    $this->db->select('*');
+    $this->db->from('tbl_surattugas');
     $query = $this->db->get('');
-    return $query->result();
+    return $query;
   }
 
   public function getPetugas($id){

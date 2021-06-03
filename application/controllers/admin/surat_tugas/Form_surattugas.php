@@ -73,7 +73,7 @@
 				$this->db->insert('tbl_pegawai',$data2);
 			}
 			$this->session->set_flashdata('success', 'Data Berhasil Dimasukan');
-			redirect('admin/Surat_tugas', 'refresh');
+			redirect('admin/Surat_tugas/surat_tugas', 'refresh');
 
 		}
 		
