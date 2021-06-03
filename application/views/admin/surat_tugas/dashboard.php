@@ -129,7 +129,7 @@
 						<div class="box-body">
 
 							<div class="form-group">
-								<input type="hidden" class="form-control" name="idSur" id="idSur" >
+								<input type="hidden" class="form-control" name="idSurat" id="idSurat" >
 							</div>
 
 							<div class="form-group">
@@ -166,22 +166,22 @@
 <script src="<?php echo base_url();?>assets/vendor/jquery/jquery-1.10.0.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 	$(document).on("click","#editSuratTugas",function(){
-		var idSur = $(this).data('id');
-		var noSurat = $(this).data('nosurat');
-		var tglSurat = $(this).data('tglsurat');
-		var maksud = $(this).data('maksud');
-		var kota = $(this).data('kota');
+		var idS = $(this).data('id');
+		var noS = $(this).data('nosurat');
+		var tglS = $(this).data('tglsurat');
+		var maksudS = $(this).data('maksud');
+		var kotaS = $(this).data('kota');
 
-		$("#editData #id").val(idSur);
-		$("#editData #nosurat").val(noSurat);
-		$("#editData #tglsurat").val(tglSurat);
-		$("#editData #maksud").val(maksud);
-		$("#editData #kota").val(kota);
+		$("#editData #idSurat").val(idS);
+		$("#editData #noSurat").val(noS);
+		$("#editData #tglSurat").val(tglS);
+		$("#editData #maksud").val(maksudS);
+		$("#editData #kota").val(kotaS);
 	});
   </script>
 
- <!-- Hapus Pegawai -->
- <div id= "hapusPegawai" class="modal fade" role="dialog">
+ <!-- Hapus Surat -->
+ <div id= "hapusSurat" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -189,10 +189,10 @@
                     <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
                 </div>
                 <div class="modal-body" id=hapusData>
-                    <form role="form" method="post" action="<?= base_url('admin/Master/hapus_dataPegawai') ?>">
+                    <form role="form" method="post" action="<?= base_url('admin/surat_tugas/surat_tugas/hapus_surat') ?>">
                         <div class="box-body">
                             <div class="form-group" style="text-align:center">Anda yakin akan menghapus Data Pegawai ini ?</label>
-                                <input type="hidden" id="idPg" name="idPg">
+                                <input type="hidden" id="idSurat" name="idSurat">
                               
                             </div>                        
                         </div><!-- /.box-body -->
