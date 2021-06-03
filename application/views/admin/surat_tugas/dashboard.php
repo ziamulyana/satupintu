@@ -65,7 +65,7 @@
                         echo "<td class='dt-center'>".$row->maksud."</td>";
                         echo "<td class='dt-center'>".$row->kota."</td>";
                         echo "<td class='dt-center'>"?>
-                        <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editSurat"
+                        <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editSur"
                         data-idsurat="<?=$row->idSurat ?>" data-nosurat="<?=$row->noSuratTugas ?>"  data-tglsurat="<?=$row->tglSurat ?>" data-maksud="<?=$row->maksud ?>" data-kota="<?=$row->kota ?>" data-toggle="modal" data-target="#editSurat">
                           <i class="fa fa-edit"></i></a>
 
