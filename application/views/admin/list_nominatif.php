@@ -1,10 +1,10 @@
 <section class="content-header">
  <h1>
-   Surat Pertanggung Jawaban 
+   Surat Nominatif
  </h1>
  <ol class="breadcrumb">
   <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-  <li><a href="#">Surat Pertanggung Jawaban</a></li>
+  <li><a href="#">Surat Nominatif</a></li>
 </ol>
 </section>
 <!-- Main content -->
@@ -21,13 +21,9 @@
       <div class="box box-primary">
         <div class="box-header with-border">
 
-          <h3 class="box-title">Daftar Surat Pertanggung Jawaban </h3>
+          <h3 class="box-title">Daftar Surat Nominatif </h3>
           <div class="pull-right">
-            <ul>
-              <a class= "btn btn-primary" href="<?php echo base_url('admin/form_pj')?>">
-                <i class="fa fa-plus"></i>&nbsp; Tambah Data 
-              </a> </span>
-            </ul>
+
           </div>
 
           <section class="content">
@@ -41,26 +37,23 @@
                       <thead>
                         <tr>
                           <th class="dt-center">No Surat Tugas</th>
-                          <th class="dt-center">Petugas</th>
-                          <th class="dt-center">Tgl Kwitansi</th>
                           <th class="dt-center">Aksi</th>
                         </tr>
                       </thead>
                       <tbody>
                         <?php     
-                        if(isset($kwitansi)){
-                         foreach ($kwitansi->result() as $row){
+                        if(isset($tugas)){
+                         foreach ($tugas->result() as $row){
 
                           echo "<tr>";
                           echo "<td class='dt-center'>".$row->noSuratTugas."</td>";      
-                          echo "<td class='dt-center'>".$row->nama."</td>";
-                          echo "<td class='dt-center'>".$row->tglKwitansi."</td>";
+                         
                           echo "<td class='dt-center'>"?>                             
                         
 
-                            <a href="" class="btn btn-info btn-sm" data-tooltip="tooltip" title="Dakota" id="printDk" data-id = "<?=$row->idKwitansi ?>" data-toggle="modal" data-target="#printDakota"><i class="fa fa-print"></i></a>
+                            <a href="" class="btn btn-info btn-sm" data-tooltip="tooltip" title="Dakota" id="printDk" data-id = "<?=$row->idSurat ?>" data-toggle="modal" data-target="#printDakota"><i class="fa fa-print"></i></a>
 
-                            <a href="" class="btn btn-warning btn-sm" data-tooltip="tooltip" title="Lukota" id="printLk" data-id = "<?=$row->idKwitansi ?>" data-toggle="modal" data-target="#printLukota"><i class="fa fa-print"></i></a>
+                            <a href="" class="btn btn-warning btn-sm" data-tooltip="tooltip" title="Lukota" id="printLk" data-id = "<?=$row->idSurat ?>" data-toggle="modal" data-target="#printLukota"><i class="fa fa-print"></i></a>
 
                           
 
@@ -116,9 +109,9 @@
         <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
       </div>
       <div class="modal-body" id=panelDkt>
-        <form role="form" method="post" action="<?= base_url('admin/surat_pj/printDk')?>">
+        <form role="form" method="post" action="<?= base_url('admin/surat_pj/nominatifDk')?>">
           <div class="box-body">
-            <div class="form-group" style="text-align:center">Anda Akan Mencetak Kwitansi Format Dalam Kota</label>
+            <div class="form-group" style="text-align:center">Anda Akan Mencetak Nominatif Format Dalam Kota</label>
               <input type="hidden" id="idKw" name="idKw">
 
             </div>                        
@@ -150,9 +143,9 @@
         <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
       </div>
       <div class="modal-body" id=panelLkt>
-        <form role="form" method="post" action="<?= base_url('admin/surat_pj/printLk')?>">
+        <form role="form" method="post" action="<?= base_url('admin/surat_pj/nominatifLk')?>">
           <div class="box-body">
-            <div class="form-group" style="text-align:center">Anda Akan Mencetak Kwitansi Format Luar Kota</label>
+            <div class="form-group" style="text-align:center">Anda Akan Mencetak Nominatif Format Luar Kota</label>
               <input type="hidden" id="idKw" name="idKw">
 
             </div>                        

@@ -10,7 +10,6 @@ header("Content-Disposition: attachment; Filename=kwDakota-".$filename)
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title><?php echo $title; ?></title>
 	<link rel="stylesheet" href="">
 	<!-- CSS buatan sendiri -->
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/vendor/bootstrap/css/style.css">
@@ -120,8 +119,7 @@ header("Content-Disposition: attachment; Filename=kwDakota-".$filename)
 				</tr>
 
 				<tr>
-					<td><p> </p></td>
-					<td><p>	Jumlah</p></td>
+					<td colspan="2"><p align="center">Jumlah</p></td>
 					<td><p>Rp 150.000 </p></td>
 				</tr>
 
@@ -135,7 +133,7 @@ header("Content-Disposition: attachment; Filename=kwDakota-".$filename)
 
 			<table style="width:100%">
 				<tr>
-					<th><p><b>Mengetahui/Menyetujui</b></p></th> 
+					<th><p class="satu"><b>Mengetahui/Menyetujui</b></p></th> 
 					<th><p class="satu"><b>Batam, <?php echo convertDay($tglKw)."-".convertMonthB(convertMonthA($tglKw))."-".convertYear($tglKw) ;?></b></p></th> 
 				</tr>
 				<tr>

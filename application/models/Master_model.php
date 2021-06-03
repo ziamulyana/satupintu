@@ -33,4 +33,30 @@ public function hapus_dataPegawai($id){
    $this->db->delete("tbl_pegawai",array("idPegawai"=>$id));
  }
 
+public function getSarana(){
+    $this->db->select('*');
+    $this->db->from('tbl_sarana');
+    $query = $this->db->get('');
+    return $query->result();
+}
+
+ public function updateSarana($data1){
+   $this->db->set('namaSarana', $data1['namas']); 
+   $this->db->set('alamatSarana', $data1['alamats']);
+   $this->db->set('pemilik', $data1['pemiliks']); 
+   $this->db->set('noIzinSarana', $data1['noIS']);
+   $this->db->set('penangungJawab', $data1['pJ']); 
+   $this->db->set('noIzinPj', $data1['noIPJ']);
+   $this->db->set('kategoriSarana', $data1['kS']); 
+   $this->db->set('jenisSarana', $data1['jS']); 
+   $this->db->set('kota', $data1['kotas']);  
+   $this->db->where('idSarana', $data1['idSarana']);
+   $query = $this->db->update('tbl_sarana');
+}
+
+public function hapus_dataSarana($id){
+   $this->db->delete("tbl_sarana",array("idSarana"=>$id));
+ }
+
+
 }

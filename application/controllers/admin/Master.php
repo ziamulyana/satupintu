@@ -84,7 +84,86 @@ public function hapus_dataPegawai(){
     public function data_sarana()
     {
 
-        $this->template->load('layouts/admin_template', 'admin/data_sarana');
+        $data1['sarana'] = $this->Master_model->getSarana();
+        $this->template->load('layouts/admin_template', 'admin/data_sarana',$data1);
     }
+
+ public function tambah_sarana()
+        {
+            $data1 = konfigurasi('Form Tambah Sarana',"as");
+            $this->template->load('layouts/admin_template', 'admin/form_sarana');
+            
+        }
+
+        public function simpan_sarana()
+        {
+            $ns =  $this->input->post('namas');
+            $als =  $this->input->post('alamats');
+            $ps =  $this->input->post('pemiliks');
+            $nois =  $this->input->post('noIS');
+            $pj =  $this->input->post('pJ');
+            $noip =  $this->input->post('noIPJ');
+            $ks =  $this->input->post('kS');
+            $js =  $this->input->post('jS');
+            $kt =  $this->input->post('kotas');
+            
+            $data1 = array(
+                'namaSarana' => $ns,
+                'alamatSarana' => $als,
+                'pemilik' => $ps,
+                'noIzinSarana' => $nois,
+                'penanggungJawab' => $pj,
+                'noIzinPj' => $noip,
+                'kategoriSarana' => $ks,
+                'jenisSarana' => $js,
+                'kota' => $kt
+                );  
+
+            $this->db->insert('tbl_sarana',$data1);
+
+        
+
+        $this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
+        redirect('admin/Master/data_sarana', 'refresh');
+
+            
+        }
+
+        public function ubahSarana(){
+            $id = $this->input->post('idSr');
+            $ns =  $this->input->post('namas');
+            $als =  $this->input->post('alamats');
+            $ps =  $this->input->post('pemiliks');
+            $nois =  $this->input->post('noIS');
+            $pj =  $this->input->post('pJ');
+            $noip =  $this->input->post('noIPJ');
+            $ks =  $this->input->post('kS');
+            $js =  $this->input->post('jS');
+            $kt =  $this->input->post('kotas');
+            
+            $data1 = array(
+                'idSarana' => $id,
+                'namaSarana' => $ns,
+                'alamatSarana' => $als,
+                'pemilik' => $ps,
+                'noIzinSarana' => $nois,
+                'penanggungJawab' => $pj,
+                'noIzinPj' => $noip,
+                'kategoriSarana' => $ks,
+                'jenisSarana' => $js,
+                'kota' => $kt
+                );  
+
+            $this->Master_model->updateSarana($data1);
+            redirect('admin/Master/data_sarana');
+        }
+    
+
+        public function hapus_dataSarana(){
+        $id = $this->input->post('idHapus');
+        $this->Master_model->hapus_dataSarana($id);
+        redirect('admin/Master/data_sarana');
+        }
+
 }
 

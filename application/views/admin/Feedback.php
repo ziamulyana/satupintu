@@ -7,7 +7,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="<?php echo base_url();?>Dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="<?=site_url('Admin/loglab') ?>"><i class="fa fa-user"></i> Feedback CAPA</a></li>
+    <li><a href="<?=site_url('Admin/loglab') ?>"><i class="fa fa-user"></i> Feedback</a></li>
 
   </section>
 
@@ -15,7 +15,7 @@
 
     <div class="box">
       <div class="box-header with-border">
-       <h4>Hai <b>Admin!</b> </h4>
+       <h4>Hai <b>Admin!!</b> </h4>
        <div class="box-tools pull-right">
         <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
         <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
@@ -36,23 +36,19 @@
         </div>
 
       </div>
-
+      <div class="pull-right">
+                <ul>
+                  <a class= "btn btn-primary" href="<?php echo base_url('admin/entry_capa_c')?>">
+                    <i class="fa fa-plus"></i>&nbsp; Tambah Data 
+                  </a> </span>
+                </ul>
+              </div>
         <div class="row">
           <div class="col-xs-12">
             <div class="box">
+            
+              
 
-            <div class="box box-primary">
-      <div class="box-header with-border">
-
-        <h3 class="box-title">Daftar Feedback CAPA</h3>
-          <div class="pull-right">
-            <ul>
-              <a class= "btn btn-primary" href="<?php echo base_url('admin/entry_capa_c')?>">
-                  <i class="fa fa-plus"></i>&nbsp; Tambah Data 
-                </a> </span>
-            </ul>
-                  </div>
-                  
 
               <!-- /.box-header -->
               <div class="box-body">
@@ -152,7 +148,7 @@
             <h4 class="modal-title"><i class="icon fa fa-ban"></i>  Alert !</h4>
           </div>
           <div class="modal-body" id="acceptData">
-            <form action="<?=base_url('petugas/feedback/updateClosed') ?>" method="post">
+            <form action="<?=base_url('admin/feedback/updateClosed') ?>" method="post">
               <div class="box-body">
                 <div class="form-group" style="text-align:center">
                   Ini akan mengubah status feedback menjadi <b>closed</b>, apakah anda yakin ?</label>
