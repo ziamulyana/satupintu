@@ -10,8 +10,7 @@
 }
 
 .page2 {  
-  width: 29.7cm;
-  height: 21cm;
+  size: 21cm  29.7cm landscape;
   margin-top: 0.5in;
   margin-bottom: 0.2in;
   margin-right: 0.1in;
@@ -98,6 +97,7 @@ br{
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
 
 
 
