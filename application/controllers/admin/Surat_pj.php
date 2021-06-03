@@ -72,7 +72,8 @@ class Surat_pj extends CI_Controller {
 	public function nominatifLk(){
 		$id = $this->input->post('idKw');
 		$data['idKw'] = $id;
-		// $data['kwLukota'] = $this->SuratKw_model->dataKw($id);
+		$data['nomLk'] = $this->SuratKw_model->getNomDk($id);
+		$data['uraian'] = $this->SuratKw_model->uraianLk($id);
 		$this->load->view('admin/nomLk', $data, false);
 	}
 

@@ -29,7 +29,7 @@ class SuratKw_model extends CI_Model{
  // }
 
 
- public function dataKw($id){
+  public function dataKw($id){
    $this->db->select('tbl_uraian.uraian, tbl_uraian.biaya, tbl_surattugas.noSuratTugas, tbl_tugas.urutan, tbl_surattugas.tglMulai, tbl_surattugas.tglSelesai,tbl_surattugas.maksud, tbl_surattugas.tglSurat,tbl_surattugas.kota, tbl_kwitansi.tglKwitansi, tbl_pegawai.nama, tbl_pegawai.pangkat, tbl_pegawai.nip, tbl_pegawai.jabatan, tbl_pegawai.golongan');
    $this->db->from('tbl_uraian');
    $this->db->join('tbl_kwitansi', 'tbl_uraian.idKwitansi = tbl_kwitansi.idKwitansi');
@@ -52,20 +52,42 @@ class SuratKw_model extends CI_Model{
 
  public function getTugas(){
   $this->db->select('*');
-   $this->db->from('tbl_surattugas');
-   $query = $this->db->get('');
-   return $query;
- }
+  $this->db->from('tbl_surattugas');
+  $query = $this->db->get('');
+  return $query;
+}
 
- public function getNomDk($id){
+public function getNomDk($id){
   $this->db->select("tbl_pegawai.nama,tbl_pegawai.nip,tbl_surattugas.noSuratTugas,tbl_surattugas.mak,tbl_surattugas.kota,tbl_surattugas.tglMulai,tbl_surattugas.tglSelesai,  tbl_surattugas.lamaPerjalanan");
-   $this->db->from('tbl_tugas');
-    $this->db->join('tbl_surattugas', 'tbl_tugas.idSuratTugas =tbl_surattugas.idSurat');
-       $this->db->join('tbl_pegawai', 'tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
-       $this->db->where('tbl_tugas.idSuratTugas', $id);
-        $query = $this->db->get('');
-   return $query;
- }
+  $this->db->from('tbl_tugas');
+  $this->db->join('tbl_surattugas', 'tbl_tugas.idSuratTugas =tbl_surattugas.idSurat');
+  $this->db->join('tbl_pegawai', 'tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
+  $this->db->where('tbl_tugas.idSuratTugas', $id);
+  $query = $this->db->get('');
+  return $query;
+}
+
+
+public function getNomLk($id){
+  $this->db->select("tbl_pegawai.nama,tbl_pegawai.nip,tbl_surattugas.noSuratTugas,tbl_surattugas.mak,tbl_surattugas.kota,tbl_surattugas.tglMulai,tbl_surattugas.tglSelesai,  tbl_surattugas.lamaPerjalanan");
+  $this->db->from('tbl_surattugas');
+  $this->db->join('tbl_tugas', 'tbl_surattugas.idSurat = tbl_tugas.idSuratTugas');
+  $this->db->join('tbl_pegawai', 'tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
+  $this->db->where('tbl_tugas.idSuratTugas', $id);
+  $query = $this->db->get('');
+  return $query;
+}
+
+public function uraianLk($id){
+   $this->db->select("tbl_uraian.kategori, tbl_uraian.biaya");
+  $this->db->from('tbl_uraian');
+  $this->db->join('tbl_kwitansi', 'tbl_uraian.idKwitansi = tbl_kwitansi.idKwitansi');
+  $this->db->join('tbl_tugas', 'tbl_kwitansi.idTugas = tbl_tugas.idTugas');
+  $this->db->where('tbl_tugas.idSuratTugas', $id);
+  $query = $this->db->get('');
+  return $query;
+
+}
 
 
 }
