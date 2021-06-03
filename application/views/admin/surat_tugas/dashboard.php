@@ -203,9 +203,10 @@
                     </form>             
                         <script src="<?php echo base_url();?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
                         <script type="text/javascript" >
-                            $(document).on("click","#hapusPeg",function(){
+                            $(document).on("click","#hapusSur",function(){
                                 var id = $(this).data('id');
-                                $("#hapusData #idPg").val(id);
+
+                                $("#hapusData #idSurat").val(id);
                             });
                         </script>
                 </div>
