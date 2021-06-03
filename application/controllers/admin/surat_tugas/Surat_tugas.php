@@ -24,7 +24,9 @@ class Surat_tugas extends CI_Controller {
     public function tambah_surat()
     {
         $data = konfigurasi('Form Tambah Surat', "ap");
-        $this->template->load('layouts/admin_template', 'admin/surat_tugas/form');
+        $data['petugas'] = $this->SuratTugas_model->getpetugas();
+        $data['nama_kota'] = $this->SuratTugas_model->getkota();
+        $this->template->load('layouts/admin_template', 'admin/surat_tugas/form', $data);
     }
 
     //simpan surat tugas

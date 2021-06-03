@@ -54,7 +54,7 @@
                   echo "<option value=".$kota->id_kota.">".$kota->nama."</option>";
                 }
                 ?>
-                <option selected="selected">- Select -</option>
+                <option value="" disabled selected>- Kota Tujuan -</option>
                 </select>
               </div>
             </div>
@@ -207,7 +207,7 @@
                 <div class="col-md-12">
                   <select class="category related-post form-control" name="idPetugas" id= "idPetugas" multiple="multiple" data-placeholder="Pilih Petugas" style="width: 100%;" required>
                     <?php
-                    foreach ($pegawai as $pegawai) {
+                    foreach ($petugas as $pegawai) {
                       echo "<option value=".$pegawai->idPegawai.">".$pegawai->nama."</option>";
                     }
                     ?>

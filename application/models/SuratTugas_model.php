@@ -19,6 +19,24 @@ class SuratTugas_model extends CI_Model{
     return $query->result();
   }
 
+  // petugas
+  public function getpetugas()
+  {
+    $this->db->select('*');
+    $this->db->from('tbl_pegawai');
+    $query = $this->db->get('');
+    return $query->result();
+  }
+
+  //kota
+  public function getkota()
+  {
+    $this->db->select('*');
+    $this->db->from('tbl_kota');
+    $query = $this->db->get('');
+    return $query->result();
+  }
+
   // ubah surat tugas
   public function ubah_surat($data)
   {
@@ -59,30 +77,9 @@ class SuratTugas_model extends CI_Model{
     $this->db->update($table,$data);
   }
 
-  public function getTugas()
-  {
 
-    $this->db->select('*');
-    $this->db->from('tbl_surattugas');
-    $query = $this->db->get('');
-    return $query;
-  }
 
-  public function getPetugas($id){
-    $this->db->select('tbl_tugas.idTugas,tbl_pegawai.nama');
-    $this->db->from('tbl_tugas');
-    $this->db->join('tbl_pegawai', 'tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
-    $this->db->where('tbl_tugas.idSuratTugas', $id);
-    $query = $this->db->get('');
-    $output = '<option value="">Pilih Petugas</option>';
-    foreach($query->result() as $row)
-    {
-     $output .= '<option value="'.$row->idTugas.'">'.$row->nama.'</option>';
- }
- return $output;
-
-  }
-
+  
 
 
 
