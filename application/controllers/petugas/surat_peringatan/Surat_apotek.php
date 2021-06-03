@@ -104,7 +104,8 @@ $data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
 					'jenisPeringatan' => "apotek",
 					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',
-					'idTl' => $idTl
+					'idTl' => $idTl,
+					'status' =>0
 				);
 
 			$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
