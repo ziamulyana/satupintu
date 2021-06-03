@@ -165,7 +165,7 @@
 </div>
 <script src="<?php echo base_url();?>assets/vendor/jquery/jquery-1.10.0.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-	$(document).on("click","#editSuratTugas",function(){
+	$(document).on("click","#editSur",function(){
 		var idS = $(this).data('id');
 		var noS = $(this).data('nosurat');
 		var tglS = $(this).data('tglsurat');
