@@ -23,6 +23,20 @@ class Lhk_model extends CI_Model
     return $query;
   }
 
+  public function getSuratTugas(){
+     $this->db->select('tbl_surattugas.idSurat, tbl_surattugas.noSuratTugas');
+     $this->db->from('tbl_surattugas');
+    $query = $this->db->get();
+    return $query->result();
+  }
+
+  public function getSarana(){
+     $this->db->select('*');
+     $this->db->from('tbl_sarana');
+    $query = $this->db->get();
+    return $query->result();
+  }
+
   public function updateSuratPeringatan($data){
     $this->db->set('tglSuratPeringatan', $data['tglSuratPeringatan']); 
     $this->db->set('noSuratPeringatan', $data['noSuratPeringatan']); 

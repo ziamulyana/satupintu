@@ -8,7 +8,7 @@ class Lhk_pem_c extends MY_Controller
     {
         parent::__construct();
         $this->load->database();
-        $this->load->model('add_lhk_pem_m');
+        $this->load->model('Lhk_model');
 
         $this->check_login();
         if ($this->session->userdata('id_role') != "2") {
@@ -19,7 +19,9 @@ class Lhk_pem_c extends MY_Controller
     public function index()
     {
 
-        $this->template->load('layouts/petugas_template', 'petugas/lhk/lhk_pem_v');
+        $data['surat_tugas']= $this->Lhk_model->getSuratTugas();
+        $data['sarana'] = $this->Lhk_model->getSarana();
+        $this->template->load('layouts/petugas_template', 'petugas/lhk/lhk_pem_v',$data);
     }
     public function add()
     {
