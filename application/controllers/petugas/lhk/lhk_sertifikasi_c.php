@@ -16,6 +16,6 @@ class Lhk_sertifikasi_c extends MY_Controller
     public function index()
     {
         
-        $this->template->load('layouts/petugas_template', 'petugas/lhk_sertifikasi_v');
+        $this->template->load('layouts/petugas_template', 'petugas/lhk/lhk_sertifikasi_v');
     }
 }

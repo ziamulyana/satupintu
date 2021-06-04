@@ -34,20 +34,9 @@
       <!-- Optionally, you can add icons to the links -->
       <li class="active"><a href="<?=base_url()?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
       <li class="active"><a href="<?php echo base_url('petugas/add_timeline_c')?>"><i class="fa fa-plus"></i> <span>Entry CAPA</span></a></li>
-      <li class="treeview" style="height: auto;">
-        <a href="#">
-          <i class="fa fa-book"></i> <span>LHK</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu" style="display: none;">
-          <li><a href="<?php echo base_url('petugas/lhk_pem_c')?>"><i class="fa fa-circle-o"></i>LHK Pemeriksaan</a></li>
-          <li><a href="<?php echo base_url('petugas/lhk_iklan_c')?>"><i class="fa fa-circle-o"></i>LHK Iklan Dll</a></li>
-          <li><a href="<?php echo base_url('petugas/lhk_sertifikasi_c')?>"><i class="fa fa-circle-o"></i>LHK Sertifikasi</a></li>
-          <li><a href="<?php echo base_url('petugas/lhk_sampling_c')?>"><i class="fa fa-circle-o"></i>LHK Sampling</a></li>
-        </ul>
-      </li>
+       <li class="active"><a href="<?php echo base_url('petugas/lhk/list_lhk_c')?>"><i class="fa fa-book"></i> <span>LHK</span></a></li>
+
+   
       <li class="treeview" style="height: auto;">
         <a href="#">
           <i class="fa fa-share"></i> <span>Tindak Lanjut</span>

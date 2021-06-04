@@ -19,7 +19,7 @@ class Lhk_pem_c extends MY_Controller
     public function index()
     {
 
-        $this->template->load('layouts/petugas_template', 'petugas/lhk_pem_v');
+        $this->template->load('layouts/petugas_template', 'petugas/lhk/lhk_pem_v');
     }
     public function add()
     {

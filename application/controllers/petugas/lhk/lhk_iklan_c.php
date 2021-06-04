@@ -16,6 +16,6 @@ class Lhk_iklan_c extends MY_Controller
     public function index()
     {
         
-        $this->template->load('layouts/petugas_template', 'petugas/lhk_iklan_v');
+        $this->template->load('layouts/petugas_template', 'petugas/lhk/lhk_iklan_v');
     }
 }
