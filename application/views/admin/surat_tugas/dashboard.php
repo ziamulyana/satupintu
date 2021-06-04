@@ -238,8 +238,6 @@
 		$("#editData #kota").val(kotaS);
 	});
   </script>
-
-<<<<<<< Updated upstream
  <!-- Hapus Surat -->
  <div id= "hapusSurat" class="modal fade" role="dialog">
         <div class="modal-dialog">
