@@ -104,7 +104,7 @@
 </div>
 <!-- /.row -->
 
-<!-- Edit Peringatan -->
+<!-- Edit Sarana -->
 <div id= "editSarana" class="modal fade" role="dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
