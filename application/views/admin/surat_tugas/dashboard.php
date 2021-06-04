@@ -69,7 +69,7 @@
                         data-idsurat="<?=$row->idSurat ?>" data-nosurat="<?=$row->noSuratTugas ?>"  data-tglsurat="<?=$row->tglSurat ?>" data-maksud="<?=$row->maksud ?>" data-kota="<?=$row->kota ?>" data-toggle="modal" data-target="#editSurat">
                           <i class="fa fa-edit"></i></a>
 
-                         <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusSur" data-id="<?$row->idSurat ?>" data-toggle="modal" data-target="#hapusSurat">
+                         <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusSur" data-id="<?=$row->idSurat ?>" data-toggle="modal" data-target="#hapusSurat">
                           <i class="fa fa-trash"></i></a>
 
                          <a href="#" class="btn btn-info btn-sm" data-tooltip="tooltip" title="printSurat" id="printSurat" data-toggle="modal" data-target="#printSurat" data-id="<?=$row->idSurat ?>">

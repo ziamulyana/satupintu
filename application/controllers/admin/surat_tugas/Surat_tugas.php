@@ -109,7 +109,7 @@ class Surat_tugas extends CI_Controller {
     // hapus surat tugas
     public function hapus_surat()
     {
-        $idsurat = $this->input->post('idSurat');
+        $id = $this->input->post('idSur');
         $this->SuratTugas_model->hapus_surat($id);
         redirect('admin/surat_tugas/surat_tugas');
     }
