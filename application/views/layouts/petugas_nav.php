@@ -14,7 +14,7 @@
 				</a>
 				<div ></div>
 				<ul id="notifications" class="dropdown-menu">
-					<li class="header">Anda Memiliki <?php echo $this->db->from("notif")->count_all_results(); ?> Notifikasi</li>
+					<li class="header">Anda Memiliki <?php echo $this->db->where('closed =', 0)->from("tbl_feedback")->count_all_results(); ?> Notifikasi</li>
 					<li>
 						<!-- inner menu: contains the actual data -->
 						<ul class="menu">
@@ -22,8 +22,9 @@
 								<?php
 
 								$this->db->select('*');
-								$this->db->from('notif');
-								$this->db->order_by('created_date', 'DESC');
+								$this->db->from('tbl_feedback');
+								$this->db->where('closed =', 0);
+								$this->db->order_by('tglFeedback', 'DESC');
 								$query = $this->db->get();
 
 								?>
@@ -33,7 +34,7 @@
 								if (isset($query)) {
 									foreach ($query->result() as $row) {
 
-										echo "<a href=''><i class='fa fa-envelope text-green'></i>" . $row->sarana . '</a>';
+										echo "<a href=''><i class='fa fa-envelope text-green'></i>" . $row->isiFeedback . '</a>';
 									}
 								} else {
 									echo "no record found";

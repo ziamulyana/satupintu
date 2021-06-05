@@ -142,7 +142,7 @@
 
 		// ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
 		$('#noti_Counter')
-			.text('<?php echo $this->db->from("notif")->count_all_results(); ?>') // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
+			.text('<?php echo $this->db->where('closed =', 0)->from("tbl_feedback")->count_all_results(); ?>') // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
 			.css({
 				top: '0px'
 			})
@@ -202,13 +202,13 @@
 	var areaChartData = {
 		labels: ["January", "February", "March", "April", "May", "June", "July", "Agustus", "September", "Oktober", "November", "Desember"],
 		datasets: [{
-				label: "OPEN",
-				fillColor: "#dd4b39",
-				strokeColor: "#dd4b39",
-				pointColor: "#dd4b39",
-				pointStrokeColor: "#dd4b39",
+				label: "CLOSED",
+				fillColor: "#00a65a",
+				strokeColor: "#00a65a",
+				pointColor: "#00a65a",
+				pointStrokeColor: "#00a65a",
 				pointHighlightFill: "#fff",
-				pointHighlightStroke: "#dd4b39",
+				pointHighlightStroke: "#00a65a",
 				data: [
 					<?php echo $this->db->where('MONTH(tglFeedback)=', 1)->where('closed =', 1)->from("tbl_feedback")->count_all_results(); ?>,
 					<?php echo $this->db->where('MONTH(tglFeedback)=', 2)->where('closed =', 1)->from("tbl_feedback")->count_all_results(); ?>,
@@ -225,13 +225,13 @@
 				]
 			},
 			{
-				label: "CLOSED",
-				fillColor: "#00a65a",
-				strokeColor: "#00a65a",
-				pointColor: "#00a65a",
-				pointStrokeColor: "#00a65a",
+				label: "OPEN",
+				fillColor: "#dd4b39",
+				strokeColor: "#dd4b39",
+				pointColor: "#dd4b39",
+				pointStrokeColor: "#dd4b39",
 				pointHighlightFill: "#fff",
-				pointHighlightStroke: "#00a65a",
+				pointHighlightStroke: "#dd4b39",
 				data: [
 					<?php echo $this->db->where('MONTH(tglFeedback)=', 1)->where('closed =', 0)->from("tbl_feedback")->count_all_results(); ?>,
 					<?php echo $this->db->where('MONTH(tglFeedback)=', 2)->where('closed =', 0)->from("tbl_feedback")->count_all_results(); ?>,

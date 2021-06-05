@@ -65,8 +65,8 @@
             <canvas id="areaChart"></canvas>
           </div>
           <div class="mid">
-            <small class="label label-danger"></i> OPEN</small>
             <small class="label label-success"></i> CLOSED</small>
+            <small class="label label-danger"></i> OPEN</small>
           </div>
           <!-- /.box-body -->
         </div>
