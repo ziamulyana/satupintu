@@ -32,27 +32,16 @@ class Lhk_sampling_c extends MY_Controller
     echo $tglLhk;
     echo $detSampling;
 
+    $data['surat'] = $this->Lhk_model->getAtributSampling($idSurat);
+
+    $data = array
+        (
+            'title'=>'Cetak LHK Sampling'
+            'tglLhk'              => $tglLhk,
+            'jenisLhk'        => "Sampling",
+            'file_lhk'                  => "0"
+        );
 
 
-        // $data = array
-        // (
-        //     'idLhk'                 => $this->input->post('idLhk'),
-        //     'idSuratTugas'          => $this->input->post('idSuratTugas'),
-        //     'kegiatan'              => $this->input->post('kegiatan'),
-        //     'tglPemeriksaan'        => $this->input->post('tglPemeriksaan'),
-        //     'kota'                  => $this->input->post('kota'),
-        //     'petugas1'              => $this->input->post('petugas1'),
-        //     'petugas2'              => $this->input->post('petugas2'),
-        //     'petugas3'              => $this->input->post('petugas3'),
-        //     'petugas4'              => $this->input->post('petugas4'),
-        //     'jenisSarana'           => $this->input->post('jenisSarana'),
-        //     'idSarana'              => $this->input->post('idSarana'),
-        //     'temuanRHPK'            => $this->input->post('temuanRHPK'),
-        //     'isMk'                  => $this->input->post('isMk'),
-        //     'tindakLanjut'          => $this->input->post('tindakLanjut'),
-        //     'alasanTidakDiperiksa'  => $this->input->post('alasanTidakDiperiksa'),
-        //     'keterangan'            => $this->input->post('keterangan')
-
-        // );
     }
 }

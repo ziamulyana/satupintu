@@ -1,4 +1,3 @@
-
 <section class="content-header">
   <h1>
     LHK Sampling
@@ -109,6 +108,76 @@
 
             </div>
 
+              <div class="col-md-12">
+              <div class="box box-primary">
+                <div class="box-header with-border">
+
+                  <h3 class="box-title">Identitas Kegiatan</h3>
+
+                  <div class="row">
+                    <div class="col-xs-12">
+
+                     <hr>
+
+                  <!-- nama / judul kegiatan -->
+                 <div class="form-group row">
+                <label for="noSurat" class="col-sm-6 col-form-label">Nama / Judul :<span class="wajib"> *</span></label>
+                <div class="col-sm-12">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
+                    <input type="text" class="form-control" name="judulKegiatan" id="judulKegiatan" placeholder="Nama / judul kegiatan" required>
+                  </div>
+                </div>
+              </div>
+
+                   <!--waktu kegiatan-->
+              <div class="form-group row">
+                <label for="example-date-input" class="col-sm-4 col-form-label">Jadwal / waktu <span class="wajib"> *</span></label>
+                <div class="col-sm-12">
+                  <input class="form-control <?php echo form_error('tglLhk') ? 'is-invalid' : '' ?>" type="date" name="tglKegiatan" id="tglKegiatan" required>
+                  <div class="invalid-feedback">
+                    <?php echo form_error('tglPemeriksaan') ?>
+                  </div>
+                </div>
+              </div>
+
+
+                   <!-- tempat / tujuan kegiatan-->
+                 <div class="form-group row">
+                <label for="noSurat" class="col-sm-6 col-form-label">Tempat / Tujuan :<span class="wajib"> *</span></label>
+                <div class="col-sm-12">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
+                    <input type="text" class="form-control" name="tujuanKegiatan" id="tujuanKegiatan" placeholder="tempat / tujuan kegiatan" required>
+                  </div>
+                </div>
+              </div>
+
+                <!-- pejabat yang dituju -->
+                 <div class="form-group row">
+                <label for="noSurat" class="col-sm-6 col-form-label">Pejabat yang dituju : <span class="wajib"> *</span></label>
+                <div class="col-sm-12">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
+                    <input type="text" class="form-control" name="pejabat" id="pejabat" placeholder="Pejabat yang dituju" required>
+                  </div>
+                </div>
+              </div>
+
+                      <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                  </div>
+
+                  <div class="box-body pad">
+                    <form>
+                     
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="col-md-12">
               <div class="box box-primary">
                 <div class="box-header with-border">
@@ -136,10 +205,6 @@
                     </div>
                     <!-- /.box -->
                   </div>
-
-
-
-
 
                   <div class="box-body pad">
                     <form>
@@ -190,20 +255,3 @@
 </style>
 
 
-<script type="text/javascript">
-  $(document).ready(function(){
-
-    var i = 1;
-
-    $("#add").click(function(){
-      i++;
-      $('#dynamic_field').append('<tr id="row'+i+'"><tr><td><p><?php foreach($sarana as $sr){ echo $sr->namaSarana;}?></p></td></tr></tr>');  
-    });
-
-    $(document).on('click', '.btn_remove', function(){  
-      var button_id = $(this).attr("id");   
-      $('#row'+button_id+'').remove();  
-    });
-
-  });
-</script>

@@ -42,6 +42,7 @@ class SuratTugas_model extends CI_Model{
   {
     $this->db->set('noSuratTugas', $data['noSur']);
     $this->db->set('tglSurat', $data['tglSur']);
+<<<<<<< Updated upstream
     $this->db->set('tglMulai', $data['tglMulai']);
     //$this->db->set('bebanBiaya', $data['bebanBiaya']);
     //$this->db->set('kendaraan', $data['kendaraan']);
@@ -53,6 +54,10 @@ class SuratTugas_model extends CI_Model{
     //$this->db->set('jabatanPenandatangan', $data['jabatanpenandatangan']);
     //$this->db->set('idPetugas', $data['idpetugas']);
 
+=======
+    $this->db->set('kota', $data['kotas']);
+    $this->db->set('maksud', $data['maksuds']);
+>>>>>>> Stashed changes
     $this->db->where('idSurat', $data['idSur']);
     $query = $this->db->update('tbl_surattugas');
   }
