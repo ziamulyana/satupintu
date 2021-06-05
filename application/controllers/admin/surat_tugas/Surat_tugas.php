@@ -116,12 +116,12 @@ class Surat_tugas extends CI_Controller {
     }
 
     //Print Surat Tugas
-    public function print_surat()
+    public function print_surat($id)
     {
         $id = $this->input->post('idSurat');
-        $data['idSurat'] = $id;
+        //$data['idSurat'] = $id;
         $data['printS'] = $this->SuratTugas_model->print_surat($id);
-        $this->load->view('admin/print_surat');
+        $this->load->view('admin/surat_tugas/print_surat', $data);
     }
 
 }

@@ -72,7 +72,7 @@
                          <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusSur" data-id="<?=$row->idSurat ?>" data-toggle="modal" data-target="#hapusSurat">
                           <i class="fa fa-trash"></i></a>
 
-                         <a href="#" class="btn btn-info btn-sm" data-tooltip="tooltip" title="printSurat" id="printSur" data-toggle="modal" data-target="#printSurat" data-id="<?=$row->idSurat ?>">
+                         <a href="#" class="btn btn-info btn-sm" data-tooltip="tooltip" title="Print" id="printSur" data-toggle="modal" data-target="#printSurat" data-id="<?=$row->idSurat ?>">
                           <i class="fa fa-print"></i></a>
                             
                         </td>
@@ -166,7 +166,7 @@
 <script src="<?php echo base_url();?>assets/vendor/jquery/jquery-1.10.0.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 	$(document).on("click","#editSur",function(){
-		var idS = $(this).data('id');
+		var idS = $(this).data('idsurat');
 		var noS = $(this).data('nosurat');
 		var tglS = $(this).data('tglsurat');
 		var maksudS = $(this).data('maksud');
@@ -203,9 +203,9 @@
                         <script src="<?php echo base_url();?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
                         <script type="text/javascript" >
                             $(document).on("click","#hapusSur",function(){
-                                var id = $(this).data('id');
+                            var id = $(this).data('id');
 
-                                $("#hapusData #idSurat").val(id);
+                            $("#hapusData #idSurat").val(id);
                             });
                         </script>
                 </div>
@@ -215,23 +215,6 @@
     </div>
   </div>  
 
- <!-- Hapus Surat Tugas -->
- <div id="hapusSurat" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title"><i class="icon fa fa-ban"></i>Alert !</h4>
-      </div>
-      <div class="modal-body" id=hapusData>
-        <form role="form" method="post" action="<?= base_url('admin/surat_tugas/surat_tugas/hapus_surat') ?>">
-          <div class="box-body">
-            <div class="form-group" style="text-align:center">Anda yakin akan menghapus Surat Tugas ini ?</label>
-            <input type="hidden" id="idSurat" name="idSurat">
-            </div>
-        </div>
-    </div>
-
 <!-- Print Surat Tugas -->
 <div id= "printSurat" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -240,11 +223,11 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
       </div>
-      <div class="modal-body" id=panelDkt>
-        <form role="form" method="post" action="<?= base_url('admin/surat_pj/nominatifDk')?>">
+      <div class="modal-body" id=panelSur>
+        <form role="form" method="post" action="<?= base_url('admin/surat_tugas/print_surat')?>">
           <div class="box-body">
-            <div class="form-group" style="text-align:center">Anda Akan Mencetak Nominatif Format Dalam Kota</label>
-              <input type="hidden" id="idKw" name="idKw">
+            <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Tugas</label>
+              <input type="hidden" id="idSurat" name="idSurat">
 
             </div>                        
           </div><!-- /.box-body -->
@@ -255,9 +238,10 @@
         </form>             
         <script src="<?php echo base_url();?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
         <script type="text/javascript" >
-          $(document).on("click","#printDk",function(){
-            var id = $(this).data('id');
-            $("#panelDkt #idKw").val(id);
+          $(document).on("click","#printSur",function(){
+          var id = $(this).data('id');
+
+          $("#panelSur #idSurat").val(id);
           });
         </script>
       </div>
