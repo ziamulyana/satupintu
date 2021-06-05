@@ -11,11 +11,13 @@ class Lhk_sertifikasi_c extends MY_Controller
         if ($this->session->userdata('id_role') != "2") {
             redirect('', 'refresh');
         }
+         $this->load->model('Lhk_model');
     }
 
     public function index()
     {
-        
-        $this->template->load('layouts/petugas_template', 'petugas/lhk/lhk_sertifikasi_v');
+         $data['surat_tugas']= $this->Lhk_model->getSuratTugas();
+         $data['sarana'] = $this->Lhk_model->getSarana();
+        $this->template->load('layouts/petugas_template', 'petugas/lhk/lhk_sertifikasi_v',$data);
     }
 }

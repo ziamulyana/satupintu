@@ -146,7 +146,7 @@
                           <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
 
 
-                        <td><button type="button" name="add" id="add" class="btn btn-primary"><i class="fa fa-plus"> Tambah</button></td>  
+                        <td rowspan="2"><button type="button" name="add" id="add" class="btn btn-primary"><i class="fa fa-plus"> Tambah</button></td>  
                         </tr>
                         </tr>
                       </table>

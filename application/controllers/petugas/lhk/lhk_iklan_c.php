@@ -11,11 +11,12 @@ class Lhk_iklan_c extends MY_Controller
         if ($this->session->userdata('id_role') != "2") {
             redirect('', 'refresh');
         }
+         $this->load->model('Lhk_model');
     }
 
     public function index()
     {
-        
-        $this->template->load('layouts/petugas_template', 'petugas/lhk/lhk_iklan_v');
+         $data['surat_tugas']= $this->Lhk_model->getSuratTugas();
+        $this->template->load('layouts/petugas_template', 'petugas/lhk/lhk_iklan_v',$data);
     }
 }

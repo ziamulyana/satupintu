@@ -14,7 +14,7 @@
 <section class="content">
   <div class="row">
     <div class="col-md-12">
-      <form action="<?php echo site_url('petugas/lhk_pem_c/add') ?>" method="post" enctype="multipart/form-data" role="form">
+      <form action="<?php echo site_url('petugas/lhk/lhk_sampling_c/add') ?>" method="post" enctype="multipart/form-data" role="form">
         <div class="box box-primary">
           <div class="box-header with-border">
             <h3 class="box-title">Form Pembuatan Surat LHK</h3>
@@ -57,7 +57,7 @@
               <div class="form-group row">
                 <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal LHK<span class="wajib"> *</span></label>
                 <div class="col-sm-12">
-                  <input class="form-control <?php echo form_error('tglLhk') ? 'is-invalid' : '' ?>" type="date" name="tglLhk" required>
+                  <input class="form-control <?php echo form_error('tglLhk') ? 'is-invalid' : '' ?>" type="date" name="tglLhk" id="tglLhk" required>
                   <div class="invalid-feedback">
                     <?php echo form_error('tglPemeriksaan') ?>
                   </div>
@@ -77,7 +77,7 @@
                 <div class="col-sm-12">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
-                    <input type="text" class="form-control" name="sppd" id="sppd" placeholder="Pengesah SPPD" required>
+                    <input type="text" class="form-control" name="sppd" id="sppd" placeholder="Pengesah SPPD" >
                   </div>
                 </div>
               </div>
@@ -89,7 +89,7 @@
                 <div class="col-sm-12">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
-                    <input type="text" class="form-control" name="kwitansi" id="kwitansi" placeholder="Pengesah Kwitansi" required>
+                    <input type="text" class="form-control" name="kwitansi" id="kwitansi" placeholder="Pengesah Kwitansi">
                   </div>
                 </div>
               </div>
@@ -97,11 +97,11 @@
 
               <!-- form 8 jam  -->
               <div class="form-group row">
-                <label for="noSurat" class="col-sm-6 col-form-label">Form 8 jam disahkan oleh :</label>
+                <label for="noSurat" class="col-sm-6 col-form-label">Form 8 jam disahkan oleh :<span class="wajib"> *</span></label>
                 <div class="col-sm-12">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
-                    <input type="text" class="form-control" name="8jam" id="8jam" placeholder="Pengesah Form 8 Jam" required>
+                    <input type="text" class="form-control" name="form" id="form" placeholder="Pengesah Form 8 Jam" required>
                   </div>
                 </div>
               </div>
@@ -125,7 +125,7 @@
               <!-- /.card-header -->
               <div class="box-body pad">
                 <div class="">
-                  <textarea id="editor1" name="noIzin" id= "noIzin" placeholder="noIzin" 
+                  <textarea id="editor1" name="detSampling" id= "detSampling" placeholder="noIzin" 
                   style="width: 100%; height: 200px; font-size: 12px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" required ></textarea>
                 </div>
               </div>
@@ -149,7 +149,7 @@
                 </div>
               </div>
             </div>
-            <button type="submit" class="btn btn-success"><i class="fa fa-share"></i>&nbsp Save</button>
+            <button type="submit" class="btn btn-success"><i class="fa fa-print"></i>&nbsp Print</button>
           </div>
           <!-- /.box-body -->
         </div>
