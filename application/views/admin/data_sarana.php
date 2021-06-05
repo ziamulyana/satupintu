@@ -118,7 +118,7 @@
 						<div class="box-body">
 
 							<div class="form-group">
-								<input type="hidden" class="form-control" name="id" id="idSarEdit" >
+								<input type="hidden" class="form-control" name="idSr" id="idSarEdit" >
 							</div>
 
 							<div class="form-group">
