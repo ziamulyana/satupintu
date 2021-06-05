@@ -72,7 +72,7 @@
                          <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusSur" data-id="<?=$row->idSurat ?>" data-toggle="modal" data-target="#hapusSurat">
                           <i class="fa fa-trash"></i></a>
 
-                         <a href="#" class="btn btn-info btn-sm" data-tooltip="tooltip" title="printSurat" id="printSurat" data-toggle="modal" data-target="#printSurat" data-id="<?=$row->idSurat ?>">
+                         <a href="#" class="btn btn-info btn-sm" data-tooltip="tooltip" title="printSurat" id="printSur" data-toggle="modal" data-target="#printSurat" data-id="<?=$row->idSurat ?>">
                           <i class="fa fa-print"></i></a>
                             
                         </td>
@@ -116,7 +116,6 @@
 <!-- /.row -->
 
 <!-- Edit Surat Tugas -->
-<<<<<<< Updated upstream
 <div id= "editSurat" class="modal fade" role="dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -163,64 +162,6 @@
 			</div>
 		</div>
 	</div>
-=======
- <div id="editSurat" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Ubah Surat Tugas</h4>
-      </div>
-      
-      <div class="modal-body" id=editData>
-        <form role="form" method="post" action="<?= base_url('admin/surat_tugas/Surat_tugas/ubah_surat') ?>" method="post">
-          <div class="box box-success">
-            <div class="box-body">
-
-
-              <div class="form-group">
-                <input type="hidden" class="form-control" name="idsurat" id="idSuratEdit">
-              </div>
-              
-              <div class="form-group">
-                <label for="noEdit">No Surat Tugas</label><span class="wajib"> *</span>
-                <input type="text" class="form-control" name="nosurat" id="noSuratEdit" placeholder="No Surat Tugas" required>
-              </div> 
-            
-              <div class="form-group" id="sandbox-container">
-                <label for="noEdit">Tanggal </label><span class="wajib"> *</span>
-                <div class="input-group date">
-                  <input type="text" class="form-control" name="tglsurat" id="tglSuratEdit" required>
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="noEdit">Maksud & Tujuan</label><small class="text-danger">*</small>
-                <input type="text" class="form-control" name="maksud" id="maksudEdit" required>
-              </div>
-
-              <div class="form-group">
-                <label for="noEdit">Kota</label><small class="text-danger">*</small>
-                <input type="text" class="form-control" name="kota" id="kotaEdit" required>
-              </div>
-              
-
-             </div><!-- /.box-body -->
-             <div class="modal-footer">
-              <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-              <button type="submit" name="update" class="btn btn-success"><i class="fa fa-check"></i> Update</button>
-             </div>
-            </div>
-          </div>
-        </form>
-           </div>
-
-    </div>
-  </div>
->>>>>>> Stashed changes
 </div>
 <script src="<?php echo base_url();?>assets/vendor/jquery/jquery-1.10.0.min.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -269,7 +210,6 @@
                         </script>
                 </div>
                 
-=======
   </div>
       </div>
     </div>
@@ -288,16 +228,40 @@
           <div class="box-body">
             <div class="form-group" style="text-align:center">Anda yakin akan menghapus Surat Tugas ini ?</label>
             <input type="hidden" id="idSurat" name="idSurat">
->>>>>>> Stashed changes
             </div>
         </div>
-<<<<<<< Updated upstream
     </div>
-=======
+
+<!-- Print Surat Tugas -->
+<div id= "printSurat" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
       </div>
+      <div class="modal-body" id=panelDkt>
+        <form role="form" method="post" action="<?= base_url('admin/surat_pj/nominatifDk')?>">
+          <div class="box-body">
+            <div class="form-group" style="text-align:center">Anda Akan Mencetak Nominatif Format Dalam Kota</label>
+              <input type="hidden" id="idKw" name="idKw">
+
+            </div>                        
+          </div><!-- /.box-body -->
+          <div class="modal-footer">
+            <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+            <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
+          </div>
+        </form>             
+        <script src="<?php echo base_url();?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
+        <script type="text/javascript" >
+          $(document).on("click","#printDk",function(){
+            var id = $(this).data('id');
+            $("#panelDkt #idKw").val(id);
+          });
+        </script>
+      </div>
+
     </div>
   </div>
-
-
-</section>
->>>>>>> Stashed changes
+</div>

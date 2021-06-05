@@ -40,20 +40,18 @@ class SuratTugas_model extends CI_Model{
   // ubah surat tugas
   public function ubah_surat($data)
   {
-    $this->db->set('noSuratTugas', $data['nosurat']);
-    $this->db->set('tglSurat', $data['tglsurat']);
-    $this->db->set('tglMulai', $data['tglmulai']);
-    $this->db->set('bebanBiaya', $data['bebanbiaya']);
-    $this->db->set('kendaraan', $data['kendaraan']);
-    $this->db->set('kota', $data['kendaraan']);
-    $this->db->set('idAnggaran', $data['idanggaran']);
-    $this->db->set('tglSelesai', $data['tglselesai']);
+    $this->db->set('noSuratTugas', $data['noSur']);
+    $this->db->set('tglSurat', $data['tglSur']);
+    $this->db->set('tglMulai', 0);
+    $this->db->set('bebanBiaya', 0);
+    $this->db->set('kendaraan', 0);
+    $this->db->set('kota', $data['kotas']);
+    $this->db->set('idAnggaran', 0);
+    $this->db->set('tglSelesai', 0);
     $this->db->set('maksud', $data['maksud']);
-    $this->db->set('namaPenandatangan', $data['namapenandatangan']);
-    $this->db->set('jabatanPenandatangan', $data['jabatanpenandatangan']);
-    $this->db->set('idPetugas', $data['idpetugas']);
-
-    $this->db->where('idSurat', $data['idsurat']);
+    $this->db->set('namaPenandatangan', 0);
+    $this->db->set('jabatanPenandatangan', 0);
+    $this->db->where('idSurat', $data['idSur']);
     $query = $this->db->update('tbl_surattugas');
   }
 
@@ -62,6 +60,18 @@ class SuratTugas_model extends CI_Model{
   {
     $this->db->delete("tbl_surattugas", array("idSurat" => $id));
   }
+
+  // print surat tugas
+  public function surat_tugas($id)
+  {
+    $this->db->select('');
+    $this->db->from('');
+    $this->db->join('');
+    $this->db->where('');
+    $query = $this->db->get('');
+    return $query;
+  }
+
 
 
 }

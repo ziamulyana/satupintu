@@ -67,6 +67,14 @@
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-money"></i></span>
                 <input type="text" class="form-control" name="idAnggaran" id="idAnggaran" placeholder="Anggaran" required>
+                <select class="form-control" name="kota" id="kota" required>
+                <?php
+                foreach ($nama_kota as $kota) {
+                  echo "<option value=".$kota->id_kota.">".$kota->nama."</option>";
+                }
+                ?>
+                <option value="" disabled selected>- Kota Tujuan -</option>
+                </select>s
               </div>
             </div>
           </div>

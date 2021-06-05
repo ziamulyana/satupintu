@@ -73,33 +73,34 @@ class Surat_tugas extends CI_Controller {
     public function ubah_surat()
     {
         $idsurat = $this->input->post('idSurat');
-        $nosurat = $this->input->post('noSuratTugas');
+        $nosurat = $this->input->post('noSurat');
         $tglsurat = $this->input->post('tglSurat');
-        $tglmulai = $this->input->post('tglMulai');
-        $bebanbiaya = $this->input->post('bebanBiaya');
-        $kendaraan = $this->input->post('kendaraan');
+        //$tglmulai = $this->input->post('tglMulai');
+        //$bebanbiaya = $this->input->post('bebanBiaya');
+        //$kendaraan = $this->input->post('kendaraan');
         $kota = $this->input->post('kota');
-        $idanggaran = $this->input->post('idAnggaran');
-        $tglselesai = $this->input->post('tglSelesai');
+        //$idanggaran = $this->input->post('idAnggaran');
+        //$tglselesai = $this->input->post('tglSelesai');
         $maksud = $this->input->post('maksud');
-        $namapenandatangan = $this->input->post('namaPenandatangan');
-        $jabatanpenandatangan = $this->input->post('jabatanPenandatangan');
-        $idpetugas = $this->input->post('idPetugas');
+        //$namapenandatangan = $this->input->post('namaPenandatangan');
+        //$jabatanpenandatangan = $this->input->post('jabatanPenandatangan');
+        //$idpetugas = $this->input->post('idPetugas');
+
 
         $data = array (
-            'idSurat' => $idsurat,
-            'noSuratTugas' => $nosurat,
-            'tglSurat' => $tglsurat,
-            'tglMulai' => $tglmulai,
-            'bebanBiaya' => $bebanbiaya,
-            'kendaraan' => $kendaraan,
-            'kota' => $kota,
-            'idAnggaran' => $idanggaran,
-            'tglSelesai' => $tglselesai,
-            'maksud' => $maksud,
-            'namapenandatangan' => $namapenandatangan,
-            'jabatanPenandatangan' => $jabatanpenandatangan,
-            'idPetugas' => $idpetugas
+            'idSur' => $idsurat,
+            'noSur' => $nosurat,
+            'tglSur' => $tglsurat,
+            //'tglMulai' => $tglmulai,
+            //'bebanBiaya' => $bebanbiaya,
+            //'kendaraan' => $kendaraan,
+            'kotas' => $kota,
+            //'idAnggaran' => $idanggaran,
+            //'tglSelesai' => $tglselesai,
+            'maksuds' => $maksud
+            //'namapenandatangan' => $namapenandatangan,
+            //'jabatanPenandatangan' => $jabatanpenandatangan,
+            //'idPetugas' => $idpetugas
             );
             
         $this->SuratTugas_model->ubah_surat($data);
@@ -112,6 +113,15 @@ class Surat_tugas extends CI_Controller {
         $id = $this->input->post('idSurat');
         $this->SuratTugas_model->hapus_surat($id);
         redirect('admin/surat_tugas/surat_tugas');
+    }
+
+    //Print Surat Tugas
+    public function print_surat()
+    {
+        $id = $this->input->post('idSurat');
+        $data['idSurat'] = $id;
+        $data['printS'] = $this->SuratTugas_model->print_surat($id);
+        $this->load->view('admin/print_surat');
     }
 
 }
