@@ -34,7 +34,14 @@
 								if (isset($query)) {
 									foreach ($query->result() as $row) {
 
-										echo "<a href=''><i class='fa fa-envelope text-green'></i>" . $row->isiFeedback . '</a>';
+										echo '
+										<li>
+										<a href="#"><i class="fa fa-reply-all text-green"></i>
+										<strong>'.$row->isiFeedback.'</strong><br />
+										<small>&nbsp<i class="fa fa-clock-o"></i><em>&nbsp&nbsp&nbsp&nbsp'.$row->tglFeedback.'</em></small>
+										</a>
+										</li>
+										';
 									}
 								} else {
 									echo "no record found";
