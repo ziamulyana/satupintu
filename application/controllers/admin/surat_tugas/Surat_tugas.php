@@ -9,7 +9,7 @@ class Surat_tugas extends CI_Controller {
         parent::__construct();
         $this->load->database();
         $this->load->model("SuratTugas_model");
- 
+        
     }
 
     public function index()
@@ -61,7 +61,7 @@ class Surat_tugas extends CI_Controller {
             'namapenandatangan' => $namapenandatangan,
             'jabatanPenandatangan' => $jabatanpenandatangan,
             'idPetugas' => $idpetugas
-            );
+        );
         
         $this->db->insert('tbl_surattugas', $data);
         $this->session->set_flashdata('success', 'Data Berhasil Dimasukan');
@@ -101,8 +101,8 @@ class Surat_tugas extends CI_Controller {
             //'namapenandatangan' => $namapenandatangan,
             //'jabatanPenandatangan' => $jabatanpenandatangan,
             //'idPetugas' => $idpetugas
-            );
-            
+        );
+        
         $this->SuratTugas_model->ubah_surat($data);
         redirect('admin/surat_tugas/surat_tugas');
     }
@@ -115,13 +115,18 @@ class Surat_tugas extends CI_Controller {
         redirect('admin/surat_tugas/surat_tugas');
     }
 
-    //Print Surat Tugas
-    public function print_surat($id)
+    public function print()
     {
-        $id = $this->input->post('idSurat');
-        //$data['idSurat'] = $id;
-        $data['printS'] = $this->SuratTugas_model->print_surat($id);
-        $this->load->view('admin/surat_tugas/print_surat', $data);
-    }
+     echo "0";
+ }
 
+    // //Print Surat Tugas
+    // public function print()
+    // {
+    //     // $id = $this->input->post('idSurat');
+    //     //$data['idSurat'] = $id;
+    //     // $data['printS'] = $this->SuratTugas_model->print_surat($id);
+    //     // $this->load->view('admin/surat_tugas/print_surat', $data);
+    //     echo "0";
+    // }
 }
