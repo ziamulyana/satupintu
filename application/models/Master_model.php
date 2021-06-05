@@ -59,4 +59,27 @@ public function hapus_dataSarana($id){
  }
 
 
+public function getAnggaran(){
+    $this->db->select('*');
+    $this->db->from('tbl_anggaran');
+    $query = $this->db->get('');
+    return $query->result();
+}
+
+ public function updateAnggaran($data2){
+   $this->db->set('mak', $data2['mak']); 
+   $this->db->set('namaAnggaran', $data2['namaAnggaran']);
+   $this->db->set('uraianKegiatan', $data2['uraianKegiatan']); 
+   $this->db->set('divisi', $data2['divisi']);
+   $this->db->set('kode', $data2['kode']); 
+   $this->db->set('pagu', $data2['pagu']);
+   $this->db->set('realisasi', $data2['realisasi']); 
+   $this->db->where('idAnggaran', $data2['idAnggaran']);
+   $query = $this->db->update('tbl_anggaran');
+}
+
+public function hapus_dataAnggaran($id){
+   $this->db->delete("tbl_anggaran",array("idAnggaran"=>$id));
+ }
+
 }

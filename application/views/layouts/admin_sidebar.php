@@ -44,7 +44,7 @@
         <ul class="treeview-menu" style="display: none;">
           <li><a href="<?php echo base_url('admin/Master/data_pegawai')?>"><i class="fa fa-circle-o"></i>Data Pegawai</a></li>
           <li><a href="<?php echo base_url('admin/Master/data_sarana')?>"><i class="fa fa-circle-o"></i>Data Sarana</a></li>
-        
+          <li><a href="<?php echo base_url('admin/Master/data_anggaran')?>"><i class="fa fa-circle-o"></i>Data Anggaran</a></li>
         </ul>
       </li>
 

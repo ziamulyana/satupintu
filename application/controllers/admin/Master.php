@@ -81,6 +81,8 @@ public function hapus_dataPegawai(){
         redirect('admin/Master/data_pegawai');
         }
 
+
+
     public function data_sarana()
     {
 
@@ -163,6 +165,84 @@ public function hapus_dataPegawai(){
         $id = $this->input->post('idHapus');
         $this->Master_model->hapus_dataSarana($id);
         redirect('admin/Master/data_sarana');
+        }
+
+
+public function data_anggaran()
+    {
+
+        $data2['anggaran'] = $this->Master_model->getAnggaran();
+        $this->template->load('layouts/admin_template', 'admin/data_anggaran',$data2);
+    }
+
+ public function tambah_anggaran()
+        {
+            $data2 = konfigurasi('Form Tambah Sarana',"ag");
+            $this->template->load('layouts/admin_template', 'admin/form_anggaran');
+            
+        }
+
+        public function simpan_anggaran()
+        {
+            $ma =  $this->input->post('makag');
+            $na =  $this->input->post('namag');
+            $uka =  $this->input->post('ukag');
+            $da =  $this->input->post('diviag');
+            $kodea =  $this->input->post('kodeag');
+            $pagua =  $this->input->post('paguag');
+            $ra =  $this->input->post('realisasiag');
+                        
+            $data2 = array(
+                'mak' => $ma,
+                'namaAnggaran' => $na,
+                'uraianKegiatan' => $uka,
+                'divisi' => $da,
+                'kode' => $kodea,
+                'pagu' => $pagua,
+                'realisasi' => $ra
+                );  
+
+            $this->db->insert('tbl_anggaran',$data2);
+
+        
+
+        $this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
+        redirect('admin/Master/data_anggaran', 'refresh');
+
+            
+        }
+
+        public function ubahAnggaran(){
+            $id = $this->input->post('idag');
+            $ma =  $this->input->post('makag');
+            $na =  $this->input->post('namag');
+            $uka =  $this->input->post('ukag');
+            $da =  $this->input->post('diviag');
+            $kodea =  $this->input->post('kodeag');
+            $pagua =  $this->input->post('paguag');
+            $ra =  $this->input->post('realisasiag');
+                        
+           
+            $data2 = array(
+                'idAnggaran' => $id,
+                'mak' => $ma,
+                'namaAnggaran' => $na,
+                'uraianKegiatan' => $uka,
+                'divisi' => $da,
+                'kode' => $kodea,
+                'pagu' => $pagua,
+                'realisasi' => $ra
+                );  
+
+            $this->Master_model->updateAnggaran($data2);
+            redirect('admin/Master/data_anggaran');
+        }
+    
+
+        public function hapus_dataAnggaran(){
+        $id = $this->input->post('idHapus');
+        $this->Master_model->hapus_dataAnggaran($id);
+        redirect('admin/Master/data_anggaran');
         }
 
 }
