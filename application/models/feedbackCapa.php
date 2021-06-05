@@ -30,8 +30,7 @@ class FeedbackCapa extends CI_Model{
   function getSaranaModel($id){
     $this->db->select('*');
     $this->db->from('tbl_sarana');
-    $this->db->join('tbl_lhk', 'tbl_lhk.idSarana = tbl_sarana.idSarana');
-    $this->db->join('tbl_surattl', 'tbl_surattl.idLhk = tbl_lhk.idLhk');
+    $this->db->join('tbl_surattl', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
     $this->db->join('tbl_peringatan', 'tbl_surattl.idTl = tbl_peringatan.idTl');
     $this->db->where('tbl_peringatan.idPeringatan', $id);
     $query = $this->db->get('');

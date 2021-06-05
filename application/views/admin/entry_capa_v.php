@@ -94,7 +94,7 @@
            <div class="form-group">
               <label>Sarana</label>
               <select name="sarana" id="sarana" class="form-control input-sm" data-live-search="true" title="Pilih Sarana">
-                   <option value="">Pilih surat petugas dulu</option>
+                   <option value="">Pilih Sarana</option>
               </select> 
             </div>
             </div>

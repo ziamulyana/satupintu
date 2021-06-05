@@ -56,6 +56,8 @@
                   <thead>
                     <tr>
                       <th>Nomor Surat Feedback</th>
+                      <th>Perihal Surat</th>
+                      <th>Nomor Surat Peringatan</th>
                       <th>Nama Sarana</th>
                       <th>Tgl Feedback </th>
                       <th>Status</th>
@@ -69,6 +71,8 @@
                      foreach ($list_feedback->result() as $row){
                       echo "<tr>";
                       echo "<td>".$row->noSuratFeedback."</td>";
+                      echo "<td>".$row->isiFeedback."</td>";
+                      echo "<td>".$row->noSuratPeringatan."</td>";
                       echo "<td>".$row->namaSarana."</td>";
                       echo "<td>".$row->tglFeedback."</td>";
                       if($row->closed == -1) { ?>
