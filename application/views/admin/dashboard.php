@@ -6,57 +6,105 @@
       Elektronik Surat Tugas.
     </div>
     <div class="row">
-        <!-- ./col -->
-        <div class="col-lg-4 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3>53</sup></h3>
+      <!-- ./col -->
+      <div class="col-lg-4 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-green">
+          <div class="inner">
+            <h3><?php echo $this->db->where('timeline >', 7)->from("view_timeline")->count_all_results(); ?></h3>
 
-              <p>AKTIF</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <p>AKTIF</p>
+          </div>
+          <div class="icon">
+            <i class="small fa fa-check-square-o"  style="font-size:70px;"></i>
           </div>
         </div>
-        <!-- ./col -->
-        <div class="col-lg-4 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3>44</h3>
-
-              <p>TENGGANG</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-4 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3>65</h3>
-
-              <p>EXPIRED</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
       </div>
-    <!-- BAR CHART -->
+      <!-- ./col -->
+      <div class="col-lg-4 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-yellow">
+          <div class="inner">
+            <h3><?php echo $this->db->where('timeline >=', 4)->where('timeline <=', 7)->from("view_timeline")->count_all_results(); ?></h3>
+
+            <p>TENGGANG</p>
+          </div>
+          <div class="icon">
+            <i class="fa  fa-clock-o" style="font-size:70px;"></i>
+          </div>
+        </div>
+      </div>
+      <!-- ./col -->
+      <div class="col-lg-4 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-red">
+          <div class="inner">
+            <h3><?php echo $this->db->where('timeline <=', 3)->from("view_timeline")->count_all_results(); ?></h3>
+
+            <p>EXPIRED</p>
+          </div>
+          <div class="icon">
+            <i class="fa fa-exclamation-circle" style="font-size:70px;"></i>
+          </div>
+        </div>
+      </div>
+      <!-- ./col -->
+    </div>
     
-    <!-- BAR CHART -->
-   
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-xs-12">
+
+        <div class="box box-primary collapsed-box box-solid">
+          <div class="box-header with-border">
+            <h3 class="box-title">Tabel Feedback CAPA</h3>
+
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+              </button>
+            </div>
+            <!-- /.box-tools -->
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+
+            <table id="tbl" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th class="dt-center">No. Surat Peringatan</th>
+                  <th class="dt-center">Tanggal Surat</th>
+                  <th class="dt-center">Nama Sarana</th>
+                  <th class="dt-center">Timeline</th>
+                  <th class="dt-center">Status</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                if (isset($total)) {
+                  foreach ($total->result() as $row) {
+                    if ($row->timeline <= 3) {
+                      $status = '<small class="label label-danger"><i class="fa fa-exclamation-triangle"></i> EXPIRED</small>';
+                    } else if ($row->timeline <= 7) {
+                      $status = '<small class="label label-warning"><i class="fa fa-clock-o"></i>&nbsp TENGGANG</small>';
+                    } else {
+                      $status = '<small class="label label-success"><i class="fa fa-check-circle"></i>&nbsp AKTIF</small>';
+                    }
+                    echo "<tr>";
+                    echo "<td class='dt-center'>" . $row->noSuratFeedback . "</td>";
+                    echo "<td class='dt-center'>" . $row->namaSarana . "</td>";
+                    echo "<td class='dt-center'>" . $row->tglFeedback . "</td>";
+                    echo "<td class='dt-center'>" . $row->timeline . " Hari Tersisa</td>";
+                    echo "<td class='dt-center'>" . $status . "</td>";
+                  }
+                } else {
+                  echo "no record found";
+                }
+                ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
         <!-- /.box -->
       </div>
@@ -80,6 +128,6 @@
 
   .mid {
     margin: auto;
-    width: 30%;
+    width: 17%;
   }
 </style>
