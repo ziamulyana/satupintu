@@ -33,15 +33,23 @@ class Lhk_sampling_c extends MY_Controller
     echo $detSampling;
 
     $data['surat'] = $this->Lhk_model->getAtributSampling($idSurat);
+    $data['idSurat'] = $idSurat;
+    $data['tglLhk'] = $tglLhk;
+    $data['sppd'] = $sppd;
+    $data['kwitansi'] = $kwitansi;
+    $data['form'] = $form;
+    $data['detSampling'] = $detSampling;
 
     $data = array
         (
-            'title'=>'Cetak LHK Sampling'
-            'tglLhk'              => $tglLhk,
-            'jenisLhk'        => "Sampling",
-            'file_lhk'                  => "0"
+            'title'=>'Cetak LHK Sampling',
+            'tglLhk'   => $tglLhk,
+            'jenisLhk' => "Sampling",
+            'file_lhk' => "0"
         );
 
+    // $this->db->insert('tbl_peringatan',$data_db);
+    $this->load->view('petugas/lhk/lhl_sampling_isi.php', $data, FALSE);
 
     }
 }

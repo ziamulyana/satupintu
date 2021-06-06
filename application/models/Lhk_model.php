@@ -30,6 +30,17 @@ class Lhk_model extends CI_Model
     return $query->result();
   }
 
+  public function getAtributSampling($idSurat){
+    $this->db->select('tbl_surattugas.noSuratTugas, tbl_surattugas.tglSurat, tbl_pegawai.nama, tbl_pegawai.nip, tbl_pegawai.pangkat, tbl_pegawai.golongan, tbl_pegawai.jabatan');
+    $this->db->from('tbl_surattugas');
+     $this->db->join('tbl_tugas', 'tbl_surattugas.idSurat = tbl_tugas.idSuratTugas');
+     $this->db->join('tbl_pegawai','tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
+      $this->db->where('idSurat', $idSurat);
+      $query = $this->db->get();
+    return $query->result();
+
+  }
+
   public function getSarana(){
      $this->db->select('*');
      $this->db->from('tbl_sarana');
