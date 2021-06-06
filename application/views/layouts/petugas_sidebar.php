@@ -33,7 +33,6 @@
       <li class="header">HEADER</li>
       <!-- Optionally, you can add icons to the links -->
       <li class="active"><a href="<?=base_url()?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-      <li class="active"><a href="<?php echo base_url('petugas/add_timeline_c')?>"><i class="fa fa-plus"></i> <span>Entry CAPA</span></a></li>
        <li class="active"><a href="<?php echo base_url('petugas/lhk/list_lhk_c')?>"><i class="fa fa-book"></i> <span>LHK</span></a></li>
 
    
