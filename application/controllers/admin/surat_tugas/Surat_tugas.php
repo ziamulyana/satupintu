@@ -16,6 +16,7 @@ class Surat_tugas extends CI_Controller {
     {
         $data = konfigurasi('Pilih Surat Tugas','ap');
         $data['surattugas'] = $this->SuratTugas_model->getsurattugas();
+        $data['anggaran'] = $this->SuratTugas_model->getanggaran();
         $this->template->load('layouts/admin_template', 'admin/surat_tugas/dashboard', $data);  
 
     }
@@ -26,6 +27,7 @@ class Surat_tugas extends CI_Controller {
         $data = konfigurasi('Form Tambah Surat', "ap");
         $data['petugas'] = $this->SuratTugas_model->getpetugas();
         $data['nama_kota'] = $this->SuratTugas_model->getkota();
+        $data['anggaran'] = $this->SuratTugas_model->getanggaran();
         $this->template->load('layouts/admin_template', 'admin/surat_tugas/form', $data);
     }
 
@@ -38,6 +40,7 @@ class Surat_tugas extends CI_Controller {
         $tglmulai = $this->input->post('tglMulai');
         $bebanbiaya = $this->input->post('bebanBiaya');
         $kendaraan = $this->input->post('kendaraan');
+        // $lamaperjalanan = $this->input->post('lamaPerjalanan');
         $kota = $this->input->post('kota');
         $idanggaran = $this->input->post('idAnggaran');
         $tglselesai = $this->input->post('tglSelesai');
@@ -53,7 +56,7 @@ class Surat_tugas extends CI_Controller {
             'tglMulai' => $tglmulai,
             'bebanBiaya' => $bebanbiaya,
             'kendaraan' => $kendaraan,
-            'kota' => $kendaraan,
+            // 'lamaPerjalanan' => $lamaperjalanan,
             'kota' => $kota,
             'idAnggaran' => $idanggaran,
             'tglSelesai' => $tglselesai,
@@ -115,18 +118,12 @@ class Surat_tugas extends CI_Controller {
         redirect('admin/surat_tugas/surat_tugas');
     }
 
+    // Print Surat Tugas
     public function print()
     {
-     echo "0";
- }
-
-    // //Print Surat Tugas
-    // public function print()
-    // {
-    //     // $id = $this->input->post('idSurat');
-    //     //$data['idSurat'] = $id;
-    //     // $data['printS'] = $this->SuratTugas_model->print_surat($id);
-    //     // $this->load->view('admin/surat_tugas/print_surat', $data);
-    //     echo "0";
-    // }
+    $id = $this->input->post('idSurat');
+    $data['idSurat'] = $id;
+    $data['printS'] = $this->SuratTugas_model->print_surat($id);
+    $this->load->view('admin/surat_tugas/print_surat', $data, false);
+    }
 }

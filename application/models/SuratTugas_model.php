@@ -37,12 +37,19 @@ class SuratTugas_model extends CI_Model{
     return $query->result();
   }
 
+  public function getanggaran()
+  {
+    $this->db->select('*');
+    $this->db->from('tbl_anggaran');
+    $query = $this->db->get('');
+    return $query->result();
+  }
+
   // ubah surat tugas
   public function ubah_surat($data)
   {
     $this->db->set('noSuratTugas', $data['noSur']);
     $this->db->set('tglSurat', $data['tglSur']);
-<<<<<<< Updated upstream
     $this->db->set('tglMulai', $data['tglMulai']);
     //$this->db->set('bebanBiaya', $data['bebanBiaya']);
     //$this->db->set('kendaraan', $data['kendaraan']);
@@ -54,10 +61,6 @@ class SuratTugas_model extends CI_Model{
     //$this->db->set('jabatanPenandatangan', $data['jabatanpenandatangan']);
     //$this->db->set('idPetugas', $data['idpetugas']);
 
-=======
-    $this->db->set('kota', $data['kotas']);
-    $this->db->set('maksud', $data['maksuds']);
->>>>>>> Stashed changes
     $this->db->where('idSurat', $data['idSur']);
     $query = $this->db->update('tbl_surattugas');
   }
@@ -71,13 +74,13 @@ class SuratTugas_model extends CI_Model{
   // print surat tugas
   public function print_surat($id)
   {
-    // $this->db->select('tbl_surattugas.noSuratTugas, tbl_pegawai.nama, tbl_pegawai.pangkat, tbl_pegawai.golongan, tbl_pegawai.nip, tbl_pegawai.jabatan, tbl_surattugas.maksud, tbl_surattugas.kota, tbl_surattugas.kendaraan, tbl_surattugas.lamaPerjalanan, tbl_surattugas.tglMulai, tbl_surattugas.tglSelesai, tbl_anggaran.mak, tbl_surattugas.tglSurat, tbl_surattugas.jabatanPenandatangan, tbl_surattugas.namaPenandatangan');
-    // $this->db->from('tbl_surattugas');
-    // $this->db->join('tbl_tugas', 'tbl_surattugas.idSurat = tbl_tugas.idSuratTugas');
-    // $this->db->join('tbl_pegawai', 'tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
-    // $this->db->join('tbl_anggaran', 'tbl_surattugas.idAnggaran = tbl_anggaran.idAnggaran');
-    // $this->db->where('tbl_surattugas.idSurat', $id);
-    // $query = $this->db->get('');
+    $this->db->select('tbl_surattugas.noSuratTugas, tbl_pegawai.nama, tbl_pegawai.pangkat, tbl_pegawai.golongan, tbl_pegawai.nip, tbl_pegawai.jabatan, tbl_surattugas.maksud, tbl_surattugas.kota, tbl_surattugas.kendaraan, tbl_surattugas.lamaPerjalanan, tbl_surattugas.tglMulai, tbl_surattugas.tglSelesai, tbl_anggaran.mak, tbl_surattugas.tglSurat, tbl_surattugas.jabatanPenandatangan, tbl_surattugas.namaPenandatangan');
+    $this->db->from('tbl_surattugas');
+    $this->db->join('tbl_tugas', 'tbl_surattugas.idSurat = tbl_tugas.idSuratTugas');
+    $this->db->join('tbl_pegawai', 'tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
+    $this->db->join('tbl_anggaran', 'tbl_surattugas.idAnggaran = tbl_anggaran.idAnggaran');
+    $this->db->where('tbl_surattugas.idSurat', $id);
+    $query = $this->db->get('');
     return $query;
   }
 

@@ -64,9 +64,10 @@
                         echo "<td class='dt-center'>".$row->tglSurat."</td>";
                         echo "<td class='dt-center'>".$row->maksud."</td>";
                         echo "<td class='dt-center'>".$row->kota."</td>";
+                        
                         echo "<td class='dt-center'>"?>
                         <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editSur"
-                        data-idsurat="<?=$row->idSurat ?>" data-nosurat="<?=$row->noSuratTugas ?>"  data-tglsurat="<?=$row->tglSurat ?>" data-maksud="<?=$row->maksud ?>" data-kota="<?=$row->kota ?>" data-toggle="modal" data-target="#editSurat">
+                        data-idsurat="<?=$row->idSurat ?>" data-nosurat="<?=$row->noSuratTugas ?>"  data-tglsurat="<?=$row->tglSurat ?>" data-maksud="<?=$row->maksud ?>" data-kota="<?=$row->kota ?>" data-anggaran="<?=$row->idAnggaran ?>" data-tglmulai="<?=$row->tglMulai ?>"  data-toggle="modal" data-target="#editSurat">
                           <i class="fa fa-edit"></i></a>
 
                          <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusSur" data-id="<?=$row->idSurat ?>" data-toggle="modal" data-target="#hapusSurat">
@@ -133,7 +134,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="noEdit">No. Surat Tugas</label> <small class="text-danger">*</small>
+								<label for="noEdit">No. Surat Tugas </label> <small class="text-danger">*</small>
 								<input type="text" class="form-control" name="noSurat" id="noSurat" required >
 							</div>
 
@@ -142,15 +143,66 @@
 								<input type="text" class="form-control" name="tglSurat" id="tglSurat" required >
 							</div>
 
-							<div class="form-group">
-								<label for="noEdit">Maksud</label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="maksud" id="maksud" required >
-							</div>
+              <div class="form-group">
+                <label for="noEdit">Kota </label> <small class="text-danger">*</small>
+                <select class="form-control" name="kota" id="kota" required>
+                  <option>Kota Batam</option>
+                  <option>Kota Tanjung Pinang</option>
+                  <option>Kabupaten Bintang</option>
+                  <option>Kabupaten Karimun</option>
+                  <option>Kabupaten Anambas</option>
+                  <option>Kabupaten Lingga</option>
+                  <option>Kabupaten Natuna</option>
+                </select>
+              </div>
 
-							<div class="form-group">
-								<label for="noEdit">Kota</label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="kota" id="kota" required >
-							</div>
+              <div class="form-group">
+                <label for="noEdit">Anggaran </label> <small class="text-danger">*</small>
+                <select class="form-control" name="idAnggaran" id="idAnggaran" required>
+                <?php
+                foreach ($anggaran as $anggaran) {
+                  echo "<option value=".$anggaran->idAnggaran.">".$anggaran->namaAnggaran."</option>";
+                }
+                ?>
+                <option value="" disabled selected></option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="noEdit">Maksud </label> <small class="text-danger">*</small>
+                <input type="text" class="form-control" name="maksud" id="maksud" required >
+              </div>
+
+              <div class="form-group">
+                <label for="noEdit">Tanggal Mulai Tugas </label> <small class="text-danger">*</small>
+                <input type="text" class="form-control" name="tglMulai" id="tglMulai" required >
+              </div>
+
+               <div class="form-group">
+                <label for="noEdit">Tanggal Selesai Tugas </label> <small class="text-danger">*</small>
+                <input type="text" class="form-control" name="tglSelesai" id="tglSelesai" required >
+              </div>
+
+               <div class="form-group">
+                <label for="noEdit">Beban Biaya </label> <small class="text-danger">*</small>
+                <input type="text" class="form-control" name="tglSelesai" id="tglSelesai" required >
+              </div>
+
+              <div class="form-group">
+                <label for="noEdit">Kendaraan </label> <small class="text-danger">*</small>
+                <input type="text" class="form-control" name="kendaraan" id="kendaraan" required >
+              </div>
+
+              <div class="form-group">
+                <label for="noEdit">Nama Penanda Tangan ST </label> <small class="text-danger">*</small>
+                <input type="text" class="form-control" name="namaPenandatangan" id="namaPenandatangan" required >
+              </div>
+
+              <div class="form-group">
+                <label for="noEdit">Jabatan Penanda Tangan ST </label> <small class="text-danger">*</small>
+                <input type="text" class="form-control" name="jabatanPenandatangan" id="jabatanPenandatangan" required >
+              </div>
+
 
 						</div><!-- /.box-body -->                        
 						<div class="modal-footer">
@@ -171,12 +223,16 @@
 		var tglS = $(this).data('tglsurat');
 		var maksudS = $(this).data('maksud');
 		var kotaS = $(this).data('kota');
+    var anggaranS = $(this).data('anggaran');
+    var tglmulaiS = $(this).data('tglmulai');
 
 		$("#editData #idSurat").val(idS);
 		$("#editData #noSurat").val(noS);
 		$("#editData #tglSurat").val(tglS);
 		$("#editData #maksud").val(maksudS);
 		$("#editData #kota").val(kotaS);
+    $("#editData #anggaran").val(anggaranS);
+    $("#editData #tglmulai").val(tglmulaiS);
 	});
   </script>
  <!-- Hapus Surat -->
@@ -224,7 +280,7 @@
         <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
       </div>
       <div class="modal-body" id=panelSur>
-        <form role="form" method="post" action="<?= base_url('admin/surat_tugas/surat_tugas/hapus_surat')?>">
+        <form role="form" method="post" action="<?= base_url('admin/surat_tugas/surat_tugas/print')?>">
           <div class="box-body">
             <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Tugas</label>
               <input type="hidden" id="idSurat" name="idSurat">

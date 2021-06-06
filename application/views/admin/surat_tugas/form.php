@@ -49,12 +49,14 @@
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-building"></i></span>
                 <select class="form-control" name="kota" id="kota" required>
-                <?php
-                foreach ($nama_kota as $kota) {
-                  echo "<option value=".$kota->id_kota.">".$kota->nama."</option>";
-                }
-                ?>
-                <option value="" disabled selected>- Kota Tujuan -</option>
+                  <option value="" disabled selected>- Pilih Kota -</option>
+                  <option>Kota Batam</option>
+                  <option>Kota Tanjung Pinang</option>
+                  <option>Kabupaten Bintang</option>
+                  <option>Kabupaten Karimun</option>
+                  <option>Kabupaten Anambas</option>
+                  <option>Kabupaten Lingga</option>
+                  <option>Kabupaten Natuna</option>
                 </select>
               </div>
             </div>
@@ -66,15 +68,14 @@
             <div class="col-sm-12">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                <input type="text" class="form-control" name="idAnggaran" id="idAnggaran" placeholder="Anggaran" required>
-                <select class="form-control" name="kota" id="kota" required>
+                <select class="form-control" name="idAnggaran" id="idAnggaran" required>
                 <?php
-                foreach ($nama_kota as $kota) {
-                  echo "<option value=".$kota->id_kota.">".$kota->nama."</option>";
+                foreach ($anggaran as $anggaran) {
+                  echo "<option value=".$anggaran->idAnggaran.">".$anggaran->namaAnggaran."</option>";
                 }
                 ?>
-                <option value="" disabled selected>- Kota Tujuan -</option>
-                </select>s
+                <option value="" disabled selected>- Anggaran -</option>
+                </select>
               </div>
             </div>
           </div>
@@ -100,18 +101,7 @@
           <div class="form-group row">
             <label for="example-date-input" class="col-sm-5 col-form-label">Tanggal Mulai Tugas<span class="wajib"> *</span></label>
             <div class="col-sm-12">
-              <input class="form-control" type="date" name ="tglMulai" id="tglMulai" placeholder="Tanggal Mulai Tugas" required>
-            </div>
-          </div>
-
-          <!-- lama tugas -->
-          <div class="form-group row">
-            <label for="lamaTugas" class="col-sm-4 col-form-label">Lama Tugas<span class="wajib"> *</span></label>
-            <div class="col-sm-12">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
-                <input type="text" class="form-control" name="lamaTugas" id="lamaTugas" placeholder="Lama Tugas" required>
-              </div>
+              <input class="form-control" type="date" name ="tglMulai" id="tglMulai" placeholder="Tanggal Mulai Tugas" onclick="return chk_date()" required>
             </div>
           </div>
 
@@ -119,7 +109,7 @@
           <div class="form-group row">
             <label for="example-date-input" class="col-sm-5 col-form-label">Tanggal Selesai Tugas<span class="wajib"> *</span></label>
             <div class="col-sm-12">
-              <input class="form-control" type="date" name ="tglSelesai" id="tglSelesai" placeholder="Tanggal Selesai Tugasa" onclick="return chk_date()">
+              <input class="form-control" type="date" name ="tglSelesai" id="tglSelesai" placeholder="Tanggal Selesai Tugas" onclick="return chk_date()" required>
             </div>
           </div>
 
@@ -141,7 +131,7 @@
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-taxi"></i></span>
                 <select class="form-control" name="kendaraan" id="kendaraan" required>
-                  <option selected="selected">- Select -</option>
+                  <option value="" disabled selected>- Pilih Kendaraan -</option>
                   <option>Pesawat</option>
                   <option>Kapal laut</option>
                   <option>Roda empat</option>
@@ -158,7 +148,7 @@
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                 <select class="form-control" name="namaPenandatangan" id="namaPenandatangan" required>
-                  <option selected="selected">- Select -</option>
+                  <option value="" disabled selected>- Pilih Penanda Tangan Surat Tugas -</option>
                   <option>Bagus Heri Purnomo, S.Si., Apt</option>
                   <option>Larasati Setyaningtyas, S.Farm., Apt</option>
                   <option>Dyah Ayu Novi Hapsari, S.Farm., Apt</option>
@@ -177,7 +167,7 @@
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                 <select class="form-control" name="jabatanPenandatangan" id="jabatanPenandatangan" required>
-                      <option selected="selected">- Select -</option>
+                      <option value="" disabled selected>- Pilih Jabatan Penanda Tangan Surat Tugas -</option>
                       <option>Kepala Balai POM di Batam</option>
                       <option>PLH Kepala Balai POM di Batam Koordinator Substansi Informasi dan Komunikasi</option>
                       <option>PLH Kepala Balai POM di Batam Koordinatitor Substansi Pengujian</option>
