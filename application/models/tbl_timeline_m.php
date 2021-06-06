@@ -32,7 +32,7 @@ class tbl_timeline_m extends CI_Model
     { 
       
       $this->db->select('*');
-      $this->db->from('view_notif');
+      $this->db->from('view_timeline');
       $query = $this->db->get();
   
       return $query;

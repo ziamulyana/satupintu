@@ -81,7 +81,7 @@
 
         <div class="box box-primary collapsed-box box-solid">
           <div class="box-header with-border">
-            <h3 class="box-title">Tabel CAPA</h3>
+            <h3 class="box-title">Tabel Feedback CAPA</h3>
 
             <div class="box-tools pull-right">
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
@@ -95,10 +95,9 @@
             <table id="tbl" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th class="dt-center">Nomor Surat</th>
+                  <th class="dt-center">No. Surat Feedback</th>
                   <th class="dt-center">Sarana</th>
-                  <th class="dt-center">Tanggal Surat</th>
-                  <th class="dt-center">Tanggal Timeline</th>
+                  <th class="dt-center">Tanggal Feedback</th>
                   <th class="dt-center">Timeline</th>
                   <th class="dt-center">Status</th>
 
@@ -116,10 +115,9 @@
                       $status = '<small class="label label-success"><i class="fa fa-check-circle"></i>&nbsp AKTIF</small>';
                     }
                     echo "<tr>";
-                    echo "<td class='dt-center'>" . $row->no_surat . "</td>";
-                    echo "<td class='dt-center'>" . $row->sarana . "</td>";
-                    echo "<td class='dt-center'>" . $row->tgl_surat . "</td>";
-                    echo "<td class='dt-center'>" . $row->tanggal_timeline . "</td>";
+                    echo "<td class='dt-center'>" . $row->noSuratFeedback . "</td>";
+                    echo "<td class='dt-center'>" . $row->namaSarana . "</td>";
+                    echo "<td class='dt-center'>" . $row->tglFeedback . "</td>";
                     echo "<td class='dt-center'>" . $row->timeline . " Hari Tersisa</td>";
                     echo "<td class='dt-center'>" . $status . "</td>";
                   }
