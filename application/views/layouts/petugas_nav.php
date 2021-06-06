@@ -24,7 +24,7 @@
 								$this->db->select('*');
 								$this->db->from('tbl_feedback');
 								$this->db->where('closed =', 0);
-								$this->db->order_by('tglFeedback', 'DESC');
+								$this->db->order_by('created_date', 'DESC');
 								$query = $this->db->get();
 
 								?>
@@ -38,7 +38,7 @@
 										<li>
 										<a href="feedback"><i class="fa fa-reply-all text-green"></i>
 										<strong>'.$row->noSuratFeedback.'</strong><br />
-										<small>&nbsp<i class="fa fa-clock-o"></i><em>&nbsp&nbsp&nbsp&nbsp'.$row->tglFeedback.'</em></small>
+										<small>&nbsp<i class="fa fa-clock-o"></i><em>&nbsp&nbsp&nbsp&nbsp'.$row->created_date.'</em></small>
 										</a>
 										</li>
 										';

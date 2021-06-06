@@ -63,6 +63,15 @@
               </div>
             </div>
 
+            <!-- tanggal created date -->
+            
+            <?php
+                  $timezone = new DateTimeZone('Asia/Jakarta');
+                  $date = new DateTime();
+                  $date->setTimeZone($timezone);
+                ?>
+            <input class="form-control" type="hidden" name="created_date" value="<?php echo $date->format('Y-m-d H:i:s'); ?>">
+
             <!-- Perihal Feedback CAPA -->
             <div class="form-group row">
                 <label for="noSurat" class="col-sm-4 col-form-label">Perihal Surat Feedback<span class="wajib"> *</span></label>

@@ -36,6 +36,7 @@
 			$noFeedback =  $this->input->post('noFeedback');
 			$tanggal =  $this->input->post('tanggal');
 			$perihalFeedback =  $this->input->post('perihalFeedback');
+			$created_date =  $this->input->post('created_date');
 
 			return array(
 				'idFeedback' => '',
@@ -44,6 +45,7 @@
 				'isiFeedback' => $perihalFeedback,
 				'closed' => '0',
 				'file_feedback' => '0',
+				'created_date' => $created_date,
 				'idSuratPeringatan' => $idPeringatan
 			);
 		}

@@ -81,12 +81,7 @@
                 </div>
               </div>
             </div>
-                <?php
-                  $timezone = new DateTimeZone('Asia/Jakarta');
-                  $date = new DateTime();
-                  $date->setTimeZone($timezone);
-                ?>
-            <input class="form-control" type="hidden" name="created_date" value="<?php echo $date->format('Y-m-d H:i:s'); ?>">
+               
             <div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>
