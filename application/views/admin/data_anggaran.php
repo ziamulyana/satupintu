@@ -60,7 +60,7 @@
 														echo "<td class='dt-left'>".$row->realisasi."</td>";
 														echo "<td class='dt-left'>"?>                             
 
-														<a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editAnggaran"
+														<a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editA"
 														data-idag =  "<?=$row->idAnggaran ?>" data-makag="<?=$row->mak ?>" data-namag="<?= $row->namaAnggaran ?>" data-ukag="<?= $row->uraianKegiatan ?>" data-diviag="<?= $row->divisi ?>" data-kodeag="<?= $row->kode ?>" data-paguag="<?= $row->pagu ?>"data-realisasiag="<?= $row->realisasi?>" data-toggle="modal" data-target="#editAnggaran" ><i class="fa fa-edit"></i></a>
 
 
@@ -172,7 +172,7 @@
 </div>
 <script src="<?php echo base_url();?>assets/vendor/jquery/jquery-1.10.0.min.js" type="text/javascript"></script>
 <script type="text/javascript" >
-	$(document).on("click","#editAnggaran",function(){
+	$(document).on("click","#editA",function(){
 		var idAn = $(this).data('idag');
 		var makAn = $(this).data('makag');
 		var namaAn = $(this).data('namag');
