@@ -157,6 +157,7 @@ header("Content-Disposition: attachment; Filename=lhk-".$filename)
 
 		<p>3. Pointer Hasil Kegiatan </p>
 		<p>Dilakukan sampling dengan rincian sebagai berikut : </p>
+		<p><?php echo $detKegiatan?></p>
 		<p><?php echo $detSampling?></p>
 
 		<p>4. Pengesahan </p>

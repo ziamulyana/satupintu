@@ -42,7 +42,7 @@ class Lhk_sampling_c extends MY_Controller
     $data2 = array
         (
             'tglLhk'   => $tglLhk,
-            'jenisLhk' => "Sampling",
+            'jenisLhk' => "sampling",
             'file_lhk' => "0"
         );
 

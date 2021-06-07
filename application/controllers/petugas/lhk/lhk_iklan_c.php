@@ -19,4 +19,40 @@ class Lhk_iklan_c extends MY_Controller
          $data['surat_tugas']= $this->Lhk_model->getSuratTugas();
         $this->template->load('layouts/petugas_template', 'petugas/lhk/lhk_iklan_v',$data);
     }
+
+    public function add(){
+
+    $noSurat = $this->input->post('suratTugas'); 
+    $tglLhk = $this->input->post('tglLhk');
+    $sppd = $this->input->post('sppd');
+    $kwitansi =  $this->input->post('kwitansi');
+    $form = $this->input->post('form');
+    $detSampling = $this->input->post('detSampling');
+    $detKegiatan = $this->input->post('detKegiatan');
+    $pejabat = $this->input->post('pejabat');
+   
+    $data['surat'] = $this->Lhk_model->getAtributSampling($noSurat);
+    $data['noSurat'] =$noSurat ;
+    $data['tglLhk'] =  $tglLhk;
+    $data['sppd'] =  $sppd;
+    $data['kwitansi'] = $kwitansi;
+    $data['form'] =  $form;
+    $data['detSampling'] = $detSampling;
+    $data['detKegiatan'] =  $detKegiatan;
+    $data['pejabat'] =$pejabat;
+
+
+    $data2 = array
+        (
+            'tglLhk'   => $tglLhk,
+            'jenisLhk' => "iklan",
+            'file_lhk' => "0"
+        );
+
+
+
+    // $this->db->insert('tbl_peringatan',$data_db);
+    $this->load->view('petugas/lhk/lhk_iklan_isi.php', $data, FALSE);
+
+    }
 }
