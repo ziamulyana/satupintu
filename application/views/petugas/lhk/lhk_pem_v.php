@@ -1,4 +1,6 @@
 
+
+
 <section class="content-header">
   <h1>
     LHK Pemeriksaan
@@ -119,8 +121,8 @@
                     <div class="col-xs-12">
 
                      <hr>
-                     <table class="table table-bordered table-hover" id="dynamic_field">
-                      <tr>
+                     <div class="dynamic">
+                     <table class="table table-bordered table-hover" >
                       <tr>
                         <!-- sarana -->
                         <td><select name="sarana[]" id="sarana[]" class="form-control category sm" title="Nama Sarana">
@@ -180,8 +182,12 @@
 
                         <td><button type="button" name="add" id="add" class="btn btn-primary"><i class="fa fa-plus"> Tambah</button></td>  
                         </tr>
-                        </tr>
+                      
                       </table>
+                      </div>
+
+                        <div id="newRow"></div>
+            <button id="addRow" type="button" class="btn btn-info">Add Row</button>
 
                       <!-- /.box-body -->
                     </div>
@@ -241,20 +247,28 @@
 </style>
 
 
-<script type="text/javascript">
-  $(document).ready(function(){
+<script>
+    $(document).ready(function(){
+      
+      var count = 0;
 
-    var i = 1;
+      $(document).on('click', '.add', function(){
+        count++;
+        var html = '';
+        html += '<tr>';
+        html += '<td><input type="text" name="item_name[]" class="form-control item_name" /></td>';
+        html += '<td><select name="item_category[]" class="form-control item_category" data-sub_category_id="'+count+'"><option value="">Select Category</option><?php echo fill_select_box($connect, "0"); ?></select></td>';
+        html += '<td><select name="item_sub_category[]" class="form-control item_sub_category" id="item_sub_category'+count+'"><option value="">Select Sub Category</option></select></td>';
+        html += '<td><button type="button" name="remove" class="btn btn-danger btn-xs remove"><span class="glyphicon glyphicon-minus"></span></button></td>';
+        $('tbody').append(html);
+      });
 
-    $("#add").click(function(){
-      i++;
-      $('#dynamic_field').append('<tr id="row'+i+'"><tr><td><p><?php foreach($sarana as $sr){ echo $sr->namaSarana;}?></p></td></tr></tr>');  
+      $(document).on('click', '.remove', function(){
+        $(this).closest('tr').remove();
+      });
+
+ 
+
+   
     });
-
-    $(document).on('click', '.btn_remove', function(){  
-      var button_id = $(this).attr("id");   
-      $('#row'+button_id+'').remove();  
-    });
-
-  });
 </script>
