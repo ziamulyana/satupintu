@@ -21,35 +21,35 @@ class Lhk_sampling_c extends MY_Controller
     }
 
     public function add(){
-    $idSurat = $this->input->post('suratTugas');
+
+    $noSurat = $this->input->post('suratTugas'); 
     $tglLhk = $this->input->post('tglLhk');
     $sppd = $this->input->post('sppd');
-    $kwitansi = $this->input->post('kwitansi');
+    $kwitansi =  $this->input->post('kwitansi');
     $form = $this->input->post('form');
     $detSampling = $this->input->post('detSampling');
-
-    echo $idSurat;
-    echo $tglLhk;
-    echo $detSampling;
-
-    $data['surat'] = $this->Lhk_model->getAtributSampling($idSurat);
-    $data['idSurat'] = $idSurat;
-    $data['tglLhk'] = $tglLhk;
-    $data['sppd'] = $sppd;
+    $pejabat = $this->input->post('pejabat');
+   
+    $data['surat'] = $this->Lhk_model->getAtributSampling($noSurat);
+    $data['noSurat'] =$noSurat ;
+    $data['tglLhk'] =  $tglLhk;
+    $data['sppd'] =  $sppd;
     $data['kwitansi'] = $kwitansi;
-    $data['form'] = $form;
+    $data['form'] =  $form;
     $data['detSampling'] = $detSampling;
+    $data['pejabat'] =$pejabat;
 
-    $data = array
+    $data2 = array
         (
-            'title'=>'Cetak LHK Sampling',
             'tglLhk'   => $tglLhk,
             'jenisLhk' => "Sampling",
             'file_lhk' => "0"
         );
 
+
+
     // $this->db->insert('tbl_peringatan',$data_db);
-    $this->load->view('petugas/lhk/lhl_sampling_isi.php', $data, FALSE);
+    $this->load->view('petugas/lhk/lhk_sampling_isi.php', $data, FALSE);
 
     }
 }

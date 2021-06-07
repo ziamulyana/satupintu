@@ -1,7 +1,7 @@
 <?php
 header("Content-type:application/vnd.ms-word");
-$filename = $idSurat.".doc";
-header("Content-Disposition: attachment; Fi tanggal lename=lhk-".$filename)
+$filename = $noSurat.".doc";
+header("Content-Disposition: attachment; Filename=lhk-".$filename)
 
 ?>
 
@@ -65,13 +65,23 @@ header("Content-Disposition: attachment; Fi tanggal lename=lhk-".$filename)
 			return $tahun;
 		}
 
+
+		?>
+		
+
+		<?php 
 		$nama_all = array();
 		$nip_all = array();
 		$pangkat_all = array();
 		$golongan_all = array();
 		$jabatan_all = array();
-		$noSurat = ""
-		$tglSurat = ""
+		$noSurat = "";
+		$tglSurat = "";
+		$tglMulai = "";
+		$tujuan = "";
+		$maksud = "";
+		$kota = "";
+
 		
 		foreach($surat as $row){
 			array_push($nama_all,$row->nama);
@@ -82,172 +92,122 @@ header("Content-Disposition: attachment; Fi tanggal lename=lhk-".$filename)
 			$noSurat = $row->noSuratTugas;
 			$tujuan = $row->kota;
 			$tglSurat =strtotime($row->tglSurat);
+			$tglMulai = strtotime($row->tglMulai);
+			$maksud = $row->maksud;
+			$kota = $row->kota;
 
 		}
 
-
-
 		?>
-		<p align="center"><b>LAPORAN HASIL KEGIATAN</p></b>
-		<p align="left"><b><u>Yth: </u></b>  Kepala Balai POM di Batam Melalui PPK</p>
-		<p>Sehubungan dengan penugasan berdasarkan surat tugas dari Kepala Balai POM di Batam nomor <?php echo $noSurat; ?> tanggal <?php echo $tglSurat; ?> berikut ini kami sampaikan laporan hasil kegiatan yang telah dilaksanakan :  </p>
+
+		<p align="center"><b>LAPORAN HASIL KEGIATAN </b></p>
+		<p><b><u>Yth:</u></b>  	Kepala Balai POM di Batam melalui PPK</p>
+		<p align="justify">Sehubungan dengan penugasan berdasarkan surat tugas dari kepala Balai POM di Batam nomor  <?php echo $noSurat?> tanggal <?php echo $tglSurat; ?> berikut ini kami sampaikan laporan hasil kegiatan yang telah dilaksanakan : </p>
+
+		<p>1. Identitas Kegiatan </p>
+		<table style="width:100%">
+
+			<tr>
+				<td><p></p></td> 
+				<td><p class="satu">- Nama/Judul: </p></td> 
+				<td><p ><?php echo $maksud;?></p></td> 
+			</tr>
+			<tr>
+				<td><p></p></td> 
+				<td><p class="satu">- Jadwal/Waktu: </p></td> 
+				<td><p ><?php echo $tglMulai;?></p></td> 
+			</tr>
+			<tr>
+				<td><p></p></td> 
+				<td><p class="satu">- Tempat/Tujuan: </p></td> 
+				<td><p ><?php echo $kota;?></p></td> 
+			</tr>
+			<tr>
+				<td><p></p></td> 
+				<td><p class="satu">- Pejabat yang Dituju: </p></td> 
+				<td><p ><?php echo $pejabat;?></p></td> 
+			</tr>
+
+		</table>
+
+		<p>2. Identitas Petugas </p>
+
+		<table style="width:100%">
+
+			<?php 
+			$huruf = array('a.','b.','c.','d.','e.');
+			for($i=0;$i<count($nama_all);$i++){?>
+			<tr>
+				<td><p><?php echo $huruf[$i] ;?></p></td> 
+				<td><p class="satu">Nama / NIP : </p></td> 
+				<td><p ><?php echo $nama_all[$i];?></p></td> 
+			</tr>
+			<tr>
+				<td><p>     </p></td> 
+				<td><p class="satu">Pangkat / Gol : </p></td> 
+				<td><p ><?php echo $pangkat_all[$i]."/".$golongan_all[$i];?></p></td> 
+			</tr>
+			<tr>
+				<td><p>        </p></td> 
+				<td><p class="satu">Jabatan : </p></td> 
+				<td><p ><?php echo $jabatan_all[$i];?></p></td> 
+			</tr>
+		<?php }?>
+		</table>
+
+		<p>3. Pointer Hasil Kegiatan </p>
+		<p>Dilakukan sampling dengan rincian sebagai berikut : </p>
+		<p><?php echo $detSampling?></p>
+
+		<p>4. Pengesahan </p>
+		<table style="width:100%">
+			<tr>
+				<td><p></p></td> 
+				<td><p class="satu">a. SPPD disahkan oleh : </p></td> 
+				<td><p ><?php echo $sppd;?></p></td> 
+			</tr>
+			<tr>
+				<td><p></p></td> 
+				<td><p class="satu">b. Kwitansi disahkan oleh: </p></td> 
+				<td><p ><?php echo $kwitansi;?></p></td> 
+			</tr>
+			<tr>
+				<td><p></p></td> 
+				<td><p class="satu">c. Form 8 jam disahkan oleh: </p></td> 
+				<td><p ><?php echo $form;?></p></td> 
+			</tr>
+
+		</table>
+		<p>Demikian disampaikan, atas perhatiannya diucapkan terimakasih.</p>
 
 		<table style="width:100%">
 			<tr>
-				<th><p class="satu">Mengetahui/Menyetujui</p></th> 
-				<th><p class="satu">Batam, </p></th> 
+				<th><p class="satu">Menyetujui</p></th> 
+				<th><p class="satu">Batam, <?php echo $tglLhk?> </p></th> 
 			</tr>
 			<tr>
-				<td><p>Pejabat Pembuat Komitmen</p></td> 
-				<td><p>Bendahara Pengeluaran</p></td> 
+				<td><p></p></td> 
+				<td><p>Petugas,</p></td> 
 			</tr>
-			<tr>
-				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-			</tr>
+			<?php for($i=0;$i<count($nama_all);$i++){?> 
 			<tr>
 				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
+				<td><p><?php echo ($i+1) ."." .$nama_all[$i]?></p></td> 
 			</tr>
-			<tr>
-				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-			</tr>
-			<tr>
-				<td><p><u>Paniyati, S.Farm., Apt</u></p></td> 
-				<td><p><u>Deasy Mandasari, A.Md</u></p></td> 
-			</tr>
-
-			<tr>
-				<td><p>NIP. 19830820 200712 2 001</p></td> 
-				<td><p>NIP. 19891203 201012 2 005</p></td> 
-			</tr>
-
-		</table>
-
-		<table style="width:100%;  border:1px solid black;border-collapse: collapse;">
-			<tr>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" align="center" >No.</p></th>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" align="center">Nama/NIP <br> Pangkat/Gol</p></th>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" align="center">Asal</p></th>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" align="center">Tujuan</p></th>
-				<th class="a"><p class="satu" id="space2" align="center">Tanggal</p></th>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" ></p></th>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" align="center">Lama Perjalanan</p></th>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" align="center">Rincian(Rp)</p></th>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" align="center"></p></th>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" align="center"></p></th>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" align="center">Jumlah (Rp)</p></th>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" align="center" >Tanda Tangan</p></th>
-			</tr>
-
-
-			<tr>
-				<td style="border:1px solid black;"><p></p></td>
-				<td style="border:1px solid black;"><p></p></td>
-				<td style="border:1px solid black;"><p></p></td>
-				<td style="border:1px solid black;"><p></p></td>
-				<td style="border:1px solid black;"><p align="center">Mulai</p></td>
-				<td style="border:1px solid black;"><p align="center">Selesai</p></td>
-				<td style="border:1px solid black;"><p></p></td>
-				<td style="border:1px solid black;"><p>Transportasi</p></td>
-				<td style="border:1px solid black;"><p>Uang Harian</p></td>
-				<td style="border:1px solid black;"><p>Penginapan</p></td>
-				<td style="border:1px solid black;"><p></p></td>
-				<td style="border:1px solid black;"><p></p></td>
-				
-			</tr>
-
-			<tr>
-				<td style="border:1px solid black;"><p align="center">1</p></td>
-				<td style="border:1px solid black;"><p align="center">2</p></td>
-				<td style="border:1px solid black;"><p align="center">3</p></td>
-				<td style="border:1px solid black;"><p align="center">4</p></td>
-				<td style="border:1px solid black;"><p align="center">5</p></td>
-				<td style="border:1px solid black;"><p align="center">6</p></td>
-				<td style="border:1px solid black;"><p align="center">7</p></td>
-				<td style="border:1px solid black;"><p align="center">8</p></td>
-				<td style="border:1px solid black;"><p align="center">9</p></td>
-				<td style="border:1px solid black;"><p align="center">10</p></td>
-				<td style="border:1px solid black;"><p align="center">11</p></td>
-				<td style="border:1px solid black;"><p align="center">12</p></td>
-			</tr>
-			<?php for ($i=0; $i < count($nama_nom) ; $i++) { 
-				?>
-			
-				<tr>
-				<td style="border:1px solid black;"><p align="center"><?php echo $i+1;?></p></td>
-				<td style="border:1px solid black;"><p align="center"><?php echo $nama_nom[$i]."<br>".$nip_nom[$i]."<br>".$surat; ?></p></td>
-				<td style="border:1px solid black;"><p align="center">Batam</p></td>
-				<td style="border:1px solid black;"><p align="center"><?php echo $tujuan;?></p></td>
-				<td style="border:1px solid black;"><p align="center"><?php echo convertDay($tgl1)."-".convertMonthB(convertMonthA($tgl1))."-".convertYear($tgl1);?></p></td>
-				<td style="border:1px solid black;"><p align="center"><?php echo convertDay($tgl2)."-".convertMonthB(convertMonthA($tgl2))."-".convertYear($tgl2);?></p></td>
-				<td style="border:1px solid black;"><p align="center"><?php echo $lama;?> Hari</p></td>
-				<td style="border:1px solid black;"><p align="center"><?php echo $tr_nom[$i];?></p></td>
-				<td style="border:1px solid black;"><p align="center"><?php echo $uh_nom[$i];?></p></td>
-				<td style="border:1px solid black;"><p align="center"><?php echo $ht_nom[$i];?></p></td>
-				<td style="border:1px solid black;"><p align="center"><?php echo ($tr_nom[$i]+$uh_nom[$i]+$ht_nom[$i]);?></p></td>	
-
-				<?php $total = $tr_nom[$i]+$uh_nom[$i]+$ht_nom[$i]; 
-				array_push($total_nom,$total);
-				?>
-				<td style="border:1px solid black;"><p ><?php echo $i+1;?>.</p></td>
-			</tr>
-
-			<?php }?>
-
-			<tr>
-				<td style="border:1px solid black;"><p align="center"></p></td>
-				<td style="border:1px solid black;"><p align="center"></p></td>
-				<td style="border:1px solid black;"><p align="center"></p></td>
-				<td style="border:1px solid black;"><p align="center"></p></td>
-				<td style="border:1px solid black;"><p align="center"></p></td>
-
-<td style="border:1px solid black;"><p align="center"></p></td>
-				<td style="border:1px solid black;"><p align="center">Jumlah</p></td>
-				<td style="border:1px solid black;"><p align="center"><?php echo array_sum($tr_nom);?></p></td>
-				<td style="border:1px solid black;"><p align="center"><?php echo array_sum($uh_nom);?></p></td>
-				<td style="border:1px solid black;"><p align="center"><?php echo array_sum($ht_nom);?></p></td>
-				<td style="border:1px solid black;"><p align="center"><?php echo array_sum($total_nom);?></p></td>
-				<td style="border:1px solid black;"><p align="center"></p></td>
-			</tr>
-
-		</table>
+		<?php }?>
 		
-
-
-		<table style="width:100%">
 			<tr>
-				<th><p class="satu">Mengetahui/Menyetujui</p></th> 
-				<th><p class="satu">Batam, </p></th> 
-			</tr>
-			<tr>
-				<td><p>Pejabat Pembuat Komitmen</p></td> 
-				<td><p>Bendahara Pengeluaran</p></td> 
-			</tr>
-			<tr>
-				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-			</tr>
-			<tr>
-				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-			</tr>
-			<tr>
-				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-			</tr>
-			<tr>
-				<td><p><u>Paniyati, S.Farm., Apt</u></p></td> 
-				<td><p><u>Deasy Mandasari, A.Md</u></p></td> 
+				<td><p><u>Ruth Deseyanti Purba, S.Si., Apt.</u></p></td> 
+				<td><p><u></u></p></td> 
 			</tr>
 
 			<tr>
-				<td><p>NIP. 19830820 200712 2 001</p></td> 
-				<td><p>NIP. 19891203 201012 2 005</p></td> 
+				<td><p>NIP. 198112292009122002</p></td> 
+				<td><p></p></td> 
 			</tr>
 
 		</table>
+
 
 
 		
