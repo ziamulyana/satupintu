@@ -61,6 +61,7 @@
 				'idSuratPeringatan' => $idPeringatan
 			);
 
+			$this->feedbackCapa->editPeringatan($idPeringatan);
 			$this->feedbackCapa->saveData($data);
 
 
