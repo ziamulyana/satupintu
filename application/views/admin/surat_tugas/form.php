@@ -203,7 +203,7 @@
               <div class="form-group row">
                 <label for="pilihPetugas" class="col-sm-3 col-form-label">Pilih Petugas<span class="wajib"> *</span></label>
                 <div class="col-md-12">
-                  <select class="category related-post form-control" name="idPetugas" id= "idPetugas" multiple="multiple" data-placeholder="Pilih Petugas" style="width: 100%;" required>
+                  <select class="category related-post form-control" name="idPetugas[]" id= "idPetugas[]" multiple="multiple" data-placeholder="Pilih Petugas" style="width: 100%;" required>
                     <?php
                     foreach ($petugas as $pegawai) {
                       echo "<option value=".$pegawai->idPegawai.">".$pegawai->nama."</option>";

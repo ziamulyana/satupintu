@@ -40,7 +40,7 @@ class Surat_tugas extends CI_Controller {
         $tglmulai = $this->input->post('tglMulai');
         $bebanbiaya = $this->input->post('bebanBiaya');
         $kendaraan = $this->input->post('kendaraan');
-        // $lamaperjalanan = $this->input->post('lamaPerjalanan');
+        $lamaperjalanan = $this->input->post('lamaPerjalanan');
         $kota = $this->input->post('kota');
         $idanggaran = $this->input->post('idAnggaran');
         $tglselesai = $this->input->post('tglSelesai');
@@ -56,17 +56,31 @@ class Surat_tugas extends CI_Controller {
             'tglMulai' => $tglmulai,
             'bebanBiaya' => $bebanbiaya,
             'kendaraan' => $kendaraan,
-            // 'lamaPerjalanan' => $lamaperjalanan,
+            'lamaPerjalanan' => "3",
             'kota' => $kota,
             'idAnggaran' => $idanggaran,
             'tglSelesai' => $tglselesai,
             'maksud' => $maksud,
-            'namapenandatangan' => $namapenandatangan,
-            'jabatanPenandatangan' => $jabatanpenandatangan,
-            'idPetugas' => $idpetugas
+            'namaPenandatangan' => $namapenandatangan,
+            'jabatanPenandatangan' => $jabatanpenandatangan
         );
+
         
         $this->db->insert('tbl_surattugas', $data);
+        $huruf = array('A','B','C','D');
+        $i = 0;
+
+        foreach($idpetugas as $petugas){
+            $data_petugas = array(
+                'noSuratTugas' =>$nosurat,
+                'idPetugas' => $petugas,
+                'urutan' => $huruf[$i] 
+            );
+            $this->db->insert('tbl_tugas', $data_petugas);
+
+            $i++;
+        }
+
         $this->session->set_flashdata('success', 'Data Berhasil Dimasukan');
         redirect('admin/surat_tugas/surat_tugas', 'refresh');
 
