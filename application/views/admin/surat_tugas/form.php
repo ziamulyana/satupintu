@@ -113,17 +113,6 @@
             </div>
           </div>
 
-          <!-- beban biaya -->
-          <div class="form-group row">
-            <label for="bebanBiaya" class="col-sm-4 col-form-label">Beban Biaya<span class="wajib"> *</span></label>
-            <div class="col-sm-12">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
-                <input type="text" class="form-control" name="bebanBiaya" id="bebanBiaya" placeholder="Beban Biaya" required>
-              </div>
-            </div>
-          </div>
-
           <!-- kendaraan -->
           <div class="form-group row">
             <label for="kendaraan" class="col-sm-4 col-form-label">Kendaraan<span class="wajib"> *</span></label>

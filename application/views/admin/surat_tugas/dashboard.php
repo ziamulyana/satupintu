@@ -66,7 +66,7 @@
                         echo "<td class='dt-center'>".$row->kota."</td>";
                         echo "<td class='dt-center'>"?>
                         <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editSur"
-                        data-idsurat="<?=$row->idSurat ?>" data-nosurat="<?=$row->noSuratTugas ?>"  data-tglsurat="<?=$row->tglSurat ?>" data-maksud="<?=$row->maksud ?>" data-kota="<?=$row->kota ?>" data-anggaran="<?=$row->namaAnggaran ?>" data-tglmulai="<?=$row->tglMulai ?>"  data-toggle="modal" data-target="#editSurat">
+                        data-idsurat="<?=$row->idSurat ?>" data-nosurat="<?=$row->noSuratTugas ?>"  data-tglsurat="<?=$row->tglSurat ?>" data-maksud="<?=$row->maksud ?>" data-kota="<?=$row->kota ?>" data-anggaran="<?=$row->idAnggaran ?>" data-tglmulai="<?=$row->tglMulai ?>" data-bebanbiaya="<?=$row->bebanBiaya ?>" data-tglselesai="<?=$row->tglSelesai ?>" data-kendaraan="<?=$row->kendaraan ?>" data-namapenandatangan="<?=$row->namaPenandatangan ?>" data-jabatanpenandatangan="<?=$row->jabatanPenandatangan ?>"  data-toggle="modal" data-target="#editSurat">
                           <i class="fa fa-edit"></i></a>
 
                          <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusSur" data-id="<?=$row->idSurat ?>" data-toggle="modal" data-target="#hapusSurat">
@@ -139,7 +139,7 @@
 
 							<div class="form-group">
 								<label for="noEdit">Tanggal Surat </label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="tglSurat" id="tglSurat" >
+								<input class="form-control" type="date" name ="tglSurat" id="tglSurat" placeholder="Tanggal Mulai Tugas" onclick="return chk_date()" >
 							</div>
 
               <div class="form-group">
@@ -163,7 +163,6 @@
                   echo "<option value=".$anggaran->idAnggaran.">".$anggaran->namaAnggaran."</option>";
                 }
                 ?>
-                <option value="" disabled selected></option>
                 </select>
               </div>
 
@@ -174,17 +173,12 @@
 
               <div class="form-group">
                 <label for="noEdit">Tanggal Mulai Tugas </label> <small class="text-danger">*</small>
-                <input type="text" class="form-control" name="tglMulai" id="tglMulai" >
+                <input class="form-control" type="date" name ="tglMulai" id="tglMulai" placeholder="Tanggal Mulai Tugas" onclick="return chk_date()" >
               </div>
 
                <div class="form-group">
                 <label for="noEdit">Tanggal Selesai Tugas </label> <small class="text-danger">*</small>
-                <input type="text" class="form-control" name="tglSelesai" id="tglSelesai" >
-              </div>
-
-               <div class="form-group">
-                <label for="noEdit">Beban Biaya </label> <small class="text-danger">*</small>
-                <input type="text" class="form-control" name="tglSelesai" id="tglSelesai" >
+                <input class="form-control" type="date" name ="tglSelesai" id="tglSelesai" placeholder="Tanggal Mulai Tugas" onclick="return chk_date()" >
               </div>
 
               <div class="form-group">
@@ -224,6 +218,10 @@
 		var kotaS = $(this).data('kota');
     var anggaranS = $(this).data('anggaran');
     var tglmulaiS = $(this).data('tglmulai');
+    var tglselesaiS = $(this).data('tglselesai');
+    var kendaraanS = $(this).data('kendaraan');
+    var namaS = $(this).data('namapenandatangan');
+    var jabatanS = $(this).data('jabatanpenandatangan');
 
 		$("#editData #idSurat").val(idS);
 		$("#editData #noSurat").val(noS);
@@ -231,7 +229,11 @@
 		$("#editData #maksud").val(maksudS);
 		$("#editData #kota").val(kotaS);
     $("#editData #idAnggaran").val(anggaranS);
-    $("#editData #tglmulai").val(tglmulaiS);
+    $("#editData #tglMulai").val(tglmulaiS);
+    $("#editData #tglSelesai").val(tglselesaiS);
+    $("#editData #kendaraan").val(kendaraanS);
+    $("#editData #namaPenandatangan").val(namaS);
+    $("#editData #jabatanPenandatangan").val(jabatanS);
 	});
   </script>
  <!-- Hapus Surat -->

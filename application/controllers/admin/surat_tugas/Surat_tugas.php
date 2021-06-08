@@ -40,7 +40,7 @@ class Surat_tugas extends CI_Controller {
         $tglmulai = $this->input->post('tglMulai');
         $bebanbiaya = $this->input->post('bebanBiaya');
         $kendaraan = $this->input->post('kendaraan');
-        $lamaperjalanan = $this->input->post('lamaPerjalanan');
+        // $lamaperjalanan = $this->input->post('lamaPerjalanan');
         $kota = $this->input->post('kota');
         $idanggaran = $this->input->post('idAnggaran');
         $tglselesai = $this->input->post('tglSelesai');
@@ -68,18 +68,18 @@ class Surat_tugas extends CI_Controller {
 
         
         $this->db->insert('tbl_surattugas', $data);
-        $huruf = array('A','B','C','D');
+        $huruf = array('A','B','C','D','E','F','G','H','I','J');
         $i = 0;
 
         foreach($idpegawai as $petugas){
             $data_petugas = array(
-                'idSuratTugas' =>$nosurat,
+                'noSuratTugas' =>$nosurat,
                 'idPetugas' => $petugas,
                 'urutan' => $huruf[$i] 
             );
             
             $this->db->insert('tbl_tugas', $data_petugas);
-
+            
             $i++;
             
         }
@@ -95,32 +95,32 @@ class Surat_tugas extends CI_Controller {
         $idsurat = $this->input->post('idSurat');
         $nosurat = $this->input->post('noSurat');
         $tglsurat = $this->input->post('tglSurat');
-        //$tglmulai = $this->input->post('tglMulai');
-        //$bebanbiaya = $this->input->post('bebanBiaya');
-        //$kendaraan = $this->input->post('kendaraan');
+        $tglmulai = $this->input->post('tglMulai');
+        $bebanbiaya = $this->input->post('bebanBiaya');
+        $kendaraan = $this->input->post('kendaraan');
         $kota = $this->input->post('kota');
-        //$idanggaran = $this->input->post('idAnggaran');
-        //$tglselesai = $this->input->post('tglSelesai');
+        $idanggaran = $this->input->post('idAnggaran');
+        $tglselesai = $this->input->post('tglSelesai');
         $maksud = $this->input->post('maksud');
-        //$namapenandatangan = $this->input->post('namaPenandatangan');
-        //$jabatanpenandatangan = $this->input->post('jabatanPenandatangan');
-        //$idpetugas = $this->input->post('idPetugas');
+        $namapenandatangan = $this->input->post('namaPenandatangan');
+        $jabatanpenandatangan = $this->input->post('jabatanPenandatangan');
+        $idpetugas = $this->input->post('idPetugas');
 
 
         $data = array (
             'idSur' => $idsurat,
             'noSur' => $nosurat,
             'tglSur' => $tglsurat,
-            //'tglMulai' => $tglmulai,
-            //'bebanBiaya' => $bebanbiaya,
-            //'kendaraan' => $kendaraan,
+            'tglMulai' => $tglmulai,
+            'bebanBiaya' => $bebanbiaya,
+            'kendaraan' => $kendaraan,
             'kotas' => $kota,
-            //'idAnggaran' => $idanggaran,
-            //'tglSelesai' => $tglselesai,
-            'maksuds' => $maksud
-            //'namapenandatangan' => $namapenandatangan,
-            //'jabatanPenandatangan' => $jabatanpenandatangan,
-            //'idPetugas' => $idpetugas
+            'idAnggaran' => $idanggaran,
+            'tglSelesai' => $tglselesai,
+            'maksuds' => $maksud,
+            'namaPenandatangan' => $namapenandatangan,
+            'jabatanPenandatangan' => $jabatanpenandatangan,
+            'idPetugas' => $idpetugas
         );
         
         $this->SuratTugas_model->ubah_surat($data);
