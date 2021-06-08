@@ -41,25 +41,18 @@ class FeedbackCapa extends CI_Model{
      $output .= '<option value="'.$row->idSarana.'">'.$row->namaSarana.'</option>';
    }
    return $output;
-   
+  }
 
- }
- 
+  // public function uploadFeedback($data){
+  //   $this->db->set('file_feedback', $data['file_feedback']);
+  // }
 
 
-
-
+  
  function saveData($params){
    $this->db->insert('tbl_feedback',$params);
 
    $this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
    redirect('/admin/Feedback', 'refresh');
  }
-
- public function editPeringatan($id){
-  $this->db->set('status',"1");    
-  $this->db->where('idPeringatan', $id);
-  $this->db->update('tbl_peringatan'); 
-    }
-    
 }

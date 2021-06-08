@@ -86,7 +86,7 @@
             <!-- Upload File -->
             <div class="form-group">
                   <label for="uploadFile">Lampiran Feedback<span class="wajib"> *</span></label>
-                  <input type="file" id="uploadFile">
+                  <input type="file" name="fileFeedback" id="fileFeedback">
             </div>
 
             <br>

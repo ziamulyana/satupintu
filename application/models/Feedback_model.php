@@ -22,6 +22,22 @@ class Feedback_model extends CI_Model{
     
   }
 
+  public function updateSuratFeedback($data){
+    $this->db->set('tglFeedback', $data['tglFeedback']); 
+    $this->db->set('noSuratFeedback', $data['noSuratFeedback']); 
+    $this->db->set('file_feedback', $data['file_feedback']);
+    $this->db->where('idFeedback', $data['id']);
+    $query = $this->db->update('tbl_feedback');
+
+  }
+
+  public function getFile(){
+    $this->db->select('file_feedback');
+    $this->db->where('file_feedback = ', "0");
+    $query = $this->db->get('tbl_feedback');
+    return $query->num_rows();
+  }
+
   public function getChecklist(){
    $this->db->select('*');
    $this->db->from('tbl_feedback');
@@ -31,11 +47,15 @@ class Feedback_model extends CI_Model{
    return $query->num_rows();
  }
 
- public function updateClosed($id, $editClosed){
-  $this->db->set('closed', $editClosed, FALSE);    
-  $this->db->where('idFeedback', $id);
-  $this->db->update('tbl_feedback'); 
-}
+  public function hapusSuratPeringatan($id){
+  $this->db->delete("tbl_feedback",array("idFeedback"=>$id));
+  }
+
+//  public function updateClosed($id, $editClosed){
+//   $this->db->set('closed', $editClosed, FALSE);    
+//   $this->db->where('idFeedback', $id);
+//   $this->db->update('tbl_feedback'); 
+// }
 
 
 
