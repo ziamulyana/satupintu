@@ -28,11 +28,7 @@
 		}
 
 		function add_data(){
-			$idPeringatan =  $this->input->post('noSuratPeringatan');
-			$this->feedbackCapa->editPeringatan($idPeringatan);
 			$this->feedbackCapa->saveData($this->inputFields());
-			
-
 		}
 
 		function inputFields(){
@@ -42,16 +38,38 @@
 			$perihalFeedback =  $this->input->post('perihalFeedback');
 			$created_date =  $this->input->post('created_date');
 
-			return array(
-				'idFeedback' => '',
+			$config['upload_path'] = './assets/uploads/files/feedback';
+			$config['allowed_types'] = 'pdf';
+			$config['file_name'] = 'feedback-'.$noFeedback;
+			$config['overwrite'] = true;
+			$config['max_size'] = 0;
+		
+
+			$this->load->library("upload",$config);
+			$this->upload->initialize($config);
+
+
+			if(!$this->upload->do_upload('fileFeedback')){
+				echo $this->upload->display_errors();
+			}else{
+				$fd=$this->upload->data();
+				$file=$fd['file_name'];
+
+			$data = array(
 				'noSuratFeedback' => $noFeedback,
 				'tglFeedback' => $tanggal,
 				'isiFeedback' => $perihalFeedback,
-				'closed' => '0',
-				'file_feedback' => '0',
-				'created_date' => $created_date,
+				'closed' => '-1',
+				'file_feedback' => $file,
+				'created_date' => $created_date,	
 				'idSuratPeringatan' => $idPeringatan
 			);
+
+			$this->db->set($data);
+			$this->db->insert($this->db->satupintu . 'tbl_feedback');
+			// $this->db->insert($this->db->'tbl_feedback',$data);
+		
+		}
 		}
 
 	}

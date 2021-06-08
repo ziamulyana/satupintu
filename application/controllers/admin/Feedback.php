@@ -30,17 +30,57 @@
 			
 		}
 
-		public function updateClosed(){
-			$id = $this->input->post('id');
-			$editClosed = $this->input->post('editclosed');
+		// public function updateClosed(){
+		// 	$id = $this->input->post('id');
+		// 	$editClosed = $this->input->post('editclosed');
 
-			$this->Feedback_model->updateClosed($id, $editClosed);
-			redirect('admin/Feedback');
-		}
-		
+		// 	$this->Feedback_model->updateClosed($id, $editClosed);
+		// 	redirect('admin/Feedback');
+		// }
 	
+		
+		public function ubah_suratFeedback(){
+			$id = $this->input->post('idFeedback');
+			$tglEdit = $this->input->post('tglEdit');
+			$noEdit = $this->input->post('noEdit');
+	
+			$config['upload_path'] = './assets/uploads/files/feedback';
+			$config['allowed_types'] = 'pdf';
+			$config['file_name'] = 'feedbackCAPA-'.$id;
+			$config['overwrite'] = true;
+			$config['max_size'] = 0;
+			
+	
+			$this->load->library("upload",$config);
+			$this->upload->initialize($config);
+	
+			if(!$this->upload->do_upload('fileEdit')){
+				echo $this->upload->display_errors();
+			}else{
+				$fd=$this->upload->data();
+				$file=$fd['file_name'];
+	
+				$data_peringatan = array (
+					'id' => $id,
+					'thlFeedback' => $tglEdit,
+					'noSuratFeedback' => $noEdit,
+					'file_feedback' => $file	
+				);
+	
+				$this->Feedback_model->updateSuratFeedback($data_feedback);
+				redirect('admin/Feedback');
+			}
+		}
 
-	}
+
+		public function hapus_suratFeedback(){
+			$id = $this->input->post('idFeedback');
+			$this->Feedback_model->hapusSuratFeedback($id);
+			redirect('petugas/Feedback');
+			}
+	
+		}
+	
 
 	/* End of file Home.php */
 	/* Location: ./application/controllers/Home.php */

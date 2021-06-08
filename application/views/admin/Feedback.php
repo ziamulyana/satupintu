@@ -76,62 +76,54 @@
                       echo "<td>".$row->namaSarana."</td>";
                       echo "<td>".$row->tglFeedback."</td>";
                       if($row->closed == -1) { ?>
-                       <td> 
-
-                         <a href="#" class="btn btn-success btn-sm" id="acceptClosed" data-tooltip="tooltip" title="Accept" data-id = "<?=$row->idFeedback ?>" data-closed = "1" data-toggle="modal" data-target="#accept"  ><i class="fa fa-check"></i></a> 
-
-                         <a href="#" class="btn btn-danger btn-sm" id="rejectClosed" data-tooltip="tooltip" title="Reject" data-id = "<?=$row->idFeedback ?>" data-closed = "0"  data-toggle="modal" data-target="#reject" ><i class="fa fa-close "></i></a>
-
-                       </td>
-
+                        <td> 
+ 
+                          <a href="#" class="btn btn-success btn-sm" id="acceptClosed" data-tooltip="tooltip" title="Accept" data-id = "<?=$row->idFeedback ?>" data-closed = "1" data-toggle="modal" data-target="#accept"  ><i class="fa fa-check"></i></a> 
+ 
+                          <a href="#" class="btn btn-danger btn-sm" id="rejectClosed" data-tooltip="tooltip" title="Reject" data-id = "<?=$row->idFeedback ?>" data-closed = "0"  data-toggle="modal" data-target="#reject" ><i class="fa fa-close "></i></a>
+ 
+                        </td>
+ 
+                        <?php
+                      }else if ($row->closed == 0) {
+                       ?> 
+                        <td> 
+                       <small class="label label-danger"><i class="fa fa-exclamation-triangle"></i> Open</small>
+                     </td>
                        <?php
-                     }else if ($row->closed == 0) {
-                      ?> 
-                       <td> 
-                      <small class="label label-danger"><i class="fa fa-exclamation-triangle"></i> Open</small>
-                    </td>
-                      <?php
-                    }else{
-                      ?>
-                      <td>
-                      <small class="label label-success"><i class="fa fa-check-circle"></i>&nbsp Closed   </small>
-                      </td>
+                     }else{
+                       ?>
+                       <td>
+                       <small class="label label-success"><i class="fa fa-check-circle"></i>&nbsp Closed   </small>
+                       </td>
+ 
+                       <?php
+                     }
+                     echo "</td>";
+                      
+                      echo "<td class='dt-center'>"?>                             
+                        <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editFed"
+                        data-id =  "<?=$row->idFeedback ?>" data-tgl="<?=$row->tglFeedback ?>" data-nomor="<?= $row->noSuratFeedback ?>" data-toggle="modal" data-target="#editFeedback" ><i class="fa fa-edit"></i></a>
 
-                      <?php
-                    }
-                    echo "</td>";
-                    echo "<td>" ?>
+                         <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusFed" data-id =  "<?=$row->idFeedback ?>" data-toggle="modal" data-target="#hapusFeedback"><i class="fa fa-trash"></i></a>
 
-                    <?php if($row->closed == -1){
-
-                      ?>
-
-                    <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editFeedback" disabled="disabled" ><i class="fa fa-edit"></i> </a>
-                  <?php } else if ($row->closed == 0) { ?>
-                    <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="acceptClosed" data-id = "<?= $row->idFeedback ?>" data-closed="1" data-toggle="modal" data-target="#accept" ><i class="fa fa-edit"></i></a>
-
-                  <?php } else{ ?>
-
-                      <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="rejectClosed" data-id = "<?= $row->idFeedback ?>" data-closed= "0"  data-toggle="modal" data-target="#reject" ><i class="fa fa-edit"></i></a>
-
-
-                 <?php  } 
-
-                 if($row->file_feedback !=0){ ?>
-                        <a href="../../assets/uploads/files/peringatan/suratPeringatan-<?php echo $row ->idPeringatan ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" ><i class="fa fa-eye"></i></a>
+                        <?php if($row->file_feedback !=0){ ?>
+                        <a href="../../assets/uploads/files/peringatan/feedback-<?php echo $row ->idFeedback ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" ><i class="fa fa-eye"></i></a>
 
                         <?php  } else{
                           ?>
                           <a href="#" data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" disabled><i class="fa fa-eye"></i></a>
                        <?php } ?>
 
-                   <?php echo "</td>";
 
+                      </td>
+
+                      <?php 
+                    }
+                  }else{
+                    echo "no record found";
                   }
-                }else{
-                  echo "no record found";
-                }
-                ?>
+                  ?>
               </tbody>
             </table>
           </div>
@@ -143,84 +135,103 @@
     </div>
     <!-- /.row -->
 
-    <!-- accept -->
-    <div id= "accept" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title"><i class="icon fa fa-ban"></i>  Alert !</h4>
-          </div>
-          <div class="modal-body" id="acceptData">
-            <form action="<?=base_url('admin/feedback/updateClosed') ?>" method="post">
-              <div class="box-body">
-                <div class="form-group" style="text-align:center">
-                  Ini akan mengubah status feedback menjadi <b>closed</b>, apakah anda yakin ?</label>
-                  <input type="hidden" class="form-control" name="id" id="id"> 
-                  <input type="hidden" class="form-control" name="editclosed" id="editclosed" value="nonaktif"> 
 
-                </div>                                                  
-              </div><!-- /.box-body -->                        
-              <div class="modal-footer">
-                <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                <button type="submit" name="hapus" class="btn btn-success"><i class="fa fa-check"></i> Accept</button>
-              </div>
-            </form>
+    <!-- Edit Peringatan -->
+<div id= "editPeringatan" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><i class="icon fa fa-edit"></i>  Edit Data Surat Feedback</h4>
+      </div>
+      <div class="modal-body" id=editData >
+        <form action="<?= base_url('petugas/Feedback/Feedback/ubah_suratFeedback')?>" method="post" enctype="multipart/form-data">
+          <div class="box box-success">
+            <div class="box-body">
+
+             <div class="form-group">
+              <input type="hidden" class="form-control" name="idFeedback" id="idFeedback" >
+            </div>
+
+            <div class="form-group">
+              <label for="noEdit">No. Surat Feedback CAPA</label> <small class="text-danger">*</small>
+              <input type="text" class="form-control" name="noEdit" id="noEdit" required >
+            </div>
+
+            <!-- tanggal surat -->
+            <div class="form-group ">
+             <label for="tglEdit"><i class="fa fa-calendar"></i> Tanggal Feedback</label> <small class="text-danger">*</small>
+             <input class="form-control" type="date" name="tglEdit" id="tglEdit" required >
+
+           </div>
+
+
+           <div class="mb-3">
+            <label for="fileEdit">Soft File Surat Peringatan</label> <small class="text-danger">*</small>
+            <input class="form-control" type="file" id="formFile" name="fileEdit" id="fileEdit" required>
           </div>
+
+        </div><!-- /.box-body -->                        
+        <div class="modal-footer">
+          <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+          <button type="submit" name="update" class="btn btn-success"><i class="fa fa-edit"></i> Update</button>
         </div>
       </div>
-    </div>
-    <script src="<?php echo base_url();?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
-    <script type="text/javascript" >
-      $(document).on("click","#acceptClosed",function(){
-        var id = $(this).data('id');
-        var closed = $(this).data('closed');
+    </form>
+  </div>
+</div>
+</div>
+</div>
+<script src="<?php echo base_url();?>assets/vendor/jquery/jquery-1.10.0.min.js" type="text/javascript"></script>
+<script type="text/javascript" >
+  $(document).on("click","#editFed",function(){
+    var idFed = $(this).data('id');
+    var tglFed = $(this).data('tgl');
+    var noFed = $(this).data('nomor');
 
-        $("#acceptData #id").val(id);
-        $("#acceptData #editclosed").val(closed);
-      });
-    </script>
+    $("#editData #idFeedback").val(idFed);
+    $("#editData #noEdit").val(noFed);
+    $("#editData #tglEdit").val(tglFed);
 
 
-    <!-- /. reject -->
-
-    <div id= "reject" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title"><i class="icon fa fa-ban"></i>  ALert !</h4>
-          </div>
-          <div class="modal-body" id="rejectData">
-            <form action="<?=base_url('petugas/feedback/updateClosed') ?>" method="post">
-              <div class="box-body">
-                <div class="form-group" style="text-align:center">
-                  Ini akan mengubah status feedback menjadi <b>open</b>, apakah anda yakin ?</label>
-                  <input type="hidden" class="form-control" name="id" id="id"> 
-                  <input type="hidden" class="form-control" name="editclosed" id="editclosed" value="nonaktif"> 
-
-                </div>                                                  
-              </div><!-- /.box-body -->                        
-              <div class="modal-footer">
-                <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                <button type="submit" name="hapus" class="btn btn-danger"><i class="fa fa-check"></i> Accept</button>
-              </div>
-            </form>
-          </div>
+  });
+</script>
+<!-- /. Edit Peringatan -->
+  
+    
+    <!-- Hapus Peringatan -->
+ <div id= "hapusFeedback" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
+                </div>
+                <div class="modal-body" id="hapusData">
+                    <form role="form" method="post" action="<?= base_url('admin/Feedback/Feedback/hapus_suratFeedback') ?>">
+                        <div class="box-body">
+                            <div class="form-group" style="text-align:center">Anda yakin akan menghapus Surat Feedback CAPA ini ?</label>
+                                <input type="hidden" id="idFeedback" name="idFeedback">
+                              
+                            </div>                        
+                        </div><!-- /.box-body -->
+                        <div class="modal-footer">
+                            <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+                            <button type="submit" class="btn btn-danger" name="delete"><i class="fa fa-check"></i> Hapus</button>
+                        </div>
+                    </form>             
+                        <script src="<?php echo base_url();?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
+                        <script type="text/javascript" >
+                            $(document).on("click","#hapusFed",function(){
+                                var id = $(this).data('id');
+                                $("#hapusData #idfeedback").val(id);
+                            });
+                        </script>
+                </div>
+                
+            </div>
         </div>
-      </div>
     </div>
-    <script src="<?php echo base_url();?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
-    <script type="text/javascript" >
-      $(document).on("click","#rejectClosed",function(){
-        var id = $(this).data('id');
-        var closed = $(this).data('closed');
-
-        $("#rejectData #id").val(id);
-        $("#rejectData #editclosed").val(closed);
-      });
-    </script>
-    <!-- /. Hapus Modal -->
 
 
   </section>
