@@ -41,7 +41,8 @@ class Lhk_pem_c extends MY_Controller
 
     }
 
-    public function getSarana2(){
-        return "<option value=hello>hello</option>";
-           }
+    public function getSarana(){
+       echo $this->Lhk_model->getSarana();
+    }
+
 }
