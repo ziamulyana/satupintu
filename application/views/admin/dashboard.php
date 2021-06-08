@@ -11,7 +11,7 @@
         <!-- small box -->
         <div class="small-box bg-green">
           <div class="inner">
-            <h3><?php echo $this->db->where('timeline >', 7)->from("view_admin")->count_all_results(); ?></h3>
+            <h3><?php echo $this->db->where('timeline >', 7)->where('status =', 0)->from("view_admin")->count_all_results(); ?></h3>
 
             <p>AKTIF</p>
           </div>
@@ -25,7 +25,7 @@
         <!-- small box -->
         <div class="small-box bg-yellow">
           <div class="inner">
-            <h3><?php echo $this->db->where('timeline >=', 4)->where('timeline <=', 7)->from("view_admin")->count_all_results(); ?></h3>
+            <h3><?php echo $this->db->where('timeline >=', 4)->where('timeline <=', 7)->where('status =', 0)->from("view_admin")->count_all_results(); ?></h3>
 
             <p>TENGGANG</p>
           </div>
@@ -39,7 +39,7 @@
         <!-- small box -->
         <div class="small-box bg-red">
           <div class="inner">
-            <h3><?php echo $this->db->where('timeline <=', 3)->from("view_admin")->count_all_results(); ?></h3>
+            <h3><?php echo $this->db->where('timeline <=', 3)->where('status =', 0)->from("view_admin")->count_all_results(); ?></h3>
 
             <p>EXPIRED</p>
           </div>
@@ -72,8 +72,8 @@
               <thead>
                 <tr>
                   <th class="dt-center">No. Surat Peringatan</th>
-                  <th class="dt-center">Tanggal Surat</th>
                   <th class="dt-center">Nama Sarana</th>
+                  <th class="dt-center">Tanggal Surat Peringatan</th>
                   <th class="dt-center">Timeline</th>
                   <th class="dt-center">Status</th>
 
@@ -91,9 +91,9 @@
                       $status = '<small class="label label-success"><i class="fa fa-check-circle"></i>&nbsp AKTIF</small>';
                     }
                     echo "<tr>";
-                    echo "<td class='dt-center'>" . $row->noSuratFeedback . "</td>";
+                    echo "<td class='dt-center'>" . $row->noSuratPeringatan . "</td>";
                     echo "<td class='dt-center'>" . $row->namaSarana . "</td>";
-                    echo "<td class='dt-center'>" . $row->tglFeedback . "</td>";
+                    echo "<td class='dt-center'>" . $row->tglSuratPeringatan . "</td>";
                     echo "<td class='dt-center'>" . $row->timeline . " Hari Tersisa</td>";
                     echo "<td class='dt-center'>" . $status . "</td>";
                   }

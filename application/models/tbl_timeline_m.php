@@ -4,13 +4,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class tbl_timeline_m extends CI_Model
 {
-  private $_table   = 'view_notif';
-  
-  public $no_surat;
-  public $sarana;
-  public $tgl_surat;
-  public $tanggal_timeline;
-  public $timeline;
 
   function __construct()
   {
@@ -33,6 +26,18 @@ class tbl_timeline_m extends CI_Model
       
       $this->db->select('*');
       $this->db->from('view_timeline');
+      $this->db->where('closed =',0);
+      $query = $this->db->get();
+  
+      return $query;
+      
+    }
+    public function tampil_total_admin()
+    { 
+      
+      $this->db->select('*');
+      $this->db->from('view_admin');
+      $this->db->where('status =',0);
       $query = $this->db->get();
   
       return $query;

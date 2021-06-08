@@ -11,7 +11,7 @@
         <!-- small box -->
         <div class="small-box bg-green">
           <div class="inner">
-            <h3><?php echo $this->db->where('timeline >', 7)->from("view_timeline")->count_all_results(); ?></h3>
+            <h3><?php echo $this->db->where('timeline >', 7)->where('closed =', 0)->from("view_timeline")->count_all_results(); ?></h3>
 
             <p>AKTIF</p>
           </div>
@@ -25,7 +25,7 @@
         <!-- small box -->
         <div class="small-box bg-yellow">
           <div class="inner">
-            <h3><?php echo $this->db->where('timeline >=', 4)->where('timeline <=', 7)->from("view_timeline")->count_all_results(); ?></h3>
+            <h3><?php echo $this->db->where('timeline >=', 4)->where('timeline <=', 7)->where('closed =', 0)->from("view_timeline")->count_all_results(); ?></h3>
 
             <p>TENGGANG</p>
           </div>
@@ -39,7 +39,7 @@
         <!-- small box -->
         <div class="small-box bg-red">
           <div class="inner">
-            <h3><?php echo $this->db->where('timeline <=', 3)->from("view_timeline")->count_all_results(); ?></h3>
+            <h3><?php echo $this->db->where('timeline <=', 3)->where('closed =', 0)->from("view_timeline")->count_all_results(); ?></h3>
 
             <p>EXPIRED</p>
           </div>
