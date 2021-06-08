@@ -28,10 +28,6 @@
 		}
 
 		function add_data(){
-			$this->feedbackCapa->saveData($this->inputFields());
-		}
-
-		function inputFields(){
 			$idPeringatan =  $this->input->post('noSuratPeringatan');
 			$noFeedback =  $this->input->post('noFeedback');
 			$tanggal =  $this->input->post('tanggal');
@@ -65,14 +61,13 @@
 				'idSuratPeringatan' => $idPeringatan
 			);
 
-			$this->db->set($data);
-			$this->db->insert($this->db->satupintu . 'tbl_feedback');
-			// $this->db->insert($this->db->'tbl_feedback',$data);
-		
-		}
+			$this->feedbackCapa->saveData($data);
+
+
 		}
 
 	}
+}
 
 	/* End of file Home.php */
 	/* Location: ./application/controllers/Home.php */
