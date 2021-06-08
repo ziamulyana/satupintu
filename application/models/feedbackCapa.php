@@ -57,8 +57,8 @@ class FeedbackCapa extends CI_Model{
  }
 
  public function editPeringatan($id){
-     $this->db->set('status',1, FALSE);    
-  $this->db->where('noSuratPeringatan', $id);
+  $this->db->set('status',"1");    
+  $this->db->where('idPeringatan', $id);
   $this->db->update('tbl_peringatan'); 
     }
     
