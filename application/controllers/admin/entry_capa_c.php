@@ -28,7 +28,10 @@
 		}
 
 		function add_data(){
+			$idPeringatan =  $this->input->post('noSuratPeringatan');
 			$this->feedbackCapa->saveData($this->inputFields());
+			$this->feedbackCapa->editPeringatan($idPeringatan);
+
 		}
 
 		function inputFields(){

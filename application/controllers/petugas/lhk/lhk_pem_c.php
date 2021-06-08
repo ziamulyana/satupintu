@@ -40,4 +40,8 @@ class Lhk_pem_c extends MY_Controller
     $this->load->view('petugas/lhk/lhk_pem_isi.php', $data, FALSE);
 
     }
+
+    public function getSarana2(){
+        return "<option value=hello>hello</option>";
+           }
 }

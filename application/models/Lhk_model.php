@@ -46,6 +46,20 @@ class Lhk_model extends CI_Model
      $this->db->from('tbl_sarana');
     $query = $this->db->get();
     return $query->result();
+
+  }
+
+  public function getSarana2(){
+     $this->db->select('*');
+     $this->db->from('tbl_sarana');
+    $query = $this->db->get();
+    $output = '<option value="">Pilih Sarana</option>';
+    foreach($query->result() as $row)
+    {
+     $output .= '<option value="'.$row->idSarana.'">'.$row->namaSarana.'</option>';
+ }
+ return $output;
+
   }
 
   public function updateSuratPeringatan($data){

@@ -55,4 +55,11 @@ class FeedbackCapa extends CI_Model{
    $this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
    redirect('/admin/Feedback', 'refresh');
  }
+
+ public function editPeringatan($id){
+     $this->db->set('status',1, FALSE);    
+  $this->db->where('noSuratPeringatan', $id);
+  $this->db->update('tbl_peringatan'); 
+    }
+    
 }

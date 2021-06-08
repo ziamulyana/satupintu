@@ -15,7 +15,7 @@ class SuratKw_model extends CI_Model{
     $this->db->from('tbl_kwitansi');
     $this->db->join('tbl_tugas', 'tbl_kwitansi.idTugas = tbl_tugas.idTugas');
     $this->db->join('tbl_pegawai', 'tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
-    $this->db->join('tbl_surattugas', 'tbl_tugas.idSuratTugas = tbl_surattugas.idSurat');
+    $this->db->join('tbl_surattugas', 'tbl_tugas.noSuratTugas = tbl_surattugas.noSuratTugas');
     $query = $this->db->get('');
     return $query;
   }
@@ -34,7 +34,7 @@ class SuratKw_model extends CI_Model{
    $this->db->from('tbl_uraian');
    $this->db->join('tbl_kwitansi', 'tbl_uraian.idKwitansi = tbl_kwitansi.idKwitansi');
    $this->db->join('tbl_tugas', 'tbl_kwitansi.idTugas = tbl_tugas.idTugas');
-   $this->db->join('tbl_surattugas', 'tbl_tugas.idSuratTugas = tbl_surattugas.idSurat');
+   $this->db->join('tbl_surattugas', 'tbl_tugas.noSuratTugas = tbl_surattugas.noSuratTugas');
    $this->db->join('tbl_pegawai', 'tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
    $this->db->where('tbl_kwitansi.idKwitansi', $id);
    $query = $this->db->get('');
