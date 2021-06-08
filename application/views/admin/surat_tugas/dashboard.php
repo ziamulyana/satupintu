@@ -64,10 +64,9 @@
                         echo "<td class='dt-center'>".$row->tglSurat."</td>";
                         echo "<td class='dt-center'>".$row->maksud."</td>";
                         echo "<td class='dt-center'>".$row->kota."</td>";
-                        
                         echo "<td class='dt-center'>"?>
                         <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editSur"
-                        data-idsurat="<?=$row->idSurat ?>" data-nosurat="<?=$row->noSuratTugas ?>"  data-tglsurat="<?=$row->tglSurat ?>" data-maksud="<?=$row->maksud ?>" data-kota="<?=$row->kota ?>" data-anggaran="<?=$row->idAnggaran ?>" data-tglmulai="<?=$row->tglMulai ?>"  data-toggle="modal" data-target="#editSurat">
+                        data-idsurat="<?=$row->idSurat ?>" data-nosurat="<?=$row->noSuratTugas ?>"  data-tglsurat="<?=$row->tglSurat ?>" data-maksud="<?=$row->maksud ?>" data-kota="<?=$row->kota ?>" data-anggaran="<?=$row->namaAnggaran ?>" data-tglmulai="<?=$row->tglMulai ?>"  data-toggle="modal" data-target="#editSurat">
                           <i class="fa fa-edit"></i></a>
 
                          <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusSur" data-id="<?=$row->idSurat ?>" data-toggle="modal" data-target="#hapusSurat">
@@ -135,20 +134,20 @@
 
 							<div class="form-group">
 								<label for="noEdit">No. Surat Tugas </label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="noSurat" id="noSurat" required >
+								<input type="text" class="form-control" name="noSurat" id="noSurat" >
 							</div>
 
 							<div class="form-group">
 								<label for="noEdit">Tanggal Surat </label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="tglSurat" id="tglSurat" required >
+								<input type="text" class="form-control" name="tglSurat" id="tglSurat" >
 							</div>
 
               <div class="form-group">
                 <label for="noEdit">Kota </label> <small class="text-danger">*</small>
-                <select class="form-control" name="kota" id="kota" required>
+                <select class="form-control" name="kota" id="kota" >
                   <option>Kota Batam</option>
                   <option>Kota Tanjung Pinang</option>
-                  <option>Kabupaten Bintang</option>
+                  <option>Kabupaten Bintan</option>
                   <option>Kabupaten Karimun</option>
                   <option>Kabupaten Anambas</option>
                   <option>Kabupaten Lingga</option>
@@ -158,7 +157,7 @@
 
               <div class="form-group">
                 <label for="noEdit">Anggaran </label> <small class="text-danger">*</small>
-                <select class="form-control" name="idAnggaran" id="idAnggaran" required>
+                <select class="form-control" name="idAnggaran" id="idAnggaran" >
                 <?php
                 foreach ($anggaran as $anggaran) {
                   echo "<option value=".$anggaran->idAnggaran.">".$anggaran->namaAnggaran."</option>";
@@ -170,37 +169,37 @@
 
               <div class="form-group">
                 <label for="noEdit">Maksud </label> <small class="text-danger">*</small>
-                <input type="text" class="form-control" name="maksud" id="maksud" required >
+                <input type="text" class="form-control" name="maksud" id="maksud" >
               </div>
 
               <div class="form-group">
                 <label for="noEdit">Tanggal Mulai Tugas </label> <small class="text-danger">*</small>
-                <input type="text" class="form-control" name="tglMulai" id="tglMulai" required >
+                <input type="text" class="form-control" name="tglMulai" id="tglMulai" >
               </div>
 
                <div class="form-group">
                 <label for="noEdit">Tanggal Selesai Tugas </label> <small class="text-danger">*</small>
-                <input type="text" class="form-control" name="tglSelesai" id="tglSelesai" required >
+                <input type="text" class="form-control" name="tglSelesai" id="tglSelesai" >
               </div>
 
                <div class="form-group">
                 <label for="noEdit">Beban Biaya </label> <small class="text-danger">*</small>
-                <input type="text" class="form-control" name="tglSelesai" id="tglSelesai" required >
+                <input type="text" class="form-control" name="tglSelesai" id="tglSelesai" >
               </div>
 
               <div class="form-group">
                 <label for="noEdit">Kendaraan </label> <small class="text-danger">*</small>
-                <input type="text" class="form-control" name="kendaraan" id="kendaraan" required >
+                <input type="text" class="form-control" name="kendaraan" id="kendaraan" >
               </div>
 
               <div class="form-group">
                 <label for="noEdit">Nama Penanda Tangan ST </label> <small class="text-danger">*</small>
-                <input type="text" class="form-control" name="namaPenandatangan" id="namaPenandatangan" required >
+                <input type="text" class="form-control" name="namaPenandatangan" id="namaPenandatangan">
               </div>
 
               <div class="form-group">
                 <label for="noEdit">Jabatan Penanda Tangan ST </label> <small class="text-danger">*</small>
-                <input type="text" class="form-control" name="jabatanPenandatangan" id="jabatanPenandatangan" required >
+                <input type="text" class="form-control" name="jabatanPenandatangan" id="jabatanPenandatangan"   >
               </div>
 
 
@@ -231,7 +230,7 @@
 		$("#editData #tglSurat").val(tglS);
 		$("#editData #maksud").val(maksudS);
 		$("#editData #kota").val(kotaS);
-    $("#editData #anggaran").val(anggaranS);
+    $("#editData #idAnggaran").val(anggaranS);
     $("#editData #tglmulai").val(tglmulaiS);
 	});
   </script>
