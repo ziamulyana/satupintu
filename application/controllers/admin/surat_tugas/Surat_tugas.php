@@ -34,7 +34,7 @@ class Surat_tugas extends CI_Controller {
     //simpan surat tugas
     public function simpan_surat()
     {
-        $idsurat = $this->input->post('idSurat');
+        
         $nosurat = $this->input->post('noSuratTugas');
         $tglsurat = $this->input->post('tglSurat');
         $tglmulai = $this->input->post('tglMulai');
@@ -47,10 +47,10 @@ class Surat_tugas extends CI_Controller {
         $maksud = $this->input->post('maksud');
         $namapenandatangan = $this->input->post('namaPenandatangan');
         $jabatanpenandatangan = $this->input->post('jabatanPenandatangan');
-        $idpetugas = $this->input->post('idPetugas');
+        $idpegawai = $this->input->post('idPetugas');
 
         $data = array (
-            'idSurat' => $idsurat,
+                
             'noSuratTugas' => $nosurat,
             'tglSurat' => $tglsurat,
             'tglMulai' => $tglmulai,
@@ -62,7 +62,8 @@ class Surat_tugas extends CI_Controller {
             'tglSelesai' => $tglselesai,
             'maksud' => $maksud,
             'namaPenandatangan' => $namapenandatangan,
-            'jabatanPenandatangan' => $jabatanpenandatangan
+            'jabatanPenandatangan' => $jabatanpenandatangan,
+
         );
 
         
@@ -70,15 +71,17 @@ class Surat_tugas extends CI_Controller {
         $huruf = array('A','B','C','D');
         $i = 0;
 
-        foreach($idpetugas as $petugas){
+        foreach($idpegawai as $petugas){
             $data_petugas = array(
-                'noSuratTugas' =>$nosurat,
+                'idSuratTugas' =>$nosurat,
                 'idPetugas' => $petugas,
                 'urutan' => $huruf[$i] 
             );
+            
             $this->db->insert('tbl_tugas', $data_petugas);
 
             $i++;
+            
         }
 
         $this->session->set_flashdata('success', 'Data Berhasil Dimasukan');
