@@ -51,9 +51,9 @@
                           echo "<td class='dt-center'>"?>                             
                         
 
-                            <a href="" class="btn btn-info btn-sm" data-tooltip="tooltip" title="Dakota" id="printDk" data-id = "<?=$row->idSurat ?>" data-toggle="modal" data-target="#printDakota"><i class="fa fa-print"></i></a>
+                            <a href="" class="btn btn-info btn-sm" data-tooltip="tooltip" title="Dakota" id="printDk" data-id = "<?=$row->noSuratTugas ?>" data-toggle="modal" data-target="#printDakota"><i class="fa fa-print"></i></a>
 
-                            <a href="" class="btn btn-warning btn-sm" data-tooltip="tooltip" title="Lukota" id="printLk" data-id = "<?=$row->idSurat ?>" data-toggle="modal" data-target="#printLukota"><i class="fa fa-print"></i></a>
+                            <a href="" class="btn btn-warning btn-sm" data-tooltip="tooltip" title="Lukota" id="printLk" data-id = "<?=$row->noSuratTugas ?>" data-toggle="modal" data-target="#printLukota"><i class="fa fa-print"></i></a>
 
                           
 
