@@ -1,6 +1,3 @@
-
-
-
 <section class="content-header">
   <h1>
     LHK Pemeriksaan
@@ -123,62 +120,15 @@
                      <hr>
                      <div class="dynamic">
                      <table class="table table-bordered table-hover" >
-                      <tr>
-                        <!-- sarana -->
-                        <td><select name="sarana[]" id="sarana[]" class="form-control category sm" title="Nama Sarana">
-                          <?php
-                      foreach ($sarana as $sr) {
-                        echo "<option value=".$sr->idSarana.">".$sr->namaSarana."</option>";
-                      }
-                      ?>
-                      <option selected="selected">- Pilih Sarana -</option>
-                        </select>
-
-                        <br>
-
-                        <p>Jika tidak ada sarana, <a href="" >tambah sarana </a></p>
-
-                      </td>
-
-                        <!-- temuan -->
-
-                         <td><select name="temuan[]" id="temuan[]" class="category related-post form-control" multiple="multiple" data-placeholder="Temuan" style="width: 100%;"> 
-                          <option value="Perizinan">Perizinan</option>
-                          <option value="Pengadaan">Pengadaan</option>
-                          <option value="CDOB">CDOB</option>
-                          <option value="Produk TIE">Produk TIE</option>
-                          <option value="Mutu/Label">Mutu/Label</option>
-                          <option value="Produk Dilarang">Produk Dilarang</option>
-                          <option value="Administrasi">Administrasi</option>
-                          <option value="Hygiene/Sanitasi">Hygiene/Sanitasi</option>
-                          <option value="CPPB">CPPB</option>
-                          <option value="Lain-lain">Lain-lain</option>
-                        </select></td>
-
-                           <td><select name="tl[]" id="tl[]" class="form-control sm" title="Nama Sarana">
-                          <option>Tindak Lanjut</option>
-                          <option value="Pembinaan">Pembinaan</option>
-                          <option value="Peringatan">Peringatan</option>
-                          <option value="Peringatan Keras">Peringatan Keras</option>
-                          <option value="PSK">PSK</option>
-                          <option value="Penghentian Kegiatan">Penghentian Kegiatan</option>
-                          <option value="TL ke Penyidikan">TL ke Penyidikan</option>
-                          <option value="CAPA">CAPA</option>
-                        </select></td>
-
-                           <td><select name="kesimpulan[]" id="kesimpulan[]" class="form-control sm" title="Kesimpulan">
-                          <option>Kesimpulan</option>
-                          <option value="1">MK</option>
-                          <option value="0">TMK</option>
-                          
-                        </select></td>
-
-
-                        </tr>
-
-                        <tr>
-
-                        <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
+                      <thead>
+              <tr>
+                <th>Enter Item Name</th>
+                <th>Category</th>
+                <th>Sub Category</th>
+                <th><button type="button" name="add" class="btn btn-success btn-xs add"><span class="glyphicon glyphicon-plus"></span></button></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
 
                         <td><button type="button" name="add" id="add" class="btn btn-primary"><i class="fa fa-plus"> Tambah</button></td>  
                         </tr>
@@ -186,7 +136,7 @@
                       </table>
                       </div>
 
-                        
+                        <div id="newRow"></div>
             <button id="addRow" type="button" class="btn btn-info">Add Row</button>
 
                       <!-- /.box-body -->
@@ -207,6 +157,44 @@
               </div>
             </div>
             <button type="submit" class="btn btn-success"><i class="fa fa-share"></i>&nbsp Save</button>
+          </div>
+          <!-- /.box-body -->
+        </div>
+
+      </div>
+
+      <div class="box-footer">
+
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+<!-- /.row -->
+</section>
+<!-- /.content -->
+<style>
+  .wajib {
+    color: red;
+  }
+
+  .kotak {
+    border: 1px groove #ffffffba !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow: 0px 0px 0px 0px #000;
+    box-shadow: 0px 0px 0px 0px #000;
+  }
+
+  legend.scheduler-border {
+    width: inherit;
+    /* Or auto */
+    padding: 0 10px;
+    /* To give a bit of padding on the left and right */
+    border-bottom: none;
+    font-size: 16px;
+  }
+</style>
 
 
 <script>
@@ -214,11 +202,13 @@
       
       var count = 0;
 
-      $(document).on('click', '#addRow', function(){
+      $(document).on('click', '.add', function(){
         count++;
         var html = '';
         html += '<tr>';
-        html += '<td><select name="item_category[]" class="form-control item_category" ><option value="">Select Category</option><option value="hei">"hei"</option>}?></select></td>';
+        html += '<td><input type="text" name="item_name[]" class="form-control item_name" /></td>';
+        html += '<td><select name="item_category[]" class="form-control item_category" data-sub_category_id="'+count+'"><option value="">Select Category</option><?php echo fill_select_box($connect, "0"); ?></select></td>';
+        html += '<td><select name="item_sub_category[]" class="form-control item_sub_category" id="item_sub_category'+count+'"><option value="">Select Sub Category</option></select></td>';
         html += '<td><button type="button" name="remove" class="btn btn-danger btn-xs remove"><span class="glyphicon glyphicon-minus"></span></button></td>';
         $('tbody').append(html);
       });
@@ -227,11 +217,8 @@
         $(this).closest('tr').remove();
       });
 
+ 
 
-
-      
-
-     
-      
+   
     });
 </script>
