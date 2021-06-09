@@ -183,7 +183,12 @@
 
               <div class="form-group">
                 <label for="noEdit">Kendaraan </label> <small class="text-danger">*</small>
-                <input type="text" class="form-control" name="kendaraan" id="kendaraan" >
+                <select class="form-control" name="kendaraan" id="kendaraan" >
+                <option>Pesawat</option>
+                  <option>Kapal laut</option>
+                  <option>Roda empat</option>
+                  <option>Kendaraan umum</option>
+                  </select>
               </div>
 
               <div class="form-group">
@@ -194,13 +199,20 @@
                   <option>Dyah Ayu Novi Hapsari, S.Farm., Apt</option>
                   <option>Ruth Deseyanti Purba, S.Si., Apt</option>
                   <option>Irdiansyah, SH</option>
-                  <option>Paniyati, S.Farm., Apt
+                  <option>Paniyati, S.Farm., Apt</option>
                 </select>
               </div>
 
               <div class="form-group">
                 <label for="noEdit">Jabatan Penanda Tangan ST </label> <small class="text-danger">*</small>
-                <input type="text" class="form-control" name="jabatanPenandatangan" id="jabatanPenandatangan"   >
+                <select class="form-control" name="jabatanPenandatangan" id="jabatanPenandatangan"   >
+                <option>Kepala Balai POM di Batam</option>
+                      <option>PLH Kepala Balai POM di Batam Koordinator Substansi Informasi dan Komunikasi</option>
+                      <option>PLH Kepala Balai POM di Batam Koordinatitor Substansi Pengujian</option>
+                      <option>PLH Kepala Balai POM di Batam Koordinator Substansi Pemeriksaan</option>
+                      <option>PLH Kepala Balai POM di Batam Koordinator Substansi Penindakan</option>
+                      <option>PLH Kepala Balai POM di Batam Kepala SUB Bagian Tata Usaha</option>
+                </select>
               </div>
 
 

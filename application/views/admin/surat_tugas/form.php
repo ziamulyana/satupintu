@@ -52,7 +52,7 @@
                   <option value="" disabled selected>- Pilih Kota -</option>
                   <option>Kota Batam</option>
                   <option>Kota Tanjung Pinang</option>
-                  <option>Kabupaten Bintang</option>
+                  <option>Kabupaten Bintan</option>
                   <option>Kabupaten Karimun</option>
                   <option>Kabupaten Anambas</option>
                   <option>Kabupaten Lingga</option>
@@ -143,7 +143,7 @@
                   <option>Dyah Ayu Novi Hapsari, S.Farm., Apt</option>
                   <option>Ruth Deseyanti Purba, S.Si., Apt</option>
                   <option>Irdiansyah, SH</option>
-                  <option>Paniyati, S.Farm., Apt
+                  <option>Paniyati, S.Farm., Apt</option>
                 </select>
               </div>
             </div>

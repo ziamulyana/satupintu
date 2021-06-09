@@ -91,8 +91,8 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 			$no_surat = $row->noSuratTugas;
 			$maksud = $row->maksud;
 			$tujuan = $row->kota;
-			$kendaaraan = $row->kendaraan;
-			$tgl_surat = $row->tglSurat;
+			$kendaraan = $row->kendaraan;
+			$tgl_surat =strtotime($row->tglSurat);
 			$tgl_mulai =strtotime($row->tglMulai);
 			$tgl_selesai = strtotime($row->tglSelesai);
 			$mak = $row->mak;
@@ -190,20 +190,89 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 		</tr>
 
 		<?php
-		$no =1;{
+		$huruf = array('1','2','3','4','5');
+		for($i=0;$i<count($nama_peg);$i++){
 		?>
 
 		<tr>
-			<td><p align="center"><?php echo $no++; ?></p></td>
-			<td><?php echo $row->nama; ?></td>
-			<td><p align="center"><?php echo $row->pangkat; ?></p></td>
-			<td><p align="center"><?php echo $row->golongan; ?></p></td>
-			<td><p align="center"><?php echo $row->nip; ?></p></td>
-			<td><p align="center"><?php echo $row->jabatan; ?></p></td>
+			<td><p align="center"><?php echo $huruf[$i]; ?></p></td>
+			<td><p><?php echo $nama_peg[$i]; ?></P></td>
+			<td><p align="center"><?php echo $pangkat_peg[$i]; ?></p></td>
+			<td><p align="center"><?php echo $golongan_peg[$i]; ?></p></td>
+			<td><p align="center"><?php echo $nip_peg[$i]; ?></p></td>
+			<td><p align="center"><?php echo $jabatan_peg[$i]; ?></p></td>
 		</tr>
 
 		<?php }?>
 		</table>
+
+		
+
+	<p><b>Untuk </b> : 1. <?php echo $maksud; ?> </p></td>
+		
+		<table style="width:100%">
+
+		<tr>
+		<td></td>
+		<td></td>
+		<td><p align="left">2.</p></td>
+		<td><p align="left">Tujuan</p></td>
+		<td><p align="left">:</p></td>
+		<td><p align="left"><?php echo $tujuan; ?></p></td>
+		</tr>
+
+		<tr>
+		<td></td>
+		<td></td>
+		<td><p align="left">3.</p></td>
+		<td><p align="left">Kendaraan</p></td>
+		<td><p align="left">:</p></td>
+		<td><p align="left"><?php echo $kendaraan; ?></p></td>
+		</tr>
+
+		<tr>
+		<td></td>
+		<td></td>
+		<td><p align="left">4.</p></td>
+		<td><p align="left">Waktu</p></td>
+		<td><p align="left">:</p></td>
+		<td><p align="left">
+		<?php{
+			  $datetime1 = new DateTime($tgl_mulai);
+			  $datetime2 = new DateTime($tgl_selesai);
+			  $difference = $datetime1->diff($datetime2);
+			  $difference->days."";
+			  }
+		  ?>Hari mulai tgl. <?php echo $tgl_mulai; ?> sampai dengan <?php echo $tgl_selesai; ?></p></td>
+		</tr>
+
+		<tr>
+		<td></td>
+		<td></td>
+		<td><p align="left">4.</p></td>
+		<td><p align="left">Biaya</p></td>
+		<td><p align="left">:</p></td>
+		<td><p align="left">DIPA Balai Pengawas Obat dan Makanan di Batam Tahun Anggaran 2021</p></td>
+		</tr>
+
+		<tr>
+		<td></td>
+		<td></td>
+		<td><p align="left"></p></td>
+		<td><p align="left"></p></td>
+		<td><p align="left"></p></td>
+		<td><p align="left"><?php echo $mak; ?></p></td>
+		</tr>
+
+		</table>
+
+		<p align="right">Batam, <?php echo $tgl_surat; ?></p>
+		<td></td>
+		<td></td>
+		<p align="right"><?php echo $jabatan_penandatangan; ?></p>
+		<p align="right"><?php echo $nama_penandatangan; ?></p>
+
+
 
 	</body>
 	</html>
