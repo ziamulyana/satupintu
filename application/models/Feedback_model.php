@@ -47,9 +47,16 @@ class Feedback_model extends CI_Model{
    return $query->num_rows();
  }
 
-  public function hapusSuratPeringatan($id){
+  public function hapus_SuratFeedback($id){
   $this->db->delete("tbl_feedback",array("idFeedback"=>$id));
   }
+
+
+//   function hapus_SuratFeedback(){
+//     $idFeedback=$this->input->post('idFeedback');
+//     $this->tbl_feedback->hapus_barang($idFeedback);
+//     redirect('Feedback');
+// }
 
 //  public function updateClosed($id, $editClosed){
 //   $this->db->set('closed', $editClosed, FALSE);    

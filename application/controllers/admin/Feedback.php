@@ -46,7 +46,7 @@
 	
 			$config['upload_path'] = './assets/uploads/files/feedback';
 			$config['allowed_types'] = 'pdf';
-			$config['file_name'] = 'feedbackCAPA-'.$id;
+			$config['file_name'] = 'feedback-'.$id;
 			$config['overwrite'] = true;
 			$config['max_size'] = 0;
 			
@@ -62,7 +62,7 @@
 	
 				$data_peringatan = array (
 					'id' => $id,
-					'thlFeedback' => $tglEdit,
+					'tglFeedback' => $tglEdit,
 					'noSuratFeedback' => $noEdit,
 					'file_feedback' => $file	
 				);
@@ -75,8 +75,8 @@
 
 		public function hapus_suratFeedback(){
 			$id = $this->input->post('idFeedback');
-			$this->Feedback_model->hapusSuratFeedback($id);
-			redirect('petugas/Feedback');
+			$this->Feedback_model->hapus_SuratFeedback($id);
+			redirect('admin/Feedback');
 			}
 	
 		}
