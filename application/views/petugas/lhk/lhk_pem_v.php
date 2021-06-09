@@ -218,7 +218,7 @@
         count++;
         var html = '';
         html += '<tr>';
-        html += '<td><select name="item_category[]" class="form-control item_category" ><option value="">Select Category</option><option value="hei">"hei"</option>}?></select></td>';
+        html += ' <td><select name="sarana[]" id="sarana[]" class="form-control category sm" title="Nama Sarana"><option selected="selected">- Pilih Saranaaaa -</option><?php echo base_url("petugas/lhk/lhk_pem_c/getSarana2"); ?></select></td>';
         html += '<td><button type="button" name="remove" class="btn btn-danger btn-xs remove"><span class="glyphicon glyphicon-minus"></span></button></td>';
         $('tbody').append(html);
       });
@@ -227,11 +227,8 @@
         $(this).closest('tr').remove();
       });
 
+ 
 
-
-      
-
-     
-      
+   
     });
 </script>
