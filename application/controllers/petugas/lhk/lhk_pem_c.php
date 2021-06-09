@@ -64,23 +64,23 @@ class Lhk_pem_c extends MY_Controller
 
    for($i=0;$i<count($sarana);$i++){
     if($sarana[$i]!="Pilih Sarana"){
-       $data = array(
+      $data_sarana = array(
       'idSarana'   => $sarana[$i],
       'isMk'   => $kesimpulan[$i],
       'temuan' => $temuan[$i],
       'jenisTl' => $tl[$i],
       'idSuratTugas' => $idSurat
     );
-    $this->db->insert('tbl_surattl',$data);
-    }else{
-      break;
-    }
-   
+     $this->db->insert('tbl_surattl',$data_sarana);
+   }else{
+    break;
   }
 
+}
 
-  $this->db->insert('tbl_lhk',$data2);
-  $this->load->view('petugas/lhk/lhk_pem_isi.php', $data, FALSE);
+
+$this->db->insert('tbl_lhk',$data2);
+$this->load->view('petugas/lhk/lhk_pem_isi.php', $data, FALSE);
 
 }
 

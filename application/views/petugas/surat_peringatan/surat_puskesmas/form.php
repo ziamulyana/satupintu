@@ -29,7 +29,7 @@
                   <div class="col-sm-12">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-newspaper-o"></i></span>
-                      <select name="suratTugas" id= "suratTugas" class="selectpicker form-control" data-live-search="true" required>
+                      <select name="suratTugas" id= "suratTugas" class="form-control category" data-live-search="true" required>
                           <?php
                         foreach ($surat_tugas as $surat) {
                           echo "<option value=".$surat->idSurat.">".$surat->noSuratTugas."</option>";
