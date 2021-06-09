@@ -42,7 +42,7 @@
                     <select class="form-control category" name="suratTugas" id="suratTugas" style="width: 100%;">
                       <?php
                       foreach ($surat_tugas as $surat) {
-                        echo "<option value=".$surat->noSuratTugas.">".$surat->noSuratTugas."</option>";
+                        echo "<option value=".$surat->idSurat.">".$surat->noSuratTugas."</option>";
                       }
                       ?>
                       <option selected="selected">- Pilih Surat Tugas -</option>
@@ -66,7 +66,7 @@
 
               <!--pejabat yang dituju -->
               <div class="form-group row">
-                <label for="noSurat" class="col-sm-6 col-form-label">Pejabat Yang Dituju:</label>
+                <label for="noSurat" class="col-sm-6 col-form-label">Pejabat Yang Dituju:<span class="wajib"> *</span></label></label>
                 <div class="col-sm-12">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
@@ -83,7 +83,7 @@
 
               <!-- sppd -->
               <div class="form-group row">
-                <label for="noSurat" class="col-sm-6 col-form-label">SPPD disahkan oleh :</label>
+                <label for="noSurat" class="col-sm-6 col-form-label">SPPD disahkan oleh :<span class="wajib"> *</span></label></label>
                 <div class="col-sm-12">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
@@ -95,7 +95,7 @@
 
               <!-- kwitansi -->
               <div class="form-group row">
-                <label for="noSurat" class="col-sm-6 col-form-label">Kwitansi disahkan oleh :</label>
+                <label for="noSurat" class="col-sm-6 col-form-label">Kwitansi disahkan oleh :<span class="wajib"> *</span></label></label>
                 <div class="col-sm-12">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>

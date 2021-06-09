@@ -88,75 +88,75 @@ header("Content-Disposition: attachment; Filename=nominatifDakota-".$filename)
 
 
 		?>
-		<p align="left">DAFTAR NOMINATIF PENGGUNAAN BIAYA PERJALANAN DINAS DALAM KOTA </p>
-		<p align="left">PADA BALAI PENGAWAS OBAT DAN MAKANAN DI BATAM.</p>
-		<p><b>MAK : <?php echo $mak;?></b></p>
+		<p style="font-family:arial;" align="left">DAFTAR NOMINATIF PENGGUNAAN BIAYA PERJALANAN DINAS DALAM KOTA </p>
+		<p style="font-family:arial;" align="left">PADA BALAI PENGAWAS OBAT DAN MAKANAN DI BATAM.</p>
+		<p style="font-family:arial;"><b>MAK : <?php echo $mak;?></b></p>
 
 		<table style="width:100%;  border:1px solid black;border-collapse: collapse; " >
 			<tr>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" align="center" >No.</p></th>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" align="center">Nama/NIP <br> Pangkat/Gol</p></th>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" align="center">Tujuan</p></th>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" align="center">Tanggal</p></th>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" ></p></th>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" align="center">Lama Perjalanan</p></th>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" align="center">Rincian(Rp)</p></th>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" align="center">Jumlah (Rp)</p></th>
-				<th class="a" style="border:1px solid black;"><p class="satu" id="space2" align="center" >Tanda Tangan</p></th>
+				<th class="a" style="border:1px solid black; font-family:arial;"><p class="satu" id="space2" align="center" >No.</p></th>
+				<th class="a" style="border:1px solid black; font-family:arial;"><p class="satu" id="space2" align="center">Nama/NIP <br> Pangkat/Gol</p></th>
+				<th class="a" style="border:1px solid black; font-family:arial;"><p class="satu" id="space2" align="center">Tujuan</p></th>
+				<th class="a" style="border:1px solid black; font-family:arial;"><p class="satu" id="space2" align="center">Tanggal</p></th>
+				<th class="a"><p class="satu" id="space2" ></p></th>
+				<th class="a" style="border:1px solid black; font-family:arial;"><p class="satu" id="space2" align="center">Lama Perjalanan</p></th>
+				<th class="a" style="border:1px solid black; font-family:arial;"><p class="satu" id="space2" align="center">Rincian(Rp)</p></th>
+				<th class="a" style="border:1px solid black; font-family:arial;"><p class="satu" id="space2" align="center">Jumlah (Rp)</p></th>
+				<th class="a" style="border:1px solid black; font-family:arial;"><p class="satu" id="space2" align="center" >Tanda Tangan</p></th>
 			</tr>
 
 
 			<tr>
-				<td style="border:1px solid black;"><p></p></td>
-				<td style="border:1px solid black;"><p></p></td>
-				<td style="border:1px solid black;"><p></p></td>
-				<td style="border:1px solid black;"><p align="center">Mulai</p></td>
-				<td style="border:1px solid black;"><p align="center">Selesai</p></td>
-				<td style="border:1px solid black;"><p></p></td>
-				<td style="border:1px solid black;"><p>Transport Lokal</p></td>
-				<td style="border:1px solid black;"><p></p></td>
-				<td style="border:1px solid black;"><p></p></td>
+				<td style="border:1px solid black; font-family:arial;"><p></p></td>
+				<td style="border:1px solid black; font-family:arial;"><p></p></td>
+				<td style="border:1px solid black; font-family:arial;"><p></p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center">Mulai</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center">Selesai</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p></p></td>
+				<td style="border:1px solid black; font-family:arial;"><p>Transport Lokal</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p></p></td>
+				<td style="border:1px solid black; font-family:arial;"><p></p></td>
 				
 			</tr>
 
 			<tr>
-				<td style="border:1px solid black;"><p align="center">1</p></td>
-				<td style="border:1px solid black;"><p align="center">2</p></td>
-				<td style="border:1px solid black;"><p align="center">3</p></td>
-				<td style="border:1px solid black;"><p align="center">4</p></td>
-				<td style="border:1px solid black;"><p align="center">5</p></td>
-				<td style="border:1px solid black;"><p align="center">6</p></td>
-				<td style="border:1px solid black;"><p align="center">7</p></td>
-				<td style="border:1px solid black;"><p align="center">8</p></td>
-				<td style="border:1px solid black;"><p align="center">9</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center">1</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center">2</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center">3</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center">4</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center">5</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center">6</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center">7</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center">8</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center">9</p></td>
 			</tr>
 			<?php for ($i=0; $i < count($nama_nom) ; $i++) { 
 				?>
 			
 				<tr>
-				<td style="border:1px solid black;"><p align="center"><?php echo $i+1;?></p></td>
-				<td style="border:1px solid black;"><p align="center"><?php echo $nama_nom[$i]."<br>".$nip_nom[$i]."<br>".$surat; ?></p></td>
-				<td style="border:1px solid black;"><p align="center"><?php echo $tujuan;?></p></td>
-				<td style="border:1px solid black;"><p align="center"><?php echo convertDay($tgl1)."-".convertMonthB(convertMonthA($tgl1))."-".convertYear($tgl1);?></p></td>
-				<td style="border:1px solid black;"><p align="center"><?php echo convertDay($tgl2)."-".convertMonthB(convertMonthA($tgl2))."-".convertYear($tgl2);?></p></td>
-				<td style="border:1px solid black;"><p align="center">1 Hari</p></td>
-				<td style="border:1px solid black;"><p align="center">150.000</p></td>
-				<td style="border:1px solid black;"><p align="center">150.000</p></td>
-				<td style="border:1px solid black;"><p ><?php echo $i+1;?>.</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center"><?php echo $i+1;?></p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center"><?php echo $nama_nom[$i]."<br>".$nip_nom[$i]."<br>".$surat; ?></p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center"><?php echo $tujuan;?></p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center"><?php echo convertDay($tgl1)."-".convertMonthB(convertMonthA($tgl1))."-".convertYear($tgl1);?></p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center"><?php echo convertDay($tgl2)."-".convertMonthB(convertMonthA($tgl2))."-".convertYear($tgl2);?></p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center">1 Hari</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center">150.000</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center">150.000</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p ><?php echo $i+1;?>.</p></td>
 			</tr>
 
 			<?php }?>
 
 			<tr>
-				<td style="border:1px solid black;"><p align="center"></p></td>
-				<td style="border:1px solid black;"><p align="center"></p></td>
-				<td style="border:1px solid black;"><p align="center"></p></td>
-				<td style="border:1px solid black;"><p align="center"></p></td>
-				<td style="border:1px solid black;"><p align="center"></p></td>
-				<td style="border:1px solid black;"><p align="center">Jumlah</p></td>
-				<td style="border:1px solid black;"><p align="center">300.000</p></td>
-				<td style="border:1px solid black;"><p align="center">300.000</p></td>
-				<td style="border:1px solid black;"><p align="center"></p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center"></p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center"></p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center"></p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center"></p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center"></p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center">Jumlah</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center">300.000</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center">300.000</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center"></p></td>
 			</tr>
 
 		</table>
@@ -165,16 +165,12 @@ header("Content-Disposition: attachment; Filename=nominatifDakota-".$filename)
 
 		<table style="width:100%">
 			<tr>
-				<th><p class="satu">Mengetahui/Menyetujui</p></th> 
-				<th><p class="satu">Batam, </p></th> 
+				<th><p style="font-family:arial;" class="satu">Mengetahui/Menyetujui</p></th> 
+				<th><p style="font-family:arial;" class="satu">Batam, </p></th> 
 			</tr>
 			<tr>
-				<td><p>Pejabat Pembuat Komitmen</p></td> 
-				<td><p>Bendahara Pengeluaran</p></td> 
-			</tr>
-			<tr>
-				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
+				<td><p style="font-family:arial;">Pejabat Pembuat Komitmen</p></td> 
+				<td><p style="font-family:arial;">Bendahara Pengeluaran</p></td> 
 			</tr>
 			<tr>
 				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
@@ -185,13 +181,17 @@ header("Content-Disposition: attachment; Filename=nominatifDakota-".$filename)
 				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
 			</tr>
 			<tr>
-				<td><p><u>Paniyati, S.Farm., Apt</u></p></td> 
-				<td><p><u>Deasy Mandasari, A.Md</u></p></td> 
+				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
+				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
+			</tr>
+			<tr>
+				<td><p style="font-family:arial;"><u>Paniyati, S.Farm., Apt</u></p></td> 
+				<td><p style="font-family:arial;"><u>Deasy Mandasari, A.Md</u></p></td> 
 			</tr>
 
 			<tr>
-				<td><p>NIP. 19830820 200712 2 001</p></td> 
-				<td><p>NIP. 19891203 201012 2 005</p></td> 
+				<td><p style="font-family:arial;">NIP. 19830820 200712 2 001</p></td> 
+				<td><p style="font-family:arial;">NIP. 19891203 201012 2 005</p></td> 
 			</tr>
 
 		</table>

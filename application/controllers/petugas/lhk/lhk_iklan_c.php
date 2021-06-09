@@ -22,7 +22,7 @@ class Lhk_iklan_c extends MY_Controller
 
     public function add(){
 
-    $noSurat = $this->input->post('suratTugas'); 
+    $idSurat = $this->input->post('suratTugas'); 
     $tglLhk = $this->input->post('tglLhk');
     $sppd = $this->input->post('sppd');
     $kwitansi =  $this->input->post('kwitansi');
@@ -31,8 +31,8 @@ class Lhk_iklan_c extends MY_Controller
     $detKegiatan = $this->input->post('detKegiatan');
     $pejabat = $this->input->post('pejabat');
    
-    $data['surat'] = $this->Lhk_model->getAtributSampling($noSurat);
-    $data['noSurat'] =$noSurat ;
+    $data['surat'] = $this->Lhk_model->getAtribut($idSurat);
+    $data['noSurat'] = $idSurat ;
     $data['tglLhk'] =  $tglLhk;
     $data['sppd'] =  $sppd;
     $data['kwitansi'] = $kwitansi;
@@ -46,13 +46,16 @@ class Lhk_iklan_c extends MY_Controller
         (
             'tglLhk'   => $tglLhk,
             'jenisLhk' => "iklan",
-            'file_lhk' => "0"
+            'file_lhk' => "0",
+            'idSuratTugas' =>$idSurat
         );
 
 
 
-    // $this->db->insert('tbl_peringatan',$data_db);
-    $this->load->view('petugas/lhk/lhk_iklan_isi.php', $data, FALSE);
+
+
+    $this->db->insert('tbl_lhk',$data2);
+     $this->load->view('petugas/lhk/lhk_iklan_isi.php', $data, FALSE);
 
     }
 }

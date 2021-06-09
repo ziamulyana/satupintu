@@ -108,7 +108,7 @@
                          <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusFed" data-id =  "<?=$row->idFeedback ?>" data-toggle="modal" data-target="#hapusFeedback"><i class="fa fa-trash"></i></a>
 
                         <?php if($row->file_feedback !=0){ ?>
-                        <a href="../../assets/uploads/files/peringatan/feedback-<?php echo $row ->idFeedback ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" ><i class="fa fa-eye"></i></a>
+                        <a href="../../assets/uploads/files/feedback-<?php echo $row ->idFeedback ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" ><i class="fa fa-eye"></i></a>
 
                         <?php  } else{
                           ?>
@@ -196,7 +196,7 @@
 
   });
 </script>
-<!-- /. Edit Peringatan -->
+<!-- /. Edit feefback -->
   
     
     <!-- Hapus Peringatan -->
@@ -208,7 +208,7 @@
                     <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
                 </div>
                 <div class="modal-body" id="hapusData">
-                    <form role="form" method="post" action="<?= base_url('admin/Feedback/Feedback/hapus_suratFeedback') ?>">
+                    <form role="form" method="post" action="<?= base_url('admin/Feedback/hapus_suratFeedback') ?>">
                         <div class="box-body">
                             <div class="form-group" style="text-align:center">Anda yakin akan menghapus Surat Feedback CAPA ini ?</label>
                                 <input type="hidden" id="idFeedback" name="idFeedback">

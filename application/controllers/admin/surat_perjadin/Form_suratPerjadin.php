@@ -16,7 +16,7 @@
 		public function index()
 		{
 			$data = konfigurasi('Form Surat Tugas',"ap");
-			$data['tugas'] = $this->SuratPerjadin_model->getTugas();
+			//$data['tugas'] = $this->SuratPerjadin_model->getTugas();
         	$this->template->load('layouts/admin_template', 'admin/surat_perjadin/Form_suratperjadin', $data);
 			
 		}
