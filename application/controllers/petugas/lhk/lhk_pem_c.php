@@ -41,8 +41,8 @@ class Lhk_pem_c extends MY_Controller
 
     }
 
-    public function getSarana(){
-       echo $this->Lhk_model->getSarana();
-    }
 
+    public function getSarana2(){
+       echo $this->Lhk_model->getSarana2();
+           }
 }

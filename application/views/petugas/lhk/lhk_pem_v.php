@@ -1,6 +1,4 @@
 
-
-
 <section class="content-header">
   <h1>
     LHK Pemeriksaan
@@ -16,7 +14,7 @@
 <section class="content">
   <div class="row">
     <div class="col-md-12">
-      <form action="<?php echo site_url('petugas/lhk_pem_c/add') ?>" method="post" enctype="multipart/form-data" role="form">
+      <form action="<?php echo site_url('petugas/lhk/lhk_pem_c/getSarana2') ?>" method="post" enctype="multipart/form-data" role="form">
         <div class="box box-primary">
           <div class="box-header with-border">
             <h3 class="box-title">Form Pembuatan Surat LHK</h3>
@@ -208,7 +206,6 @@
             </div>
             <button type="submit" class="btn btn-success"><i class="fa fa-share"></i>&nbsp Save</button>
 
-
 <script>
     $(document).ready(function(){
       
@@ -218,7 +215,7 @@
         count++;
         var html = '';
         html += '<tr>';
-        html += '<td><select name="item_category[]" class="form-control item_category" ><option value="">Select Category</option><option value="hei">"hei"</option>}?></select></td>';
+        html += ' <td><select name="sarana[]" id="sarana[]" class="form-control category sm" title="Nama Sarana"><option selected="selected">- Pilih Saranaaaa -</option><?php echo base_url("petugas/lhk/lhk_pem_c/getSarana2"); ?></select></td>';
         html += '<td><button type="button" name="remove" class="btn btn-danger btn-xs remove"><span class="glyphicon glyphicon-minus"></span></button></td>';
         $('tbody').append(html);
       });
@@ -227,11 +224,8 @@
         $(this).closest('tr').remove();
       });
 
+ 
 
-
-      
-
-     
-      
+   
     });
 </script>
