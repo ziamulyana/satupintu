@@ -25,9 +25,8 @@ class Lhk_pem_c extends MY_Controller
     }
     public function add()
     {
-       
 
-      $noSurat = $this->input->post('suratTugas');
+      $idSurat = $this->input->post('suratTugas');
       $tglLhk = $this->input->post('tglLhk');
       $sppd = $this->input->post('sppd');
       $kwitansi = $this->input->post('kwitansi');
@@ -38,31 +37,35 @@ class Lhk_pem_c extends MY_Controller
       $kesimpulan = $this->input->post('kesimpulan');
       $keterangan = $this->input->post('keterangan');
 
-       $data2 = array
-        (
-            'tglLhk'   => $tglLhk,
-            'jenisLhk' => "pem",
-            'file_lhk' => "0"
-        );
+      $data2 = array
+      (
+        'tglLhk'   => $tglLhk,
+        'jenisLhk' => "pem",
+        'file_lhk' => "0"
+    );
+      $data['surat'] = $this->Lhk_model->getAtributPem($idSurat);
+      $data['idSurat'] = $idSurat;
+      $data['tglLhk'] = $tglLhk;
+      $data['sppd'] = $sppd;
+      $data['kwitansi'] = $kwitansi;
+      $data['form'] = $form;
+      $array_sarana = array();
+      foreach ($sarana as $num) {
+       $sarana2['data'] = $this->Lhk_model->getSarana2($num);
+       array_push($array_sarana,$sarana2);
+   }
+   $data['sarana'] =  $array_sarana ;
+   $data['temuan'] = $temuan;
+   $data['tl'] = $tl;
+   $data['kesimpulan'] = $kesimpulan;
+   $data['keterangan'] = $keterangan;
 
-        echo $noSurat;
-        echo $tglLhk;
-        echo $sppd;
-        echo $kwitansi;
-        echo $form;
-        print_r($sarana);
-        print_r($temuan);
-        print_r($tl);
-        print_r($kesimpulan);
-        print_r($keterangan);
-       
+
     // $this->db->insert('tbl_lhk', $data);
-    // $this->load->view('petugas/lhk/lhk_pem_isi.php', $data, FALSE);
+    $this->load->view('petugas/lhk/lhk_pem_isi.php', $data, FALSE);
 
-    }
+}
 
 
-    public function getSarana2(){
-       echo $this->Lhk_model->getSarana2();
-           }
+
 }

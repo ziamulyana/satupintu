@@ -1,7 +1,6 @@
-
 <section class="content-header">
   <h1>
-    LHK Pemeriksaan
+    LHK Sertifikasi
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -14,7 +13,7 @@
 <section class="content">
   <div class="row">
     <div class="col-md-12">
-      <form action="<?php echo site_url('petugas/lhk_pem_c/add') ?>" method="post" enctype="multipart/form-data" role="form">
+      <form action="<?php echo site_url('petugas/lhk/lhk_sertifikasi_c/add') ?>" method="post" enctype="multipart/form-data" role="form">
         <div class="box box-primary">
           <div class="box-header with-border">
             <h3 class="box-title">Form Pembuatan Surat LHK</h3>
@@ -101,7 +100,7 @@
                 <div class="col-sm-12">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
-                    <input type="text" class="form-control" name="8jam" id="8jam" placeholder="Pengesah Form 8 Jam" required>
+                    <input type="text" class="form-control" name="form" id="form" placeholder="Pengesah Form 8 Jam" required>
                   </div>
                 </div>
               </div>
@@ -119,8 +118,8 @@
                     <div class="col-xs-12">
 
                      <hr>
-                     <table class="table table-bordered table-hover" id="dynamic_field">
-                      <tr>
+                     <div class="dynamic">
+                     <table class="table table-bordered table-hover" >
                       <tr>
                         <!-- sarana -->
                         <td><select name="sarana[]" id="sarana[]" class="form-control category sm" title="Nama Sarana">
@@ -138,91 +137,114 @@
 
                       </td>
 
-                     
+        
+
+
                         </tr>
 
                         <tr>
 
-                          <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
+                        <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." name="keterangan[]" id="keterangan[]" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
 
-
-                        <td rowspan="2"><button type="button" name="add" id="add" class="btn btn-primary"><i class="fa fa-plus"> Tambah</button></td>  
                         </tr>
-                        </tr>
+                      
                       </table>
+                      </div>
+
+
+                        <div id="repeater">
+   
+                        <button type="button" class="btn btn-primary repeater-add-btn"><i class="fa fa-plus"></i>&nbsp Sarana</button>
+                      
+                      <div class="items" data-group="programming_languages">
+                        <div class="item-content">
+                          <div class="form-group">
+                            <div class="row">
+                              <table class="table table-bordered table-hover">
+                        <tr>
+                          <!-- sarana -->
+                          <td>
+                                <label></label>
+                                <select data-skip-name="true" name="sarana[]" id="sarana[]" class="form-control category sm">
+                                  <?php
+                              foreach ($sarana as $sr) {
+                                echo "<option value=" . $sr->idSarana . ">" . $sr->namaSarana . "</option>";
+                              }
+                              ?>
+                              <option selected="selected">- Pilih Sarana -</option>
+                                </select>
+
+                                <p>Jika tidak ada sarana, <a href="">tambah sarana </a></p>
+
+                            </td>
+
+                          
+
+                          </tr>
+
+                           <tr>
+
+                          <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." name="keterangan[]" id="keterangan[]" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
+
+                          <td> <div class="col-md-3" style="margin-top:18px;" align="left">
+                                <button id="remove-btn" onclick="$(this).parents('.items').remove()" class="btn btn-danger">Remove</button>
+                              </div></td>
+
+                        </tr>
+
+                        </table>
+
+                             
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                        
+             
 
                       <!-- /.box-body -->
                     </div>
                     <!-- /.box -->
                   </div>
 
-
-
-
-
-                  <div class="box-body pad">
-                    <form>
-                     
-                    </form>
-                  </div>
-                </div>
+              </div>
               </div>
             </div>
+
+                 <div class="col-md-12">
+              <div class="box box-primary">
+                <div class="box-header with-border">
+
+                  <h3 class="box-title">Kesimpulan</h3>
+
+                  <div class="row">
+                    <div class="col-xs-12">
+
+                     <hr>
+                     <div class="dynamic">
+                   <textarea class="textarea" placeholder="Keterangan." name="kesimpulan" id="kesimpulan" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                      </div>
+                        
+                    </div>
+                    <!-- /.box -->
+                  </div>
+
+              </div>
+              </div>
+            </div>
+
+             
             <button type="submit" class="btn btn-success"><i class="fa fa-share"></i>&nbsp Save</button>
-          </div>
-          <!-- /.box-body -->
-        </div>
 
-      </div>
-
-      <div class="box-footer">
-
-      </div>
-    </form>
-  </div>
-</div>
-</div>
-<!-- /.row -->
-</section>
-<!-- /.content -->
-<style>
-  .wajib {
-    color: red;
-  }
-
-  .kotak {
-    border: 1px groove #ffffffba !important;
-    padding: 0 1.4em 1.4em 1.4em !important;
-    margin: 0 0 1.5em 0 !important;
-    -webkit-box-shadow: 0px 0px 0px 0px #000;
-    box-shadow: 0px 0px 0px 0px #000;
-  }
-
-  legend.scheduler-border {
-    width: inherit;
-    /* Or auto */
-    padding: 0 10px;
-    /* To give a bit of padding on the left and right */
-    border-bottom: none;
-    font-size: 16px;
-  }
-</style>
+          </form>
 
 
-<script type="text/javascript">
-  $(document).ready(function(){
+<script>
+    $(document).ready(function(){
+        $('#repeater').createRepeater();
 
-    var i = 1;
-
-    $("#add").click(function(){
-      i++;
-      $('#dynamic_field').append('<tr id="row'+i+'"><tr><td><p><?php foreach($sarana as $sr){ echo $sr->namaSarana;}?></p></td></tr></tr>');  
     });
-
-    $(document).on('click', '.btn_remove', function(){  
-      var button_id = $(this).attr("id");   
-      $('#row'+button_id+'').remove();  
-    });
-
-  });
-</script>
+        
+    </script>

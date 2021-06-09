@@ -31,11 +31,22 @@ class Lhk_model extends CI_Model
   }
 
   public function getAtributSampling($noSurat){
-    $this->db->select('tbl_surattugas.noSuratTugas, tbl_surattugas.tglSurat, tbl_surattugas.maksud, tbl_surattugas.tglMulai, tbl_surattugas.kota, tbl_pegawai.nama, tbl_pegawai.nip, tbl_pegawai.pangkat, tbl_pegawai.golongan, tbl_pegawai.jabatan');
+    $this->db->select('tbl_surattugas.noSuratTugas, tbl_surattugas.tglSurat, tbl_surattugas.maksud, tbl_surattugas.tglMulai, tbl_surattugas.tglSelesai, tbl_surattugas.kota, tbl_pegawai.nama, tbl_pegawai.nip, tbl_pegawai.pangkat, tbl_pegawai.golongan, tbl_pegawai.jabatan');
     $this->db->from('tbl_surattugas');
      $this->db->join('tbl_tugas', 'tbl_surattugas.noSuratTugas = tbl_tugas.noSuratTugas');
      $this->db->join('tbl_pegawai','tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
       $this->db->where('tbl_surattugas.noSuratTugas', $noSurat);
+      $query = $this->db->get();
+    return $query->result();
+
+  }
+
+  public function getAtributPem($id){
+    $this->db->select('tbl_surattugas.noSuratTugas, tbl_surattugas.tglSurat, tbl_surattugas.maksud, tbl_surattugas.tglMulai, tbl_surattugas.tglSelesai, tbl_surattugas.kota, tbl_pegawai.nama, tbl_pegawai.nip, tbl_pegawai.pangkat, tbl_pegawai.golongan, tbl_pegawai.jabatan');
+    $this->db->from('tbl_surattugas');
+     $this->db->join('tbl_tugas', 'tbl_surattugas.noSuratTugas = tbl_tugas.noSuratTugas');
+     $this->db->join('tbl_pegawai','tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
+      $this->db->where('tbl_surattugas.idSurat', $id);
       $query = $this->db->get();
     return $query->result();
 
@@ -49,17 +60,13 @@ class Lhk_model extends CI_Model
 
   }
 
-  public function getSarana2(){
-     $this->db->select('*');
+  public function getSarana2($id){
+     $this->db->select('tbl_sarana.namaSarana,tbl_sarana.alamatSarana,tbl_sarana.kategoriSarana, tbl_sarana.jenisSarana');
      $this->db->from('tbl_sarana');
-    $query = $this->db->get();
-    $output = '<option value="">Pilih Sarana</option>';
-    foreach($query->result() as $row)
-    {
-     $output .= '<option value="'.$row->idSarana.'">'.$row->namaSarana.'</option>';
- }
- return $output;
-
+     $this->db->where('tbl_sarana.idSarana',$id);
+     $query = $this->db->get();
+     return $query->result();
+   
   }
 
   public function updateSuratPeringatan($data){
