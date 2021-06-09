@@ -56,7 +56,7 @@
             <div class="form-group row">
               <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal LHK<span class="wajib"> *</span></label>
               <div class="col-sm-12">
-                <input class="form-control <?php echo form_error('tglLhk') ? 'is-invalid' : '' ?>" type="date" name="tglLhk" required>
+                <input class="form-control <?php echo form_error('tglLhk') ? 'is-invalid' : '' ?>" type="date" name="tglLhk" id="tglLhk" required>
                 <div class="invalid-feedback">
                   <?php echo form_error('tglPemeriksaan') ?>
                 </div>
@@ -100,7 +100,7 @@
               <div class="col-sm-12">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
-                  <input type="text" class="form-control" name="8jam" id="8jam" placeholder="Pengesah Form 8 Jam" required>
+                  <input type="text" class="form-control" name="form" id="form" placeholder="Pengesah Form 8 Jam" required>
                 </div>
               </div>
             </div>
@@ -152,7 +152,7 @@
                               <option value="Lain-lain">Lain-lain</option>
                             </select></td>
 
-                          <td><select name="tl[]" id="tl[]" class="form-control sm" title="Nama Sarana">
+                          <td><select name="tl[]" id="tl[]" class="form-control sm" title="Tindak Lanjut">
                               <option>Tindak Lanjut</option>
                               <option value="Pembinaan">Pembinaan</option>
                               <option value="Peringatan">Peringatan</option>
@@ -175,9 +175,8 @@
 
                         <tr>
 
-                          <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
+                          <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." name="keterangan[]" id="keterangan[]" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
 
-                          <td><button type="button" name="add" id="add" class="btn btn-primary"><i class="fa fa-plus">&nbsp Tambah</button></td>
                         </tr>
 
                       </table>
@@ -185,31 +184,81 @@
 
 
                     <div id="repeater">
-                      <div align="left">
+   
                         <button type="button" class="btn btn-primary repeater-add-btn"><i class="fa fa-plus"></i>&nbsp Sarana</button>
-                      </div>
                       
                       <div class="items" data-group="programming_languages">
                         <div class="item-content">
                           <div class="form-group">
                             <div class="row">
-                              <div class="col-md-4">
+                              <table class="table table-bordered table-hover">
+                        <tr>
+                          <!-- sarana -->
+                          <td>
                                 <label></label>
-                                <select data-skip-name="true" data-name="skill[]" class="form-control">
-                                  <option value="">Pilih Sarana</option>
-                                  <option value="PHP">PHP</option>
-                                  <option value="Mysql">Mysql</option>
-                                  <option value="JQuery">JQuery</option>
-                                  <option value="Ajax">Ajax</option>
-                                  <option value="AngularJS">AngularJS</option>
-                                  <option value="Codeigniter">Codeigniter</option>
-                                  <option value="Laravel">Laravel</option>
-                                  <option value="Bootstrap">Bootstrap</option>
+                                <select data-skip-name="true" name="sarana[]" id="sarana[]" class="form-control category sm">
+                                  <?php
+                              foreach ($sarana as $sr) {
+                                echo "<option value=" . $sr->idSarana . ">" . $sr->namaSarana . "</option>";
+                              }
+                              ?>
+                              <option selected="selected">- Pilih Sarana -</option>
                                 </select>
-                              </div>
-                              <div class="col-md-3" style="margin-top:18px;" align="left">
+
+                                <p>Jika tidak ada sarana, <a href="">tambah sarana </a></p>
+
+                            </td>
+
+                             <!-- temuan -->
+
+                          <td><select name="temuan[]" id="temuan[]" class="category related-post form-control" multiple="multiple" data-placeholder="Temuan" style="width: 100%;">
+                              <option value="Perizinan">Perizinan</option>
+                              <option value="Pengadaan">Pengadaan</option>
+                              <option value="CDOB">CDOB</option>
+                              <option value="Produk TIE">Produk TIE</option>
+                              <option value="Mutu/Label">Mutu/Label</option>
+                              <option value="Produk Dilarang">Produk Dilarang</option>
+                              <option value="Administrasi">Administrasi</option>
+                              <option value="Hygiene/Sanitasi">Hygiene/Sanitasi</option>
+                              <option value="CPPB">CPPB</option>
+                              <option value="Lain-lain">Lain-lain</option>
+                            </select></td>
+
+                             <td><select name="tl[]" id="tl[]" class="form-control sm" title="Tindak lanjut">
+                              <option>Tindak Lanjut</option>
+                              <option value="Pembinaan">Pembinaan</option>
+                              <option value="Peringatan">Peringatan</option>
+                              <option value="Peringatan Keras">Peringatan Keras</option>
+                              <option value="PSK">PSK</option>
+                              <option value="Penghentian Kegiatan">Penghentian Kegiatan</option>
+                              <option value="TL ke Penyidikan">TL ke Penyidikan</option>
+                              <option value="CAPA">CAPA</option>
+                            </select></td>
+
+                                <td><select name="kesimpulan[]" id="kesimpulan[]" class="form-control sm" title="Kesimpulan">
+                              <option>Kesimpulan</option>
+                              <option value="1">MK</option>
+                              <option value="0">TMK</option>
+
+                            </select></td>
+
+
+
+                          </tr>
+
+                           <tr>
+
+                          <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." name="keterangan[]" id="keterangan[]" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
+
+                          <td> <div class="col-md-3" style="margin-top:18px;" align="left">
                                 <button id="remove-btn" onclick="$(this).parents('.items').remove()" class="btn btn-danger">Remove</button>
-                              </div>
+                              </div></td>
+
+                        </tr>
+
+                        </table>
+
+                             
                             </div>
                           </div>
                         </div>
@@ -220,15 +269,13 @@
                   </div>
                   <!-- /.box -->
                 </div>
-                <div class="box-body pad">
-                  <form>
-
-                  </form>
+                
                 </div>
               </div>
             </div>
           </div>
           <button type="submit" class="btn btn-success"><i class="fa fa-share"></i>&nbsp Save</button>
+        </form>
 <script>
     $(document).ready(function(){
         $('#repeater').createRepeater();
