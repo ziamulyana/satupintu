@@ -35,13 +35,7 @@ class Lhk_sertifikasi_c extends MY_Controller
       $kesimpulan = $this->input->post('kesimpulan');
       $keterangan = $this->input->post('keterangan');
 
-      $data2 = array
-      (
-        'tglLhk'   => $tglLhk,
-        'jenisLhk' => "pem",
-        'file_lhk' => "0"
-    );
-      $data['surat'] = $this->Lhk_model->getAtributPem($idSurat);
+      $data['surat'] = $this->Lhk_model->getAtribut($idSurat);
       $data['idSurat'] = $idSurat;
       $data['tglLhk'] = $tglLhk;
       $data['sppd'] = $sppd;
@@ -57,7 +51,15 @@ class Lhk_sertifikasi_c extends MY_Controller
    $data['kesimpulan'] =$kesimpulan;
 
 
-    // $this->db->insert('tbl_lhk', $data);
+    $data2 = array
+        (
+            'tglLhk'   => $tglLhk,
+            'jenisLhk' => "sertifikasi",
+            'file_lhk' => "0",
+            'idSuratTugas' =>$idSurat
+        );
+
+    $this->db->insert('tbl_lhk',$data2);
     $this->load->view('petugas/lhk/lhk_sertifikasi_isi.php', $data, FALSE);
 
 }

@@ -75,91 +75,88 @@
                 <i class="fa fa-briefcase"></i>
               </div>
               <a href="<?php echo base_url('petugas/lhk/lhk_iklan_c')?>" class="small-box-footer">
-                 Buat LHK <i class="fa fa-arrow-circle-right"></i>
-              </a>
+               Buat LHK <i class="fa fa-arrow-circle-right"></i>
+             </a>
+           </div>
+         </div>
+         <!-- ./col -->
+
+         <!-- kemasan pangan -->
+         <div class="col-lg-3 col-xs-5">
+          <!-- small box -->
+          <div class="small-box bg-purple">
+            <div class="inner">
+              <h3>4</h3>
+
+              <h4><b>LHK Sertifikasi</b></h4>
             </div>
-          </div>
-          <!-- ./col -->
-
-          <!-- kemasan pangan -->
-          <div class="col-lg-3 col-xs-5">
-            <!-- small box -->
-            <div class="small-box bg-purple">
-              <div class="inner">
-                <h3>4</h3>
-
-                <h4><b>LHK Sertifikasi</b></h4>
-              </div>
-              <div class="icon">
-                <i class="fa fa-building"></i>
-              </div>
-              <a href="<?php echo base_url('petugas/lhk/lhk_sertifikasi_c')?>" class="small-box-footer">
-                 Buat LHK <i class="fa fa-arrow-circle-right"></i>
-              </a>
+            <div class="icon">
+              <i class="fa fa-building"></i>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            <a href="<?php echo base_url('petugas/lhk/lhk_sertifikasi_c')?>" class="small-box-footer">
+             Buat LHK <i class="fa fa-arrow-circle-right"></i>
+           </a>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 
-    <div class="box box-primary">
-      <div class="box-header with-border">
+ <div class="box box-primary">
+  <div class="box-header with-border">
 
-        <h3 class="box-title"><i class="fa fa-list"></i> Daftar LHK
-        </h3>
+    <h3 class="box-title"><i class="fa fa-list"></i> Daftar LHK
+    </h3>
 
-        <br>
+    <br>
 
-       <!--  <?php if($upload_file>0){
+     <?php if($upload_file>0){
           ?>
-
-
           <div class="alert alert-danger alert-dismissable" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-exclamation"></i> Alert!</h4>
             Hallo Petugas ! Terdapat <strong><?php echo $upload_file ?></strong> LHK  <?= $this->session->flashdata('flash_error'); ?> yang butuh upload soft file. Silahkan cek pada tabel!  
 
-          <?php  }; ?>   -->
+          <?php  }; ?>  
         </div>
 
+          </div>
 
-        <section class="content">
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="box">
 
-                <!-- /.box-header -->
-                <div class="box-body">
-                  <table id="tbl" class="table table-bordered table-striped">
-                    <thead>
-                      <tr>
-                        <th class="dt-center">Nomor Surat Tugas</th>
-                        <th class="dt-center">Tanggal LHK</th>
-                        <th class="dt-center">Jenis LHK</th>
-                        <th class="dt-center">Aksi</th>
+          <section class="content">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="box">
 
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php     
+                  <!-- /.box-header -->
+                  <div class="box-body">
+                    <table id="tbl" class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th class="dt-center">Nomor Surat Tugas</th>
+                          <th class="dt-center">Tanggal LHK</th>
+                          <th class="dt-center">Jenis LHK</th>
+                          <th class="dt-center">Aksi</th>
 
-                    
-                      if(isset($list_lhk)){
-                       foreach ($list_lhk->result() as $row){
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php     
+                        if(isset($list_lhk)){
+                         foreach ($list_lhk->result() as $row){
 
-                        echo "<tr>";
-                        echo "<td class='dt-center'>".$row->noSuratTugas."</td>";      
-                        echo "<td class='dt-center'>".$row->tglLhk."</td>";
-                        echo "<td class='dt-center'>".$row->jenisLhk."</td>";
-                       
-                        echo "<td class='dt-center'>"?><!--                              
+                          echo "<tr>";
+                          echo "<td class='dt-center'>".$row->noSuratTugas."</td>";      
+                          echo "<td class='dt-center'>".$row->tglLhk."</td>";
+                          echo "<td class='dt-center'>".$row->jenisLhk."</td>";
+                           echo "<td class='dt-center'>"?>                             
                         <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editPer"
-                        data-id =  "<?=$row->idPeringatan ?>" data-tgl="<?=$row->tglSuratPeringatan ?>" data-nomor="<?= $row->noSuratPeringatan ?>" data-toggle="modal" data-target="#editPeringatan" ><i class="fa fa-edit"></i></a>
+                        data-id =  "<?=$row->idLhk ?>" data-tgl="<?=$row->tglLhk ?>" data-file="<?= $row->file_lhk ?>" data-toggle="modal" data-target="#editLhk" ><i class="fa fa-edit"></i></a>
 
-                         <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusPer" data-id =  "<?=$row->idPeringatan ?>" data-toggle="modal" data-target="#hapusPeringatan"><i class="fa fa-trash"></i></a>
+                         <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusPer" data-id =  "<?=$row->idLhk ?>" data-toggle="modal" data-target="#hapusLhk"><i class="fa fa-trash"></i></a>
 
-                        <?php if($row->filePeringatan !=0){ ?>
-                        <a href="../../assets/uploads/files/peringatan/suratPeringatan-<?php echo $row ->idPeringatan ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" ><i class="fa fa-eye"></i></a>
+                        <?php if($row->file_lhk !=0){ ?>
+                        <a href="../../assets/uploads/files/lhk/lhk-<?php echo $row ->idLhk ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" ><i class="fa fa-eye"></i></a>
 
                         <?php  } else{
                           ?>
@@ -171,33 +168,35 @@
 
                       <?php 
                     }
-                  }else{
-                    echo "no record found";
-                  }
-                  ?> -->
-                </tbody>
-              </table>
+                        
+                      }                           
+                      else{
+                        echo "no record found";
+                      }
+                      ?> 
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.box-body -->
+              </div>
+              <!-- /.box -->
             </div>
-            <!-- /.box-body -->
+            <!-- /.col -->
           </div>
-          <!-- /.box -->
-        </div>
-        <!-- /.col -->
+          <!-- /.row -->
+        </section>
+        <!-- /.content -->
       </div>
-      <!-- /.row -->
-    </section>
-    <!-- /.content -->
+      <style>
+        th.dt-center, td.dt-center { text-align: center; }
+      </style>
+
+    </div>
+    <!-- /.box-header -->
+    <!-- form start -->
+
+
   </div>
-  <style>
-    th.dt-center, td.dt-center { text-align: center; }
-  </style>
-
-</div>
-<!-- /.box-header -->
-<!-- form start -->
-
-
-</div>
 </div>
 
 </div>
@@ -208,37 +207,32 @@
 <!-- /.row -->
 
 <!-- Edit Peringatan -->
-<div id= "editPeringatan" class="modal fade" role="dialog">
+<div id= "editLhk" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title"><i class="icon fa fa-edit"></i>  Edit Data Surat Peringatan</h4>
+        <h4 class="modal-title"><i class="icon fa fa-edit"></i>  Edit Data LHK</h4>
       </div>
       <div class="modal-body" id=editData >
-        <form action="<?= base_url('petugas/surat_peringatan/c_surat_peringatan/ubah_suratPeringatan')?>" method="post" enctype="multipart/form-data">
+        <form action="<?= base_url('petugas/lhk/list_lhk_c/ubah_lhk')?>" method="post" enctype="multipart/form-data">
           <div class="box box-success">
             <div class="box-body">
 
              <div class="form-group">
-              <input type="hidden" class="form-control" name="idPeringatan" id="idPeringatan" >
-            </div>
-
-            <div class="form-group">
-              <label for="noEdit">No. Surat Peringatan</label> <small class="text-danger">*</small>
-              <input type="text" class="form-control" name="noEdit" id="noEdit" required >
+              <input type="hidden" class="form-control" name="id_" id="id_" >
             </div>
 
             <!-- tanggal surat -->
             <div class="form-group ">
-             <label for="tglEdit"><i class="fa fa-calendar"></i> Tanggal Surat Peringatan</label> <small class="text-danger">*</small>
+             <label for="tglEdit"><i class="fa fa-calendar"></i> Tanggal LHK</label> <small class="text-danger">*</small>
              <input class="form-control" type="date" name="tglEdit" id="tglEdit" required >
 
            </div>
 
 
            <div class="mb-3">
-            <label for="fileEdit">Soft File Surat Peringatan</label> <small class="text-danger">*</small>
+            <label for="fileEdit">Soft File LHK</label> <small class="text-danger">*</small>
             <input class="form-control" type="file" id="formFile" name="fileEdit" id="fileEdit" required>
           </div>
 
@@ -258,10 +252,8 @@
   $(document).on("click","#editPer",function(){
     var idPer = $(this).data('id');
     var tglPer = $(this).data('tgl');
-    var noPer = $(this).data('nomor');
 
-    $("#editData #idPeringatan").val(idPer);
-    $("#editData #noEdit").val(noPer);
+    $("#editData #id_").val(idPer);
     $("#editData #tglEdit").val(tglPer);
 
 
@@ -269,40 +261,40 @@
 </script>
 <!-- /. Edit Peringatan -->
 
-    <!-- Hapus Peringatan -->
- <div id= "hapusPeringatan" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
-                </div>
-                <div class="modal-body" id="hapusData">
-                    <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/c_surat_peringatan/hapus_suratPeringatan') ?>">
-                        <div class="box-body">
-                            <div class="form-group" style="text-align:center">Anda yakin akan menghapus Surat Peringatan ini ?</label>
-                                <input type="hidden" id="idPeringatan" name="idPeringatan">
-                              
-                            </div>                        
-                        </div><!-- /.box-body -->
-                        <div class="modal-footer">
-                            <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                            <button type="submit" class="btn btn-danger" name="delete"><i class="fa fa-check"></i> Hapus</button>
-                        </div>
-                    </form>             
-                        <script src="<?php echo base_url();?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
-                        <script type="text/javascript" >
-                            $(document).on("click","#hapusPer",function(){
-                                var id = $(this).data('id');
-                                $("#hapusData #idPeringatan").val(id);
-                            });
-                        </script>
-                </div>
-                
-            </div>
-        </div>
+<!-- Hapus Peringatan -->
+<div id= "hapusLhk" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
+      </div>
+      <div class="modal-body" id="hapusData">
+        <form role="form" method="post" action="<?= base_url('petugas/lhk/list_lhk_c/hapus_lhk') ?>">
+          <div class="box-body">
+            <div class="form-group" style="text-align:center">Anda yakin akan menghapus LHK ini ?</label>
+              <input type="hidden" id=id_ name="id_">
+
+            </div>                        
+          </div><!-- /.box-body -->
+          <div class="modal-footer">
+            <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+            <button type="submit" class="btn btn-danger" name="delete"><i class="fa fa-check"></i> Hapus</button>
+          </div>
+        </form>             
+        <script src="<?php echo base_url();?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
+        <script type="text/javascript" >
+          $(document).on("click","#hapusPer",function(){
+            var id = $(this).data('id');
+            $("#hapusData #id_").val(id);
+          });
+        </script>
+      </div>
+
     </div>
-    <!-- Hapus Peringatan -->
+  </div>
+</div>
+<!-- Hapus Peringatan -->
 </section>
 
 

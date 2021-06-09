@@ -42,7 +42,7 @@
                     <select class="form-control category" name="suratTugas" id="suratTugas" style="width: 100%;">
                       <?php
                       foreach ($surat_tugas as $surat) {
-                        echo "<option value=".$surat->noSuratTugas.">".$surat->noSuratTugas."</option>";
+                        echo "<option value=".$surat->idSurat.">".$surat->noSuratTugas."</option>";
                       }
                       ?>
                       <option selected="selected">- Pilih Surat Tugas -</option>

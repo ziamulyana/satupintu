@@ -134,7 +134,7 @@
 
                         <br>
 
-                        <p>Jika tidak ada sarana, <a href="" >tambah sarana </a></p>
+                        <p>Jika tidak ada sarana, <a href="<?php echo base_url("petugas/lhk/list_lhk_c/addSarana") ?>" >tambah sarana </a></p>
 
                       </td>
 
@@ -207,7 +207,7 @@
                               <option selected="selected">- Pilih Sarana -</option>
                                 </select>
 
-                                <p>Jika tidak ada sarana, <a href="">tambah sarana </a></p>
+                                <p>Jika tidak ada sarana, <a href=<?php echo base_url("petugas/lhk/list_lhk_c/addSarana") ?>> tambah sarana </a></p>
 
                             </td>
 
