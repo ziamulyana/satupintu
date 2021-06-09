@@ -136,8 +136,8 @@
     <!-- /.row -->
 
 
-    <!-- Edit Peringatan -->
-<div id= "editPeringatan" class="modal fade" role="dialog">
+    <!-- Edit Feedback -->
+<div id= "editFeedback" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -145,12 +145,13 @@
         <h4 class="modal-title"><i class="icon fa fa-edit"></i>  Edit Data Surat Feedback</h4>
       </div>
       <div class="modal-body" id=editData >
-        <form action="<?= base_url('petugas/Feedback/Feedback/ubah_suratFeedback')?>" method="post" enctype="multipart/form-data">
+        <form action="<?= base_url('admin/Feedback/ubah_suratFeedback')?>" method="post" enctype="multipart/form-data">
           <div class="box box-success">
             <div class="box-body">
 
+            <!-- No Surat Feedback -->
              <div class="form-group">
-              <input type="hidden" class="form-control" name="idFeedback" id="idFeedback" >
+              <input type="hidden" class="form-control" name="id" id="id" >
             </div>
 
             <div class="form-group">
@@ -158,17 +159,27 @@
               <input type="text" class="form-control" name="noEdit" id="noEdit" required >
             </div>
 
+            <!-- Isi Surat Feedback -->
+            <div class="form-group">
+              <input type="hidden" class="form-control" name="nomor" id="nomor" >
+            </div>
+
+            <div class="form-group">
+              <label for="isiEdit">Perihal Surat Feedback CAPA</label> <small class="text-danger">*</small>
+              <input type="text" class="form-control" name="isiEdit" id="isiEdit" required >
+            </div>
+
             <!-- tanggal surat -->
             <div class="form-group ">
              <label for="tglEdit"><i class="fa fa-calendar"></i> Tanggal Feedback</label> <small class="text-danger">*</small>
-             <input class="form-control" type="date" name="tglEdit" id="tglEdit" required >
+             <input class="form-control" type="date" name="tgl" id="tgl;" required >
 
            </div>
 
 
            <div class="mb-3">
-            <label for="fileEdit">Soft File Surat Peringatan</label> <small class="text-danger">*</small>
-            <input class="form-control" type="file" id="formFile" name="fileEdit" id="fileEdit" required>
+            <label for="fileEdit">Soft File Surat Feedback</label> <small class="text-danger">*</small>
+            <input class="form-control" type="file" id="formFile" name="file" id="file" required>
           </div>
 
         </div><!-- /.box-body -->                        
@@ -188,15 +199,18 @@
     var idFed = $(this).data('id');
     var tglFed = $(this).data('tgl');
     var noFed = $(this).data('nomor');
+    var isiFed = $(this).data('isi');
+    var fileFed = $(this).data('file');
 
     $("#editData #idFeedback").val(idFed);
     $("#editData #noEdit").val(noFed);
     $("#editData #tglEdit").val(tglFed);
+    $("#editData #fileEdit").val(fileFed);
 
 
   });
 </script>
-<!-- /. Edit feefback -->
+<!-- /. Edit Feedback -->
   
     
     <!-- Hapus Peringatan -->
@@ -224,7 +238,7 @@
                         <script type="text/javascript" >
                             $(document).on("click","#hapusFed",function(){
                                 var id = $(this).data('id');
-                                $("#hapusData #idfeedback").val(id);
+                                $("#hapusData #idFeedback").val(id);
                             });
                         </script>
                 </div>

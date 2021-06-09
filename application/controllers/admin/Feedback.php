@@ -41,8 +41,9 @@
 		
 		public function ubah_suratFeedback(){
 			$id = $this->input->post('idFeedback');
-			$tglEdit = $this->input->post('tglEdit');
 			$noEdit = $this->input->post('noEdit');
+			$isiEdit = $this->input->post('isiEdit');
+			$tglEdit = $this->input->post('tglEdit');
 	
 			$config['upload_path'] = './assets/uploads/files/feedback';
 			$config['allowed_types'] = 'pdf';
@@ -60,11 +61,12 @@
 				$fd=$this->upload->data();
 				$file=$fd['file_name'];
 	
-				$data_peringatan = array (
+				$data_feedback = array (
 					'id' => $id,
-					'tglFeedback' => $tglEdit,
 					'noSuratFeedback' => $noEdit,
-					'file_feedback' => $file	
+					'isiFeedback' => $isiEdit,
+					'tglFeedback' => $tglEdit,
+					'file_feedback' => $fileEdit	
 				);
 	
 				$this->Feedback_model->updateSuratFeedback($data_feedback);
