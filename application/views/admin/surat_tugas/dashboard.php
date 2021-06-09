@@ -139,7 +139,7 @@
 
 							<div class="form-group">
 								<label for="noEdit">Tanggal Surat </label> <small class="text-danger">*</small>
-								<input class="form-control" type="date" name ="tglSurat" id="tglSurat" placeholder="Tanggal Mulai Tugas" onclick="return chk_date()" >
+								<input class="form-control" type="date" name ="tglSurat" id="tglSurat" onclick="return chk_date()" >
 							</div>
 
               <div class="form-group">
@@ -173,12 +173,12 @@
 
               <div class="form-group">
                 <label for="noEdit">Tanggal Mulai Tugas </label> <small class="text-danger">*</small>
-                <input class="form-control" type="date" name ="tglMulai" id="tglMulai" placeholder="Tanggal Mulai Tugas" onclick="return chk_date()" >
+                <input class="form-control" type="date" name ="tglMulai" id="tglMulai"  onclick="return chk_date()" >
               </div>
 
                <div class="form-group">
                 <label for="noEdit">Tanggal Selesai Tugas </label> <small class="text-danger">*</small>
-                <input class="form-control" type="date" name ="tglSelesai" id="tglSelesai" placeholder="Tanggal Mulai Tugas" onclick="return chk_date()" >
+                <input class="form-control" type="date" name ="tglSelesai" id="tglSelesai" onclick="return chk_date()" >
               </div>
 
               <div class="form-group">
@@ -188,7 +188,14 @@
 
               <div class="form-group">
                 <label for="noEdit">Nama Penanda Tangan ST </label> <small class="text-danger">*</small>
-                <input type="text" class="form-control" name="namaPenandatangan" id="namaPenandatangan">
+                <select class="form-control" name="namaPenandatangan" id="namaPenandatangan" >
+                  <option>Bagus Heri Purnomo, S.Si., Apt</option>
+                  <option>Larasati Setyaningtyas, S.Farm., Apt</option>
+                  <option>Dyah Ayu Novi Hapsari, S.Farm., Apt</option>
+                  <option>Ruth Deseyanti Purba, S.Si., Apt</option>
+                  <option>Irdiansyah, SH</option>
+                  <option>Paniyati, S.Farm., Apt
+                </select>
               </div>
 
               <div class="form-group">

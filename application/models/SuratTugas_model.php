@@ -57,13 +57,13 @@ class SuratTugas_model extends CI_Model{
     $this->db->set('tglSurat', $data['tglSur']);
     $this->db->set('tglMulai', $data['tglMulai']);
     //$this->db->set('bebanBiaya', $data['bebanBiaya']);
-    //$this->db->set('kendaraan', $data['kendaraan']);
+    $this->db->set('kendaraan', $data['kendaraan']);
     $this->db->set('kota', $data['kotas']);
-    //$this->db->set('idAnggaran', $data['idAnggaran']);
-    //$this->db->set('tglSelesai', $data['tglselesai']);
-    $this->db->set('maksud', $data['maksuds']);
-    //$this->db->set('namaPenandatangan', $data['namapenandatangan']);
-    //$this->db->set('jabatanPenandatangan', $data['jabatanpenandatangan']);
+    $this->db->set('idAnggaran', $data['idAnggaran']);
+    $this->db->set('tglSelesai', $data['tglSelesai']);
+    $this->db->set('maksud', $data['maksud']);
+    $this->db->set('namaPenandatangan', $data['namaPenandatangan']);
+    $this->db->set('jabatanPenandatangan', $data['jabatanPenandatangan']);
     //$this->db->set('idPetugas', $data['idpetugas']);
 
     $this->db->where('idSurat', $data['idSur']);
