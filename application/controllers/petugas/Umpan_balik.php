@@ -16,18 +16,29 @@
 		public function index()
 		{
 			$data = konfigurasi('Lihat Umpan Balik','');
-			// $data['list_peringatan']= $this->SuratPeringatan_model->getSuratPeringatan();
+			$data['surat'] = $this->UmpanBalik_model->getSuratTugas();
         $this->template->load('layouts/petugas_template', 'petugas/umpan_balik', $data);
+			
+		}
+
+		public function getSarana()
+		{
+			if($this->input->post('idPer'))
+			{
+				echo $this->UmpanBalik_model->getSaranaFeedback($this->input->post('idPer'));
+			}
+			
 			
 		}
 		
 		public function tracking()
 		{
 
-			$noSuratTugas =$this->input->post('noSuratTugas');
-			$namaSarana =$this->input->post('namaSarana');
+			$idSuratTugas =$this->input->post('idSurat');
+			$idSarana =$this->input->post('sarana');
 
-			$data['tracking_result']= $this->UmpanBalik_model->getHistory($noSuratTugas, $namaSarana);
+
+			$data['tracking_result']= $this->UmpanBalik_model->getHistory($idSuratTugas, $idSarana);
 
 			$this->template->load('layouts/petugas_template', 'petugas/umpan_balik_data', $data);
 
