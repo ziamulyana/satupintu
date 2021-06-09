@@ -63,7 +63,8 @@ class Lhk_pem_c extends MY_Controller
   );
 
    for($i=0;$i<count($sarana);$i++){
-    $data = array(
+    if($sarana[$i]!="Pilih Sarana"){
+       $data = array(
       'idSarana'   => $sarana[$i],
       'isMk'   => $kesimpulan[$i],
       'temuan' => $temuan[$i],
@@ -71,6 +72,10 @@ class Lhk_pem_c extends MY_Controller
       'idSuratTugas' => $idSurat
     );
     $this->db->insert('tbl_surattl',$data);
+    }else{
+      break;
+    }
+   
   }
 
 

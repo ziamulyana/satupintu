@@ -73,7 +73,7 @@
 
               <!-- sppd -->
               <div class="form-group row">
-                <label for="noSurat" class="col-sm-6 col-form-label">SPPD disahkan oleh :</label>
+                <label for="noSurat" class="col-sm-6 col-form-label">SPPD disahkan oleh :<span class="wajib"> *</span></label></label>
                 <div class="col-sm-12">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
@@ -85,7 +85,7 @@
 
               <!-- kwitansi -->
               <div class="form-group row">
-                <label for="noSurat" class="col-sm-6 col-form-label">Kwitansi disahkan oleh :</label>
+                <label for="noSurat" class="col-sm-6 col-form-label">Kwitansi disahkan oleh :<span class="wajib"> *</span></label></label>
                 <div class="col-sm-12">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
@@ -97,7 +97,7 @@
 
               <!-- form 8 jam  -->
               <div class="form-group row">
-                <label for="noSurat" class="col-sm-6 col-form-label">Form 8 jam disahkan oleh :</label>
+                <label for="noSurat" class="col-sm-6 col-form-label">Form 8 jam disahkan oleh :<span class="wajib"> *</span></label></label>
                 <div class="col-sm-12">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
@@ -129,7 +129,7 @@
                         echo "<option value=".$sr->idSarana.">".$sr->namaSarana."</option>";
                       }
                       ?>
-                      <option selected="selected">- Pilih Sarana -</option>
+                      <option selected="selected">Pilih Sarana</option>
                         </select>
 
                         <br>
@@ -204,10 +204,10 @@
                                 echo "<option value=" . $sr->idSarana . ">" . $sr->namaSarana . "</option>";
                               }
                               ?>
-                              <option selected="selected">- Pilih Sarana -</option>
+                              <option selected="selected">Pilih Sarana</option>
                                 </select>
 
-                                <p>Jika tidak ada sarana, <a href=<?php echo base_url("petugas/lhk/list_lhk_c/addSarana") ?>> tambah sarana </a></p>
+                                <p>Jika tidak ada sarana, <a href=<?php echo base_url("petugas/lhk/list_lhk_c/addSarana") ?>>tambah sarana </a></p>
 
                             </td>
 

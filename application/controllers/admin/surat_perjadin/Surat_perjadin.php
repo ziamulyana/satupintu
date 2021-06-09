@@ -16,7 +16,7 @@
 		public function index()
 		{
 			$data = konfigurasi('Form Surat Perjalanan Dinas',"ap");
-			$data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
+			
         	$this->template->load('layouts/admin_template', 'admin/surat_perjadin/surat_perjadin', $data);
 			
 		}

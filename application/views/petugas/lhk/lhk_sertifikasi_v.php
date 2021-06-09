@@ -72,7 +72,7 @@
 
               <!-- sppd -->
               <div class="form-group row">
-                <label for="noSurat" class="col-sm-6 col-form-label">SPPD disahkan oleh :</label>
+                <label for="noSurat" class="col-sm-6 col-form-label">SPPD disahkan oleh :<span class="wajib"> *</span></label></label>
                 <div class="col-sm-12">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
@@ -84,7 +84,7 @@
 
               <!-- kwitansi -->
               <div class="form-group row">
-                <label for="noSurat" class="col-sm-6 col-form-label">Kwitansi disahkan oleh :</label>
+                <label for="noSurat" class="col-sm-6 col-form-label">Kwitansi disahkan oleh :<span class="wajib"> *</span></label></label>
                 <div class="col-sm-12">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
@@ -96,7 +96,7 @@
 
               <!-- form 8 jam  -->
               <div class="form-group row">
-                <label for="noSurat" class="col-sm-6 col-form-label">Form 8 jam disahkan oleh :</label>
+                <label for="noSurat" class="col-sm-6 col-form-label">Form 8 jam disahkan oleh :<span class="wajib"> *</span></label></label>
                 <div class="col-sm-12">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
