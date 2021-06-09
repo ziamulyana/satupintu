@@ -113,6 +113,7 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 		<tr>
 			<td><p><b>Menimbang</b></p></td>
 			<td><p>:</p></td>
+			<td></td>
 			<td><p>bahwa dalam rangka melaksanakan kebijakan di bidang pengawasan obat dan makanan Balai POM di Batam tahun 2021, maka dipandang perlu mengeluarkan surat tugas ini</p></td>
 		</tr>
 
@@ -124,9 +125,85 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 		</tr>
 
 		<tr>
-			<td><p></p></td>
+			<td></td>
+			<td></td>
 			<td><p>2.</p></td>
 			<td></p>Undang-undang Republik Indonesia No. 8 Tahun 1999 tentang Perlindungan Konsumen</p></td>
 		</tr>
+
+		<tr>
+			<td></td>
+			<td></td>
+			<td><p>3.</p></td>
+			<td><p>Undang-undang Republik Indonesia No. 35 Tahun 2009 tentang Narkotika</p></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td></td>
+			<td><p>4.</p></td>
+			<td><p>Undang-undang Republik Indonesia No. 5 Tahun 1997 tentang Psikotropika</p></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td></td>
+			<td><p>5.</p></td>
+			<td><p>Instruksi Presiden Republik Indonesia No. 3 Tahun 2017 tentang Peningkatan Efektivitas Pengawasan Obat dan Makanan</p></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td></td>
+			<td><p>6.</p></td>
+			<td><p>Peraturan Pemerintah No. 72 Tahun 1998 tentang Pengamanan Sediaan Farmasi dan Alat Kesehatan</p></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td></td>
+			<td><p>7.</p></td>
+			<td><p>Peraturan Kepala Badan Pengawas Obat dan Makanan Republik Indonesia Nomor 12 Tahun 2018 tentang Organisasi dan Tata Kerja Unit Pelaksana Teknis di Lingkungan Badan Pengawas Obat dan Makanan</p></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td></td>
+			<td><p>8.</p></td>
+			<td><p>DIPA Balai Pengawas Obat dan Makanan di Batam Tahun Anggaran 2021</p></td>
+		</tr>
+
+		</table>
+
+		
+
+		<p align="center"><b>Memberi Tugas Kepada :</b></p>
+		<table style="width:100%" border="1">
+
+		<tr>
+		<th><b><p align="center">No</p></b></th>
+		<th><b><p align="center">Nama</p></b></th>
+		<th><b><p align="center">Pangkat</p></b></th>
+		<th><b><p align="center">Golongan</p></b></th>
+		<th><b><p align="center">NIP</p></b></th>
+		<th><b><p align="center">Jabatan</p></b></th>
+		</tr>
+
+		<?php
+		$no =1;{
+		?>
+
+		<tr>
+			<td><p align="center"><?php echo $no++; ?></p></td>
+			<td><?php echo $row->nama; ?></td>
+			<td><p align="center"><?php echo $row->pangkat; ?></p></td>
+			<td><p align="center"><?php echo $row->golongan; ?></p></td>
+			<td><p align="center"><?php echo $row->nip; ?></p></td>
+			<td><p align="center"><?php echo $row->jabatan; ?></p></td>
+		</tr>
+
+		<?php }?>
+		</table>
+
 	</body>
 	</html>
