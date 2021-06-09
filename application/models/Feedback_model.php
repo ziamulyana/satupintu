@@ -58,11 +58,11 @@ class Feedback_model extends CI_Model{
 //     redirect('Feedback');
 // }
 
-//  public function updateClosed($id, $editClosed){
-//   $this->db->set('closed', $editClosed, FALSE);    
-//   $this->db->where('idFeedback', $id);
-//   $this->db->update('tbl_feedback'); 
-// }
+ public function updateClosed($id, $editClosed){
+  $this->db->set('closed', $editClosed, FALSE);    
+  $this->db->where('idFeedback', $id);
+  $this->db->update('tbl_feedback'); 
+}
 
 
 
