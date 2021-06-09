@@ -89,34 +89,34 @@ header("Content-Disposition: attachment; Filename=kwLukota-".$filename)
 		$jumlahPerjalanan = 0;
 
 		?>
-		<p align="center"><b>BIAYA PERJALANAN DINAS</b></p>
-		<p align="center"><b><?php  echo $maksud; ?></b></p>
+		<p style="font-family:arial;" align="center"><b>BIAYA PERJALANAN DINAS</b></p>
+		<p style="font-family:arial;" align="center"><b><?php  echo $maksud; ?></b></p>
 
 		<table style="width:100%">
 			<tr>
-				<th class="a"><p class="satu" id="space2">Nama</p></th>
-				<th class="b"><p class="satu">: <?php echo $nama; ?></p></th>
+				<th class="a"><p style="font-family:arial;" class="satu" id="space2">Nama</p></th>
+				<th class="b"><p style="font-family:arial;" class="satu">: <?php echo $nama; ?></p></th>
 			</tr>
 
 
 			<tr>
-				<td><p id="space2">NIP</p></td>
-				<td><p>: <?php echo $nip; ?></p></td>
+				<td><p style="font-family:arial;" id="space2">NIP</p></td>
+				<td><p style="font-family:arial;">: <?php echo $nip; ?></p></td>
 			</tr>
 
 			<tr>
-				<td><p id="space2">Tujuan</p></td>
-				<td><p>: <?php echo $tujuan; ?></p></td>
+				<td><p style="font-family:arial;" id="space2">Tujuan</p></td>
+				<td><p style="font-family:arial;">: <?php echo $tujuan; ?></p></td>
 			</tr>	
 
 			<tr>
-				<td><p id="space2">Waktu Pelaksanaan</p></td>
-				<td><p>: <?php echo convertDay($tgl1)."-".convertMonthB(convertMonthA($tgl1))."-".convertYear($tgl1) ." - ".convertDay($tgl2)."-".convertMonthB(convertMonthA($tgl2))."-".convertYear($tgl2); ?></p></td>
+				<td><p style="font-family:arial;" id="space2">Waktu Pelaksanaan</p></td>
+				<td><p style="font-family:arial;">: <?php echo convertDay($tgl1)."-".convertMonthB(convertMonthA($tgl1))."-".convertYear($tgl1) ." - ".convertDay($tgl2)."-".convertMonthB(convertMonthA($tgl2))."-".convertYear($tgl2); ?></p></td>
 			</tr>	
 
 			<tr>
-				<td><p id="space2">Maksud Perjalanan</p></td>
-				<td><p>: <?php echo $maksud; ?></p></td>
+				<td><p style="font-family:arial;" id="space2">Maksud Perjalanan</p></td>
+				<td><p style="font-family:arial;">: <?php echo $maksud; ?></p></td>
 			</tr>	
 
 		</table>
@@ -132,37 +132,33 @@ header("Content-Disposition: attachment; Filename=kwLukota-".$filename)
 
 		<table style="width:100%" border="1">
 			<tr>
-				<th ><p>No</p></th>
-				<th><p>Perincian Biaya</p></th>
-				<th><p>Jumlah</p></th>
+				<th><p style="font-family:arial;">No</p></th>
+				<th><p style="font-family:arial;">Perincian Biaya</p></th>
+				<th><p style="font-family:arial;">Jumlah</p></th>
 			</tr>
 
 			<?php for($i=0;$i<count($biaya_kw);$i++){ ?>
 
 				<tr>
-					<td><p><?php echo $i+1; ?></p></td>
-					<td><p><?php echo $uraian_kw[$i]; ?></p></td>
-					<td><p><?php echo "Rp       ".$biaya_kw[$i]; ?></p></td>
+					<td><p style="font-family:arial;"><?php echo $i+1; ?></p></td>
+					<td><p style="font-family:arial;"><?php echo $uraian_kw[$i]; ?></p></td>
+					<td><p style="font-family:arial;"><?php echo "Rp       ".$biaya_kw[$i]; ?></p></td>
 				</tr>
 
 			<?php }?>
-			<td colspan="2"><p align="center"><?php echo "Jumlah"; ?></p></td>
-			<td><p><?php echo "Rp       ".array_sum($biaya_kw); ?></p></td>
+			<td colspan="2"><p style="font-family:arial;" align="center"><?php echo "Jumlah"; ?></p></td>
+			<td><p style="font-family:arial;"><?php echo "Rp       ".array_sum($biaya_kw); ?></p></td>
 
 		</table>
 		<br>
 		<table style="width:100%">
 			<tr>
-				<th><p class="satu"><b>Mengetahui/Menyetujui</b></p></th> 
-				<th><p class="satu"><b>Batam, <?php echo convertDay($tglKw)."-".convertMonthB(convertMonthA($tglKw))."-".convertYear($tglKw) ;?></b></p></th> 
+				<th><p style="font-family:arial;" class="satu"><b>Mengetahui/Menyetujui</b></p></th> 
+				<th><p style="font-family:arial;" class="satu"><b>Batam, <?php echo convertDay($tglKw)."-".convertMonthB(convertMonthA($tglKw))."-".convertYear($tglKw) ;?></b></p></th> 
 			</tr>
 			<tr>
-				<td><p><b>Pejabat Pembuat Komitmen</b></p></td> 
-				<td><p><b>Petugas</b></p></td> 
-			</tr>
-			<tr>
-				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
+				<td><p style="font-family:arial;"><b>Pejabat Pembuat Komitmen</b></p></td> 
+				<td><p style="font-family:arial;"><b>Petugas</b></p></td> 
 			</tr>
 			<tr>
 				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
@@ -173,13 +169,17 @@ header("Content-Disposition: attachment; Filename=kwLukota-".$filename)
 				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
 			</tr>
 			<tr>
-				<td><p><b>Paniyati, S.Farm., Apt</b></p></td> 
-				<td><p><b><?php echo $nama; ?></b></p></td> 
+				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
+				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
+			</tr>
+			<tr>
+				<td><p style="font-family:arial;"><b>Paniyati, S.Farm., Apt</b></p></td> 
+				<td><p style="font-family:arial;"><b><?php echo $nama; ?></b></p></td> 
 			</tr>
 
 			<tr>
-				<td><p><b>NIP. 19830820 200712 2 001</b></p></td> 
-				<td><p><b><?php echo $nip; ?></b></p></td> 
+				<td><p style="font-family:arial;"><b>NIP. 19830820 200712 2 001</b></p></td> 
+				<td><p style="font-family:arial;"><b><?php echo $nip; ?></b></p></td> 
 			</tr>
 
 		</table>
