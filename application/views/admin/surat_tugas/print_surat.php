@@ -62,7 +62,7 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 
 		function convertYear($year){
 			$year = date('y',$year);
-			$tahun = $year;
+			$tahun = "20".$year;
 			return $tahun;
 		}
 
@@ -78,6 +78,8 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 		$tgl_surat = "";
 		$tgl_mulai = "";
 		$tgl_selesai = "";
+		$tgl_mulai2;
+		$tgl_selesai2;
 		$mak = "";
 		$nama_penandatangan = "";
 		$jabatan_penandatangan = "";
@@ -94,6 +96,8 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 			$kendaraan = $row->kendaraan;
 			$tgl_surat =strtotime($row->tglSurat);
 			$tgl_mulai =strtotime($row->tglMulai);
+			$tgl_mulai2 = $row->tglMulai;
+			$tgl_selesai2 = $row->tglSelesai;
 			$tgl_selesai = strtotime($row->tglSelesai);
 			$mak = $row->mak;
 			$nama_penandatangan = $row->namaPenandatangan;
@@ -237,19 +241,18 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 		<td><p align="left">Waktu</p></td>
 		<td><p align="left">:</p></td>
 		<td><p align="left">
-		<?php{
-			  $datetime1 = new DateTime($tgl_mulai);
-			  $datetime2 = new DateTime($tgl_selesai);
-			  $difference = $datetime1->diff($datetime2);
-			  $difference->days."";
-			  }
-		  ?>Hari mulai tgl. <?php echo $tgl_mulai; ?> sampai dengan <?php echo $tgl_selesai; ?></p></td>
+		<?php
+		 $datetime1 = new DateTime($tgl_mulai2);
+	     $datetime2 = new DateTime($tgl_selesai2);
+	     $difference = $datetime2->diff($datetime1)->days + 1;
+		 echo $difference. " "; 
+		?>Hari mulai tgl. <?php echo convertDay($tgl_mulai)." ".convertMonthB(convertMonthA($tgl_mulai))." ".convertYear($tgl_mulai)?> sampai dengan <?php echo convertDay($tgl_selesai)." ".convertMonthB(convertMonthA($tgl_selesai))." ".convertYear($tgl_selesai)?></p></td>
 		</tr>
 
 		<tr>
 		<td></td>
 		<td></td>
-		<td><p align="left">4.</p></td>
+		<td><p align="left">5.</p></td>
 		<td><p align="left">Biaya</p></td>
 		<td><p align="left">:</p></td>
 		<td><p align="left">DIPA Balai Pengawas Obat dan Makanan di Batam Tahun Anggaran 2021</p></td>
@@ -266,7 +269,7 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 
 		</table>
 
-		<p align="right">Batam, <?php echo $tgl_surat; ?></p>
+		<p align="right">Batam, <?php echo convertDay($tgl_surat)." ".convertMonthB(convertMonthA($tgl_surat))." ".convertYear($tgl_surat)?></p>
 		<td></td>
 		<td></td>
 		<p align="right"><?php echo $jabatan_penandatangan; ?></p>

@@ -52,12 +52,6 @@ class Feedback_model extends CI_Model{
   }
 
 
-//   function hapus_SuratFeedback(){
-//     $idFeedback=$this->input->post('idFeedback');
-//     $this->tbl_feedback->hapus_barang($idFeedback);
-//     redirect('Feedback');
-// }
-
  public function updateClosed($id, $editClosed){
   $this->db->set('closed', $editClosed, FALSE);    
   $this->db->where('idFeedback', $id);
