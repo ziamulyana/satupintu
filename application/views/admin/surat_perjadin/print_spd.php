@@ -20,7 +20,7 @@ header("Content-Disposition: attachment; Filename=SPD-".$filename)
 
 	<div class="page2">
 </div>
-<div class="contents">
+
 
 	<?php
 
@@ -132,12 +132,51 @@ header("Content-Disposition: attachment; Filename=SPD-".$filename)
     </th>
         <td><p style="font-family:bookman old style;" align="left">Lembar Ke<p>Kode No<p>Nomor</p></p></p></td>
         <td><p style="font-family:bookman old style;" align="left">:<p>:<p>:</p></p></p></td>
-        <td><p style="font-family:bookman old style;" align="left"><p><p><?php echo $no_surat; ?></b></p>
+        <td><p style="font-family:bookman old style;" align="left"><p><p><?php echo $no_surat; ?></p>
     </tr>   
-
-    
-
     </table>
+
+	<p style="font-family:bookman old style;" align="center"><b>SURAT PERJALANAN DINAS (SPD)</u></p>
+
+	<table>
+	<tr>
+	<th><p style="font-family:bookman old style;">1.</th>
+	<th><p style="font-family:bookman old style;"></th>
+	<th><p style="font-family:bookman old style;">Pejabat Pembuat Komitmen</p></th>
+	<th><p style="font-family:bookman old style;">Paniyati, S.Farm., Apt</p></th>
+	</tr>
+
+	<tr>
+	<th><p style="font-family:bookman old style;">2.</th>
+	<th><p style="font-family:bookman old style;"></th>
+	<th><p style="font-family:bookman old style;">Nama / NIP Pegawai yang melaksanakan perjalanan dinas</p></th>
+	<th><p style="font-family:bookman old style;"><?php echo $nama_peg; ?>    / <?php echo $nip_peg; ?></p></th>
+	</tr>
+
+	<tr>
+	<th><p style="font-family:bookman old style;">3.</th>
+	<th><p style="font-family:bookman old style;">a.</th>
+	<th><p style="font-family:bookman old style;">Pangkat dan Golongan</p></th>
+	<th><p style="font-family:bookman old style;">a. <?php echo $pangkat_peg; ?>    / <?php echo $golongan_peg; ?></p></th>
+	</tr>
+
+	<tr>
+	<th><p style="font-family:bookman old style;"></th>
+	<th><p style="font-family:bookman old style;">b.</th>
+	<th><p style="font-family:bookman old style;">Jabatan/Instansi</p></th>
+	<th><p style="font-family:bookman old style;">b. <?php echo $jabatan_peg; ?></p></th>
+	</tr>
+
+	<tr>
+	<th><p style="font-family:bookman old style;"></th>
+	<th><p style="font-family:bookman old style;">c.</th>
+	<th><p style="font-family:bookman old style;">Tingkat Biaya Perjalanan Dinas</p></th>
+	<th><p style="font-family:bookman old style;">c.</p></th>
+	</tr>
+	
+	
+	</table>
+
 
 
 </div>
