@@ -1,7 +1,7 @@
 <?php
 header("Content-type:application/vnd.ms-word");
 $filename = $idSurat.".doc";
-header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
+header("Content-Disposition: attachment; Filename=SPD-".$filename)
 
 ?>
 

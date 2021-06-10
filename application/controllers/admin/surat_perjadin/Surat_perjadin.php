@@ -29,6 +29,15 @@
 			}
 		}
 
+		  // Print SPD
+		public function print()
+		{
+			$id = $this->input->post('idSurat');
+			$data['idSurat'] = $id;
+			$data['printS'] = $this->SuratPerjadin_model->print_spd($id);
+			$this->load->view('admin/surat_perjadin/print_spd', $data, false);
+		}
+
 
 
 		
