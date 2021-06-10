@@ -105,7 +105,7 @@
                  <?php  } 
 
                  if($row->file_feedback !=0){ ?>
-                        <a href="../assets/uploads/files/feedback/feedback-<?php echo $row ->noSuratFeedback ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" ><i class="fa fa-eye"></i></a>
+                        <a href="../assets/uploads/files/feedback/feedback-<?php echo $row ->idFeedback ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" ><i class="fa fa-eye"></i></a>
 
                         <?php  } else{
                           ?>
