@@ -43,7 +43,7 @@
                     <!-- nomor surat -->
            <div class="form-group">
               <label>Petugas</label>
-              <select name="idPetugas" id="idPetugas" class="form-control input-sm" data-live-search="true" title="Pilih Petugas">
+              <select name="petugas" id="petugas" class="form-control input-sm" data-live-search="true" title="Pilih Petugas">
                    <option value="" disabled selected>Pilih Petugas</option>
               </select> 
             </div>
@@ -69,19 +69,19 @@
   {
     $('#idSurat').change(function()
     {
-      var idPer=$('#idSurat').val();
-      if(idPer!=''){
+      var idSur=$('#idSurat').val();
+      if(idSur!=''){
         $.ajax({
-          url: "<?php echo base_url();?>petugas/umpan_balik/getSarana", 
+          url: "<?php echo base_url();?>admin/surat_perjadin/surat_perjadin/getpetugas", 
           method: "POST",
-          data: {idPer:idPer},
+          data: {idSur:idSur},
           success: function(data)
           {
-            $('#sarana').html(data);
+            $('#petugas').html(data);
           } 
         });
       }else{
-        $('#sarana').html('<option value="">Pilih Surat Tugas Doloe</option>');
+        $('#petugas').html('<option value="">Pilih Surat Tugas Dulu</option>');
       }
 
 
