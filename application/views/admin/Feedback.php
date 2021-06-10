@@ -77,19 +77,14 @@
                       echo "<td>".$row->tglFeedback."</td>";
                       if($row->closed == -1) { ?>
                         <td> 
- 
-                          <a href="#" class="btn btn-success btn-sm" id="acceptClosed" data-tooltip="tooltip" title="Accept" data-id = "<?=$row->idFeedback ?>" data-closed = "1" data-toggle="modal" data-target="#accept"  ><i class="fa fa-check"></i></a> 
- 
-                          <a href="#" class="btn btn-danger btn-sm" id="rejectClosed" data-tooltip="tooltip" title="Reject" data-id = "<?=$row->idFeedback ?>" data-closed = "0"  data-toggle="modal" data-target="#reject" ><i class="fa fa-close "></i></a>
- 
-                        </td>
- 
+                        <small class="label label-default"><i class="fa fa-stack-overflow"></i> Waiting</small>
+                        </td> 
                         <?php
                       }else if ($row->closed == 0) {
                        ?> 
                         <td> 
-                       <small class="label label-danger"><i class="fa fa-exclamation-triangle"></i> Open</small>
-                     </td>
+                        <small class="label label-danger"><i class="fa fa-exclamation-triangle"></i> Open</small>
+                        </td>
                        <?php
                      }else{
                        ?>
