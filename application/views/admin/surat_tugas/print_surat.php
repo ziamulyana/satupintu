@@ -108,8 +108,9 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 	?>
 
 
-	<p style="font-family:bookman old style;" align="center"><u><b>SURAT TUGAS</b></u></p>
-	<p style="font-family:bookman old style;" align="center"><b>Nomor : <?php echo $no_surat; ?></b></p>
+	<p style="line-height: 1px;" align="center" style="font-family:bookman old style;"><u><b>SURAT TUGAS</u>
+	<br/>
+	Nomor : <?php echo $no_surat; ?></font></b></p>
 		
 		<p style="font-family:bookman old style;">Yang bertanda tangan di bawah ini Kepala Balai POM di Batam memerintahkan kepada nama tersebut dibawah ini. </p>
 			
@@ -278,9 +279,11 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 		<p style="font-family:bookman old style;" align="right"><?php echo $nama_penandatangan; ?></p>
 	</font>
 
-	<p style="font-family:bookman old style;" align="center"><u><b>Petugas Balai POM di Batam Tidak Menerima Gratifikasi Dalam Bentuk Apapun</b></u></p>
-	<p style="font-family:bookman old style;" align="center"><u><b>Laporkan Pelanggaran Melalui Layanan Lapor BPOM di bit.ly/laporbpombatam</b></u></p>
-	<p style="font-family:bookman old style;" align="center"><u><b>LIHAT, LAWAN, LAPOR</b></u></p>
+	<p style="line-height: 1px;" align="center" style="font-family:bookman old style;"><b>Petugas Balai POM di Batam Tidak Menerima Gratifikasi Dalam Bentuk Apapun
+	<br/>
+	Laporkan Pelanggaran Melalui Layanan Lapor BPOM di bit.ly/laporbpombatam
+	<br/>
+	LIHAT, LAWAN, LAPOR</b></p>
 
 	</body>
 	</html>
