@@ -22,7 +22,7 @@
 
           <hr>
 
-           <form action="<?php echo base_url('admin/surat_perjadin/surat_perjadin') ?>" method="post">
+           <form action="<?php echo base_url('admin/surat_perjadin/surat_perjadin/print') ?>" method="post">
                 <!-- nomor surat -->
          <div class="form-group">
               <label>Surat Tugas</label><span class="wajib"> *</span></label>
