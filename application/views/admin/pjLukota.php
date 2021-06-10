@@ -141,28 +141,24 @@ header("Content-Disposition: attachment; Filename=kwLukota-".$filename)
 
 				<tr>
 					<td style="border:1px solid black;"><p style="font-family:arial;" align="center"><?php echo $i+1; ?></p></td>
-					<td style="border:1px solid black;"><p style="font-family:arial;" align="center"><?php echo $uraian_kw[$i]; ?></p></td>
+					<td style="border:1px solid black;"><p style="font-family:arial;" align="left"><?php echo $uraian_kw[$i]; ?></p></td>
 					<td style="border:1px solid black;"><p style="font-family:arial;" align="center"><?php echo "Rp       ".$biaya_kw[$i]; ?></p></td>
 				</tr>
 
 			<?php }?>
-			<td style="border:1px solid black;" colspan="2"><p style="font-family:arial;" align="center"><?php echo "Jumlah"; ?></p></td>
+			<td style="border:1px solid black;" colspan="2"><p style="font-family:arial;" align="center"><b>Jumlah</b></p></td>
 			<td style="border:1px solid black;"><p style="font-family:arial;" align="center"><?php echo "Rp       ".array_sum($biaya_kw); ?></p></td>
 
 		</table>
 		<br>
 		<table style="width:100%">
 			<tr>
-				<th><p style="font-family:arial;" class="satu"><b>Mengetahui/Menyetujui</b></p></th> 
-				<th><p style="font-family:arial;" class="satu"><b>Batam, <?php echo convertDay($tglKw)."-".convertMonthB(convertMonthA($tglKw))."-".convertYear($tglKw) ;?></b></p></th> 
+				<th><p style="font-family:arial;" align="right" >Mengetahui/Menyetujui</p></th> 
+				<th><p style="font-family:arial;" align="right">Batam, <?php echo convertDay($tglKw)."-".convertMonthB(convertMonthA($tglKw))."-".convertYear($tglKw) ;?></b></p></th> 
 			</tr>
 			<tr>
-				<td><p style="font-family:arial;"><b>Pejabat Pembuat Komitmen</b></p></td> 
-				<td><p style="font-family:arial;"><b>Petugas</b></p></td> 
-			</tr>
-			<tr>
-				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
+				<td><p style="font-family:arial;" align="right">Pejabat Pembuat Komitmen</p></td> 
+				<td><p style="font-family:arial;" align="right">Petugas</p></td> 
 			</tr>
 			<tr>
 				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
@@ -173,13 +169,17 @@ header("Content-Disposition: attachment; Filename=kwLukota-".$filename)
 				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
 			</tr>
 			<tr>
-				<td><p style="font-family:arial;"><b>Paniyati, S.Farm., Apt</b></p></td> 
-				<td><p style="font-family:arial;"><b><?php echo $nama; ?></b></p></td> 
+				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
+				<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
+			</tr>
+			<tr>
+				<td><p style="font-family:arial;" align="right"><b>Paniyati, S.Farm., Apt</b></p></td> 
+				<td><p style="font-family:arial;" align="right"><b><?php echo $nama; ?></b></p></td> 
 			</tr>
 
 			<tr>
-				<td><p style="font-family:arial;"><b>NIP. 19830820 200712 2 001</b></p></td> 
-				<td><p style="font-family:arial;"><b><?php echo $nip; ?></b></p></td> 
+				<td><p style="font-family:arial;" align="right"><b>NIP. 19830820 200712 2 001</b></p></td> 
+				<td><p style="font-family:arial;" align="right"><b><?php echo $nip; ?></b></p></td> 
 			</tr>
 
 		</table>

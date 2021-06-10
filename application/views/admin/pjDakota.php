@@ -84,16 +84,16 @@ header("Content-Disposition: attachment; Filename=kwDakota-" . $filename)
 			<table style="width:100%">
 				<tr>
 					<th class="a">
-						<p style="font-family:arial;" class="satu" id="space2">Nama</p>
+						<p style="font-family:arial;">Nama</p>
 					</th>
 					<th class="b">
-						<p style="font-family:arial;" class="satu">: <?php echo $row->nama; ?></p>
+						<p style="font-family:arial;">: <?php echo $row->nama; ?></p>
 					</th>
 				</tr>
 
 				<tr>
 					<td>
-						<p style="font-family:arial;" id="space2">Pangkat/Gol</p>
+						<p style="font-family:arial;">Pangkat/Gol</p>
 					</td>
 					<td>
 						<p style="font-family:arial;">: <?php echo $row->pangkat . "     /" . $row->golongan; ?></p>
@@ -102,7 +102,7 @@ header("Content-Disposition: attachment; Filename=kwDakota-" . $filename)
 
 				<tr>
 					<td>
-						<p style="font-family:arial;" id="space2">NIP</p>
+						<p style="font-family:arial;">NIP</p>
 					</td>
 					<td>
 						<p style="font-family:arial;">: <?php echo $row->nip; ?></p>
@@ -111,7 +111,7 @@ header("Content-Disposition: attachment; Filename=kwDakota-" . $filename)
 
 				<tr>
 					<td>
-						<p style="font-family:arial;" id="space2">Jabatan</p>
+						<p style="font-family:arial;">Jabatan</p>
 					</td>
 					<td>
 						<p style="font-family:arial;">: <?php echo $row->jabatan; ?></p>
@@ -146,7 +146,7 @@ header("Content-Disposition: attachment; Filename=kwDakota-" . $filename)
 						<p style="font-family:arial;" align="center">1</p>
 					</td>
 					<td style="border:1px solid black;">
-						<p style="font-family:arial;" align="center">Transport Dalam Kota 1 Hari </p>
+						<p style="font-family:arial;" align="left">Transport Dalam Kota 1 Hari </p>
 					</td>
 					<td style="border:1px solid black;">
 						<p style="font-family:arial;" align="center">Rp 150.000 </p>
@@ -155,7 +155,7 @@ header("Content-Disposition: attachment; Filename=kwDakota-" . $filename)
 
 				<tr>
 					<td style="border:1px solid black;" colspan="2">
-						<p style="font-family:arial;" align="center">Jumlah</p>
+						<p style="font-family:arial;" align="center"><b>Jumlah</b></p>
 					</td>
 					<td style="border:1px solid black;">
 						<p style="font-family:arial;" align="center">Rp 150.000 </p>
@@ -173,26 +173,18 @@ header("Content-Disposition: attachment; Filename=kwDakota-" . $filename)
 			<table style="width:100%">
 				<tr>
 					<th>
-						<p style="font-family:arial;" class="satu"><b>Mengetahui/Menyetujui</b></p>
+						<p style="font-family:arial;" align="right">Mengetahui/Menyetujui</p>
 					</th>
 					<th>
-						<p style="font-family:arial;" class="satu"><b>Batam, <?php echo convertDay($tglKw) . "-" . convertMonthB(convertMonthA($tglKw)) . "-" . convertYear($tglKw); ?></b></p>
+						<p style="font-family:arial;" align="right">Batam, <?php echo convertDay($tglKw) . "-" . convertMonthB(convertMonthA($tglKw)) . "-" . convertYear($tglKw); ?></p>
 					</th>
 				</tr>
 				<tr>
 					<td>
-						<p style="font-family:arial;"><b>Pejabat Pembuat Komitmen</b></p>
+						<p style="font-family:arial;" align="right">Pejabat Pembuat Komitmen</p>
 					</td>
 					<td>
-						<p style="font-family:arial;"><b>Petugas</b></p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p id="hilang">Cobacabicobacabicobacabicobacabi</p>
-					</td>
-					<td>
-						<p id="hilang">Cobacabicobacabicobacabicobacabi</p>
+						<p style="font-family:arial;" align="right">Petugas</p>
 					</td>
 				</tr>
 				<tr>
@@ -213,19 +205,27 @@ header("Content-Disposition: attachment; Filename=kwDakota-" . $filename)
 				</tr>
 				<tr>
 					<td>
-						<p style="font-family:arial;"><b>Paniyati, S.Farm., Apt</b></p>
+						<p id="hilang">Cobacabicobacabicobacabicobacabi</p>
 					</td>
 					<td>
-						<p style="font-family:arial;"><b><?php echo $row->nama ?></b></p>
+						<p id="hilang">Cobacabicobacabicobacabicobacabi</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p style="font-family:arial;" align="right"><b>Paniyati, S.Farm., Apt</b></p>
+					</td>
+					<td>
+						<p style="font-family:arial;" align="right"><b><?php echo $row->nama ?></b></p>
 					</td>
 				</tr>
 
 				<tr>
 					<td>
-						<p style="font-family:arial;"><b>NIP. 19830820 200712 2 001</b></p>
+						<p style="font-family:arial;" align="right"><b>NIP. 19830820 200712 2 001</b></p>
 					</td>
 					<td>
-						<p style="font-family:arial;"><b><?php echo $row->nip ?></b></p>
+						<p style="font-family:arial;" align="right"><b><?php echo $row->nip ?></b></p>
 					</td>
 				</tr>
 
