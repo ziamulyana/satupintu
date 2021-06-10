@@ -23,9 +23,9 @@
 
 		function getPetugas()
 		{
-			if($this->input->post('idSuratTugas'))
+			if($this->input->post('noSuratTugas'))
 			{
-				echo $this->SuratPj_model->getPetugas($this->input->post('idSuratTugas'));
+				echo $this->SuratPj_model->getPetugas($this->input->post('noSuratTugas'));
 			}
 		}
 

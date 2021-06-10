@@ -29,13 +29,13 @@
 
             <div class="form-group">
               <label>Surat Tugas</label><span class="wajib"> *</span></label>
-              <select name="surattugas" id="surattugas" class="form-control input-sm" data-live-search="true" title="Select Category" required>
+              <select name="surattugas" id="surattugas" class="form-control category" data-live-search="true" title="Select Category" required>
 
                 <option value="">Pilih Surat Tugas</option>
 
                 <?php
                 foreach ($tugas as $tg) {
-                  echo "<option value=".$tg->idSuratTugas.">".$tg->noSuratTugas."</option>";
+                  echo "<option value=".$tg->noSuratTugas.">".$tg->noSuratTugas."</option>";
                 }
                 ?>
 
@@ -155,12 +155,12 @@
   {
     $('#surattugas').change(function()
     {
-      var idSuratTugas=$('#surattugas').val();
-      if(idSuratTugas!=''){
+      var noSuratTugas=$('#surattugas').val();
+      if(noSuratTugas!=''){
         $.ajax({
           url: "<?php echo base_url();?>admin/form_pj/getPetugas",    
           method: "POST",
-          data: {idSuratTugas:idSuratTugas},
+          data: {noSuratTugas:noSuratTugas},
           success: function(data)
           {
             $('#petugas').html(data);
@@ -184,7 +184,7 @@
 
     $("#add").click(function(){
       i++;
-      $('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="uraian[]" id="uraian[]" placeholder="Uraian Biaya" class="form-control name_list"/></td>  <td><select name="kategori[]" id="kategori[]"  class="form-control input-sm" data-live-search="true" title="Select Sub Category">  <option>Pilih Kategori</option>   <option value="uh">Uang Harian</option><option value="tr">Transport</option><option value="rl">Riil</option><option value="ht">Hotel</option></select></td><td><input type="text" name="biaya[]" id="biaya[]" placeholder="Jumlah Biaya" class="form-control name_email"/></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
+      $('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="uraian[]" id="uraian[]" placeholder="Uraian Biaya" class="form-control name_list"/></td>  <td><select name="kategori[]" id="kategori[]"  class="form-control category" data-live-search="true" title="Select Sub Category">  <option>Pilih Kategori</option>   <option value="uh">Uang Harian</option><option value="tr">Transport</option><option value="rl">Riil</option><option value="ht">Hotel</option></select></td><td><input type="text" name="biaya[]" id="biaya[]" placeholder="Jumlah Biaya" class="form-control name_email"/></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
     });
 
     $(document).on('click', '.btn_remove', function(){  
