@@ -43,8 +43,7 @@ $data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
 			$penerimaSurat =  $this->input->post('penerimaSurat');
 			$kotaSurat =  $this->input->post('kotaSurat');
 			// detil sarana
-			$namaSarana =  $this->input->post('namaSarana');
-			$alamatSarana = $this->input->post('alamatSarana');
+			$idSarana =  $this->input->post('idSarana');
 			$tglMulaiperiksa = $this->input->post('tglMulaiperiksa');
 			$tglSelesaiperiksa = $this->input->post('tglSelesaiperiksa');
 			$noIzin =  $this->input->post('noIzin');
@@ -70,6 +69,16 @@ $data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
 			}
 
 
+				$dataSarana = $this->SuratPeringatan_model->getSarana($idSarana);
+
+			   foreach ($dataSarana as $row) {
+			   	$namaSarana= $row->namaSarana;
+			   	$idTl =  $row->idTl;
+			   	$alamatSarana = $row->alamatSarana;
+			   }
+
+
+
 
 			$data = array('title'=>'Cetak surat tugas',
 				'tanggal' => $tanggal,
@@ -91,10 +100,7 @@ $data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
 				'pilihPasal' => $pasal_peringatan
 			);	
 
-			$idTl = $this->SuratTl_model->getTl($idSurat);
-				foreach ($idTl as $id) {
-					$idTl = $id->idTl;
-				}
+			
 
 
 			$data_db = array(

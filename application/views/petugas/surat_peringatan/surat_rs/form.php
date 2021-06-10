@@ -89,27 +89,21 @@
           <h4>Detail Sarana</h4>
           <hr>
 
-          <!-- nama sarana -->
-          <div class="form-group row">
-            <label for="noSurat" class="col-sm-4 col-form-label">Nama Sarana<span class="wajib"> *</span></label>
-            <div class="col-sm-12">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                <input type="text" class="form-control" name="namaSarana" id="namaSarana" placeholder="Nama Sarana" required>
-              </div>
-            </div>
-          </div>
+            <!-- nama sarana -->
+                <div class="form-group row">
+                  <label for="noSurat" class="col-sm-4 col-form-label">Nama Sarana<span class="wajib"> *</span></label>
+                  <div class="col-sm-12">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                     <select name="idSarana" id="idSarana" class="form-control input-sm" data-live-search="true" title="Pilih Sarana">
+                   <option value="">Pilih Sarana</option>
+              </select> 
+                    </div>
+                  </div>
+                </div>
 
-          <!-- alamat sarana -->
-          <div class="form-group row">
-            <label for="noSurat" class="col-sm-4 col-form-label">Alamat Sarana<span class="wajib"> *</span></label>
-            <div class="col-sm-12">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                <input type="text" class="form-control" name="alamatSarana" id="alamatSarana" placeholder="Alamat Sarana" required>
-              </div>
-            </div>
-          </div>
+
+        
 
 
 
@@ -276,3 +270,28 @@
 <!-- /.row -->
 </section>
 <!-- /.content -->
+
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    $('#suratTugas').change(function()
+    {
+      var idPer=$('#suratTugas').val();
+      if(idPer!=''){
+        $.ajax({
+          url: "<?php echo base_url();?>petugas/surat_peringatan/c_surat_peringatan/getSaranaPer", 
+          method: "POST",
+          data: {idPer:idPer},
+          success: function(data)
+          {
+            $('#idSarana').html(data);
+          } 
+        });
+      }else{
+        $('#idSarana').html('<option value="">Pilih Surat Tugas Doloe</option>');
+      }
+
+
+    });
+  });
+</script>
