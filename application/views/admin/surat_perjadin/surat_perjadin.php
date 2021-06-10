@@ -17,7 +17,7 @@
       <div class="box box-primary">
         <div class="box-header with-border">
 
-          <h3 class="box-title"><i class="fa fa-file"></i>Cetak Surat Perjalanan Dinas
+          <h3 class="box-title"><i class="fa fa-file"></i> Cetak Surat Perjalanan Dinas
           </h3>
 
           <hr>
@@ -48,7 +48,7 @@
               </select> 
             </div>
 
-          <button type="submit" value="submit" onclick="" class="btn btn-info"><i class="fa fa-search"></i> Search</button>
+          <button type="submit" value="submit" onclick="" class="btn btn-info"><i class="fa fa-print"></i> Print</button>
       </form>
 
         </div>
