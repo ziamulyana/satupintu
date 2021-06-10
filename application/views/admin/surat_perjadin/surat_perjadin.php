@@ -21,7 +21,7 @@
         <h3 class="box-title">Daftar Surat Perjalanan Dinas</h3>
           <div class="pull-right">
             <ul>
-              <a class= "btn btn-primary" href="<?php echo base_url('admin/surat_perjadin/form_suratperjadin')?>">
+              <a class= "btn btn-primary" href="<?php echo base_url('admin/surat_perjadin/surat_perjadin/tambahdata')?>">
                   <i class="fa fa-plus"></i>&nbsp; Tambah Data 
                 </a> </span>
             </ul>
@@ -37,25 +37,22 @@
                   <table id="tbl" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th class="dt-center">No</th>
                         <th class="dt-center">No Surat Tugas</th>
-                        <th class="dt-center">Tanggal Pergi</th>
-                        <th class="dt-center">Tanggal Pulang</th>
+                        <th class="dt-center">Nama Petugas</th>
                         <th class="dt-center">Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
                       <?php     
-                      if(isset($list_peringatan)){
-                       foreach ($list_peringatan->result() as $row){
+                      if(isset($perjadin)){
+                       foreach ($perjadin as $row){
                         
                         echo "<tr>";
-                        echo "<td class='dt-center'>".$row->noSuratPeringatan."</td>";      
-                        echo "<td class='dt-center'>".$row->tglSuratPeringatan."</td>";
-                        echo "<td class='dt-center'>".$row->filePeringatan."</td>";
+                        echo "<td class='dt-center'>".$row->noSuratTugas."</td>";      
+                        echo "<td class='dt-center'>".$row->nama."</td>";
                         echo "<td class='dt-center'>"?>                             
                             <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editDataPeringatan"
-                            data-id = "<?= $row->id ?>" data-tglPeringatan="<?= $row->tglSuratPeringatan ?>" data-noSuratPeringatan="<?=  $row->noSuratPeringatan ?>" data-filePeringatan ="<?=  $row->filePeringatan ?>" data-toggle="modal" data-target="#editModal" ><i class="fa fa-edit"></i></a>
+                            data-id = "<?= $row->idSurat ?>" data-nosurattugas="<?= $row->noSuratTugas ?>" data-nama="<?=  $row->nama ?>" data-toggle="modal" data-target="#editSpd" ><i class="fa fa-edit"></i></a>
 
                             </td>
                             

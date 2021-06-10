@@ -17,7 +17,7 @@
 <section class="content">
   <div class="row">
    <div class="col-md-12">
-     <form role="form" action="<?php echo base_url('admin/surat_perjalanandinas/form')?>" method="post">
+     <form role="form" action="<?php echo base_url('admin/surat_perjadin/surat_perjadin/simpandata')?>" method="post">
       <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">Form Pembuatan Surat Perjalanan Dinas Luar Kota</h3>
@@ -29,14 +29,14 @@
           
           <!-- nomor surat -->
           <div class="form-group">
-              <label>Surat Tugas</label><span class="wajib"> *</span></label>
+          <label for="nosurat">No Surat Tugas</label><span class="wajib"> *</span></label>
               <select name="surattugas" id="surattugas" class="form-control input-sm" data-live-search="true" title="Select Category" required>
 
-                <option value="">Pilih Surat Tugas</option>
+                <option value="" disabled selected>Pilih Surat Tugas</option>
 
                 <?php
                 foreach ($tugas as $tg) {
-                  echo "<option value=".$tg->idSuratTugas.">".$tg->noSuratTugas."</option>";
+                  echo "<option value=".$tg->idSurat.">".$tg->noSuratTugas."</option>";
                 }
                 ?>
 
@@ -49,6 +49,7 @@
               <select name="petugas" id="petugas" class="form-control input-sm" data-live-search="true" title="Pilih Petugas">
 
                    <option value="">Pilih Petugas</option>
+
               </select> 
             </div>
 

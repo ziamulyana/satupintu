@@ -107,6 +107,7 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 	
 	?>
 
+	<font style="bookman old style">
 	<p align="center"><u><b>SURAT TUGAS</b></u></p>
 	<p align="center"><b>Nomor : <?php echo $no_surat; ?></b></p>
 		<br>
@@ -264,7 +265,7 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 		<td><p align="left"></p></td>
 		<td><p align="left"></p></td>
 		<td><p align="left"></p></td>
-		<td><p align="left"><?php echo $mak; ?></p></td>
+		<td><p align="left">MAK <?php echo $mak; ?></p></td>
 		</tr>
 
 		</table>
@@ -274,6 +275,7 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 		<td></td>
 		<p align="right"><?php echo $jabatan_penandatangan; ?></p>
 		<p align="right"><?php echo $nama_penandatangan; ?></p>
+	</font>
 
 
 
