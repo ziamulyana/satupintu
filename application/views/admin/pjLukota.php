@@ -130,24 +130,24 @@ header("Content-Disposition: attachment; Filename=kwLukota-".$filename)
 		<br>
 
 
-		<table style="width:100%" border="1">
+		<table style="width:100%;  border:1px solid black;border-collapse: collapse; ">
 			<tr>
-				<th><p style="font-family:arial;">No</p></th>
-				<th><p style="font-family:arial;">Perincian Biaya</p></th>
-				<th><p style="font-family:arial;">Jumlah</p></th>
+				<th style="border:1px solid black;"><p style="font-family:arial;">No</p></th>
+				<th style="border:1px solid black;"><p style="font-family:arial;">Perincian Biaya</p></th>
+				<th style="border:1px solid black;"><p style="font-family:arial;">Jumlah</p></th>
 			</tr>
 
 			<?php for($i=0;$i<count($biaya_kw);$i++){ ?>
 
 				<tr>
-					<td><p style="font-family:arial;"><?php echo $i+1; ?></p></td>
-					<td><p style="font-family:arial;"><?php echo $uraian_kw[$i]; ?></p></td>
-					<td><p style="font-family:arial;"><?php echo "Rp       ".$biaya_kw[$i]; ?></p></td>
+					<td style="border:1px solid black;"><p style="font-family:arial;" align="center"><?php echo $i+1; ?></p></td>
+					<td style="border:1px solid black;"><p style="font-family:arial;" align="center"><?php echo $uraian_kw[$i]; ?></p></td>
+					<td style="border:1px solid black;"><p style="font-family:arial;" align="center"><?php echo "Rp       ".$biaya_kw[$i]; ?></p></td>
 				</tr>
 
 			<?php }?>
-			<td colspan="2"><p style="font-family:arial;" align="center"><?php echo "Jumlah"; ?></p></td>
-			<td><p style="font-family:arial;"><?php echo "Rp       ".array_sum($biaya_kw); ?></p></td>
+			<td style="border:1px solid black;" colspan="2"><p style="font-family:arial;" align="center"><?php echo "Jumlah"; ?></p></td>
+			<td style="border:1px solid black;"><p style="font-family:arial;" align="center"><?php echo "Rp       ".array_sum($biaya_kw); ?></p></td>
 
 		</table>
 		<br>
