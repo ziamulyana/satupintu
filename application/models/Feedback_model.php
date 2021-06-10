@@ -25,11 +25,11 @@ class Feedback_model extends CI_Model{
   public function updateSuratFeedback($data){
     $this->db->set('noSuratFeedback', $data['noSuratFeedback']);
     $this->db->set('isiFeedback', $data['isiFeedback']);
-    $this->db->set('tglFeedback', $data['tglFeedback']); 
-    $this->db->set('file_feedback', $data['file_feedback']);
-    $this->db->where('idFeedback', $data['id']);
-    $query = $this->db->update('tbl_feedback');
+    $this->db->set('tglFeedback', $data['tglFeedback']);
 
+    $this->db->where('idFeedback', $data['idFeedback']);
+
+    $query = $this->db->update('tbl_feedback');
   }
 
   public function getFile(){

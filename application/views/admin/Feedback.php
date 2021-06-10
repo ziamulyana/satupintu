@@ -103,7 +103,7 @@
                       
                       echo "<td class='dt-center'>"?>                             
                         <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editFed"
-                        data-id =  "<?=$row->idFeedback ?>" data-tgl="<?=$row->tglFeedback ?>" data-nomor="<?= $row->noSuratFeedback ?>" data-toggle="modal" data-target="#editFeedback" ><i class="fa fa-edit"></i></a>
+                        data-id =  "<?=$row->idFeedback ?>" data-nomor="<?= $row->noSuratFeedback ?>" data-isi="<?= $row->isiFeedback ?>" data-tgl="<?=$row->tglFeedback ?>" data-toggle="modal" data-target="#editFeedback" ><i class="fa fa-edit"></i></a>
 
                          <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusFed" data-id =  "<?=$row->idFeedback ?>" data-toggle="modal" data-target="#hapusFeedback"><i class="fa fa-trash"></i></a>
 
@@ -136,7 +136,7 @@
     <!-- /.row -->
 
 
-    <!-- Edit Feedback -->
+<!-- Edit Feedback -->
 <div id= "editFeedback" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -145,42 +145,32 @@
         <h4 class="modal-title"><i class="icon fa fa-edit"></i>  Edit Data Surat Feedback</h4>
       </div>
       <div class="modal-body" id=editData >
-        <form action="<?= base_url('admin/Feedback/ubah_suratFeedback')?>" method="post" enctype="multipart/form-data">
+        <form action="<?= base_url('admin/Feedback/ubahSuratFeedback')?>" method="post" enctype="multipart/form-data">
           <div class="box box-success">
             <div class="box-body">
 
-            <!-- No Surat Feedback -->
              <div class="form-group">
-              <input type="hidden" class="form-control" name="id" id="id" >
+              <input type="hidden" class="form-control" name="idF" id="idF" >
             </div>
 
+            <!-- No Surat Feedback -->
             <div class="form-group">
               <label for="noEdit">No. Surat Feedback CAPA</label> <small class="text-danger">*</small>
-              <input type="text" class="form-control" name="noEdit" id="noEdit" required >
+              <input type="text" class="form-control" name="noF" id="noF" required >
             </div>
 
             <!-- Isi Surat Feedback -->
             <div class="form-group">
-              <input type="hidden" class="form-control" name="nomor" id="nomor" >
-            </div>
-
-            <div class="form-group">
-              <label for="isiEdit">Perihal Surat Feedback CAPA</label> <small class="text-danger">*</small>
-              <input type="text" class="form-control" name="isiEdit" id="isiEdit" required >
+              <label for="noEdit">Perihal Surat Feedback CAPA</label> <small class="text-danger">*</small>
+              <input type="text" class="form-control" name="isiF" id="isiF" required >
             </div>
 
             <!-- tanggal surat -->
             <div class="form-group ">
-             <label for="tglEdit"><i class="fa fa-calendar"></i> Tanggal Feedback</label> <small class="text-danger">*</small>
-             <input class="form-control" type="date" name="tgl" id="tgl;" required >
+             <label for="noEdit"><i class="fa fa-calendar"></i> Tanggal Feedback</label> <small class="text-danger">*</small>
+             <input class="form-control" type="date" name="tglF" id="tglF" required >
 
            </div>
-
-
-           <div class="mb-3">
-            <label for="fileEdit">Soft File Surat Feedback</label> <small class="text-danger">*</small>
-            <input class="form-control" type="file" id="formFile" name="file" id="file" required>
-          </div>
 
         </div><!-- /.box-body -->                        
         <div class="modal-footer">
@@ -197,18 +187,16 @@
 <script type="text/javascript" >
   $(document).on("click","#editFed",function(){
     var idFed = $(this).data('id');
-    var tglFed = $(this).data('tgl');
     var noFed = $(this).data('nomor');
     var isiFed = $(this).data('isi');
-    var fileFed = $(this).data('file');
+    var tglFed = $(this).data('tgl');
 
-    $("#editData #idFeedback").val(idFed);
-    $("#editData #noEdit").val(noFed);
-    $("#editData #tglEdit").val(tglFed);
-    $("#editData #fileEdit").val(fileFed);
-
-
-  });
+    $("#editData #idF").val(idFed);
+    $("#editData #noF").val(noFed);
+    $("#editData #isiF").val(isiFed);
+    $("#editData #tglF").val(tglFed);
+  }
+  );
 </script>
 <!-- /. Edit Feedback -->
   

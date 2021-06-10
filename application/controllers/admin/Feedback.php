@@ -39,39 +39,21 @@
 		// }
 	
 		
-		public function ubah_suratFeedback(){
-			$id = $this->input->post('idFeedback');
-			$noEdit = $this->input->post('noEdit');
-			$isiEdit = $this->input->post('isiEdit');
-			$tglEdit = $this->input->post('tglEdit');
-	
-			$config['upload_path'] = './assets/uploads/files/feedback';
-			$config['allowed_types'] = 'pdf';
-			$config['file_name'] = 'feedback-'.$id;
-			$config['overwrite'] = true;
-			$config['max_size'] = 0;
-			
-	
-			$this->load->library("upload",$config);
-			$this->upload->initialize($config);
-	
-			if(!$this->upload->do_upload('fileEdit')){
-				echo $this->upload->display_errors();
-			}else{
-				$fd=$this->upload->data();
-				$file=$fd['file_name'];
-	
-				$data_feedback = array (
-					'id' => $id,
-					'noSuratFeedback' => $noEdit,
-					'isiFeedback' => $isiEdit,
-					'tglFeedback' => $tglEdit,
-					'file_feedback' => $fileEdit	
-				);
-	
-				$this->Feedback_model->updateSuratFeedback($data_feedback);
-				redirect('admin/Feedback');
-			}
+		public function ubahSuratFeedback(){
+			$id = $this->input->post('idF');
+       	 	$nomor = $this->input->post('noF');
+			$isi = $this->input->post('isiF');
+        	$tgl = $this->input->post('tglF');
+       		
+        	$data = array (
+            	'idFeedback' => $id,
+            	'noSuratFeedback' => $nomor,
+           		'isiFeedback' => $isi,
+           		'tglFeedback' => $tgl,
+        	);
+        
+        $this->Feedback_model->updateSuratFeedback($data);
+		redirect('admin/Feedback');
 		}
 
 
