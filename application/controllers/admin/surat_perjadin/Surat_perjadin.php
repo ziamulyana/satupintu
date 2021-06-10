@@ -16,18 +16,12 @@
 		public function index()
 		{
 			$data = konfigurasi('Form Surat Perjalanan Dinas',"ap");
-			$data['perjadin'] = $this->SuratPerjadin_model->getperjadin();			
+			$data['tugas'] = $this->SuratPerjadin_model->getsurattugas();			
         	$this->template->load('layouts/admin_template', 'admin/surat_perjadin/surat_perjadin', $data);
 			
 		}
 
-		// Tambah Data Perjadin
-		public function tambahdata()
-		{
-			$data = konfigurasi('Form Surat Perjalanan Dinas',"ap");
-			$data['tugas'] = $this->SuratPerjadin_model->getsurattugas();			
-        	$this->template->load('layouts/admin_template', 'admin/surat_perjadin/form_suratperjadin', $data);
-		}
+
 		
 		
 	}
