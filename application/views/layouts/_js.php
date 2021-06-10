@@ -143,7 +143,7 @@
 
 		// ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
 		$('#noti_Counter')
-			.text('<?php echo $this->db->where('closed =', 0)->from("tbl_feedback")->count_all_results(); ?>') // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
+			.text('<?php echo $this->db->where('closed =', 0)->from("view_feedback")->count_all_results(); ?>') // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
 			.css({
 				top: '0px'
 			})

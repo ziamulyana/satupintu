@@ -35,7 +35,7 @@
 			$created_date =  $this->input->post('created_date');
 
 			$config['upload_path'] = './assets/uploads/files/feedback';
-			$config['allowed_types'] = 'pdf';
+			$config['allowed_types'] = '*';
 			$config['file_name'] = 'feedback-'.$noFeedback;
 			$config['overwrite'] = true;
 			$config['max_size'] = 0;
