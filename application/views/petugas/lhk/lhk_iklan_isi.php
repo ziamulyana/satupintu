@@ -105,51 +105,58 @@ header("Content-Disposition: attachment; Filename=lhk-".$filename)
 		<p align="justify">Sehubungan dengan penugasan berdasarkan surat tugas dari kepala Balai POM di Batam nomor  <?php echo $noSurat?> tanggal <?php echo $tglSurat; ?> berikut ini kami sampaikan laporan hasil kegiatan yang telah dilaksanakan : </p>
 
 		<p>1. Identitas Kegiatan </p>
-		<table style="width:100%">
+<table style="width:100%">
 
 			<tr>
-				<td><p></p></td> 
-				<td><p class="satu">- Nama/Judul: </p></td> 
-				<td><p ><?php echo $maksud;?></p></td> 
+				<td width="1%"><p></p></td>
+				<td width="26%"><p class="satu">- Nama/Judul</p></td> 
+				<td width="3%"><p class="satu">:</p></td> 
+				<td width="70%"><p ><?php echo $maksud;?></p></td> 
 			</tr>
 			<tr>
-				<td><p></p></td> 
-				<td><p class="satu">- Jadwal/Waktu: </p></td> 
+				<td><p></p></td>
+				<td><p class="satu">- Jadwal/Waktu</p></td> 
+				<td><p class="satu">:</p></td> 
 				<td><p ><?php echo $tglMulai;?></p></td> 
 			</tr>
 			<tr>
-				<td><p></p></td> 
-				<td><p class="satu">- Tempat/Tujuan: </p></td> 
+				<td><p></p></td>
+				<td><p class="satu">- Tempat/Tujuan</p></td> 
+				<td><p class="satu">:</p></td> 
 				<td><p ><?php echo $kota;?></p></td> 
 			</tr>
 			<tr>
-				<td><p></p></td> 
-				<td><p class="satu">- Pejabat yang Dituju: </p></td> 
+				<td><p></p></td>
+				<td><p class="satu">- Pejabat yang Dituju</p></td> 
+				<td><p class="satu">:</p></td> 
 				<td><p ><?php echo $pejabat;?></p></td> 
 			</tr>
 
 		</table>
 
-		<p>2. Identitas Petugas </p>
+<p>2. Identitas Petugas </p>
 
-		<table style="width:100%">
+<table style="width:100%">
 
 			<?php 
 			$huruf = array('a.','b.','c.','d.','e.');
 			for($i=0;$i<count($nama_all);$i++){?>
 			<tr>
-				<td><p><?php echo $huruf[$i] ;?></p></td> 
-				<td><p class="satu">Nama / NIP : </p></td> 
-				<td><p ><?php echo $nama_all[$i];?></p></td> 
+				<td width="1%"><p><?php echo $huruf[$i] ;?></p></td>
+				<td width="26%"><p>Nama / NIP</p></td> 
+				<td width="3%"><p>: </p></td> 
+				<td width="70%"><p ><?php echo $nama_all[$i];?></p></td> 
 			</tr>
 			<tr>
-				<td><p>     </p></td> 
-				<td><p class="satu">Pangkat / Gol : </p></td> 
+				<td><p>     </p></td>
+				<td><p class="satu">Pangkat / Gol</p></td> 
+				<td><p class="satu">: </p></td> 
 				<td><p ><?php echo $pangkat_all[$i]."/".$golongan_all[$i];?></p></td> 
 			</tr>
 			<tr>
-				<td><p>        </p></td> 
-				<td><p class="satu">Jabatan : </p></td> 
+				<td><p>        </p></td>
+				<td><p class="satu">Jabatan</p></td> 
+				<td><p class="satu">: </p></td> 
 				<td><p ><?php echo $jabatan_all[$i];?></p></td> 
 			</tr>
 		<?php }?>
@@ -160,21 +167,24 @@ header("Content-Disposition: attachment; Filename=lhk-".$filename)
 		<p><?php echo $detKegiatan?></p>
 		<p><?php echo $detSampling?></p>
 
-		<p>4. Pengesahan </p>
+<p>4. Pengesahan </p>
 		<table style="width:100%">
 			<tr>
-				<td><p></p></td> 
-				<td><p class="satu">a. SPPD disahkan oleh : </p></td> 
-				<td><p ><?php echo $sppd;?></p></td> 
+				<td width="1%"><p></p></td>
+				<td width="37%"><p class="satu">a. SPPD disahkan oleh </p></td> 
+				<td width="3%"><p class="satu">: </p></td> 
+				<td width="59%"><p ><?php echo $sppd;?></p></td> 
 			</tr>
 			<tr>
-				<td><p></p></td> 
-				<td><p class="satu">b. Kwitansi disahkan oleh: </p></td> 
+				<td><p></p></td>
+				<td><p class="satu">b. Kwitansi disahkan oleh</p></td> 
+				<td><p class="satu">: </p></td> 
 				<td><p ><?php echo $kwitansi;?></p></td> 
 			</tr>
 			<tr>
-				<td><p></p></td> 
-				<td><p class="satu">c. Form 8 jam disahkan oleh: </p></td> 
+				<td><p></p></td>
+				<td><p class="satu">c. Form 8 jam disahkan oleh</p></td> 
+				<td><p class="satu">: </p></td> 
 				<td><p ><?php echo $form;?></p></td> 
 			</tr>
 
@@ -225,5 +235,5 @@ header("Content-Disposition: attachment; Filename=lhk-".$filename)
 
 
 
-	</body>
+</body>
 	</html>

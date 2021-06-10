@@ -156,18 +156,21 @@ header("Content-Disposition: attachment; Filename=lhkSer-".$filename)
 			$huruf = array('a.','b.','c.','d.','e.');
 			for($i=0;$i<count($nama_all);$i++){?>
 			<tr>
-				<td><p><?php echo $huruf[$i] ;?></p></td> 
-				<td><p class="satu">Nama / NIP : </p></td> 
-				<td><p ><?php echo $nama_all[$i];?></p></td> 
+				<td width="5%"><p><?php echo $huruf[$i] ;?></p></td>
+				<td width="24%"><p class="satu">Nama / NIP </p></td> 
+				<td width="5%"><p class="satu"> : </p></td> 
+				<td width="66%"><p ><?php echo $nama_all[$i];?></p></td> 
 			</tr>
 			<tr>
-				<td><p>     </p></td> 
-				<td><p class="satu">Pangkat / Gol : </p></td> 
+				<td><p>     </p></td>
+				<td><p class="satu">Pangkat / Gol </p></td> 
+				<td><p class="satu"> : </p></td> 
 				<td><p ><?php echo $pangkat_all[$i]."/".$golongan_all[$i];?></p></td> 
 			</tr>
 			<tr>
-				<td><p>        </p></td> 
-				<td><p class="satu">Jabatan : </p></td> 
+				<td><p>        </p></td>
+				<td><p class="satu">Jabatan </p></td> 
+				<td><p class="satu"> : </p></td> 
 				<td><p ><?php echo $jabatan_all[$i];?></p></td> 
 			</tr>
 		<?php }?>
@@ -192,33 +195,43 @@ header("Content-Disposition: attachment; Filename=lhkSer-".$filename)
 						?>
 
 						<tr>
-				<td><p><?php echo $nomor+1 ?>.</p></td> 
-				<td><p class="satu">Nama Sarana:<?php echo $row ->namaSarana ?> </p></td> 
+				<td width="5%"><p><?php echo $nomor+1 ?>.</p></td>
+				<td width="24%"><p class="satu">Nama Sarana</p></td>
+				<td width="5%"><p class="satu">:</p></td> 
+				<td width="60%"><p class="satu"><?php echo $row ->namaSarana ?> </p></td> 
 
 			</tr>
 			<tr>
-				<td><p id="hilang">1</p></td> 
-				<td><p class="satu">Alamat : <?php echo $row ->alamatSarana ?> </p></td>  
+				<td><p id="hilang">1</p></td>
+				<td><p class="satu">Alamat </p></td>
+				<td><p class="satu"> :</p></td> 
+				<td><p class="satu"><?php echo $row ->alamatSarana ?> </p></td>  
 			</tr>
 
 			<tr>
-				<td><p id="hilang">1</p></td> 
-				<td><p class="satu">Kategori Sarana : <?php echo $row ->kategoriSarana ?> </p></td> 
-				<td><p id="hilang">1</p></td> 
-				<td><p id="hilang">1</p></td> 
+				<td><p id="hilang">1</p></td>
+				<td><p class="satu">Kategori Sarana </p></td>
+				<td><p class="satu"> :</p></td> 
+				<td><p class="satu"><?php echo $row ->kategoriSarana ?> </p></td> 
+				<td width="3%"><p id="hilang">1</p></td> 
+				<td width="3%"><p id="hilang">1</p></td> 
 			</tr>
 
 			<tr>
-				<td><p id="hilang">1</p></td> 
-				<td><p class="satu">Jenis Sarana : <?php echo $row ->jenisSarana ?> </p></td> 
+				<td><p id="hilang">1</p></td>
+				<td><p class="satu">Jenis Sarana </p></td>
+				<td><p class="satu"> :</p></td> 
+				<td><p class="satu"><?php echo $row ->jenisSarana ?> </p></td> 
 				<td><p id="hilang">1</p></td> 
 				<td><p id="hilang">1</p></td> 
 			</tr>
 
 			
 			<tr>
-				<td><p id="hilang">1</p></td> 
-				<td><p class="satu">Keterangan : <?php echo $keterangan[$nomor] ?> </p></td> 
+				<td><p id="hilang">1</p></td>
+				<td><p class="satu">Keterangan</p></td>
+				<td><p class="satu"> :</p></td> 
+				<td><p class="satu"><?php echo $keterangan[$nomor] ?> </p></td> 
 				<td><p id="hilang">1</p></td> 
 				<td><p id="hilang">1</p></td> 
 			</tr>
@@ -236,32 +249,44 @@ header("Content-Disposition: attachment; Filename=lhkSer-".$filename)
 		<table style="width:100%">
 
 			<tr>
-				<td><p><b>VI.</b></p></td> 
-				<td><p class="satu"><b>PENGESAHAN :</b></p></td> 
+				<td width="5%"><p><b>VI.</b></p></td>
+				<td width="33%"><p class="satu"><b>PENGESAHAN :</b></p></td>
+				<td width="4%"><p class="satu">&nbsp;</p></td> 
+				<td width="58%"><p class="satu">&nbsp;</p></td> 
 			</tr>
 
 			<tr>
-				<td><p id="hilang"><b>VI.</b></p></td> 
-				<td><p class="satu">- SPPD disahkan oleh : <?php echo $sppd?> </p></td> 
+				<td><p id="hilang"><b>VI.</b></p></td>
+				<td><p class="satu">- SPPD disahkan oleh</p></td>
+				<td><p class="satu">:</p></td> 
+				<td><p class="satu"><?php echo $sppd?> </p></td> 
 			</tr>
 
 			<tr>
-				<td><p id="hilang"><b>VI.</b></p></td> 
-				<td><p class="satu">- Kwitansi disahkan oleh : <?php echo $kwitansi?> </p></td> 
+				<td><p id="hilang"><b>VI.</b></p></td>
+				<td><p class="satu">- Kwitansi disahkan oleh</p></td>
+				<td><p class="satu">:</p></td> 
+				<td><p class="satu"><?php echo $kwitansi?> </p></td> 
 			</tr>
 
 			<tr>
-				<td><p id="hilang"><b>VI.</b></p></td> 
-				<td><p class="satu">- Form 8 Jam disahkan oleh : <?php echo $form?> </p></td> 
+				<td><p id="hilang"><b>VI.</b></p></td>
+				<td><p class="satu">- Form 8 Jam disahkan oleh </p></td>
+				<td><p class="satu"> :</p></td> 
+				<td><p class="satu"><?php echo $form?> </p></td> 
 			</tr>
 
 			<tr>
-				<td><p><b>VII.</b></p></td> 
-				<td><p class="satu"><b>KESIMPULAN</b></p></td> 
+				<td><p><b>VII.</b></p></td>
+				<td><p class="satu"><b>KESIMPULAN</b></p></td>
+				<td><p class="satu">&nbsp;</p></td> 
+				<td><p class="satu">&nbsp;</p></td> 
 			</tr>
 			<tr>
-				<td><p id="hilang"><b>VI.</b></p></td> 
-				<td><p class="satu"> <?php echo $kesimpulan?> </p></td> 
+				<td><p id="hilang"><b>VI.</b></p></td>
+				<td><p class="satu"> <?php echo $kesimpulan?></p></td>
+				<td><p class="satu">&nbsp;</p></td> 
+				<td><p class="satu">&nbsp;</p></td> 
 			</tr>
 
 		
@@ -276,7 +301,7 @@ header("Content-Disposition: attachment; Filename=lhkSer-".$filename)
 			<tr>
 				<th><p class="satu">Menyetujui</p></th> 
 				<th><p class="satu">Batam, <?php echo $tglLhk?> </p></th> 
-			</tr>
+		  </tr>
 			<tr>
 				<td><p></p></td> 
 				<td><p>Petugas,</p></td> 
@@ -298,7 +323,7 @@ header("Content-Disposition: attachment; Filename=lhkSer-".$filename)
 				<td><p></p></td> 
 			</tr>
 
-		</table>
+</table>
 
 		<p align="center">Mengetahui,</p>
 		<p align="center">Kepala Balai POM di Batam</p>
