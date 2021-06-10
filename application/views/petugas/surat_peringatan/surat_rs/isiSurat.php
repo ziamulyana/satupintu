@@ -79,18 +79,18 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-".$filename)
 			<table style="width:100%">
 				<tr>
 					<!-- nomor surat -->
-					<th class="satu"><p>Nomor	: <?php echo $noSurat ?></p></th>
+					<th class="satu"><p style="font-family:arial;">Nomor	: <?php echo $noSurat ?></p></th>
 					<!-- tanggal pembuatan surat -->
-					<th class="dua"><p>Batam, <?php echo convertDay($tanggal)." ".convertMonthB(convertMonthA($tanggal))." ".convertYear($tanggal) ?></p></th> 
+					<th class="dua"><p style="font-family:arial;">Batam, <?phpstyle="font-family:arial;" echo convertDay($tanggal)." ".convertMonthB(convertMonthA($tanggal))." ".convertYear($tanggal) ?></p></th> 
+				</tr>style="font-family:arial;"
+				<tr>
+					<td><p style="font-family:arial;">Lampiran: </p></td> 
 				</tr>
 				<tr>
-					<td><p>Lampiran: </p></td> 
+					<td><p style="font-family:arial;">Hal		: Peringatan</p></td>
 				</tr>
 				<tr>
-					<td><p>Hal		: Peringatan</p></td>
-				</tr>
-				<tr>
-					<td><p><?php echo " " ?></p></td>
+					<td><p style="font-family:arial;"><?php echo " " ?></p></td>
 				</tr>
 			</table>
 
@@ -98,24 +98,24 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-".$filename)
 			<br>
 			<table style="width:100%">
 				<tr>
-					<th><p class="satu"><b>Yth.</b></p></th> 
+					<th><p style="font-family:arial;"class="satu"><b>Yth.</b></p></th> 
 				</tr>
 				<tr>
-					<td><p><b>Pimpinan / Penanggung Jawab</b></p></td> 
+					<td><p style="font-family:arial;"><b>Pimpinan / Penanggung Jawab</b></p></td> 
 				</tr>
 				<tr>
-					<td><p><b><?php echo $penerimaSurat; ?></b></p></td>
+					<td><p style="font-family:arial;"><b><?php echo $penerimaSurat; ?></b></p></td>
 				</tr>
 				<tr>
-					<td><p><b>di</b></p></td>
+					<td><p style="font-family:arial;"><b>di</b></p></td>
 				</tr>
 				<tr>
-					<td><p id="space1"><b><?php echo " ". $kotaSurat ?></b></p></td>
+					<td><p style="font-family:arial;"id="space1"><b><?php echo " ". $kotaSurat ?></b></p></td>
 				</tr>
 			</table>
 			<!-- paragraf 1 -->
 			<br>
-			<p class="paragraf">Berdasarkan hasil pemeriksaan petugas Balai POM di Batam pada tanggal <?php echo convertDay($tglMulaiperiksa)." ". convertMonthB(convertMonthA($tglMulaiperiksa))." ". convertYear($tglMulaiperiksa) ?> 
+			<p style="font-family:arial;"class="paragraf">Berdasarkan hasil pemeriksaan petugas Balai POM di Batam pada tanggal <?php echo convertDay($tglMulaiperiksa)." ". convertMonthB(convertMonthA($tglMulaiperiksa))." ". convertYear($tglMulaiperiksa) ?> 
 			<?php if(convertYear($tglSelesaiperiksa)!=convertYear($tglMulaiperiksa)){
 				echo "";
 			}else{
@@ -126,43 +126,43 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-".$filename)
 		<!-- paragraf 2 -->
 		<table style="width:100%">
 			<tr>
-				<th class="a"><p class="satu" id="space2">Nama</p></th>
-				<th class="b"><p class="satu">: <?php echo $namaSarana; ?></p></th>
+				<th class="a"><p style="font-family:arial;"class="satu" id="space2">Nama</p></th>
+				<th class="b"><p style="font-family:arial;"class="satu">: <?php echo $namaSarana; ?></p></th>
 			</tr>
 
 			<tr>
-				<td><p id="space2">Alamat</p></td>
-				<td><p>: <?php echo $alamatSarana; ?></p></td>
+				<td><p style="font-family:arial;"id="space2">Alamat</p></td>
+				<td><p style="font-family:arial;">: <?php echo $alamatSarana; ?></p></td>
 			</tr>
 
 			<tr>
-				<td><p id="space2">Nomor Izin</p></td>
-				<td><p>: <?php echo $noIzin; ?></p></td>
+				<td><p style="font-family:arial;"id="space2">Nomor Izin</p></td>
+				<td><p style="font-family:arial;">: <?php echo $noIzin; ?></p></td>
 			</tr>
 
 			<tr>
-				<td><p id="space2">Nama Penanggung Jawab</p></td>
-				<td><p>: <?php echo $namaPj; ?></p></td>
+				<td><p style="font-family:arial;"id="space2">Nama Penanggung Jawab</p></td>
+				<td><p style="font-family:arial;">: <?php echo $namaPj; ?></p></td>
 			</tr>
 
 			<tr>
-				<td><p id="space2">Nomor SIPTTK</p></td>
-				<td><p>: <?php echo $noSip; ?></p></td>
+				<td><p style="font-family:arial;"id="space2">Nomor SIPTTK</p></td>
+				<td><p style="font-family:arial;">: <?php echo $noSip; ?></p></td>
 			</tr>
 
 			<tr>
-				<td><p id="space2">Nomor Telepon </p></td>
-				<td><p>: <?php echo $noHp; ?></p></td>
+				<td><p style="font-family:arial;"id="space2">Nomor Telepon </p></td>
+				<td><p style="font-family:arial;">: <?php echo $noHp; ?></p></td>
 			</tr>		
 
 		</table>
 		<!-- paragraf 3 -->
 		<br>
-		<p class="paragraf">Ditemukan pelanggaran sebagai berikut: </p>
-		<p class="paragraf"><?php echo "<p class='paragraf'>".$detailTemuan."</p>" ?></p>
+		<p style="font-family:arial;"class="paragraf">Ditemukan pelanggaran sebagai berikut: </p>
+		<p style="font-family:arial;"class="paragraf"><?php echo "<p class='paragraf'>".$detailTemuan."</p>" ?></p>
 		<!-- paragraf 4 -->
-		<p class="paragraf">Hal ini merupakan pelanggaran terhadap: </p>
-		<p class="paragraf"><ol>
+		<p style="font-family:arial;"class="paragraf">Hal ini merupakan pelanggaran terhadap: </p>
+		<p style="font-family:arial;"class="paragraf"><ol>
 			<?php 
 			foreach ($pilihPasal as $value) {
 				foreach ($value as $item) {
@@ -174,43 +174,43 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-".$filename)
 			?>
 		</ol></p>
 		<!-- paragraf 5 -->
-		<p class="paragraf">Sehubungan dengan temuan tersebut di atas, kami memberikan sanksi 
+		<p style="font-family:arial;"class="paragraf">Sehubungan dengan temuan tersebut di atas, kami memberikan sanksi 
 			<b>PERINGATAN</b> dan kepada Saudara agar: </p>
-			<p id="space1"><ol>
-				<li><p class="paragraf">Melakukan tindak lanjut terhadap temuan dengan membuat <i>Corrective Action</i> dan <i>Preventive Action</i> (CAPA)</p></li>
-				<li><p class="paragraf">Melaporkan hasil tindak lanjut dan CAPA tersebut paling lambat 21 (dua puluh satu) hari kerja sejak dilakukan pemeriksaan sarana dengan disertai data/dokumen pendukung Dinas Kesehatan Kota Batam
+			<p style="font-family:arial;"id="space1"><ol>
+				<li><p style="font-family:arial;"class="paragraf">Melakukan tindak lanjut terhadap temuan dengan membuat <i>Corrective Action</i> dan <i>Preventive Action</i> (CAPA)</p></li>
+				<li><p style="font-family:arial;"class="paragraf">Melaporkan hasil tindak lanjut dan CAPA tersebut paling lambat 21 (dua puluh satu) hari kerja sejak dilakukan pemeriksaan sarana dengan disertai data/dokumen pendukung Dinas Kesehatan Kota Batam
 				</p></li>
-				<li><p class="paragraf">Apabila CAPA tidak dilaporkan sesuai ketentuan dapat dikenakan sanksi bertingkat sesuai prosedur yang berlaku.</p></li>
-				<li><p class="paragraf">Agar mentaati peraturan perundang-undangan yang berlaku untuk jaminan mutu, keamanan dan khasiat obat</p></li>
+				<li><p style="font-family:arial;"class="paragraf">Apabila CAPA tidak dilaporkan sesuai ketentuan dapat dikenakan sanksi bertingkat sesuai prosedur yang berlaku.</p></li>
+				<li><p style="font-family:arial;"class="paragraf">Agar mentaati peraturan perundang-undangan yang berlaku untuk jaminan mutu, keamanan dan khasiat obat</p></li>
 			</ol></p>
 			<!-- paragraf 6 -->
-			<p class="paragraf">Demikian disampaikan untuk dilaksanakan.</p>
+			<p style="font-family:arial;"class="paragraf">Demikian disampstyle="font-family:arial;"aikan untuk dilaksanakan.</p>
 			<!-- paragraf 7 -->
 			<br>
 			<table style="width:100%">
 				<tr>
-					<th class="c"><p class="satu" id="hilang">Cobacabicobacabicobacabicobacabi</p></th> 
-					<th class="c"><p class="satu"><b>Kepala Balai Pengawas Obat dan Makanan</b></p></th> 
+					<th class="c"><p style="font-family:arial;"class="satu" id="hilang">Cobacabicobacabicobacabicobacabi</p></th> 
+					<th class="c"><p style="font-family:arial;"class="satu"><b>Kepala Balai Pengawas Obat dan Makanan</b></p></th> 
 				</tr>
 				<tr>
-					<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-					<td><p><b>Di Batam</b></p></td> 
+					<td><p style="font-family:arial;"id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
+					<td><p style="font-family:arial;"><b>Di Batam</b></p></td> 
 				</tr>
 				<tr>
-					<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-					<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
+					<td><p style="font-family:arial;"id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
+					<td><p style="font-family:arial;"id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
 				</tr>
 				<tr>
-					<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-					<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
+					<td><p style="font-family:arial;"id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
+					<td><p style="font-family:arial;"id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
 				</tr>
 				<tr>
-					<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-					<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
+					<td><p style="font-family:arial;"id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
+					<td><p style="font-family:arial;"id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
 				</tr>
 				<tr>
-					<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
-					<td><p><b>Bagus Heri Purnomo, S.Si., Apt.</b></p></td> 
+					<td><p style="font-family:arial;"id="hilang">Cobacabicobacabicobacabicobacabi</p></td> 
+					<td><p style="font-family:arial;"><b>Bagus Heri Purnomo, S.Si., Apt.</b></p></td> 
 				</tr>
 
 			</table>
