@@ -19,6 +19,8 @@ header("Content-Disposition: attachment; Filename=SPD-".$filename)
 <body onload="window.print()">
 
 	<div class="page2">
+</div>
+<div class="contents">
 
 	<?php
 
@@ -107,180 +109,37 @@ header("Content-Disposition: attachment; Filename=SPD-".$filename)
 	
 	?>
 
-	<font style="font-family:bookman old style;">
-	<p style="font-family:bookman old style;" align="center"><u><b>SURAT TUGAS</b></u></p>
-	<p style="font-family:bookman old style;" align="center"><b>Nomor : <?php echo $no_surat; ?></b></p>
-		<br>
-		<p style="font-family:bookman old style;">Yang bertanda tangan di bawah ini Kepala Balai POM di Batam memerintahkan kepada nama tersebut dibawah ini. </p>
-			
-		<table style="width:100%">
+    <table style="width:100%">
+    
+    <tr>
+    <td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td>
+    <td>
+    <p style="font-family:bookman old style;">PERATURAN DIREKTUR JENDERAL PERBENDAHARAAN</p>
+    <p style="font-family:bookman old style;">NOMOR-22/PB/2013 TENTANG KETENTUAN LEBIH LANJUT</p>
+    <p style="font-family:bookman old style;">PELAKSANAAN PERJALANAN DINAS DALAM NEGERI BAGI PEJABAT</p>
+    <p style="font-family:bookman old style;">NEGARA, PEGAWAI NEGERI DAN PEGAWAI TIDAK TETAP</p>
+    </td>
+    </tr>
+    </table>
 
-		<tr>
-			<td><p style="font-family:bookman old style;"><b>Menimbang</b></p></td>
-			<td><p style="font-family:bookman old style;">:</p></td>
-			<td></td>
-			<td><p style="font-family:bookman old style;">bahwa dalam rangka melaksanakan kebijakan di bidang pengawasan obat dan makanan Balai POM di Batam tahun 2021, maka dipandang perlu mengeluarkan surat tugas ini</p></td>
-		</tr>
+    <table style="width:100%">
+    <tr>
+    <th><p style="font-family:bookman old style;" align="center">Kementerian Negara/Lembaga</p>
+    <p style="font-family:bookman old style;" align="center"><b>BALAI PENGAWAS OBAT DAN MAKANAN DI</b></p>
+    <p style="font-family:bookman old style;" align="center"><b>BATAM</b></p>
+    <p style="font-family:bookman old style;" align="center"><b>Jalan Hang Jebat Batu Besar Nongsa</b></p>
+    <p style="font-family:bookman old style;" align="center"><b>BATAM</b></p>
+    </th>
+        <td><p style="font-family:bookman old style;" align="left">Lembar Ke<p>Kode No<p>Nomor</p></p></p></td>
+        <td><p style="font-family:bookman old style;" align="left">:<p>:<p>:</p></p></p></td>
+        <td><p style="font-family:bookman old style;" align="left"><p><p><?php echo $no_surat; ?></b></p>
+    </tr>   
 
-		<tr>
-			<td><p style="font-family:bookman old style;"><b>Dasar</b></p></td>
-			<td><p style="font-family:bookman old style;">:</p></td>
-			<td><p style="font-family:bookman old style;">1.</p></td>
-			<td><p style="font-family:bookman old style;">Undang-undang Republik Indonesia No. 36 Tahun 2009 tentang Kesehatan</p></td>
-		</tr>
+    
 
-		<tr>
-			<td></td>
-			<td></td>
-			<td><p style="font-family:bookman old style;">2.</p></td>
-			<td><p style="font-family:bookman old style;">Undang-undang Republik Indonesia No. 8 Tahun 1999 tentang Perlindungan Konsumen</p></td>
-		</tr>
+    </table>
 
-		<tr>
-			<td></td>
-			<td></td>
-			<td><p style="font-family:bookman old style;">3.</p></td>
-			<td><p style="font-family:bookman old style;">Undang-undang Republik Indonesia No. 35 Tahun 2009 tentang Narkotika</p></td>
-		</tr>
 
-		<tr>
-			<td></td>
-			<td></td>
-			<td><p style="font-family:bookman old style;">4.</p></td>
-			<td><p style="font-family:bookman old style;">Undang-undang Republik Indonesia No. 5 Tahun 1997 tentang Psikotropika</p></td>
-		</tr>
-
-		<tr>
-			<td></td>
-			<td></td>
-			<td><p style="font-family:bookman old style;">5.</p></td>
-			<td><p style="font-family:bookman old style;">Instruksi Presiden Republik Indonesia No. 3 Tahun 2017 tentang Peningkatan Efektivitas Pengawasan Obat dan Makanan</p></td>
-		</tr>
-
-		<tr>
-			<td></td>
-			<td></td>
-			<td><p style="font-family:bookman old style;">6.</p></td>
-			<td><p style="font-family:bookman old style;">Peraturan Pemerintah No. 72 Tahun 1998 tentang Pengamanan Sediaan Farmasi dan Alat Kesehatan</p></td>
-		</tr>
-
-		<tr>
-			<td></td>
-			<td></td>
-			<td><p style="font-family:bookman old style;">7.</p></td>
-			<td><p style="font-family:bookman old style;">Peraturan Kepala Badan Pengawas Obat dan Makanan Republik Indonesia Nomor 12 Tahun 2018 tentang Organisasi dan Tata Kerja Unit Pelaksana Teknis di Lingkungan Badan Pengawas Obat dan Makanan</p></td>
-		</tr>
-
-		<tr>
-			<td></td>
-			<td></td>
-			<td><p style="font-family:bookman old style;">8.</p></td>
-			<td><p style="font-family:bookman old style;">DIPA Balai Pengawas Obat dan Makanan di Batam Tahun Anggaran 2021</p></td>
-		</tr>
-
-		</table>
-
-		
-
-		<p style="font-family:bookman old style;" align="center"><b>Memberi Tugas Kepada :</b></p>
-		<table style="width:100%" border="1">
-
-		<tr>
-		<th><b><p style="font-family:bookman old style;" align="center">No</p></b></th>
-		<th><b><p style="font-family:bookman old style;" align="center">Nama</p></b></th>
-		<th><b><p style="font-family:bookman old style;" align="center">Pangkat</p></b></th>
-		<th><b><p style="font-family:bookman old style;" align="center">Golongan</p></b></th>
-		<th><b><p style="font-family:bookman old style;" align="center">NIP</p></b></th>
-		<th><b><p style="font-family:bookman old style;" align="center">Jabatan</p></b></th>
-		</tr>
-
-		<?php
-		$huruf = array('1','2','3','4','5');
-		for($i=0;$i<count($nama_peg);$i++){
-		?>
-
-		<tr>
-			<td><p style="font-family:bookman old style;" align="center"><?php echo $huruf[$i]; ?></p></td>
-			<td><p style="font-family:bookman old style;"><?php echo $nama_peg[$i]; ?></P></td>
-			<td><p style="font-family:bookman old style;" align="center"><?php echo $pangkat_peg[$i]; ?></p></td>
-			<td><p style="font-family:bookman old style;" align="center"><?php echo $golongan_peg[$i]; ?></p></td>
-			<td><p style="font-family:bookman old style;" align="center"><?php echo $nip_peg[$i]; ?></p></td>
-			<td><p style="font-family:bookman old style;" align="center"><?php echo $jabatan_peg[$i]; ?></p></td>
-		</tr>
-
-		<?php }?>
-		</table>
-
-		
-
-	<p style="font-family:bookman old style;"><b>Untuk </b> : 1. <?php echo $maksud; ?> </p></td>
-		
-		<table style="width:100%">
-
-		<tr>
-		<td></td>
-		<td></td>
-		<td><p style="font-family:bookman old style;" align="left">2.</p></td>
-		<td><p style="font-family:bookman old style;" align="left">Tujuan</p></td>
-		<td><p style="font-family:bookman old style;" align="left">:</p></td>
-		<td><p style="font-family:bookman old style;" align="left"><?php echo $tujuan; ?></p></td>
-		</tr>
-
-		<tr>
-		<td></td>
-		<td></td>
-		<td><p style="font-family:bookman old style;" align="left">3.</p></td>
-		<td><p style="font-family:bookman old style;" align="left">Kendaraan</p></td>
-		<td><p style="font-family:bookman old style;" align="left">:</p></td>
-		<td><p style="font-family:bookman old style;" align="left"><?php echo $kendaraan; ?></p></td>
-		</tr>
-
-		<tr>
-		<td></td>
-		<td></td>
-		<td><p style="font-family:bookman old style;" align="left">4.</p></td>
-		<td><p style="font-family:bookman old style;" align="left">Waktu</p></td>
-		<td><p style="font-family:bookman old style;" align="left">:</p></td>
-		<?php
-		 $datetime1 = new DateTime($tgl_mulai2);
-	     $datetime2 = new DateTime($tgl_selesai2);
-	     $difference = $datetime2->diff($datetime1)->days + 1;
-		 echo $difference. " "; 
-		?><td><p style="font-family:bookman old style;" >Hari mulai tgl.<?php echo  convertDay($tgl_mulai)." ".convertMonthB(convertMonthA($tgl_mulai))." ".convertYear($tgl_mulai)?> sampai dengan <?php echo convertDay($tgl_selesai)." ".convertMonthB(convertMonthA($tgl_selesai))." ".convertYear($tgl_selesai)?></p></td>
-		</tr>
-
-		<tr>
-		<td></td>
-		<td></td>
-		<td><p style="font-family:bookman old style;" align="left">5.</p></td>
-		<td><p style="font-family:bookman old style;" align="left">Biaya</p></td>
-		<td><p style="font-family:bookman old style;" align="left">:</p></td>
-		<td><p style="font-family:bookman old style;" align="left">DIPA Balai Pengawas Obat dan Makanan di Batam Tahun Anggaran 2021</p></td>
-		</tr>
-
-		<tr>
-		<td></td>
-		<td></td>
-		<td><p style="font-family:bookman old style;" align="left"></p></td>
-		<td><p style="font-family:bookman old style;" align="left"></p></td>
-		<td><p style="font-family:bookman old style;" align="left"></p></td>
-		<td><p style="font-family:bookman old style;"align="left">MAK <?php echo $mak; ?></p></td>
-		</tr>
-
-		</table>
-
-		<p style="font-family:bookman old style;" align="right">Batam, <?php echo convertDay($tgl_surat)." ".convertMonthB(convertMonthA($tgl_surat))." ".convertYear($tgl_surat)?></p>
-		<td></td>
-		<td></td>
-		<p style="font-family:bookman old style;" align="right"><?php echo $jabatan_penandatangan; ?></p>
-		<p id="hilang">Cobacabicobacabicobacabicobacabi</p>
-		<p id="hilang">Cobacabicobacabicobacabicobacabi</p>
-		<p style="font-family:bookman old style;" align="right"><?php echo $nama_penandatangan; ?></p>
-	</font>
-
-	<p style="font-family:bookman old style;" align="center"><u><b>Petugas Balai POM di Batam Tidak Menerima Gratifikasi Dalam Bentuk Apapun</b></u></p>
-	<p style="font-family:bookman old style;" align="center"><u><b>Laporkan Pelanggaran Melalui Layanan Lapor BPOM di bit.ly/laporbpombatam</b></u></p>
-	<p style="font-family:bookman old style;" align="center"><u><b>LIHAT, LAWAN, LAPOR</b></u></p>
-
+</div>
 	</body>
 	</html>

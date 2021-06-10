@@ -18,7 +18,7 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 
 <body onload="window.print()">
 
-	<div class="page2">
+
 
 	<?php
 
@@ -107,10 +107,10 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 	
 	?>
 
-	<font style="font-family:bookman old style;">
+
 	<p style="font-family:bookman old style;" align="center"><u><b>SURAT TUGAS</b></u></p>
 	<p style="font-family:bookman old style;" align="center"><b>Nomor : <?php echo $no_surat; ?></b></p>
-		<br>
+		
 		<p style="font-family:bookman old style;">Yang bertanda tangan di bawah ini Kepala Balai POM di Batam memerintahkan kepada nama tersebut dibawah ini. </p>
 			
 		<table style="width:100%">
