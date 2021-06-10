@@ -16,7 +16,7 @@ header("Content-Disposition: attachment; Filename=lhk-".$filename)
 </head>
 
 
-<body onload="window.print()">
+<body style="font-family:arial;" onload="window.print()">
 
 	<div class="page2">
 		<?php
