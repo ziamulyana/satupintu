@@ -101,7 +101,7 @@ header("Content-Disposition: attachment; Filename=nominatifLukota-".$filename)
 
 
 		?>
-		<p style="font-family:arial;font-size: 12px;" align="left">DAFTAR NOMINATIF PENGGUNAAN BIAYA PERJALANAN DINAS DALAM KOTA </p>
+		<p style="font-family:arial;font-size: 12px;" align="left">DAFTAR NOMINATIF PENGGUNAAN BIAYA PERJALANAN DINAS LUAR KOTA </p>
 		<p style="font-family:arial;font-size: 12px;" align="left">PADA BALAI PENGAWAS OBAT DAN MAKANAN DI BATAM.</p>
 		<p style="font-family:arial;font-size: 12px;"><b>MAK : <?php echo $mak;?></b></p>
 
@@ -154,7 +154,7 @@ header("Content-Disposition: attachment; Filename=nominatifLukota-".$filename)
 			
 				<tr>
 				<td style="border:1px solid black; font-family:arial;font-size: 12px;"><p align="center"><?php echo $i+1;?></p></td>
-				<td style="border:1px solid black; font-family:arial;font-size: 12px;"><p align="center"><?php echo $nama_nom[$i]."<br>".$nip_nom[$i]."<br>".$surat; ?></p></td>
+				<td style="border:1px solid black; font-family:arial;font-size: 12px;"><p align="left"><?php echo $nama_nom[$i]."<br>".$nip_nom[$i]."<br>".$surat; ?></p></td>
 				<td style="border:1px solid black; font-family:arial;font-size: 12px;"><p align="center">Batam</p></td>
 				<td style="border:1px solid black; font-family:arial;font-size: 12px;"><p align="center"><?php echo $tujuan;?></p></td>
 				<td style="border:1px solid black; font-family:arial;font-size: 12px;"><p align="center"><?php echo convertDay($tgl1)."-".convertMonthB(convertMonthA($tgl1))."-".convertYear($tgl1);?></p></td>
