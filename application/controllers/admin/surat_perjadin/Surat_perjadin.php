@@ -15,31 +15,21 @@
 
 		public function index()
 		{
-			$data = konfigurasi('Form Surat Perjalanan Dinas',"");
+			$data = konfigurasi('Form Surat Perjalanan Dinas',"ap");
 			$data['tugas'] = $this->SuratPerjadin_model->getsurattugas();			
         	$this->template->load('layouts/admin_template', 'admin/surat_perjadin/surat_perjadin', $data);
 			
 		}
 
-
-
-		// Petugas
-		public function getpetugas()
+		function getPetugas()
 		{
-			if($this->input->post('idSur'))
+			if($this->input->post('idPer'))
 			{
-				echo $this->SuratPerjadin_model->getpetugas($this->input->post('idSur'));
+				echo $this->SuratPerjadin_model->getPetugas($this->input->post('idPer'));
 			}
 		}
 
-		public function tracking()
-		{
-			$idSuratTugas = $this->input->post('idSurat');
-			$idPetugas = $this->input->post('petugas');
 
-			$data['tracking_result']= $this->SuratPerjadin_model->getHistory($idSuratTugas, $idPetugas);
-
-		}
 
 		
 		

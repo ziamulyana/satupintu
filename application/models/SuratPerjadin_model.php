@@ -17,7 +17,6 @@ class SuratPerjadin_model extends CI_Model{
       return $query->result();
     }
 
-
     public function getPetugas($id){
     $this->db->select('tbl_pegawai.idPegawai,tbl_pegawai.nama');
     $this->db->from('tbl_tugas');
@@ -32,4 +31,6 @@ class SuratPerjadin_model extends CI_Model{
  return $output;
 
 
+}
+   
 }
