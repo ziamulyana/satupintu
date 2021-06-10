@@ -117,7 +117,7 @@ header("Content-Disposition: attachment; Filename=lhkPem-".$filename)
 				<td><p><b>I.</b></p></td> 
 				<td><p class="satu"><b>DASAR PEMERIKSAAN :</b> 
 					
-					</td> 
+			  </td> 
 			</tr>
 			<tr>
 				<td><p id="hilang">I</p></td> 
@@ -157,18 +157,21 @@ header("Content-Disposition: attachment; Filename=lhkPem-".$filename)
 			$huruf = array('a.','b.','c.','d.','e.');
 			for($i=0;$i<count($nama_all);$i++){?>
 			<tr>
-				<td><p><?php echo $huruf[$i] ;?></p></td> 
-				<td><p class="satu">Nama / NIP : </p></td> 
-				<td><p ><?php echo $nama_all[$i];?></p></td> 
+				<td width="3%"><p><?php echo $huruf[$i] ;?></p></td>
+				<td width="20%"><p class="satu">Nama / NIP</p></td> 
+				<td width="5%"><p class="satu">:</p></td> 
+				<td width="72%"><p ><?php echo $nama_all[$i];?></p></td> 
 			</tr>
 			<tr>
-				<td><p>     </p></td> 
-				<td><p class="satu">Pangkat / Gol : </p></td> 
+				<td><p>     </p></td>
+				<td><p class="satu">Pangkat / Gol</p></td> 
+				<td><p class="satu"> :</p></td> 
 				<td><p ><?php echo $pangkat_all[$i]."/".$golongan_all[$i];?></p></td> 
 			</tr>
 			<tr>
-				<td><p>        </p></td> 
-				<td><p class="satu">Jabatan : </p></td> 
+				<td><p>        </p></td>
+				<td><p class="satu">Jabatan</p></td> 
+				<td><p class="satu"> :</p></td> 
 				<td><p ><?php echo $jabatan_all[$i];?></p></td> 
 			</tr>
 		<?php }?>
@@ -177,8 +180,8 @@ header("Content-Disposition: attachment; Filename=lhkPem-".$filename)
 		<table style="width:100%">
 
 			<tr>
-				<td><p><b>V.</b></p></td> 
-				<td><p class="satu"><b>HASIL PEMERIKSAAN :</b> </p>
+				<td width="3%"><p><b>V.</b></p></td> 
+				<td width="97%"><p class="satu"><b>HASIL PEMERIKSAAN :</b> </p>
 					
 					</td> 
 			</tr>
@@ -193,42 +196,56 @@ header("Content-Disposition: attachment; Filename=lhkPem-".$filename)
 						?>
 
 						<tr>
-				<td><p><?php echo $nomor+1 ?>.</p></td> 
-				<td><p class="satu">Nama Sarana:<?php echo $row ->namaSarana ?> </p></td> 
-				<td><p >Temuan : </p></td> 
-				<td><p >Tindak Lanjut: </p></td> 
+				<td width="3%"><p><?php echo $nomor+1 ?>.</p></td>
+				<td width="20%"><p class="satu">Nama Sarana</p></td>
+				<td width="5%"><p class="satu">:</p></td> 
+				<td width="36%"><p class="satu"><?php echo $row ->namaSarana ?> </p></td> 
+				<td width="19%"><p >Temuan : </p></td> 
+				<td width="17%"><p >Tindak Lanjut: </p></td> 
 			</tr>
 			<tr>
-				<td><p id="hilang">1</p></td> 
-				<td><p class="satu">Alamat : <?php echo $row ->alamatSarana ?> </p></td> 
+				<td><p id="hilang">1</p></td>
+				<td><p class="satu">Alamat</p></td>
+				<td><p class="satu"> : </p></td> 
+				<td><p class="satu"><?php echo $row ->alamatSarana ?> </p></td> 
 				<td><p ><?php echo $temuan[$nomor];?></p></td> 
 				<td><p ><?php echo $tl[$nomor];?></p></td> 
 			</tr>
 
 			<tr>
-				<td><p id="hilang">1</p></td> 
-				<td><p class="satu">Kategori Sarana : <?php echo $row ->kategoriSarana ?> </p></td> 
-				<td><p id="hilang">1</p></td> 
-				<td><p id="hilang">1</p></td> 
-			</tr>
-
-			<tr>
-				<td><p id="hilang">1</p></td> 
-				<td><p class="satu">Jenis Sarana : <?php echo $row ->jenisSarana ?> </p></td> 
+				<td><p id="hilang">1</p></td>
+				<td><p class="satu">Kategori Sarana</p></td>
+				<td><p class="satu"> : </p></td> 
+				<td><p class="satu"><?php echo $row ->kategoriSarana ?> </p></td> 
 				<td><p id="hilang">1</p></td> 
 				<td><p id="hilang">1</p></td> 
 			</tr>
 
 			<tr>
-				<td><p id="hilang">1</p></td> 
-				<td><p class="satu">Kesimpulan : <?php if($kesimpulan[$nomor]=="1"){echo "MK"; $mk+=1;} else{echo "TMK"; $tmk+=1;} ?> </p></td> 
+				<td><p id="hilang">1</p></td>
+				<td><p class="satu">Jenis Sarana</p></td>
+				<td><p class="satu"> : </p></td> 
+				<td><p class="satu"><?php echo $row ->jenisSarana ?> </p></td> 
 				<td><p id="hilang">1</p></td> 
 				<td><p id="hilang">1</p></td> 
 			</tr>
 
 			<tr>
+				<td><p id="hilang">1</p></td>
+				<td><p class="satu">Kesimpulan</p></td>
+				<td><p class="satu"> :
+
+				  </p></td> 
+				<td><p class="satu"><?php if($kesimpulan[$nomor]=="1"){echo "MK"; $mk+=1;} else{echo "TMK"; $tmk+=1;} ?> </p></td> 
 				<td><p id="hilang">1</p></td> 
-				<td><p class="satu">Keterangan : <?php echo $keterangan[$nomor] ?> </p></td> 
+				<td><p id="hilang">1</p></td> 
+			</tr>
+
+			<tr>
+				<td><p id="hilang">1</p></td>
+				<td><p class="satu">Keterangan</p></td>
+				<td><p class="satu"> : </p></td> 
+				<td><p class="satu"><?php echo $keterangan[$nomor] ?> </p></td> 
 				<td><p id="hilang">1</p></td> 
 				<td><p id="hilang">1</p></td> 
 			</tr>
@@ -248,7 +265,7 @@ header("Content-Disposition: attachment; Filename=lhkPem-".$filename)
 			<tr>
 				<td><p><b>VI.</b></p></td> 
 				<td><p class="satu"><b>PENGESAHAN :</b></p></td> 
-			</tr>
+		  </tr>
 
 			<tr>
 				<td><p id="hilang"><b>VI.</b></p></td> 
@@ -275,7 +292,7 @@ header("Content-Disposition: attachment; Filename=lhkPem-".$filename)
 				<td><p class="satu">Dari <?php echo $nomor+1 ?> sarana yang diperiksa, ditemukan <?php echo $mk ?> sarana yang memenuhi ketentuan dan <?php echo $tmk ?> sarana yang tidak memenuhi ketentuan. </p></td> 
 			</tr>
 
-		</table>
+</table>
 
 
 
