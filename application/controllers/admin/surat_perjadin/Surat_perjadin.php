@@ -21,6 +21,14 @@
 			
 		}
 
+		function getPetugas()
+		{
+			if($this->input->post('idPer'))
+			{
+				echo $this->SuratPerjadin_model->getPetugas($this->input->post('idPer'));
+			}
+		}
+
 
 
 		

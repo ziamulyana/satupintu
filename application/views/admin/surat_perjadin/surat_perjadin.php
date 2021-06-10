@@ -26,13 +26,13 @@
                 <!-- nomor surat -->
          <div class="form-group">
               <label>Surat Tugas</label><span class="wajib"> *</span></label>
-              <select name="idSurat"  id="idSurat" class="form-control category" data-live-search="true" title="Select Category" required>
+              <select name="noSurat"  id="noSurat" class="form-control category" data-live-search="true" title="Select Category" required>
 
                 <option value="" disabled selected>Pilih Surat Tugas</option>
 
                 <?php
                 foreach ($tugas as $row) {
-                  echo "<option value=".$row->idSurat.">".$row->noSuratTugas."</option>";
+                  echo "<option value=".$row->noSuratTugas.">".$row->noSuratTugas."</option>";
                 }
                 
                 ?>
@@ -67,21 +67,21 @@
  <script type="text/javascript">
   $(document).ready(function()
   {
-    $('#idSurat').change(function()
+    $('#noSurat').change(function()
     {
-      var idPer=$('#idSurat').val();
+      var idPer=$('#noSurat').val();
       if(idPer!=''){
         $.ajax({
-          url: "<?php echo base_url();?>petugas/umpan_balik/getSarana", 
+          url: "<?php echo base_url();?>admin/surat_perjadin/surat_perjadin/getPetugas", 
           method: "POST",
           data: {idPer:idPer},
           success: function(data)
           {
-            $('#sarana').html(data);
+            $('#idPetugas').html(data);
           } 
         });
       }else{
-        $('#sarana').html('<option value="">Pilih Surat Tugas Doloe</option>');
+        $('#idPetugas').html('<option value="">Pilih Surat Tugas Doloe</option>');
       }
 
 
