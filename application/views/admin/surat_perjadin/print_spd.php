@@ -124,12 +124,12 @@ header("Content-Disposition: attachment; Filename=SPD-".$filename)
 
     <table style="width:100%">
     <tr>
-    <th><p style="font-family:bookman old style;" align="center">Kementerian Negara/Lembaga</p>
+    <td><p style="font-family:bookman old style;" align="center">Kementerian Negara/Lembaga</p>
     <p style="font-family:bookman old style;" align="center"><b>BALAI PENGAWAS OBAT DAN MAKANAN DI</b></p>
     <p style="font-family:bookman old style;" align="center"><b>BATAM</b></p>
     <p style="font-family:bookman old style;" align="center"><b>Jalan Hang Jebat Batu Besar Nongsa</b></p>
     <p style="font-family:bookman old style;" align="center"><b>BATAM</b></p>
-    </th>
+    </td>
         <td><p style="font-family:bookman old style;" align="left">Lembar Ke<p>Kode No<p>Nomor</p></p></p></td>
         <td><p style="font-family:bookman old style;" align="left">:<p>:<p>:</p></p></p></td>
         <td><p style="font-family:bookman old style;" align="left"><p><p><?php echo $no_surat; ?></p>
@@ -138,42 +138,79 @@ header("Content-Disposition: attachment; Filename=SPD-".$filename)
 
 	<p style="font-family:bookman old style;" align="center"><b>SURAT PERJALANAN DINAS (SPD)</u></p>
 
-	<table>
+	<table style="width:100%" border="1">
 	<tr>
-	<th><p style="font-family:bookman old style;">1.</th>
-	<th><p style="font-family:bookman old style;"></th>
-	<th><p style="font-family:bookman old style;">Pejabat Pembuat Komitmen</p></th>
-	<th><p style="font-family:bookman old style;">Paniyati, S.Farm., Apt</p></th>
+	<td><p style="font-family:bookman old style;">1. Pejabat Pembuat Komitmen</p></td>
+	<td><p style="font-family:bookman old style;">Paniyati, S.Farm., Apt</p></td>
 	</tr>
 
 	<tr>
-	<th><p style="font-family:bookman old style;">2.</th>
-	<th><p style="font-family:bookman old style;"></th>
-	<th><p style="font-family:bookman old style;">Nama / NIP Pegawai yang melaksanakan perjalanan dinas</p></th>
-	<th><p style="font-family:bookman old style;"><?php echo $nama_peg; ?>    / <?php echo $nip_peg; ?></p></th>
-	</tr>
-
-	<tr>
-	<th><p style="font-family:bookman old style;">3.</th>
-	<th><p style="font-family:bookman old style;">a.</th>
-	<th><p style="font-family:bookman old style;">Pangkat dan Golongan</p></th>
-	<th><p style="font-family:bookman old style;">a. <?php echo $pangkat_peg; ?>    / <?php echo $golongan_peg; ?></p></th>
-	</tr>
-
-	<tr>
-	<th><p style="font-family:bookman old style;"></th>
-	<th><p style="font-family:bookman old style;">b.</th>
-	<th><p style="font-family:bookman old style;">Jabatan/Instansi</p></th>
-	<th><p style="font-family:bookman old style;">b. <?php echo $jabatan_peg; ?></p></th>
-	</tr>
-
-	<tr>
-	<th><p style="font-family:bookman old style;"></th>
-	<th><p style="font-family:bookman old style;">c.</th>
-	<th><p style="font-family:bookman old style;">Tingkat Biaya Perjalanan Dinas</p></th>
-	<th><p style="font-family:bookman old style;">c.</p></th>
+	<td><p style="font-family:bookman old style;">2. Nama / NIP Pegawai yang melaksanakan perjalanan dinas</p></td>
+	<td><p style="font-family:bookman old style;"><?php echo $nama_peg; ?>    / <?php echo $nip_peg; ?></p></td>
 	</tr>
 	
+
+	<tr>
+	<td>
+		<p style="font-family:bookman old style;">3. a. Pangkat dan Golongan</p>
+		<p style="font-family:bookman old style;">&nbsp;&nbsp;&nbsp;&nbsp;b. Jabatan/Instansi</p>
+		<p style="font-family:bookman old style;">&nbsp;&nbsp;&nbsp;&nbsp;c. Tingkat Biaya Perjalanan Dinas</p>
+	</td>
+	<td>
+	<p style="font-family:bookman old style;">a. <?php echo $pangkat_peg; ?>    / <?php echo $golongan_peg; ?></p>
+	<p style="font-family:bookman old style;">b. <?php echo $jabatan_peg; ?></p>
+	<p style="font-family:bookman old style;">c.</p>
+	</td>
+	<tr>
+
+	<tr>
+	<td><p style="font-family:bookman old style;">4. Maksud Perjalanan Dinas</p></td>
+	<td><p style="font-family:bookman old style;"><?php echo $maksud; ?></p></td>
+	</tr>
+
+	<tr>
+	<td><p style="font-family:bookman old style;">5. Alat angkut yang dipergunakan</p></td>
+	<td><p style="font-family:bookman old style;"><?php echo $kendaraan; ?></p></td>
+	</tr>
+
+	<tr>
+	<td>
+	<p style="font-family:bookman old style;">6. a. Tempat Berangkat</p>
+	<p style="font-family:bookman old style;">&nbsp;&nbsp;&nbsp;&nbsp;b. Tempat Tujuan</p>
+	</td>
+	<td>
+	<p style="font-family:bookman old style;">a. Kota Batam</p>
+	<p style="font-family:bookman old style;">b. <?php echo $tujuan; ?></p>
+	</td>
+	</tr>
+
+	<tr>
+	<td>
+	<p style="font-family:bookman old style;">7. a. Lama perjalanan Dinas</p>
+	<p style="font-family:bookman old style;">&nbsp;&nbsp;&nbsp;&nbsp;b. Tanggal berangkat</p>
+	<p style="font-family:bookman old style;">&nbsp;&nbsp;&nbsp;&nbsp;c. Tanggal harus kembali/tiba di tempat *)</p>
+	</td>
+	<td>
+	<p style="font-family:bookman old style;">a. </p>
+	<p style="font-family:bookman old style;">b. <?php echo $tgl_mulai; ?></p>
+	<p style="font-family:bookman old style;">b. <?php echo $tgl_selesai; ?></p>
+	</td>
+	</tr>
+
+	</table>
+
+	<table style="width:100%" border="1">
+	<tr>
+	<td>
+	<p style="font-family:bookman old style;">8. Pengikut : Nama</p>
+	<p style="font-family:bookman old style;">&nbsp;&nbsp;&nbsp;&nbsp;1.</p>
+	<p style="font-family:bookman old style;">&nbsp;&nbsp;&nbsp;&nbsp;2.</p>
+	<p style="font-family:bookman old style;">&nbsp;&nbsp;&nbsp;&nbsp;3.</p>
+	</td>
+	<td><p style="font-family:bookman old style;">Tanggal Lahir</p></td>
+	<td><p style="font-family:bookman old style;">Keterangan</p></td>
+	</tr>
+
 	
 	</table>
 
