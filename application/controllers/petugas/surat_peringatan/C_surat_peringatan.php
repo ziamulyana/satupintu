@@ -68,6 +68,14 @@ class C_surat_peringatan extends CI_Controller {
 		redirect('petugas/surat_peringatan/C_surat_peringatan');
 		}
 
+
+	public function getSaranaPer(){
+		if($this->input->post('idPer'))
+			{
+				echo $this->SuratPeringatan_model->getSaranaPer($this->input->post('idPer'));
+			}
+	}
+
 	}
 
 	

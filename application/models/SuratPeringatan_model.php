@@ -54,4 +54,30 @@ class SuratPeringatan_model extends CI_Model
   public function hapusSuratPeringatan($id){
    $this->db->delete("tbl_peringatan",array("idPeringatan"=>$id));
  }
+
+ public function getSaranaPer($id){
+   $this->db->select('*');
+   $this->db->from('tbl_sarana');
+   $this->db->join('tbl_surattl', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
+   $this->db->where('tbl_surattl.idSuratTugas', $id);
+   $query = $this->db->get('');
+   $output = '<option value="">Nama Sarana</option>';
+   $output=""; 
+   foreach($query->result() as $row)
+   {
+     $output .= '<option value="'.$row->idSarana.'">'.$row->namaSarana.'</option>';
+   }
+   return $output;
+ }
+
+ public function getSarana($id){
+  $this->db->select('tbl_sarana.namaSarana, tbl_sarana.alamatSarana,tbl_surattl.idTl');
+  $this->db->from('tbl_sarana');
+  $this->db->join('tbl_surattl', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
+  $this->db->where('tbl_surattl.idSarana', $id);
+  $query = $this->db->get();
+  return $query->result();
+}
+
+
 }

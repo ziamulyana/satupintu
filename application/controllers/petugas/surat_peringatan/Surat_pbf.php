@@ -23,6 +23,10 @@
 	        	$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/surat_pbf/form', $data);
 		
 			}
+
+			
+
+
 			
 			public function surat()
 			{
@@ -45,8 +49,7 @@
 				$penerimaSurat =  $this->input->post('penerimaSurat');
 				$kotaSurat =  $this->input->post('kotaSurat');
 				// detil sarana
-				$namaSarana =  $this->input->post('namaSarana');
-				$alamatSarana = $this->input->post('alamatSarana');
+				$idSarana =  $this->input->post('idSarana');
 				$tglMulaiperiksa = $this->input->post('tglMulaiperiksa');
 				$tglSelesaiperiksa = $this->input->post('tglSelesaiperiksa');
 				$namaPimpinan = $this->input->post('namaPimpinan');
@@ -61,10 +64,9 @@
 
 				$tanggalolah  = strtotime($tanggal);
 
-				echo $tanggal;
-
+			
 				$noSuratFix = "T-PW.01.12.9A2.".convertMonths($tanggalolah).".".convertYears($tanggalolah).".".$noSurat;
-				echo $noSuratFix;
+				
 
 
 				$pasal_peringatan = array();
@@ -72,6 +74,20 @@
 					$pasal['data'] = $this->SuratPbf_model->getPasal($num);
 					array_push($pasal_peringatan,$pasal);
 				}
+
+
+				
+				$dataSarana = $this->SuratPeringatan_model->getSarana($idSarana);
+
+			   foreach ($dataSarana as $row) {
+			   	$namaSarana= $row->namaSarana;
+			   	$idTl =  $row->idTl;
+			   	$alamatSarana = $row->alamatSarana;
+			   }
+
+			
+
+
 
 
 				$data = array('title'=>'Cetak surat tugas',
@@ -94,12 +110,6 @@
 					// ganti ke db
 					'pilihPasal' => $pasal_peringatan
 					);	
-
-				$idTl = $this->SuratTl_model->getTl($idSurat);
-				foreach ($idTl as $id) {
-					$idTl = $id->idTl;
-				}
-
 
 			
 			$data_db = array(

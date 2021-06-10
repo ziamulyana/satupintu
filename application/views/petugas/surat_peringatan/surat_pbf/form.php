@@ -41,7 +41,7 @@
                   <div class="col-sm-12">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-newspaper-o"></i></span>
-                      <select name="suratTugas" id= "suratTugas" class="form-control category" data-live-search="true" required>
+                      <select name="suratTugas" id="suratTugas" class="form-control category" data-live-search="true" required>
                         <?php
                         foreach ($surat_tugas as $surat) {
                           echo "<option value=".$surat->idSurat.">".$surat->noSuratTugas."</option>";
@@ -108,18 +108,9 @@
                   <div class="col-sm-12">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                      <input type="text" class="form-control" name="namaSarana" id="namaSarana" placeholder="Nama Sarana" required>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- alamat sarana -->
-                <div class="form-group row">
-                  <label for="noSurat" class="col-sm-4 col-form-label">Alamat Sarana<span class="wajib"> *</span></label>
-                  <div class="col-sm-12">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                      <input type="text" class="form-control" name="alamatSarana" id="alamatSarana" placeholder="Alamat Sarana" required>
+                     <select name="idSarana" id="idSarana" class="form-control input-sm" data-live-search="true" title="Pilih Sarana">
+                   <option value="">Pilih Sarana</option>
+              </select> 
                     </div>
                   </div>
                 </div>
@@ -261,7 +252,7 @@
 
 
               <div class="box-footer">
-               <button type="submit" value="submit" onclick="return chk_date()" class="btn btn-success"><i class="fa fa-save"></i> Save Document</button>
+               <button type="submit" value="submit"  class="btn btn-success"><i class="fa fa-save"></i> Save Document</button>
                <button type="reset"  value ="reset" class="btn btn-danger"><i class="fa fa-refresh" aria-hidden="true"></i> Reset Form</button>
 
                <a class="btn btn-primary pull-right" href=<?php echo base_url()."petugas/surat_peringatan/c_surat_peringatan"?> > <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali ke daftar peringatan</a>
@@ -305,3 +296,29 @@
 <!-- /.row -->
 </section>
 <!-- /.content -->
+
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    $('#suratTugas').change(function()
+    {
+      var idPer=$('#suratTugas').val();
+      if(idPer!=''){
+        $.ajax({
+          url: "<?php echo base_url();?>petugas/surat_peringatan/c_surat_peringatan/getSaranaPer", 
+          method: "POST",
+          data: {idPer:idPer},
+          success: function(data)
+          {
+            $('#idSarana').html(data);
+          } 
+        });
+      }else{
+        $('#idSarana').html('<option value="">Pilih Surat Tugas Doloe</option>');
+      }
+
+
+    });
+  });
+</script>
+
