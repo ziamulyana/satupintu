@@ -16,7 +16,7 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-".$filename)
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/vendor/bootstrap/css/style.css">
 </head>
 
-<body onload="window.print()">
+<body style="font-family:arial;" onload="window.print()">
 
 	<div class="page">
 		<!-- formatting date -->

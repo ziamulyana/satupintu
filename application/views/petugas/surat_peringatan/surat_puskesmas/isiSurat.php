@@ -17,7 +17,7 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-".$filename)
 </head>
 
 
-<body onload="window.print()">
+<body style="font-family:arial;" onload="window.print()">
 
 	<div class="page">
 		
