@@ -69,7 +69,7 @@
         </ul>
       </li>
 
-       <li class="treeview" style="height: auto;">
+    <!--    <li class="treeview" style="height: auto;">
         <a href="#">
           <i class="fa fa-share"></i> <span>REPORT</span>
           <span class="pull-right-container">
@@ -81,7 +81,9 @@
           <li><a href="#"><i class="fa fa-circle-o"></i>Anggaran</a></li>
  
         </ul>
-      </li>
+      </li> -->
+
+      
     </ul>
     <!-- /.sidebar-menu -->
   </section>
