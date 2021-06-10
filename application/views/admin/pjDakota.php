@@ -124,8 +124,10 @@ header("Content-Disposition: attachment; Filename=kwDakota-" . $filename)
 
 			<p style="font-family:arial;">Berdasarkan Surat Tugas Nomor: <?php echo $row->noSuratTugas . " " . $row->urutan; ?> tanggal <?php echo convertDay($tanggal) . "-" . convertMonthB(convertMonthA($tanggal)) . "-" . convertYear($tanggal); ?> dengan ini kami menyatakan dengan sesungguhnya bahwa : </p>
 
-			<p style="font-family:arial;">1. Biaya transpor pegawai dan/atau biaya penginapan di bawah ini yang tidak dapat diperoleh bukti-bukti pengeluarannya, meliputi:</p>
+			<ol>
+				<li style="font-family:arial;">Biaya transpor pegawai dan/atau biaya penginapan di bawah ini yang tidak dapat diperoleh bukti-bukti pengeluarannya, meliputi:</li>
 
+			
 			<table style="width:100%;  border:1px solid black;border-collapse: collapse; ">
 				<tr>
 					<th style="border:1px solid black;">
@@ -162,9 +164,9 @@ header("Content-Disposition: attachment; Filename=kwDakota-" . $filename)
 
 			</table>
 
-			<p style="font-family:arial;">2. Jumlah uang tersebut pada angka 1 diatas benar-benar dikeluarkan untuk pelaksanaan dinas dimaksud dan apabila di kemudian hari terdapat kelebihan atas pembayaran, kami bersedia untuk menyetorkan kelebihan tersebut ke Kas Negara.</p>
 			<br>
-
+			<li style="font-family:arial;">Jumlah uang tersebut pada angka 1 diatas benar-benar dikeluarkan untuk pelaksanaan dinas dimaksud dan apabila di kemudian hari terdapat kelebihan atas pembayaran, kami bersedia untuk menyetorkan kelebihan tersebut ke Kas Negara.</li>
+			</ol>
 			<p style="font-family:arial;">Demikian pernyataan ini kami buat dengan sebenarnya, untuk dipergunakan sebagimana mestinya.</p>
 
 
@@ -235,12 +237,13 @@ header("Content-Disposition: attachment; Filename=kwDakota-" . $filename)
 		}
 		?>
 
-		
+
 </body>
 <style>
-			.justi {
-				text-align: justify;
-				text-justify: inter-word;
-			}
-		</style>
+	.justi {
+		text-align: justify;
+		text-justify: inter-word;
+	}
+</style>
+
 </html>
