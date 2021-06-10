@@ -14,7 +14,7 @@
 				</a>
 				<div ></div>
 				<ul id="notifications" class="dropdown-menu">
-					<li class="header">Anda Memiliki <?php echo $this->db->where('closed =', 0)->from("view_feedback")->count_all_results(); ?> Notifikasi</li>
+					<li class="header">Terdapat <b><?php echo $this->db->where('closed =', -1)->from("view_feedback")->count_all_results(); ?></b> Feedback Belum di-Accept</li>
 					<li>
 						<!-- inner menu: contains the actual data -->
 						<ul class="menu">
@@ -23,7 +23,7 @@
 
 								$this->db->select('*');
 								$this->db->from('view_feedback');
-								$this->db->where('closed =', 0);
+								$this->db->where('closed =', -1);
 								$this->db->order_by('created_date', 'DESC');
 								$query = $this->db->get();
 

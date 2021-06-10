@@ -65,8 +65,8 @@
             <canvas id="areaChart"></canvas>
           </div>
           <div class="mid">
-            <small class="label label-success"></i> CLOSED</small>
-            <small class="label label-danger"></i> OPEN</small>
+            <small class="label label-closed"></i> CLOSED</small>
+            <small class="label label-open"></i> OPEN</small>
           </div>
           <!-- /.box-body -->
         </div>
@@ -153,5 +153,15 @@
   .mid {
     margin: auto;
     width: 17%;
+  }
+  .mid {
+    margin: auto;
+    width: 17%;
+  }
+  .label-closed {
+    background-color: #2ec4b6;
+  }
+  .label-open {
+    background-color: #0f4c5c;
   }
 </style>
