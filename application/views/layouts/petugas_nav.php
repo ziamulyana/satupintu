@@ -37,7 +37,7 @@
 										echo '
 										<li>
 										<a href="../petugas/feedback"><i class="fa fa-reply-all text-green"></i>
-										<strong>'.$row->noSuratFeedback.'</strong><br />
+										<strong>'.$row->namaSarana.'</strong><br />
 										<small>&nbsp<i class="fa fa-clock-o"></i><em>&nbsp&nbsp&nbsp&nbsp'.$row->created_date.'</em></small>
 										</a>
 										</li>
