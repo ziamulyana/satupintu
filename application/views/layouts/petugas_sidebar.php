@@ -7,10 +7,10 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel">
       <div class="pull-left image">
-        <img src="<?php echo base_url('assets/uploads/images/foto_profil/1583991814826.png'); ?>" class="img-circle">
+        <img src="<?php echo base_url('assets/uploads/images/foto_profil/petugas.png'); ?>" class="img-circle">
       </div>
       <div class="pull-left info">
-        <p></p>
+        <p>Petugas</p>
         <!-- Status -->
         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
       </div>
