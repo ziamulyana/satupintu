@@ -60,16 +60,6 @@
             </div>
           </div>
 
-          <!-- tujuan surat -->
-          <div class="form-group row">
-            <label for="noSurat" class="col-sm-4 col-form-label">Penerima Surat<span class="wajib"> *</span></label>
-            <div class="col-sm-12">
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-home"></i></span>
-                <input type="text" class="form-control" name="penerimaSurat" id="penerimaSurat" placeholder="Penerima Surat" required>
-              </div>
-            </div>
-          </div>
 
           <!-- alamat tujuan -->
           <div class="form-group row">

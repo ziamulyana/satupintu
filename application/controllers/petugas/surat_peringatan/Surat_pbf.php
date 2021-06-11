@@ -46,7 +46,6 @@
 				$tanggal =  $this->input->post('tanggal');
 				$noSurat =  $this->input->post('noSurat');
 				$idSurat= $this->input->post('suratTugas');
-				$penerimaSurat =  $this->input->post('penerimaSurat');
 				$kotaSurat =  $this->input->post('kotaSurat');
 				// detil sarana
 				$idSarana =  $this->input->post('idSarana');
@@ -93,7 +92,7 @@
 				$data = array('title'=>'Cetak surat tugas',
 					'tanggal' => $tanggal,
 					'noSurat' => $noSuratFix,
-					'penerimaSurat' => $penerimaSurat,
+					'penerimaSurat' =>$namaSarana,
 					'kotaSurat' => $kotaSurat,
 					// detil sarana
 					'namaSarana' => $namaSarana,

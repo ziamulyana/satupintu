@@ -155,6 +155,7 @@
 
                            <td><select name="tl[]" id="tl[]" class="form-control sm" title="Nama Sarana">
                           <option>Tindak Lanjut</option>
+                          <option value="Tidak TL">Tidak TL</option>
                           <option value="Pembinaan">Pembinaan</option>
                           <option value="Peringatan">Peringatan</option>
                           <option value="Peringatan Keras">Peringatan Keras</option>
@@ -228,6 +229,7 @@
 
                              <td><select data-skip-name="true" name="tl[]" id="tl[]" class="form-control sm" title="Tindak lanjut">
                               <option>Tindak Lanjut</option>
+                              <option value="Tidak TL">Tidak TL</option>
                               <option value="Pembinaan">Pembinaan</option>
                               <option value="Peringatan">Peringatan</option>
                               <option value="Peringatan Keras">Peringatan Keras</option>
