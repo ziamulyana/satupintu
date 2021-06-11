@@ -39,7 +39,7 @@
             <label for="noSurat" class="col-sm-4 col-form-label">Nama Anggaran<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <span class="input-group-addon"><i class="fa fa-list"></i></span>
                 <input type="text" class="form-control" placeholder="Nama Anggaran" name="namag" id="namag" required>
               </div>
             </div>
@@ -49,19 +49,27 @@
             <label for="noSurat" class="col-sm-4 col-form-label">Uraian Kegiatan<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <span class="input-group-addon"><i class="fa fa-list"></i></span>
                 <input type="text" class="form-control" placeholder="NIP" name="ukag" id="ukag" required>
               </div>
             </div>
           </div>
 
           <!-- divisi -->
-          <div class="form-group row">
-            <label for="noSurat" class="col-sm-4 col-form-label">Divisi<span class="wajib"> *</span></label>
+            <div class="form-group row">
+            <label for="noSurat" class="col-sm-4 col-form-label">Divisi <span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                <input type="text" class="form-control" placeholder="Divisi" name="diviag" id="diviag" required>
+                <span class="input-group-addon"><i class="fa fa-list"></i></span>
+                <select class="form-control" name="diviag" id="diviag" required>
+                  <option value="" disabled selected>- Pilih Divisi -</option>
+                  <option>Ser</option>
+                  <option>Pem</option>
+                  <option>TU</option>
+                  <option>Infokom</option>
+                  <option>Pengujian</option>
+                  <option>Penindakan</option>
+                </select>
               </div>
             </div>
           </div>
@@ -71,7 +79,7 @@
             <label for="noSurat" class="col-sm-4 col-form-label">Kode<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <span class="input-group-addon"><i class="fa fa-list"></i></span>
                 <input type="text" class="form-control" placeholder="Kode" name="kodeag" id="kodeag" required>
               </div>
             </div>
@@ -82,7 +90,7 @@
             <label for="noSurat" class="col-sm-4 col-form-label">Pagu<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <span class="input-group-addon"><i class="fa fa-list"></i></span>
                 <input type="text" class="form-control" placeholder="Pagu" name="paguag" id="paguag" required>
               </div>
             </div>
@@ -93,7 +101,7 @@
             <label for="noSurat" class="col-sm-4 col-form-label">Realisasi<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <span class="input-group-addon"><i class="fa fa-list"></i></span>
                 <input type="text" class="form-control" placeholder="Realisasi" name="realisasiag" id="realisasiag" required>
               </div>
             </div>
