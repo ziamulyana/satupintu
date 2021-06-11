@@ -114,25 +114,33 @@ header("Content-Disposition: attachment; Filename=SPD-".$filename)
     <tr>
     <td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td>
     <td>
-    <p style="font-family:bookman old style;">PERATURAN DIREKTUR JENDERAL PERBENDAHARAAN</p>
-    <p style="font-family:bookman old style;">NOMOR-22/PB/2013 TENTANG KETENTUAN LEBIH LANJUT</p>
-    <p style="font-family:bookman old style;">PELAKSANAAN PERJALANAN DINAS DALAM NEGERI BAGI PEJABAT</p>
-    <p style="font-family:bookman old style;">NEGARA, PEGAWAI NEGERI DAN PEGAWAI TIDAK TETAP</p>
+    <p style="line-height: 1px;" font-size="10">PERATURAN DIREKTUR JENDERAL PERBENDAHARAAN
+    <br/>
+	NOMOR-22/PB/2013 TENTANG KETENTUAN LEBIH LANJUT
+    <br/>
+	PELAKSANAAN PERJALANAN DINAS DALAM NEGERI BAGI PEJABAT
+    <br/>
+	NEGARA, PEGAWAI NEGERI DAN PEGAWAI TIDAK TETAP</p>
     </td>
     </tr>
     </table>
 
     <table style="width:100%">
     <tr>
-    <td><p style="font-family:bookman old style;" align="center">Kementerian Negara/Lembaga</p>
-    <p style="font-family:bookman old style;" align="center"><b>BALAI PENGAWAS OBAT DAN MAKANAN DI</b></p>
-    <p style="font-family:bookman old style;" align="center"><b>BATAM</b></p>
-    <p style="font-family:bookman old style;" align="center"><b>Jalan Hang Jebat Batu Besar Nongsa</b></p>
-    <p style="font-family:bookman old style;" align="center"><b>BATAM</b></p>
+    <td><p style="font-family:bookman old style;" align="center">Kementerian Negara/Lembaga
+    <br/>
+	<b>BALAI PENGAWAS OBAT DAN MAKANAN DI
+    <br/>
+	BATAM
+    <br/>
+	Jalan Hang Jebat Batu Besar Nongsa
+    <br/>
+	BATAM</b></p>
+
     </td>
-        <td><p style="font-family:bookman old style;" align="left">Lembar Ke<p>Kode No<p>Nomor</p></p></p></td>
-        <td><p style="font-family:bookman old style;" align="left">:<p>:<p>:</p></p></p></td>
-        <td><p style="font-family:bookman old style;" align="left"><p><p><?php echo $no_surat; ?></p>
+        <td><p style="font-family:bookman old style;" align="left">Lembar Ke<br/>Kode No<br/>Nomor</p></td>
+        <td><p style="font-family:bookman old style;" align="left">:<br/>:<br/>:</p></td>
+        <td><p style="font-family:bookman old style;" align="left"><br/><br/><?php echo $no_surat; ?></p>
     </tr>   
     </table>
 
