@@ -28,28 +28,51 @@
             <label for="noSurat" class="col-sm-4 col-form-label">Nama Pegawai<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
                 <input type="text" class="form-control" placeholder="Nama Pegawai" name="nama" id="nama" required>
               </div>
             </div>
           </div>
 
          <!-- jabatan pegawai -->
-          <div class="form-group row">
+            <div class="form-group row">
             <label for="noSurat" class="col-sm-4 col-form-label">Jabatan<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                <input type="text" class="form-control" placeholder="Jabatan" name="jabatan" id="jabatan" required>
+                <span class="input-group-addon"><i class="fa fa-list"></i></span>
+                <select class="form-control" name="jabatan" id="jabatan" required>
+                  <option value="" disabled selected>- Pilih Jabatan -</option>
+                  <option>Kepala Balai POM di Batam</option>
+                  <option>Kepala Sub Bagian Tata Usaha</option>
+                  <option>Koordinator Substansi Infokom</option>
+                  <option>Koordinator Substansi Penindakan</option>
+                  <option>Koordinator Substansi Pemeriksaan</option>
+                  <option>Koordinator Substansi Pengujian</option>
+                  <option>PFM Ahli Madya</option>
+                  <option>PFM Ahli Muda</option>
+                  <option>PFM Ahli Pertama</option>
+                  <option>PFM Terampil Pelaksana</option>
+                  <option>PFM Terampil Pelaksana Lanjutan</option>
+                  <option>Perencana Ahli Pertama</option>
+                  <option>Pranata Komputer Pelaksana</option>
+                  <option>Analis Kepegawaian Pelaksana Lanjutan</option>
+                  <option>Arsiparis Terampil</option>
+                  <option>Analis Laporan Keuangan</option>
+                  <option>Analis Pengadaan Barang dan Jasa</option>
+                  <option>Bendahara</option>
+                  <option>Pengadministrasi Umum</option>
+                </select>
               </div>
             </div>
           </div>
+
+
           <!-- nip -->
           <div class="form-group row">
             <label for="noSurat" class="col-sm-4 col-form-label">NIP<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <span class="input-group-addon"><i class="fa fa-list"></i></span>
                 <input type="text" class="form-control" placeholder="NIP" name="nip" id="nip" required>
               </div>
             </div>
@@ -60,8 +83,22 @@
             <label for="noSurat" class="col-sm-4 col-form-label">Pangkat<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                <input type="text" class="form-control" placeholder="Pangkat" name="pangkat" id="pangkat" required>
+                <span class="input-group-addon"><i class="fa fa-list"></i></span>
+                <select class="form-control" name="pangkat" id="pangkat" required>
+                  <option value="" disabled selected>- Pilih Pangkat -</option>
+                  <option>-</option>
+                  <option>Pengatur</option>
+                  <option>Pengatur Tk.I</option>
+                  <option>Penata Muda</option>
+                  <option>Penata Muda Tk.I</option>
+                  <option>Penata</option>
+                  <option>Penata Tk.I</option>
+                  <option>Pembina</option>
+                  <option>Pembina Tk.I</option>
+                  <option>Pembina Utama Muda</option>
+                  <option>Pembina Utama Madya</option>
+                  <option>Pembina Utama</option>
+                </select>
               </div>
             </div>
           </div>
@@ -71,16 +108,27 @@
             <label for="noSurat" class="col-sm-4 col-form-label">Golongan<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                <input type="text" class="form-control" placeholder="Golongan" name="golongan" id="golongan" required>
+                <span class="input-group-addon"><i class="fa fa-list"></i></span>
+                <select class="form-control" name="golongan" id="golongan" required>
+                  <option value="" disabled selected>- Pilih Golongan -</option>
+                  <option>-</option>
+                  <option>II c</option>
+                  <option>II d</option>
+                  <option>III a</option>
+                  <option>III b</option>
+                  <option>III c</option>
+                  <option>III d</option>
+                  <option>IV a</option>
+                  <option>IV b</option>
+                  <option>IV c</option>
+                  <option>IV d</option>
+                  <option>IV e</option>
+                </select>
               </div>
             </div>
           </div>
 
           </div>
-
-
-
 
         <div class="box-footer">
          <button type="submit" value="submit"  class="btn btn-info"><i class="fa fa-print"></i> Save Document</button>

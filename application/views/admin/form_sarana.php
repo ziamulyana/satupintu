@@ -28,18 +28,18 @@
             <label for="noSurat" class="col-sm-4 col-form-label">Nama Sarana<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <span class="input-group-addon"><i class="fa fa-list"></i></span>
                 <input type="text" class="form-control" placeholder="Nama Sarana" name="namas" id="namas" required>
               </div>
             </div>
           </div>
 
-         <!-- jabatan pegawai -->
+         <!-- Alamat Sarana -->
           <div class="form-group row">
             <label for="noSurat" class="col-sm-4 col-form-label">Alamat Sarana<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <span class="input-group-addon"><i class="fa fa-list"></i></span>
                 <input type="text" class="form-control" placeholder="Alamat Sarana" name="alamats" id="alamats" required>
               </div>
             </div>
@@ -50,7 +50,7 @@
             <label for="noSurat" class="col-sm-4 col-form-label">Pemilik<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
                 <input type="text" class="form-control" placeholder="Nama Pemilik" name="pemiliks" id="pemiliks" required>
               </div>
             </div>
@@ -72,7 +72,7 @@
             <label for="noSurat" class="col-sm-4 col-form-label">Penanggung Jawab<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
                 <input type="text" class="form-control" placeholder="Penangung Jawab" name="pJ" id="pJ" required>
               </div>
             </div>
@@ -94,7 +94,7 @@
             <label for="noSurat" class="col-sm-4 col-form-label">Kategori Sarana<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <span class="input-group-addon"><i class="fa fa-list"></i></span>
                 <input type="text" class="form-control" placeholder="Kategori Sarana" name="kS" id="kS" required>
               </div>
             </div>
@@ -105,19 +105,28 @@
             <label for="noSurat" class="col-sm-4 col-form-label">Jenis Sarana<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <span class="input-group-addon"><i class="fa fa-list"></i></span>
                 <input type="text" class="form-control" placeholder="Jenis Sarana" name="jS" id="jS" required>
               </div>
             </div>
           </div>
 
           <!-- Kota -->
-          <div class="form-group row">
-            <label for="noSurat" class="col-sm-4 col-form-label">Kota<span class="wajib"> *</span></label>
+            <div class="form-group row">
+            <label for="noSurat" class="col-sm-4 col-form-label">Kota <span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                <input type="text" class="form-control" placeholder="Kota" name="kotas" id="kotas" required>
+                <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                <select class="form-control" name="kotas" id="kotas" required>
+                  <option value="" disabled selected>- Pilih Kota -</option>
+                  <option>Kota Batam</option>
+                  <option>Kota Tanjung Pinang</option>
+                  <option>Kabupaten Bintan</option>
+                  <option>Kabupaten Karimun</option>
+                  <option>Kabupaten Anambas</option>
+                  <option>Kabupaten Lingga</option>
+                  <option>Kabupaten Natuna</option>
+                </select>
               </div>
             </div>
           </div>
