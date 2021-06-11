@@ -239,15 +239,16 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 		<tr>
 		<td></td>
 		<td></td>
-		<td><p style="font-family:bookman old style;" align="left">4.</p></td>
+		<td valign="top"><p style="font-family:bookman old style;" align="left">4.</p></td>
 		<td><p style="font-family:bookman old style;" align="left">Waktu</p></td>
 		<td><p style="font-family:bookman old style;" align="left">:</p></td>
+		<td><p style="font-family:bookman old style;" >
 		<?php
 		 $datetime1 = new DateTime($tgl_mulai2);
 	     $datetime2 = new DateTime($tgl_selesai2);
 	     $difference = $datetime2->diff($datetime1)->days + 1;
 		 echo $difference. " "; 
-		?><td><p style="font-family:bookman old style;" >Hari mulai tgl.<?php echo  convertDay($tgl_mulai)." ".convertMonthB(convertMonthA($tgl_mulai))." ".convertYear($tgl_mulai)?> sampai dengan <?php echo convertDay($tgl_selesai)." ".convertMonthB(convertMonthA($tgl_selesai))." ".convertYear($tgl_selesai)?></p></td>
+		?>Hari mulai tgl.<?php echo  convertDay($tgl_mulai)." ".convertMonthB(convertMonthA($tgl_mulai))." ".convertYear($tgl_mulai)?> sampai dengan <?php echo convertDay($tgl_selesai)." ".convertMonthB(convertMonthA($tgl_selesai))." ".convertYear($tgl_selesai)?></p></td>
 		</tr>
 
 		<tr>
