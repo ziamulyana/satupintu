@@ -23,19 +23,7 @@
     </div>
     <div class="box-body">
      <h5> Berikut laporan feedback CAPA Sarana. </h5>
-
-     <?php if($jumlah_confirm>0){
-      ?>
-
-      <div class="alert alert-danger alert-dismissable" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <h4><i class="icon fa fa-exclamation"></i> Alert!</h4>
-        Terdapat <strong><?php echo $jumlah_confirm ?></strong> feedback  <?= $this->session->flashdata('flash_error'); ?> yang butuh konfirmasi. Silahkan cek pada tabel!  
-
-      <?php  }; ?>  
-        </div>
-
-      </div>
+    </div>
       <div class="pull-right">
                 <ul>
                   <a class= "btn btn-primary" href="<?php echo base_url('admin/entry_capa_c')?>">
@@ -77,7 +65,7 @@
                       echo "<td>".$row->tglFeedback."</td>";
                       if($row->closed == -1) { ?>
                         <td> 
-                        <small class="label label-default"><i class="fa fa-stack-overflow"></i> Waiting</small>
+                        <small class="label label-warning"><i class="fa fa-clock-o"></i> Waiting</small>
                         </td> 
                         <?php
                       }else if ($row->closed == 0) {
