@@ -270,14 +270,24 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 
 		</table>
 
-		<p style="font-family:bookman old style;" align="right">Batam, <?php echo convertDay($tgl_surat)." ".convertMonthB(convertMonthA($tgl_surat))." ".convertYear($tgl_surat)?></p>
-		<td></td>
-		<td></td>
-		<p style="font-family:bookman old style;" align="right"><?php echo $jabatan_penandatangan; ?></p>
-		<p id="hilang">Cobacabicobacabicobacabicobacabi</p>
-		<p id="hilang">Cobacabicobacabicobacabicobacabi</p>
-		<p style="font-family:bookman old style;" align="right"><?php echo $nama_penandatangan; ?></p>
-	</font>
+		<br/>
+
+		<table style="width:100%">
+		<tr>
+		<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td>
+		<td>
+			<p style="font-family:bookman old style;" align="left">Batam, <?php echo convertDay($tgl_surat)." ".convertMonthB(convertMonthA($tgl_surat))." ".convertYear($tgl_surat)?>
+			<br/><?php echo $jabatan_penandatangan; ?>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<?php echo $nama_penandatangan; ?></p>
+			</td>
+			</tr>
+		</table>
 
 	<p style="line-height: 1px;" align="center" style="font-family:bookman old style;"><b>Petugas Balai POM di Batam Tidak Menerima Gratifikasi Dalam Bentuk Apapun
 	<br/>
