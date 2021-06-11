@@ -153,8 +153,8 @@ header("Content-Disposition: attachment; Filename=kwLukota-".$filename)
 		<br>
 		<table style="width:100%">
 			<tr>
-				<th><p style="font-family:arial;" align="right" >Mengetahui/Menyetujui</p></th> 
-				<th><p style="font-family:arial;" align="right">Batam, <?php echo convertDay($tglKw)."-".convertMonthB(convertMonthA($tglKw))."-".convertYear($tglKw) ;?></b></p></th> 
+				<td><p style="font-family:arial;" align="right" >Mengetahui/Menyetujui</p></td> 
+				<td><p style="font-family:arial;" align="right">Batam, <?php echo convertDay($tglKw)."-".convertMonthB(convertMonthA($tglKw))."-".convertYear($tglKw) ;?></b></p></td> 
 			</tr>
 			<tr>
 				<td><p style="font-family:arial;" align="right">Pejabat Pembuat Komitmen</p></td> 

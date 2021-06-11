@@ -19,7 +19,7 @@ header("Content-Disposition: attachment; Filename=kwDakota-" . $filename)
 
 <body onload="window.print()">
 
-	<div class="page">
+	<div>
 		<?php
 
 		function convertDay($day)
@@ -83,12 +83,12 @@ header("Content-Disposition: attachment; Filename=kwDakota-" . $filename)
 
 			<table style="width:100%">
 				<tr>
-					<th class="a">
+					<td>
 						<p style="font-family:arial;">Nama</p>
-					</th>
-					<th class="b">
+					</td>
+					<td>
 						<p style="font-family:arial;">: <?php echo $row->nama; ?></p>
-					</th>
+					</td>
 				</tr>
 
 				<tr>
@@ -172,12 +172,12 @@ header("Content-Disposition: attachment; Filename=kwDakota-" . $filename)
 
 			<table style="width:100%">
 				<tr>
-					<th>
+					<td>
 						<p style="font-family:arial;" align="right">Mengetahui/Menyetujui</p>
-					</th>
-					<th>
+					</td>
+					<td>
 						<p style="font-family:arial;" align="right">Batam, <?php echo convertDay($tglKw) . "-" . convertMonthB(convertMonthA($tglKw)) . "-" . convertYear($tglKw); ?></p>
-					</th>
+					</td>
 				</tr>
 				<tr>
 					<td>
