@@ -129,7 +129,9 @@ header("Content-Disposition: attachment; Filename=nominatifDakota-".$filename)
 				<td style="border:1px solid black; font-family:arial;"><p align="center">8</p></td>
 				<td style="border:1px solid black; font-family:arial;"><p align="center">9</p></td>
 			</tr>
-			<?php for ($i=0; $i < count($nama_nom) ; $i++) { 
+			<?php 
+			  $i = 0;
+			for ($i=0; $i < count($nama_nom) ; $i++) { 
 				?>
 			
 				<tr>
@@ -148,8 +150,8 @@ header("Content-Disposition: attachment; Filename=nominatifDakota-".$filename)
 
 			<tr>
 				<td colspan="6" style="border:1px solid black; font-family:arial;"><p align="center"><b>Jumlah</b></p></td>
-				<td style="border:1px solid black; font-family:arial;"><p align="center">300.000</p></td>
-				<td style="border:1px solid black; font-family:arial;"><p align="center">300.000</p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center"><?php echo ($i*150000);?></p></td>
+				<td style="border:1px solid black; font-family:arial;"><p align="center"><?php echo ($i*150000);?></p></td>
 				<td style="border:1px solid black; font-family:arial;"><p align="center"></p></td>
 			</tr>
 
