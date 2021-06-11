@@ -69,11 +69,12 @@ header("Content-Disposition: attachment; Filename=SPD-".$filename)
 		}
 
 		$no_surat = "";
-		$nama_peg = array();
-		$nip_peg = array();
-		$pangkat_peg = array();
-		$golongan_peg = array();
-		$jabatan_peg = array();
+		$nama_peg = "";
+		$nip_peg = "";
+		$pangkat_peg = "";
+		$golongan_peg = "";
+		$jabatan_peg = "";
+		$urutan_peg = "";
 		$maksud = "";
 		$tujuan = "";
 		$kendaraan = "";
@@ -87,11 +88,12 @@ header("Content-Disposition: attachment; Filename=SPD-".$filename)
 		$jabatan_penandatangan = "";
 
 		foreach($printS->result() as $row){
-			array_push($nama_peg,$row->nama);
-			array_push($nip_peg,$row->nip);
-			array_push($pangkat_peg,$row->pangkat);
-			array_push($golongan_peg,$row->golongan);
-			array_push($jabatan_peg,$row->jabatan);
+			$nama_peg =  $row->nama;
+			$nip_peg = $row->nip;
+			$pangkat_peg= $row->pangkat;
+			$golongan_peg =$row->golongan;
+			$jabatan_peg =  $row->jabatan;
+			$urutan_peg = $row->urutan;
 			$no_surat = $row->noSuratTugas;
 			$maksud = $row->maksud;
 			$tujuan = $row->kota;
@@ -154,20 +156,20 @@ header("Content-Disposition: attachment; Filename=SPD-".$filename)
 
 	<tr>
 	<td><p style="font-family:bookman old style;">2. Nama / NIP Pegawai yang melaksanakan perjalanan dinas</p></td>
-	<td><p style="font-family:bookman old style;"><?php echo $nama_peg; ?>    / <?php echo $nip_peg; ?></p></td>
+	<td><p style="font-family:bookman old style;"><?php echo $nama_peg; ?>    / <?php echo $nip_peg."    ". $urutan_peg; ?></p></td>
 	</tr>
 	
 
 	<tr>
 	<td>
-		<p style="font-family:bookman old style;">3. a. Pangkat dan Golongan
-		<br/>&nbsp;&nbsp;&nbsp;&nbsp;b. Jabatan/Instansi
-		<br/>&nbsp;&nbsp;&nbsp;&nbsp;c. Tingkat Biaya Perjalanan Dinas</p>
+		<p style="font-family:bookman old style;">3. a. Pangkat dan Golongan</p>
+		<p style="font-family:bookman old style;">&nbsp;&nbsp;&nbsp;&nbsp;b. Jabatan/Instansi</p>
+		<p style="font-family:bookman old style;">&nbsp;&nbsp;&nbsp;&nbsp;c. Tingkat Biaya Perjalanan Dinas</p>
 	</td>
 	<td>
-	<p style="font-family:bookman old style;">a. <?php echo $pangkat_peg; ?>    / <?php echo $golongan_peg; ?>
-	<br/>b. <?php echo $jabatan_peg; ?>
-	<br/>c.</p>
+	<p style="font-family:bookman old style;">a. <?php echo $pangkat_peg; ?>    / <?php echo $golongan_peg; ?></p>
+	<p style="font-family:bookman old style;">b. <?php echo $jabatan_peg; ?></p>
+	<p style="font-family:bookman old style;">c.</p>
 	</td>
 	<tr>
 
@@ -183,27 +185,30 @@ header("Content-Disposition: attachment; Filename=SPD-".$filename)
 
 	<tr>
 	<td>
-	<p style="font-family:bookman old style;">6. a. Tempat Berangkat
-	<br/>b. Tempat Tujuan</p>
+	<p style="font-family:bookman old style;">6. a. Tempat Berangkat</p>
+	<p style="font-family:bookman old style;">&nbsp;&nbsp;&nbsp;&nbsp;b. Tempat Tujuan</p>
 	</td>
-
 	<td>
-	<p style="font-family:bookman old style;">a. Kota Batam
-	<br/>b. <?php echo $tujuan; ?></p>
+	<p style="font-family:bookman old style;">a. Kota Batam</p>
+	<p style="font-family:bookman old style;">b. <?php echo $tujuan; ?></p>
 	</td>
 	</tr>
 
 	<tr>
 	<td>
-	<p style="font-family:bookman old style;">7. a. Lama perjalanan Dinas
-	<br/>b. Tanggal berangkat
-	<br/>c. Tanggal harus kembali/tiba di tempat *)</p>
+	<p style="font-family:bookman old style;">7. a. Lama perjalanan Dinas</p>
+	<p style="font-family:bookman old style;">&nbsp;&nbsp;&nbsp;&nbsp;b. Tanggal berangkat</p>
+	<p style="font-family:bookman old style;">&nbsp;&nbsp;&nbsp;&nbsp;c. Tanggal harus kembali/tiba di tempat *)</p>
 	</td>
-
 	<td>
-	<p style="font-family:bookman old style;">a.
-	<br/>b. <?php echo $tgl_mulai; ?>
-	<br/><?php echo $tgl_selesai; ?></p>
+		<?php
+		 $datetime1 = new DateTime($tgl_mulai2);
+	     $datetime2 = new DateTime($tgl_selesai2);
+	     $difference = $datetime2->diff($datetime1)->days + 1;
+	     ?>
+	<p style="font-family:bookman old style;">a. <?php echo $difference. " Hari"?></p>
+	<p style="font-family:bookman old style;">b. <?php echo  convertDay($tgl_mulai)." ".convertMonthB(convertMonthA($tgl_mulai))." ".convertYear($tgl_mulai)?></p>
+	<p style="font-family:bookman old style;">b.<?php echo convertDay($tgl_selesai)." ".convertMonthB(convertMonthA($tgl_selesai))." ".convertYear($tgl_selesai)?></p>
 	</td>
 	</tr>
 
@@ -212,49 +217,23 @@ header("Content-Disposition: attachment; Filename=SPD-".$filename)
 	<table style="width:100%" border="1">
 	<tr>
 	<td>
-	<p style="font-family:bookman old style;">8. Pengikut : Nama
-	<br/>&nbsp;&nbsp;&nbsp;&nbsp;1.
-	<br/>&nbsp;&nbsp;&nbsp;&nbsp;2.
-	<br/>&nbsp;&nbsp;&nbsp;&nbsp;3.</p>
+	<p style="font-family:bookman old style;">8. Pengikut : Nama</p>
+	<p style="font-family:bookman old style;">&nbsp;&nbsp;&nbsp;&nbsp;1.</p>
+	<p style="font-family:bookman old style;">&nbsp;&nbsp;&nbsp;&nbsp;2.</p>
+	<p style="font-family:bookman old style;">&nbsp;&nbsp;&nbsp;&nbsp;3.</p>
 	</td>
-
 	<td><p style="font-family:bookman old style;">Tanggal Lahir</p></td>
 	<td><p style="font-family:bookman old style;">Keterangan</p></td>
 	</tr>
+
 	
 	</table>
 
-	<table style="width:100%" border="1">
-	<tr>
-	<td>
-	<p style="font-family:bookman old style;">9. Pembebanan Anggaran
-	<br/>&nbsp;&nbsp;&nbsp;&nbsp;a. Instansi
-	<br/>&nbsp;&nbsp;&nbsp;&nbsp;b. Mata Anggaran</p>
-	</td>
-	
-	<td>
-	<p style="font-family:bookman old style;">
-	<br/>a. Balai Pengawas Obat dan Makanan di Batam
-	<br/>b. <?php echo $mak; ?></p>
-	</td>
-	</tr>
 
-	<tr>
-	<td>
-	<p style="font-family:bookman old style;">10. Keterangan Lain-Lain</p>
-	</td>
-	<td></td>
-	</tr>
-	</table>
-	<br/>
 
-	<table style="width:100%">
-		<tr>
-		<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td>
-		<td>
-		<p style="font-family:bookman old style;" align="left">Dikeluarkan di : Batam
-		<br/>Tanggal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $tgl_surat; ?>
-		<br/><u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+</div>
+	</body>
+	</html>p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
 		<br/>Pejabat Pembuat Komitmen
 		<br/>
 		<br/>
