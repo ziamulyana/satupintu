@@ -53,13 +53,13 @@
 			<!-- User Account: style can be found in dropdown.less -->
 			<li class="dropdown user user-menu">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="<?= base_url('assets/uploads/images/foto_profil//admin.jpeg'); ?>" class="user-image">
+                <img src="<?= base_url('assets/uploads/images/foto_profil/1526456245974.png'); ?>" class="user-image">
                 <span class="hidden-xs"></span>
             </a>
 				<ul class="dropdown-menu">
 					<!-- User image -->
 					<li class="user-header">
-						<img src="<?= base_url('assets/uploads/images/foto_profil//admin.jpeg'); ?>" class="img-circle">
+						<img src="<?= base_url('assets/uploads/images/foto_profil/1526456245974.png'); ?>" class="img-circle">
 						<p>
 							
 							<small>Anda Masuk Sebagai Admin</small>
