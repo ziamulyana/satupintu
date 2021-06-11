@@ -32,9 +32,10 @@
 		  // Print SPD
 		public function print()
 		{
-			$id = $this->input->post('idSurat');
+			$id = $this->input->post('noSurat');
+			$idPetugas = $this->input->post('idPetugas');
 			$data['idSurat'] = $id;
-			$data['printS'] = $this->SuratPerjadin_model->print_spd($id);
+			$data['printS'] = $this->SuratPerjadin_model->print_spd($id,$idPetugas);
 			$this->load->view('admin/surat_perjadin/print_spd', $data, false);
 		}
 
