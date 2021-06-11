@@ -233,4 +233,138 @@ header("Content-Disposition: attachment; Filename=SPD-".$filename)
 
 </div>
 	</body>
+	</html>p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+		<br/>Pejabat Pembuat Komitmen
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/><b>Paniyati, S.Farm., Apt
+		<br/>NIP. 19830820 200712 2 001</b></p>
+		</td>
+		</tr>
+
+	</table>
+
+	<table style="width:100%" border="1">
+	<tr>
+	<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td>
+	<td>
+	<p style="font-family:bookman old style;" align="left">Berangkat dari &nbsp;&nbsp;&nbsp; : Batam
+		<br/>Pada Tanggal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $tgl_surat; ?>
+		<br/>Tempat Tujuan &nbsp;&nbsp;&nbsp;: <?php echo $tgl_surat; ?>
+		<br/>Kepala Sub Bagian Tata Usaha
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/><b>Larasti Setyaningtyas, S.Farm., Apt
+		<br/>NIP. 19840502 200812 2 002</b></p>
+		</td>
+		</tr>
+	
+	<tr>
+	<td valign="top">
+	<p style="font-family:bookman old style;"  align="left">II. Tiba di &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;Pada Tanggal :</p>
+	</td>
+	<td>
+	<p style="font-family:bookman old style;" align="top-left">Berangkat dari :
+	<br/>Ke &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
+	<br/>Pada Tanggal &nbsp;&nbsp;:</p>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	</td>
+	</tr>
+
+	<tr>
+	<td valign="top">
+	<p style="font-family:bookman old style;"  align="left">III. Tiba di &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pada Tanggal :</p>
+	</td>
+	<td>
+	<p style="font-family:bookman old style;" align="top-left">Berangkat dari :
+	<br/>Ke &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
+	<br/>Pada Tanggal &nbsp;&nbsp;:</p>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	</td>
+	</tr>
+
+	<tr>
+	<td valign="top">
+	<p style="font-family:bookman old style;"  align="left">IV. Tiba di &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pada Tanggal :</p>
+	</td>
+	<td>
+	<p style="font-family:bookman old style;" align="top-left">Berangkat dari :
+	<br/>Ke &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
+	<br/>Pada Tanggal &nbsp;&nbsp;:</p>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	</td>
+	</tr>
+
+	<tr>
+	<td valign="top">
+	<p style="font-family:bookman old style;" align="left">Tiba Kembali &nbsp;&nbsp;&nbsp; : Batam
+		<br/>(Tempat Kedudukan)
+		<br/>Pada Tanggal &nbsp;&nbsp;&nbsp;&nbsp;:
+		<br/>
+		<br/>Pejabat Pembuat Komitmen
+		<br/>
+		<br/>
+		<br/>
+		<br/><b>Paniyati, S.Farm., Apt
+		<br/>NIP. 19830820 200712 2 001</b></p>
+		</td>
+	
+		<td valign="top">
+	<p style="font-family:bookman old style;" align="left">Telah diperiksa dengan keterangan bahwa perjalanan tersebut diatas benar dilakukan atas perintahnya dan semata-mata untuk kepentingan jabatan dalam waktu yang sesingkat-singkatnya
+		<br/>Pejabat Pembuat Komitmen
+		<br/>
+		<br/>
+		<br/>
+		<br/><b>Paniyati, S.Farm., Apt
+		<br/>NIP. 19830820 200712 2 001</b></p>
+		</td>
+	</tr>
+	</table>
+
+	<table style="width:100%" border="1">
+	<tr>
+	<td valign="top">
+	<p style="font-family:bookman old style;" align="left">VI. Keterangan Lain-Lain
+	</td>
+	</tr>
+
+	<tr>
+	<td valign="top">
+	<p style="font-family:bookman old style;" align="left">VII. PERHATIAN :</p>
+	<p>PPK yang menerbitkan SPD, pegawai yang melakukan perjalanan dinas, para pejabat yang mengesahkan tanggal berangkat/tiba, serta bendahara bertanggung jawab berdasarkan peraturan-peraturan keuangan Negara apabila negara menderita rugi akibat kesalahan, kelalaian dan kealpaannya.
+	</td>
+	</tr>
+	</table>
+
+
+
+
+</div>
+	</body>
 	</html>
