@@ -182,7 +182,7 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 				<p style="font-family:bookman old style;">2. Nama / NIP Pegawai yang melaksanakan perjalanan dinas</p>
 			</td>
 			<td>
-				<p style="font-family:bookman old style;"><?php echo $nama_peg; ?> &nbsp;&nbsp;&nbsp;&nbsp;/<?php echo $nip_peg . "      " . $urutan_peg; ?></p>
+				<p style="font-family:bookman old style;"><?php echo $nama_peg; ?> &nbsp;&nbsp;&nbsp;&nbsp;/<?php echo $nip_peg; ?></p>
 			</td>
 		</tr>
 

@@ -117,24 +117,24 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 		<table style="width:100%">
 
 		<tr>
-			<td><p style="font-family:bookman old style;"><b>Menimbang</b></p></td>
-			<td><p style="font-family:bookman old style;">:</p></td>
+			<td valign="top"><p style="font-family:bookman old style;"><b>Menimbang</b></p></td>
+			<td valign="top"><p style="font-family:bookman old style;">:</p></td>
 			<td></td>
-			<td><p style="font-family:bookman old style;">bahwa dalam rangka melaksanakan kebijakan di bidang pengawasan obat dan makanan Balai POM di Batam tahun 2021, maka dipandang perlu mengeluarkan surat tugas ini</p></td>
+			<td valign="top"><p style="font-family:bookman old style;">bahwa dalam rangka melaksanakan kebijakan di bidang pengawasan obat dan makanan Balai POM di Batam tahun 2021, maka dipandang perlu mengeluarkan surat tugas ini</p></td>
 		</tr>
 
 		<tr>
-			<td><p style="font-family:bookman old style;"><b>Dasar</b></p></td>
-			<td><p style="font-family:bookman old style;">:</p></td>
-			<td><p style="font-family:bookman old style;">1.</p></td>
-			<td><p style="font-family:bookman old style;">Undang-undang Republik Indonesia No. 36 Tahun 2009 tentang Kesehatan</p></td>
+		<td valign="top"><p style="font-family:bookman old style;"><b>Dasar</b></p></td>
+		<td valign="top"><p style="font-family:bookman old style;">:</p></td>
+		<td valign="top"><p style="font-family:bookman old style;">1.</p></td>
+		<td valign="top"><p style="font-family:bookman old style;">Undang-undang Republik Indonesia No. 36 Tahun 2009 tentang Kesehatan</p></td>
 		</tr>
 
 		<tr>
+		<td valign="top"></td>
 			<td></td>
-			<td></td>
-			<td><p style="font-family:bookman old style;">2.</p></td>
-			<td><p style="font-family:bookman old style;">Undang-undang Republik Indonesia No. 8 Tahun 1999 tentang Perlindungan Konsumen</p></td>
+			<td valign="top"><p style="font-family:bookman old style;">2.</p></td>
+			<td valign="top"><p style="font-family:bookman old style;">Undang-undang Republik Indonesia No. 8 Tahun 1999 tentang Perlindungan Konsumen</p></td>
 		</tr>
 
 		<tr>
@@ -147,36 +147,36 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 		<tr>
 			<td></td>
 			<td></td>
-			<td><p style="font-family:bookman old style;">4.</p></td>
-			<td><p style="font-family:bookman old style;">Undang-undang Republik Indonesia No. 5 Tahun 1997 tentang Psikotropika</p></td>
+			<td valign="top"><p style="font-family:bookman old style;">4.</p></td>
+			<td valign="top"><p style="font-family:bookman old style;">Undang-undang Republik Indonesia No. 5 Tahun 1997 tentang Psikotropika</p></td>
 		</tr>
 
 		<tr>
 			<td></td>
 			<td></td>
-			<td><p style="font-family:bookman old style;">5.</p></td>
-			<td><p style="font-family:bookman old style;">Instruksi Presiden Republik Indonesia No. 3 Tahun 2017 tentang Peningkatan Efektivitas Pengawasan Obat dan Makanan</p></td>
+			<td valign="top"><p style="font-family:bookman old style;">5.</p></td>
+			<td valign="top"><p style="font-family:bookman old style;">Instruksi Presiden Republik Indonesia No. 3 Tahun 2017 tentang Peningkatan Efektivitas Pengawasan Obat dan Makanan</p></td>
 		</tr>
 
 		<tr>
 			<td></td>
 			<td></td>
-			<td><p style="font-family:bookman old style;">6.</p></td>
-			<td><p style="font-family:bookman old style;">Peraturan Pemerintah No. 72 Tahun 1998 tentang Pengamanan Sediaan Farmasi dan Alat Kesehatan</p></td>
+			<td valign="top"><p style="font-family:bookman old style;">6.</p></td>
+			<td valign="top"><p style="font-family:bookman old style;">Peraturan Pemerintah No. 72 Tahun 1998 tentang Pengamanan Sediaan Farmasi dan Alat Kesehatan</p></td>
 		</tr>
 
 		<tr>
 			<td></td>
 			<td></td>
-			<td><p style="font-family:bookman old style;">7.</p></td>
-			<td><p style="font-family:bookman old style;">Peraturan Kepala Badan Pengawas Obat dan Makanan Republik Indonesia Nomor 12 Tahun 2018 tentang Organisasi dan Tata Kerja Unit Pelaksana Teknis di Lingkungan Badan Pengawas Obat dan Makanan</p></td>
+			<td valign="top"><p style="font-family:bookman old style;">7.</p></td>
+			<td valign="top"><p style="font-family:bookman old style;">Peraturan Kepala Badan Pengawas Obat dan Makanan Republik Indonesia Nomor 12 Tahun 2018 tentang Organisasi dan Tata Kerja Unit Pelaksana Teknis di Lingkungan Badan Pengawas Obat dan Makanan</p></td>
 		</tr>
 
 		<tr>
 			<td></td>
 			<td></td>
-			<td><p style="font-family:bookman old style;">8.</p></td>
-			<td><p style="font-family:bookman old style;">DIPA Balai Pengawas Obat dan Makanan di Batam Tahun Anggaran 2021</p></td>
+			<td valign="top"><p style="font-family:bookman old style;">8.</p></td>
+			<td valign="top"><p style="font-family:bookman old style;">DIPA Balai Pengawas Obat dan Makanan di Batam Tahun Anggaran 2021</p></td>
 		</tr>
 
 		</table>
@@ -221,10 +221,10 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 		<tr>
 		<td></td>
 		<td></td>
-		<td><p style="font-family:bookman old style;" align="left">2.</p></td>
-		<td><p style="font-family:bookman old style;" align="left">Tujuan</p></td>
-		<td><p style="font-family:bookman old style;" align="left">:</p></td>
-		<td><p style="font-family:bookman old style;" align="left"><?php echo $tujuan; ?></p></td>
+		<td valign="top"><p style="font-family:bookman old style;" align="left">2.</p></td>
+		<td valign="top"><p style="font-family:bookman old style;" align="left">Tujuan</p></td>
+		<td valign="top"><p style="font-family:bookman old style;" align="left">:</p></td>
+		<td valign="top"><p style="font-family:bookman old style;" align="left"><?php echo $tujuan; ?></p></td>
 		</tr>
 
 		<tr>
@@ -240,9 +240,9 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 		<td></td>
 		<td></td>
 		<td valign="top"><p style="font-family:bookman old style;" align="left">4.</p></td>
-		<td><p style="font-family:bookman old style;" align="left">Waktu</p></td>
-		<td><p style="font-family:bookman old style;" align="left">:</p></td>
-		<td><p style="font-family:bookman old style;" >
+		<td valign="top"><p style="font-family:bookman old style;" align="left">Waktu</p></td>
+		<td valign="top"><p style="font-family:bookman old style;" align="left">:</p></td>
+		<td valign="top"><p style="font-family:bookman old style;" >
 		<?php
 		 $datetime1 = new DateTime($tgl_mulai2);
 	     $datetime2 = new DateTime($tgl_selesai2);
@@ -254,10 +254,10 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 		<tr>
 		<td></td>
 		<td></td>
-		<td><p style="font-family:bookman old style;" align="left">5.</p></td>
-		<td><p style="font-family:bookman old style;" align="left">Biaya</p></td>
-		<td><p style="font-family:bookman old style;" align="left">:</p></td>
-		<td><p style="font-family:bookman old style;" align="left">DIPA Balai Pengawas Obat dan Makanan di Batam Tahun Anggaran 2021</p></td>
+		<td valign="top"><p style="font-family:bookman old style;" align="left">5.</p></td>
+		<td valign="top"><p style="font-family:bookman old style;" align="left">Biaya</p></td>
+		<td valign="top"><p style="font-family:bookman old style;" align="left">:</p></td>
+		<td valign="top"><p style="font-family:bookman old style;" align="left">DIPA Balai Pengawas Obat dan Makanan di Batam Tahun Anggaran 2021</p></td>
 		</tr>
 
 		<tr>

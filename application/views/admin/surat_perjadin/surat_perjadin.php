@@ -1,3 +1,6 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <section class="content-header">
    <h1>
     Surat Perjalanan Dinas
@@ -42,7 +45,7 @@
 
                     <!-- nomor surat -->
            <div class="form-group">
-              <label>Petugas</label>
+              <label>Petugas</label><span class="wajib"> *</span></label>
               <select name="idPetugas" id="idPetugas" class="form-control input-sm" data-live-search="true" title="Pilih Petugas">
                    <option value="" disabled selected>Pilih Petugas</option>
               </select> 
@@ -63,6 +66,11 @@
      </div>
    </div>
  </div>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
 
  <script type="text/javascript">
   $(document).ready(function()
