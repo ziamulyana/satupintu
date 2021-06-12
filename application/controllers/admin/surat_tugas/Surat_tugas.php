@@ -34,6 +34,15 @@ class Surat_tugas extends CI_Controller {
     //simpan surat tugas
     public function simpan_surat()
     {
+			function convertMonths($month){
+				$month = date('m',$month);
+				return $month;
+			}
+
+			function convertYears($year){
+				$year = date('y',$year);
+				return $year;
+			}
         
         $nosurat = $this->input->post('noSuratTugas');
         $tglsurat = $this->input->post('tglSurat');
@@ -49,9 +58,16 @@ class Surat_tugas extends CI_Controller {
         $jabatanpenandatangan = $this->input->post('jabatanPenandatangan');
         $idpegawai = $this->input->post('idPetugas');
 
+
+        $tanggalolah  = strtotime($tglsurat);
+
+			
+        $noSuratFix = "T-PW.01.12.9A2.".convertMonths($tanggalolah).".".convertYears($tanggalolah).".".$nosurat;
+       
+
         $data = array (
                 
-            'noSuratTugas' => $nosurat,
+            'noSuratTugas' => $noSuratFix,
             'tglSurat' => $tglsurat,
             'tglMulai' => $tglmulai,
             // 'bebanBiaya' => $bebanbiaya,
@@ -66,14 +82,13 @@ class Surat_tugas extends CI_Controller {
 
         );
 
-        
-        $this->db->insert('tbl_surattugas', $data);
+      
         $huruf = array('A','B','C','D','E','F','G','H','I','J');
         $i = 0;
 
         foreach($idpegawai as $petugas){
             $data_petugas = array(
-                'noSuratTugas' =>$nosurat,
+                'noSuratTugas' =>$noSuratFix,
                 'idPetugas' => $petugas,
                 'urutan' => $huruf[$i] 
             );
@@ -83,7 +98,7 @@ class Surat_tugas extends CI_Controller {
             $i++;
             
         }
-
+        $this->db->insert('tbl_surattugas', $data);
         $this->session->set_flashdata('success', 'Data Berhasil Dimasukan');
         redirect('admin/surat_tugas/surat_tugas', 'refresh');
 
