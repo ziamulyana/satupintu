@@ -7,7 +7,7 @@ class Surat_capa extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model("");
+		$this->load->model("SuratPeringatan_model");
 
 
 	}
@@ -16,6 +16,7 @@ class Surat_capa extends CI_Controller {
 	{
 
 		$data = konfigurasi('Pilih Surat Capa','ap');
+		$data['surat'] = $this->SuratPeringatan_model->getSuratPeringatan();
 		$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/capa/sub_capa', $data);
 	}
 }
