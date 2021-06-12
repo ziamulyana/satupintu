@@ -65,9 +65,9 @@
                       if($row->closed == -1) { ?>
                        <td> 
 
-                         <a href="#" class="btn btn-success btn-sm" id="acceptClosed" data-tooltip="tooltip" title="Accept" data-id = "<?=$row->idFeedback ?>" data-closed = "1" data-toggle="modal" data-target="#accept"  ><i class="fa fa-check"></i></a> 
+                         <a href="#" class="btn btn-success btn-sm" id="acceptClosed" data-tooltip="tooltip" title="Close" data-id = "<?=$row->idFeedback ?>" data-closed = "1" data-toggle="modal" data-target="#accept"  ><i class="fa fa-check"></i></a> 
 
-                         <a href="#" class="btn btn-danger btn-sm" id="rejectClosed" data-tooltip="tooltip" title="Reject" data-id = "<?=$row->idFeedback ?>" data-closed = "0"  data-toggle="modal" data-target="#reject" ><i class="fa fa-close "></i></a>
+                         <a href="#" class="btn btn-danger btn-sm" id="rejectClosed" data-tooltip="tooltip" title="Open" data-id = "<?=$row->idFeedback ?>" data-closed = "0"  data-toggle="modal" data-target="#reject" ><i class="fa fa-close "></i></a>
 
                        </td>
 
@@ -150,7 +150,7 @@
               </div><!-- /.box-body -->                        
               <div class="modal-footer">
                 <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                <button type="submit" name="hapus" class="btn btn-success"><i class="fa fa-check"></i> Accept</button>
+                <button type="submit" name="hapus" class="btn btn-primary"><i class="fa fa-check"></i> Oke</button>
               </div>
             </form>
           </div>
@@ -176,7 +176,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title"><i class="icon fa fa-ban"></i>  ALert !</h4>
+            <h4 class="modal-title"><i class="icon fa fa-ban"></i>  Alert !</h4>
           </div>
           <div class="modal-body" id="rejectData">
             <form action="<?=base_url('petugas/feedback/updateClosed') ?>" method="post">
@@ -190,7 +190,7 @@
               </div><!-- /.box-body -->                        
               <div class="modal-footer">
                 <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                <button type="submit" name="hapus" class="btn btn-danger"><i class="fa fa-check"></i> Accept</button>
+                <button type="submit" name="hapus" class="btn btn-primary"><i class="fa fa-check"></i> Oke</button>
               </div>
             </form>
           </div>

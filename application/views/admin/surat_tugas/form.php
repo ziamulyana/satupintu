@@ -68,7 +68,7 @@
             <div class="col-sm-12">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                <select class="form-control category" data-live-search="true" name="idAnggaran" id="idAnggaran" required>
+                <select class="form-control" name="idAnggaran" id="idAnggaran" required>
                 <?php
                 foreach ($anggaran as $anggaran) {
                   echo "<option value=".$anggaran->idAnggaran.">".$anggaran->namaAnggaran."</option>";
