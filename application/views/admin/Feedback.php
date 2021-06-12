@@ -65,13 +65,13 @@
                       echo "<td>".$row->tglFeedback."</td>";
                       if($row->closed == -1) { ?>
                         <td> 
-                        <small class="label label-warning"><i class="fa fa-clock-o"></i> Waiting</small>
+                        <small class="label label-default"><i class="fa fa-clock-o"></i> Waiting</small>
                         </td> 
                         <?php
                       }else if ($row->closed == 0) {
                        ?> 
                         <td> 
-                        <small class="label label-danger"><i class="fa fa-exclamation-triangle"></i> Open</small>
+                        <small class="label label-warning"><i class="fa fa-exclamation-triangle"></i> Open</small>
                         </td>
                        <?php
                      }else{
@@ -90,7 +90,7 @@
 
                          <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusFed" data-id =  "<?=$row->idFeedback ?>" data-toggle="modal" data-target="#hapusFeedback"><i class="fa fa-trash"></i></a>
 
-                        <?php if($row->file_feedback !=0){ ?>
+                        <?php if(isset ($row->file_feedback)){ ?>
                         <a href="../assets/uploads/files/feedback/feedback-<?php echo $row ->noSuratFeedback ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" ><i class="fa fa-eye"></i></a>
 
                         <?php  } else{
