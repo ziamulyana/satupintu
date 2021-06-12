@@ -49,7 +49,7 @@
           <li><a href="#"><i class="fa fa-circle-o"></i>PSK</a></li>
           <li><a href="#"><i class="fa fa-circle-o"></i>Penghentian Kegiatan</a></li>
           <li><a href="#"><i class="fa fa-circle-o"></i>TL Ke Penyidikan</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i>CAPA</a></li>
+          <li><a href="<?=base_url('petugas/surat_capa') ?>"><i class="fa fa-circle-o"></i>CAPA</a></li>
         </ul>
       </li>
 
