@@ -39,6 +39,7 @@ $data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
 
 			$tanggal =  $this->input->post('tanggal');
 			$noSurat =  $this->input->post('noSurat');
+			$halSurat = $this->input->post('halSurat');
 			$idSurat= $this->input->post('suratTugas');
 			$kotaSurat =  $this->input->post('kotaSurat');
 			// detil sarana
@@ -82,6 +83,7 @@ $data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
 			$data = array('title'=>'Cetak surat tugas',
 				'tanggal' => $tanggal,
 				'noSurat' => $noSuratFix,
+				'halSurat' => $halSurat,
 				'penerimaSurat' => $namaSarana,
 				'kotaSurat' => $kotaSurat,
 				// detil sarana
@@ -106,8 +108,8 @@ $data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
 
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
+					'halPeringatan' => $halSurat,
 					'jenisPeringatan' => "apotek",
-					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',
 					'idTl' => $idTl,
 					'status' =>0

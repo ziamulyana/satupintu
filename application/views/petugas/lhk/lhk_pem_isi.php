@@ -102,7 +102,7 @@ header("Content-Disposition: attachment; Filename=lhkPem-".$filename)
 		}
 
 		$mk =0;
-		$tmk = 1;
+		$tmk = 0;
 		$nomor = 0;
 
 		
@@ -289,7 +289,7 @@ header("Content-Disposition: attachment; Filename=lhkPem-".$filename)
 
 			<tr>
 				<td><p id="hilang"><b>VI.</b></p></td> 
-				<td><p class="satu">Dari <?php echo $nomor+1 ?> sarana yang diperiksa, ditemukan <?php echo $mk ?> sarana yang memenuhi ketentuan dan <?php echo $tmk ?> sarana yang tidak memenuhi ketentuan. </p></td> 
+				<td><p class="satu">Dari <?php echo $nomor ?> sarana yang diperiksa, ditemukan <?php echo $mk ?> sarana yang memenuhi ketentuan dan <?php echo $tmk ?> sarana yang tidak memenuhi ketentuan. </p></td> 
 			</tr>
 
 </table>

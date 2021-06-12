@@ -38,6 +38,7 @@
 
 			$tanggal =  $this->input->post('tanggal');
 			$noSurat =  $this->input->post('noSurat');
+			$halSurat = $this->input->post('halSurat');
 			$idSurat= $this->input->post('suratTugas');
 			$kotaSurat =  $this->input->post('kotaSurat');
 			// detil sarana
@@ -80,6 +81,7 @@
 			$data = array('title'=>'Cetak surat tugas',
 				'tanggal' => $tanggal,
 				'noSurat' => $noSuratFix,
+				'halSurat' => $halSurat,
 				'penerimaSurat' => $namaSarana,
 				'kotaSurat' => $kotaSurat,
 				// detil sarana
@@ -104,7 +106,7 @@
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
 					'jenisPeringatan' => "klinik",
-					'isiPeringatan' => $detailTemuan,
+					'halPeringatan' => $halSurat,
 					'filePeringatan' => '0',
 					'idTl' => $idTl,
 					'status' =>0

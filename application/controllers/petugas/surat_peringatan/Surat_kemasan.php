@@ -38,6 +38,7 @@
 
 			$tanggal =  $this->input->post('tanggal');
 			$noSurat =  $this->input->post('noSurat');
+			$halSurat = $this->input->post('halSurat');
 			$idSurat= $this->input->post('suratTugas');
 			$kotaSurat =  $this->input->post('kotaSurat');
 
@@ -110,7 +111,7 @@
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
 					'jenisPeringatan' => "kemasan pangan",
-					'isiPeringatan' => $detailTemuan,
+					'halSurat' => $halSurat,
 					'filePeringatan' => '0',
 					'idTl' => $idTl,
 					'status' =>0

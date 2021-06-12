@@ -23,264 +23,287 @@
               <div class="alert alert-success" role="alert">
                 <?php echo $this->session->flashdata('success'); ?>
               </div>
-              <?php elseif ($this->session->flashdata('failed')): ?>
-                <div class="alert alert-danger" role="alert">
-                  <?php echo $this->session->flashdata('failed'); ?>
-                </div>
-              <?php endif; ?>
-
-
-              <div class="col-md-6">
-                <h4>Informasi Kepala Surat</h4>
-                <hr>
-
-
-                <!-- nomor surat tugas -->
-                <div class="form-group row">
-                  <label for="kendaraan" class="col-sm-4 col-form-label">No.Surat Tugas<span class="wajib"> *</span></label>
-                  <div class="col-sm-12">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-newspaper-o"></i></span>
-                      <select name="suratTugas" id="suratTugas" class="form-control category" data-live-search="true" required>
-                        <?php
-                        foreach ($surat_tugas as $surat) {
-                          echo "<option value=".$surat->idSurat.">".$surat->noSuratTugas."</option>";
-                        }
-                        ?>
-                        <option selected="selected">- Pilih Surat Tugas -</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                
-
-                <!-- tanggal surat -->
-                <div class="form-group row">
-                  <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal Surat<span class="wajib"> *</span></label>
-                  <div class="col-sm-12">
-                    <input class="form-control" type="date" name ="tanggal" id="tanggal" placeholder="Tanggal" required>
-                  </div>
-                </div>
-
-                <!-- nomor surat -->
-                <div class="form-group row">
-                  <label for="noSurat" class="col-sm-4 col-form-label">Nomor Surat<span class="wajib"> *</span></label>
-                  <div class="col-sm-12">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                      <input type="text" class="form-control" placeholder="Nomor Surat" name="noSurat" id="noSurat" required>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- alamat tujuan -->
-                <div class="form-group row">
-                  <label for="noSurat" class="col-sm-4 col-form-label">Kota Tujuan Surat<span class="wajib"> *</span></label>
-                  <div class="col-sm-12">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                      <input type="text" class="form-control" name="kotaSurat" id="kotaSurat" placeholder="Kota Tujuan Surat" required>
-                    </div>
-                  </div>
-                </div>
-
+            <?php elseif ($this->session->flashdata('failed')): ?>
+              <div class="alert alert-danger" role="alert">
+                <?php echo $this->session->flashdata('failed'); ?>
               </div>
+            <?php endif; ?>
 
 
-              <div class="col-md-6">
-                <h4>Detail Sarana</h4>
-                <hr>
-
-                <!-- nama sarana -->
-                <div class="form-group row">
-                  <label for="noSurat" class="col-sm-4 col-form-label">Nama Sarana<span class="wajib"> *</span></label>
-                  <div class="col-sm-12">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                     <select name="idSarana" id="idSarana" class="form-control input-sm" data-live-search="true" title="Pilih Sarana">
-                   <option value="">Pilih Sarana</option>
-              </select> 
-                    </div>
-                  </div>
-                </div>
-
-
-
-                <!-- tanggal periksa mulai -->
-                <div class="form-group row">
-                  <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal Mulai Periksa<span class="wajib"> *</span></label>
-                  <div class="col-sm-12">
-                    <input class="form-control" type="date" name ="tglMulaiperiksa" id="tglMulaiperiksa" placeholder="Tanggal Mulai Periksa" required>
-                  </div>
-                </div>
-
-                <!-- tanggal periksa selesai -->
-                <div class="form-group row">
-                  <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal Selesai Periksa</label>
-                  <div class="col-sm-12">
-                    <input class="form-control" type="date" name ="tglSelesaiperiksa" id="tglSelesaiperiksa" placeholder="Tanggal Selesai Periksa" onclick="return chk_date()">
-                  </div>
-                </div>
-
-                <script>
-                  function chk_date()
-                  {
-                    var durationstart = document.getElementById('tglMulaiperiksa').value;
-                    var durationend = document.getElementById('tglSelesaiperiksa').value;
-                    var st = durationstart.split("-");
-                    var en = durationend.split("-");
-                    var startDate = new Date(st[2], (+st[0] - 1), st[1]);                  
-                    var endDate = new Date(en[2], (+en[0] - 1), en[1]);
-                    if (startDate > endDate) {
-                      alert("Please enter proper duration range");
-                      return false;
-                    } else {
-                      return true;
-                    }
-                  }
-
-                </script>
-
-
-                <!-- no izin -->
-                <div class="form-group row">
-                  <label for="noSurat" class="col-sm-4 col-form-label">Nomor izin<span class="wajib"> *</span></label>
-                  <div class="col-sm-12">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                      <input type="text" class="form-control" name="noIzin" id="noIzin" placeholder="Nomor Izin" required>
-                    </div>
-                  </div>
-                </div>
-
-
-
-                <!-- nama pimpinan-->
-                <div class="form-group row">
-                  <label for="noSurat" class="col-sm-5 col-form-label">Nama Pimpinan<span class="wajib"> *</span></label>
-                  <div class="col-sm-12">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                      <input type="text" class="form-control" name="namaPimpinan" id="namaPimpinan" placeholder="Nama Pimpinan" required>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- nama pj-->
-                <div class="form-group row">
-                  <label for="noSurat" class="col-sm-5 col-form-label">Nama Penanggung Jawab<span class="wajib"> *</span></label>
-                  <div class="col-sm-12">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                      <input type="text" class="form-control" name="namaPj" id="namaPj" placeholder="Nama Penanggung Jawab" required>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- nomor SIPTTK-->
-                <div class="form-group row">
-                  <label for="noSurat" class="col-sm-5 col-form-label">No. SIPTTK<span class="wajib"> *</span></label>
-                  <div class="col-sm-12">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                      <input type="text" class="form-control" name="noSip" id="noSip" placeholder="No. SIPTTK" required>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- nomor HP-->
-                <div class="form-group row">
-                  <label for="noSurat" class="col-sm-5 col-form-label">No. HP<span class="wajib"> *</span></label>
-                  <div class="col-sm-12">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                      <input type="text" class="form-control" name="noHp" id="noHp" placeholder="No. HP" required >
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="col-md-12">
-                <h4>Detail Temuan</h4>
-                <hr>
-
-                <div class="form-group row">
-                 <label for="detailTemuan" class="col-sm-3 col-form-label">Detail Temuan<span class="wajib"> *</span></label>
-                 <div class="col-md-12">
-                  <!-- /.card-header -->
-                  <div class="card-body pad">
-                    <div class="">
-                      <textarea class="textarea" name="detailTemuan" id= "detailTemuan" placeholder="Rincian Detail Temuan" 
-                      style="width: 100%; height: 200px; font-size: 12px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" required ></textarea>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+            <div class="col-md-6">
+              <h4>Informasi Kepala Surat</h4>
               <hr>
-              <h4>Detail Pasal Pelanggaran</h4>
-              <hr>
-              
 
-              <!-- Pelanggaran -->
+
+              <!-- nomor surat tugas -->
               <div class="form-group row">
-                <label for="pilihPasal" class="col-sm-3 col-form-label">Pasal Pelanggaran<span class="wajib"> *</span></label>
-                <div class="col-md-12">
-                  <select class="category related-post form-control" name="pilihPasal[]" id= "pilihPasal" multiple="multiple" data-placeholder="Pilih Pasal" style="width: 100%;" required>
-                    <?php
-                    foreach ($temuan_pbf as $temuan) {
-                      echo "<option value=".$temuan->id.">".$temuan->temuan."</option>";
-                    }
-                    ?>
+                <label for="kendaraan" class="col-sm-4 col-form-label">No.Surat Tugas<span class="wajib"> *</span></label>
+                <div class="col-sm-12">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-newspaper-o"></i></span>
+                    <select name="suratTugas" id="suratTugas" class="form-control category" data-live-search="true" required>
+                      <?php
+                      foreach ($surat_tugas as $surat) {
+                        echo "<option value=".$surat->idSurat.">".$surat->noSuratTugas."</option>";
+                      }
+                      ?>
+                      <option selected="selected">- Pilih Surat Tugas -</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
 
-                  </select>
+               <!-- hal -->
+              <div class="form-group row">
+                <label for="noSurat" class="col-sm-4 col-form-label">Hal<span class="wajib"> *</span></label>
+                <div class="col-sm-12">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                   <select class="form-control category" name="halSurat" id="halSurat" > 
+                  <option selected="">Pilih Hal</option>
+                  <option value="Peringatan">Peringatan</option>
+                  <option value="Peringatan Keras">Peringatan Keras</option>
+                </select>
+                  </div>
                 </div>
               </div>
 
 
+              <!-- tanggal surat -->
+              <div class="form-group row">
+                <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal Surat<span class="wajib"> *</span></label>
+                <div class="col-sm-12">
+                  <input class="form-control" type="date" name ="tanggal" id="tanggal" placeholder="Tanggal" required>
+                </div>
+              </div>
 
-              <div class="box-footer">
-               <button type="submit" value="submit"  class="btn btn-success"><i class="fa fa-save"></i> Save Document</button>
-               <button type="reset"  value ="reset" class="btn btn-danger"><i class="fa fa-refresh" aria-hidden="true"></i> Reset Form</button>
+              <!-- nomor surat -->
+              <div class="form-group row">
+                <label for="noSurat" class="col-sm-4 col-form-label">Nomor Surat<span class="wajib"> *</span></label>
+                <div class="col-sm-12">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                    <input type="text" class="form-control" placeholder="Nomor Surat" name="noSurat" id="noSurat" required>
+                  </div>
+                </div>
+              </div>
 
-               <a class="btn btn-primary pull-right" href=<?php echo base_url()."petugas/surat_peringatan/c_surat_peringatan"?> > <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali ke daftar peringatan</a>
+              <!-- kota tujuan -->
+              <div class="form-group row">
+                <label for="noSurat" class="col-sm-4 col-form-label">Kota Tujuan Surat<span class="wajib"> *</span></label>
+                <div class="col-sm-12">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                   <select class="form-control category" name="kotaSurat" id="kotaSurat" > 
+                  <option>Kota Batam</option>
+                  <option>Kota Tanjung Pinang</option>
+                  <option>Kabupaten Bintan</option>
+                  <option>Kabupaten Karimun</option>
+                  <option>Kabupaten Anambas</option>
+                  <option>Kabupaten Lingga</option>
+                  <option>Kabupaten Natuna</option>
+                </select>
+                  </div>
+                </div>
+              </div>
 
-                
+          </div>
 
 
+          <div class="col-md-6">
+            <h4>Detail Sarana</h4>
+            <hr>
+
+            <!-- nama sarana -->
+            <div class="form-group row">
+              <label for="noSurat" class="col-sm-4 col-form-label">Nama Sarana<span class="wajib"> *</span></label>
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                  <select name="idSarana" id="idSarana" class="form-control input-sm" data-live-search="true" title="Pilih Sarana">
+                   <option value="">Pilih Sarana</option>
+                 </select> 
+               </div>
              </div>
            </div>
-         </div>
 
-         
-       </form>
 
+
+           <!-- tanggal periksa mulai -->
+           <div class="form-group row">
+            <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal Mulai Periksa<span class="wajib"> *</span></label>
+            <div class="col-sm-12">
+              <input class="form-control" type="date" name ="tglMulaiperiksa" id="tglMulaiperiksa" placeholder="Tanggal Mulai Periksa" required>
+            </div>
+          </div>
+
+          <!-- tanggal periksa selesai -->
+          <div class="form-group row">
+            <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal Selesai Periksa</label>
+            <div class="col-sm-12">
+              <input class="form-control" type="date" name ="tglSelesaiperiksa" id="tglSelesaiperiksa" placeholder="Tanggal Selesai Periksa" onclick="return chk_date()">
+            </div>
+          </div>
+
+          <script>
+            function chk_date()
+            {
+              var durationstart = document.getElementById('tglMulaiperiksa').value;
+              var durationend = document.getElementById('tglSelesaiperiksa').value;
+              var st = durationstart.split("-");
+              var en = durationend.split("-");
+              var startDate = new Date(st[2], (+st[0] - 1), st[1]);                  
+              var endDate = new Date(en[2], (+en[0] - 1), en[1]);
+              if (startDate > endDate) {
+                alert("Please enter proper duration range");
+                return false;
+              } else {
+                return true;
+              }
+            }
+
+          </script>
+
+
+          <!-- no izin -->
+          <div class="form-group row">
+            <label for="noSurat" class="col-sm-4 col-form-label">Nomor izin<span class="wajib"> *</span></label>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                <input type="text" class="form-control" name="noIzin" id="noIzin" placeholder="Nomor Izin" required>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- nama pimpinan-->
+          <div class="form-group row">
+            <label for="noSurat" class="col-sm-5 col-form-label">Nama Pimpinan<span class="wajib"> *</span></label>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                <input type="text" class="form-control" name="namaPimpinan" id="namaPimpinan" placeholder="Nama Pimpinan" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- nama pj-->
+          <div class="form-group row">
+            <label for="noSurat" class="col-sm-5 col-form-label">Nama Penanggung Jawab<span class="wajib"> *</span></label>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                <input type="text" class="form-control" name="namaPj" id="namaPj" placeholder="Nama Penanggung Jawab" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- nomor SIPTTK-->
+          <div class="form-group row">
+            <label for="noSurat" class="col-sm-5 col-form-label">No. SIPTTK<span class="wajib"> *</span></label>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                <input type="text" class="form-control" name="noSip" id="noSip" placeholder="No. SIPTTK" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- nomor HP-->
+          <div class="form-group row">
+            <label for="noSurat" class="col-sm-5 col-form-label">No. HP<span class="wajib"> *</span></label>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                <input type="text" class="form-control" name="noHp" id="noHp" placeholder="No. HP" required >
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-12">
+          <h4>Detail Temuan</h4>
+          <hr>
+
+          <div class="form-group row">
+           <label for="detailTemuan" class="col-sm-3 col-form-label">Detail Temuan<span class="wajib"> *</span></label>
+           <div class="col-md-12">
+            <!-- /.card-header -->
+            <div class="card-body pad">
+              <div class="">
+                <textarea class="textarea" name="detailTemuan" id= "detailTemuan" placeholder="Rincian Detail Temuan" 
+                style="width: 100%; height: 200px; font-size: 12px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" required ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+        <h4>Detail Pasal Pelanggaran</h4>
+        <hr>
+
+
+        <!-- Pelanggaran -->
+        <div class="form-group row">
+          <label for="pilihPasal" class="col-sm-3 col-form-label">Pasal Pelanggaran<span class="wajib"> *</span></label>
+          <div class="col-md-12">
+            <select class="category related-post form-control" name="pilihPasal[]" id= "pilihPasal" multiple="multiple" data-placeholder="Pilih Pasal" style="width: 100%;" required>
+              <?php
+              foreach ($temuan_pbf as $temuan) {
+                echo "<option value=".$temuan->id.">".$temuan->temuan."</option>";
+              }
+              ?>
+
+            </select>
+          </div>
+        </div>
+
+
+
+        <div class="box-footer">
+         <button type="submit" value="submit"  class="btn btn-success"><i class="fa fa-save"></i> Save Document</button>
+         <button type="reset"  value ="reset" class="btn btn-danger"><i class="fa fa-refresh" aria-hidden="true"></i> Reset Form</button>
+
+         <a class="btn btn-primary pull-right" href=<?php echo base_url()."petugas/surat_peringatan/c_surat_peringatan"?> > <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali ke daftar peringatan</a>
+
+
+
+
+       </div>
      </div>
-
-
-
    </div>
- </div>
 
- <style>
-  .select2-container--default .select2-selection--multiple .select2-selection__choice {
-    background-color: #3c8dbc;
-    
-    border-radius: 4px;
-    cursor: default;
-    float: left;
-    margin-right: 5px;
-    margin-top: 5px;
-    padding: 0 5px;
-  }
-  .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
-    color: #151515;
-    cursor: pointer;
-    display: inline-block;
-    font-weight: bold;
-    margin-right: 2px;
-  }
+
+ </form>
+
+</div>
+
+
+
+</div>
+</div>
+
+<style>
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background-color: #3c8dbc;
+
+  border-radius: 4px;
+  cursor: default;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: 0 5px;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  color: #151515;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 2px;
+}
 </style>
 <!-- /.row -->
 </section>

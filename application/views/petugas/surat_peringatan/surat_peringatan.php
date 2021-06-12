@@ -17,7 +17,7 @@
       <div class="box box-primary">
         <div class="box-header with-border">
 
-          <h3 class="box-title"><i class="fa fa-file"></i> Buat Surat Peringatan
+          <h3 class="box-title"><i class="fa fa-file"></i> Buat Surat Peringatan / Peringatan Keras
           </h3>
 
         </div>
