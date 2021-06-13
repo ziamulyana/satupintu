@@ -87,13 +87,12 @@ class SuratPeringatan_model extends CI_Model
  public function getCapa()
   { 
 
-    $this->db->select('tbl_peringatan.idPeringatan, tbl_peringatan.tglSuratPeringatan, tbl_peringatan.noSuratPeringatan, tbl_peringatan.filePeringatan, tbl_sarana.namaSarana');
+    $this->db->select('tbl_peringatan.idPeringatan, tbl_feedback.idFeedback, tbl_feedback.noSuratFeedback, tbl_feedback.isiFeedback, tbl_feedback.tglFeedback, tbl_feedback.file_feedback, tbl_feedback.idSuratPeringatan, tbl_peringatan.tglSuratPeringatan, tbl_peringatan.noSuratPeringatan, tbl_peringatan.filePeringatan, tbl_sarana.namaSarana');
     $this->db->from('tbl_peringatan');
     $this->db->join('tbl_surattl', 'tbl_surattl.idTl = tbl_peringatan.idTl');
     $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
+    $this->db->join('tbl_feedback', 'tbl_peringatan.idPeringatan = tbl_feedback.idSuratPeringatan');
     $this->db->where("(tbl_peringatan.halPeringatan='Evaluasi CAPA' OR tbl_peringatan.halPeringatan='Closed CAPA')");
-
-
     $query = $this->db->get('');
     return $query;
   }

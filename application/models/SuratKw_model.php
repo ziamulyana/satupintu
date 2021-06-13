@@ -21,12 +21,12 @@ class SuratKw_model extends CI_Model{
   }
 
 
- //  public function updateKw($data){
- //   $this->db->set('tglKwitansi', $data['tglKwitansi']); 
- //   $this->db->set('fileKwitansi', $data['fileKwitansi']);
- //   $this->db->where('idKwitansi', $data['idKwitansi']);
- //   $query = $this->db->update('tbl_kwitansi');
- // }
+  public function updateKw($data){
+   $this->db->set('tglKwitansi', $data['tglKwitansi']); 
+   $this->db->set('fileKwitansi', $data['fileKwitansi']);
+   $this->db->where('idKwitansi', $data['idKwitansi']);
+   $query = $this->db->update('tbl_kwitansi');
+ }
 
 
   public function dataKw($id){

@@ -55,6 +55,8 @@
 
                             <a href="" class="btn btn-warning btn-sm" data-tooltip="tooltip" title="Lukota" id="printLk" data-id = "<?=$row->noSuratTugas ?>" data-toggle="modal" data-target="#printLukota"><i class="fa fa-print"></i></a>
 
+                            <a href="#" data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" disabled><i class="fa fa-eye"></i></a>
+
                           
 
                           </td>

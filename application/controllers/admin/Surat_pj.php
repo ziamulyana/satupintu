@@ -39,6 +39,24 @@ class Surat_pj extends CI_Controller {
 		
 	}
 
+	public function editpj()
+	{
+		$idKw = $this->input->post('idKwitansi');
+		$nosurat =  $this->input->post('noSuratTugas');
+		$tglkw = $this->input->post('tglKwitansi');
+
+		
+		$data = array (
+			'idPj' => $idKw,
+			'noSur' => $nosurat,
+			'tglkwitansi' => $tglkw
+		);
+		$this->SuratKw_model->updateKw($data);
+        redirect('admin/surat_pj');
+    }
+
+	
+
 	public function printDk(){
 		$id = $this->input->post('idKw');
 		$data['idKw'] = $id;

@@ -66,7 +66,7 @@
                       
                       echo "<td class='dt-center'>"?>                             
                         <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editFed"
-                        data-id =  "<?=$row->idFeedback ?>" data-nomor="<?= $row->noSuratFeedback ?>" data-isi="<?= $row->isiFeedback ?>" data-tgl="<?=$row->tglFeedback ?>" data-toggle="modal" data-target="#editFeedback" ><i class="fa fa-edit"></i></a>
+                        data-id="<?=$row->idFeedback ?>" data-nomor="<?= $row->noSuratFeedback ?>" data-isi="<?= $row->isiFeedback ?>" data-tgl="<?=$row->tglFeedback ?>" data-toggle="modal" data-target="#editFeedback" ><i class="fa fa-edit"></i></a>
 
                          <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusFed" data-id =  "<?=$row->idFeedback ?>" data-toggle="modal" data-target="#hapusFeedback"><i class="fa fa-trash"></i></a>
 

@@ -78,6 +78,8 @@ header("Content-Disposition: attachment; Filename=nominatifLukota-" . $filename)
 		$tujuan = "";
 		$tgl1 = "";
 		$tgl2 = "";
+		$tgl_mulai2;
+		$tgl_selesai2;
 		$lama = "";
 		$mak  = "";
 		$total_nom = array();
@@ -89,6 +91,8 @@ header("Content-Disposition: attachment; Filename=nominatifLukota-" . $filename)
 			$tujuan = $row->kota;
 			$tgl1 = strtotime($row->tglMulai);
 			$tgl2 = strtotime($row->tglSelesai);
+			$tgl_mulai2 = $row->tglMulai;
+			$tgl_selesai2 = $row->tglSelesai;
 			$lama = $row->lamaPerjalanan;
 			$mak = $row->mak;
 		}
@@ -244,7 +248,14 @@ header("Content-Disposition: attachment; Filename=nominatifLukota-" . $filename)
 						<p align="center"><?php echo convertDay($tgl2) . "-" . convertMonthB(convertMonthA($tgl2)) . "-" . convertYear($tgl2); ?></p>
 					</td>
 					<td style="border:1px solid black; font-family:arial;font-size: 12px;">
-						<p align="center"><?php echo $lama; ?> Hari</p>
+						<p align="center">
+						<?php
+		 $datetime1 = new DateTime($tgl_mulai2);
+	     $datetime2 = new DateTime($tgl_selesai2);
+	     $difference = $datetime2->diff($datetime1)->days + 1;
+		 echo $difference. " "; 
+		?>
+		Hari</p></td>
 					</td>
 					<td style="border:1px solid black; font-family:arial;font-size: 12px;">
 						<p align="center"><?php echo $tr_nom[$i]; ?></p>
