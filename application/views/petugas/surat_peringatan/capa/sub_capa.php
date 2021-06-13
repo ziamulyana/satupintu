@@ -13,7 +13,7 @@
   <section class="content">
     <div class="row">
      <div class="col-md-12">
-       <form role="form" action="<?php echo base_url('petugas/capa/surat_capa/print')?>" method="post">
+       <form role="form" action="<?php echo base_url('petugas/surat_capa/printCapa')?>" method="post">
         <div class="box box-primary">
           <div class="box-header with-border">
             <h3 class="box-title"><?php echo $title; ?></h3>
@@ -31,8 +31,8 @@
                     <span class="input-group-addon"><i class="fa fa-newspaper-o"></i></span>
                     <select  name="suratTugas" id= "suratTugas" class="form-control category" data-live-search="true" required>
                       <?php
-                      foreach ($surat as $srt) {
-                        echo "<option value=".$srt->idSurat.">".$surat->noSuratTugas."</option>";
+                      foreach ($surat as $row) {
+                        echo "<option value=".$row->idSurat.">".$row->noSuratTugas."</option>";
                       }
                       ?>
                       <option selected="selected">- Pilih Surat Tugas -</option>
@@ -60,13 +60,13 @@
               </div>
               
 
-              <!-- alamat tujuan -->
+              <!-- hal surat -->
               <div class="form-group row">
                 <label for="Perihal" class="col-sm-4 col-form-label">Perihal CAPA<span class="wajib"> *</span></label>
                 <div class="col-sm-12">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                    <select  name="suratTugas" id= "suratTugas" class="form-control" required>
+                    <select  name="halSurat" id= "halSurat" class="form-control" required>
                     <option value=""disabled selected>- Pilih Perihal -</option>
                     <option>Evaluasi CAPA</option>
                     <option>Close CAPA</option>
@@ -173,7 +173,7 @@
       var idPer=$('#suratTugas').val();
       if(idPer!=''){
         $.ajax({
-          url: "<?php echo base_url();?>petugas/surat_peringatan/c_surat_peringatan/getSaranaPer", 
+          url: "<?php echo base_url();?>petugas/surat_capa/getSaranaPer", 
           method: "POST",
           data: {idPer:idPer},
           success: function(data)

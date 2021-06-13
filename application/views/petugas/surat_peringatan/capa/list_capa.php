@@ -43,11 +43,9 @@
                 <table id="tbl" data-sort-name="closed" class="table table-bordered table-striped"  data-sort-order="asc">
                   <thead>
                     <tr>
-                      <th>Nomor Surat Feedback</th>
-                      <th>Perihal Surat</th>
                       <th>Nomor Surat Peringatan</th>
                       <th>Nama Sarana</th>
-                      <th>Tgl Feedback </th>
+                      <th>Tgl CAPA </th>
                       <th>Status</th>
                       <th>Aksi</th>
 
@@ -55,33 +53,15 @@
                   </thead>
                   <tbody>
                     <?php     
-                    if(isset($list_feedback)){
-                     foreach ($list_feedback->result() as $row){
+                    if(isset($capa)){
+                     foreach ($capa->result() as $row){
                       echo "<tr>";
-                      echo "<td>".$row->noSuratFeedback."</td>";
-                      echo "<td>".$row->isiFeedback."</td>";
                       echo "<td>".$row->noSuratPeringatan."</td>";
                       echo "<td>".$row->namaSarana."</td>";
-                      echo "<td>".$row->tglFeedback."</td>";
-                      if($row->closed == -1) { ?>
-                        <td> 
-                        <small class="label label-warning"><i class="fa fa-clock-o"></i> Waiting</small>
-                        </td> 
-                        <?php
-                      }else if ($row->closed == 0) {
-                       ?> 
-                        <td> 
-                        <small class="label label-danger"><i class="fa fa-exclamation-triangle"></i> Open</small>
-                        </td>
-                       <?php
-                     }else{
-                       ?>
-                       <td>
-                       <small class="label label-success"><i class="fa fa-check-circle"></i>&nbsp Closed   </small>
-                       </td>
+                      echo "<td>".$row->tglSuratPeringatan."</td>";
+                    
  
-                       <?php
-                     }
+                      
                      echo "</td>";
                       
                       echo "<td class='dt-center'>"?>                             

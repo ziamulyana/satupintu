@@ -31,6 +31,7 @@ class SuratPeringatan_model extends CI_Model
     $this->db->from('tbl_peringatan');
     $this->db->join('tbl_surattl', 'tbl_surattl.idTl = tbl_peringatan.idTl');
     $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
+     $this->db->where("(tbl_peringatan.halPeringatan='Peringatan' OR tbl_peringatan.halPeringatan='Peringatan Keras')");
 
     $query = $this->db->get('');
     return $query;
@@ -71,14 +72,32 @@ class SuratPeringatan_model extends CI_Model
    return $output;
  }
 
+ 
+
  public function getSarana($id){
-  $this->db->select('tbl_sarana.namaSarana, tbl_sarana.alamatSarana,tbl_surattl.idTl');
+  $this->db->select('tbl_sarana.namaSarana, tbl_sarana.alamatSarana,tbl_sarana.kota, tbl_surattl.idTl');
   $this->db->from('tbl_sarana');
   $this->db->join('tbl_surattl', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
   $this->db->where('tbl_surattl.idSarana', $id);
   $query = $this->db->get();
   return $query->result();
 }
+
+
+ public function getCapa()
+  { 
+
+    $this->db->select('tbl_peringatan.idPeringatan, tbl_peringatan.tglSuratPeringatan, tbl_peringatan.noSuratPeringatan, tbl_peringatan.filePeringatan, tbl_sarana.namaSarana');
+    $this->db->from('tbl_peringatan');
+    $this->db->join('tbl_surattl', 'tbl_surattl.idTl = tbl_peringatan.idTl');
+    $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
+    $this->db->where("(tbl_peringatan.halPeringatan='Evaluasi CAPA' OR tbl_peringatan.halPeringatan='Closed CAPA')");
+
+
+    $query = $this->db->get('');
+    return $query;
+  }
+
 
 
 }
