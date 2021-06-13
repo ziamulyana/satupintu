@@ -31,7 +31,7 @@ class SuratPeringatan_model extends CI_Model
     $this->db->from('tbl_peringatan');
     $this->db->join('tbl_surattl', 'tbl_surattl.idTl = tbl_peringatan.idTl');
     $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
-     $this->db->where("(tbl_peringatan.halPeringatan='Peringatan' OR tbl_peringatan.halPeringatan='Peringatan Keras')");
+     $this->db->where("(tbl_surattl.jenisTl='Peringatan' OR tbl_surattl.jenisTl='Peringatan Keras')");
 
     $query = $this->db->get('');
     return $query;
