@@ -213,14 +213,16 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 		</table>
 
 		
-
-	<p style="font-family:bookman old style;"><b>Untuk </b> : 1. <?php echo $maksud; ?> </p></td>
-		
+		<table style="width:100%">
+		<tr>
+		<td valign="bottom"><p style="font-family:bookman old style;"><b>Untuk </b> : 1. <?php echo $maksud; ?> </p></td>
+		</tr>
+		</table>
 		<table style="width:100%">
 
 		<tr>
 		<td></td>
-		<td></td>
+		<td><p id="hilang">Cobacabi</p></td>
 		<td valign="top"><p style="font-family:bookman old style;" align="left">2.</p></td>
 		<td valign="top"><p style="font-family:bookman old style;" align="left">Tujuan</p></td>
 		<td valign="top"><p style="font-family:bookman old style;" align="left">:</p></td>
@@ -289,6 +291,14 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 			</td>
 			</tr>
 		</table>
+	
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
 
 	<p style="line-height: 1px;" align="center" style="font-family:bookman old style;"><b>Petugas Balai POM di Batam Tidak Menerima Gratifikasi Dalam Bentuk Apapun
 	<br/>
