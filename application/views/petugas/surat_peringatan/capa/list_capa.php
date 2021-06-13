@@ -46,7 +46,6 @@
                       <th>Nomor Surat Peringatan</th>
                       <th>Nama Sarana</th>
                       <th>Tgl CAPA </th>
-                      <th>Status</th>
                       <th>Aksi</th>
 
                     </tr>
