@@ -59,6 +59,23 @@ class Feedback_model extends CI_Model{
   $this->db->update('tbl_feedback'); 
 }
 
+public function isMk($id, $editClosed){
+  $this->db->set('isMk', $editClosed, FALSE); 
+  $this->db->where('idSarana', $id);
+   $this->db->update('tbl_surattl');  
+}
+
+public function getSarana($id){
+  $this->db->select('idSarana');
+  $this->db->from('tbl_surattl');
+    $this->db->join('tbl_peringatan', 'tbl_peringatan.idTl = tbl_surattl.idTl');
+    $this->db->join('tbl_feedback', 'tbl_feedback.idSuratPeringatan = tbl_peringatan.idPeringatan');
+    $this->db->where('tbl_feedback.idFeedback', $id);
+    $query = $this->db->get('');
+    return $query->row();
+  
+}
+
 
 
 }

@@ -27,6 +27,13 @@
 			$id = $this->input->post('id');
 			$editClosed = $this->input->post('editclosed');
 
+			$idSarana = $this->Feedback_model->getSarana($id);
+			foreach($idSarana as $row){
+				$idSarana =$row;
+			}
+			echo $idSarana;
+
+			$this->Feedback_model->isMk($idSarana, $editClosed);
 			$this->Feedback_model->updateClosed($id, $editClosed);
 			redirect('petugas/feedback');
 		}

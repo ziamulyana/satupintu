@@ -18,7 +18,6 @@ class SuratTl_model extends CI_Model{
 		$this->db->join('tbl_peringatan', 'tbl_surattl.idTl = tbl_peringatan.idTl', 'left');
 		$this->db->join('tbl_feedback', 'tbl_peringatan.idPeringatan = tbl_feedback.idSuratPeringatan', 'left');
 		$this->db->group_by('tbl_surattugas.noSuratTugas'); 
-		$this->db->having('sum(closed) < 1 or sum(closed) is null' );
 		$this->db->where("(tbl_surattl.jenisTl='Peringatan' OR tbl_surattl.jenisTl='Peringatan Keras')");
 		$query = $this->db->get();
 		return $query->result();
