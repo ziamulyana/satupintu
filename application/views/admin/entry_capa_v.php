@@ -97,7 +97,7 @@
 
           <div class="col-md-6">
             <br>
-            <!-- <br> -->
+            <br>
 
            <!-- Sarana -->
            <div class="form-group">
@@ -107,11 +107,13 @@
               </select> 
             </div>
             </div>
-
-                </div>
-              </div>
             </div>
-            <button type="submit" class="btn btn-success"><i class="fa fa-share"></i>&nbsp Save</button>
+            <div class="box-footer">
+            <button type="submit" value="submit" class="btn btn-primary"><i class="fa fa-print"></i> Save Document</button>
+            <button type="reset"  value ="reset" class="btn btn-danger"><i class="fa fa-refresh" aria-hidden="true"></i> Reset Form</button>
+            </div>
+            </div>
+            
           </div>
           <!-- /.box-body -->
         </div>
