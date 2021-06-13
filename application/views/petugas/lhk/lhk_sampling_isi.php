@@ -102,10 +102,10 @@ header("Content-Disposition: attachment; Filename=lhk-".$filename)
 
 		<p align="center"><b>LAPORAN HASIL KEGIATAN </b></p>
 		<p><b><u>Yth:</u></b>  	Kepala Balai POM di Batam melalui PPK</p>
-		<p align="justify">Sehubungan dengan penugasan berdasarkan surat tugas dari kepala Balai POM di Batam nomor  <?php echo $noSurat?> tanggal <?php echo $tglSurat; ?> berikut ini kami sampaikan laporan hasil kegiatan yang telah dilaksanakan : </p>
+		<p align="justify">Sehubungan dengan penugasan berdasarkan surat tugas dari kepala Balai POM di Batam nomor  <?php echo $noSurat?> tanggal <?php echo  convertDay($tglSurat) . " " . convertMonthB(convertMonthA($tglSurat)) . " " . convertYear($tglSurat) ?> berikut ini kami sampaikan laporan hasil kegiatan yang telah dilaksanakan : </p>
 
 		<p>1. Identitas Kegiatan </p>
-		<table style="width:100%">
+		<table style="width:100%; font-family:arial;">
 
 			<tr>
 				<td width="2%"><p></p></td>
@@ -136,14 +136,14 @@ header("Content-Disposition: attachment; Filename=lhk-".$filename)
 
 		<p>2. Identitas Petugas </p>
 
-		<table style="width:100%">
+		<table style="width:100%; font-family:arial;">
 
 			<?php 
 			$huruf = array('a.','b.','c.','d.','e.');
 			for($i=0;$i<count($nama_all);$i++){?>
 			<tr>
-				<td width="2%"><p><?php echo $huruf[$i] ;?></p></td>
-				<td width="27%"><p class="satu">Nama / NIP</p></td> 
+				<td width="1%"><p><?php echo $huruf[$i] ;?></p></td>
+				<td width="28%"><p class="satu">Nama / NIP</p></td> 
 				<td width="4%"><p class="satu">:</p></td> 
 				<td width="67%"><p ><?php echo $nama_all[$i];?></p></td> 
 			</tr>
@@ -167,7 +167,7 @@ header("Content-Disposition: attachment; Filename=lhk-".$filename)
 		<p><?php echo $detSampling?></p>
 
 		<p>4. Pengesahan </p>
-		<table style="width:100%">
+		<table style="width:100%; font-family:arial;">
 			<tr>
 				<td width="2%"><p></p></td>
 				<td width="38%"><p class="satu">a. SPPD disahkan oleh</p></td> 
@@ -190,10 +190,10 @@ header("Content-Disposition: attachment; Filename=lhk-".$filename)
 		</table>
 		<p>Demikian disampaikan, atas perhatiannya diucapkan terimakasih.</p>
 
-		<table style="width:100%">
+		<table style="width:100%; font-family:arial;">
 			<tr>
 				<th><p class="satu">Menyetujui</p></th> 
-				<th><p class="satu">Batam, <?php echo $tglLhk?> </p></th> 
+				<th><p class="satu">Batam, <?php echo $tglLhk?></p></th> 
 			</tr>
 			<tr>
 				<td><p></p></td> 

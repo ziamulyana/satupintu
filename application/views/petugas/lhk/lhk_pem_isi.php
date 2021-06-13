@@ -111,7 +111,7 @@ header("Content-Disposition: attachment; Filename=lhkPem-".$filename)
 
 		<p align="center"><b>LAPORAN HASIL KEGIATAN </b></p>
 		<p><b><u>Yth:</u></b>  	Kepala Balai POM di Batam melalui PPK</p>
-		<table style="width:100%">
+		<table style="width:100%; font-family:arial;">
 
 			<tr>
 				<td><p><b>I.</b></p></td> 
@@ -121,7 +121,7 @@ header("Content-Disposition: attachment; Filename=lhkPem-".$filename)
 			</tr>
 			<tr>
 				<td><p id="hilang">I</p></td> 
-				<td><p class="satu">Surat Perintah Tugas Kepala Balai Pengawas Obat Makanan di Batam, Nomor <?php echo $noSurat  ?>, dilaksanakan pada tanggal <?php echo $tglMulai ?> s.d. <?php echo $tglSelesai?></p></td> 
+				<td><p class="satu">Surat Perintah Tugas Kepala Balai Pengawas Obat Makanan di Batam, Nomor <?php echo $noSurat  ?>, dilaksanakan pada tanggal <?php echo  convertDay($tglMulai) . " " . convertMonthB(convertMonthA($tglMulai)) . " " . convertYear($tglMulai) ?> s.d. <?php echo  convertDay($tglSelesai) . " " . convertMonthB(convertMonthA($tglSelesai)) . " " . convertYear($tglSelesai) ?></p></td> 
 			</tr>
 
 			<tr>
@@ -151,14 +151,14 @@ header("Content-Disposition: attachment; Filename=lhkPem-".$filename)
 
 		</table>
 
-		<table style="width:100%">
+		<table style="width:100%; font-family:arial;">
 
 			<?php 
 			$huruf = array('a.','b.','c.','d.','e.');
 			for($i=0;$i<count($nama_all);$i++){?>
 			<tr>
-				<td width="3%"><p><?php echo $huruf[$i] ;?></p></td>
-				<td width="20%"><p class="satu">Nama / NIP</p></td> 
+				<td width="1%"><p><?php echo $huruf[$i] ;?></p></td>
+				<td width="22%"><p class="satu">Nama / NIP</p></td> 
 				<td width="5%"><p class="satu">:</p></td> 
 				<td width="72%"><p ><?php echo $nama_all[$i];?></p></td> 
 			</tr>
@@ -177,7 +177,7 @@ header("Content-Disposition: attachment; Filename=lhkPem-".$filename)
 		<?php }?>
 		</table>
 
-		<table style="width:100%">
+		<table style="width:100%; font-family:arial;">
 
 			<tr>
 				<td width="3%"><p><b>V.</b></p></td> 
@@ -188,7 +188,7 @@ header("Content-Disposition: attachment; Filename=lhkPem-".$filename)
 
 		</table>
 
-		<table style="width:100%">
+		<table style="width:100%; font-family:arial;">
 		   <?php 
 				foreach ($sarana as $value) {
 				foreach ($value as $item) {
@@ -260,7 +260,7 @@ header("Content-Disposition: attachment; Filename=lhkPem-".$filename)
 			?>
 		</table>
 
-		<table style="width:100%">
+		<table style="width:100%; font-family:arial;">
 
 			<tr>
 				<td><p><b>VI.</b></p></td> 
@@ -298,7 +298,7 @@ header("Content-Disposition: attachment; Filename=lhkPem-".$filename)
 
 	
 
-		<table style="width:100%">
+		<table style="width:100%; font-family:arial;">
 			<tr>
 				<th><p class="satu">Menyetujui</p></th> 
 				<th><p class="satu">Batam, <?php echo $tglLhk?> </p></th> 
