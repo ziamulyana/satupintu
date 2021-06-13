@@ -76,6 +76,8 @@ header("Content-Disposition: attachment; Filename=nominatifDakota-" . $filename)
 		$tujuan = "";
 		$tgl1 = "";
 		$tgl2 = "";
+		$tgl_mulai2;
+		$tgl_selesai2;
 		$lama = "";
 		$mak  = "";
 
@@ -86,6 +88,8 @@ header("Content-Disposition: attachment; Filename=nominatifDakota-" . $filename)
 			$tujuan = $row->kota;
 			$tgl1 = strtotime($row->tglMulai);
 			$tgl2 = strtotime($row->tglSelesai);
+			$tgl_mulai2 = $row->tglMulai;
+			$tgl_selesai2 = $row->tglSelesai;
 			$lama = $row->lamaPerjalanan;
 			$mak = $row->mak;
 		}
@@ -209,7 +213,14 @@ header("Content-Disposition: attachment; Filename=nominatifDakota-" . $filename)
 						<p align="center"><?php echo convertDay($tgl2) . "-" . convertMonthB(convertMonthA($tgl2)) . "-" . convertYear($tgl2); ?></p>
 					</td>
 					<td style="border:1px solid black; font-family:arial;">
-						<p align="center">1 Hari</p>
+						<p align="center">
+					<?php
+		 $datetime1 = new DateTime($tgl_mulai2);
+	     $datetime2 = new DateTime($tgl_selesai2);
+	     $difference = $datetime2->diff($datetime1)->days + 1;
+		 echo $difference. " "; 
+		?>
+		Hari</p></td>
 					</td>
 					<td style="border:1px solid black; font-family:arial;">
 						<p align="center">150.000</p>
