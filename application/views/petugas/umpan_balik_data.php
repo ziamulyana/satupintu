@@ -47,12 +47,12 @@
                         foreach ($tracking_result->result() as $row) {
 
                           if($row->closed == 0) {
-                            $status='<span class="bg-red"><i class="fa fa-exclamation-triangle"></i> CAPA ditolak </span>';
+                            $status='<span class="bg-yellow"><i class="fa fa-exclamation-triangle"></i> CAPA masih dalam proses </span>';
                           }else if($row->closed == -1){
-                            $status='<span class="bg-yellow"><i class="  fa fa-question-circle"></i> Menunggu verifikasi</span> ';
+                            $status='<span class="bg-grey"><i class="  fa fa-question-circle"></i> Menunggu verifikasi</span> ';
                           }
                           else {
-                            $status='<span class="bg-green"><i class="fa fa-check-circle"></i> CAPA diterima</span>';
+                            $status='<span class="bg-green"><i class="fa fa-check-circle"></i> CAPA selesai</span>';
                           }
 
                           $attr = array(
@@ -68,7 +68,7 @@
                             <i class="fa fa-envelope bg-blue"></i>
                             <div class="timeline-item">
                               <span class="time"><i class="fa fa-clock-o"></i> <?php echo $row->tglSuratPeringatan ?></span>
-                              <h3 class="timeline-header"><a href="#">Anda</a> mengirim Surat Peringatan dengan nomor <?php echo $row ->noSuratPeringatan ?></h3>
+                              <h3 class="timeline-header"><a href="#">Anda</a> mengirim surat <?php echo $row->halPeringatan ?> dengan nomor <?php echo $row ->noSuratPeringatan ?></h3>
                               <div class="timeline-body">
                                 <?php echo $row ->isiPeringatan ?> 
                               </div>
