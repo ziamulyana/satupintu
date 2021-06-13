@@ -40,9 +40,7 @@
 
 			$tanggal =  $this->input->post('tanggal');
 			$noSurat =  $this->input->post('noSurat');
-			$halSurat = $this->input->post('halSurat');
 			$idSurat= $this->input->post('suratTugas');
-			$kotaSurat =  $this->input->post('kotaSurat');
 			// detil sarana
 			$idSarana =  $this->input->post('idSarana');
 			// $alamatSarana = $this->input->post('alamatSarana');
@@ -78,6 +76,8 @@
 			   	$namaSarana= $row->namaSarana;
 			   	$idTl =  $row->idTl;
 			   	$alamatSarana = $row->alamatSarana;
+			   	  	$halSurat = $row->jenisTl;
+			   	$kotaSurat = $row->kota;
 			   }
 
 

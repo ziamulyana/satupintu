@@ -40,21 +40,7 @@
                   </div>
                 </div>
 
-                  <!-- hal -->
-              <div class="form-group row">
-                <label for="noSurat" class="col-sm-4 col-form-label">Hal<span class="wajib"> *</span></label>
-                <div class="col-sm-12">
-                  <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                   <select class="form-control category" name="halSurat" id="halSurat" > 
-                  <option selected="">Pilih Hal</option>
-                  <option value="Peringatan">Peringatan</option>
-                  <option value="Peringatan Keras">Peringatan Keras</option>
-                </select>
-                  </div>
-                </div>
-              </div>
-                            
+                   
 
             <!-- tanggal surat -->
             <div class="form-group row">
@@ -75,24 +61,7 @@
               </div>
             </div>
 
-         <!-- kota tujuan -->
-              <div class="form-group row">
-                <label for="noSurat" class="col-sm-4 col-form-label">Kota Tujuan Surat<span class="wajib"> *</span></label>
-                <div class="col-sm-12">
-                  <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                   <select class="form-control category" name="kotaSurat" id="kotaSurat" > 
-                  <option>Kota Batam</option>
-                  <option>Kota Tanjung Pinang</option>
-                  <option>Kabupaten Bintan</option>
-                  <option>Kabupaten Karimun</option>
-                  <option>Kabupaten Anambas</option>
-                  <option>Kabupaten Lingga</option>
-                  <option>Kabupaten Natuna</option>
-                </select>
-                  </div>
-                </div>
-              </div>
+        
 
           </div>
 
