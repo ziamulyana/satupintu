@@ -113,7 +113,7 @@ class Surat_capa extends CI_Controller {
 		public function getSaranaPer(){
 		if($this->input->post('idPer'))
 			{
-				echo $this->SuratPeringatan_model->getSaranaPer($this->input->post('idPer'));
+				echo $this->SuratPeringatan_model->getSaranaCapa($this->input->post('idPer'));
 			}
 	}
 }

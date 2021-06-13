@@ -46,6 +46,7 @@
                       <th>Nomor Surat Peringatan</th>
                       <th>Nama Sarana</th>
                       <th>Tgl CAPA </th>
+                      <th>Hal</th>
                       <th>Aksi</th>
 
                     </tr>
@@ -58,7 +59,7 @@
                       echo "<td>".$row->noSuratPeringatan."</td>";
                       echo "<td>".$row->namaSarana."</td>";
                       echo "<td>".$row->tglSuratPeringatan."</td>";
-                    
+                      echo "<td>".$row->halPeringatan."</td>";
  
                       
                      echo "</td>";
