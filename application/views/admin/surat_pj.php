@@ -114,7 +114,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title"><i class="icon fa fa-edit"></i>  Edit Surat Tugas</h4>
+				<h4 class="modal-title"><i class="icon fa fa-edit"></i>  Edit Surat Pertanggung Jawaban</h4>
 			</div>
 			<div class="modal-body" id=editData >
 				<form action="<?= base_url('admin/surat_pj/ubahPj')?>" method="post">
