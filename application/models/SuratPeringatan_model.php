@@ -31,7 +31,7 @@ class SuratPeringatan_model extends CI_Model
     $this->db->from('tbl_peringatan');
     $this->db->join('tbl_surattl', 'tbl_surattl.idTl = tbl_peringatan.idTl');
     $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
-     $this->db->where("(tbl_peringatan.halPeringatan='Peringatan' OR tbl_peringatan.halPeringatan='Peringatan Keras')");
+     $this->db->where("(tbl_surattl.jenisTl='Peringatan' OR tbl_surattl.jenisTl='Peringatan Keras')");
 
     $query = $this->db->get('');
     return $query;
@@ -72,6 +72,21 @@ class SuratPeringatan_model extends CI_Model
    return $output;
  }
 
+ public function getSaranaCapa($id){
+   $this->db->select('*');
+   $this->db->from('tbl_sarana');
+   $this->db->join('tbl_surattl', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
+   $this->db->where('tbl_surattl.idSuratTugas',$id);
+   $query = $this->db->get('');
+   $output = '<option value="">Nama Sarana</option>';
+   $output=""; 
+   foreach($query->result() as $row)
+   {
+     $output .= '<option value="'.$row->idSarana.'">'.$row->namaSarana.'</option>';
+   }
+   return $output;
+ }
+
  
 
  public function getSarana($id){
@@ -87,12 +102,12 @@ class SuratPeringatan_model extends CI_Model
  public function getCapa()
   { 
 
-    $this->db->select('tbl_peringatan.idPeringatan, tbl_feedback.idFeedback, tbl_feedback.noSuratFeedback, tbl_feedback.isiFeedback, tbl_feedback.tglFeedback, tbl_feedback.file_feedback, tbl_feedback.idSuratPeringatan, tbl_peringatan.tglSuratPeringatan, tbl_peringatan.noSuratPeringatan, tbl_peringatan.filePeringatan, tbl_sarana.namaSarana');
+    $this->db->select('tbl_peringatan.idPeringatan, tbl_feedback.idFeedback, tbl_feedback.noSuratFeedback, tbl_feedback.isiFeedback, tbl_feedback.tglFeedback, tbl_feedback.file_feedback, tbl_feedback.idSuratPeringatan, tbl_peringatan.tglSuratPeringatan, tbl_peringatan.noSuratPeringatan, tbl_peringatan.filePeringatan, tbl_peringatan.halPeringatan,   tbl_sarana.namaSarana');
     $this->db->from('tbl_peringatan');
     $this->db->join('tbl_surattl', 'tbl_surattl.idTl = tbl_peringatan.idTl');
     $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
-    $this->db->join('tbl_feedback', 'tbl_peringatan.idPeringatan = tbl_feedback.idSuratPeringatan');
-    $this->db->where("(tbl_peringatan.halPeringatan='Evaluasi CAPA' OR tbl_peringatan.halPeringatan='Closed CAPA')");
+    $this->db->join('tbl_feedback', 'tbl_peringatan.idPeringatan = tbl_feedback.idSuratPeringatan', "left");
+    $this->db->where("(tbl_peringatan.halPeringatan='Evaluasi CAPA' OR tbl_peringatan.halPeringatan='Close CAPA')");
     $query = $this->db->get('');
     return $query;
   }

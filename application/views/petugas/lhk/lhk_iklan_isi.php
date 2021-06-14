@@ -102,10 +102,10 @@ header("Content-Disposition: attachment; Filename=lhk-".$filename)
 
 		<p align="center"><b>LAPORAN HASIL KEGIATAN </b></p>
 		<p><b><u>Yth:</u></b>  	Kepala Balai POM di Batam melalui PPK</p>
-		<p align="justify">Sehubungan dengan penugasan berdasarkan surat tugas dari kepala Balai POM di Batam nomor  <?php echo $noSurat?> tanggal <?php echo $tglSurat; ?> berikut ini kami sampaikan laporan hasil kegiatan yang telah dilaksanakan : </p>
+		<p align="justify">Sehubungan dengan penugasan berdasarkan surat tugas dari kepala Balai POM di Batam nomor  <?php echo $noSurat?> tanggal <?php echo  convertDay($tglSurat) . " " . convertMonthB(convertMonthA($tglSurat)) . " " . convertYear($tglSurat) ?> berikut ini kami sampaikan laporan hasil kegiatan yang telah dilaksanakan : </p>
 
 		<p>1. Identitas Kegiatan </p>
-<table style="width:100%">
+<table style="width:100%; font-family:arial;">
 
 			<tr>
 				<td width="1%"><p></p></td>
@@ -117,7 +117,9 @@ header("Content-Disposition: attachment; Filename=lhk-".$filename)
 				<td><p></p></td>
 				<td><p class="satu">- Jadwal/Waktu</p></td> 
 				<td><p class="satu">:</p></td> 
-				<td><p ><?php echo $tglMulai;?></p></td> 
+				<td><p >
+					<?php echo  convertDay($tglMulai) . " " . convertMonthB(convertMonthA($tglMulai)) . " " . convertYear($tglMulai) ?>
+					</p></td> 
 			</tr>
 			<tr>
 				<td><p></p></td>
@@ -136,7 +138,7 @@ header("Content-Disposition: attachment; Filename=lhk-".$filename)
 
 <p>2. Identitas Petugas </p>
 
-<table style="width:100%">
+<table style="width:100%; font-family:arial;">
 
 			<?php 
 			$huruf = array('a.','b.','c.','d.','e.');
@@ -168,7 +170,7 @@ header("Content-Disposition: attachment; Filename=lhk-".$filename)
 		<p><?php echo $detSampling?></p>
 
 <p>4. Pengesahan </p>
-		<table style="width:100%">
+		<table style="width:100%; font-family:arial;">
 			<tr>
 				<td width="1%"><p></p></td>
 				<td width="37%"><p class="satu">a. SPPD disahkan oleh </p></td> 
@@ -191,7 +193,7 @@ header("Content-Disposition: attachment; Filename=lhk-".$filename)
 		</table>
 		<p>Demikian disampaikan, atas perhatiannya diucapkan terimakasih.</p>
 
-		<table style="width:100%">
+		<table style="width:100%; font-family:arial;">
 			<tr>
 				<th><p class="satu">Menyetujui</p></th> 
 				<th><p class="satu">Batam, <?php echo $tglLhk?> </p></th> 

@@ -120,7 +120,7 @@ header("Content-Disposition: attachment; Filename=lhkSer-".$filename)
 			</tr>
 			<tr>
 				<td><p id="hilang">I</p></td> 
-				<td><p class="satu">Surat Perintah Tugas Kepala Balai Pengawas Obat Makanan di Batam, Nomor <?php echo $noSurat  ?>, dilaksanakan pada tanggal <?php echo $tglMulai ?> s.d. <?php echo $tglSelesai?></p></td> 
+				<td><p class="satu">Surat Perintah Tugas Kepala Balai Pengawas Obat Makanan di Batam, Nomor <?php echo $noSurat  ?>, dilaksanakan pada tanggal <?php echo  convertDay($tglMulai) . " " . convertMonthB(convertMonthA($tglMulai)) . " " . convertYear($tglMulai) ?> s.d. <?php echo  convertDay($tglSelesai) . " " . convertMonthB(convertMonthA($tglSelesai)) . " " . convertYear($tglSelesai) ?></p></td> 
 			</tr>
 
 			<tr>
