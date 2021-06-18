@@ -57,6 +57,7 @@
 <script src="<?php echo base_url('assets'); ?>/vendor/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <script src="<?php echo base_url('assets'); ?>/vendor/ckeditor/ckeditor.js"></script>
 <script src="<?php echo base_url('assets'); ?>/vendor/repeater/repeater.js"></script>
+<script src="<?php echo base_url('assets'); ?>/vendor/jAutoCalc/dist/jautocalc.js"></script>
 <script>
   $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
