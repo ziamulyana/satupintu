@@ -300,7 +300,7 @@
         <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
       </div>
       <div class="modal-body" id=panelSur>
-        <form role="form" method="post" action="<?= base_url('admin/surat_tugas/surat_tugas/print')?>">
+        <form role="form" method="post" action="<?= base_url('admin/surat_tugas/surattugas_tu/print')?>">
           <div class="box-body">
             <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Tugas</label>
               <input type="hidden" id="idSurat" name="idSurat">
