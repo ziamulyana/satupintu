@@ -17,7 +17,7 @@
 
 		public function index()
 		{
-			$data = konfigurasi('Form Surat Peringatan Obat',"ap");
+			$data = konfigurasi('Form Surat Tindak Lanjut Apotek',"ap");
 $data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
 			$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/surat_apotek/form', $data);
 			
@@ -110,6 +110,7 @@ $data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
 					'noSuratPeringatan' => $noSuratFix,
 					'halPeringatan' => $halSurat,
 					'jenisPeringatan' => "apotek",
+					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',
 					'idTl' => $idTl,
 					'status' =>0

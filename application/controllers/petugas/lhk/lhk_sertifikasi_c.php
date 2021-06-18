@@ -59,6 +59,23 @@ class Lhk_sertifikasi_c extends MY_Controller
             'idSuratTugas' =>$idSurat
         );
 
+        for($i=0;$i<count($sarana);$i++){
+            if($sarana[$i]!="Pilih Sarana"){
+              $data_sarana = array(
+              'idSarana'   => $sarana[$i],
+              'isMk'   => $kesimpulan[$i],
+              'temuan' => $temuan[$i],
+              'deskripsiTemuan' => $keterangan,
+              'jenisTl' => $tl[$i],
+              'idSuratTugas' => $idSurat
+            );
+             $this->db->insert('tbl_surattl',$data_sarana);
+           }else{
+            break;
+          }
+        
+        }
+
     $this->db->insert('tbl_lhk',$data2);
     $this->load->view('petugas/lhk/lhk_sertifikasi_isi.php', $data, FALSE);
 

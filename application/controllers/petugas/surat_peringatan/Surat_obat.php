@@ -104,12 +104,13 @@
 
 				
 			
-			$data_db = array(
+				$data_db = array(
 
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
-					'jenisPeringatan' => "toko obat",
 					'halPeringatan' => $halSurat,
+					'jenisPeringatan' => "apotek",
+					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',
 					'idTl' => $idTl,
 					'status' =>0

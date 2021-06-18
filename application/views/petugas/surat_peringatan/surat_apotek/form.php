@@ -1,10 +1,10 @@
   <section class="content-header">
     <h1>
-      Buat Surat Peringatan Untuk Apotek
+      Buat Surat Tindak Lanjut Untuk Apotek
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="#">Peringatan</a></li>
+      <li><a href="#">Tindak Lanjut</a></li>
       <li><a href="#">Surat Obat</a></li>
     </ol>
   </section>

@@ -101,12 +101,13 @@
 
 				
 			
-			$data_db = array(
+				$data_db = array(
 
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
-					'jenisPeringatan' => "klinik",
 					'halPeringatan' => $halSurat,
+					'jenisPeringatan' => "apotek",
+					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',
 					'idTl' => $idTl,
 					'status' =>0

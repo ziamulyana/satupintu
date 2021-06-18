@@ -44,12 +44,8 @@
           </span>
         </a>
         <ul class="treeview-menu" style="display: none;">
-          <li><a href="#"><i class="fa fa-circle-o"></i>Pembinaan</a></li>
-          <li><a href="<?=base_url('petugas/surat_peringatan/c_surat_peringatan')?>"><i class="fa fa-circle-o"></i>Peringatan</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i>PSK</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i>Penghentian Kegiatan</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i>TL Ke Penyidikan</a></li>
-          <li><a href="<?=base_url('petugas/surat_capa') ?>"><i class="fa fa-circle-o"></i>CAPA</a></li>
+          <li><a href="<?=base_url('petugas/surat_peringatan/c_surat_peringatan')?>"><i class="fa fa-circle-o"></i>Buat Tindak Lanjut</a></li>
+          <li><a href="<?=base_url('petugas/surat_capa') ?>"><i class="fa fa-circle-o"></i>Buat Feedback CAPA</a></li>
         </ul>
       </li>
 

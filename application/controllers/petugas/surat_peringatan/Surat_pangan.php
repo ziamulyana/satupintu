@@ -101,14 +101,15 @@
 		
 			$data_db = array(
 
-					'tglSuratPeringatan' => $tanggal,
-					'noSuratPeringatan' => $noSuratFix,
-					'jenisPeringatan' => "pangan",
-					'halPeringatan' => $halSurat,
-					'filePeringatan' => '0',
-					'idTl' => $idTl,
-					'status' =>0
-				);
+				'tglSuratPeringatan' => $tanggal,
+				'noSuratPeringatan' => $noSuratFix,
+				'halPeringatan' => $halSurat,
+				'jenisPeringatan' => "apotek",
+				'isiPeringatan' => $detailTemuan,
+				'filePeringatan' => '0',
+				'idTl' => $idTl,
+				'status' =>0
+			);
 
 			$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
 			if($checkvalidation == true){
