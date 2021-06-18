@@ -64,6 +64,8 @@
         </ul>
       </li>
 
+      <li class="active"><a href="<?php echo base_url('petugas/eksporData')?>"><i class="fa fa-download"></i> <span>Ekspor Data</span></a></li>
+
     <!--    <li class="treeview" style="height: auto;">
         <a href="#">
           <i class="fa fa-share"></i> <span>REPORT</span>
