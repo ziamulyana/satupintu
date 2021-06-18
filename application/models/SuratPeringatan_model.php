@@ -90,7 +90,7 @@ class SuratPeringatan_model extends CI_Model
  
 
  public function getSarana($id){
-  $this->db->select('tbl_sarana.namaSarana, tbl_sarana.alamatSarana,tbl_sarana.kota,tbl_surattl.jenisTl, tbl_surattl.idTl');
+  $this->db->select('tbl_sarana.namaSarana, tbl_sarana.alamatSarana,tbl_sarana.kotaSarana,tbl_surattl.jenisTl, tbl_surattl.idTl');
   $this->db->from('tbl_sarana');
   $this->db->join('tbl_surattl', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
   $this->db->where('tbl_surattl.idSarana', $id);

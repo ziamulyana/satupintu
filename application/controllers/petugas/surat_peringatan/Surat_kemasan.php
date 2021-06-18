@@ -71,13 +71,13 @@
 
 				$dataSarana = $this->SuratPeringatan_model->getSarana($idSarana);
 
-			   foreach ($dataSarana as $row) {
-			   	$namaSarana= $row->namaSarana;
-			   	$idTl =  $row->idTl;
-			   	$alamatSarana = $row->alamatSarana;
-			   	  	$halSurat = $row->jenisTl;
-			   	$kotaSurat = $row->kota;
-			   }
+				foreach ($dataSarana as $row) {
+					$namaSarana= $row->namaSarana;
+					$idTl =  $row->idTl;
+					$alamatSarana = $row->alamatSarana;
+					$halSurat = $row->jenisTl;
+					$kotaSurat = $row->kotaSarana;
+				}
 
 				
 
@@ -111,7 +111,7 @@
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
 					'halPeringatan' => $halSurat,
-					'jenisPeringatan' => "apotek",
+					'jenisPeringatan' => "kemasan pangan",
 					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',
 					'idTl' => $idTl,

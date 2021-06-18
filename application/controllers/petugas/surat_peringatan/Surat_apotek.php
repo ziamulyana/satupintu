@@ -69,13 +69,13 @@ $data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
 
 				$dataSarana = $this->SuratPeringatan_model->getSarana($idSarana);
 
-			   foreach ($dataSarana as $row) {
-			   	$namaSarana= $row->namaSarana;
-			   	$idTl =  $row->idTl;
-			   	$alamatSarana = $row->alamatSarana;
-			   	$halSurat = $row->jenisTl;
-			   	$kotaSurat = $row->kota;
-			   }
+				foreach ($dataSarana as $row) {
+					$namaSarana= $row->namaSarana;
+					$idTl =  $row->idTl;
+					$alamatSarana = $row->alamatSarana;
+					$halSurat = $row->jenisTl;
+					$kotaSurat = $row->kotaSarana;
+				}
 
 
 

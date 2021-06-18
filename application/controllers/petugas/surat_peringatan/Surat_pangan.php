@@ -36,11 +36,9 @@
 				return $year;
 			}
 
-
 			$tanggal =  $this->input->post('tanggal');
 			$noSurat =  $this->input->post('noSurat');
-							
-							$idSurat= $this->input->post('suratTugas');
+			$idSurat= $this->input->post('suratTugas');
 			// detil sarana
 			$idSarana =  $this->input->post('idSarana');
 			$tglPeriksa = $this->input->post('tglPeriksa');
@@ -74,9 +72,10 @@
 			   	$namaSarana= $row->namaSarana;
 			   	$idTl =  $row->idTl;
 			   	$alamatSarana = $row->alamatSarana;
-			   	  	$halSurat = $row->jenisTl;
-			   	$kotaSurat = $row->kota;
+			   	$halSurat = $row->jenisTl;
+			   	$kotaSurat = $row->kotaSarana;
 			   }
+
 
 
 			$data = array('title'=>'Cetak surat tugas',
@@ -90,7 +89,6 @@
 				'tglMulaiperiksa' => $tglMulaiperiksa,
 				'tglSelesaiperiksa' => $tglSelesaiperiksa,
 				'namaPemilik' => $namaPemilik,
-
 				'detailTemuan' => $detailTemuan,
 				'pilihPasal' => $pasal_peringatan
 
@@ -103,8 +101,7 @@
 
 				'tglSuratPeringatan' => $tanggal,
 				'noSuratPeringatan' => $noSuratFix,
-				'halPeringatan' => $halSurat,
-				'jenisPeringatan' => "apotek",
+				'jenisPeringatan' => $halSurat,
 				'isiPeringatan' => $detailTemuan,
 				'filePeringatan' => '0',
 				'idTl' => $idTl,

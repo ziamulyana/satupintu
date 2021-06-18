@@ -68,13 +68,14 @@
 
 				$dataSarana = $this->SuratPeringatan_model->getSarana($idSarana);
 
-			   foreach ($dataSarana as $row) {
-			   	$namaSarana= $row->namaSarana;
-			   	$idTl =  $row->idTl;
-			   	$alamatSarana = $row->alamatSarana;
-			   	  	$halSurat = $row->jenisTl;
-			   	$kotaSurat = $row->kota;
-			   }
+				foreach ($dataSarana as $row) {
+					$namaSarana= $row->namaSarana;
+					$idTl =  $row->idTl;
+					$alamatSarana = $row->alamatSarana;
+					$halSurat = $row->jenisTl;
+					$kotaSurat = $row->kotaSarana;
+				}
+
 
 
 
@@ -100,19 +101,18 @@
 				);			
 
 				
-			
 				$data_db = array(
 
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
 					'halPeringatan' => $halSurat,
-					'jenisPeringatan' => "apotek",
+					'jenisPeringatan' => "klinik",
 					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',
 					'idTl' => $idTl,
 					'status' =>0
 				);
-
+				
 				$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
 			if($checkvalidation == true){
 				$this->db->insert('tbl_peringatan',$data_db);

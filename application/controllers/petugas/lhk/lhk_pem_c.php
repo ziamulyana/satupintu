@@ -68,7 +68,7 @@ class Lhk_pem_c extends MY_Controller
       'idSarana'   => $sarana[$i],
       'isMk'   => $kesimpulan[$i],
       'temuan' => $temuan[$i],
-      'deskripsiTemuan' => $keterangan,
+      'deskripsiTemuan' => $keterangan[$i],
       'jenisTl' => $tl[$i],
       'idSuratTugas' => $idSurat
     );
