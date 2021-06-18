@@ -17,6 +17,14 @@ class SuratPerjadin_model extends CI_Model{
       return $query->result();
     }
 
+    public function getpejabat()
+    {
+      $this->db->select('*');
+      $this->db->from('tbl_pejabat');
+      $query = $this->db->get('');
+      return $query->result();
+    }
+
     public function getPetugas($id){
     $this->db->select('tbl_pegawai.idPegawai,tbl_pegawai.nama');
     $this->db->from('tbl_tugas');
@@ -33,14 +41,16 @@ class SuratPerjadin_model extends CI_Model{
 }
 
     // print SPD
-    public function print_spd($id,$idPetugas)
+    public function print_spd($id,$idPetugas,$id_pejabat)
     {
-      $this->db->select('tbl_tugas.urutan,tbl_surattugas.noSuratTugas, tbl_tugas.idPetugas, tbl_pegawai.nama, tbl_pegawai.pangkat, tbl_pegawai.golongan, tbl_pegawai.nip, tbl_pegawai.jabatan, tbl_surattugas.maksud, tbl_surattugas.kota, tbl_surattugas.kendaraan, tbl_surattugas.lamaPerjalanan, tbl_surattugas.tglMulai, tbl_surattugas.tglSelesai, tbl_anggaran.mak, tbl_surattugas.tglSurat, tbl_surattugas.jabatanPenandatangan, tbl_surattugas.namaPenandatangan');
+      $this->db->select('tbl_tugas.urutan, tbl_pejabat.nama_jabatan, tbl_pejabat.nama_pejabat, tbl_ppk.nama_ppk, tbl_surattugas.noSuratTugas, tbl_tugas.idPetugas, tbl_pegawai.nama, tbl_pegawai.pangkat, tbl_pegawai.golongan, tbl_pegawai.nip, tbl_pegawai.jabatan, tbl_surattugas.maksud, tbl_surattugas.kota, tbl_surattugas.kendaraan, tbl_surattugas.lamaPerjalanan, tbl_surattugas.tglMulai, tbl_surattugas.tglSelesai, tbl_anggaran.mak, tbl_surattugas.tglSurat, tbl_surattugas.jabatanPenandatangan, tbl_surattugas.namaPenandatangan');
       $this->db->from('tbl_surattugas');
       $this->db->join('tbl_tugas', 'tbl_surattugas.noSuratTugas = tbl_tugas.noSuratTugas');
       $this->db->join('tbl_pegawai', 'tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
       $this->db->join('tbl_anggaran', 'tbl_surattugas.idAnggaran = tbl_anggaran.idAnggaran');
-      $this->db->where(array('tbl_tugas.noSuratTugas'=>$id, 'tbl_tugas.idPetugas'=> $idPetugas));
+      $this->db->join('tbl_ppk', 'tbl_surattugas.idppk = tbl_ppk.idSurat');
+      $this->db->join('tbl_pejabat', 'tbl_surattugas.id_pejabat = tbl_pejabat.id_pejabat');
+      $this->db->where(array('tbl_tugas.noSuratTugas'=>$id, 'tbl_tugas.idPetugas'=> $idPetugas, 'tbl_pejabat.id_pejabat'=> $id_pejabat));
       $query = $this->db->get('');
       return $query;
     }

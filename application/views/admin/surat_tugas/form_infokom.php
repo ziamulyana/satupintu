@@ -29,7 +29,7 @@
             <div class="col-sm-12">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                <input type="text" class="form-control" placeholder="T-PW.01.12.9A4." name="noSuratTugas" id="noSuratTugas" required>
+                <input type="text" class="form-control" placeholder="RT.02.01.9A.9A4." name="noSuratTugas" id="noSuratTugas" required>
               </div>
             </div>
           </div>
@@ -138,12 +138,12 @@
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                 <select class="form-control" name="namaPenandatangan" id="namaPenandatangan" required>
                   <option value="" disabled selected>- Pilih Penanda Tangan Surat Tugas -</option>
-                  <option>Bagus Heri Purnomo, S.Si., Apt</option>
-                  <option>Larasati Setyaningtyas, S.Farm., Apt</option>
-                  <option>Dyah Ayu Novi Hapsari, S.Farm., Apt</option>
-                  <option>Ruth Deseyanti Purba, S.Si., Apt</option>
+                  <option>Bagus Heri Purnomo, S.Si., Apt.</option>
+                  <option>Larasati Setyaningtyas, S.Farm., Apt.</option>
+                  <option>Dyah Ayu Novi Hapsari, S.Farm., Apt.</option>
+                  <option>Ruth Deseyanti Purba, S.Si., Apt.</option>
                   <option>Irdiansyah, SH</option>
-                  <option>Paniyati, S.Farm., Apt</option>
+                  <option>Paniyati, S.Farm., Apt.</option>
                 </select>
               </div>
             </div>

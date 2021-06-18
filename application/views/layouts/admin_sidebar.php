@@ -48,6 +48,8 @@
         </ul>
       </li>
 
+      <li class="active"><a href="<?=base_url('admin/surat_tugas/surat_tugas')?>"><i class="fa fa-envelope"></i> <span>Surat Tugas</span></a></li>
+
       <li class="treeview" style="height: auto;">
         <a href="#">
          <i class="fa fa-envelope"></i> <span>Surat Tugas</span>

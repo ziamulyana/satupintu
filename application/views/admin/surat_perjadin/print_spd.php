@@ -91,6 +91,9 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 	$mak = "";
 	$nama_penandatangan = "";
 	$jabatan_penandatangan = "";
+	$nama_ppk = "";
+	$nama_pejabat = "";
+	$nama_jabatan = "";
 
 	foreach ($printS->result() as $row) {
 		$nama_peg =  $row->nama;
@@ -111,6 +114,9 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 		$mak = $row->mak;
 		$nama_penandatangan = $row->namaPenandatangan;
 		$jabatan_penandatangan = $row->jabatanPenandatangan;
+		$nama_ppk = $row->nama_ppk;
+		$nama_pejabat = $row->nama_pejabat;
+		$nama_jabatan = $row->nama_jabatan;
 	}
 
 
@@ -173,7 +179,7 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 				<p style="font-family:bookman old style;">1. Pejabat Pembuat Komitmen</p>
 			</td>
 			<td>
-				<p style="font-family:bookman old style;">Paniyati, S.Farm., Apt</p>
+				<p style="font-family:bookman old style;"><?php echo $nama_ppk; ?></p>
 			</td>
 		</tr>
 
@@ -335,12 +341,12 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 				<p style="font-family:bookman old style;" align="left">Berangkat dari &nbsp;&nbsp;&nbsp; : Batam
 					<br />Pada Tanggal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo  convertDay($tgl_surat) . " " . convertMonthB(convertMonthA($tgl_surat)) . " " . convertYear($tgl_surat) ?>
 					<br />Tempat Tujuan &nbsp;&nbsp;&nbsp;: <?php echo $tujuan; ?>
-					<br />Kepala Sub Bagian Tata Usaha
+					<br /><?php echo $nama_jabatan; ?>
 					<br />
 					<br />
 					<br />
 
-					<br /><b>Larasti Setyaningtyas, S.Farm., Apt
+					<br /><b><?php echo $nama_pejabat; ?>
 						<br />NIP. 19840502 200812 2 002</b>
 				</p>
 			</td>

@@ -43,13 +43,39 @@
               </select>
             </div>
 
+
                     <!-- nomor surat -->
            <div class="form-group">
               <label>Petugas</label><span class="wajib"> *</span></label>
               <select name="idPetugas" id="idPetugas" class="form-control input-sm" data-live-search="true" title="Pilih Petugas">
-                   <option value="" disabled selected>Pilih Petugas</option>
+                   <option value="" disabled selected>- Pilih Petugas -</option>
               </select> 
             </div>
+
+            <!-- ppk -->
+            <div class="form-group">
+            <label>ppk<span class="wajib"> *</span></label>
+                <select class="form-control" name="nama_ppk" id="nama_ppk" required>
+                  <option value="" disabled selected>- Pejabat Pembuat Komitmen -</option>
+                  <option>Paniyati, S.Farm., Apt </option>
+                  <option>TIM TIK</option>
+                </select>
+              </div>
+
+            <!-- ppk -->
+            <div class="form-group">
+                    <label>spd<span class="wajib"> *</span></label>
+                        <select class="form-control" name="id_pejabat" id="id_pejabat" required>
+                        <option value="" disabled selected>- Pilih Penanda Tangan SPD -</option>
+
+                        <?php
+                        foreach ($printS as $row) {
+                          echo "<option value=".$row->id_pejabat.">".$row->nama_pejabat."</option>";
+                        }
+
+                        ?>
+                        </select>
+
 
           <button type="submit" value="submit" onclick="" class="btn btn-info"><i class="fa fa-print"></i> Print</button>
       </form>

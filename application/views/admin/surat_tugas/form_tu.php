@@ -29,7 +29,7 @@
             <div class="col-sm-12">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                <input type="text" class="form-control" placeholder="T-PW.01.12.9A5." name="noSuratTugas" id="noSuratTugas" required>
+                <input type="text" class="form-control" placeholder="RT.02.01.9A.9A5." name="noSuratTugas" id="noSuratTugas" required>
               </div>
             </div>
           </div>

@@ -1,41 +1,127 @@
 <section class="content-header">
- <h1>
-   Surat Tugas Substansi Pengujian
- </h1>
- <ol class="breadcrumb">
-  <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-  <li><a href="#">Surat Tugas Substansi Pengujian</a></li>
-</ol>
+   <h1>
+     Menu Surat Tugas
+   </h1>
+   <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="#">Surat Tugas</a></li>
+  </ol>
 </section>
 <!-- Main content -->
 <section class="content">
 
-  <div class="box">
-    <div class="box-header with-border">
-       <h4>Hai <b>Admin..</b> </h4>
-      <div class="box-tools pull-right">
-        <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
-        <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
-      </div>
-    </div>
-  </div>
+  <div class="row">
+    <!-- left column -->
+    <div class="col-md-12">
+      <!-- general form elements -->
+      <div class="box box-primary">
+        <div class="box-header with-border">
 
-<div class="row">
-  <!-- left column -->
-  <div class="col-md-12">
-    <!-- general form elements -->
+          <h3 class="box-title"><i class="fa fa-file"></i> Buat Surat Tugas
+          </h3>
 
-    <div class="box box-primary">
-      <div class="box-header with-border">
-
-        <h3 class="box-title">Daftar Surat Tugas</h3>
-        <div class="pull-right">
-          <ul>
-            <a class= "btn btn-primary" href="<?php echo base_url('admin/surat_tugas/surattugas_pengujian/tambah_surat')?>">
-              <i class="fa fa-plus"></i>&nbsp; Tambah Data 
-            </a> </span>
-          </ul>
         </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+
+        <div class="box-body">
+         <div class="row">
+
+
+          <!-- Substansi Pengujian-->
+          <div class="col-lg-2 col-xs-5">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>1</h3>
+                <h4><b>Substansi Pengujian</b></h4>
+                
+
+              </div>
+              <div class="icon">
+                <i class="fa fa-plus-square"></i>
+              </div>
+              <a href="<?php echo base_url('admin/surat_tugas/surattugas_pengujian')?>" class="small-box-footer">
+                Buat Surat Tugas <i class="fa fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Substansi Pemeriksaan -->
+          <div class="col-lg-2 col-xs-5">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+              <div class="inner">
+                <h3>2</h3>
+
+                <h4><b>Substansi Pemeriksaan</b></h4>
+              </div>
+              <div class="icon">
+                <i class="fa fa-magic"></i>
+              </div>
+              <a href="<?php echo base_url('admin/surat_tugas/surattugas_pem')?>" class="small-box-footer">
+                Buat Surat Tugas <i class="fa fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Substansi Penindakan -->
+          <div class="col-lg-2 col-xs-5">
+            <!-- small box -->
+            <div class="small-box bg-red">
+              <div class="inner">
+                <h3>3</h3>
+
+                <h4><b>Substansi Penindakan </b></h4>
+              </div>
+              <div class="icon">
+                <i class="fa fa-briefcase"></i>
+              </div>
+              <a href="<?php echo base_url('admin/surat_tugas/surattugas_penindakan')?>" class="small-box-footer">
+               Buat Surat Tugas <i class="fa fa-arrow-circle-right"></i>
+             </a>
+           </div>
+         </div>
+         <!-- ./col -->
+
+         <!-- Substansi Infokom -->
+         <div class="col-lg-2 col-xs-5">
+          <!-- small box -->
+          <div class="small-box bg-purple">
+            <div class="inner">
+              <h3>4</h3>
+
+              <h4><b>Substansi Infokom</b></h4>
+            </div>
+            <div class="icon">
+              <i class="fa fa-building"></i>
+            </div>
+            <a href="<?php echo base_url('admin/surat_tugas/surattugas_infokom')?>" class="small-box-footer">
+             Buat Surat Tugas <i class="fa fa-arrow-circle-right"></i>
+           </a>
+         </div>
+       </div>
+
+         <!-- Sub Bagian Tata Usaha -->
+         <div class="col-lg-2 col-xs-5">
+          <!-- small box -->
+          <div class="small-box bg-purple">
+            <div class="inner">
+              <h3>5 </h3>
+
+              <h4><b>Sub Bagian Tata Usaha</b></h4>
+            </div>
+            <div class="icon">
+              <i class="fa fa-building"></i>
+            </div>
+            <a href="<?php echo base_url('admin/surat_tugas/surattugas_tu')?>" class="small-box-footer">
+             Buat Surat Tugas <i class="fa fa-arrow-circle-right"></i>
+           </a>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 
         <section class="content">
           <div class="row">

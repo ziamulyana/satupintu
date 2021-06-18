@@ -17,7 +17,7 @@ class Surat_tugas extends CI_Controller {
         $data = konfigurasi('Pilih Surat Tugas','ap');
         $data['surattugas'] = $this->SuratTugas_model->getsurattugas();
         $data['anggaran'] = $this->SuratTugas_model->getanggaran();
-        $this->template->load('layouts/admin_template', 'admin/surat_tugas/dashboard', $data);  
+        $this->template->load('layouts/admin_template', 'admin/surat_tugas/surat_tugas', $data);  
 
     }
 
@@ -96,6 +96,8 @@ class Surat_tugas extends CI_Controller {
             $this->db->insert('tbl_tugas', $data_petugas);
             
             $i++;
+
+
             
         }
         $this->db->insert('tbl_surattugas', $data);
@@ -153,6 +155,7 @@ class Surat_tugas extends CI_Controller {
     // Print Surat Tugas
     public function print()
     {
+
     $id = $this->input->post('idSurat');
     $data['idSurat'] = $id;
     $data['printS'] = $this->SuratTugas_model->print_surat($id);

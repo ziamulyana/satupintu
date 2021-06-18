@@ -17,7 +17,7 @@ class Surattugas_TU extends CI_Controller {
         $data = konfigurasi('Pilih Surat Tugas','ap');
         $data['surattugas'] = $this->SuratTugas_model->getsurattugas();
         $data['anggaran'] = $this->SuratTugas_model->getanggaran();
-        $this->template->load('layouts/admin_template', 'admin/surat_tugas/surattugas_tu', $data);  
+        $this->template->load('layouts/admin_template', 'admin/surat_tugas/form_tu', $data);  
 
     }
 

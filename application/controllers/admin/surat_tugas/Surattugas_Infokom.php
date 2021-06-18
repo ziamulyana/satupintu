@@ -17,7 +17,10 @@ class Surattugas_Infokom extends CI_Controller {
         $data = konfigurasi('Pilih Surat Tugas','ap');
         $data['surattugas'] = $this->SuratTugas_model->getsurattugas();
         $data['anggaran'] = $this->SuratTugas_model->getanggaran();
-        $this->template->load('layouts/admin_template', 'admin/surat_tugas/surattugas_infokom', $data);  
+        $data['petugas'] = $this->SuratTugas_model->getpetugas();
+        $data['nama_kota'] = $this->SuratTugas_model->getkota();
+        $data['anggaran'] = $this->SuratTugas_model->getanggaran();
+        $this->template->load('layouts/admin_template', 'admin/surat_tugas/form_infokom', $data);  
 
     }
 
@@ -25,9 +28,7 @@ class Surattugas_Infokom extends CI_Controller {
     public function tambah_surat()
     {
         $data = konfigurasi('Form Tambah Surat', "ap");
-        $data['petugas'] = $this->SuratTugas_model->getpetugas();
-        $data['nama_kota'] = $this->SuratTugas_model->getkota();
-        $data['anggaran'] = $this->SuratTugas_model->getanggaran();
+
         $this->template->load('layouts/admin_template', 'admin/surat_tugas/form_infokom', $data);
     }
 
