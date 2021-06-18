@@ -159,9 +159,7 @@
                           <option value="Pembinaan">Pembinaan</option>
                           <option value="Peringatan">Peringatan</option>
                           <option value="Peringatan Keras">Peringatan Keras</option>
-                          <option value="PSK">PSK</option>
-                          <option value="Penghentian Kegiatan">Penghentian Kegiatan</option>
-                          <option value="TL ke Penyidikan">TL ke Penyidikan</option>
+                          <option value="Penghentian Sementara Kegiatan">PSK</option>
                           <option value="CAPA">CAPA</option>
                         </select></td>
 
@@ -233,9 +231,7 @@
                               <option value="Pembinaan">Pembinaan</option>
                               <option value="Peringatan">Peringatan</option>
                               <option value="Peringatan Keras">Peringatan Keras</option>
-                              <option value="PSK">PSK</option>
-                              <option value="Penghentian Kegiatan">Penghentian Kegiatan</option>
-                              <option value="TL ke Penyidikan">TL ke Penyidikan</option>
+                              <option value="Penghentian Sementara Kegiatan">PSK</option>
                               <option value="CAPA">CAPA</option>
                             </select></td>
 
