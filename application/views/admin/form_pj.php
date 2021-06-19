@@ -92,7 +92,7 @@
                             </select></td>
                           <td span="1" style="width: 10%;"><input type="text" name="qty" id="qty" placeholder="QTY" class="form-control" /></td>
                           <td><input type="text" name="harga" id="harga" placeholder="Harga" class="form-control" /></td>
-                          <td span="1" style="width: 15%;"><input type="text" name="biaya[]" id="biaya[]" value="" class="form-control" jAutoCalc="{qty} * {harga}"  /></td>
+                          <td span="1" style="width: 15%;"><input type="text" name="biaya[]" id="biaya[]" value="" class="form-control" jAutoCalc="{qty} * {harga}" readonly  /></td>
                           <td><button class="row-remove"><i class="fa fa-close"></button></td>
                         </tr>
                         

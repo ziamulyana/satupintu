@@ -94,6 +94,13 @@ class Surat_pj extends CI_Controller {
 		$data['uraian'] = $this->SuratKw_model->uraianLk($id);
 		$this->load->view('admin/nomLk', $data, false);
 	}
+	public function nominatifLkLS(){
+		$id = $this->input->post('idKw');
+		$data['idKw'] = $id;
+		$data['nomLkLS'] = $this->SuratKw_model->getNomDk($id);
+		$data['uraian'] = $this->SuratKw_model->uraianLk($id);
+		$this->load->view('admin/nomLkLS', $data, false);
+	}
 
 }
 
