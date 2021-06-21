@@ -13,7 +13,7 @@
 <section class="content">
   <div class="row">
     <div class="col-md-12">
-      <form action="<?php echo site_url('petugas/lhk_pem_c/add') ?>" method="post" enctype="multipart/form-data" role="form">
+      <form action="<?php echo site_url('petugas/eksporData/cetakReport') ?>" method="post" role="form">
         <div class="box box-primary">
           <div class="box-header with-border">
             <h3 class="box-title">Form Tarik Data Sarana</h3>
@@ -115,7 +115,7 @@
                <div class="form-group row">
                 <label for="example-date-input" class="col-sm-6 col-form-label">Periode Pemeriksaan Awal<span class="wajib"> *</span></label>
                 <div class="col-sm-12">
-                  <input class="form-control <?php echo form_error('tglLhk') ? 'is-invalid' : '' ?>" type="date" name="tglLhk" required>
+                  <input class="form-control" type="date" name="tglAwal" required>
                   <div class="invalid-feedback">
                     <?php echo form_error('tglPemeriksaan') ?>
                   </div>
@@ -126,17 +126,12 @@
                <div class="form-group row">
                 <label for="example-date-input" class="col-sm-6 col-form-label">Periode Pemeriksaan Akhir<span class="wajib"> *</span></label>
                 <div class="col-sm-12">
-                  <input class="form-control <?php echo form_error('tglLhk') ? 'is-invalid' : '' ?>" type="date" name="tglLhk" required>
+                  <input class="form-control <?php echo form_error('tglAwal') ? 'is-invalid' : '' ?>" type="date" name="tglAkhir" required>
                   <div class="invalid-feedback">
-                    <?php echo form_error('tglPemeriksaan') ?>
+                    <?php echo form_error('tglAkhir') ?>
                   </div>
                 </div>
               </div>
-
-                
-
-             
-
 
             </div>
 

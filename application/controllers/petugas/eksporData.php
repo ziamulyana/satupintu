@@ -9,9 +9,7 @@
 		{
 			parent::__construct();
 			$this->load->database();
-			$this->load->model('SuratObat_model');
-			$this->load->model('SuratPeringatan_model');
-			$this->load->model('SuratTl_model');
+			$this->load->model('Laporan_model');
 		}
 
 
@@ -21,6 +19,28 @@
 			// $data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
 			$this->template->load('layouts/petugas_template', 'petugas/tarikData', $data);
 			
+		}
+
+		public function cetakReport(){
+			$kategori =$this->input->post('kategori');
+			$komoditi =$this->input->post('komoditi');
+			$status = $this->input->post('status');
+			$tglAwal = $this->input->post('tglAwal');
+			$tglAkhir = $this->input->post('tglAkhir');
+
+			$laporanSarana = $this->Laporan_model->getLaporan($idSarana);
+
+			// $data = array('title'=>'Cetak Laporan Pemeriksaan',
+			// 	'kategori' => $kategori,
+			// 	'komoditi' => $komoditi,
+			// 	'status' => $status,
+			// 	'tglAwal' => $tglAwal,
+			// 	'tglAkhir' => $tglAkhir
+			// );	
+
+			// $this->load->view('petugas/isiLaporan', $data, FALSE);
+			
+
 		}
 		
 		
