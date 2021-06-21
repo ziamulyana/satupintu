@@ -43,6 +43,7 @@
                         <th class="dt-center">Tgl Surat Tugas</th>
                         <th class="dt-center">Maksud & Tujuan</th>
                         <th class="dt-center">Kota</th>
+                        <th class="dt-center">Substansi</th>
                         <th class="dt-center">Aksi</th>
                       </tr>
                     </thead>
