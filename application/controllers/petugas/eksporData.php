@@ -22,35 +22,13 @@
 		}
 
 		public function cetakReport(){
-			$kategori =$this->input->post('kategori');
+			$jenis =$this->input->post('kategori');
 			$komoditi =$this->input->post('komoditi');
 			$status = $this->input->post('status');
 			$tglAwal = $this->input->post('tglAwal');
 			$tglAkhir = $this->input->post('tglAkhir');
 
-			$data['laporanSarana'] = $this->Laporan_model->getLaporanAll();
-
-			// foreach ($laporanSarana as $row) {	
-			// 	$namaSarana= $row->namaSarana;
-			// 	$tglSurat = $row->tglSurat;
-			// 	$tglMulai = $row->tglMulai;
-			// 	$tglSelesai = $row->tglSelesai;
-			// 	$maksud = $row->maksud;
-			// 	$kategori = $row->kategoriSarana;
-			// 	$temuan = $row->deskripsiTemuan;
-			// 	$jenisTl = $row->jenisTl;
-			// 	$peringatan = $row->isiPeringatan;
-			// 	$statusBalai = $row->statusBalai;
-			// }
-			$data['laporanPetugas'] = $this->Laporan_model->getPetugas();
-
-			// $data = array('title'=>'Cetak Laporan Pemeriksaan',
-			// 	'kategori' => $kategori,
-			// 	'komoditi' => $komoditi,
-			// 	'status' => $status,
-			// 	'tglAwal' => $tglAwal,
-			// 	'tglAkhir' => $tglAkhir
-			// );	
+			$data['laporanSarana'] = $this->Laporan_model->getLaporanAll($jenis,$komoditi,$status,$tglAwal,$tglAkhir);
 
 			$this->load->view('petugas/isiLaporan', $data, FALSE);
 			

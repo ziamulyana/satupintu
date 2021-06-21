@@ -77,6 +77,7 @@
                     <option value="Kosmetik">Kosmetik</option>
                     <option value="Obat Tradisional">Obat Tradisional</option>
                     <option value="Suplemen Kesehatan">Suplemen Kesehatan</option>
+                    <option value="Produksi Pangan">Produksi Pangan</option>
                     <option value="Pangan">Pangan</option>
                       <option selected="selected">- Pilih Jenis Komoditi -</option>
                     </select>

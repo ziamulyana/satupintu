@@ -41,9 +41,9 @@ class Lhk_model extends CI_Model
   public function getAtribut($id){
     $this->db->select('tbl_surattugas.noSuratTugas, tbl_surattugas.tglSurat, tbl_surattugas.maksud, tbl_surattugas.tglMulai, tbl_surattugas.tglSelesai, tbl_surattugas.kota, tbl_pegawai.nama, tbl_pegawai.nip, tbl_pegawai.pangkat, tbl_pegawai.golongan, tbl_pegawai.jabatan');
     $this->db->from('tbl_surattugas');
-     $this->db->join('tbl_tugas', 'tbl_surattugas.noSuratTugas = tbl_tugas.noSuratTugas');
-     $this->db->join('tbl_pegawai','tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
-      $this->db->where('tbl_surattugas.idSurat', $id);
+    $this->db->join('tbl_tugas', 'tbl_surattugas.noSuratTugas = tbl_tugas.noSuratTugas');
+    $this->db->join('tbl_pegawai','tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
+    $this->db->where('tbl_surattugas.idSurat', $id);
       $query = $this->db->get();
     return $query->result();
 
