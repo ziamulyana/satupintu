@@ -22,6 +22,24 @@
 
         <div class="col-md-6">
           <hr>
+
+          <!-- hal surat -->
+          <div class="form-group row">
+                <label for="Perihal" class="col-sm-4 col-form-label">Substansi<span class="wajib"> *</span></label>
+                <div class="col-sm-12">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                    <select  name="substansi" id= "substansi" class="form-control" required>
+                    <option value=""disabled selected>- Pilih Substansi -</option>
+                    <option>Substansi Pengujian</option>
+                    <option>Substansi Pemeriksaan</option>
+                    <option>Substansi Penindakan</option>
+                    <option>Substansi Infokom</option>
+                    <option>Sub Bagian Tata Usaha</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
           
           <!-- nomor surat -->
           <div class="form-group row">

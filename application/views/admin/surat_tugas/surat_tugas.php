@@ -10,119 +10,25 @@
 <!-- Main content -->
 <section class="content">
 
-  <div class="row">
-    <!-- left column -->
-    <div class="col-md-12">
-      <!-- general form elements -->
-      <div class="box box-primary">
-        <div class="box-header with-border">
+	<div class="row">
+		<!-- left column -->
+		<div class="col-md-12">
+			<!-- general form elements -->
 
-          <h3 class="box-title"><i class="fa fa-file"></i> Buat Surat Tugas
-          </h3>
+			<div class="box box-primary">
+				<div class="box-header with-border">
 
-        </div>
+					<h3 class="box-title">Buat Surat Tugas </h3>
+					<div class="pull-right">
+						<ul>
+							<a class= "btn btn-primary" href="<?php echo base_url('admin/surat_tugas/surat_tugas/tambah_surat')?>">
+								<i class="fa fa-plus"></i>&nbsp; Tambah Data 
+							</a> </span>
+						</ul>
+					</div>
+
         <!-- /.box-header -->
         <!-- form start -->
-
-        <div class="box-body">
-         <div class="row">
-
-
-          <!-- Substansi Pengujian-->
-          <div class="col-lg-2 col-xs-5">
-            <!-- small box -->
-            <div class="small-box bg-aqua">
-              <div class="inner">
-                <h3>1</h3>
-                <h4><b>Substansi Pengujian</b></h4>
-                
-
-              </div>
-              <div class="icon">
-                <i class="fa fa-plus-square"></i>
-              </div>
-              <a href="<?php echo base_url('admin/surat_tugas/surattugas_pengujian')?>" class="small-box-footer">
-                Buat Surat Tugas <i class="fa fa-arrow-circle-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Substansi Pemeriksaan -->
-          <div class="col-lg-2 col-xs-5">
-            <!-- small box -->
-            <div class="small-box bg-yellow">
-              <div class="inner">
-                <h3>2</h3>
-
-                <h4><b>Substansi Pemeriksaan</b></h4>
-              </div>
-              <div class="icon">
-                <i class="fa fa-magic"></i>
-              </div>
-              <a href="<?php echo base_url('admin/surat_tugas/surattugas_pem')?>" class="small-box-footer">
-                Buat Surat Tugas <i class="fa fa-arrow-circle-right"></i>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Substansi Penindakan -->
-          <div class="col-lg-2 col-xs-5">
-            <!-- small box -->
-            <div class="small-box bg-red">
-              <div class="inner">
-                <h3>3</h3>
-
-                <h4><b>Substansi Penindakan </b></h4>
-              </div>
-              <div class="icon">
-                <i class="fa fa-briefcase"></i>
-              </div>
-              <a href="<?php echo base_url('admin/surat_tugas/surattugas_penindakan')?>" class="small-box-footer">
-               Buat Surat Tugas <i class="fa fa-arrow-circle-right"></i>
-             </a>
-           </div>
-         </div>
-         <!-- ./col -->
-
-         <!-- Substansi Infokom -->
-         <div class="col-lg-2 col-xs-5">
-          <!-- small box -->
-          <div class="small-box bg-purple">
-            <div class="inner">
-              <h3>4</h3>
-
-              <h4><b>Substansi Infokom</b></h4>
-            </div>
-            <div class="icon">
-              <i class="fa fa-building"></i>
-            </div>
-            <a href="<?php echo base_url('admin/surat_tugas/surattugas_infokom')?>" class="small-box-footer">
-             Buat Surat Tugas <i class="fa fa-arrow-circle-right"></i>
-           </a>
-         </div>
-       </div>
-
-         <!-- Sub Bagian Tata Usaha -->
-         <div class="col-lg-2 col-xs-5">
-          <!-- small box -->
-          <div class="small-box bg-purple">
-            <div class="inner">
-              <h3>5 </h3>
-
-              <h4><b>Sub Bagian Tata Usaha</b></h4>
-            </div>
-            <div class="icon">
-              <i class="fa fa-building"></i>
-            </div>
-            <a href="<?php echo base_url('admin/surat_tugas/surattugas_tu')?>" class="small-box-footer">
-             Buat Surat Tugas <i class="fa fa-arrow-circle-right"></i>
-           </a>
-         </div>
-       </div>
-     </div>
-   </div>
- </div>
-
         <section class="content">
           <div class="row">
             <div class="col-xs-12">
@@ -152,7 +58,7 @@
                         echo "<td class='dt-center'>".$row->kota."</td>";
                         echo "<td class='dt-center'>"?>
                         <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editSur"
-                        data-idsurat="<?=$row->idSurat ?>" data-nosurat="<?=$row->noSuratTugas ?>"  data-tglsurat="<?=$row->tglSurat ?>" data-maksud="<?=$row->maksud ?>" data-kota="<?=$row->kota ?>" data-anggaran="<?=$row->idAnggaran ?>" data-tglmulai="<?=$row->tglMulai ?>" data-bebanbiaya="<?=$row->bebanBiaya ?>" data-tglselesai="<?=$row->tglSelesai ?>" data-kendaraan="<?=$row->kendaraan ?>" data-namapenandatangan="<?=$row->namaPenandatangan ?>" data-jabatanpenandatangan="<?=$row->jabatanPenandatangan ?>"  data-toggle="modal" data-target="#editSurat">
+                        data-idsurat="<?=$row->idSurat ?>" data-nosurat="<?=$row->noSuratTugas ?>"  data-tglsurat="<?=$row->tglSurat ?>" data-maksud="<?=$row->maksud ?>" data-kota="<?=$row->kota ?>" data-anggaran="<?=$row->idAnggaran ?>" data-tglmulai="<?=$row->tglMulai ?>" data-tglselesai="<?=$row->tglSelesai ?>" data-kendaraan="<?=$row->kendaraan ?>" data-namapenandatangan="<?=$row->namaPenandatangan ?>" data-jabatanpenandatangan="<?=$row->jabatanPenandatangan ?>"  data-toggle="modal" data-target="#editSurat">
                           <i class="fa fa-edit"></i></a>
 
                          <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusSur" data-id="<?=$row->idSurat ?>" data-toggle="modal" data-target="#hapusSurat">
