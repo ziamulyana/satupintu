@@ -1,4 +1,3 @@
-
 <section class="content-header">
   <h1>
     LHK Pemeriksaan
@@ -24,267 +23,208 @@
             <div class="alert alert-success" role="alert">
               <?php echo $this->session->flashdata('success'); ?>
             </div>
-            <?php elseif ($this->session->flashdata('failed')) : ?>
-              <div class="alert alert-danger" role="alert">
-                <?php echo $this->session->flashdata('failed'); ?>
-              </div>
-            <?php endif; ?>
+          <?php elseif ($this->session->flashdata('failed')) : ?>
+            <div class="alert alert-danger" role="alert">
+              <?php echo $this->session->flashdata('failed'); ?>
+            </div>
+          <?php endif; ?>
 
-            <div class="col-md-6">
+          <div class="col-md-6">
 
-              <br>
-              <!-- nomor surat -->
-              <div class="form-group row">
-                <label for="noSurat" class="col-sm-6 col-form-label">Nomor Surat Tugas<span class="wajib"> *</span></label>
-                <div class="col-sm-12">
-                  <!-- no surat -->
-                  <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-align-left"></i></span>
-                    <select class="form-control category" name="suratTugas" id="suratTugas" style="width: 100%;">
-                      <?php
-                      foreach ($surat_tugas as $surat) {
-                        echo "<option value=".$surat->idSurat.">".$surat->noSuratTugas."</option>";
-                      }
-                      ?>
-                      <option selected="selected">- Pilih Surat Tugas -</option>
-                    </select>
-                  </div>
+            <br>
+            <!-- nomor surat -->
+            <div class="form-group row">
+              <label for="noSurat" class="col-sm-6 col-form-label">Nomor Surat Tugas<span class="wajib"> *</span></label>
+              <div class="col-sm-12">
+                <!-- no surat -->
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-align-left"></i></span>
+                  <select class="form-control category" name="suratTugas" id="suratTugas" style="width: 100%;">
+                    <?php
+                    foreach ($surat_tugas as $surat) {
+                      echo "<option value=" . $surat->idSurat . ">" . $surat->noSuratTugas . "</option>";
+                    }
+                    ?>
+                    <option selected="selected">- Pilih Surat Tugas -</option>
+                  </select>
                 </div>
               </div>
-
-
-              <!-- tanggal kegiatan -->
-              <div class="form-group row">
-                <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal LHK<span class="wajib"> *</span></label>
-                <div class="col-sm-12">
-                  <input class="form-control <?php echo form_error('tglLhk') ? 'is-invalid' : '' ?>" type="date" name="tglLhk" required>
-                  <div class="invalid-feedback">
-                    <?php echo form_error('tglPemeriksaan') ?>
-                  </div>
-                </div>
-              </div>
-
-
             </div>
 
 
-            <div class="col-md-6">
-              <br>
-
-              <!-- sppd -->
-              <div class="form-group row">
-                <label for="noSurat" class="col-sm-6 col-form-label">SPPD disahkan oleh :<span class="wajib"> *</span></label></label>
-                <div class="col-sm-12">
-                  <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
-                    <input type="text" class="form-control" name="sppd" id="sppd" placeholder="Pengesah SPPD" required>
-                  </div>
+            <!-- tanggal kegiatan -->
+            <div class="form-group row">
+              <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal LHK<span class="wajib"> *</span></label>
+              <div class="col-sm-12">
+                <input class="form-control <?php echo form_error('tglLhk') ? 'is-invalid' : '' ?>" type="date" name="tglLhk" required>
+                <div class="invalid-feedback">
+                  <?php echo form_error('tglPemeriksaan') ?>
                 </div>
               </div>
-
-
-              <!-- kwitansi -->
-              <div class="form-group row">
-                <label for="noSurat" class="col-sm-6 col-form-label">Kwitansi disahkan oleh :<span class="wajib"> *</span></label></label>
-                <div class="col-sm-12">
-                  <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
-                    <input type="text" class="form-control" name="kwitansi" id="kwitansi" placeholder="Pengesah Kwitansi" required>
-                  </div>
-                </div>
-              </div>
-
-
-              <!-- form 8 jam  -->
-              <div class="form-group row">
-                <label for="noSurat" class="col-sm-6 col-form-label">Form 8 jam disahkan oleh :<span class="wajib"> *</span></label></label>
-                <div class="col-sm-12">
-                  <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
-                    <input type="text" class="form-control" name="form" id="form" placeholder="Pengesah Form 8 Jam" required>
-                  </div>
-                </div>
-              </div>
-
-
             </div>
 
-            <div class="col-md-12">
-              <div class="box box-primary">
-                <div class="box-header with-border">
 
-                  <h3 class="box-title">Hasil Pemeriksaan</h3>
-
-                  <div class="row">
-                    <div class="col-xs-12">
-
-                     <hr>
-                     <div class="dynamic">
-                     <table class="table table-bordered table-hover" >
-                      <tr>
-                        <!-- sarana -->
-                        <td><select name="sarana[]" id="sarana[]" class="form-control category sm" title="Nama Sarana">
-                          <?php
-                      foreach ($sarana as $sr) {
-                        echo "<option value=".$sr->idSarana.">".$sr->namaSarana."</option>";
-                      }
-                      ?>
-                      <option selected="selected">Pilih Sarana</option>
-                        </select>
-
-                        <br>
-
-                        <p>Jika tidak ada sarana, <a href="<?php echo base_url("petugas/lhk/list_lhk_c/addSarana") ?>" >tambah sarana </a></p>
-
-                      </td>
-
-                        <!-- temuan -->
-
-                         <td><select name="temuan[]" id="temuan[]" class="category related-post form-control" multiple="multiple" data-placeholder="Temuan" style="width: 100%;"> 
-                          <option value="Perizinan">Perizinan</option>
-                          <option value="Pengadaan">Pengadaan</option>
-                          <option value="CDOB">CDOB</option>
-                          <option value="Produk TIE">Produk TIE</option>
-                          <option value="Mutu/Label">Mutu/Label</option>
-                          <option value="Produk Dilarang">Produk Dilarang</option>
-                          <option value="Administrasi">Administrasi</option>
-                          <option value="Hygiene/Sanitasi">Hygiene/Sanitasi</option>
-                          <option value="CPPB">CPPB</option>
-                          <option value="Lain-lain">Lain-lain</option>
-                        </select></td>
-
-                           <td><select name="tl[]" id="tl[]" class="form-control sm" title="Nama Sarana">
-                          <option>Tindak Lanjut</option>
-                          <option value="Tidak TL">Tidak TL</option>
-                          <option value="Pembinaan">Pembinaan</option>
-                          <option value="Peringatan">Peringatan</option>
-                          <option value="Peringatan Keras">Peringatan Keras</option>
-                          <option value="Penghentian Sementara Kegiatan">PSK</option>
-                          <option value="CAPA">CAPA</option>
-                        </select></td>
-
-                           <td><select name="kesimpulan[]" id="kesimpulan[]" class="form-control sm" title="Kesimpulan">
-                          <option>Kesimpulan</option>
-                          <option value="1">MK</option>
-                          <option value="0">TMK</option>
-                          
-                        </select></td>
+          </div>
 
 
-                        </tr>
+          <div class="col-md-6">
+            <br>
 
-                        <tr>
+            <!-- sppd -->
+            <div class="form-group row">
+              <label for="noSurat" class="col-sm-6 col-form-label">SPPD disahkan oleh :<span class="wajib"> *</span></label></label>
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
+                  <input type="text" class="form-control" name="sppd" id="sppd" placeholder="Pengesah SPPD" required>
+                </div>
+              </div>
+            </div>
 
-                        <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." name="keterangan[]" id="keterangan[]" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
 
-                        <td><button type="button" name="add" id="add" class="btn btn-primary"><i class="fa fa-plus"> Tambah</button></td>  
-                        </tr>
-                      
-                      </table>
-                      </div>
+            <!-- kwitansi -->
+            <div class="form-group row">
+              <label for="noSurat" class="col-sm-6 col-form-label">Kwitansi disahkan oleh :<span class="wajib"> *</span></label></label>
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
+                  <input type="text" class="form-control" name="kwitansi" id="kwitansi" placeholder="Pengesah Kwitansi" required>
+                </div>
+              </div>
+            </div>
 
 
-                        <div id="repeater">
-   
-                        <button type="button" class="btn btn-primary repeater-add-btn"><i class="fa fa-plus"></i>&nbsp Sarana</button>
-                      
+            <!-- form 8 jam  -->
+            <div class="form-group row">
+              <label for="noSurat" class="col-sm-6 col-form-label">Form 8 jam disahkan oleh :<span class="wajib"> *</span></label></label>
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
+                  <input type="text" class="form-control" name="form" id="form" placeholder="Pengesah Form 8 Jam" required>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="col-md-12">
+            <div class="box box-primary">
+              <div class="box-header with-border">
+
+                <h3 class="box-title">Hasil Pemeriksaan</h3>
+
+                <div class="row">
+                  <div class="col-xs-12">
+
+                    <hr>
+                    <div id="repeater">
+                      <button type="button" class="btn btn-primary repeater-add-btn"><i class="fa fa-plus"></i>&nbsp Sarana</button>
                       <div class="items" data-group="programming_languages">
                         <div class="item-content">
                           <div class="form-group">
                             <div class="row">
                               <table class="table table-bordered table-hover">
-                        <tr>
-                          <!-- sarana -->
-                          <td>
-                                <label></label>
-                                <select data-skip-name="true" name="sarana[]" id="sarana[]" class="form-control category sm">
-                                  <?php
-                              foreach ($sarana as $sr) {
-                                echo "<option value=" . $sr->idSarana . ">" . $sr->namaSarana . "</option>";
-                              }
-                              ?>
-                              <option selected="selected">Pilih Sarana</option>
-                                </select>
-
-                                <p>Jika tidak ada sarana, <a href=<?php echo base_url("petugas/lhk/list_lhk_c/addSarana") ?>>tambah sarana </a></p>
-
-                            </td>
-
-                             <!-- temuan -->
-
-                          <td><select  data-skip-name="true" name="temuan[]" id="temuan[]" class="category related-post form-control" multiple="multiple" data-placeholder="Temuan" style="width: 100%;">
-                              <option value="Perizinan">Perizinan</option>
-                              <option value="Pengadaan">Pengadaan</option>
-                              <option value="CDOB">CDOB</option>
-                              <option value="Produk TIE">Produk TIE</option>
-                              <option value="Mutu/Label">Mutu/Label</option>
-                              <option value="Produk Dilarang">Produk Dilarang</option>
-                              <option value="Administrasi">Administrasi</option>
-                              <option value="Hygiene/Sanitasi">Hygiene/Sanitasi</option>
-                              <option value="CPPB">CPPB</option>
-                              <option value="Lain-lain">Lain-lain</option>
-                            </select></td>
-
-                             <td><select data-skip-name="true" name="tl[]" id="tl[]" class="form-control sm" title="Tindak lanjut">
-                              <option>Tindak Lanjut</option>
-                              <option value="Tidak TL">Tidak TL</option>
-                              <option value="Pembinaan">Pembinaan</option>
-                              <option value="Peringatan">Peringatan</option>
-                              <option value="Peringatan Keras">Peringatan Keras</option>
-                              <option value="Penghentian Sementara Kegiatan">PSK</option>
-                              <option value="CAPA">CAPA</option>
-                            </select></td>
-
-                                <td><select  data-skip-name="true" name="kesimpulan[]" id="kesimpulan[]" class="form-control sm" title="Kesimpulan">
-                              <option>Kesimpulan</option>
-                              <option value="1">MK</option>
-                              <option value="0">TMK</option>
-
-                            </select></td>
 
 
 
-                          </tr>
+                                <tr>
+                                  <!-- sarana -->
+                                  <td>
+                                    <select data-skip-name="true" name="sarana[]" id="sarana[]" class="form-control category sm">
+                                      <?php
+                                      foreach ($sarana as $sr) {
+                                        echo "<option value=" . $sr->idSarana . ">" . $sr->namaSarana . "</option>";
+                                      }
+                                      ?>
+                                      <option selected="selected">Pilih Sarana</option>
+                                    </select>
 
-                           <tr>
 
-                          <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." name="keterangan[]" id="keterangan[]" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
+                                  </td>
 
-                          <td> <div class="col-md-3" style="margin-top:18px;" align="left">
-                                <button id="remove-btn" onclick="$(this).parents('.items').remove()" class="btn btn-danger">Remove</button>
-                              </div></td>
+                                  <!-- temuan -->
 
-                        </tr>
+                                  <td><select data-skip-name="true" name="temuan[]" id="temuan[]" class="category related-post form-control" multiple="multiple" data-placeholder="Temuan" style="width: 100%;">
+                                      <option value="Perizinan">Perizinan</option>
+                                      <option value="Pengadaan">Pengadaan</option>
+                                      <option value="CDOB">CDOB</option>
+                                      <option value="Produk TIE">Produk TIE</option>
+                                      <option value="Mutu/Label">Mutu/Label</option>
+                                      <option value="Produk Dilarang">Produk Dilarang</option>
+                                      <option value="Administrasi">Administrasi</option>
+                                      <option value="Hygiene/Sanitasi">Hygiene/Sanitasi</option>
+                                      <option value="CPPB">CPPB</option>
+                                      <option value="Lain-lain">Lain-lain</option>
+                                    </select></td>
 
-                        </table>
+                                  <td><select data-skip-name="true" name="tl[]" id="tl[]" class="form-control sm" title="Tindak lanjut">
+                                      <option>Tindak Lanjut</option>
+                                      <option value="Tidak TL">Tidak TL</option>
+                                      <option value="Pembinaan">Pembinaan</option>
+                                      <option value="Peringatan">Peringatan</option>
+                                      <option value="Peringatan Keras">Peringatan Keras</option>
+                                      <option value="Penghentian Sementara Kegiatan">PSK</option>
+                                      <option value="CAPA">CAPA</option>
+                                    </select></td>
 
-                             
+                                  <td><select data-skip-name="true" name="kesimpulan[]" id="kesimpulan[]" class="form-control sm" title="Kesimpulan">
+                                      <option>Kesimpulan</option>
+                                      <option value="1">MK</option>
+                                      <option value="0">TMK</option>
+
+                                    </select></td>
+
+
+
+                                </tr>
+
+                                <tr>
+
+                                  <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." name="keterangan[]" id="keterangan[]" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
+
+                                  <td>
+                                    <div class="col-md-3" style="margin-top:18px;" align="left">
+                                      <button id="remove-btn" onclick="$(this).parents('.items').remove()" class="btn btn-danger">Remove</button>
+                                    </div>
+                                  </td>
+
+                                </tr>
+
+                              </table>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                        
-             
 
-                      <!-- /.box-body -->
-                    </div>
-                    <!-- /.box -->
+                    <!-- /.box-body -->
                   </div>
-
-              </div>
+                  <!-- /.box -->
+                </div>
               </div>
             </div>
             <button type="submit" class="btn btn-success"><i class="fa fa-share"></i>&nbsp Save</button>
-
-          </form>
-
-
+          </div>
+          &nbsp;
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 <script>
-    $(document).ready(function(){
-        $('#repeater').createRepeater();
+  $(document).ready(function() {
+    $('#repeater').createRepeater();
 
-    });
-        
-    </script>
+  });
+</script>
+<script>
+  $(function() {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor1');
+    //bootstrap WYSIHTML5 - text editor
+    $(".textarea").wysihtml5();
+  });
+</script>
