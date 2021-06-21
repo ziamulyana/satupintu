@@ -28,7 +28,21 @@
 			$tglAwal = $this->input->post('tglAwal');
 			$tglAkhir = $this->input->post('tglAkhir');
 
-			$laporanSarana = $this->Laporan_model->getLaporan($idSarana);
+			$data['laporanSarana'] = $this->Laporan_model->getLaporanAll();
+
+			// foreach ($laporanSarana as $row) {	
+			// 	$namaSarana= $row->namaSarana;
+			// 	$tglSurat = $row->tglSurat;
+			// 	$tglMulai = $row->tglMulai;
+			// 	$tglSelesai = $row->tglSelesai;
+			// 	$maksud = $row->maksud;
+			// 	$kategori = $row->kategoriSarana;
+			// 	$temuan = $row->deskripsiTemuan;
+			// 	$jenisTl = $row->jenisTl;
+			// 	$peringatan = $row->isiPeringatan;
+			// 	$statusBalai = $row->statusBalai;
+			// }
+			$data['laporanPetugas'] = $this->Laporan_model->getPetugas();
 
 			// $data = array('title'=>'Cetak Laporan Pemeriksaan',
 			// 	'kategori' => $kategori,
@@ -38,7 +52,7 @@
 			// 	'tglAkhir' => $tglAkhir
 			// );	
 
-			// $this->load->view('petugas/isiLaporan', $data, FALSE);
+			$this->load->view('petugas/isiLaporan', $data, FALSE);
 			
 
 		}
