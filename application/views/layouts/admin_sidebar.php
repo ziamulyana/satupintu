@@ -50,24 +50,6 @@
 
       <li class="active"><a href="<?=base_url('admin/surat_tugas/surat_tugas')?>"><i class="fa fa-envelope"></i> <span>Surat Tugas</span></a></li>
 
-      <li class="treeview" style="height: auto;">
-        <a href="#">
-         <i class="fa fa-envelope"></i> <span>Surat Tugas</span>
-         <span class="pull-right-container">
-          <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu" style="display:none;">
-          <li><a href="<?php echo base_url('admin/surat_tugas/surattugas_tu') ?>"><i class="fa fa-circle-o"></i>Surat Tugas Sub Bagian TU</a></li>
-          <li><a href="<?php echo base_url('admin/surat_tugas/surattugas_pem') ?>"><i class="fa fa-circle-o"></i>Surat Tugas Sub Pemeriksaan</a></li>
-          <li><a href="<?php echo base_url('admin/surat_tugas/surattugas_pengujian') ?>"><i class="fa fa-circle-o"></i>Surat Tugas Sub Pengujian</a></li>
-          <li><a href="<?php echo base_url('admin/surat_tugas/surattugas_penindakan') ?>"><i class="fa fa-circle-o"></i>Surat Tugas Sub Penindakan</a></li>
-          <li><a href="<?php echo base_url('admin/surat_tugas/surattugas_infokom') ?>"><i class="fa fa-circle-o"></i>Surat Tugas Sub Infokom</a></li>
-        </ul>
-      </li>
-
-
-
         <li class="active"><a href="<?php echo base_url('admin/surat_perjadin/surat_perjadin')?>"><i class="fa fa-plane"></i> <span>Surat Perjalanan Dinas</span></a></li>
 
          <li class="treeview" style="height: auto;">
