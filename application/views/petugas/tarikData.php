@@ -65,7 +65,7 @@
                 </div>
               </div>
 
-              <!-- Jenis Komoditi -->
+              Jenis Komoditi
               <div class="form-group row">
                 <label for="noSurat" class="col-sm-6 col-form-label">Jenis Komoditi<span class="wajib"> *</span></label>
                 <div class="col-sm-12">
@@ -78,7 +78,6 @@
                     <option value="Obat Tradisional">Obat Tradisional</option>
                     <option value="Suplemen Kesehatan">Suplemen Kesehatan</option>
                     <option value="Pangan">Pangan</option>
-                    <option value="Semua">Semua</option>
                       <option selected="selected">- Pilih Jenis Komoditi -</option>
                     </select>
                   </div>
@@ -96,7 +95,6 @@
                     <select class="form-control " name="status" id="status" style="width: 100%;">
                     <option value="1">MK</option>
                     <option value="0">TMK</option>
-                    <option value="Semua">Semua</option>
                       <option selected="selected">- Pilih Status Hasil Pemeriksaan -</option>
                     </select>
                   </div>
