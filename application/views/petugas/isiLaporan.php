@@ -110,6 +110,7 @@ $nomor = 0;
                 <th rowspan="2">Saran Tindak Lanjut</th>
                 <th rowspan="2">Catatan</th>
                 <th rowspan="2">Status</th>
+                <th rowspan="2">Petugas</th>
             </tr>
         </thead>
             <tr style="background-color:#E0E0E0 ;text-align:center">

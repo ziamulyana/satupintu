@@ -11,7 +11,7 @@ class Laporan_model extends CI_Model
     }
 
     // Listing Konfigurasi
-    public function getLaporanAll($jenis,$komoditi,$status,$tglAwal,$tglAkhir) {
+    public function getLaporanAll($komoditi,$status,$tglAwal,$tglAkhir) {
         $this->db->select('group_concat(tbl_pegawai.nama) as namaPetugas ,,tbl_surattugas.noSuratTugas,tbl_sarana.namaSarana,tbl_sarana.alamatSarana, tbl_surattugas.tglSurat, tbl_surattugas.tglMulai, tbl_surattugas.tglSelesai, tbl_surattugas.maksud, tbl_sarana.kategoriSarana, tbl_surattl.deskripsiTemuan, tbl_surattl.jenisTl, tbl_peringatan.isiPeringatan, tbl_surattl.statusBalai');
 		$this->db->from('tbl_surattugas');
 		$this->db->join('tbl_surattl','tbl_surattl.idSuratTugas = tbl_surattugas.idSurat' );

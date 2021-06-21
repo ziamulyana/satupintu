@@ -22,13 +22,13 @@
 		}
 
 		public function cetakReport(){
-			$jenis =$this->input->post('kategori');
+			// $jenis =$this->input->post('kategori');
 			$komoditi =$this->input->post('komoditi');
 			$status = $this->input->post('status');
 			$tglAwal = $this->input->post('tglAwal');
 			$tglAkhir = $this->input->post('tglAkhir');
 
-			$data['laporanSarana'] = $this->Laporan_model->getLaporanAll($jenis,$komoditi,$status,$tglAwal,$tglAkhir);
+			$data['laporanSarana'] = $this->Laporan_model->getLaporanAll($komoditi,$status,$tglAwal,$tglAkhir);
 
 			$this->load->view('petugas/isiLaporan', $data, FALSE);
 			
