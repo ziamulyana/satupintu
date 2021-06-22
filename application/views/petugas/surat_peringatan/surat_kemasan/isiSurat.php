@@ -177,7 +177,7 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-".$filename)
 			foreach ($pilihPasal as $value) {
 				foreach ($value as $item) {
 					foreach ($item as $key) {
-						echo "<li><p style="font-family:arial;"class='paragraf'>".$key->uu." tentang ".$key->tentang." ".$key->pasal."</p></li>";
+						echo "<li><p style='font-family:arial;' class='paragraf'>".$key->uu." tentang ".$key->tentang." ".$key->pasal."</p></li>";
 					}
 				}
 			}

@@ -99,26 +99,24 @@ public function hapus_dataPegawai(){
 
         public function simpan_sarana()
         {
-            $ns =  $this->input->post('namas');
-            $als =  $this->input->post('alamats');
-            $ps =  $this->input->post('pemiliks');
-            $nois =  $this->input->post('noIS');
-            $pj =  $this->input->post('pJ');
-            $noip =  $this->input->post('noIPJ');
-            $ks =  $this->input->post('kS');
-            $js =  $this->input->post('jS');
-            $kt =  $this->input->post('kotas');
+            $nama =  $this->input->post('namas');
+            $alamat =  $this->input->post('alamats');
+            $jenis =  $this->input->post('kategori'); 
+            $produk = $this->input->post('produk');
+            $kota =  $this->input->post('kota'); 
+            $kecamatan =  $this->input->post('kecamatan'); 
+            $kelurahan = $this->input->post('kelurahan'); 
+            $kategori = $this->input->post('komoditi');     
             
             $data1 = array(
-                'namaSarana' => $ns,
-                'alamatSarana' => $als,
-                'pemilik' => $ps,
-                'noIzinSarana' => $nois,
-                'penanggungJawab' => $pj,
-                'noIzinPj' => $noip,
-                'kategoriSarana' => $ks,
-                'jenisSarana' => $js,
-                'kota' => $kt
+                'namaSarana' => $nama,
+                'alamatSarana' => $alamat,
+                'jenisSarana' => $jenis,
+                'produkSarana' => $produk,
+                'kotaSarana' => $kota,
+                'kecamatanSarana' => $kecamatan,
+                'kelurahanSarana' => $kelurahan,
+                'kategoriSarana' => $kategori
                 );  
 
             $this->db->insert('tbl_sarana',$data1);
@@ -135,25 +133,24 @@ public function hapus_dataPegawai(){
             $id = $this->input->post('idSr');
             $ns =  $this->input->post('namas');
             $als =  $this->input->post('alamats');
-            $ps =  $this->input->post('pemiliks');
-            $nois =  $this->input->post('noIS');
-            $pj =  $this->input->post('pJ');
-            $noip =  $this->input->post('noIPJ');
-            $ks =  $this->input->post('kS');
-            $js =  $this->input->post('jS');
-            $kt =  $this->input->post('kotas');
+            $jenis =  $this->input->post('jenisEdit');
+            $produk =  $this->input->post('produkEdit');
+            $kota =  $this->input->post('kotaEdit');
+            $kecamatan =  $this->input->post('kecamatanEdit');
+            $kelurahan =  $this->input->post('kelurahanEdit');
+            $kategori =  $this->input->post('kategoriEdit');
+            
             
             $data1 = array(
                 'idSarana' => $id,
                 'namaSarana' => $ns,
                 'alamatSarana' => $als,
-                'pemilik' => $ps,
-                'noIzinSarana' => $nois,
-                'penanggungJawab' => $pj,
-                'noIzinPj' => $noip,
-                'kategoriSarana' => $ks,
-                'jenisSarana' => $js,
-                'kota' => $kt
+                'jenisSarana' => $jenis,
+                'produkSarana' => $produk,
+                'kotaSarana' => $kota,
+                'kecamatanSarana' => $kecamatan,
+                'kelurahanSarana' => $kelurahan,
+                'kategoriSarana' => $kategori
                 );  
 
             $this->Master_model->updateSarana($data1);

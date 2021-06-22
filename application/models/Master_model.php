@@ -43,13 +43,12 @@ public function getSarana(){
  public function updateSarana($data1){
    $this->db->set('namaSarana', $data1['namaSarana']); 
    $this->db->set('alamatSarana', $data1['alamatSarana']);
-   $this->db->set('pemilik', $data1['pemilik']); 
-   $this->db->set('noIzinSarana', $data1['noIzinSarana']);
-   $this->db->set('penanggungJawab', $data1['penanggungJawab']); 
-   $this->db->set('noIzinPj', $data1['noIzinPj']);
-   $this->db->set('kategoriSarana', $data1['kategoriSarana']); 
    $this->db->set('jenisSarana', $data1['jenisSarana']); 
-   $this->db->set('kota', $data1['kota']);  
+   $this->db->set('produkSarana', $data1['produkSarana']);
+   $this->db->set('kotaSarana', $data1['kotaSarana']); 
+   $this->db->set('kecamatanSarana', $data1['kecamatanSarana']);
+   $this->db->set('kelurahanSarana', $data1['kelurahanSarana']); 
+   $this->db->set('kategoriSarana', $data1['kategoriSarana']);  
    $this->db->where('idSarana', $data1['idSarana']);
    $query = $this->db->update('tbl_sarana');
 }

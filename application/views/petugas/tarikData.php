@@ -31,7 +31,38 @@
 
             <div class="col-md-6">
 
-              <br>
+            <div class="form-group row">
+                <label for="noSurat" class="col-sm-6 col-form-label">Jenis Sarana<span class="wajib"> *</span></label>
+                <div class="col-sm-12">
+                  <!-- no surat -->
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-align-left"></i></span>
+                    <select class="form-control category" name="kategori" id="kategori" style="width: 100%;">
+                    <option value="Apotek">Apotek</option>
+                    <option value="Toko Obat">Toko Obat</option>
+                    <option value="Rumah Sakit">Rumah Sakit</option>
+                    <option value="Puskesmas">Puskesmas</option>
+                    <option value="PBF">PBF</option>
+                    <option value="Klinik">Klinik</option>
+                    <option value="IFK">IFK</option>
+                    <option value="Toko Kosmetik">Toko Kosmetik</option>
+                    <option value="Pemilik Notifikasi">Pemilik Notifikasi</option>
+                    <option value="Konter Kosmetik">Konter Kosmetik</option>
+                    <option value="Klinik Kecantikan/Salon/Spa">Klinik Kecantikan/Salon/Spa</option>
+                    <option value="Industri Kosmetik Golongan B">Industri Kosmetik Golongan B</option>
+                    <option value="Industri Kosmetik Golongan A">Industri Kosmetik Golongan A</option>
+                    <option value="Importir Kosmetik">Importir Kosmetik</option>
+                    <option value="Distributor Kosmetik">Distributor Kosmetik</option>
+                    <option value="Agen/Stokis MLM">Agen/Stokis MLM</option>
+                    <option value="Retail Suplemen Kesehatan">Retail Suplemen Kesehatan</option>
+                    <option value="Retail Obat Tradisional">Retail Obat Tradisional</option>
+                    <option value="Importir Suplemen Kesehatan">Retail Obat Tradisional</option>
+                    <option value="Pangan IRTP">Pangan IRTP</option>
+                      <option selected="selected">- Pilih Jenis Sarana -</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
              
               <div class="form-group row">
                 <label for="noSurat" class="col-sm-6 col-form-label">Jenis Komoditi<span class="wajib"> *</span></label>

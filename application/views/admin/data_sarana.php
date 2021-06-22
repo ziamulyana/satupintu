@@ -39,9 +39,9 @@
 												<tr>
 													<th class="dt-center">Nama Sarana</th>
 													<th class="dt-center">Alamat Sarana</th>
-													<th class="dt-center">Penangung Jawab</th>
 													<th class="dt-center">Jenis Sarana</th>
 													<th class="dt-center">Kota</th>
+													<th class="dt-center">Kecamatan</th>
 													<th class="dt-center">Aksi</th>
 												</tr>
 											</thead>
@@ -53,14 +53,20 @@
 														echo "<tr>";
 														echo "<td class='dt-left'>".$row->namaSarana."</td>";      
 														echo "<td class='dt-left'>".$row->alamatSarana."</td>";
-														echo "<td class='dt-left'>".$row->penanggungJawab."</td>";
 														echo "<td class='dt-left'>".$row->jenisSarana."</td>";
-														echo "<td class='dt-left'>".$row->kota."</td>";
+														echo "<td class='dt-left'>".$row->kotaSarana."</td>";
+														echo "<td class='dt-left'>".$row->kecamatanSarana."</td>";
 														echo "<td class='dt-left'>"?>                             
 
 														<a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editSar"
-														data-id =  "<?=$row->idSarana ?>" data-namas="<?=$row->namaSarana ?>" data-alamats="<?= $row->alamatSarana ?>" data-pemiliks="<?= $row->pemilik ?>" data-nois="<?= $row->noIzinSarana ?>" data-pj="<?= $row->penanggungJawab ?>" data-noipj="<?= $row->noIzinPj ?>"data-ks="<?= $row->kategoriSarana ?>"data-js="<?= $row->jenisSarana ?>"data-kotas="<?= $row->kota ?>" data-toggle="modal" data-target="#editSarana" ><i class="fa fa-edit"></i></a>
-
+														data-id =  "<?=$row->idSarana ?>" data-namas="<?=$row->namaSarana ?>" data-alamats="<?= $row->alamatSarana ?>" 
+														data-jeniss="<?= $row->jenisSarana ?>" 
+														data-produks="<?= $row->produkSarana ?>" 
+														data-kotas="<?= $row->kotaSarana ?>" 
+														data-kecamatans="<?= $row->kecamatanSarana ?>"
+														data-kelurahans="<?= $row->kelurahanSarana ?>" 
+														data-kategoris="<?= $row->kategoriSarana ?>" 
+														data-toggle="modal" data-target="#editSarana" ><i class="fa fa-edit"></i></a>
 
 														<a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusSr" data-id =  "<?=$row->idSarana ?>" data-toggle="modal" data-target="#hapusSarana"><i class="fa fa-trash"></i></a>
 
@@ -132,39 +138,36 @@
 							</div>
 
 							<div class="form-group">
-								<label for="noEdit">Pemilik</label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="pemiliks" id="pemiliksEdit" required >
+								<label for="noEdit">Jenis</label> <small class="text-danger">*</small>
+								<input type="text" class="form-control" name="jenisEdit" id="jenisEdit" required >
 							</div>
 
 							<div class="form-group">
-								<label for="noEdit">noIzinSarana</label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="noIS" id="noISEdit" required >
-							</div>
-
-							<div class="form-group">
-								<label for="noEdit">Penanggung Jawab</label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="pJ" id="pJEdit" required >
-							</div>
-
-							<div class="form-group">
-								<label for="noEdit">Nomor Izin Penanggung Jawab</label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="noIPJ" id="noIPJEdit" required >
-							</div>
-
-							<div class="form-group">
-								<label for="noEdit">Kategori Sarana</label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="kS" id="kSEdit" required >
-							</div>
-
-							<div class="form-group">
-								<label for="noEdit">Jenis Sarana</label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="jS" id="jSEdit" required >
+								<label for="noEdit">Produk</label> <small class="text-danger">*</small>
+								<input type="text" class="form-control" name="produkEdit" id="produkEdit" required >
 							</div>
 
 							<div class="form-group">
 								<label for="noEdit">Kota</label> <small class="text-danger">*</small>
-								<input type="text" class="form-control" name="kotas" id="kotasEdit" required >
+								<input type="text" class="form-control" name="kotaEdit" id="kotaEdit" required >
 							</div>
+
+							<div class="form-group">
+								<label for="noEdit">Kecamatan</label> <small class="text-danger">*</small>
+								<input type="text" class="form-control" name="kecamatanEdit" id="kecamatanEdit" required >
+							</div>
+
+							<div class="form-group">
+								<label for="noEdit">Kelurahan</label> <small class="text-danger">*</small>
+								<input type="text" class="form-control" name="kelurahanEdit" id="kelurahanEdit" required >
+							</div>
+
+							<div class="form-group">
+								<label for="noEdit">Kategori</label> <small class="text-danger">*</small>
+								<input type="text" class="form-control" name="kategoriEdit" id="kategoriEdit" required >
+							</div>
+
+							
 
 
 						</div><!-- /.box-body -->                        
@@ -184,24 +187,23 @@
 		var idSar = $(this).data('id');
 		var namaSar = $(this).data('namas');
 		var alamatSar = $(this).data('alamats');
-		var pemilikSar = $(this).data('pemiliks');
-		var noIsar = $(this).data('nois');
-		var pjSar = $(this).data('pj');
-		var noIpsar = $(this).data('noipj');
-		var kSar = $(this).data('ks');
-		var jSar = $(this).data('js');
+		var jenisSar = $(this).data('jeniss');
+		var produkSar = $(this).data('produks');
 		var kotaSar = $(this).data('kotas');
+		var kecamatanSar = $(this).data('kecamatans');
+		var kelurahanSar = $(this).data('kelurahans');
+		var kategoriSar = $(this).data('kategoris');	
 
+	
 		$("#editData #idSarEdit").val(idSar);
 		$("#editData #namasEdit").val(namaSar);
 		$("#editData #alamatsEdit").val(alamatSar);
-		$("#editData #pemiliksEdit").val(pemilikSar);
-		$("#editData #noISEdit").val(noIsar);
-		$("#editData #pJEdit").val(pjSar);
-		$("#editData #noIPJEdit").val(noIpsar);
-		$("#editData #kSEdit").val(kSar);
-		$("#editData #jSEdit").val(jSar);
-		$("#editData #kotasEdit").val(kotaSar);
+		$("#editData #jenisEdit").val(jenisSar);
+		$("#editData #produkEdit").val(produkSar);
+		$("#editData #kotaEdit").val(kotaSar);
+		$("#editData #kecamatanEdit").val(kecamatanSar);
+		$("#editData #kelurahanEdit").val(kelurahanSar);
+		$("#editData #kategoriEdit").val(kategoriSar);
 			});
 		</script>
 

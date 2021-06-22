@@ -88,16 +88,12 @@ foreach($laporanSarana as $row){
 }
 
 
-$nomor = 0;
-
-
-
 ?>
 
-<p>LAPORAN HASIL PEMERIKSAAN SARANA PELAYANAN - </p>
-<p>Jenis Sarana</p>
-<p>Pemeriksaan Awal</p>
-<p>Pemeriksaan Akhir</p>
+<p>LAPORAN HASIL PEMERIKSAAN SARANA  </p>
+<p>Jenis Sarana     : <?php echo $jenisSarana; ?></p>
+<p>Pemeriksaan Awal : <?php echo $tglAwal; ?></p>
+<p>Pemeriksaan Akhir: <?php echo $tglAkhir; ?></p>
 <table border="1" style="text-align:center">
         <thead>
             <tr style="background-color:#E0E0E0 ">
@@ -130,7 +126,11 @@ $nomor = 0;
                 <td><?php echo $temuan_all[$i] ; ?></td>
                 <td><?php echo $jenisTl_all[$i] ; ?></td>
                 <td><?php echo $peringatan_all[$i] ; ?></td>
-                <td><?php echo $statusBalai_all[$i] ; ?></td>
+                <td><?php  if($statusBalai_all[$i] ==0){
+                    echo "TMK";
+                }else{
+                    echo "MK";
+                } ?></td>
                 <td><?php echo $petugas_all[$i] ; ?></td>
             </tr>
           <?php } ?>
