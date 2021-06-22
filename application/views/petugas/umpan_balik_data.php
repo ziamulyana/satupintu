@@ -68,7 +68,7 @@
                             <i class="fa fa-envelope bg-blue"></i>
                             <div class="timeline-item">
                               <span class="time"><i class="fa fa-clock-o"></i> <?php echo $row->tglSuratPeringatan ?></span>
-                              <h3 class="timeline-header"><a href="#">Anda</a> mengirim surat <?php echo $row->halPeringatan ?> dengan nomor <?php echo $row ->noSuratPeringatan ?></h3>
+                              <h3 class="timeline-header"><a href="#">Anda</a> mengirim <b>Surat <?php echo $row->jenisTl ?></b> dengan nomor <?php echo $row ->noSuratPeringatan ?></h3>
                               <div class="timeline-body">
                                 <?php echo $row ->isiPeringatan ?> 
                               </div>

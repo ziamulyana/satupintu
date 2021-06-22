@@ -85,7 +85,7 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-".$filename)
 				<td><p style="font-family:arial;">Lampiran: </p></td> 
 			</tr>
 			<tr>
-				<td><p style="font-family:arial;">Hal		: Peringatan</p></td>
+				<td><p style="font-family:arial;">Hal		: <?php echo $halSurat?></p></td>
 			</tr>
 			<tr>
 				<td><p style="font-family:arial;"><?php echo " " ?></p></td>
