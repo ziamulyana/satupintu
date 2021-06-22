@@ -1,10 +1,10 @@
  <section class="content-header">
    <h1>
-     Menu Surat Peringatan
+     Menu Surat Tindak Lanjut
    </h1>
    <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="#">Peringatan</a></li>
+    <li><a href="#">Tindak Lanjut</a></li>
   </ol>
 </section>
 <!-- Main content -->
@@ -17,7 +17,7 @@
       <div class="box box-primary">
         <div class="box-header with-border">
 
-          <h3 class="box-title"><i class="fa fa-file"></i> Buat Surat Peringatan / Peringatan Keras
+          <h3 class="box-title"><i class="fa fa-file"></i> Buat Surat Tindak Lanjut
           </h3>
 
         </div>
@@ -39,7 +39,7 @@
                 <i class="fa fa-plus-square"></i>
               </div>
               <a href="<?php echo base_url('petugas/surat_peringatan/c_surat_peringatan/sub_obat')?>" class="small-box-footer">
-                Buat Surat Peringatan <i class="fa fa-arrow-circle-right"></i>
+                Buat Surat Tindak Lanjut <i class="fa fa-arrow-circle-right"></i>
               </a>
             </div>
           </div>
@@ -57,7 +57,7 @@
                 <i class="fa fa-magic"></i>
               </div>
               <a href="<?php echo base_url('petugas/surat_peringatan/surat_pangan')?>" class="small-box-footer">
-                Buat Surat Peringatan <i class="fa fa-arrow-circle-right"></i>
+              Buat Surat Tindak Lanjut<i class="fa fa-arrow-circle-right"></i>
               </a>
             </div>
           </div>
@@ -75,7 +75,7 @@
                 <i class="fa fa-briefcase"></i>
               </div>
               <a href="<?php echo base_url('petugas/surat_peringatan/surat_kosmetik')?>" class="small-box-footer">
-                Buat Surat Peringatan <i class="fa fa-arrow-circle-right"></i>
+              Buat Surat Tindak Lanjut<i class="fa fa-arrow-circle-right"></i>
               </a>
             </div>
           </div>
@@ -94,7 +94,7 @@
                 <i class="fa fa-building"></i>
               </div>
               <a href="<?php echo base_url('petugas/surat_peringatan/surat_kemasan')?>" class="small-box-footer">
-                Buat Surat Peringatan <i class="fa fa-arrow-circle-right"></i>
+              Buat Surat Tindak Lanjut <i class="fa fa-arrow-circle-right"></i>
               </a>
             </div>
           </div>
@@ -105,7 +105,7 @@
     <div class="box box-primary">
       <div class="box-header with-border">
 
-        <h3 class="box-title"><i class="fa fa-list"></i> Daftar Surat Peringatan
+        <h3 class="box-title"><i class="fa fa-list"></i> Daftar Surat Tindak Lanjut
         </h3>
 
         <br>
@@ -117,7 +117,7 @@
           <div class="alert alert-danger alert-dismissable" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-exclamation"></i> Alert!</h4>
-            Hallo Petugas ! Terdapat <strong><?php echo $upload_file ?></strong> surat peringatan  <?= $this->session->flashdata('flash_error'); ?> yang butuh upload soft file Surat Peringatan. Silahkan cek pada tabel!  
+            Hallo Petugas ! Terdapat <strong><?php echo $upload_file ?></strong> surat tindak lanjut  <?= $this->session->flashdata('flash_error'); ?> yang butuh upload soft file Surat Tindak Lanjut. Silahkan cek pada tabel!  
 
           <?php  }; ?>  
         </div>

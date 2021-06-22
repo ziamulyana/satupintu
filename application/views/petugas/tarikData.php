@@ -19,15 +19,7 @@
             <h3 class="box-title">Form Tarik Data Sarana</h3>
             <p><span class="wajib">* wajib diisi</span></p>
           </div>
-          <?php if ($this->session->flashdata('success')) : ?>
-            <div class="alert alert-success" role="alert">
-              <?php echo $this->session->flashdata('success'); ?>
-            </div>
-            <?php elseif ($this->session->flashdata('failed')) : ?>
-              <div class="alert alert-danger" role="alert">
-                <?php echo $this->session->flashdata('failed'); ?>
-              </div>
-            <?php endif; ?>
+         
 
             <div class="col-md-6">
 
