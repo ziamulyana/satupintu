@@ -110,7 +110,6 @@
 
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
-					'halPeringatan' => $halSurat,
 					'jenisPeringatan' => "puskesmas",
 					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',

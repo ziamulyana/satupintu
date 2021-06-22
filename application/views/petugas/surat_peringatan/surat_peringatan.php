@@ -136,6 +136,7 @@
                         <th class="dt-center">Nomor Surat Peringatan</th>
                         <th class="dt-center">Tanggal Surat</th>
                         <th class="dt-center">Nama Sarana</th>
+                        <th class="dt-center">Jenis TL</th>
                         <th class="dt-center">Aksi</th>
 
                       </tr>
@@ -151,6 +152,7 @@
                         echo "<td class='dt-center'>".$row->noSuratPeringatan."</td>";      
                         echo "<td class='dt-center'>".$row->tglSuratPeringatan."</td>";
                         echo "<td class='dt-center'>".$row->namaSarana."</td>";
+                        echo "<td class='dt-center'>".$row->jenisTl."</td>";
                        
                         echo "<td class='dt-center'>"?>                             
                         <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit"  id="editPer"

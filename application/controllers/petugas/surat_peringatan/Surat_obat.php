@@ -74,7 +74,7 @@
 			   	$namaSarana= $row->namaSarana;
 			   	$idTl =  $row->idTl;
 			   	$alamatSarana = $row->alamatSarana;
-			   	  	$halSurat = $row->jenisTl;
+			   	$halSurat = $row->jenisTl;
 			   	$kotaSurat = $row->kotaSarana;
 			   }
 
@@ -108,7 +108,6 @@
 
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
-					'halPeringatan' => $halSurat,
 					'jenisPeringatan' => "obat",
 					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',

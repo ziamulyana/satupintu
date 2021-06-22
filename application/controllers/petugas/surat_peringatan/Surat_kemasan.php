@@ -87,6 +87,7 @@
 					'noSurat' => $noSuratFix,
 					'penerimaSurat' => $namaSarana,
 					'kotaSurat' => $kotaSurat,
+					'halSurat' => $halSurat,
 				// 
 					'namaSarana' => $namaSarana,
 					'alamatSarana' => $alamatSarana,
@@ -110,7 +111,6 @@
 
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
-					'halPeringatan' => $halSurat,
 					'jenisPeringatan' => "kemasan pangan",
 					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',

@@ -105,7 +105,6 @@
 
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
-					'halPeringatan' => $halSurat,
 					'jenisPeringatan' => "klinik",
 					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',

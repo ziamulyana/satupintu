@@ -117,7 +117,6 @@
 
 							'tglSuratPeringatan' => $tanggal,
 							'noSuratPeringatan' => $noSuratFix,
-							'halPeringatan' => $halSurat,
 							'jenisPeringatan' => "pbf",
 							'isiPeringatan' => $detailTemuan,
 							'filePeringatan' => '0',

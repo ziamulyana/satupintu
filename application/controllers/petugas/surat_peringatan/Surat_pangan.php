@@ -101,7 +101,7 @@
 
 				'tglSuratPeringatan' => $tanggal,
 				'noSuratPeringatan' => $noSuratFix,
-				'jenisPeringatan' => $halSurat,
+				'jenisPeringatan' => "pangan",
 				'isiPeringatan' => $detailTemuan,
 				'filePeringatan' => '0',
 				'idTl' => $idTl,

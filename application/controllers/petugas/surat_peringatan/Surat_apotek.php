@@ -73,7 +73,6 @@ $data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
 					$namaSarana= $row->namaSarana;
 					$idTl =  $row->idTl;
 					$alamatSarana = $row->alamatSarana;
-					$halSurat = $row->jenisTl;
 					$kotaSurat = $row->kotaSarana;
 				}
 
@@ -108,7 +107,6 @@ $data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
 
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
-					'halPeringatan' => $halSurat,
 					'jenisPeringatan' => "apotek",
 					'isiPeringatan' => $detailTemuan,
 					'filePeringatan' => '0',

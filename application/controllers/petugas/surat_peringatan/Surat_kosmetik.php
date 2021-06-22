@@ -102,7 +102,6 @@
 
 				'tglSuratPeringatan' => $tanggal,
 				'noSuratPeringatan' => $noSuratFix,
-				'halPeringatan' => $halSurat,
 				'jenisPeringatan' => "kosmetik",
 				'isiPeringatan' => $detailTemuan,
 				'filePeringatan' => '0',
