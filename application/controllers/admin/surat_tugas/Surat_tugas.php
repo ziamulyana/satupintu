@@ -168,18 +168,18 @@ class Surat_tugas extends CI_Controller
         }
 
         if ($jenisSurat == "Pemeriksaan") {
-            $this->load->view('admin/surat_tugas/print_surat', $data, false);
+            $this->load->view('admin/surat_tugas/print_suratpem', $data, false);
         } else if ($jenisSurat == "Penindakan") {
-            echo "Hello penindakan";
+            $this->load->view('admin/surat_tugas/print_suratpenindakan', $data, false);
             // view format surat tugas penindakan
         } else if ($jenisSurat == "Pengujian") {
-            echo "Hello pengujian";
+            $this->load->view('admin/surat_tugas/print_suratpengujian', $data, false);
             // view format surat tugas pengujian
         } else if ($jenisSurat == "Infokom") {
-            echo "Hello infokom";
+            $this->load->view('admin/surat_tugas/print_suratinfokom', $data, false);
             // view format surat tugas infokom
-        } else {
-            echo "Hello tata usaha";
+        } else if ($jenisSurat == "Tata Usaha") {
+            $this->load->view('admin/surat_tugas/print_surattu', $data, false);
             // view format surat tugas tata usaha
         }
     }

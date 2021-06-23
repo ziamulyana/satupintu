@@ -16,8 +16,7 @@
 		public function index()
 		{
 			$data = konfigurasi('Form Surat Perjalanan Dinas',"ap");
-			$data['tugas'] = $this->SuratPerjadin_model->getsurattugas();
-			$data['printS'] = $this->SuratPerjadin_model->getpejabat();			
+			$data['tugas'] = $this->SuratPerjadin_model->getsurattugas();		
         	$this->template->load('layouts/admin_template', 'admin/surat_perjadin/surat_perjadin', $data);
 			
 		}
@@ -33,19 +32,10 @@
 		  // Print SPD
 		public function print()
 		{
-			$ppk = $this->input->post('nama_ppk');
-        
-			$data = array (
-				'nama_ppk' => $ppk,
-			);
-			$this->db->insert('tbl_ppk', $data);
-	
 			$id = $this->input->post('noSurat');
 			$idPetugas = $this->input->post('idPetugas');
-			$id_ppk = $this->input->post('nama_ppk');
-			$id_pejabat = $this->input->post('id_pejabat');
 			$data2['idSurat'] = $id;
-			$data2['printS'] = $this->SuratPerjadin_model->print_spd($id,$idPetugas,$id_ppk,$id_pejabat);
+			$data2['printS'] = $this->SuratPerjadin_model->print_spd($id,$idPetugas,$id_ppk);
 			$this->load->view('admin/surat_perjadin/print_spd', $data2, false);
 		}
 
