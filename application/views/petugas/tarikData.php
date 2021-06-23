@@ -19,17 +19,17 @@
             <h3 class="box-title">Form Tarik Data Sarana</h3>
             <p><span class="wajib">* wajib diisi</span></p>
           </div>
-         
 
-            <div class="col-md-6">
+
+          <div class="col-md-6">
 
             <div class="form-group row">
-                <label for="noSurat" class="col-sm-6 col-form-label">Jenis Sarana<span class="wajib"> *</span></label>
-                <div class="col-sm-12">
-                  <!-- no surat -->
-                  <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-align-left"></i></span>
-                    <select class="form-control category" name="kategori" id="kategori" style="width: 100%;">
+              <label for="noSurat" class="col-sm-6 col-form-label">Jenis Sarana<span class="wajib"> *</span></label>
+              <div class="col-sm-12">
+                <!-- no surat -->
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-align-left"></i></span>
+                  <select class="form-control category" name="kategori" id="kategori" style="width: 100%;">
                     <option value="Apotek">Apotek</option>
                     <option value="Toko Obat">Toko Obat</option>
                     <option value="Rumah Sakit">Rumah Sakit</option>
@@ -48,100 +48,107 @@
                     <option value="Agen/Stokis MLM">Agen/Stokis MLM</option>
                     <option value="Retail Suplemen Kesehatan">Retail Suplemen Kesehatan</option>
                     <option value="Retail Obat Tradisional">Retail Obat Tradisional</option>
-                    <option value="Importir Suplemen Kesehatan">Retail Obat Tradisional</option>
+                    <option value="Importir Suplemen Kesehatan">Importir Suplemen Kesehatan</option>
+                    <option value="Distributor Suplemen Kesehatan">Distributor Suplemen Kesehatan</option>
+                    <option value="Distributor Obat Tradisional">Distributor Obat Tradisional</option>
+                    <option value="Retail Pangan Tradisional">Retail Pangan Tradisional</option>
+                    <option value="Retail Pangan Modern">Retail Pangan Modern</option>
+                    <option value="Distributor Pangan">Distributor Pangan</option>
+                    <option value="Importir Pangan">Importir Pangan</option>
                     <option value="Pangan IRTP">Pangan IRTP</option>
-                      <option selected="selected">- Pilih Jenis Sarana -</option>
-                    </select>
-                  </div>
+                    <option value="Pangan MD">Pangan MD</option>
+                    <option selected="selected">- Pilih Jenis Sarana -</option>
+                  </select>
                 </div>
               </div>
-             
-              <div class="form-group row">
-                <label for="noSurat" class="col-sm-6 col-form-label">Jenis Komoditi<span class="wajib"> *</span></label>
-                <div class="col-sm-12">
-                  <!-- no surat -->
-                  <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-align-left"></i></span>
-                    <select class="form-control category" name="komoditi" id="komoditi" style="width: 100%;">
+            </div>
+
+            <div class="form-group row">
+              <label for="noSurat" class="col-sm-6 col-form-label">Jenis Komoditi<span class="wajib"> *</span></label>
+              <div class="col-sm-12">
+                <!-- no surat -->
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-align-left"></i></span>
+                  <select class="form-control category" name="komoditi" id="komoditi" style="width: 100%;">
                     <option value="Obat">Obat</option>
                     <option value="Kosmetik">Kosmetik</option>
                     <option value="Obat Tradisional">Obat Tradisional</option>
                     <option value="Suplemen Kesehatan">Suplemen Kesehatan</option>
                     <option value="Produksi Pangan">Produksi Pangan</option>
                     <option value="Pangan">Pangan</option>
-                      <option selected="selected">- Pilih Jenis Komoditi -</option>
-                    </select>
-                  </div>
+                    <option selected="selected">- Pilih Jenis Komoditi -</option>
+                  </select>
                 </div>
               </div>
+            </div>
 
 
-              <!-- Status -->
-              <div class="form-group row">
-                <label for="noSurat" class="col-sm-6 col-form-label">Status Hasil Pemeriksaan<span class="wajib"> *</span></label>
-                <div class="col-sm-12">
-                  <!-- no surat -->
-                  <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-align-left"></i></span>
-                    <select class="form-control " name="status" id="status" style="width: 100%;">
+            <!-- Status -->
+            <div class="form-group row">
+              <label for="noSurat" class="col-sm-6 col-form-label">Status Hasil Pemeriksaan<span class="wajib"> *</span></label>
+              <div class="col-sm-12">
+                <!-- no surat -->
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-align-left"></i></span>
+                  <select class="form-control " name="status" id="status" style="width: 100%;">
                     <option value="1">MK</option>
                     <option value="0">TMK</option>
-                      <option selected="selected">- Pilih Status Hasil Pemeriksaan -</option>
-                    </select>
-                  </div>
+                    <option selected="selected">- Pilih Status Hasil Pemeriksaan -</option>
+                  </select>
                 </div>
               </div>
-
-
-
             </div>
 
 
-            <div class="col-md-6">
-              <br>
 
-               <!-- pemeriksaan awal -->
-               <div class="form-group row">
-                <label for="example-date-input" class="col-sm-6 col-form-label">Periode Pemeriksaan Awal<span class="wajib"> *</span></label>
-                <div class="col-sm-12">
-                  <input class="form-control" type="date" name="tglAwal" required>
-                  <div class="invalid-feedback">
-                    <?php echo form_error('tglPemeriksaan') ?>
-                  </div>
+          </div>
+
+
+          <div class="col-md-6">
+            <br>
+
+            <!-- pemeriksaan awal -->
+            <div class="form-group row">
+              <label for="example-date-input" class="col-sm-6 col-form-label">Periode Pemeriksaan Awal<span class="wajib"> *</span></label>
+              <div class="col-sm-12">
+                <input class="form-control" type="date" name="tglAwal" required>
+                <div class="invalid-feedback">
+                  <?php echo form_error('tglPemeriksaan') ?>
                 </div>
               </div>
-
-               <!-- pemeriksaan akhir -->
-               <div class="form-group row">
-                <label for="example-date-input" class="col-sm-6 col-form-label">Periode Pemeriksaan Akhir<span class="wajib"> *</span></label>
-                <div class="col-sm-12">
-                  <input class="form-control <?php echo form_error('tglAwal') ? 'is-invalid' : '' ?>" type="date" name="tglAkhir" required>
-                  <div class="invalid-feedback">
-                    <?php echo form_error('tglAkhir') ?>
-                  </div>
-                </div>
-              </div>
-
             </div>
 
-            <div class="col-md-12">
-              
-            
+            <!-- pemeriksaan akhir -->
+            <div class="form-group row">
+              <label for="example-date-input" class="col-sm-6 col-form-label">Periode Pemeriksaan Akhir<span class="wajib"> *</span></label>
+              <div class="col-sm-12">
+                <input class="form-control <?php echo form_error('tglAwal') ? 'is-invalid' : '' ?>" type="date" name="tglAkhir" required>
+                <div class="invalid-feedback">
+                  <?php echo form_error('tglAkhir') ?>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-12">
+
+
             <button type="submit" class="btn btn-success"><i class="fa  fa-get-pocket"></i>&nbsp Proses</button>
           </div>
           <!-- /.box-body -->
         </div>
 
-      </div>
+    </div>
 
-      <div class="box-footer">
+    <div class="box-footer">
 
-      </div>
+    </div>
     </form>
   </div>
-</div>
-</div>
-<!-- /.row -->
+  </div>
+  </div>
+  <!-- /.row -->
 </section>
 <!-- /.content -->
 <style>
@@ -165,7 +172,4 @@
     border-bottom: none;
     font-size: 16px;
   }
-
-  
 </style>
-
