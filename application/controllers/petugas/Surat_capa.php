@@ -16,6 +16,7 @@ class Surat_capa extends CI_Controller
 	{
 
 		$data['capa'] = $this->SuratPeringatan_model->getCapa();
+		$data['fileCapa'] = $this->SuratPeringatan_model->fileCapa();
 		$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/capa/list_capa', $data);
 	}
 

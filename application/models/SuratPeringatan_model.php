@@ -26,11 +26,11 @@ class SuratPeringatan_model extends CI_Model
   public function getSuratPeringatan()
   {
 
-    $this->db->select('tbl_peringatan.idPeringatan, tbl_peringatan.tglSuratPeringatan, tbl_peringatan.noSuratPeringatan, tbl_peringatan.filePeringatan, tbl_peringatan.jenisCapa, tbl_surattl.jenisTl, tbl_sarana.namaSarana');
+    $this->db->select('tbl_peringatan.idPeringatan, tbl_peringatan.tglSuratPeringatan, tbl_peringatan.noSuratPeringatan, tbl_peringatan.filePeringatan, tbl_surattl.jenisTl, tbl_sarana.namaSarana');
     $this->db->from('tbl_peringatan');
     $this->db->join('tbl_surattl', 'tbl_surattl.idTl = tbl_peringatan.idTl');
     $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
-    $this->db->where("(tbl_surattl.jenisTl='Peringatan' OR tbl_surattl.jenisTl='Peringatan Keras')");
+    $this->db->where("tbl_peringatan.jenisCapa", "");
 
     $query = $this->db->get('');
     return $query;
@@ -49,9 +49,21 @@ class SuratPeringatan_model extends CI_Model
   {
     $this->db->select('filePeringatan');
     $this->db->where('filePeringatan = ', "0");
+    $this->db->where('tbl_peringatan.jenisCapa', "");
     $query = $this->db->get('tbl_peringatan');
     return $query->num_rows();
   }
+
+  public function fileCapa()
+  {
+    $this->db->select('filePeringatan');
+    $this->db->where('filePeringatan = ', "0");
+    $this->db->where('tbl_peringatan.jenisPeringatan', "CAPA");
+    $query = $this->db->get('tbl_peringatan');
+    return $query->num_rows();
+  }
+
+
 
   public function hapusSuratPeringatan($id)
   {

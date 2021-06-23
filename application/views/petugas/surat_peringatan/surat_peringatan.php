@@ -152,12 +152,7 @@
                                 echo "<td class='dt-center'>" . $row->noSuratPeringatan . "</td>";
                                 echo "<td class='dt-center'>" . $row->tglSuratPeringatan . "</td>";
                                 echo "<td class='dt-center'>" . $row->namaSarana . "</td>";
-                                if ($row->jenisCapa != null) {
-                                  echo "<td class='dt-center'>" . $row->jenisCapa . "</td>";
-                                } else {
-                                  echo "<td class='dt-center'>" . $row->jenisTl . "</td>";
-                                }
-
+                                echo "<td class='dt-center'>" . $row->jenisTl . "</td>";
                                 echo "<td class='dt-center'>" ?>
                                <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editPer" data-id="<?= $row->idPeringatan ?>" data-tgl="<?= $row->tglSuratPeringatan ?>" data-nomor="<?= $row->noSuratPeringatan ?>" data-toggle="modal" data-target="#editPeringatan"><i class="fa fa-edit"></i></a>
 
