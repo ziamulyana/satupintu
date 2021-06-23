@@ -81,8 +81,8 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-".$filename)
 					<!-- nomor surat -->
 					<th class="satu"><p style="font-family:arial;">Nomor	: <?php echo $noSurat ?></p></th>
 					<!-- tanggal pembuatan surat -->
-					<th class="dua"><p style="font-family:arial;">Batam, <?phpstyle="font-family:arial;" echo convertDay($tanggal)." ".convertMonthB(convertMonthA($tanggal))." ".convertYear($tanggal) ?></p></th> 
-				</tr>style="font-family:arial;"
+					<th class="dua"><p style="font-family:arial;">Batam, <?php echo convertDay($tanggal)." ".convertMonthB(convertMonthA($tanggal))." ".convertYear($tanggal) ?></p></th> 
+				</tr>
 				<tr>
 					<td><p style="font-family:arial;">Lampiran: </p></td> 
 				</tr>
