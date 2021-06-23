@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Surat_tugas extends CI_Controller {
+class Surat_tugas extends CI_Controller
+{
 
     // main page
     public function __construct()
@@ -9,16 +10,14 @@ class Surat_tugas extends CI_Controller {
         parent::__construct();
         $this->load->database();
         $this->load->model("SuratTugas_model");
-        
     }
 
     public function index()
     {
-        $data = konfigurasi('Pilih Surat Tugas','ap');
+        $data = konfigurasi('Pilih Surat Tugas', 'ap');
         $data['surattugas'] = $this->SuratTugas_model->getsurattugas();
         $data['anggaran'] = $this->SuratTugas_model->getanggaran();
-        $this->template->load('layouts/admin_template', 'admin/surat_tugas/surat_tugas', $data);  
-
+        $this->template->load('layouts/admin_template', 'admin/surat_tugas/surat_tugas', $data);
     }
 
     // tambah surat tugas
@@ -26,7 +25,6 @@ class Surat_tugas extends CI_Controller {
     {
         $data = konfigurasi('Form Tambah Surat', "ap");
         $data['petugas'] = $this->SuratTugas_model->getpetugas();
-        $data['nama_kota'] = $this->SuratTugas_model->getkota();
         $data['anggaran'] = $this->SuratTugas_model->getanggaran();
         $this->template->load('layouts/admin_template', 'admin/surat_tugas/form', $data);
     }
@@ -34,16 +32,18 @@ class Surat_tugas extends CI_Controller {
     //simpan surat tugas
     public function simpan_surat()
     {
-			function convertMonths($month){
-				$month = date('m',$month);
-				return $month;
-			}
+        function convertMonths($month)
+        {
+            $month = date('m', $month);
+            return $month;
+        }
 
-			function convertYears($year){
-				$year = date('y',$year);
-				return $year;
-			}
-        
+        function convertYears($year)
+        {
+            $year = date('y', $year);
+            return $year;
+        }
+        $jenis = $this->input->post('substansi');
         $nosurat = $this->input->post('noSuratTugas');
         $tglsurat = $this->input->post('tglSurat');
         $tglmulai = $this->input->post('tglMulai');
@@ -61,18 +61,25 @@ class Surat_tugas extends CI_Controller {
 
         $tanggalolah  = strtotime($tglsurat);
 
-			
-        $noSuratFix = "T-PW.01.12.9A2.".convertMonths($tanggalolah).".".convertYears($tanggalolah).".".$nosurat;
-       
 
-        $data = array (
-                
+        $noSuratFix = "T-PW.01.12.9A2." . convertMonths($tanggalolah) . "." . convertYears($tanggalolah) . "." . $nosurat;
+
+
+        // menghitung beda hari
+
+        $datetime1 = new DateTime($tglmulai);
+        $datetime2 = new DateTime($tglselesai);
+        $lamaPerjalanan = $datetime2->diff($datetime1)->days + 1;
+
+
+
+        $data = array(
+            'jenisSurat' => $jenis,
             'noSuratTugas' => $noSuratFix,
             'tglSurat' => $tglsurat,
             'tglMulai' => $tglmulai,
-            // 'bebanBiaya' => $bebanbiaya,
             'kendaraan' => $kendaraan,
-            //'lamaPerjalanan' => "3",
+            'lamaPerjalanan' => $lamaPerjalanan,
             'kota' => $kota,
             'idAnggaran' => $idanggaran,
             'tglSelesai' => $tglselesai,
@@ -82,28 +89,24 @@ class Surat_tugas extends CI_Controller {
 
         );
 
-      
-        $huruf = array('A','B','C','D','E','F','G','H','I','J');
+
+        $huruf = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J');
         $i = 0;
 
-        foreach($idpegawai as $petugas){
+        foreach ($idpegawai as $petugas) {
             $data_petugas = array(
-                'noSuratTugas' =>$noSuratFix,
+                'noSuratTugas' => $noSuratFix,
                 'idPetugas' => $petugas,
-                'urutan' => $huruf[$i] 
+                'urutan' => $huruf[$i]
             );
-            
+
             $this->db->insert('tbl_tugas', $data_petugas);
-            
+
             $i++;
-
-
-            
         }
         $this->db->insert('tbl_surattugas', $data);
         $this->session->set_flashdata('success', 'Data Berhasil Dimasukan');
         redirect('admin/surat_tugas/surat_tugas', 'refresh');
-
     }
 
     // ubah surat tugas
@@ -124,7 +127,7 @@ class Surat_tugas extends CI_Controller {
         //$idpetugas = $this->input->post('idPetugas');
 
 
-        $data = array (
+        $data = array(
             'idSur' => $idsurat,
             'noSur' => $nosurat,
             'tglSur' => $tglsurat,
@@ -139,7 +142,7 @@ class Surat_tugas extends CI_Controller {
             'jabatanPenandatangan' => $jabatanpenandatangan,
             //'idPetugas' => $idpetugas
         );
-        
+
         $this->SuratTugas_model->ubah_surat($data);
         redirect('admin/surat_tugas/surat_tugas');
     }
@@ -156,9 +159,28 @@ class Surat_tugas extends CI_Controller {
     public function print()
     {
 
-    $id = $this->input->post('idSurat');
-    $data['idSurat'] = $id;
-    $data['printS'] = $this->SuratTugas_model->print_surat($id);
-    $this->load->view('admin/surat_tugas/print_surat', $data, false);
+        $id = $this->input->post('idSurat');
+        $data['idSurat'] = $id;
+        $data['printS'] = $this->SuratTugas_model->print_surat($id);
+        $jenisSurat = "";
+        foreach ($data['printS']->result() as $row) {
+            $jenisSurat = $row->jenisSurat;
+        }
+
+        if ($jenisSurat == "Pemeriksaan") {
+            $this->load->view('admin/surat_tugas/print_surat', $data, false);
+        } else if ($jenisSurat == "Penindakan") {
+            echo "Hello penindakan";
+            // view format surat tugas penindakan
+        } else if ($jenisSurat == "Pengujian") {
+            echo "Hello pengujian";
+            // view format surat tugas pengujian
+        } else if ($jenisSurat == "Infokom") {
+            echo "Hello infokom";
+            // view format surat tugas infokom
+        } else {
+            echo "Hello tata usaha";
+            // view format surat tugas tata usaha
+        }
     }
 }
