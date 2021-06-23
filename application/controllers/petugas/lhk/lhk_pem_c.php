@@ -19,9 +19,9 @@ class Lhk_pem_c extends MY_Controller
   public function index()
   {
 
-    $data['surat_tugas']= $this->Lhk_model->getSuratTugas();
+    $data['surat_tugas'] = $this->Lhk_model->getSuratTugas();
     $data['sarana'] = $this->Lhk_model->getSarana();
-    $this->template->load('layouts/petugas_template', 'petugas/lhk/lhk_pem_v',$data);
+    $this->template->load('layouts/petugas_template', 'petugas/lhk/lhk_pem_v', $data);
   }
   public function add()
   {
@@ -45,46 +45,45 @@ class Lhk_pem_c extends MY_Controller
     $data['form'] = $form;
     $array_sarana = array();
     foreach ($sarana as $num) {
-     $sarana2['data'] = $this->Lhk_model->getSarana2($num);
-     array_push($array_sarana,$sarana2);
-   }
-   $data['sarana'] =  $array_sarana ;
-   $data['temuan'] = $temuan;
-   $data['tl'] = $tl;
-   $data['kesimpulan'] = $kesimpulan;
-   $data['keterangan'] = $keterangan;
+      $sarana2['data'] = $this->Lhk_model->getSarana2($num);
+      array_push($array_sarana, $sarana2);
+    }
+    $data['sarana'] =  $array_sarana;
+    $data['temuan'] = $temuan;
+    $data['tl'] = $tl;
+    $data['kesimpulan'] = $kesimpulan;
+    $data['keterangan'] = $keterangan;
 
-   $data2 = array
-   (
-    'tglLhk'   => $tglLhk,
-    'jenisLhk' => "pemeriksaan",
-    'file_lhk' => "0",
-    'idSuratTugas' =>$idSurat
-  );
-
-   for($i=0;$i<count($sarana);$i++){
-    if($sarana[$i]!="Pilih Sarana"){
-      $data_sarana = array(
-      'idSarana'   => $sarana[$i],
-      'isMk'   => $kesimpulan[$i],
-      'temuan' => $temuan[$i],
-      'deskripsiTemuan' => $keterangan[$i],
-      'jenisTl' => $tl[$i],
+    $data2 = array(
+      'tglLhk'   => $tglLhk,
+      'jenisLhk' => "pemeriksaan",
+      'file_lhk' => "0",
       'idSuratTugas' => $idSurat
     );
-     $this->db->insert('tbl_surattl',$data_sarana);
-   }else{
-    break;
+
+    $checkvalidation = $this->Lhk_model->checkDuplicate($idSurat);
+    if ($checkvalidation == true) {
+      for ($i = 0; $i < count($sarana); $i++) {
+        if ($sarana[$i] != "Pilih Sarana") {
+          $data_sarana = array(
+            'idSarana'   => $sarana[$i],
+            'isMk'   => $kesimpulan[$i],
+            'temuan' => $temuan[$i],
+            'deskripsiTemuan' => $keterangan[$i],
+            'jenisTl' => $tl[$i],
+            'idSuratTugas' => $idSurat
+          );
+          $this->db->insert('tbl_surattl', $data_sarana);
+        } else {
+          break;
+        }
+      }
+
+
+      $this->db->insert('tbl_lhk', $data2);
+      $this->load->view('petugas/lhk/lhk_pem_isi.php', $data, FALSE);
+    } else {
+      redirect('petugas/lhk/lhk_pem_c', 'refresh');
+    }
   }
-
-}
-
-
-$this->db->insert('tbl_lhk',$data2);
-$this->load->view('petugas/lhk/lhk_pem_isi.php', $data, FALSE);
-
-}
-
-
-
 }
