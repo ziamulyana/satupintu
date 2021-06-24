@@ -21,9 +21,9 @@
       <div class="input-group">
         <input type="text" name="q" class="form-control" placeholder="Search...">
         <span class="input-group-btn">
-              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-              </button>
-            </span>
+          <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+          </button>
+        </span>
       </div>
     </form>
     <!-- /.search form -->
@@ -32,9 +32,9 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">HEADER</li>
       <!-- Optionally, you can add icons to the links -->
-      <li class="active"><a href="<?=base_url()?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+      <li class="active"><a href="<?= base_url() ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
-       <li class="treeview" style="height: auto;">
+      <li class="treeview" style="height: auto;">
         <a href="#">
           <i class="fa fa-database"></i> <span>Master Data</span>
           <span class="pull-right-container">
@@ -42,17 +42,17 @@
           </span>
         </a>
         <ul class="treeview-menu" style="display: none;">
-          <li><a href="<?php echo base_url('admin/Master/data_pegawai')?>"><i class="fa fa-circle-o"></i>Data Pegawai</a></li>
-          <li><a href="<?php echo base_url('admin/Master/data_sarana')?>"><i class="fa fa-circle-o"></i>Data Sarana</a></li>
-          <li><a href="<?php echo base_url('admin/Master/data_anggaran')?>"><i class="fa fa-circle-o"></i>Data Anggaran</a></li>
+          <li><a href="<?php echo base_url('admin/Master/data_pegawai') ?>"><i class="fa fa-circle-o"></i>Data Pegawai</a></li>
+          <li><a href="<?php echo base_url('admin/Master/data_sarana') ?>"><i class="fa fa-circle-o"></i>Data Sarana</a></li>
+          <li><a href="<?php echo base_url('admin/Master/data_anggaran') ?>"><i class="fa fa-circle-o"></i>Data Anggaran</a></li>
         </ul>
       </li>
 
-      <li class="active"><a href="<?=base_url('admin/surat_tugas/surat_tugas')?>"><i class="fa fa-envelope"></i> <span>Surat Tugas</span></a></li>
+      <li class="active"><a href="<?= base_url('admin/surat_tugas/surat_tugas') ?>"><i class="fa fa-envelope"></i> <span>Surat Tugas</span></a></li>
 
-        <li class="active"><a href="<?php echo base_url('admin/surat_perjadin/surat_perjadin')?>"><i class="fa fa-plane"></i> <span>Surat Perjalanan Dinas</span></a></li>
+      <li class="active"><a href="<?php echo base_url('admin/surat_perjadin/surat_perjadin') ?>"><i class="fa fa-plane"></i> <span>Surat Perjalanan Dinas</span></a></li>
 
-         <li class="treeview" style="height: auto;">
+      <li class="treeview" style="height: auto;">
         <a href="#">
           <i class="fa fa-money"></i> <span>Pertanggung Jawaban</span>
           <span class="pull-right-container">
@@ -60,14 +60,27 @@
           </span>
         </a>
         <ul class="treeview-menu" style="display: none;">
-          <li><a href="<?php echo base_url('admin/surat_pj')?>"><i class="fa fa-circle-o"></i>Surat PJ</a></li>
-          <li><a href="<?php echo base_url('admin/surat_pj/list_nominatif')?>"><i class="fa fa-circle-o"></i>Nominatif</a></li>
+          <li><a href="<?php echo base_url('admin/surat_pj') ?>"><i class="fa fa-circle-o"></i>Surat PJ</a></li>
+          <li><a href="<?php echo base_url('admin/surat_pj/list_nominatif') ?>"><i class="fa fa-circle-o"></i>Nominatif</a></li>
         </ul>
       </li>
 
-         
-        <li class="active"><a href="<?php echo base_url('admin/Feedback')?>"><i class="fa fa-share"></i> <span>Feedback CAPA</span></a></li>
-  </ul>
+
+      <li class="active"><a href="<?php echo base_url('admin/Feedback') ?>"><i class="fa fa-share"></i> <span>Feedback CAPA</span></a></li>
+
+      <li class="treeview" style="height: auto;">
+        <a href="#">
+          <i class="fa fa-caret-square-o-down"></i> <span>Tarik Data</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu" style="display: none;">
+          <li><a href="<?php echo base_url('admin/eksporDataAdmin/surat') ?>"><i class="fa fa-circle-o"></i>Surat Tugas</a></li>
+          <li><a href="<?php echo base_url('admin/eksporDataAdmin/anggaran') ?>"><i class="fa fa-circle-o"></i>Realisasi Anggaran</a></li>
+        </ul>
+      </li>
+    </ul>
     <!-- /.sidebar-menu -->
   </section>
   <!-- /.sidebar -->
