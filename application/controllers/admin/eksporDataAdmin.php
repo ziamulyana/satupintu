@@ -23,9 +23,16 @@ class EksporDataAdmin extends CI_Controller
 
     public function anggaran()
     {
-        $data = konfigurasi('Ekspor Data', 'rs');
-        // $data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
+        $data['anggaran']= $this->Laporan_model->getLaporanAnggaran();
+        
         $this->template->load('layouts/admin_template', 'admin/tarikDataAnggaran', $data);
+    }
+
+    public function tarikAnggaran()
+    {
+        $data['anggaran']= $this->Laporan_model->getLaporanAnggaran();
+        
+        $this->load->view('admin/isiLaporanAnggaran', $data, FALSE);
     }
 
     public function tarikSurat()

@@ -44,6 +44,15 @@ class Laporan_model extends CI_Model
         return $query->result();
     }
 
+    public function getLaporanAnggaran()
+    {
+        $this->db->select('*');
+        $this->db->from('view_riil');
+        $query = $this->db->get();
+    
+        return $query;
+    }
+
     public function getPetugasSurat($tglAwal, $tglAkhir)
     {
         $this->db->select('tbl_surattugas.noSuratTugas, tbl_pegawai.nama');
