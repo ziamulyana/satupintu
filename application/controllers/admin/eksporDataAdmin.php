@@ -33,7 +33,8 @@ class EksporDataAdmin extends CI_Controller
 
         $tglAwal = $this->input->post('tglAwal');
         $tglAkhir = $this->input->post('tglAkhir');
-
+        $data['tglAwal'] = $tglAwal;
+        $data['tglAkhir'] = $tglAkhir;
         $data['laporanSurat'] = $this->Laporan_model->getLaporanSurat($tglAwal, $tglAkhir);
         $data['petugas'] = $this->Laporan_model->getPetugasSurat($tglAwal, $tglAkhir);
         $data['feedback'] = $this->Laporan_model->getFeedbackSurat($tglAwal, $tglAkhir);

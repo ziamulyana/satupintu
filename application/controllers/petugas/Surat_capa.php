@@ -48,6 +48,7 @@ class Surat_capa extends CI_Controller
 		$idSurat = $this->input->post('suratTugas');
 		// detil sarana
 		$idSarana =  $this->input->post('idSarana');
+		$pembuat =  $this->input->post('pembuat');
 
 		// detil temuan
 		$detailTemuan =  $this->input->post('detailTemuan');
@@ -62,6 +63,7 @@ class Surat_capa extends CI_Controller
 
 
 		$dataSarana = $this->SuratPeringatan_model->getSarana($idSarana);
+
 
 		foreach ($dataSarana as $row) {
 			$namaSarana = $row->namaSarana;
@@ -88,19 +90,30 @@ class Surat_capa extends CI_Controller
 			'detailTemuan' => $detailTemuan
 		);
 
+		if ($halSurat == "Close CAPA") {
+			$data_db = array(
 
+				'tglSuratPeringatan' => $tanggal,
+				'noSuratPeringatan' => $noSuratFix,
+				'jenisCapa' => $halSurat,
+				'jenisPeringatan' => 'CAPA',
+				'filePeringatan' => '0',
+				'namaPembuat' => $pembuat,
+				'idTl' => $idTl,
+				'status' => 0
+			);
+		} else {
+			$data_db = array(
 
-
-		$data_db = array(
-
-			'tglSuratPeringatan' => $tanggal,
-			'noSuratPeringatan' => $noSuratFix,
-			'jenisCapa' => $halSurat,
-			'jenisPeringatan' => 'CAPA',
-			'filePeringatan' => '0',
-			'idTl' => $idTl,
-			'status' => 0
-		);
+				'tglSuratPeringatan' => $tanggal,
+				'noSuratPeringatan' => $noSuratFix,
+				'jenisCapa' => $halSurat,
+				'jenisPeringatan' => 'CAPA',
+				'filePeringatan' => '0',
+				'idTl' => $idTl,
+				'status' => 0
+			);
+		}
 
 		$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
 		if ($checkvalidation == true) {

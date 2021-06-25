@@ -160,13 +160,49 @@ header("Content-Disposition: attachment; filename=LaporanSuratTugas-" . $filenam
                 <td><?php echo $namaSarana_all[$i]; ?></td>
                 <td><?php echo $alamatSarana_all[$i]; ?></td>
                 <td><?php echo $jenisSarana_all[$i]; ?></td>
-                <td><?php echo $statusBalai_all[$i]; ?></td>
+                <?php if ($statusBalai_all[$i] == 0) {
+                    $status = "TMK";
+                } else {
+                    $status = "MK";
+                } ?>
+                <td><?php echo $status; ?></td>
                 <td><?php echo $jenisTl_all[$i]; ?></td>
                 <td><?php echo $temuan_all[$i]; ?></td>
                 <td></td>
                 <td></td>
                 <td><?php echo $noSuratPeringatan_all[$i]; ?></td>
                 <td><?php echo $tglSuratPeringatan_all[$i]; ?></td>
+                <td><?php echo $namaSarana_all[$i]; ?></td>
+                <td><?php echo $jenisTl_all[$i]; ?></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <?php foreach ($feedback as $row) {
+                    if ($row->namaSarana == $namaSarana_all[$i]) {
+                ?>
+                        <td><?php echo $row->noSuratFeedback; ?></td>
+                        <td><?php echo $row->tglFeedback; ?></td>
+                <?php
+                    }
+                }
+
+                ?>
+
+                <?php foreach ($closed as $row) {
+                    if ($row->namaSarana == $namaSarana_all[$i]) {
+                ?>
+                        <td><?php echo $row->noSuratPeringatan; ?></td>
+                        <td><?php echo $row->tglSuratPeringatan; ?></td>
+                        <td><?php echo $row->namaPembuat; ?></td>
+                <?php
+                    }
+                }
+
+                ?>
+
+
+
 
 
         </tr>
