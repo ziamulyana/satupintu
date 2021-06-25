@@ -15,10 +15,9 @@ class SuratTl_model extends CI_Model
 	{
 		$this->db->select('tbl_surattugas.noSuratTugas, tbl_suratTugas.idSurat');
 		$this->db->from('tbl_surattugas');
-		$this->db->join('tbl_lhk', 'tbl_lhk.idSuratTugas = tbl_suratTugas.idSurat');
-		$this->db->join('tbl_surattl', 'tbl_lhk.idSuratTugas = tbl_surattl.idSuratTugas');
+		$this->db->join('tbl_surattl', 'tbl_surattugas.idSurat = tbl_surattl.idSuratTugas');
+		$this->db->where("tbl_surattl.isMk", "0");
 		$this->db->group_by('tbl_surattugas.noSuratTugas');
-		$this->db->where("tbl_surattl.isMk == 0");
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -31,7 +30,6 @@ class SuratTl_model extends CI_Model
 		$this->db->join('tbl_surattl', 'tbl_lhk.idSuratTugas = tbl_surattl.idSuratTugas');
 		$this->db->join('tbl_peringatan', 'tbl_surattl.idTl = tbl_peringatan.idTl');
 		$this->db->group_by('tbl_surattugas.noSuratTugas');
-		$this->db->where("(tbl_surattl.jenisTl='Peringatan' OR tbl_surattl.jenisTl='Peringatan Keras')");
 		$query = $this->db->get();
 		return $query->result();
 	}

@@ -13,10 +13,10 @@
 <section class="content">
     <div class="row">
         <div class="col-md-12">
-            <form action="<?php echo site_url('petugas/eksporData/cetakReport') ?>" method="post" role="form">
+            <form action="<?php echo site_url('admin/eksporDataAdmin/tarikSurat') ?>" method="post" role="form">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Form Tarik Data Sarana</h3>
+                        <h3 class="box-title">Form Tarik Data Surat Tugas</h3>
                         <p><span class="wajib">* wajib diisi</span></p>
                     </div>
 

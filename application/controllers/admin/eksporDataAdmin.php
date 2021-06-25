@@ -28,20 +28,18 @@ class EksporDataAdmin extends CI_Controller
         $this->template->load('layouts/admin_template', 'admin/tarikDataAnggaran', $data);
     }
 
-    public function cetakReport()
+    public function tarikSurat()
     {
-        $jenis = $this->input->post('kategori');
-        $komoditi = $this->input->post('komoditi');
-        $status = $this->input->post('status');
+
         $tglAwal = $this->input->post('tglAwal');
         $tglAkhir = $this->input->post('tglAkhir');
 
-        $data['laporanSarana'] = $this->Laporan_model->getLaporanAll($jenis, $komoditi, $status, $tglAwal, $tglAkhir);
-        $data['tglAwal'] = $tglAwal;
-        $data['tglAkhir'] = $tglAkhir;
-        $data['jenisSarana'] = $jenis;
+        $data['laporanSurat'] = $this->Laporan_model->getLaporanSurat($tglAwal, $tglAkhir);
+        $data['petugas'] = $this->Laporan_model->getPetugasSurat($tglAwal, $tglAkhir);
+        $data['feedback'] = $this->Laporan_model->getFeedbackSurat($tglAwal, $tglAkhir);
+        $data['closed'] = $this->Laporan_model->getClosedSurat($tglAwal, $tglAkhir);
 
-        $this->load->view('petugas/isiLaporan', $data, FALSE);
+        $this->load->view('admin/isiLaporanSurat', $data, FALSE);
     }
 }
 

@@ -67,6 +67,7 @@ class Lhk_pem_c extends MY_Controller
         if ($sarana[$i] != "Pilih Sarana") {
           $data_sarana = array(
             'idSarana'   => $sarana[$i],
+            'statusBalai'   => $kesimpulan[$i],
             'isMk'   => $kesimpulan[$i],
             'temuan' => $temuan[$i],
             'deskripsiTemuan' => $keterangan[$i],
