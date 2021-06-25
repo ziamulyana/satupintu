@@ -92,8 +92,10 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 	$nama_penandatangan = "";
 	$jabatan_penandatangan = "";
 	$nama_ppk = "";
+	$nip_ppk = "";
 	$nama_pejabat = "";
-	$nama_jabatan = "";
+	$jabatan_pejabat = "";
+	$nip_pejabat = "";
 
 	foreach ($printS->result() as $row) {
 		$nama_peg =  $row->nama;
@@ -112,11 +114,17 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 		$tgl_selesai2 = $row->tglSelesai;
 		$tgl_selesai = strtotime($row->tglSelesai);
 		$mak = $row->mak;
-		$nama_penandatangan = $row->namaPenandatangan;
-		$jabatan_penandatangan = $row->jabatanPenandatangan;
-		$nama_ppk = $row->nama_ppk;
-		$nama_pejabat = $row->nama_pejabat;
-		$nama_jabatan = $row->nama_jabatan;
+	}
+
+	foreach ($pejabatPpk as $row) {
+		$nama_ppk = $row->nama;
+		$nip_ppk = $row->nip;
+	}
+
+	foreach ($pejabatTtd as $row) {
+		$nama_pejabat = $row->nama;
+		$jabatan_pejabat = $row->jabatan;
+		$nip_pejabat = $row->nip;
 	}
 
 
@@ -179,7 +187,8 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 				<p style="font-family:bookman old style;">1. Pejabat Pembuat Komitmen</p>
 			</td>
 			<td>
-				<p style="font-family:bookman old style;"><?php echo $nama_ppk; ?></p>
+				<p style="font-family:bookman old style;"><b><?php echo $nama_ppk; ?></b></p>
+				<p style="font-family:bookman old style;"><b><?php echo $nip_ppk; ?></b></p>
 			</td>
 		</tr>
 
@@ -341,13 +350,13 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 				<p style="font-family:bookman old style;" align="left">Berangkat dari &nbsp;&nbsp;&nbsp; : Batam
 					<br />Pada Tanggal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo  convertDay($tgl_surat) . " " . convertMonthB(convertMonthA($tgl_surat)) . " " . convertYear($tgl_surat) ?>
 					<br />Tempat Tujuan &nbsp;&nbsp;&nbsp;: <?php echo $tujuan; ?>
-					<br /><?php echo $nama_jabatan; ?>
+					<br /><?php echo $jabatan_pejabat; ?>
 					<br />
 					<br />
 					<br />
 
 					<br /><b><?php echo $nama_pejabat; ?>
-						<br />NIP. 19840502 200812 2 002</b>
+						<br /><?php echo $nip_pejabat; ?></b>
 				</p>
 			</td>
 		</tr>
@@ -420,8 +429,8 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 					<br />
 					<br />
 					<br />
-					<br /><b>Paniyati, S.Farm., Apt
-						<br />NIP. 19830820 200712 2 001</b>
+					<br /><b><?php echo $nama_ppk; ?>
+						<br /><?php echo $nip_ppk; ?></b>
 				</p>
 			</td>
 
@@ -431,8 +440,8 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 					<br />
 					<br />
 					<br />
-					<br /><b>Paniyati, S.Farm., Apt
-						<br />NIP. 19830820 200712 2 001</b>
+					<br /><b><?php echo $nama_ppk; ?>
+						<br /><?php echo $nip_ppk; ?></b>
 				</p>
 			</td>
 		</tr>
