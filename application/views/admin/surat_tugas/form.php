@@ -24,7 +24,7 @@
             <hr>
 
             <!-- hal surat -->
-            <div class="form-group row">
+            <!-- <div class="form-group row">
               <label for="Perihal" class="col-sm-4 col-form-label">Substansi<span class="wajib"> *</span></label>
               <div class="col-sm-12">
                 <div class="input-group">
@@ -40,7 +40,7 @@
                 </div>
               </div>
             </div>
-
+ -->
             <!-- nomor surat -->
             <div class="form-group row">
               <label for="noSuratTugas" class="col-sm-4 col-form-label">Nomor Surat Tugas<span class="wajib"> *</span></label>

@@ -43,7 +43,7 @@ class Surat_tugas extends CI_Controller
             $year = date('y', $year);
             return $year;
         }
-        $jenis = $this->input->post('substansi');
+        // $jenis = $this->input->post('substansi');
         $nosurat = $this->input->post('noSuratTugas');
         $tglsurat = $this->input->post('tglSurat');
         $tglmulai = $this->input->post('tglMulai');
@@ -74,7 +74,7 @@ class Surat_tugas extends CI_Controller
 
 
         $data = array(
-            'jenisSurat' => $jenis,
+            // 'jenisSurat' => $jenis,
             'noSuratTugas' => $noSuratFix,
             'tglSurat' => $tglsurat,
             'tglMulai' => $tglmulai,
@@ -92,18 +92,34 @@ class Surat_tugas extends CI_Controller
 
         $huruf = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J');
         $i = 0;
+        // sorting urutan 
+        $pegawai_attr = array();
+        foreach ($idpegawai as $idpetugas) {
+            $petugas_attr = $this->SuratTugas_model->get_attr_petugas($idpetugas);
+           foreach($petugas_attr as $row){
+            $id = $row->idPegawai;
+            $gol = $row->golongan;
+           }
+           $pegawai_attr[$id] = $gol;
+           
+        }
 
-        foreach ($idpegawai as $petugas) {
-            $data_petugas = array(
+        arsort($pegawai_attr);
+
+        foreach($pegawai_attr as $id=>$value){
+                $data_petugas = array(
                 'noSuratTugas' => $noSuratFix,
-                'idPetugas' => $petugas,
+                'idPetugas' => $id,
                 'urutan' => $huruf[$i]
             );
+
+            print_r($data_petugas);
 
             $this->db->insert('tbl_tugas', $data_petugas);
 
             $i++;
         }
+        
         $this->db->insert('tbl_surattugas', $data);
         $this->session->set_flashdata('success', 'Data Berhasil Dimasukan');
         redirect('admin/surat_tugas/surat_tugas', 'refresh');
@@ -162,25 +178,6 @@ class Surat_tugas extends CI_Controller
         $id = $this->input->post('idSurat');
         $data['idSurat'] = $id;
         $data['printS'] = $this->SuratTugas_model->print_surat($id);
-        $jenisSurat = "";
-        foreach ($data['printS']->result() as $row) {
-            $jenisSurat = $row->jenisSurat;
-        }
-
-        if ($jenisSurat == "Pemeriksaan") {
-            $this->load->view('admin/surat_tugas/print_suratpem', $data, false);
-        } else if ($jenisSurat == "Penindakan") {
-            $this->load->view('admin/surat_tugas/print_suratpenindakan', $data, false);
-            // view format surat tugas penindakan
-        } else if ($jenisSurat == "Pengujian") {
-            $this->load->view('admin/surat_tugas/print_suratpengujian', $data, false);
-            // view format surat tugas pengujian
-        } else if ($jenisSurat == "Infokom") {
-            $this->load->view('admin/surat_tugas/print_suratinfokom', $data, false);
-            // view format surat tugas infokom
-        } else if ($jenisSurat == "Tata Usaha") {
-            $this->load->view('admin/surat_tugas/print_surattu', $data, false);
-            // view format surat tugas tata usaha
-        }
+        $this->load->view('admin/surat_tugas/print_suratpem', $data, false);
     }
 }

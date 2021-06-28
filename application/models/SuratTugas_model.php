@@ -31,6 +31,15 @@ class SuratTugas_model extends CI_Model
     return $query->result();
   }
 
+   public function get_attr_petugas($id)
+  {
+    $this->db->select('tbl_pegawai.idPegawai, tbl_pegawai.golongan');
+    $this->db->from('tbl_pegawai');
+    $this->db->where('idPegawai', $id);
+    $query = $this->db->get('');
+    return $query->result();
+  }
+
   //kota
   public function getkota()
   {
