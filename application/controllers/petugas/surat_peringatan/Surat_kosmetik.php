@@ -56,8 +56,8 @@
 
 				echo $tanggal;
 
-				$noSuratFix = "T-PW.03.02.9A2.".convertMonths($tanggalolah).".".convertYears($tanggalolah).".".$noSurat;
-				echo $noSuratFix;
+			$noSuratFix = "T-PW.01.12.9A.9A2." . convertMonths($tanggalolah) . "." . convertYears($tanggalolah) . "." . $noSurat;
+			echo $noSuratFix;
 
 
 						$pasal_peringatan = array();

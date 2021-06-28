@@ -62,8 +62,8 @@
 
 					$tanggalolah  = strtotime($tanggal);
 
-				
-					$noSuratFix = "T-PW.01.12.9A2.".convertMonths($tanggalolah).".".convertYears($tanggalolah).".".$noSurat;
+				$noSuratFix = "T-PW.01.12.9A.9A2." . convertMonths($tanggalolah) . "." . convertYears($tanggalolah) . "." . $noSurat;
+			echo $noSuratFix;
 					
 
 
