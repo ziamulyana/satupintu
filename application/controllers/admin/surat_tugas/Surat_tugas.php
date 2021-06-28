@@ -62,7 +62,7 @@ class Surat_tugas extends CI_Controller
         $tanggalolah  = strtotime($tglsurat);
 
 
-        $noSuratFix = "T-PW.01.12.9A2." . convertMonths($tanggalolah) . "." . convertYears($tanggalolah) . "." . $nosurat;
+        $noSuratFix = "HM.04.02.9A.9A2." . convertMonths($tanggalolah) . "." . convertYears($tanggalolah) . "." . $nosurat;
 
 
         // menghitung beda hari

@@ -47,7 +47,7 @@
               <div class="col-sm-12">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                  <input type="text" class="form-control" placeholder="T-PW.01.12.9A2." name="noSuratTugas" id="noSuratTugas" required>
+                  <input type="text" class="form-control" placeholder="Input nomor surat terakhir" name="noSuratTugas" id="noSuratTugas" required>
                 </div>
               </div>
             </div>
