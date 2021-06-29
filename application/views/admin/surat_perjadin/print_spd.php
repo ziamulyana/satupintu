@@ -173,7 +173,7 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 				<p style="font-family:bookman old style;" align="left">:<br />:<br />:</p>
 			</td>
 			<td>
-				<p style="font-family:bookman old style;" align="left"><br /><br /><?php echo $no_surat."     ".$urutan_peg; ?></p>
+				<p style="font-family:bookman old style;" align="left"><br /><br /><?php echo $no_surat . "     " . $urutan_peg; ?></p>
 		</tr>
 	</table>
 

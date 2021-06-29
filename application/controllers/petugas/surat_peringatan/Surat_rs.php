@@ -1,8 +1,9 @@
 	<?php
-	defined('BASEPATH') OR exit('No direct script access allowed');
+	defined('BASEPATH') or exit('No direct script access allowed');
 
-	class Surat_rs extends CI_Controller {
-	// main page
+	class Surat_rs extends CI_Controller
+	{
+		// main page
 
 
 		public function __construct()
@@ -17,30 +18,31 @@
 
 		public function index()
 		{
-			$data = konfigurasi('Form Surat Peringatan Rumah Sakit','rs');
+			$data = konfigurasi('Form Surat Peringatan Rumah Sakit', 'rs');
 			$data['surat_tugas'] = $this->SuratTl_model->getSuratTugas();
 			$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/surat_rs/form', $data);
-			
 		}
-		
+
 		public function surat()
 		{
 
 
-			function convertMonths($month){
-				$month = date('m',$month);
+			function convertMonths($month)
+			{
+				$month = date('m', $month);
 				return $month;
 			}
 
-			function convertYears($year){
-				$year = date('y',$year);
+			function convertYears($year)
+			{
+				$year = date('y', $year);
 				return $year;
 			}
 
 
 			$tanggal =  $this->input->post('tanggal');
 			$noSurat =  $this->input->post('noSurat');
-			$idSurat= $this->input->post('suratTugas');
+			$idSurat = $this->input->post('suratTugas');
 			// detil sarana
 			$idSarana =  $this->input->post('idSarana');
 			// $alamatSarana = $this->input->post('alamatSarana');
@@ -66,23 +68,24 @@
 			$pasal_peringatan = array();
 			foreach ($pilihPasal as $num) {
 				$pasal['data'] = $this->SuratObat_model->getPasal($num);
-				array_push($pasal_peringatan,$pasal);
+				array_push($pasal_peringatan, $pasal);
 			}
 
 
-				$dataSarana = $this->SuratPeringatan_model->getSarana($idSarana);
+			$dataSarana = $this->SuratPeringatan_model->getSarana($idSarana);
 
-			   foreach ($dataSarana as $row) {
-			   	$namaSarana= $row->namaSarana;
-			   	$idTl =  $row->idTl;
-			   	$alamatSarana = $row->alamatSarana;
-			   	  	$halSurat = $row->jenisTl;
-			   	$kotaSurat = $row->kotaSarana;
-			   }
+			foreach ($dataSarana as $row) {
+				$namaSarana = $row->namaSarana;
+				$idTl =  $row->idTl;
+				$alamatSarana = $row->alamatSarana;
+				$halSurat = $row->jenisTl;
+				$kotaSurat = $row->kotaSarana;
+			}
 
 
 
-			$data = array('title'=>'Cetak surat tugas',
+			$data = array(
+				'title' => 'Cetak surat tugas',
 				'tanggal' => $tanggal,
 				'noSurat' => $noSuratFix,
 				'halSurat' => $halSurat,
@@ -90,22 +93,22 @@
 				'kotaSurat' => $kotaSurat,
 				// detil sarana
 				'namaSarana' => $namaSarana,
-				'alamatSarana' =>$alamatSarana,
+				'alamatSarana' => $alamatSarana,
 				'tglMulaiperiksa' => $tglMulaiperiksa,
 				'tglSelesaiperiksa' => $tglSelesaiperiksa,
 				'noIzin' => $noIzin,
 				'namaPj' => $namaPj,
-				'noSip' => $noSip, 
+				'noSip' => $noSip,
 				'noHp' => $noHp,
 				// detil temuan
 				'detailTemuan' => $detailTemuan,
 				// ganti ke db
 				'pilihPasal' => $pasal_peringatan
-			);		
+			);
 
-			
 
-		
+
+
 			$data_db = array(
 
 				'tglSuratPeringatan' => $tanggal,
@@ -114,20 +117,18 @@
 				'isiPeringatan' => $detailTemuan,
 				'filePeringatan' => '0',
 				'idTl' => $idTl,
-				'status' =>0
+				'status' => 0
 			);
 
 			$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
-			if($checkvalidation == true){
-				$this->db->insert('tbl_peringatan',$data_db);
+			if ($checkvalidation == true) {
+				$this->db->insert('tbl_peringatan', $data_db);
 				$this->load->view('petugas/surat_peringatan/surat_rs/isiSurat', $data, FALSE);
-			}else{
-				 $this->session->set_flashdata('failed', 'Maaf, Data tidak diprocess karena duplikat');
+			} else {
+				$this->session->set_flashdata('failed', 'Maaf, Data tidak diprocess karena duplikat');
 				redirect('petugas/surat_peringatan/Surat_rs', 'refresh');
-			}	
-			
+			}
 		}
-
 	}
 
 	/* End of file Home.php */

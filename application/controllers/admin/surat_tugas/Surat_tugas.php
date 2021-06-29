@@ -96,18 +96,17 @@ class Surat_tugas extends CI_Controller
         $pegawai_attr = array();
         foreach ($idpegawai as $idpetugas) {
             $petugas_attr = $this->SuratTugas_model->get_attr_petugas($idpetugas);
-           foreach($petugas_attr as $row){
-            $id = $row->idPegawai;
-            $gol = $row->golongan;
-           }
-           $pegawai_attr[$id] = $gol;
-           
+            foreach ($petugas_attr as $row) {
+                $id = $row->idPegawai;
+                $gol = $row->golongan;
+            }
+            $pegawai_attr[$id] = $gol;
         }
 
         arsort($pegawai_attr);
 
-        foreach($pegawai_attr as $id=>$value){
-                $data_petugas = array(
+        foreach ($pegawai_attr as $id => $value) {
+            $data_petugas = array(
                 'noSuratTugas' => $noSuratFix,
                 'idPetugas' => $id,
                 'urutan' => $huruf[$i]
@@ -119,7 +118,7 @@ class Surat_tugas extends CI_Controller
 
             $i++;
         }
-        
+
         $this->db->insert('tbl_surattugas', $data);
         $this->session->set_flashdata('success', 'Data Berhasil Dimasukan');
         redirect('admin/surat_tugas/surat_tugas', 'refresh');
