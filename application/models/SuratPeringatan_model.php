@@ -77,7 +77,7 @@ class SuratPeringatan_model extends CI_Model
     $this->db->select('*');
     $this->db->from('tbl_sarana');
     $this->db->join('tbl_surattl', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
-    $this->db->where(array('tbl_surattl.idSuratTugas' => $id, 'tbl_surattl.isMk' => "0"));
+    $this->db->where('tbl_surattl.idSuratTugas', $id);
     $query = $this->db->get('');
     $output = '<option value="">Nama Sarana</option>';
     $output = "";

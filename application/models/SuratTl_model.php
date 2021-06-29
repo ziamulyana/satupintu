@@ -16,7 +16,6 @@ class SuratTl_model extends CI_Model
 		$this->db->select('tbl_surattugas.noSuratTugas, tbl_suratTugas.idSurat');
 		$this->db->from('tbl_surattugas');
 		$this->db->join('tbl_surattl', 'tbl_surattugas.idSurat = tbl_surattl.idSuratTugas');
-		$this->db->where("tbl_surattl.isMk", "0");
 		$this->db->group_by('tbl_surattugas.noSuratTugas');
 		$query = $this->db->get();
 		return $query->result();
