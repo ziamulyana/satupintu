@@ -48,9 +48,11 @@ class SuratPeringatan_model extends CI_Model
   public function getFile()
   {
     $this->db->select('filePeringatan');
+    $this->db->from('tbl_peringatan');
+    $this->db->join('tbl_surattl', 'tbl_surattl.idTl = tbl_peringatan.idTl');
     $this->db->where('filePeringatan = ', "0");
     $this->db->where('tbl_peringatan.jenisCapa', "");
-    $query = $this->db->get('tbl_peringatan');
+    $query = $this->db->get('');
     return $query->num_rows();
   }
 
