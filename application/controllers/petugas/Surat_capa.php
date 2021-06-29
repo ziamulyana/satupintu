@@ -48,6 +48,7 @@ class Surat_capa extends CI_Controller
 		$idSurat = $this->input->post('suratTugas');
 		// detil sarana
 		$idSarana =  $this->input->post('idSarana');
+		$komoditi = $this->input->post('komoditi');
 		$pembuat =  $this->input->post('pembuat');
 
 		// detil temuan
@@ -55,10 +56,15 @@ class Surat_capa extends CI_Controller
 
 		$tanggalolah  = strtotime($tanggal);
 
-		echo $tanggal;
+		if ($komoditi == "obat") {
+			$noSuratFix = "T-PW.01.12.9A.9A2." . convertMonths($tanggalolah) . "." . convertYears($tanggalolah) . "." . $noSurat;
+		} else if ($komoditi == "pangan") {
+			$noSuratFix = "T-PW.01.12.9A.9A2." . convertMonths($tanggalolah) . "." . convertYears($tanggalolah) . "." . $noSurat;
+		}
 
-		$noSuratFix = "T-PW.01.12.9A2." . convertMonths($tanggalolah) . "." . convertYears($tanggalolah) . "." . $noSurat;
-		echo $noSuratFix;
+
+
+
 
 
 

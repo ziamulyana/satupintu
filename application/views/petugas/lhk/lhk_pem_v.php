@@ -162,10 +162,13 @@
                                       <option>Tindak Lanjut</option>
                                       <option value="Tidak TL">Tidak TL</option>
                                       <option value="Pembinaan">Pembinaan</option>
+                                      <option value="Tindak Lanjut Hasil Pemeriksaan">Tindak Lanjut Hasil Pemeriksaan</option>
+                                      <option value="Pembinaan Teknis">Pembinaan Teknis</option>
                                       <option value="Peringatan">Peringatan</option>
                                       <option value="Peringatan Keras">Peringatan Keras</option>
                                       <option value="Penghentian Sementara Kegiatan">PSK</option>
-                                      <option value="CAPA">CAPA</option>
+                                      <option value="Rekomendasi Pencabutan Izin">Rekomendasi Pencabutan Izin</option>
+                                      <option value="TL ke Penyidikan">TL ke Penyidikan</option>
                                     </select></td>
 
                                   <td><select data-skip-name="true" name="kesimpulan[]" id="kesimpulan[]" class="form-control sm" title="Kesimpulan">

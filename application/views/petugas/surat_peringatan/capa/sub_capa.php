@@ -60,6 +60,8 @@
               </div>
 
 
+
+
               <!-- hal surat -->
               <div class="form-group row">
                 <label for="Perihal" class="col-sm-4 col-form-label">Perihal CAPA<span class="wajib"> *</span></label>
@@ -95,9 +97,32 @@
                 </div>
               </div>
 
-              <!-- pembuat CAPA untuk closed capa -->
+              <!-- Jenis Komoditi -->
               <div class="form-group row">
-                <label for="noSurat" class="col-sm-6 col-form-label">Pembuat CAPA<span class="wajib"> (untuk closed capa)</span></label>
+                <label for="Perihal" class="col-sm-4 col-form-label">Jenis Komoditi<span class="wajib"> *</span></label>
+                <div class="col-sm-12">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                    <select name="komoditi" id="komoditi" class="form-control" required>
+                      <option value="" disabled selected>- Pilih Perihal -</option>
+                      <option value="obat">PBF</option>
+                      <option value="obat">Apotek</option>
+                      <option value="obat">RS</option>
+                      <option value="obat">Klinik</option>
+                      <option value="obat">Puskesmas</option>
+                      <option value="obat">Toko Obat</option>
+                      <option value="pangan">Pangan</option>
+                      <option value="kosmetik">Kosmetik</option>
+                      <option value="kemasan">Kemasan Pangan</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- pembuat CAPA khusus untuk closed capa -->
+              <div class="form-group row">
+                <label for="noSurat" class="col-sm-6 col-form-label">Pembuat CAPA<span class="wajib"> (khusus untuk surat closed capa)</span></label>
                 <div class="col-sm-12">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
