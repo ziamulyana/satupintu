@@ -133,11 +133,11 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 	<table style="font-family:bookman old style;font-size: 10px;">
 
 		<tr>
-			<td>
+			<td style="width:50%;">
 				<p id="hilang">aaaaaaaaaaaaaaaaaazazazazazazazazazazazazazazaz</p>
 			</td>
-			<td>
-				<p style="line-height: 1px;">PERATURAN DIREKTUR JENDERAL PERBENDAHARAAN
+			<td style="width:50%;">
+				<p style="line-height: 1px;text-align:justify;">PERATURAN DIREKTUR JENDERAL PERBENDAHARAAN
 					<br />
 					NOMOR-22/PB/2013 TENTANG KETENTUAN LEBIH LANJUT
 					<br />
@@ -154,26 +154,22 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 
 	<table style="width:100%;font-size: 14px;">
 		<tr>
-			<td>
-				<p style="font-family:bookman old style;" align="center">Kementerian Negara/Lembaga
+			<td style="width:50%;" >
+				<p style="font-family:bookman old style;text-align:center;" >Kementerian Negara/Lembaga
 					<br />
-					<b>BALAI PENGAWAS OBAT DAN MAKANAN DI
-						<br />
-						BATAM
+					<b>BALAI PENGAWAS OBAT DAN MAKANAN DI BATAM
 						<br />
 						Jalan Hang Jebat Batu Besar Nongsa
 						<br />
 						BATAM</b>
 				</p>
 			</td>
-			<td>
-				<p style="font-family:bookman old style;" align="left">Lembar Ke<br />Kode No<br />Nomor</p>
+			<td style="width:50%;">
+				<p style="font-family:bookman old style;" align="left">Lembar Ke<u class="hilang">iiiii</u>: <br />Kode No<u class="hilang">iiiiiiiii</u>: <br />Nomor<u class="hilang">iiiiiiiiiiii</u>: <?php echo $no_surat . "     " . $urutan_peg; ?></p>
 			</td>
-			<td>
-				<p style="font-family:bookman old style;" align="left">:<br />:<br />:</p>
-			</td>
-			<td>
-				<p style="font-family:bookman old style;" align="left"><br /><br /><?php echo $no_surat . "     " . $urutan_peg; ?></p>
+
+
+			
 		</tr>
 	</table>
 
@@ -181,35 +177,34 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 
 	<p style="font-family:bookman old style;" align="center"><b>SURAT PERJALANAN DINAS (SPD)</u></p>
 
-	<table style="width:100%;font-size: 14px;" border="1">
+	<table style="width:100%;font-size: 14px;border:1px solid black;border-collapse: collapse;">
 		<tr>
-			<td>
-				<p style="font-family:bookman old style;">1. Pejabat Pembuat Komitmen</p>
+			<td style="border:1px solid black;">
+				<p style="font-family:bookman old style;"> 1. Pejabat Pembuat Komitmen</p>
 			</td>
-			<td>
-				<p style="font-family:bookman old style;"><b><?php echo $nama_ppk; ?></b></p>
-				<p style="font-family:bookman old style;"><b><?php echo $nip_ppk; ?></b></p>
+			<td style="border:1px solid black;">
+				<p style="font-family:bookman old style;"><?php echo $nama_ppk; ?></p>
 			</td>
 		</tr>
 
 		<tr>
-			<td>
+			<td style="border:1px solid black;">
 				<p style="font-family:bookman old style;">2. Nama / NIP Pegawai yang melaksanakan perjalanan dinas</p>
 			</td>
-			<td>
+			<td style="border:1px solid black;">
 				<p style="font-family:bookman old style;"><?php echo $nama_peg; ?> &nbsp;&nbsp;&nbsp;&nbsp;/<?php echo $nip_peg; ?></p>
 			</td>
 		</tr>
 
 
-		<tr>
-			<td valign="top">
+		<tr >
+			<td valign="top" style="border:1px solid black;">
 				<p style="font-family:bookman old style;">3. a. Pangkat dan Golongan
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;b. Jabatan/Instansi
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;c. Tingkat Biaya Perjalanan Dinas
 				</p>
 			</td>
-			<td valign="top">
+			<td valign="top" style="border:1px solid black;">
 				<p style="font-family:bookman old style;">a. <?php echo $pangkat_peg; ?> / <?php echo $golongan_peg; ?>
 					<br />b. <?php echo $jabatan_peg; ?>
 					<br />c.
@@ -218,31 +213,31 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 		</tr>
 
 		<tr>
-			<td valign="top">
+			<td valign="top" style="border:1px solid black;">
 				<p style="font-family:bookman old style;">4. Maksud Perjalanan Dinas</p>
 			</td>
-			<td valign="top">
+			<td valign="top" style="border:1px solid black;">
 				<p style="font-family:bookman old style;"><?php echo $maksud; ?></p>
 			</td>
 		</tr>
 
 		<tr>
-			<td>
+			<td style="border:1px solid black;">
 				<p style="font-family:bookman old style;">5. Alat angkut yang dipergunakan</p>
 			</td>
-			<td>
+			<td style="border:1px solid black;">
 				<p style="font-family:bookman old style;"><?php echo $kendaraan; ?></p>
 			</td>
 		</tr>
 
 		<tr>
-			<td>
+			<td style="border:1px solid black;">
 				<p style="font-family:bookman old style;">6. a. Tempat Berangkat
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;b. Tempat Tujuan
 				</p>
 			</td>
 
-			<td>
+			<td style="border:1px solid black;">
 				<p style="font-family:bookman old style;">a. Kota Batam
 					<br />b. <?php echo $tujuan; ?>
 				</p>
@@ -250,14 +245,14 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 		</tr>
 
 		<tr>
-			<td valign="top">
+			<td valign="top" style="border:1px solid black;">
 				<p style="font-family:bookman old style;">7. a. Lama perjalanan Dinas
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;b. Tanggal berangkat
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;c. Tanggal harus kembali/tiba di tempat *)
 				</p>
 			</td>
 
-			<td valign="top">
+			<td valign="top" style="border:1px solid black;">
 				<?php
 				$datetime1 = new DateTime($tgl_mulai2);
 				$datetime2 = new DateTime($tgl_selesai2);
@@ -268,40 +263,42 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 					<br />c. <?php echo convertDay($tgl_selesai) . " " . convertMonthB(convertMonthA($tgl_selesai)) . " " . convertYear($tgl_selesai) ?>
 				</p>
 			</td>
+
 		</tr>
 
-	</table>
-
-	<table style="width:100%;font-size: 14px;" border="1">
 		<tr>
-			<td>
+
+			<td valign="top" style="border:1px solid black;">
+				
 				<p style="font-family:bookman old style;">8. Pengikut : Nama
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;1.
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;2.
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;3.
 				</p>
-			</td>
+				</td>
 
-			<td valign="top">
-				<p style="font-family:bookman old style;">Tanggal Lahir</p>
-			</td>
-			<td valign="top">
-				<p style="font-family:bookman old style;">Keterangan</p>
-			</td>
+				<td valign="top" style="border:1px solid black;">
+				
+				<p style="font-family:bookman old style;">Tanggal Lahir
+					<br />&nbsp;&nbsp;&nbsp;&nbsp;
+					<br />&nbsp;&nbsp;&nbsp;&nbsp;
+					<br />&nbsp;&nbsp;&nbsp;&nbsp;
+				</p>
+				</td>
+
+				
+		
 		</tr>
 
-	</table>
-
-	<table style="width:100%;font-size: 14px;" border="1">
 		<tr>
-			<td>
+			<td style="border:1px solid black;">
 				<p style="font-family:bookman old style;">9. Pembebanan Anggaran
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;a. Instansi
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;b. Mata Anggaran
 				</p>
 			</td>
 
-			<td>
+			<td style="border:1px solid black;">
 				<p style="font-family:bookman old style;">
 					<br />a. Balai Pengawas Obat dan Makanan di Batam
 					<br />b. <?php echo $mak; ?>
@@ -309,21 +306,23 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 			</td>
 		</tr>
 
-		<tr>
-			<td>
+		<tr >
+			<td style="border:1px solid black;">
 				<p style="font-family:bookman old style;">10. Keterangan Lain-Lain</p>
 			</td>
-			<td></td>
+			<td style="border:1px solid black;"></td>
 		</tr>
+
 	</table>
+
 	<br />
 
-	<table style="width:100%;font-size: 14px;">
+	<table style="width:100%;font-size: 14px;border-collapse: collapse;">
 		<tr>
-			<td>
+			<td style="width:52%;">
 				<p id="hilang">Cobacabicobacabicobacabicobacabi</p>
 			</td>
-			<td>
+			<td style="width:48%;">
 				<p style="font-family:bookman old style;" align="left">Dikeluarkan di : Batam
 					<br />Tanggal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo  convertDay($tgl_surat) . " " . convertMonthB(convertMonthA($tgl_surat)) . " " . convertYear($tgl_surat) ?>
 					<br /><u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
@@ -333,41 +332,43 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 					<br />
 					<br />
 					<br />
-					<br /><b>Paniyati, S.Farm., Apt
-						<br />NIP. 19830820 200712 2 001</b>
+					<br /><?php echo $nama_ppk;?>
+						<br />NIP. <?php echo $nip_ppk;?>
 				</p>
 			</td>
 		</tr>
 
 	</table>
 
-	<table style="width:100%;font-size: 14px;" border="1">
+
+	<table style="width:100%;font-size: 14px;border:1px solid black;border-collapse: collapse;" >
 		<tr>
-			<td>
+			<td style="width:52%;border:1px solid black;">
 				<p id="hilang">Cobacabicobacabicobacabicobacabi</p>
 			</td>
-			<td>
-				<p style="font-family:bookman old style;" align="left">Berangkat dari &nbsp;&nbsp;&nbsp; : Batam
-					<br />Pada Tanggal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo  convertDay($tgl_surat) . " " . convertMonthB(convertMonthA($tgl_surat)) . " " . convertYear($tgl_surat) ?>
-					<br />Tempat Tujuan &nbsp;&nbsp;&nbsp;: <?php echo $tujuan; ?>
+			<td style="width:48%;border:1px solid black;">
+				<p style="font-family:bookman old style;" align="left">Berangkat dari<u class="hilang">iiiii</u> : Batam
+					<br />Pada Tanggal <u class="hilang">iiiiiii</u>: <?php echo  convertDay($tgl_surat) . " " . convertMonthB(convertMonthA($tgl_surat)) . " " . convertYear($tgl_surat) ?>
+					<br />Tempat Tujuan<u class="hilang">iiii</u>: <?php echo $tujuan; ?>
+					<br>
 					<br /><?php echo $jabatan_pejabat; ?>
 					<br />
 					<br />
 					<br />
 
-					<br /><b><?php echo $nama_pejabat; ?>
-						<br /><?php echo $nip_pejabat; ?></b>
+					<br /><?php echo $nama_pejabat; ?>
+						<br />NIP. <?php echo $nip_pejabat; ?>
 				</p>
 			</td>
 		</tr>
 
 		<tr>
-			<td valign="top">
+			<td valign="top" style="border:1px solid black;">
 				<p style="font-family:bookman old style;" align="left">II. Tiba di &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;Pada Tanggal :
 				</p>
 			</td>
-			<td>
+			<td style="border:1px solid black;">
 				<p style="font-family:bookman old style;" align="top-left">Berangkat dari :
 					<br />Ke &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
 					<br />Pada Tanggal &nbsp;&nbsp;:
@@ -382,7 +383,7 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 		</tr>
 
 		<tr>
-			<td valign="top">
+			<td valign="top" style="border:1px solid black;">
 				<p style="font-family:bookman old style;" align="left">III. Tiba di &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pada Tanggal :
 				</p>
@@ -401,12 +402,12 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 		</tr>
 
 		<tr>
-			<td valign="top">
+			<td valign="top" style="border:1px solid black;">
 				<p style="font-family:bookman old style;" align="left">IV. Tiba di &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pada Tanggal :
 				</p>
 			</td>
-			<td>
+			<td style="border:1px solid black;">
 				<p style="font-family:bookman old style;" align="top-left">Berangkat dari :
 					<br />Ke &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
 					<br />Pada Tanggal &nbsp;&nbsp;:
@@ -420,50 +421,48 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 		</tr>
 
 		<tr>
-			<td valign="top">
-				<p style="font-family:bookman old style;" align="left">Tiba Kembali &nbsp;&nbsp;&nbsp; : Batam
+			<td valign="top" style="border:1px solid black;">
+				<p style="font-family:bookman old style;" align="left">V. Tiba Kembali &nbsp;&nbsp;&nbsp; : Batam
 					<br />(Tempat Kedudukan)
 					<br />Pada Tanggal &nbsp;&nbsp;&nbsp;&nbsp;:
-					<br />
+					<br>
 					<br />Pejabat Pembuat Komitmen
 					<br />
 					<br />
 					<br />
-					<br /><b><?php echo $nama_ppk; ?>
-						<br /><?php echo $nip_ppk; ?></b>
+					<br /><?php echo $nama_ppk; ?>
+						<br />NIP. <?php echo $nip_ppk; ?>
 				</p>
 			</td>
 
-			<td valign="top">
-				<p style="font-family:bookman old style;" align="left">Telah diperiksa dengan keterangan bahwa perjalanan tersebut diatas benar dilakukan atas perintahnya dan semata-mata untuk kepentingan jabatan dalam waktu yang sesingkat-singkatnya
+			<td valign="top" style="border:1px solid black;" >
+				<p style="font-family:bookman old style;" align="justify">Telah diperiksa dengan keterangan bahwa perjalanan tersebut diatas benar dilakukan atas perintahnya dan semata-mata untuk kepentingan jabatan dalam waktu yang sesingkat-singkatnya
+					<br>
 					<br />Pejabat Pembuat Komitmen
 					<br />
 					<br />
 					<br />
-					<br /><b><?php echo $nama_ppk; ?>
-						<br /><?php echo $nip_ppk; ?></b>
+					<br /><?php echo $nama_ppk; ?>
+						<br />NIP. <?php echo $nip_ppk; ?>
 				</p>
 			</td>
 		</tr>
-	</table>
 
-	<table style="width:100%;font-size: 14px;" border="1">
 		<tr>
-			<td valign="top">
+			<td valign="top" style="border:1px solid black;" colspan="2" >
 				<p style="font-family:bookman old style;" align="left">VI. Keterangan Lain-Lain
 			</td>
 		</tr>
 
 		<tr>
-			<td valign="top">
+			<td valign="top" style="border:1px solid black;" colspan="2">
 				<p style="font-family:bookman old style;" align="left">VII. PERHATIAN :</p>
 				<p style="font-family:bookman old style;" align="left">PPK yang menerbitkan SPD, pegawai yang melakukan perjalanan dinas, para pejabat yang mengesahkan tanggal berangkat/tiba, serta bendahara bertanggung jawab berdasarkan peraturan-peraturan keuangan Negara apabila negara menderita rugi akibat kesalahan, kelalaian dan kealpaannya.</p>
 			</td>
 		</tr>
 	</table>
 
-
-
+	
 
 	</div>
 </body>
