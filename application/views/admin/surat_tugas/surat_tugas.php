@@ -43,8 +43,8 @@
                           <th class="dt-center">Tgl Surat Tugas</th>
                           <th class="dt-center">Maksud & Tujuan</th>
                           <th class="dt-center">Kota</th>
-                          <th class="dt-center">Substansi</th>
-                          <th class="dt-center">Aksi</th>
+                          <!-- <th class="dt-center">Substansi</th>
+ -->                          <th class="dt-center">Aksi</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -57,7 +57,7 @@
                             echo "<td class='dt-center'>" . $row->tglSurat . "</td>";
                             echo "<td class='dt-center'>" . $row->maksud . "</td>";
                             echo "<td class='dt-center'>" . $row->kota . "</td>";
-                            echo "<td class='dt-center'>" . $row->jenisSurat . "</td>";
+                            // echo "<td class='dt-center'>" . $row->jenisSurat . "</td>";
                             echo "<td class='dt-center'>" ?>
                             <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editSur" data-idsurat="<?= $row->idSurat ?>" data-nosurat="<?= $row->noSuratTugas ?>" data-tglsurat="<?= $row->tglSurat ?>" data-maksud="<?= $row->maksud ?>" data-kota="<?= $row->kota ?>" data-anggaran="<?= $row->idAnggaran ?>" data-tglmulai="<?= $row->tglMulai ?>" data-tglselesai="<?= $row->tglSelesai ?>" data-kendaraan="<?= $row->kendaraan ?>" data-namapenandatangan="<?= $row->namaPenandatangan ?>" data-jabatanpenandatangan="<?= $row->jabatanPenandatangan ?>" data-toggle="modal" data-target="#editSurat">
                               <i class="fa fa-edit"></i></a>

@@ -59,7 +59,11 @@ class Surat_capa extends CI_Controller
 		if ($komoditi == "obat") {
 			$noSuratFix = "T-PW.01.12.9A.9A2." . convertMonths($tanggalolah) . "." . convertYears($tanggalolah) . "." . $noSurat;
 		} else if ($komoditi == "pangan") {
-			$noSuratFix = "T-PW.01.12.9A.9A2." . convertMonths($tanggalolah) . "." . convertYears($tanggalolah) . "." . $noSurat;
+			$noSuratFix = "T-PW.04.02.9A.9A2." . convertMonths($tanggalolah) . "." . convertYears($tanggalolah) . "." . $noSurat;
+		}else if($komoditi == "kemasan"){
+			$noSuratFix = "T-PW.04.01.9A.9A2." . convertMonths($tanggalolah) . "." . convertYears($tanggalolah) . "." . $noSurat;
+		}else{
+			$noSuratFix = "T-PW.03.02.9A.9A2." . convertMonths($tanggalolah) . "." . convertYears($tanggalolah) . "." . $noSurat;
 		}
 
 
