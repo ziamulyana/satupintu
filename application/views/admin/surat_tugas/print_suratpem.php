@@ -107,19 +107,19 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 	
 	?>
 
-
-	<p style="line-height: 1px;" align="center" style="font-family:bookman old style;"><u><b>SURAT TUGAS</u>
+<span style="font-size:11pt;" >
+	<p style="line-height: 1px;" align="center" style="font-family:bookman old style;" ><u><b>S U R A T&nbsp;&nbsp;T U G A S</u>
 	<br/>
 	Nomor : <?php echo $no_surat; ?></font></b></p>
 		
-		<p style="font-family:bookman old style;">Yang bertanda tangan di bawah ini Kepala Balai POM di Batam memerintahkan kepada nama tersebut dibawah ini. </p>
+		<p style="font-family:bookman old style;">Yang bertanda tangan di bawah ini Kepala Balai POM di Batam memerintahkan kepada nama tersebut dibawah ini, </p>
 			
 		<table style="width:100%">
-
+		<span style="font-size:11pt;" >
 		<tr>
 			<td valign="top"><p style="font-family:bookman old style;"><b>Menimbang</b></p></td>
 			<td valign="top"><p style="font-family:bookman old style;">:</p></td>
-			<td></td>
+			
 			<td valign="top"><p style="font-family:bookman old style;">bahwa dalam rangka melaksanakan kebijakan di bidang pengawasan obat dan makanan Balai POM di Batam tahun 2021, maka dipandang perlu mengeluarkan surat tugas ini</p></td>
 		</tr>
 
@@ -178,14 +178,14 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 			<td valign="top"><p style="font-family:bookman old style;">8.</p></td>
 			<td valign="top"><p style="font-family:bookman old style;">DIPA Balai Pengawas Obat dan Makanan di Batam Tahun Anggaran 2021</p></td>
 		</tr>
-
+		</span>
 		</table>
 
 		
 
 		<p style="font-family:bookman old style;" align="center"><b>Memberi Tugas Kepada :</b></p>
 		<table style="width:100%" border="1">
-
+		<span style="font-size:11pt;" >
 		<tr>
 		<th><b><p style="font-family:bookman old style;" align="center">No</p></b></th>
 		<th><b><p style="font-family:bookman old style;" align="center">Nama</p></b></th>
@@ -210,15 +210,50 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 		</tr>
 
 		<?php }?>
+		</span>
 		</table>
-
 		
-		<table style="width:100%">
+		<table>
+		<span style="font-size:11pt;" >
 		<tr>
-		<td valign="bottom"><p style="font-family:bookman old style;"><b>Untuk </b> : 1. <?php echo $maksud; ?> </p></td>
+		<td valign="top"><p style="font-family:bookman old style;"><b>Untuk </b></td>
+		<td valign="top"><p style="font-family:bookman old style;">:</td>
+		<td valign="top"><p style="font-family:bookman old style;">1.</td>
+		<td valign="top"><p style="font-family:bookman old style;"></td>
+		<td></td>
+		<td><?php echo $maksud; ?></td>
 		</tr>
+
+		<tr>
+		<td></td>
+		<td></td>
+		<td>2.</td>
+		<td>Tujuan</td>
+		<td>:</td>
+		<td><?php echo $tujuan; ?></td>
+		</tr>
+
+		</span>
 		</table>
 		<table style="width:100%">
+		<span style="font-size:11pt;" >
+		<tr>
+		<pre>
+		
+		<td valign="top"><p style="font-family:bookman old style;"><b>Untuk </b></td>
+		<td> : </td>
+		
+		<td valign="top"><p style="font-family:bookman old style;">1. <?php echo $maksud; ?></td>
+		<td>2.</td>
+		<td>Tujuan</td>
+		<td>:</td>
+		</span>
+
+		</tr>
+		</span>
+		</table>
+		<table style="width:100%">
+		<span style="font-size:11pt;" >
 
 		<tr>
 		<td></td>
@@ -270,12 +305,13 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 		<td><p style="font-family:bookman old style;" align="left"></p></td>
 		<td><p style="font-family:bookman old style;"align="left">MAK <?php echo $mak; ?></p></td>
 		</tr>
-
+		</span>
 		</table>
 
 		<br/>
 
 		<table style="width:100%">
+		<span style="font-size:11pt;" >
 		<tr>
 		<td><p id="hilang">Cobacabicobacabicobacabicobacabi</p></td>
 		<td>
@@ -290,6 +326,7 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 			<?php echo $nama_penandatangan; ?></p>
 			</td>
 			</tr>
+			</span>
 		</table>
 	
 	<br/>
@@ -305,6 +342,6 @@ header("Content-Disposition: attachment; Filename=SuratTugas-".$filename)
 	Laporkan Pelanggaran Melalui Layanan Lapor BPOM di bit.ly/laporbpombatam
 	<br/>
 	LIHAT, LAWAN, LAPOR</b></p>
-
+	</span>
 	</body>
 	</html>

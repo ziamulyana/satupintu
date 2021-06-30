@@ -175,7 +175,7 @@
                   <span class="input-group-addon"><i class="fa fa-user"></i></span>
                   <select class="form-control" name="jabatanPenandatangan" id="jabatanPenandatangan" required>
                     <option value="" disabled selected>- Pilih Jabatan Penanda Tangan Surat Tugas -</option>
-                    <option>Kepala Balai POM di Batam</option>
+                    <option>Kepala Balai Pengawas Obat dan Makanan di Batam</option>
                     <option>PLH Kepala Balai POM di Batam Koordinator Substansi Informasi dan Komunikasi</option>
                     <option>PLH Kepala Balai POM di Batam Koordinatitor Substansi Pengujian</option>
                     <option>PLH Kepala Balai POM di Batam Koordinator Substansi Pemeriksaan</option>
