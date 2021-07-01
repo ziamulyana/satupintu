@@ -154,8 +154,8 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 
 	<table style="width:100%;font-size: 14px;">
 		<tr>
-			<td style="width:50%;" >
-				<p style="font-family:bookman old style;text-align:center;" >Kementerian Negara/Lembaga
+			<td style="width:50%;">
+				<p style="font-family:bookman old style;text-align:center;">Kementerian Negara/Lembaga
 					<br />
 					<b>BALAI PENGAWAS OBAT DAN MAKANAN DI BATAM
 						<br />
@@ -169,7 +169,7 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 			</td>
 
 
-			
+
 		</tr>
 	</table>
 
@@ -179,10 +179,10 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 
 	<table style="width:100%;font-size: 14px;border:1px solid black;border-collapse: collapse;">
 		<tr>
-			<td style="border:1px solid black;">
+			<td style="border:1px solid black;width:50%;">
 				<p style="font-family:bookman old style;"> 1. Pejabat Pembuat Komitmen</p>
 			</td>
-			<td style="border:1px solid black;">
+			<td style="border:1px solid black;width:50%;" colspan="2">
 				<p style="font-family:bookman old style;"><?php echo $nama_ppk; ?></p>
 			</td>
 		</tr>
@@ -190,21 +190,24 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 		<tr>
 			<td style="border:1px solid black;">
 				<p style="font-family:bookman old style;">2. Nama / NIP Pegawai yang melaksanakan perjalanan dinas</p>
+				<br />
 			</td>
-			<td style="border:1px solid black;">
+			<td style="border:1px solid black;" colspan="2">
 				<p style="font-family:bookman old style;"><?php echo $nama_peg; ?> &nbsp;&nbsp;&nbsp;&nbsp;/<?php echo $nip_peg; ?></p>
+
 			</td>
 		</tr>
 
 
-		<tr >
+		<tr>
 			<td valign="top" style="border:1px solid black;">
 				<p style="font-family:bookman old style;">3. a. Pangkat dan Golongan
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;b. Jabatan/Instansi
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;c. Tingkat Biaya Perjalanan Dinas
+					<br />
 				</p>
 			</td>
-			<td valign="top" style="border:1px solid black;">
+			<td valign="top" style="border:1px solid black;" colspan="2">
 				<p style="font-family:bookman old style;">a. <?php echo $pangkat_peg; ?> / <?php echo $golongan_peg; ?>
 					<br />b. <?php echo $jabatan_peg; ?>
 					<br />c.
@@ -214,18 +217,22 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 
 		<tr>
 			<td valign="top" style="border:1px solid black;">
-				<p style="font-family:bookman old style;">4. Maksud Perjalanan Dinas</p>
+				<p style="font-family:bookman old style;">4. Maksud Perjalanan Dinas
+					<br />
+				</p>
 			</td>
-			<td valign="top" style="border:1px solid black;">
+			<td valign="top" style="border:1px solid black;" colspan="2">
 				<p style="font-family:bookman old style;"><?php echo $maksud; ?></p>
 			</td>
 		</tr>
 
 		<tr>
 			<td style="border:1px solid black;">
-				<p style="font-family:bookman old style;">5. Alat angkut yang dipergunakan</p>
+				<p style="font-family:bookman old style;">5. Alat angkut yang dipergunakan
+					<br />
+				</p>
 			</td>
-			<td style="border:1px solid black;">
+			<td style="border:1px solid black;" colspan="2">
 				<p style="font-family:bookman old style;"><?php echo $kendaraan; ?></p>
 			</td>
 		</tr>
@@ -234,10 +241,11 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 			<td style="border:1px solid black;">
 				<p style="font-family:bookman old style;">6. a. Tempat Berangkat
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;b. Tempat Tujuan
+					<br />
 				</p>
 			</td>
 
-			<td style="border:1px solid black;">
+			<td style="border:1px solid black;" colspan="2">
 				<p style="font-family:bookman old style;">a. Kota Batam
 					<br />b. <?php echo $tujuan; ?>
 				</p>
@@ -249,10 +257,11 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 				<p style="font-family:bookman old style;">7. a. Lama perjalanan Dinas
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;b. Tanggal berangkat
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;c. Tanggal harus kembali/tiba di tempat *)
+					<br />
 				</p>
 			</td>
 
-			<td valign="top" style="border:1px solid black;">
+			<td valign="top" style="border:1px solid black;" colspan="2">
 				<?php
 				$datetime1 = new DateTime($tgl_mulai2);
 				$datetime2 = new DateTime($tgl_selesai2);
@@ -269,25 +278,36 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 		<tr>
 
 			<td valign="top" style="border:1px solid black;">
-				
+
 				<p style="font-family:bookman old style;">8. Pengikut : Nama
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;1.
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;2.
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;3.
+					<br />
 				</p>
-				</td>
+			</td>
 
-				<td valign="top" style="border:1px solid black;">
-				
+			<td valign="top" style="border:1px solid black;">
+
 				<p style="font-family:bookman old style;">Tanggal Lahir
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;
 				</p>
-				</td>
+			</td>
 
-				
-		
+			<td valign="top" style="border:1px solid black;">
+
+				<p style="font-family:bookman old style;">Keterangan
+					<br />&nbsp;&nbsp;&nbsp;&nbsp;
+					<br />&nbsp;&nbsp;&nbsp;&nbsp;
+					<br />&nbsp;&nbsp;&nbsp;&nbsp;
+
+				</p>
+			</td>
+
+
+
 		</tr>
 
 		<tr>
@@ -295,10 +315,11 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 				<p style="font-family:bookman old style;">9. Pembebanan Anggaran
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;a. Instansi
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;b. Mata Anggaran
+					<br />
 				</p>
 			</td>
 
-			<td style="border:1px solid black;">
+			<td style="border:1px solid black;" colspan="2">
 				<p style="font-family:bookman old style;">
 					<br />a. Balai Pengawas Obat dan Makanan di Batam
 					<br />b. <?php echo $mak; ?>
@@ -306,11 +327,13 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 			</td>
 		</tr>
 
-		<tr >
+		<tr>
 			<td style="border:1px solid black;">
-				<p style="font-family:bookman old style;">10. Keterangan Lain-Lain</p>
+				<p style="font-family:bookman old style;">10. Keterangan Lain-Lain
+					<br />
+				</p>
 			</td>
-			<td style="border:1px solid black;"></td>
+			<td style="border:1px solid black;" colspan="2"></td>
 		</tr>
 
 	</table>
@@ -319,10 +342,10 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 
 	<table style="width:100%;font-size: 14px;border-collapse: collapse;">
 		<tr>
-			<td style="width:52%;">
+			<td style="width:50%;">
 				<p id="hilang">Cobacabicobacabicobacabicobacabi</p>
 			</td>
-			<td style="width:48%;">
+			<td style="width:50%;">
 				<p style="font-family:bookman old style;" align="left">Dikeluarkan di : Batam
 					<br />Tanggal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo  convertDay($tgl_surat) . " " . convertMonthB(convertMonthA($tgl_surat)) . " " . convertYear($tgl_surat) ?>
 					<br /><u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
@@ -332,8 +355,8 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 					<br />
 					<br />
 					<br />
-					<br /><?php echo $nama_ppk;?>
-						<br />NIP. <?php echo $nip_ppk;?>
+					<br /><?php echo $nama_ppk; ?>
+					<br />NIP. <?php echo $nip_ppk; ?>
 				</p>
 			</td>
 		</tr>
@@ -341,12 +364,12 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 	</table>
 
 
-	<table style="width:100%;font-size: 14px;border:1px solid black;border-collapse: collapse;" >
+	<table style="width:100%;font-size: 14px;border:1px solid black;border-collapse: collapse;">
 		<tr>
-			<td style="width:52%;border:1px solid black;">
+			<td style="width:50%;border:1px solid black;">
 				<p id="hilang">Cobacabicobacabicobacabicobacabi</p>
 			</td>
-			<td style="width:48%;border:1px solid black;">
+			<td style="width:50%;border:1px solid black;">
 				<p style="font-family:bookman old style;" align="left">Berangkat dari<u class="hilang">iiiii</u> : Batam
 					<br />Pada Tanggal <u class="hilang">iiiiiii</u>: <?php echo  convertDay($tgl_surat) . " " . convertMonthB(convertMonthA($tgl_surat)) . " " . convertYear($tgl_surat) ?>
 					<br />Tempat Tujuan<u class="hilang">iiii</u>: <?php echo $tujuan; ?>
@@ -357,7 +380,7 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 					<br />
 
 					<br /><?php echo $nama_pejabat; ?>
-						<br />NIP. <?php echo $nip_pejabat; ?>
+					<br />NIP. <?php echo $nip_pejabat; ?>
 				</p>
 			</td>
 		</tr>
@@ -431,11 +454,11 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 					<br />
 					<br />
 					<br /><?php echo $nama_ppk; ?>
-						<br />NIP. <?php echo $nip_ppk; ?>
+					<br />NIP. <?php echo $nip_ppk; ?>
 				</p>
 			</td>
 
-			<td valign="top" style="border:1px solid black;" >
+			<td valign="top" style="border:1px solid black;">
 				<p style="font-family:bookman old style;" align="justify">Telah diperiksa dengan keterangan bahwa perjalanan tersebut diatas benar dilakukan atas perintahnya dan semata-mata untuk kepentingan jabatan dalam waktu yang sesingkat-singkatnya
 					<br>
 					<br />Pejabat Pembuat Komitmen
@@ -443,13 +466,13 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 					<br />
 					<br />
 					<br /><?php echo $nama_ppk; ?>
-						<br />NIP. <?php echo $nip_ppk; ?>
+					<br />NIP. <?php echo $nip_ppk; ?>
 				</p>
 			</td>
 		</tr>
 
 		<tr>
-			<td valign="top" style="border:1px solid black;" colspan="2" >
+			<td valign="top" style="border:1px solid black;" colspan="2">
 				<p style="font-family:bookman old style;" align="left">VI. Keterangan Lain-Lain
 			</td>
 		</tr>
@@ -462,7 +485,7 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 		</tr>
 	</table>
 
-	
+
 
 	</div>
 </body>
