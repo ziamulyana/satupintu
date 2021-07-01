@@ -97,14 +97,22 @@ header("Content-Disposition: attachment; Filename=nominatifLukota-" . $filename)
 			$mak = $row->mak;
 		}
 
-		foreach ($uraian->result() as $row) {
-			if ($row->kategori == "uh") {
-				array_push($uh_nom, $row->biaya);
-			} elseif ($row->kategori == "tr") {
-				array_push($tr_nom, $row->biaya);
-			} else {
-				array_push($ht_nom, $row->biaya);
+		foreach ($idKwitansi->result() as $idKw) {
+			$uh_tot = 0;
+			$ht_tot = 0;
+			$tr_tot = 0;
+			foreach ($uraian->result() as $row) {
+				if ($row->kategori == "uh" && $row->idKwitansi == $idKw->idKwitansi) {
+					$uh_tot += $row->biaya;
+				} elseif ($row->kategori == "tr" && $row->idKwitansi == $idKw->idKwitansi) {
+					$tr_tot += $row->biaya;
+				} elseif ($row->kategori == "ht" && $row->idKwitansi == $idKw->idKwitansi) {
+					$ht_tot += $row->biaya;
+				}
 			}
+			array_push($uh_nom, $uh_tot);
+			array_push($tr_nom, $tr_tot);
+			array_push($ht_nom, $ht_tot);
 		}
 
 
@@ -249,13 +257,14 @@ header("Content-Disposition: attachment; Filename=nominatifLukota-" . $filename)
 					</td>
 					<td style="border:1px solid black; font-family:arial;font-size: 12px;">
 						<p align="center">
-						<?php
-		 $datetime1 = new DateTime($tgl_mulai2);
-	     $datetime2 = new DateTime($tgl_selesai2);
-	     $difference = $datetime2->diff($datetime1)->days + 1;
-		 echo $difference. " "; 
-		?>
-		Hari</p></td>
+							<?php
+							$datetime1 = new DateTime($tgl_mulai2);
+							$datetime2 = new DateTime($tgl_selesai2);
+							$difference = $datetime2->diff($datetime1)->days + 1;
+							echo $difference . " ";
+							?>
+							Hari</p>
+					</td>
 					</td>
 					<td style="border:1px solid black; font-family:arial;font-size: 12px;">
 						<p align="center"><?php echo $tr_nom[$i]; ?></p>
