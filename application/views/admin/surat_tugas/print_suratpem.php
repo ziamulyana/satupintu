@@ -13,7 +13,7 @@ header("Content-Disposition: attachment; Filename=SuratTugas-" . $filename)
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" href="">
 	<!-- CSS buatan sendiri -->
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/vendor/bootstrap/css/print.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/vendor/bootstrap/css/print.css">
 </head>
 
 
@@ -112,8 +112,9 @@ header("Content-Disposition: attachment; Filename=SuratTugas-" . $filename)
 
 	?>
 
+	<div class="Section1">
+
 	<span style="font-size:11pt;">
-		<p class="hilang">S U R A T&nbsp;&nbsp;T U G A S</p>
 		<p style="line-height: 1px;" align="center" style="font-family:bookman old style;"><u><b>S U R A T&nbsp;&nbsp;T U G A S</u>
 			<br />
 			Nomor : <?php echo $no_surat; ?></font></b>
@@ -420,6 +421,9 @@ header("Content-Disposition: attachment; Filename=SuratTugas-" . $filename)
 			<br />
 			LIHAT, LAWAN, LAPOR</b></p>
 	</span>
+
+				</div>
+
 </body>
 
 </html>
