@@ -23,29 +23,30 @@
           <hr>
 
            <form action="<?php echo base_url('petugas/umpan_balik/tracking') ?>" method="post">
-                <!-- nomor surat -->
+                
+            <!-- nomor surat -->
+           <div class="form-group">
+              <label>Sarana</label>
+              <select name="sarana" id="sarana" class="form-control category" data-live-search="true" title="Pilih Sarana">
+                   <option value="">Pilih Sarana</option>
+                   <?php
+                      foreach ($sarana as $row) {
+                        echo "<option value=".$row->idSarana.">".$row->namaSarana."</option>";
+                      }
+                    ?>
+              </select> 
+            </div>
+
+            <!-- nomor surat -->
          <div class="form-group">
               <label>Surat Tugas</label><span class="wajib"> *</span></label>
               <select name="idSurat"  id="idSurat" class="form-control category" data-live-search="true" title="Select Category" required>
 
                 <option value="">Pilih Surat Tugas</option>
 
-                <?php
-                foreach ($surat as $row) {
-                  echo "<option value=".$row->idSurat.">".$row->noSuratTugas."</option>";
-                }
-                
-                ?>
+               
 
               </select>
-            </div>
-
-                    <!-- nomor surat -->
-           <div class="form-group">
-              <label>Sarana</label>
-              <select name="sarana" id="sarana" class="form-control input-sm" data-live-search="true" title="Pilih Sarana">
-                   <option value="">Pilih Sarana</option>
-              </select> 
             </div>
 
           <button type="submit" value="submit" onclick="" class="btn btn-info"><i class="fa fa-search"></i> Search</button>
@@ -67,9 +68,10 @@
  <script type="text/javascript">
   $(document).ready(function()
   {
-    $('#idSurat').change(function()
+    $('#sarana').change(function()
     {
-      var idPer=$('#idSurat').val();
+      $('#idSurat').html('<option value="">Data Tidak Ada</option>');
+      var idPer=$('#sarana').val();
       if(idPer!=''){
         $.ajax({
           url: "<?php echo base_url();?>petugas/umpan_balik/getSarana", 
@@ -77,11 +79,11 @@
           data: {idPer:idPer},
           success: function(data)
           {
-            $('#sarana').html(data);
+            $('#idSurat').html(data);
           } 
         });
       }else{
-        $('#sarana').html('<option value="">Pilih Surat Tugas Doloe</option>');
+        $('#idSurat').html('<option value="">Data Tidak Ada</option>');
       }
 
 

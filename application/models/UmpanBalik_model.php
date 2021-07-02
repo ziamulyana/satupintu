@@ -9,24 +9,30 @@ class UmpanBalik_model extends CI_Model{
         parent::__construct();
     }
 
-    public function getSuratTugas(){
+    public function getSarana(){
         $this->db->select('*');
-    $this->db->from('tbl_surattugas');
-    $query = $this->db->get('');
-    return $query->result();
+        $this->db->from('tbl_sarana');
+        $query = $this->db->get('');
+        return $query->result();
     }
 
     public function getSaranaFeedback($id){
+        // SELECT * FROM `tbl_surattugas` JOIN `tbl_surattl` ON `tbl_surattl`.`idSuratTugas` = `tbl_surattugas`.`idSurat` WHERE `tbl_surattl`.`idSuratTugas` = '18'
+        // $this->db->select('*');
+        // $this->db->from('tbl_sarana');
+        // $this->db->join('tbl_surattl', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
+        // $this->db->where('tbl_surattl.idSuratTugas', $id);
+        // $query = $this->db->get('');
         $this->db->select('*');
-    $this->db->from('tbl_sarana');
-    $this->db->join('tbl_surattl', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
-    $this->db->where('tbl_surattl.idSuratTugas', $id);
-    $query = $this->db->get('');
-    $output = '<option value="">Nama Sarana</option>';
-    $output=""; 
+        $this->db->from('tbl_surattugas');
+        $this->db->join('tbl_surattl', 'tbl_surattl.idSuratTugas = tbl_surattugas.idSurat');
+        $this->db->where('tbl_surattl.idSarana', $id);
+        $query = $this->db->get('');
+        $output = '<option value="">Nama Sarana</option>';
+        $output=""; 
     foreach($query->result() as $row)
     {
-     $output .= '<option value="'.$row->idSarana.'">'.$row->namaSarana.'</option>';
+     $output .= '<option value="'.$row->idSurat.'">'.$row->noSuratTugas.'</option>';
    }
    return $output;
   }

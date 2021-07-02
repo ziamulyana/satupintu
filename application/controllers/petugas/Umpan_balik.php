@@ -16,7 +16,7 @@
 		public function index()
 		{
 			$data = konfigurasi('Lihat Umpan Balik','');
-			$data['surat'] = $this->UmpanBalik_model->getSuratTugas();
+			$data['sarana'] = $this->UmpanBalik_model->getSarana();
         $this->template->load('layouts/petugas_template', 'petugas/umpan_balik', $data);
 			
 		}
