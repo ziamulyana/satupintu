@@ -129,7 +129,7 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 
 
 	?>
-
+	<div class="Section1">
 	<table style="font-family:bookman old style;font-size: 10px;">
 
 		<tr>
@@ -165,7 +165,7 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 				</p>
 			</td>
 			<td style="width:50%;">
-				<p style="font-family:bookman old style;" align="left">Lembar Ke<u class="hilang">iiiii</u>: <br />Kode No<u class="hilang">iiiiiiiii</u>: <br />Nomor<u class="hilang">iiiiiiiiiiii</u>: <?php echo $no_surat . "     " . $urutan_peg; ?></p>
+				<p style="font-family:bookman old style;" align="left">Lembar Ke<u class="hilang">iiiii</u>: <br />Kode No<u class="hilang">iiiiiiiii</u>: <br />Nomor<u class="hilang">iiiiiiiiiii'</u>: <?php echo $no_surat . "     " . $urutan_peg; ?></p>
 			</td>
 
 
@@ -363,16 +363,25 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 
 	</table>
 
-
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 	<table style="width:100%;font-size: 14px;border:1px solid black;border-collapse: collapse;">
 		<tr>
 			<td style="width:50%;border:1px solid black;">
 				<p id="hilang">Cobacabicobacabicobacabicobacabi</p>
 			</td>
 			<td style="width:50%;border:1px solid black;">
-				<p style="font-family:bookman old style;" align="left">Berangkat dari<u class="hilang">iiiii</u> : Batam
-					<br />Pada Tanggal <u class="hilang">iiiiiii</u>: <?php echo  convertDay($tgl_surat) . " " . convertMonthB(convertMonthA($tgl_surat)) . " " . convertYear($tgl_surat) ?>
-					<br />Tempat Tujuan<u class="hilang">iiii</u>: <?php echo $tujuan; ?>
+				<p style="font-family:bookman old style;" align="left">Berangkat dari<u class="hilang">iiii,'</u>: Batam
+					<br />Pada Tanggal <u class="hilang">iiiii’’’</u>: <?php echo  convertDay($tgl_surat) . " " . convertMonthB(convertMonthA($tgl_surat)) . " " . convertYear($tgl_surat) ?>
+					<br />Tempat Tujuan<u class="hilang">iiill</u>: <?php echo $tujuan; ?>
 					<br>
 					<br /><?php echo $jabatan_pejabat; ?>
 					<br />
@@ -387,14 +396,14 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 
 		<tr>
 			<td valign="top" style="border:1px solid black;">
-				<p style="font-family:bookman old style;" align="left">II. Tiba di &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+				<p style="font-family:bookman old style;" align="left">II. Tiba di <u class="hilang">iiii,'.’i,'</u>:
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;Pada Tanggal :
 				</p>
 			</td>
 			<td style="border:1px solid black;">
 				<p style="font-family:bookman old style;" align="top-left">Berangkat dari :
-					<br />Ke &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
-					<br />Pada Tanggal &nbsp;&nbsp;:
+					<br />Ke <u class="hilang">,'.’ii’’’’’’’’’’’’’’’’I’</u> :
+					<br />Pada Tanggal  <u class="hilang">','</u>:
 				</p>
 				<br />
 				<br />
@@ -407,14 +416,14 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 
 		<tr>
 			<td valign="top" style="border:1px solid black;">
-				<p style="font-family:bookman old style;" align="left">III. Tiba di &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+				<p style="font-family:bookman old style;" align="left">III. Tiba di <u class="hilang">iiii,'.’i,'</u>:
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pada Tanggal :
 				</p>
 			</td>
 			<td>
 				<p style="font-family:bookman old style;" align="top-left">Berangkat dari :
-					<br />Ke &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
-					<br />Pada Tanggal &nbsp;&nbsp;:
+					<br />Ke <u class="hilang">,'.’ii’’’’’’’’’’’’’’’’I’</u> :
+					<br />Pada Tanggal <u class="hilang">','</u>:
 				</p>
 				<br />
 				<br />
@@ -426,14 +435,14 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 
 		<tr>
 			<td valign="top" style="border:1px solid black;">
-				<p style="font-family:bookman old style;" align="left">IV. Tiba di &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+				<p style="font-family:bookman old style;" align="left">IV. Tiba di <u class="hilang">iiii,'.’i,'</u>:
 					<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pada Tanggal :
 				</p>
 			</td>
 			<td style="border:1px solid black;">
 				<p style="font-family:bookman old style;" align="top-left">Berangkat dari :
-					<br />Ke &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
-					<br />Pada Tanggal &nbsp;&nbsp;:
+					<br />Ke <u class="hilang">,'.’ii’’’’’’’’’’’’’’’’I’</u> :
+					<br />Pada Tanggal <u class="hilang">','</u>:
 				</p>
 				<br />
 				<br />
@@ -445,7 +454,7 @@ header("Content-Disposition: attachment; Filename=SPD-" . $filename)
 
 		<tr>
 			<td valign="top" style="border:1px solid black;">
-				<p style="font-family:bookman old style;" align="left">V. Tiba Kembali &nbsp;&nbsp;&nbsp; : Batam
+				<p style="font-family:bookman old style;" align="left">V. Tiba Kembali<u class="hilang">''</u>: Batam
 					<br />(Tempat Kedudukan)
 					<br />Pada Tanggal &nbsp;&nbsp;&nbsp;&nbsp;:
 					<br>

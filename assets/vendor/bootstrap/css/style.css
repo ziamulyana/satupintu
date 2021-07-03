@@ -1,14 +1,16 @@
 /* Set ukuran kertas */
-.page {  
-  width: 21cm;
-  height: 29.7cm;
-  margin-top: 0.5in;
-  margin-bottom: 0.2in;
-  margin-right: 0.1in;
-  margin-left: 0.2in;
+@page Section1 {  
+  size: 21.5cm 33cm;
+  margin-top: 2.54cm;
+  margin-bottom: 2.54cm;
+  margin-right: 1.54cm;
+  margin-left: 1.54cm;
 
 }
 
+div.Section1 {
+  page: Section1;
+}
 .page2 {  
   size: 21cm  29.7cm landscape;
   margin-top: 0.5in;
