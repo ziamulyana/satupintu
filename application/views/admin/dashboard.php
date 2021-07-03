@@ -13,7 +13,7 @@
           <div class="inner">
             <h3><?php echo $this->db->where('timeline >', 7)->where('status =', 0)->from("view_admin")->count_all_results(); ?></h3>
 
-            <p>AKTIFa</p>
+            <p>AKTIF</p>
           </div>
           <div class="icon">
             <i class="small fa fa-check-square-o"  style="font-size:70px;"></i>
