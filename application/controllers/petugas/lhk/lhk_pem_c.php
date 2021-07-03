@@ -37,7 +37,7 @@ class Lhk_pem_c extends MY_Controller
     $kesimpulan = $this->input->post('kesimpulan');
     $keterangan = $this->input->post('keterangan');
 
-    echo "tes";
+    echo "tes2"; 
 
     $data['surat'] = $this->Lhk_model->getAtribut($idSurat);
     $data['idSurat'] = $idSurat;
