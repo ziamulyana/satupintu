@@ -13,13 +13,12 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-".$filename)
 	<title></title>
 	<link rel="stylesheet" href="">
 	<!-- CSS buatan sendiri -->
-<link rel="stylesheet" href="<?php echo base_url() ?>assets/vendor/bootstrap/css/style.css">
+<link rel="stylesheet" href="<?php echo base_url() ?>assets/vendor/bootstrap/css/peringatan.css">
 </head>
 
 
 <body style="font-family:arial;" onload="window.print()">
 
-	<div class="page">
 		<!-- formatting date -->
 		<?php
 
@@ -73,6 +72,7 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-".$filename)
 		}
 
 		?>
+		<div class="Section1">
 
 		<!-- tabel kop surat -->
 		<table style="width:100%">
@@ -317,6 +317,6 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-".$filename)
 		echo "</p>";
 
 		?>
-	</page>
+	</div>
 </body>
 </html>
