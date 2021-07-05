@@ -73,6 +73,23 @@ class Lhk_model extends CI_Model
     return $query->result();
   }
 
+  public function getSaranaPem(){
+    $this->db->select('*');
+    $this->db->from('tbl_sarana');
+    $query = $this->db->get();
+    $json = $query->result();
+    echo json_encode($json);
+ //    $output = '<option value="">Pilih Sarana</option>';
+ //    foreach($query->result() as $row)
+ //    {
+ //     $output .= '<option value="'.$row->idSarana.'">'.$row->namaSarana.'</option>';
+ // }
+ // return $output;
+
+
+}
+
+
   public function getSarana2($id)
   {
     $this->db->select('tbl_sarana.namaSarana,tbl_sarana.alamatSarana,tbl_sarana.kategoriSarana, tbl_sarana.jenisSarana');

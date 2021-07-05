@@ -23,6 +23,12 @@ class Lhk_pem_c extends MY_Controller
     $data['sarana'] = $this->Lhk_model->getSarana();
     $this->template->load('layouts/petugas_template', 'petugas/lhk/lhk_pem_v', $data);
   }
+
+  function getSarana()
+  {
+     echo $this->Lhk_model->getSaranaPem();
+  }
+
   public function add()
   {
 
@@ -36,8 +42,6 @@ class Lhk_pem_c extends MY_Controller
     $tl = $this->input->post('tl');
     $kesimpulan = $this->input->post('kesimpulan');
     $keterangan = $this->input->post('keterangan');
-
-    echo "tes2"; 
 
     $data['surat'] = $this->Lhk_model->getAtribut($idSurat);
     $data['idSurat'] = $idSurat;

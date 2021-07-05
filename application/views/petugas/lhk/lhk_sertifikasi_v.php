@@ -117,76 +117,44 @@
                   <div class="row">
                     <div class="col-xs-12">
 
+
                      <hr>
-                     <div class="dynamic">
-                     <table class="table table-bordered table-hover" >
-                      <tr>
-                        <!-- sarana -->
-                        <td><select name="sarana[]" id="sarana[]" class="form-control category sm" title="Nama Sarana">
+
+                      <!-- sarana -->
+
+
+                      <label for="pilihPasal" class="col-sm-6 col-form-label">Pilih Nama Sarana Terlebih Dahulu<span class="wajib"> *</span></label>
+                      <div class="col-md-12">
+                        <select class="category related-post form-control" name="sarana[]" id= "sarana" multiple="multiple" data-placeholder="Pilih Sarana" style="width: 100%;" required>
                           <?php
-                      foreach ($sarana as $sr) {
-                        echo "<option value=".$sr->idSarana.">".$sr->namaSarana."</option>";
-                      }
-                      ?>
-                      <option selected="selected">- Pilih Sarana -</option>
+                          foreach ($sarana as $sr) {
+                            echo "<option value=" . $sr->idSarana . ">" . $sr->namaSarana . "</option>";
+                          }
+                          ?>
+
+                          ?>
+
                         </select>
 
-                        <br>
-
-                        <p>Jika tidak ada sarana, <a href="" >tambah sarana </a></p>
-
-                      </td>
-
-        
-
-
-                        </tr>
-
-                        <tr>
-
-                        <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." name="keterangan[]" id="keterangan[]" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
-
-                        </tr>
-                      
-                      </table>
-                      </div>
-
-
+                         <hr>
+                       </div>
+                   
                         <div id="repeater">
    
-                        <button type="button" class="btn btn-primary repeater-add-btn"><i class="fa fa-plus"></i>&nbsp Sarana</button>
+                        <button type="button" class="btn btn-primary repeater-add-btn"><i class="fa fa-plus"></i>&nbsp Ket. Sarana</button>
                       
                       <div class="items" data-group="programming_languages">
                         <div class="item-content">
                           <div class="form-group">
                             <div class="row">
                               <table class="table table-bordered table-hover">
-                        <tr>
-                          <!-- sarana -->
-                          <td>
-                                <label></label>
-                                <select data-skip-name="true" name="sarana[]" id="sarana[]" class="form-control category sm">
-                                  <?php
-                              foreach ($sarana as $sr) {
-                                echo "<option value=" . $sr->idSarana . ">" . $sr->namaSarana . "</option>";
-                              }
-                              ?>
-                              <option selected="selected">- Pilih Sarana -</option>
-                                </select>
 
-                                <p>Jika tidak ada sarana, <a href="">tambah sarana </a></p>
-
-                            </td>
-
-                          
-
-                          </tr>
 
                            <tr>
 
-                          <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." name="keterangan[]" id="keterangan[]" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
+                          <td colspan="1"> <textarea class="textarea" placeholder="Keterangan." name="keterangan[]" id="keterangan[]" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
 
-                          <td> <div class="col-md-3" style="margin-top:18px;" align="left">
+                          <td> <div class="col-md-4" style="margin-top:18px;" align="left">
                                 <button id="remove-btn" onclick="$(this).parents('.items').remove()" class="btn btn-danger">Remove</button>
                               </div></td>
 

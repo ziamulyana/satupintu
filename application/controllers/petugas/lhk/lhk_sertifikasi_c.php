@@ -63,11 +63,12 @@ class Lhk_sertifikasi_c extends MY_Controller
       for ($i = 0; $i < count($sarana); $i++) {
         if ($sarana[$i] != "Pilih Sarana") {
           $data_sarana = array(
-            'idSarana'   => $sarana[$i],
+             'idSarana'   => $sarana[$i],
+            'statusBalai'   => $kesimpulan[$i],
             'isMk'   => $kesimpulan[$i],
-            'temuan' => $temuan[$i],
-            'deskripsiTemuan' => $keterangan,
-            'jenisTl' => $tl[$i],
+            'temuan' => "0",
+            'deskripsiTemuan' => $keterangan[$i],
+            'jenisTl' => "Tidak TL",
             'idSuratTugas' => $idSurat
           );
           $this->db->insert('tbl_surattl', $data_sarana);
