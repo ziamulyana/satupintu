@@ -220,7 +220,7 @@ header("Content-Disposition: attachment; Filename=SuratTugas-" . $filename)
 						<p style="font-family:bookman old style;">7.</p>
 					</td>
 					<td valign="top" style="width:80%">
-						<p style="font-family:bookman old style;text-align:justify"> Peraturan Kepala Badan Pengawas Obat dan Makanan Republik Indonesia Nomor 12 Tahun 2018 tentang Organisasi dan Tata Kerja Unit Pelaksana Teknis di Lingkungan Badan Pengawas Obat dan Makanan</p>
+						<p style="font-family:bookman old style;text-align:justify"> Peraturan Kepala Badan Pengawas Obat dan Makanan Republik Indonesia Nomor 22 Tahun 2020 tentang Organisasi dan Tata Kerja Unit Pelaksana Teknis di Lingkungan Badan Pengawas Obat dan Makanan</p>
 					</td>
 				</tr>
 
@@ -415,7 +415,7 @@ header("Content-Disposition: attachment; Filename=SuratTugas-" . $filename)
 	<br />
 
 
-	<p style="line-height: 1px;" align="center" style="font-family:bookman old style;"><b>Petugas Balai POM di Batam Tidak Menerima Gratifikasi Dalam Bentuk Apapun
+	<p style="line-height: 1px;font-size:11pt;" align="center" style="font-family:bookman old style;"><b>Petugas Balai POM di Batam Tidak Menerima Gratifikasi Dalam Bentuk Apapun
 			<br />
 			Laporkan Pelanggaran Melalui Layanan Lapor BPOM di bit.ly/laporbpombatam
 			<br />
