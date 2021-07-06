@@ -139,6 +139,7 @@
                   <span class="input-group-addon"><i class="fa fa-taxi"></i></span>
                   <select class="form-control" name="kendaraan" id="kendaraan" required>
                     <option value="" disabled selected>- Pilih Kendaraan -</option>
+                    <option>-</option>
                     <option>Pesawat</option>
                     <option>Kapal laut</option>
                     <option>Roda empat</option>
