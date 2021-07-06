@@ -72,7 +72,7 @@ public function getAnggaran(){
    $this->db->set('divisi', $data2['divisi']);
    $this->db->set('kode', $data2['kode']); 
    $this->db->set('pagu', $data2['pagu']);
-   $this->db->set('realisasi', $data2['realisasi']); 
+   // $this->db->set('realisasi', $data2['realisasi']); 
    $this->db->where('idAnggaran', $data2['idAnggaran']);
    $query = $this->db->update('tbl_anggaran');
 }

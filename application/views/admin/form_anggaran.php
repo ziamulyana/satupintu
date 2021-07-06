@@ -97,7 +97,7 @@
           </div>
 
           <!-- realisasi -->
-          <div class="form-group row">
+          <!-- <div class="form-group row">
             <label for="noSurat" class="col-sm-4 col-form-label">Realisasi<span class="wajib"> *</span></label>
             <div class="col-sm-12">
               <div class="input-group">
@@ -105,7 +105,7 @@
                 <input type="text" class="form-control" placeholder="Realisasi" name="realisasiag" id="realisasiag" required>
               </div>
             </div>
-          </div>
+          </div> -->
 
           </div>
 

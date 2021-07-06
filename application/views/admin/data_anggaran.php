@@ -154,10 +154,10 @@
 									<input type="text" class="form-control" name="paguag" id="paguagEdit" required>
 								</div>
 
-								<div class="form-group">
+								<!-- <div class="form-group">
 									<label for="noEdit">Realisasi</label> <small class="text-danger">*</small>
 									<input type="text" class="form-control" name="realisasiag" id="realisasiagEdit" required>
-								</div>
+								</div> -->
 
 
 							</div><!-- /.box-body -->
@@ -181,7 +181,7 @@
 			var diviAn = $(this).data('diviag');
 			var kodeAn = $(this).data('kodeag');
 			var paguAn = $(this).data('paguag');
-			var realisasiAn = $(this).data('realisasiag');
+			// var realisasiAn = $(this).data('realisasiag');
 
 			$("#editData #idagEdit").val(idAn);
 			$("#editData #makagEdit").val(makAn);
@@ -190,7 +190,7 @@
 			$("#editData #diviagEdit").val(diviAn);
 			$("#editData #kodeagEdit").val(kodeAn);
 			$("#editData #paguagEdit").val(paguAn);
-			$("#editData #realisasiagEdit").val(realisasiAn);
+			// $("#editData #realisasiagEdit").val(realisasiAn);
 		});
 	</script>
 
