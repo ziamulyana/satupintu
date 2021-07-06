@@ -180,6 +180,7 @@
                 <div class="form-group">
                   <label for="noEdit">Kendaraan </label> <small class="text-danger">*</small>
                   <select class="form-control" name="kendaraan" id="kendaraan">
+                    <option>-</option>
                     <option>Pesawat</option>
                     <option>Kapal laut</option>
                     <option>Roda empat</option>
