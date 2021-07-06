@@ -187,7 +187,7 @@ public function data_anggaran()
             $da =  $this->input->post('diviag');
             $kodea =  $this->input->post('kodeag');
             $pagua =  $this->input->post('paguag');
-            $ra =  $this->input->post('realisasiag');
+            // $ra =  $this->input->post('realisasiag');
                         
             $data2 = array(
                 'mak' => $ma,
@@ -196,7 +196,7 @@ public function data_anggaran()
                 'divisi' => $da,
                 'kode' => $kodea,
                 'pagu' => $pagua,
-                'realisasi' => $ra
+                // 'realisasi' => $ra
                 );  
 
             $this->db->insert('tbl_anggaran',$data2);
@@ -217,7 +217,7 @@ public function data_anggaran()
             $da =  $this->input->post('diviag');
             $kodea =  $this->input->post('kodeag');
             $pagua =  $this->input->post('paguag');
-            $ra =  $this->input->post('realisasiag');
+            // $ra =  $this->input->post('realisasiag');
                         
            
             $data2 = array(
@@ -228,7 +228,7 @@ public function data_anggaran()
                 'divisi' => $da,
                 'kode' => $kodea,
                 'pagu' => $pagua,
-                'realisasi' => $ra
+                // 'realisasi' => $ra
                 );  
 
             $this->Master_model->updateAnggaran($data2);

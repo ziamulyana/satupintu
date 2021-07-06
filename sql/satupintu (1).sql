@@ -160,7 +160,7 @@ CREATE TABLE `tbl_anggaran` (
 -- Dumping data for table `tbl_anggaran`
 --
 
-INSERT INTO `tbl_anggaran` (`mak`, `namaAnggaran`, `uraianKegiatan`, `divisi`, `kode`, `pagu`, `realisasi`) VALUES
+INSERT INTO `tbl_anggaran` (`mak`, `namaAnggaran`, `uraianKegiatan`, `divisi`, `kode`, `pagu`) VALUES
 ('', 'NON ANGGARAN', '', '', '', '0', '0'),
 ('3165.BAH.001.051.A.524111', 'SERTIFIKASI LK', 'Beban Perjalanan Biasa', 'Ser', 'BAH', '0', '1096000'),
 ('3165.BAH.001.051.A.524113', 'SERTIFIKASI DK', 'Beban Perjalanan Dalam Kota', 'Ser', 'BAH', '0', '2250000'),
