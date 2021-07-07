@@ -110,8 +110,8 @@
 
            <br>
 
-           <?php if ($upload_file > 0) {
-            ?>
+           <!-- <?php if ($upload_file > 0) {
+                ?>
 
 
              <div class="alert alert-danger alert-dismissable" role="alert">
@@ -119,88 +119,88 @@
                <h4><i class="icon fa fa-exclamation"></i> Alert!</h4>
                Hallo Petugas ! Terdapat <strong><?php echo $upload_file ?></strong> surat tindak lanjut <?= $this->session->flashdata('flash_error'); ?> yang butuh upload soft file Surat Tindak Lanjut. Silahkan cek pada tabel!
 
-             <?php  }; ?>
-             </div>
-
-
-             <section class="content">
-               <div class="row">
-                 <div class="col-xs-12">
-                   <div class="box">
-
-                     <!-- /.box-header -->
-                     <div class="box-body">
-                       <table id="tbl" class="table table-bordered table-striped">
-                         <thead>
-                           <tr>
-                             <th class="dt-center">Nomor Surat Peringatan</th>
-                             <th class="dt-center">Tanggal Surat</th>
-                             <th class="dt-center">Nama Sarana</th>
-                             <th class="dt-center">Jenis TL</th>
-                             <th class="dt-center">Aksi</th>
-
-                           </tr>
-                         </thead>
-                         <tbody>
-                           <?php
-
-
-                            if (isset($list_peringatan)) {
-                              foreach ($list_peringatan->result() as $row) {
-
-                                echo "<tr>";
-                                echo "<td class='dt-center'>" . $row->noSuratPeringatan . "</td>";
-                                echo "<td class='dt-center'>" . $row->tglSuratPeringatan . "</td>";
-                                echo "<td class='dt-center'>" . $row->namaSarana . "</td>";
-                                echo "<td class='dt-center'>" . $row->jenisTl . "</td>";
-                                echo "<td class='dt-center'>" ?>
-                               <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editPer" data-id="<?= $row->idPeringatan ?>" data-tgl="<?= $row->tglSuratPeringatan ?>" data-nomor="<?= $row->noSuratPeringatan ?>" data-toggle="modal" data-target="#editPeringatan"><i class="fa fa-edit"></i></a>
-
-                               <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusPer" data-id="<?= $row->idPeringatan ?>" data-toggle="modal" data-target="#hapusPeringatan"><i class="fa fa-trash"></i></a>
-
-                               <?php if ($row->filePeringatan != 0) { ?>
-                                 <a href="../../assets/uploads/files/peringatan/suratPeringatan-<?php echo $row->idPeringatan ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
-
-                               <?php  } else {
-                                ?>
-                                 <a href="#" data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" disabled><i class="fa fa-eye"></i></a>
-                               <?php } ?>
-
-
-                               </td>
-
-                           <?php
-                              }
-                            } else {
-                              echo "no record found";
-                            }
-                            ?>
-                         </tbody>
-                       </table>
-                     </div>
-                     <!-- /.box-body -->
-                   </div>
-                   <!-- /.box -->
-                 </div>
-                 <!-- /.col -->
-               </div>
-               <!-- /.row -->
-             </section>
-             <!-- /.content -->
+             <?php  }; ?> -->
          </div>
-         <style>
-           th.dt-center,
-           td.dt-center {
-             text-align: center;
-           }
-         </style>
 
+
+         <section class="content">
+           <div class="row">
+             <div class="col-xs-12">
+               <div class="box">
+
+                 <!-- /.box-header -->
+                 <div class="box-body">
+                   <table id="tbl" class="table table-bordered table-striped">
+                     <thead>
+                       <tr>
+                         <th class="dt-center">Nomor Surat Peringatan</th>
+                         <th class="dt-center">Tanggal Surat</th>
+                         <th class="dt-center">Nama Sarana</th>
+                         <th class="dt-center">Jenis TL</th>
+                         <th class="dt-center">Aksi</th>
+
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <?php
+
+
+                        if (isset($list_peringatan)) {
+                          foreach ($list_peringatan->result() as $row) {
+
+                            echo "<tr>";
+                            echo "<td class='dt-center'>" . $row->noSuratPeringatan . "</td>";
+                            echo "<td class='dt-center'>" . $row->tglSuratPeringatan . "</td>";
+                            echo "<td class='dt-center'>" . $row->namaSarana . "</td>";
+                            echo "<td class='dt-center'>" . $row->jenisTl . "</td>";
+                            echo "<td class='dt-center'>" ?>
+                           <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editPer" data-id="<?= $row->idPeringatan ?>" data-tgl="<?= $row->tglSuratPeringatan ?>" data-nomor="<?= $row->noSuratPeringatan ?>" data-toggle="modal" data-target="#editPeringatan"><i class="fa fa-edit"></i></a>
+
+                           <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusPer" data-id="<?= $row->idPeringatan ?>" data-toggle="modal" data-target="#hapusPeringatan"><i class="fa fa-trash"></i></a>
+
+                           <!-- <?php if ($row->filePeringatan != 0) { ?>
+                             <a href="../../assets/uploads/files/peringatan/suratPeringatan-<?php echo $row->idPeringatan ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
+
+                           <?php  } else {
+                            ?>
+                             <a href="#" data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" disabled><i class="fa fa-eye"></i></a>
+                           <?php } ?> -->
+
+
+                           </td>
+
+                       <?php
+                          }
+                        } else {
+                          echo "no record found";
+                        }
+                        ?>
+                     </tbody>
+                   </table>
+                 </div>
+                 <!-- /.box-body -->
+               </div>
+               <!-- /.box -->
+             </div>
+             <!-- /.col -->
+           </div>
+           <!-- /.row -->
+         </section>
+         <!-- /.content -->
        </div>
-       <!-- /.box-header -->
-       <!-- form start -->
-
+       <style>
+         th.dt-center,
+         td.dt-center {
+           text-align: center;
+         }
+       </style>
 
      </div>
+     <!-- /.box-header -->
+     <!-- form start -->
+
+
+   </div>
    </div>
 
    </div>
@@ -240,10 +240,10 @@
                  </div>
 
 
-                 <div class="mb-3">
+                 <!-- <div class="mb-3">
                    <label for="fileEdit">Soft File Surat Peringatan</label> <small class="text-danger">*</small>
                    <input class="form-control" type="file" id="formFile" name="fileEdit" id="fileEdit" required>
-                 </div>
+                 </div> -->
 
                </div><!-- /.box-body -->
                <div class="modal-footer">
