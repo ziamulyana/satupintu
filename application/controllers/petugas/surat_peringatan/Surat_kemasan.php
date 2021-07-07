@@ -44,28 +44,30 @@
 
 			$idSarana =  $this->input->post('idSarana');
 			$tglMulaiperiksa = $this->input->post('tglMulaiperiksa');
-			$tglSelesaiperiksa = $this->input->post('tglSelesaiperiksa');
 			$alamatPengolahan = $this->input->post('alamatPengolahan');
 			$nib = $this->input->post('nib');
 			$namaPimpinan =  $this->input->post('namaPimpinan');
 			$namaPj =  $this->input->post('namaPj');
 			$noHp =  $this->input->post('noHp');
 			$noIzin =  $this->input->post('noIzin');
-
-			$detailTemuan =  $this->input->post('detailTemuan');
 			$pilihPasal = $this->input->post('pilihPasal');
-
 			$tanggalolah  = strtotime($tanggal);
 
 			echo $tanggal;
 
-			$noSuratFix = "T-PW.01.12.9A.9A2." . convertMonths($tanggalolah) . "." . convertYears($tanggalolah) . "." . $noSurat;
+			$noSuratFix = "T-PW.04.01.9A.9A2." . convertMonths($tanggalolah) . "." . convertYears($tanggalolah) . "." . $noSurat;
 
 
 			$pasal_peringatan = array();
 			foreach ($pilihPasal as $num) {
 				$pasal['data'] = $this->SuratKemasan_model->getPasal($num);
 				array_push($pasal_peringatan, $pasal);
+			}
+
+
+			$temuan = $this->SuratPeringatan_model->getTemuan($idSarana);
+			foreach ($temuan as $tm) {
+				$detailTemuan = $tm->deskripsiTemuan;
 			}
 
 
@@ -113,8 +115,6 @@
 				'tglSuratPeringatan' => $tanggal,
 				'noSuratPeringatan' => $noSuratFix,
 				'jenisPeringatan' => "kemasan pangan",
-				'isiPeringatan' => $detailTemuan,
-				'filePeringatan' => '0',
 				'idTl' => $idTl,
 				'status' => 0
 			);

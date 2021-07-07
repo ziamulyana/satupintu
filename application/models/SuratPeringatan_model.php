@@ -102,6 +102,15 @@ class SuratPeringatan_model extends CI_Model
     return $output;
   }
 
+  public function getTemuan($id)
+  {
+    $this->db->select('tbl_surattl.deskripsiTemuan');
+    $this->db->from('tbl_surattl');
+    $this->db->where('tbl_surattl.idSarana', $id);
+    $query = $this->db->get();
+    return $query->result();
+  }
+
 
 
   public function getSarana($id)

@@ -45,13 +45,11 @@
 			// detil sarana
 			$idSarana =  $this->input->post('idSarana');
 			$tglMulaiperiksa = $this->input->post('tglMulaiperiksa');
-			$tglSelesaiperiksa = $this->input->post('tglSelesaiperiksa');
 			$noIzin =  $this->input->post('noIzin');
 			$namaPj =  $this->input->post('namaPj');
 			$noSip =  $this->input->post('noSip');
 			$noHp =  $this->input->post('noHp');
 			// detil temuan
-			$detailTemuan =  $this->input->post('detailTemuan');
 			$pilihPasal = $this->input->post('pilihPasal');
 
 			$tanggalolah  = strtotime($tanggal);
@@ -68,9 +66,12 @@
 				array_push($pasal_peringatan, $pasal);
 			}
 
+			$temuan = $this->SuratPeringatan_model->getTemuan($idSarana);
+			foreach ($temuan as $tm) {
+				$detailTemuan = $tm->deskripsiTemuan;
+			}
 
 			$dataSarana = $this->SuratPeringatan_model->getSarana($idSarana);
-
 			foreach ($dataSarana as $row) {
 				$namaSarana = $row->namaSarana;
 				$idTl =  $row->idTl;
@@ -78,9 +79,6 @@
 				$alamatSarana = $row->alamatSarana;
 				$kotaSurat = $row->kotaSarana;
 			}
-
-
-
 
 			$data = array(
 				'title' => 'Cetak surat tugas',
@@ -112,8 +110,8 @@
 				'tglSuratPeringatan' => $tanggal,
 				'noSuratPeringatan' => $noSuratFix,
 				'jenisPeringatan' => "apotek",
-				'isiPeringatan' => $detailTemuan,
-				'filePeringatan' => '0',
+				// 'isiPeringatan' => $detailTemuan,
+				// 'filePeringatan' => '0',
 				'idTl' => $idTl,
 				'status' => 0
 			);

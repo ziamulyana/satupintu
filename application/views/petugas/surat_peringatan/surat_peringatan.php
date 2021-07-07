@@ -110,16 +110,6 @@
 
            <br>
 
-           <!-- <?php if ($upload_file > 0) {
-                ?>
-
-
-             <div class="alert alert-danger alert-dismissable" role="alert">
-               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-               <h4><i class="icon fa fa-exclamation"></i> Alert!</h4>
-               Hallo Petugas ! Terdapat <strong><?php echo $upload_file ?></strong> surat tindak lanjut <?= $this->session->flashdata('flash_error'); ?> yang butuh upload soft file Surat Tindak Lanjut. Silahkan cek pada tabel!
-
-             <?php  }; ?> -->
          </div>
 
 

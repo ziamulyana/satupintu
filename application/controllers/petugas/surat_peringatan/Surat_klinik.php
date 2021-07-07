@@ -44,13 +44,11 @@
 			// detil sarana
 			$idSarana =  $this->input->post('idSarana');
 			$tglMulaiperiksa = $this->input->post('tglMulaiperiksa');
-			$tglSelesaiperiksa = $this->input->post('tglSelesaiperiksa');
 			$noIzin =  $this->input->post('noIzin');
 			$namaPj =  $this->input->post('namaPj');
 			$noSip =  $this->input->post('noSip');
 			$noHp =  $this->input->post('noHp');
 			// detil temuan
-			$detailTemuan =  $this->input->post('detailTemuan');
 			$pilihPasal = $this->input->post('pilihPasal');
 
 			$tanggalolah  = strtotime($tanggal);
@@ -65,6 +63,11 @@
 			foreach ($pilihPasal as $num) {
 				$pasal['data'] = $this->SuratObat_model->getPasal($num);
 				array_push($pasal_peringatan, $pasal);
+			}
+
+			$temuan = $this->SuratPeringatan_model->getTemuan($idSarana);
+			foreach ($temuan as $tm) {
+				$detailTemuan = $tm->deskripsiTemuan;
 			}
 
 
@@ -109,8 +112,6 @@
 				'tglSuratPeringatan' => $tanggal,
 				'noSuratPeringatan' => $noSuratFix,
 				'jenisPeringatan' => "klinik",
-				'isiPeringatan' => $detailTemuan,
-				'filePeringatan' => '0',
 				'idTl' => $idTl,
 				'status' => 0
 			);
