@@ -59,7 +59,7 @@
                             echo "<td class='dt-center'>" . $row->kota . "</td>";
                             // echo "<td class='dt-center'>" . $row->jenisSurat . "</td>";
                             echo "<td class='dt-center'>" ?>
-                            <a href="<?=site_url('admin/surat_tugas/surat_tugas/edit_surat/'. $row->idSurat)?>" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editSur" data-idsurat="<?= $row->idSurat ?>">
+                            <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editSur" data-idsurat="<?= $row->idSurat ?>" data-nosurat="<?= $row->noSuratTugas ?>" data-tglsurat="<?= $row->tglSurat ?>" data-maksud="<?= $row->maksud ?>" data-kota="<?= $row->kota ?>" data-anggaran="<?= $row->idAnggaran ?>" data-tglmulai="<?= $row->tglMulai ?>" data-tglselesai="<?= $row->tglSelesai ?>" data-kendaraan="<?= $row->kendaraan ?>" data-namapenandatangan="<?= $row->namaPenandatangan ?>" data-jabatanpenandatangan="<?= $row->jabatanPenandatangan ?>" data-toggle="modal" data-target="#editSurat">
                               <i class="fa fa-edit"></i></a>
 
                             <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusSur" data-id="<?= $row->idSurat ?>" data-toggle="modal" data-target="#hapusSurat">

@@ -10,6 +10,7 @@ class Surat_tugas extends CI_Controller
         parent::__construct();
         $this->load->database();
         $this->load->model("SuratTugas_model");
+        $this->load->helper('url');
     }
 
     public function index()
@@ -17,6 +18,7 @@ class Surat_tugas extends CI_Controller
         $data = konfigurasi('Pilih Surat Tugas', 'ap');
         $data['surattugas'] = $this->SuratTugas_model->getsurattugas();
         $data['anggaran'] = $this->SuratTugas_model->getanggaran();
+        // $data['petugas'] = $this->SuratTugas_model->getpetugasA();
         $this->template->load('layouts/admin_template', 'admin/surat_tugas/surat_tugas', $data);
     }
 
@@ -27,6 +29,15 @@ class Surat_tugas extends CI_Controller
         $data['petugas'] = $this->SuratTugas_model->getpetugas();
         $data['anggaran'] = $this->SuratTugas_model->getanggaran();
         $this->template->load('layouts/admin_template', 'admin/surat_tugas/form', $data);
+    }
+
+    public function edit_surat(){
+        $id = $this->uri->segment(5);
+        $data = konfigurasi('Form Edit Surat', "ap");
+        $data['surattugas'] = $this->SuratTugas_model->getsurattugasedit($id);
+        $data['petugas'] = $this->SuratTugas_model->getpetugas();
+        $data['anggaran'] = $this->SuratTugas_model->getanggaran();
+        $this->template->load('layouts/admin_template', 'admin/surat_tugas/edit', $data);
     }
 
     //simpan surat tugas
@@ -112,7 +123,7 @@ class Surat_tugas extends CI_Controller
                 'urutan' => $huruf[$i]
             );
 
-            print_r($data_petugas);
+            // print_r($data_petugas);
 
             $this->db->insert('tbl_tugas', $data_petugas);
 
@@ -128,10 +139,10 @@ class Surat_tugas extends CI_Controller
     public function ubah_surat()
     {
         $idsurat = $this->input->post('idSurat');
-        $nosurat = $this->input->post('noSurat');
+        $nosurat = $this->input->post('noSuratTugas');
+        $nosuratlama = $this->input->post('noSuratLama');
         $tglsurat = $this->input->post('tglSurat');
         $tglmulai = $this->input->post('tglMulai');
-        //$bebanbiaya = $this->input->post('bebanBiaya');
         $kendaraan = $this->input->post('kendaraan');
         $kota = $this->input->post('kota');
         $idanggaran = $this->input->post('idAnggaran');
@@ -139,10 +150,11 @@ class Surat_tugas extends CI_Controller
         $maksud = $this->input->post('maksud');
         $namapenandatangan = $this->input->post('namaPenandatangan');
         $jabatanpenandatangan = $this->input->post('jabatanPenandatangan');
-        //$idpetugas = $this->input->post('idPetugas');
+        $idpegawai = $this->input->post('idPetugas');
+        $idtugas = $this->input->post('idTugas');
 
-
-        $data = array(
+        // edit 1
+        $dataSuratTugas = array(
             'idSur' => $idsurat,
             'noSur' => $nosurat,
             'tglSur' => $tglsurat,
@@ -155,10 +167,47 @@ class Surat_tugas extends CI_Controller
             'maksud' => $maksud,
             'namaPenandatangan' => $namapenandatangan,
             'jabatanPenandatangan' => $jabatanpenandatangan,
-            //'idPetugas' => $idpetugas
         );
 
-        $this->SuratTugas_model->ubah_surat($data);
+
+        $this->SuratTugas_model->ubah_surat($dataSuratTugas);
+
+        // edit 2 
+        
+        $this->SuratTugas_model->delTblTugas($nosuratlama); 
+
+
+        $huruf = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J');
+        $i = 0;
+        // sorting urutan 
+        $pegawai_attr = array();
+        foreach ($idpegawai as $idpetugas) {
+            $petugas_attr = $this->SuratTugas_model->get_attr_petugas($idpetugas);
+            foreach ($petugas_attr as $row) {
+                $id = $row->idPegawai;
+                $gol = $row->golongan;
+            }
+            $pegawai_attr[$id] = $gol;
+        }
+
+        arsort($pegawai_attr);
+
+       foreach ($pegawai_attr as $id => $value) {
+            $data_petugas = array(
+                'noSuratTugas' => $nosurat,
+                'idPetugas' => $id,
+                'urutan' => $huruf[$i]
+            );
+
+            print_r($data_petugas);
+
+            $this->db->insert('tbl_tugas', $data_petugas);
+
+            $i++;
+        }
+
+        $this->session->set_flashdata('success', 'Data Berhasil Diedit');
+
         redirect('admin/surat_tugas/surat_tugas');
     }
 

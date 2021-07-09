@@ -22,6 +22,19 @@ class SuratTugas_model extends CI_Model
     return $query->result();
   }
 
+   public function getsurattugasedit($id)
+  {
+    $this->db->select('tbl_surattugas.idSurat,tbl_surattugas.jenisSurat,tbl_surattugas.noSuratTugas,  tbl_surattugas.maksud, tbl_surattugas.kota, tbl_surattugas.kendaraan, tbl_surattugas.tglMulai, tbl_surattugas.tglSelesai, tbl_anggaran.idAnggaran, tbl_anggaran.namaAnggaran, tbl_surattugas.tglSurat, tbl_surattugas.jabatanPenandatangan, tbl_surattugas.namaPenandatangan, tbl_anggaran.namaAnggaran, tbl_pegawai.nama,tbl_pegawai.idPegawai');
+    $this->db->from('tbl_surattugas');
+    $this->db->join('tbl_anggaran', 'tbl_surattugas.idAnggaran = tbl_anggaran.idAnggaran');
+    $this->db->join('tbl_tugas', 'tbl_surattugas.noSuratTugas = tbl_tugas.noSuratTugas');
+    $this->db->join('tbl_pegawai', 'tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
+    $this->db->where('tbl_surattugas.idSurat', $id);
+    $query = $this->db->get('');
+    return $query->result();
+  }
+
+
   // petugas
   public function getpetugas()
   {
@@ -56,6 +69,20 @@ class SuratTugas_model extends CI_Model
     $query = $this->db->get('');
     return $query->result();
   }
+
+  public function getSumTugas($noSuratTugas)
+  {
+    $this->db->select('*');
+    $this->db->where('noSuratTugas = ', $noSuratTugas);
+    $query = $this->db->get('tbl_tugas');
+    return $query->num_rows();
+  }
+
+   public function delTblTugas($noSuratTugas)
+  {
+    $this->db->delete("tbl_tugas", array("noSuratTugas" => $noSuratTugas));
+  }
+
 
   // ubah surat tugas
   public function ubah_surat($data)
