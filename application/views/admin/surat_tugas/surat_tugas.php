@@ -59,8 +59,7 @@
                             echo "<td class='dt-center'>" . $row->kota . "</td>";
                             // echo "<td class='dt-center'>" . $row->jenisSurat . "</td>";
                             echo "<td class='dt-center'>" ?>
-                            <a href="<?=site_url('admin/surat_tugas/surat_tugas/edit_surat/'. $row->idSurat)?>" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editSur" data-idsurat="<?= $row->idSurat ?>">
-                              <i class="fa fa-edit"></i></a>
+                            <a href="<?=site_url('admin/surat_tugas/surat_tugas/edit_surat/'. $row->noSuratTugas)?>" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editSur" ><i class="fa fa-edit"></i></a>
 
                             <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusSur" data-id="<?= $row->idSurat ?>" data-toggle="modal" data-target="#hapusSurat">
                               <i class="fa fa-trash"></i></a>

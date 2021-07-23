@@ -13,7 +13,7 @@
   <section class="content">
     <div class="row">
       <div class="col-md-12">
-        <form role="form" action="<?php echo base_url('petugas/surat_peringatan/surat_apotek/surat') ?>" method="post">
+        <form role="form" action="<?php echo base_url('petugas/surat_peringatan/surat_apotek/simpanPeringatan') ?>" method="post">
           <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title"><?php echo $title; ?></h3>

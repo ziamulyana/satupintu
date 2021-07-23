@@ -127,7 +127,7 @@
            </h3>
 
            <br>
-
+<!-- 
            <?php if ($upload_file > 0) {
             ?>
              <div class="alert alert-danger alert-dismissable" role="alert">
@@ -135,8 +135,8 @@
                <h4><i class="icon fa fa-exclamation"></i> Alert!</h4>
                Hallo Petugas ! Terdapat <strong><?php echo $upload_file ?></strong> LHK <?= $this->session->flashdata('flash_error'); ?> yang butuh upload soft file. Silahkan cek pada tabel!
 
-             <?php  }; ?>
-             </div>
+             <?php  }; ?> -->
+             <!-- </div> --> 
 
          </div>
 
@@ -168,18 +168,14 @@
                             echo "<td class='dt-center'>" . $row->tglLhk . "</td>";
                             echo "<td class='dt-center'>" . $row->jenisLhk . "</td>";
                             echo "<td class='dt-center'>" ?>
-                           <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editPer" data-id="<?= $row->idLhk ?>" data-tgl="<?= $row->tglLhk ?>" data-file="<?= $row->file_lhk ?>" data-toggle="modal" data-target="#editLhk"><i class="fa fa-edit"></i></a>
+                           <a href="<?=site_url('petugas/lhk/list_lhk_c/edit_lhk/'. $row->idLhk)?>" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="ubahPj"> <i class="fa fa-edit"></i></a>
 
                            <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusPer" data-id="<?= $row->idLhk ?>" data-toggle="modal" data-target="#hapusLhk"><i class="fa fa-trash"></i></a>
 
-                           <?php if ($row->file_lhk != 0) { ?>
-                             <a href="../../assets/uploads/files/lhk/lhk-<?php echo $row->idLhk ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
+                            <a href="#" class="btn btn-info btn-sm" data-tooltip="tooltip" title="Print" id="printSur" data-toggle="modal" data-target="#printLhk" data-id="<?= $row->idSurat ?>">
+                              <i class="fa fa-print"></i></a>
 
-                           <?php  } else {
-                            ?>
-                             <a href="#" data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" disabled><i class="fa fa-eye"></i></a>
-                           <?php } ?>
-
+                      
 
                            </td>
 
@@ -313,4 +309,40 @@
      </div>
    </div>
    <!-- Hapus Peringatan -->
+
+
+  <!-- Print Surat Tugas -->
+  <div id="printLhk" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
+        </div>
+        <div class="modal-body" id=panelSur>
+          <form role="form" method="post" action="<?= base_url('petugas/lhk/list_lhk_c/print_lhk') ?>">
+            <div class="box-body">
+              <div class="form-group" style="text-align:center">Anda Akan Mencetak LHK</label>
+                <input type="hidden" id="idSurat" name="idSurat">
+
+              </div>
+            </div><!-- /.box-body -->
+            <div class="modal-footer">
+              <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+              <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
+            </div>
+          </form>
+          <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
+          <script type="text/javascript">
+            $(document).on("click", "#printSur", function() {
+              var id = $(this).data('id');
+
+              $("#panelSur #idSurat").val(id);
+            });
+          </script>
+        </div>
+
+      </div>
+    </div>
+  </div>
  </section>

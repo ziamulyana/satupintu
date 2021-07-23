@@ -56,9 +56,10 @@
                           echo "<td class='dt-center'>".$row->nama."</td>";
                           echo "<td class='dt-center'>".$row->tglKwitansi."</td>";
                           echo "<td class='dt-center'>"?>
-                          <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="ubahPj"
-                        data-id="<?=$row->idKwitansi ?>" data-nosur="<?=$row->noSuratTugas ?>" data-tglkw="<?=$row->tglKwitansi ?>" data-toggle="modal" data-target="#editPJ">
-                          <i class="fa fa-edit"></i></a>                             
+                          <a href="<?=site_url('admin/surat_pj/edit_pj/'. $row->idKwitansi)?>" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="ubahPj">
+                          <i class="fa fa-edit"></i></a>
+
+                         
                         
 
                             <a href="" class="btn btn-info btn-sm" data-tooltip="tooltip" title="Dakota" id="printDk" data-id = "<?=$row->idKwitansi ?>" data-toggle="modal" data-target="#printDakota"><i class="fa fa-print"></i></a>

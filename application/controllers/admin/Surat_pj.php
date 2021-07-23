@@ -18,9 +18,16 @@ class Surat_pj extends CI_Controller
 	{
 		$data = konfigurasi('Form Surat Pertanggung Jawaban Dakota', "ap");
 		$data['kwitansi'] = $this->SuratKw_model->getKw();
-		$data['jumlah_file'] = $this->SuratKw_model->getFile();
+		// $data['jumlah_file'] = $this->SuratKw_model->getFile();
 		$this->template->load('layouts/admin_template', 'admin/surat_pj', $data);
 	}
+
+	public function edit_pj(){
+        $id = $this->uri->segment(4);
+        $data = konfigurasi('Form Edit Surat Pertanggung Jawaban', "ap");
+        $data['masterKw'] = $this->SuratKw_model->masterKw($id);
+		$this->template->load('layouts/admin_template', 'admin/edit_pj', $data);
+    }
 
 
 	public function ubahPj()

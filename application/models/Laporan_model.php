@@ -82,13 +82,13 @@ class Laporan_model extends CI_Model
 
     public function getClosedSurat($tglAwal, $tglAkhir)
     {
-        $this->db->select('tbl_surattugas.noSuratTugas, tbl_sarana.namaSarana ,tbl_peringatan.noSuratPeringatan, tbl_peringatan.tglSuratPeringatan, tbl_peringatan.namaPembuat');
+        $this->db->select('tbl_surattugas.noSuratTugas, tbl_sarana.namaSarana ,tbl_peringatan.noSuratPeringatan, tbl_peringatan.tglSuratPeringatan, tbl_peringatan.pembuatCapa');
         $this->db->from('tbl_surattugas');
         $this->db->join('tbl_surattl', 'tbl_surattugas.idSurat = tbl_surattl.idSuratTugas');
         $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
         $this->db->join('tbl_peringatan', 'tbl_surattl.idTl = tbl_peringatan.idTl');
         $this->db->where("DATE_FORMAT(tbl_surattugas.tglSurat,'%Y-%m-%d') <='$tglAkhir'");
-        $this->db->where("tbl_peringatan.jenisCapa", "Close CAPA");
+        $this->db->where("tbl_peringatan.jenisPeringatan", "Close CAPA");
         $this->db->where("DATE_FORMAT(tbl_surattugas.tglSurat,'%Y-%m-%d') <='$tglAkhir'");
         $query = $this->db->get();
         return $query->result();

@@ -44,5 +44,19 @@ public function getRowKwitansi(){
      return $query->row();
 }
 
+public function ubahTanggal($tgl,$idKw)
+  {
+    $this->db->set('tglKwitansi', $tgl);
+ 
+    $this->db->where('idKwitansi', $idKw);
+    $query = $this->db->update('tbl_kwitansi');
+  }
+
+  public function hapusUraian($idKw)
+  {
+    $this->db->delete("tbl_uraian", array("idKwitansi" => $idKw));
+  }
+
+
 
 }

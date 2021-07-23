@@ -43,6 +43,7 @@ class Lhk_pem_c extends MY_Controller
     $kesimpulan = $this->input->post('kesimpulan');
     $keterangan = $this->input->post('keterangan');
 
+      
     $data['surat'] = $this->Lhk_model->getAtribut($idSurat);
     $data['idSurat'] = $idSurat;
     $data['tglLhk'] = $tglLhk;
@@ -63,9 +64,9 @@ class Lhk_pem_c extends MY_Controller
     $data2 = array(
       'tglLhk'   => $tglLhk,
       'jenisLhk' => "pemeriksaan",
-      'file_lhk' => "0",
       'idSuratTugas' => $idSurat
     );
+
 
     $checkvalidation = $this->Lhk_model->checkDuplicate($idSurat);
     if ($checkvalidation == true) {
@@ -88,9 +89,58 @@ class Lhk_pem_c extends MY_Controller
 
 
       $this->db->insert('tbl_lhk', $data2);
-      $this->load->view('petugas/lhk/lhk_pem_isi.php', $data, FALSE);
+      redirect('petugas/lhk/list_lhk_c', 'refresh');
     } else {
       redirect('petugas/lhk/lhk_pem_c', 'refresh');
     }
+
+
+  }
+
+  public function edit(){
+    $idSurat = $this->input->post('idSuratTugas');
+    $tglLhk = $this->input->post('tglLhk');
+    $sppd = $this->input->post('sppd');
+    $kwitansi = $this->input->post('kwitansi');
+    $form = $this->input->post('form');
+    $sarana = $this->input->post('sarana');
+    $temuan = $this->input->post('temuan');
+    $tl = $this->input->post('tl');
+    $kesimpulan = $this->input->post('kesimpulan');
+    $keterangan = $this->input->post('keterangan');
+
+    $data_edit = array(
+          'tglLhk' => $tglLhk,
+          'sppd' => $sppd,
+          'kwitansi' => $kwitansi,
+          'form' =>$form,
+          'idSurat' => $idSurat
+        );
+
+
+    $this->Lhk_model->updateLhk($data_edit);
+
+    $this->Lhk_model->hapusDetailSarana($idSurat);
+
+    for ($i = 0; $i < count($temuan); $i++) {
+
+        if ($temuan[$i] != null and (count($sarana) == count($temuan))) {
+          $data_sarana = array(
+            'idSarana'   => $sarana[$i],
+            'statusBalai'   => $kesimpulan[$i],
+            'isMk'   => $kesimpulan[$i],
+            'temuan' => $temuan[$i],
+            'deskripsiTemuan' => $keterangan[$i],
+            'jenisTl' => $tl[$i],
+            'idSuratTugas' => $idSurat
+          );
+          $this->db->insert('tbl_surattl', $data_sarana);
+        } else {
+          break;
+        }
+      }
+
+     redirect('petugas/lhk/list_lhk_c', 'refresh');
+
   }
 }

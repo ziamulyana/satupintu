@@ -46,7 +46,6 @@ class Form_pj extends CI_Controller
 
 		$data1 = array(
 			'tglKwitansi' => $tanggal,
-			'fileKwitansi' => '0',
 			'idTugas' => $petugas
 		);
 
@@ -65,6 +64,38 @@ class Form_pj extends CI_Controller
 		}
 
 		$this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
+		redirect('admin/surat_pj', 'refresh');
+	}
+
+	public function editKwitansi()
+	{
+
+
+		$noSurat =  $this->input->post('surattugas');
+		$idKwitansi = $this->input->post('idkwitansi');
+		$tanggal =  $this->input->post('tanggal');
+		$uraian =  $this->input->post('uraian');
+		$kategori =  $this->input->post('kategori');
+		$biaya =  $this->input->post('biaya');
+
+		
+
+		$this->SuratPj_model->ubahTanggal($tanggal,$idKwitansi);
+		$this->SuratPj_model->hapusUraian($idKwitansi);
+
+		for ($i = 0; $i < count($uraian); $i++) {
+			$data2 = array(
+				'uraian' => $uraian[$i],
+				'kategori' => $kategori[$i],
+				'biaya' => $biaya[$i],
+				'idKwitansi' => $idKwitansi 	
+
+			);
+
+			$this->db->insert('tbl_uraian', $data2);
+		}
+
+		$this->session->set_flashdata('success', 'Data Berhasil Diupdate	');
 		redirect('admin/surat_pj', 'refresh');
 	}
 }

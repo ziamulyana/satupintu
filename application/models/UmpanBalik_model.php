@@ -41,7 +41,7 @@ class UmpanBalik_model extends CI_Model{
     public function getHistory($idSurat,$idSarana)
     { 
        
-    $this->db->select('*');
+    $this->db->select('tbl_surattugas.noSuratTugas, tbl_peringatan.noSuratPeringatan, tbl_peringatan.jenisPeringatan, tbl_peringatan.tglSuratPeringatan, tbl_peringatan.isiCapa, tbl_surattl.deskripsiTemuan, tbl_surattl.jenisTl, tbl_sarana.namaSarana, tbl_feedback.noSuratFeedback, tbl_feedback.tglFeedback, tbl_feedback.closed, tbl_feedback.isiFeedback,tbl_feedback.file_feedback');
     $this->db->from('tbl_peringatan');
     $this->db->join('tbl_feedback', 'tbl_peringatan.idPeringatan = tbl_feedback.idSuratPeringatan','left');
     $this->db->join('tbl_surattl', 'tbl_surattl.idTl = tbl_peringatan.idTl');

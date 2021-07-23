@@ -286,7 +286,10 @@ header("Content-Disposition: attachment; Filename=lhkPem-" . $filename)
 								<p class="satu"><?php echo $row->alamatSarana ?> </p>
 							</td>
 							<td>
-								<p><?php echo $temuan[$nomor]; ?></p>
+
+								<p><?php $temuann = explode( ",", $temuan[$nomor]) ; foreach($temuann as $value){
+									echo $value."<br>";
+								} ?></p>
 							</td>
 							<td>
 								<p><?php echo $tl[$nomor]; ?></p>

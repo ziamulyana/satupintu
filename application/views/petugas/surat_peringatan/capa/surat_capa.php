@@ -86,7 +86,18 @@ header("Content-Disposition: attachment; Filename=SuratCapa-".$filename)
 					<td><p style="font-family:arial;">Lampiran: </p></td> 
 				</tr>
 				<tr>
-					<td><p style="font-family:arial;">Hal		: <?php echo $halSurat ?></p></td>
+
+					<?php if($halSurat == "eval"){
+						?>
+						<td><p style="font-family:arial;">Hal		: Evaluasi CAPA</p></td>
+
+						<?php
+					}else {
+						?>
+						<td><p style="font-family:arial;">Hal		: Closed CAPA</p></td>
+						<?php
+					} ?>
+					
 				</tr>
 				<tr>
 					<td><p style="font-family:arial;"><?php echo " " ?></p></td>

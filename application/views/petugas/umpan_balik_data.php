@@ -65,20 +65,25 @@
 
                           <!-- timeline item -->
                           <li>
+                            <?php if($row->jenisPeringatan == "eval"){
+                              $stat  = "Evaluasi CAPA";
+                              $temuan = $row->isiCapa;
+                            } else if($row->jenisPeringatan == "closed"){
+                              $stat  = "Closed CAPA";
+                              $temuan = $row->isiCapa;
+                            } else{
+                              $stat  = $row->jenisTl;
+                              $temuan = $row->deskripsiTemuan;
+                            }?>
                             <i class="fa fa-envelope bg-blue"></i>
                             <div class="timeline-item">
                               <span class="time"><i class="fa fa-clock-o"></i> <?php echo $row->tglSuratPeringatan ?></span>
-                              <h3 class="timeline-header"><a href="#">Anda</a> mengirim <b>Surat <?php echo $row->jenisTl ?></b> dengan nomor <?php echo $row ->noSuratPeringatan ?></h3>
+                              <h3 class="timeline-header"><a href="#">Anda</a> mengirim <b>Surat <?php echo $stat ?></b> dengan nomor <?php echo $row ->noSuratPeringatan ?></h3>
                               <div class="timeline-body">
-                                <?php echo $row ->isiPeringatan ?> 
+                                <p><b>Temuan : </b></p>
+                                <?php echo $temuan ?> 
                               </div>
-                              <div class="timeline-footer">
-                                <!-- <?php anchor('./assets/uploads/files/peringatan/'.$row->filePeringatan, 'Lihat File', $attr)?> -->
-
-                                <!-- feedback masih gagal -->
-
-                                <a class="btn btn-primary btn-xs" href="../../assets/uploads/files/peringatan/suratPeringatan-<?php echo $row ->idPeringatan ?>.pdf " target="_blank" >Lihat File</a>
-                              </div>
+                            
                             </div>
                           </li>
 

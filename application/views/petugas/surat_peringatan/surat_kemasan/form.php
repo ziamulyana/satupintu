@@ -13,7 +13,7 @@
   <section class="content">
     <div class="row">
       <div class="col-md-12">
-        <form role="form" action="<?php echo base_url('petugas/surat_peringatan/surat_kemasan/surat') ?>" method="post">
+        <form role="form" action="<?php echo base_url('petugas/surat_peringatan/surat_kemasan/simpanPeringatan') ?>" method="post">
           <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Form Pembuatan Surat Tindak Lanjut</h3>
@@ -84,17 +84,6 @@
                   </div>
                 </div>
 
-
-                <!-- alamat pengolahan -->
-                <div class="form-group row">
-                  <label for="noSurat" class="col-sm-6 col-form-label">Alamat Unit Pengolahan<span class="wajib"> *</span></label>
-                  <div class="col-sm-12">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                      <input type="text" class="form-control" name="alamatPengolahan" id="alamatPengolahan" placeholder="Alamat Unit Pengolahan" required>
-                    </div>
-                  </div>
-                </div>
 
                 <!-- tanggal periksa mulai -->
                 <div class="form-group row">

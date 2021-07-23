@@ -23,18 +23,9 @@
     </div>
     <div class="box-body">
       <h5> Berikut daftar CAPA untuk Sarana. </h5>
-      <?php if ($fileCapa > 0) {
-      ?>
+     
 
-
-        <div class="alert alert-danger alert-dismissable" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-          <h4><i class="icon fa fa-exclamation"></i> Alert!</h4>
-          Hallo Petugas ! Terdapat <strong><?php echo $fileCapa ?></strong> surat <?= $this->session->flashdata('flash_error'); ?> yang butuh upload soft file CAPA. Silahkan cek pada tabel!
-
-        <?php  }; ?>
-
-        </div>
+       
 
         <div class="pull-right">
           <ul>
@@ -55,7 +46,7 @@
                       <th>Nomor Surat Peringatan</th>
                       <th>Nama Sarana</th>
                       <th>Tgl CAPA </th>
-                      <th>Hal</th>
+                      <th>Jenis CAPA</th>
                       <th>Aksi</th>
 
                     </tr>
@@ -68,25 +59,27 @@
                         echo "<td>" . $row->noSuratPeringatan . "</td>";
                         echo "<td>" . $row->namaSarana . "</td>";
                         echo "<td>" . $row->tglSuratPeringatan . "</td>";
-                        echo "<td>" . $row->jenisCapa . "</td>";
+                        if($row->jenisPeringatan == "eval"){
+                           echo "<td>" . "Evaluasi CAPA" . "</td>";
+                        }else{
+                          echo "<td>" . "Closed CAPA" . "</td>";
+                        }
+                       
 
 
                         echo "</td>";
 
                         echo "<td class='dt-center'>" ?>
-                        <a href="#" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editFed" data-id="<?= $row->idFeedback ?>" data-nomor="<?= $row->noSuratFeedback ?>" data-isi="<?= $row->isiFeedback ?>" data-tgl="<?= $row->tglFeedback ?>" data-toggle="modal" data-target="#editFeedback"><i class="fa fa-edit"></i></a>
-
-                        <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusFed" data-id="<?= $row->idFeedback ?>" data-toggle="modal" data-target="#hapusFeedback"><i class="fa fa-trash"></i></a>
-
-                        <?php if ($row->file_feedback != 0) { ?>
-                          <a href="../assets/uploads/files/feedback/feedback-<?php echo $row->noSuratFeedback ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
-
-                        <?php  } else {
-                        ?>
-                          <a href="#" data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" disabled><i class="fa fa-eye"></i></a>
-                        <?php } ?>
+                          <a href="<?=site_url('petugas/surat_capa/editCapa/'. $row->idPeringatan)?>" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" ><i class="fa fa-edit"></i></a>
 
 
+                        <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusFed" data-id="<?= $row->idPeringatan ?>" data-toggle="modal" data-target="#hapusFeedback"><i class="fa fa-trash"></i></a>
+
+                         <a href="#" class="btn btn-info btn-sm" data-tooltip="tooltip" title="Print" id="printSur" data-toggle="modal" data-target=
+                         "#printCapa" data-id="<?= $row->idPeringatan ?>">
+                              <i class="fa fa-print"></i></a>
+
+                      
                         </td>
 
                     <?php
@@ -204,6 +197,41 @@
             </div>
           </div>
         </div>
+
+        <!-- Print Surat Peringatan apt -->
+  <div id="printCapa" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
+        </div>
+        <div class="modal-body" id=panelSur>
+          <form role="form" method="post" action="<?= base_url('petugas/surat_capa/printCapa') ?>">
+            <div class="box-body">
+              <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat CAPA </label>
+                <input type="hidden" id="idPeringatan" name="idPeringatan">
+
+              </div>
+            </div><!-- /.box-body -->
+            <div class="modal-footer">
+              <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+              <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
+            </div>
+          </form>
+          <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
+          <script type="text/javascript">
+            $(document).on("click", "#printSur", function() {
+              var id = $(this).data('id');
+
+              $("#panelSur #idPeringatan").val(id);
+            });
+          </script>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
 
 </section>

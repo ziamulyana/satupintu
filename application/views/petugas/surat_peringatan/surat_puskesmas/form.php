@@ -13,7 +13,7 @@
   <section class="content">
     <div class="row">
       <div class="col-md-12">
-        <form role="form" action="<?php echo base_url('petugas/surat_peringatan/surat_puskesmas/surat') ?>" method="post">
+        <form role="form" action="<?php echo base_url('petugas/surat_peringatan/surat_puskesmas/simpanPeringatan') ?>" method="post">
           <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Form Pembuatan Surat Tindak Lanjut</h3>

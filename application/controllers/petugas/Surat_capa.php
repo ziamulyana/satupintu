@@ -16,7 +16,6 @@ class Surat_capa extends CI_Controller
 	{
 
 		$data['capa'] = $this->SuratPeringatan_model->getCapa();
-		$data['fileCapa'] = $this->SuratPeringatan_model->fileCapa();
 		$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/capa/list_capa', $data);
 	}
 
@@ -27,9 +26,8 @@ class Surat_capa extends CI_Controller
 		$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/capa/sub_capa', $data);
 	}
 
-	public function printCapa()
+	public function simpanCapa()
 	{
-
 		function convertMonths($month)
 		{
 			$month = date('m', $month);
@@ -66,20 +64,96 @@ class Surat_capa extends CI_Controller
 			$noSuratFix = "T-PW.03.02.9A.9A2." . convertMonths($tanggalolah) . "." . convertYears($tanggalolah) . "." . $noSurat;
 		}
 
-
-
-
-
-
-
 		$dataSarana = $this->SuratPeringatan_model->getSarana($idSarana);
 
 
 		foreach ($dataSarana as $row) {
-			$namaSarana = $row->namaSarana;
 			$idTl =  $row->idTl;
-			$alamatSarana = $row->alamatSarana;
-			$kota = $row->kota;
+		}
+
+		if ($halSurat == "Close CAPA") {
+			$data_db = array(
+
+				'tglSuratPeringatan' => $tanggal,
+				'noSuratPeringatan' => $noSuratFix,
+				'jenisPeringatan' => $halSurat,
+				'pembuatCapa' => $pembuat,
+				'isiCapa' =>$detailTemuan,
+				'idTl' => $idTl,
+				'status' => 0
+			);
+		} else {
+			$data_db = array(
+				'tglSuratPeringatan' => $tanggal,
+				'noSuratPeringatan' => $noSuratFix,
+				'jenisPeringatan' => $halSurat,
+				'isiCapa' =>$detailTemuan,
+				'idTl' => $idTl,
+				'status' => 0
+			);
+		}
+
+			$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
+		if ($checkvalidation == true) {
+			$this->db->insert('tbl_peringatan', $data_db);
+			redirect('petugas/surat_capa', 'refresh');
+
+		} else {
+			// $this->session->set_flashdata('failed', 'Maaf, Data tidak diprses karena duplikat');
+			redirect('petugas/surat_capa/buat_capa', 'refresh');
+		}
+	}
+
+	public function editCapa(){
+		$id = $this->uri->segment(4);
+		$data = konfigurasi('Form Edit Surat CAPA', "ap");
+		$data["editCapa"] = $this->SuratPeringatan_model->getEditCapa($id);
+		$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/capa/edit_capa', $data);
+	}
+
+	public function simpanEditCapa(){
+		$id = $this->input->post('idPeringatan');
+		$tanggal =  $this->input->post('tanggalSurat');
+		$noSurat =  $this->input->post('noSurat');
+		$halSurat = $this->input->post('halSurat');
+		// detil sarana
+		$pembuat =  $this->input->post('pembuat');
+
+		// detil temuan
+		$detailTemuan =  $this->input->post('detailTemuan');
+
+		$data_edit = array(
+				'tglSuratPeringatan' => $tanggal,
+				'noSuratPeringatan' => $noSurat,
+				'jenisPeringatan' => $halSurat,
+				'pembuatCapa' => $pembuat,
+				'isiCapa' =>$detailTemuan,
+				'idPeringatan' => $id
+			);
+
+		$this->SuratPeringatan_model->updateSuratCapa($data_edit);
+
+		redirect('petugas/surat_capa');
+
+
+	}
+
+	public function printCapa()
+	{
+
+		
+	$id = $this->input->post('idPeringatan');
+	$detail = $this->SuratPeringatan_model->getEditCapa($id);
+	
+		foreach ($detail as $row) {
+                $noSurat = $row->noSuratTugas;
+                $tanggal = $row->tglSuratPeringatan;
+                $noSurat = $row->noSuratPeringatan;
+                $halSurat = $row->jenisPeringatan;
+                $namaSarana = $row->namaSarana;
+                $alamatSarana = $row->alamatSarana;
+                $kota = $row->kotaSarana;
+                $detailTemuan = $row->isiCapa;
 		}
 
 
@@ -88,7 +162,7 @@ class Surat_capa extends CI_Controller
 		$data = array(
 			'title' => 'Cetak surat tugas',
 			'tanggal' => $tanggal,
-			'noSurat' => $noSuratFix,
+			'noSurat' => $noSurat,
 			'halSurat' => $halSurat,
 			'penerimaSurat' => $namaSarana,
 			// detil sarana
@@ -100,40 +174,10 @@ class Surat_capa extends CI_Controller
 			'detailTemuan' => $detailTemuan
 		);
 
-		if ($halSurat == "Close CAPA") {
-			$data_db = array(
+		
 
-				'tglSuratPeringatan' => $tanggal,
-				'noSuratPeringatan' => $noSuratFix,
-				'jenisCapa' => $halSurat,
-				'jenisPeringatan' => 'CAPA',
-				'filePeringatan' => '0',
-				'namaPembuat' => $pembuat,
-				'idTl' => $idTl,
-				'status' => 0
-			);
-		} else {
-			$data_db = array(
-
-				'tglSuratPeringatan' => $tanggal,
-				'noSuratPeringatan' => $noSuratFix,
-				'jenisCapa' => $halSurat,
-				'jenisPeringatan' => 'CAPA',
-				'filePeringatan' => '0',
-				'idTl' => $idTl,
-				'status' => 0
-			);
-		}
-
-		$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
-		if ($checkvalidation == true) {
-			$this->db->insert('tbl_peringatan', $data_db);
-			// $this->session->set_flashdata('success', 'Data Berhasil Dimasukkan');
-			$this->load->view('petugas/surat_peringatan/capa/surat_capa', $data, FALSE);
-		} else {
-			// $this->session->set_flashdata('failed', 'Maaf, Data tidak diprses karena duplikat');
-			redirect('petugas/surat_capa/buat_capa', 'refresh');
-		}
+	$this->load->view('petugas/surat_peringatan/capa/surat_capa', $data, FALSE);
+		
 	}
 
 	public function getSaranaPer()

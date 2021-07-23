@@ -15,12 +15,39 @@ class Lhk_model extends CI_Model
   public function getLhk()
   {
 
-    $this->db->select('tbl_surattugas.noSuratTugas, tbl_lhk.tglLhk, tbl_lhk.file_lhk, tbl_lhk.jenisLhk, tbl_lhk.idLhk');
+    $this->db->select('tbl_surattugas.noSuratTugas, tbl_surattugas.idSurat, tbl_lhk.tglLhk,  tbl_lhk.jenisLhk, tbl_lhk.idLhk');
     $this->db->from('tbl_lhk');
     $this->db->join('tbl_surattugas', 'tbl_lhk.idSuratTugas = tbl_surattugas.idSurat');
     $query = $this->db->get('');
     return $query;
   }
+
+  public function getLhkDet($id)
+  {
+
+    $this->db->select('tbl_lhk.idLhk, tbl_lhk.tglLhk, tbl_lhk.jenisLhk, tbl_lhk.pejabatDituju, tbl_lhk.pengesahSppd, tbl_lhk.pengesahKwitansi, tbl_lhk.pengesahForm, tbl_surattugas.noSuratTugas, tbl_surattugas.idSurat, tbl_surattl.idSarana, tbl_surattl.statusBalai, tbl_surattl.isMk, tbl_surattl.temuan, tbl_surattl.deskripsiTemuan, tbl_surattl.jenisTl, tbl_sarana.namaSarana');
+    $this->db->from('tbl_lhk');
+    $this->db->join('tbl_surattugas', 'tbl_lhk.idSuratTugas = tbl_surattugas.idSurat');
+    $this->db->join('tbl_surattl', 'tbl_surattugas.idSurat = tbl_surattl.idSuratTugas');
+    $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
+    $this->db->where('tbl_lhk.idLhk', $id);
+    $query = $this->db->get();
+    return $query->result();
+  }
+
+  public function getLhkDetail($id)
+  {
+
+    $this->db->select('tbl_lhk.idLhk, tbl_lhk.tglLhk, tbl_lhk.jenisLhk, tbl_lhk.pejabatDituju, tbl_lhk.pengesahSppd, tbl_lhk.pengesahKwitansi, tbl_lhk.pengesahForm, tbl_surattugas.noSuratTugas, tbl_surattugas.idSurat, tbl_surattl.idSarana, tbl_surattl.statusBalai, tbl_surattl.isMk, tbl_surattl.temuan, tbl_surattl.deskripsiTemuan, tbl_surattl.jenisTl, tbl_sarana.namaSarana');
+    $this->db->from('tbl_lhk');
+    $this->db->join('tbl_surattugas', 'tbl_lhk.idSuratTugas = tbl_surattugas.idSurat');
+    $this->db->join('tbl_surattl', 'tbl_surattugas.idSurat = tbl_surattl.idSuratTugas');
+    $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
+    $this->db->where('tbl_lhk.idSuratTugas', $id);
+    $query = $this->db->get();
+    return $query->result();
+  }
+
 
   public function getFileLhk()
   {
@@ -102,8 +129,10 @@ class Lhk_model extends CI_Model
   public function updateLhk($data)
   {
     $this->db->set('tglLhk', $data['tglLhk']);
-    $this->db->set('file_lhk', $data['file_lhk']);
-    $this->db->where('idLhk', $data['id']);
+    $this->db->set('pengesahSppd',$data['sppd']);
+    $this->db->set('pengesahKwitansi', $data['kwitansi']);
+    $this->db->set('pengesahForm', $data['form']);
+    $this->db->where('idSuratTugas', $data['idSurat']);
     $query = $this->db->update('tbl_lhk');
   }
 
@@ -118,5 +147,9 @@ class Lhk_model extends CI_Model
   public function hapusLhk($id)
   {
     $this->db->delete("tbl_lhk", array("idLhk" => $id));
+  }
+
+  public function hapusDetailSarana ($id){
+    $this->db->delete("tbl_surattl", array("idSuratTugas" => $id));
   }
 }

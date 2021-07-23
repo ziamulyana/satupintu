@@ -13,7 +13,7 @@
 <section class="content">
   <div class="row">
     <div class="col-md-12">
-      <form role="form" action="<?php echo base_url('petugas/surat_capa/printCapa') ?>" method="post">
+      <form role="form" action="<?php echo base_url('petugas/surat_capa/simpanCapa') ?>" method="post">
         <div class="box box-primary">
           <div class="box-header with-border">
             <h3 class="box-title"><?php echo $title; ?></h3>
@@ -70,8 +70,8 @@
                     <span class="input-group-addon"><i class="fa fa-building"></i></span>
                     <select name="halSurat" id="halSurat" class="form-control" required>
                       <option value="" disabled selected>- Pilih Perihal -</option>
-                      <option>Evaluasi CAPA</option>
-                      <option>Close CAPA</option>
+                      <option value="eval">Evaluasi CAPA</option>
+                      <option value="closed">Close CAPA</option>
                     </select>
                   </div>
                 </div>
@@ -104,7 +104,7 @@
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-building"></i></span>
                     <select name="komoditi" id="komoditi" class="form-control" required>
-                      <option value="" disabled selected>- Pilih Perihal -</option>
+                      <option value="" disabled selected>- Jenis Komoditi -</option>
                       <option value="obat">PBF</option>
                       <option value="obat">Apotek</option>
                       <option value="obat">RS</option>
