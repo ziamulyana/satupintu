@@ -68,7 +68,7 @@ class Lhk_sertifikasi_c extends MY_Controller
             'isMk'   => $kesimpulan[$i],
             'temuan' => "0",
             'deskripsiTemuan' => $keterangan[$i],
-            'jenisTl' => "Tidak TL",
+            'jenisTl' => "-",
             'idSuratTugas' => $idSurat
           );
           $this->db->insert('tbl_surattl', $data_sarana);
