@@ -190,7 +190,7 @@ header("Content-Disposition: attachment; Filename=lhkIklan-" . $filename)
 						<p>: </p>
 					</td>
 					<td width="70%">
-						<p><?php echo $nama_all[$i]; ?></p>
+						<p><?php echo $nama_all[$i]; ?> / <?php echo $nip_all[$i]; ?></p>
 					</td>
 				</tr>
 				<tr>

@@ -159,7 +159,7 @@ header("Content-Disposition: attachment; Filename=lhkSer-".$filename)
 				<td width="5%"><p><?php echo $huruf[$i] ;?></p></td>
 				<td width="24%"><p class="satu">Nama / NIP </p></td> 
 				<td width="5%"><p class="satu"> : </p></td> 
-				<td width="66%"><p ><?php echo $nama_all[$i];?></p></td> 
+				<td width="66%"><p ><?php echo $nama_all[$i];?> / <?php echo $nip_all[$i]; ?></p></td> 
 			</tr>
 			<tr>
 				<td><p>     </p></td>
