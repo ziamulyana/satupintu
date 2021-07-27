@@ -256,7 +256,7 @@
 
                   
 
-                      <td colspan="5"> <textarea  placeholder="Keterangan." name="keterangan[]" id="keterangan[]" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
+                      <td colspan="5"> <textarea  placeholder="Keterangan." name="kesimpulan[]" id="kesimpulan[]" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
 
           
              

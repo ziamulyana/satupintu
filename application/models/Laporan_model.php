@@ -32,7 +32,7 @@ class Laporan_model extends CI_Model
 
     public function getLaporanSurat($tglAwal, $tglAkhir)
     {
-        $this->db->select('tbl_surattugas.noSuratTugas, tbl_surattugas.maksud, tbl_surattugas.kota, tbl_surattugas.tglMulai, tbl_surattugas.tglSelesai, tbl_sarana.namaSarana, tbl_sarana.alamatSarana, tbl_sarana.jenisSarana, tbl_surattl.statusBalai, tbl_surattl.jenisTl, tbl_surattl.temuan, tbl_peringatan.noSuratPeringatan, tbl_peringatan.tglSuratPeringatan');
+        $this->db->select('tbl_surattugas.noSuratTugas, tbl_surattugas.maksud, tbl_surattugas.kota, tbl_surattugas.tglMulai, tbl_surattugas.tglSelesai, tbl_sarana.namaSarana, tbl_sarana.alamatSarana, tbl_sarana.jenisSarana, tbl_surattl.statusBalai, tbl_surattl.jenisTl, tbl_surattl.temuan, tbl_surattl.deskripsiTemuan, tbl_peringatan.noSuratPeringatan, tbl_peringatan.tglSuratPeringatan');
         $this->db->from('tbl_surattugas');
         $this->db->join('tbl_surattl', 'tbl_surattl.idSuratTugas = tbl_surattugas.idSurat');
         $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana');

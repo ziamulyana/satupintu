@@ -32,30 +32,65 @@ class Lhk_iklan_c extends MY_Controller
         $detKegiatan = $this->input->post('detKegiatan');
         $pejabat = $this->input->post('pejabat');
 
-        $data['surat'] = $this->Lhk_model->getAtribut($idSurat);
-        $data['noSurat'] = $idSurat;
-        $data['tglLhk'] =  $tglLhk;
-        $data['sppd'] =  $sppd;
-        $data['kwitansi'] = $kwitansi;
-        $data['form'] =  $form;
-        $data['detSampling'] = $detSampling;
-        $data['detKegiatan'] =  $detKegiatan;
-        $data['pejabat'] = $pejabat;
+        // $data['surat'] = $this->Lhk_model->getAtribut($idSurat);
+        // $data['noSurat'] = $idSurat;
+        // $data['tglLhk'] =  $tglLhk;
+        // $data['sppd'] =  $sppd;
+        // $data['kwitansi'] = $kwitansi;
+        // $data['form'] =  $form;
+        // $data['detSampling'] = $detSampling;
+        // $data['detKegiatan'] =  $detKegiatan;
+        // $data['pejabat'] = $pejabat;
 
 
         $data2 = array(
-            'tglLhk'   => $tglLhk,
+           'tglLhk'   => $tglLhk,
             'jenisLhk' => "iklan",
-            'file_lhk' => "0",
+            'pejabatDituju' =>$pejabat,
+            'pengesahSppd' => $sppd,
+      'pengesahKwitansi' => $kwitansi,
+      'pengesahForm' => $form,
+      'rincianSampling' => $detSampling,
+      'deskripsi' => $detKegiatan,
             'idSuratTugas' => $idSurat
         );
 
         $checkvalidation = $this->Lhk_model->checkDuplicate($idSurat);
         if ($checkvalidation == true) {
             $this->db->insert('tbl_lhk', $data2);
-            $this->load->view('petugas/lhk/lhk_iklan_isi.php', $data, FALSE);
+           redirect('petugas/lhk/list_lhk_c', 'refresh');
+            // $this->load->view('petugas/lhk/lhk_iklan_isi.php', $data, FALSE);
         } else {
             redirect('petugas/lhk/lhk_iklan_c', 'refresh');
         }
     }
+
+     public function edit(){
+    $idSurat = $this->input->post('idSuratTugas');
+    $tglLhk = $this->input->post('tglLhk');
+    $pejabat = $this->input->post('pejabat');
+    $sppd = $this->input->post('sppd');
+    $kwitansi = $this->input->post('kwitansi');
+    $form = $this->input->post('form');
+    $sampling = $this->input->post('detSampling');
+    $deskripsi = $this->input->post('detKegiatan');
+  
+
+    $data_edit = array(
+          'tglLhk' => $tglLhk,
+          'pejabat' => $pejabat,
+          'sppd' => $sppd,
+          'kwitansi' => $kwitansi,
+          'form' =>$form,
+          'sampling' =>$sampling,
+          'deskripsi' => $deskripsi,
+          'idSurat' => $idSurat
+        );
+
+
+    $this->Lhk_model->updateLhk($data_edit);
+
+     redirect('petugas/lhk/list_lhk_c', 'refresh');
+
+  }
 }

@@ -29,7 +29,7 @@ class SuratTugas_model extends CI_Model
     $this->db->join('tbl_anggaran', 'tbl_surattugas.idAnggaran = tbl_anggaran.idAnggaran');
     $this->db->join('tbl_tugas', 'tbl_surattugas.noSuratTugas = tbl_tugas.noSuratTugas');
     $this->db->join('tbl_pegawai', 'tbl_tugas.idPetugas = tbl_pegawai.idPegawai');
-    $this->db->where('tbl_surattugas.idSurat', $id);
+    $this->db->where('tbl_surattugas.noSuratTugas', $id);
     $query = $this->db->get('');
     return $query->result();
   }

@@ -26,9 +26,9 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="judul"><h2 class="title">ELEKTRONIK SURAT TUGAS LAPORAN MONITORING TINDAK LANJUT</h2>
+				<div class="judul"><h2 class="title">SURAT TUGAS PELAPORAN MONITORING EVALUASI TINDAK LANJUT</h2>
 				<br>
-				<h2 class="title">( e - SatuPintu )</h2>
+				<h2 class="title">( E-SATUPINTU )</h2>
 				</div>
 				<div class="login100-pic js-tilt" data-tilt>
 					<img src="<?php echo base_url('login_assets/images/logo.png');?>" alt="IMG">

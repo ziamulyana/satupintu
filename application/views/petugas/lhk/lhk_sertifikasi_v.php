@@ -152,7 +152,7 @@
 
                            <tr>
 
-                          <td colspan="1"> <textarea class="textarea" placeholder="Keterangan." name="keterangan[]" id="keterangan[]" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
+                          <td colspan="1"> <textarea class="textarea" placeholder="Keterangan[]." name="keterangan[]" id="keterangan" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
 
                           <td> <div class="col-md-4" style="margin-top:18px;" align="left">
                                 <button id="remove-btn" onclick="$(this).parents('.items').remove()" class="btn btn-danger">Remove</button>

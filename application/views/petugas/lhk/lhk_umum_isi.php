@@ -1,6 +1,6 @@
 <?php
 header("Content-type:application/vnd.ms-word");
-$filename = $idSurat . ".doc";
+$filename = $noSurat . ".doc";
 header("Content-Disposition: attachment; Filename=lhkUmum-" . $filename)
 
 ?>
@@ -310,7 +310,7 @@ header("Content-Disposition: attachment; Filename=lhkUmum-" . $filename)
 					<p id="hilang"><b>VI.</b></p>
 				</td>
 				<td>
-					<p class="satu"> <?php echo $keterangan[$nomor] ?></p>
+					<p class="satu"> <?php echo $detKegiatan ?></p>
 				</td>
 				<td>
 					<p class="satu">&nbsp;</p>

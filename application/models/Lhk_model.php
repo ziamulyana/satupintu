@@ -11,6 +11,22 @@ class Lhk_model extends CI_Model
     parent::__construct();
   }
 
+  public function jenisLhk($id)
+  {
+    $this->db->select('jenisLhk');
+    $this->db->where('tbl_lhk.idLhk', $id);
+    $query = $this->db->get('tbl_lhk');
+    return $query->result();
+  }
+
+  public function jenisLhkSurat($id)
+  {
+    $this->db->select('jenisLhk');
+    $this->db->where('tbl_lhk.idSuratTugas', $id);
+    $query = $this->db->get('tbl_lhk');
+    return $query->result();
+  }
+
 
   public function getLhk()
   {
@@ -25,11 +41,11 @@ class Lhk_model extends CI_Model
   public function getLhkDet($id)
   {
 
-    $this->db->select('tbl_lhk.idLhk, tbl_lhk.tglLhk, tbl_lhk.jenisLhk, tbl_lhk.pejabatDituju, tbl_lhk.pengesahSppd, tbl_lhk.pengesahKwitansi, tbl_lhk.pengesahForm, tbl_surattugas.noSuratTugas, tbl_surattugas.idSurat, tbl_surattl.idSarana, tbl_surattl.statusBalai, tbl_surattl.isMk, tbl_surattl.temuan, tbl_surattl.deskripsiTemuan, tbl_surattl.jenisTl, tbl_sarana.namaSarana');
+    $this->db->select('tbl_lhk.idLhk, tbl_lhk.tglLhk, tbl_lhk.jenisLhk, tbl_lhk.pejabatDituju, tbl_lhk.pengesahSppd, tbl_lhk.pengesahKwitansi, tbl_lhk.pengesahForm, tbl_lhk.rincianSampling, tbl_lhk.deskripsi, tbl_surattugas.noSuratTugas, tbl_surattugas.idSurat, tbl_surattl.idSarana, tbl_surattl.statusBalai, tbl_surattl.isMk, tbl_surattl.temuan, tbl_surattl.deskripsiTemuan, tbl_surattl.jenisTl, tbl_sarana.namaSarana');
     $this->db->from('tbl_lhk');
     $this->db->join('tbl_surattugas', 'tbl_lhk.idSuratTugas = tbl_surattugas.idSurat');
-    $this->db->join('tbl_surattl', 'tbl_surattugas.idSurat = tbl_surattl.idSuratTugas');
-    $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
+    $this->db->join('tbl_surattl', 'tbl_surattugas.idSurat = tbl_surattl.idSuratTugas',"left");
+    $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana',"left");
     $this->db->where('tbl_lhk.idLhk', $id);
     $query = $this->db->get();
     return $query->result();
@@ -38,11 +54,11 @@ class Lhk_model extends CI_Model
   public function getLhkDetail($id)
   {
 
-    $this->db->select('tbl_lhk.idLhk, tbl_lhk.tglLhk, tbl_lhk.jenisLhk, tbl_lhk.pejabatDituju, tbl_lhk.pengesahSppd, tbl_lhk.pengesahKwitansi, tbl_lhk.pengesahForm, tbl_surattugas.noSuratTugas, tbl_surattugas.idSurat, tbl_surattl.idSarana, tbl_surattl.statusBalai, tbl_surattl.isMk, tbl_surattl.temuan, tbl_surattl.deskripsiTemuan, tbl_surattl.jenisTl, tbl_sarana.namaSarana');
+    $this->db->select('tbl_lhk.idLhk, tbl_lhk.tglLhk, tbl_lhk.jenisLhk, tbl_lhk.pejabatDituju, tbl_lhk.pengesahSppd, tbl_lhk.pengesahKwitansi, tbl_lhk.pengesahForm, tbl_lhk.rincianSampling, tbl_lhk.deskripsi, tbl_surattugas.noSuratTugas, tbl_surattugas.idSurat, tbl_surattl.idSarana, tbl_surattl.statusBalai, tbl_surattl.isMk, tbl_surattl.temuan, tbl_surattl.deskripsiTemuan, tbl_surattl.jenisTl, tbl_sarana.namaSarana');
     $this->db->from('tbl_lhk');
     $this->db->join('tbl_surattugas', 'tbl_lhk.idSuratTugas = tbl_surattugas.idSurat');
-    $this->db->join('tbl_surattl', 'tbl_surattugas.idSurat = tbl_surattl.idSuratTugas');
-    $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
+    $this->db->join('tbl_surattl', 'tbl_surattugas.idSurat = tbl_surattl.idSuratTugas',"left");
+    $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana',"left");
     $this->db->where('tbl_lhk.idSuratTugas', $id);
     $query = $this->db->get();
     return $query->result();
@@ -129,12 +145,16 @@ class Lhk_model extends CI_Model
   public function updateLhk($data)
   {
     $this->db->set('tglLhk', $data['tglLhk']);
+    $this->db->set('pejabatDituju', $data['pejabat']);
     $this->db->set('pengesahSppd',$data['sppd']);
     $this->db->set('pengesahKwitansi', $data['kwitansi']);
     $this->db->set('pengesahForm', $data['form']);
+    $this->db->set('rincianSampling', $data['sampling']);
+    $this->db->set('deskripsi', $data['deskripsi']);
     $this->db->where('idSuratTugas', $data['idSurat']);
     $query = $this->db->update('tbl_lhk');
   }
+
 
   public function getFile()
   {

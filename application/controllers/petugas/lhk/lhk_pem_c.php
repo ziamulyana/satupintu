@@ -43,27 +43,12 @@ class Lhk_pem_c extends MY_Controller
     $kesimpulan = $this->input->post('kesimpulan');
     $keterangan = $this->input->post('keterangan');
 
-      
-    $data['surat'] = $this->Lhk_model->getAtribut($idSurat);
-    $data['idSurat'] = $idSurat;
-    $data['tglLhk'] = $tglLhk;
-    $data['sppd'] = $sppd;
-    $data['kwitansi'] = $kwitansi;
-    $data['form'] = $form;
-    $array_sarana = array();
-    foreach ($sarana as $num) {
-      $sarana2['data'] = $this->Lhk_model->getSarana2($num);
-      array_push($array_sarana, $sarana2);
-    }
-    $data['sarana'] =  $array_sarana;
-    $data['temuan'] = $temuan;
-    $data['tl'] = $tl;
-    $data['kesimpulan'] = $kesimpulan;
-    $data['keterangan'] = $keterangan;
-
     $data2 = array(
       'tglLhk'   => $tglLhk,
       'jenisLhk' => "pemeriksaan",
+      'pengesahSppd' => $sppd,
+      'pengesahKwitansi' => $kwitansi,
+      'pengesahForm' => $form,
       'idSuratTugas' => $idSurat
     );
 
@@ -111,20 +96,25 @@ class Lhk_pem_c extends MY_Controller
 
     $data_edit = array(
           'tglLhk' => $tglLhk,
+          'pejabat' => "-",
           'sppd' => $sppd,
           'kwitansi' => $kwitansi,
           'form' =>$form,
+          'sampling' =>"-",
+          'deskripsi' => "-",
           'idSurat' => $idSurat
         );
 
 
     $this->Lhk_model->updateLhk($data_edit);
 
-    $this->Lhk_model->hapusDetailSarana($idSurat);
+  
+    if ($temuan[$i] != null and (count($sarana) == count($temuan))) {
+        $this->Lhk_model->hapusDetailSarana($idSurat);
 
     for ($i = 0; $i < count($temuan); $i++) {
 
-        if ($temuan[$i] != null and (count($sarana) == count($temuan))) {
+        
           $data_sarana = array(
             'idSarana'   => $sarana[$i],
             'statusBalai'   => $kesimpulan[$i],
@@ -135,12 +125,66 @@ class Lhk_pem_c extends MY_Controller
             'idSuratTugas' => $idSurat
           );
           $this->db->insert('tbl_surattl', $data_sarana);
-        } else {
-          break;
+        } 
+      }else {
+           redirect('petugas/lhk/list_lhk_c', 'refresh');
         }
-      }
 
      redirect('petugas/lhk/list_lhk_c', 'refresh');
 
   }
+
+  public function print(){
+        $id = $this->input->post('idSurat');
+        $detailLhk = $this->Lhk_model->getLhkDetail($id);
+        
+        $idSarana = array();
+        $temuan = array();
+        $kesimpulan = array();
+        $keterangan= array();
+        $tl = array();
+
+        foreach($detailLhk as $row){
+                // $idLhk = $row->idLhk;
+                $tglLhk = $row->tglLhk;
+                // $jenisLhk = $row->jenisLhk;
+                $sppd = $row->pengesahSppd;
+                $kwitansi = $row->pengesahKwitansi;
+                $form = $row ->pengesahForm;
+                // $noSuratTugas = $row->noSuratTugas;
+                $idSurat = $row->idSurat;
+                array_push($idSarana, $row->idSarana);
+                array_push($kesimpulan, $row->statusBalai);
+                 array_push($keterangan,  $row->deskripsiTemuan);
+                 array_push($temuan, $row->temuan);
+                  array_push($tl, $row->jenisTl);
+
+                //  = ;
+                // $deskripsiTemuan = $row->deskripsiTemuan;
+                // $jenisTl = ;
+            }
+
+             $data['surat'] = $this->Lhk_model->getAtribut($idSurat);
+    $data['idSurat'] = $idSurat;
+    $data['tglLhk'] = $tglLhk;
+    $data['sppd'] = $sppd;
+    $data['kwitansi'] = $kwitansi;
+    $data['form'] = $form;
+
+    $array_sarana = array();
+    foreach ($idSarana as $num) {
+      $sarana2['data'] = $this->Lhk_model->getSarana2($num);
+      array_push($array_sarana, $sarana2);
+    }
+
+     $data['sarana'] =  $array_sarana;
+    $data['temuan'] = $temuan;
+    $data['tl'] = $tl;
+    $data['kesimpulan'] = $kesimpulan;
+    $data['keterangan'] = $keterangan;
+
+    $this->load->view('petugas/lhk/lhk_pem_isi', $data, FALSE);
+                
+
+    }
 }

@@ -284,7 +284,7 @@ header("Content-Disposition: attachment; Filename=lhkSer-".$filename)
 			</tr>
 			<tr>
 				<td><p id="hilang"><b>VI.</b></p></td>
-				<td><p class="satu"> <?php echo $kesimpulan?></p></td>
+				<td><p class="satu"> <?php echo $detKegiatan?></p></td>
 				<td><p class="satu">&nbsp;</p></td> 
 				<td><p class="satu">&nbsp;</p></td> 
 			</tr>

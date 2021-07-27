@@ -74,6 +74,7 @@ header("Content-Disposition: attachment; filename=LaporanSuratTugas-" . $filenam
     $statusBalai_all = array();
     $jenisTl_all = array();
     $temuan_all = array();
+    $deskripsi_all = array();
     $noSuratPeringatan_all = array();
     $tglSuratPeringatan_all = array();
 
@@ -90,6 +91,7 @@ header("Content-Disposition: attachment; filename=LaporanSuratTugas-" . $filenam
         array_push($jenisSarana_all, $row->jenisSarana);
         array_push($statusBalai_all, $row->statusBalai);
         array_push($jenisTl_all, $row->jenisTl);
+        array_push($deskripsi_all, $row->deskripsiTemuan);
         array_push($temuan_all, $row->temuan);
         array_push($noSuratPeringatan_all, $row->noSuratPeringatan);
         array_push($tglSuratPeringatan_all, $row->tglSuratPeringatan);
@@ -116,7 +118,8 @@ header("Content-Disposition: attachment; filename=LaporanSuratTugas-" . $filenam
                 <th>Kategori</th>
                 <th>Hasil</th>
                 <th>Tindak Lanjut</th>
-                <th>Keterangan</th>
+                <th>Deskripsi</th>
+                <th>Kesimpulan</th>
                 <th>LHK</th>
                 <th>SIPT</th>
                 <th>Nomor Surat TL</th>
@@ -167,6 +170,7 @@ header("Content-Disposition: attachment; filename=LaporanSuratTugas-" . $filenam
                 } ?>
                 <td><?php echo $status; ?></td>
                 <td><?php echo $jenisTl_all[$i]; ?></td>
+                <td><?php echo $deskripsi_all[$i]; ?></td>
                 <td><?php echo $temuan_all[$i]; ?></td>
                 <td></td>
                 <td></td>

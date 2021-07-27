@@ -28,41 +28,31 @@ class List_lhk_c extends MY_Controller
 
        $id = $this->uri->segment(5);
        $data = konfigurasi('Form Edit LHK', "ap");
+       $jenisLhk = $this->Lhk_model->jenisLhk($id);
+       foreach ($jenisLhk as $key) {
+               $lhk = $key->jenisLhk;
+           
+       }
+
        $data['lhk'] = $this->Lhk_model->getLhkDet($id);
        $data['data_sarana'] = $this->Lhk_model->getSarana();
-       $this->template->load('layouts/petugas_template', 'petugas/lhk/edit_lhk_pem_v', $data);
+
+       if($lhk == "pemeriksaan"){
+        $this->template->load('layouts/petugas_template', 'petugas/lhk/edit_lhk_pem_v', $data);
+       }else if($lhk == "sampling"){
+         $this->template->load('layouts/petugas_template', 'petugas/lhk/edit_lhk_sampling_v', $data);
+       }else if($lhk == "umum"){
+         $this->template->load('layouts/petugas_template', 'petugas/lhk/edit_lhk_umum_v', $data);
+       }else if($lhk == "iklan"){
+         $this->template->load('layouts/petugas_template', 'petugas/lhk/edit_lhk_iklan_v', $data);
+       }else{
+        $this->template->load('layouts/petugas_template', 'petugas/lhk/edit_lhk_sertifikasi_v', $data);
+       }
+       
+       
     }
 
-    public function ubah_lhk()
-    {
-        $id = $this->input->post('id_');
-        $tglEdit = $this->input->post('tglEdit');
-
-        // $config['upload_path'] = './assets/uploads/files/lhk';
-        // $config['allowed_types'] = 'pdf';
-        // $config['file_name'] = 'lhk-' . $id;
-        // $config['overwrite'] = true;
-        // $config['max_size'] = 0;
-
-
-        // $this->load->library("upload", $config);
-        // $this->upload->initialize($config);
-
-        // if (!$this->upload->do_upload('fileEdit')) {
-        //     echo $this->upload->display_errors();
-        // } else {
-        //     $fd = $this->upload->data();
-        //     $file = $fd['file_name'];
-
-            $dataLhk = array(
-                'id' => $id,
-                'tglLhk' => $tglEdit
-
-            );
-
-            $this->Lhk_model->updateLhk($dataLhk);
-            redirect('petugas/lhk/list_lhk_c');
-        }
+    
     
 
 
@@ -80,9 +70,16 @@ class List_lhk_c extends MY_Controller
 
     public function print_lhk(){
         $id = $this->input->post('idSurat');
-        $detailLhk = $this->Lhk_model->getLhkDetail($id);
+        $jenisLhk = $this->Lhk_model->jenisLhkSurat($id); 
         
-        $idSarana = array();
+       foreach ($jenisLhk as $key) {
+               $lhk = $key->jenisLhk;
+           
+       }
+       echo $lhk;
+        $detailLhk = $this->Lhk_model->getLhkDetail($id);
+
+         $idSarana = array();
         $temuan = array();
         $kesimpulan = array();
         $keterangan= array();
@@ -95,8 +92,11 @@ class List_lhk_c extends MY_Controller
                 $sppd = $row->pengesahSppd;
                 $kwitansi = $row->pengesahKwitansi;
                 $form = $row ->pengesahForm;
-                // $noSuratTugas = $row->noSuratTugas;
+                $noSurat = $row->noSuratTugas;
                 $idSurat = $row->idSurat;
+                $detSampling =$row->rincianSampling;
+                $deskripsi = $row->deskripsi;
+                $pejabat = $row->pejabatDituju;
                 array_push($idSarana, $row->idSarana);
                 array_push($kesimpulan, $row->statusBalai);
                  array_push($keterangan,  $row->deskripsiTemuan);
@@ -108,13 +108,18 @@ class List_lhk_c extends MY_Controller
                 // $jenisTl = ;
             }
 
-             $data['surat'] = $this->Lhk_model->getAtribut($idSurat);
-    $data['idSurat'] = $idSurat;
+    $data['surat'] = $this->Lhk_model->getAtribut($idSurat);
+     $data['noSurat'] = $noSurat;
     $data['tglLhk'] = $tglLhk;
     $data['sppd'] = $sppd;
     $data['kwitansi'] = $kwitansi;
     $data['form'] = $form;
+    $data['detSampling'] = $detSampling;
+    $data['detKegiatan'] =  $deskripsi;
+    $data['pejabat'] = $pejabat;
 
+    if($lhk == "pemeriksaan"){
+       
     $array_sarana = array();
     foreach ($idSarana as $num) {
       $sarana2['data'] = $this->Lhk_model->getSarana2($num);
@@ -126,8 +131,29 @@ class List_lhk_c extends MY_Controller
     $data['tl'] = $tl;
     $data['kesimpulan'] = $kesimpulan;
     $data['keterangan'] = $keterangan;
+        $this->load->view('petugas/lhk/lhk_pem_isi', $data, FALSE);
+       }else if($lhk == "sampling"){
 
-    $this->load->view('petugas/lhk/lhk_pem_isi', $data, FALSE);
+         $this->load->view('petugas/lhk/lhk_sampling_isi', $data, FALSE);
+       }else if($lhk == "umum"){
+         $this->load->view('petugas/lhk/lhk_umum_isi', $data, FALSE);
+       }else if($lhk == "iklan"){
+         $this->load->view('petugas/lhk/lhk_iklan_isi', $data, FALSE);
+       }else{
+         $array_sarana = array();
+    foreach ($idSarana as $num) {
+      $sarana2['data'] = $this->Lhk_model->getSarana2($num);
+      array_push($array_sarana, $sarana2);
+    }
+     $data['sarana'] =  $array_sarana;
+      $data['keterangan'] = $keterangan;
+
+
+         $this->load->view('petugas/lhk/lhk_sertifikasi_isi', $data, FALSE);
+       }
+       
+
+    
                 
 
     }

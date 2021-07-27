@@ -43,7 +43,7 @@
  -->
             <!-- nomor surat -->
             <div class="form-group row">
-              <label for="noSuratTugas" class="col-sm-4 col-form-label">Nomor Surat Tugas<span class="wajib"> *</span></label>
+              <label for="noSuratTugas" class="col-sm-6 col-form-label">Nomor Surat Tugas<span class="wajib"> *</span></label>
               <div class="col-sm-12">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
