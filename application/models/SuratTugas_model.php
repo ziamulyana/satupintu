@@ -107,7 +107,10 @@ class SuratTugas_model extends CI_Model
   // hapus surat tugas
   public function hapus_surat($id)
   {
-    $this->db->delete("tbl_surattugas", array("idSurat" => $id));
+    $sql = "DELETE tbl_surattugas, tbl_tugas, tbl_kwitansi, tbl_uraian, tbl_lhk, tbl_surattl, tbl_peringatan , tbl_feedback from tbl_surattugas left JOIN tbl_tugas on tbl_surattugas.noSuratTugas = tbl_tugas.noSuratTugas left JOIN tbl_kwitansi on tbl_kwitansi.idTugas = tbl_tugas.idTugas left JOIN tbl_uraian on tbl_kwitansi.idKwitansi = tbl_uraian.idKwitansi left JOIN tbl_lhk on tbl_lhk.idSuratTugas = tbl_surattugas.idSurat left JOIN tbl_surattl on tbl_surattl.idSuratTugas = tbl_surattugas.idSurat left JOIN tbl_peringatan on tbl_surattl.idTl = tbl_peringatan.idTl left JOIN  tbl_feedback on tbl_feedback.idSuratPeringatan = tbl_peringatan.idPeringatan where tbl_surattugas.idSurat = ?";
+     $this->db->query($sql, array($id));
+
+
   }
 
   // print surat tugas

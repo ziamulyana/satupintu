@@ -166,7 +166,8 @@ class Lhk_model extends CI_Model
 
   public function hapusLhk($id)
   {
-    $this->db->delete("tbl_lhk", array("idLhk" => $id));
+    $sql = "DELETE tbl_lhk, tbl_surattl, tbl_peringatan , tbl_feedback from tbl_lhk left JOIN tbl_surattl on tbl_surattl.idSuratTugas = tbl_lhk.idSuratTugas left JOIN tbl_peringatan on tbl_surattl.idTl = tbl_peringatan.idTl left JOIN  tbl_feedback on tbl_feedback.idSuratPeringatan = tbl_peringatan.idPeringatan where tbl_lhk.idLhk = ?";
+     $this->db->query($sql, array($id));
   }
 
   public function hapusDetailSarana ($id){
