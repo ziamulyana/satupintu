@@ -107,7 +107,7 @@ header("Content-Disposition: attachment; Filename=lhkSer-".$filename)
 		
 
 		?>
-
+		<div class="Section1">
 		<p align="center"><b>LAPORAN HASIL KEGIATAN </b></p>
 		<p><b><u>Yth:</u></b>  	Kepala Balai POM di Batam melalui PPK</p>
 		<table style="width:100%">
