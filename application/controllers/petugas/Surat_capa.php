@@ -186,4 +186,12 @@ class Surat_capa extends CI_Controller
 			echo $this->SuratPeringatan_model->getSaranaCapa($this->input->post('idPer'));
 		}
 	}
+	
+	public function hapusCapa()
+	{
+		$id = $this->input->post('idCapa');
+		echo $id;
+		$this->SuratPeringatan_model->hapusSuratPeringatan($id);
+		redirect('petugas/surat_capa');
+	}
 }

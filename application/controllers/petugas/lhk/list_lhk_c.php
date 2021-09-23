@@ -17,7 +17,7 @@ class List_lhk_c extends MY_Controller
 
     public function index()
     {
-
+        
         $data['list_lhk'] = $this->Lhk_model->getLhk();
         // $data['upload_file'] = $this->Lhk_model->getFileLhk();
         $this->template->load('layouts/petugas_template', 'petugas/lhk/list_lhk_v', $data);

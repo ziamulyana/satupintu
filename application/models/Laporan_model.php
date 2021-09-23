@@ -34,12 +34,11 @@ class Laporan_model extends CI_Model
     {
         $this->db->select('tbl_surattugas.noSuratTugas, tbl_surattugas.maksud, tbl_surattugas.kota, tbl_surattugas.tglMulai, tbl_surattugas.tglSelesai, tbl_sarana.namaSarana, tbl_sarana.alamatSarana, tbl_sarana.jenisSarana, tbl_surattl.statusBalai, tbl_surattl.jenisTl, tbl_surattl.temuan, tbl_surattl.deskripsiTemuan, tbl_peringatan.noSuratPeringatan, tbl_peringatan.tglSuratPeringatan');
         $this->db->from('tbl_surattugas');
-        $this->db->join('tbl_surattl', 'tbl_surattl.idSuratTugas = tbl_surattugas.idSurat');
-        $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
+        $this->db->join('tbl_surattl', 'tbl_surattl.idSuratTugas = tbl_surattugas.idSurat', 'left');
+        $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana', 'left');
         $this->db->join('tbl_peringatan', 'tbl_peringatan.idTl = tbl_surattl.idTl', 'left');
         $this->db->where("DATE_FORMAT(tbl_surattugas.tglSurat,'%Y-%m-%d') >='$tglAwal'");
         $this->db->where("DATE_FORMAT(tbl_surattugas.tglSurat,'%Y-%m-%d') <='$tglAkhir'");
-        $this->db->group_by('tbl_sarana.namaSarana');
         $query = $this->db->get();
         return $query->result();
     }
@@ -69,9 +68,9 @@ class Laporan_model extends CI_Model
     {
         $this->db->select('tbl_surattugas.noSuratTugas, tbl_sarana.namaSarana ,tbl_feedback.noSuratFeedback, max(tbl_feedback.tglFeedback) as tglFeedback');
         $this->db->from('tbl_surattugas');
-        $this->db->join('tbl_surattl', 'tbl_surattugas.idSurat = tbl_surattl.idSuratTugas');
+        $this->db->join('tbl_surattl', 'tbl_surattugas.idSurat = tbl_surattl.idSuratTugas', "left");
         $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
-        $this->db->join('tbl_peringatan', 'tbl_surattl.idTl = tbl_peringatan.idTl');
+        $this->db->join('tbl_peringatan', 'tbl_surattl.idTl = tbl_peringatan.idTl', "left");
         $this->db->join('tbl_feedback', 'tbl_peringatan.idPeringatan = tbl_feedback.idSuratPeringatan');
         $this->db->where("DATE_FORMAT(tbl_surattugas.tglSurat,'%Y-%m-%d') >='$tglAwal'");
         $this->db->where("DATE_FORMAT(tbl_surattugas.tglSurat,'%Y-%m-%d') <='$tglAkhir'");

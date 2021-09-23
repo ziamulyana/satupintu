@@ -73,6 +73,10 @@
                     <option value="Retail Obat Tradisional">Retail Obat Tradisional</option>
                     <option value="Importir Suplemen Kesehatan">Retail Obat Tradisional</option>
                     <option value="Pangan IRTP">Pangan IRTP</option>
+                     <option value="Distribusi Pangan">Distribusi Pangan</option>
+                      <option value="Produksi Pangan">Produksi Pangan</option>
+                      <option value="Produksi Obat Tradisional">Produksi Obat Tradisional</option>
+                      <option value="Produksi Kosmetika">Produksi Kosmetika</option>
                       <option selected="selected">- Pilih Jenis Sarana -</option>
                     </select>
                   </div>

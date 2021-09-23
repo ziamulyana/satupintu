@@ -14,168 +14,171 @@ header("Content-Disposition: attachment; Filename=lhkPem-" . $filename)
 	<link rel="stylesheet" href="">
 	<!-- CSS buatan sendiri -->
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/vendor/bootstrap/css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/vendor/bootstrap/css/print.css">
 </head>
 
 
-<body style="font-family:arial;" onload="window.print()">
+<body onload="window.print()">
 
-	<div class="page2">
-		<?php
 
-		function convertDay($day)
-		{
-			$day = date('d', $day);
-			return $day;
+	<?php
+
+	function convertDay($day)
+	{
+		$day = date('d', $day);
+		return $day;
+	}
+	function convertMonthA($month)
+	{
+		$month = date('m', $month);
+		return $month;
+	}
+
+	function convertMonthB($month)
+	{
+		if ($month == "01") {
+			$month = "Januari";
+		} elseif ($month == "02") {
+			$month = "Februari";
+		} elseif ($month == "03") {
+			$month = "Maret";
+		} elseif ($month == "04") {
+			$month = "April";
+		} elseif ($month == "05") {
+			$month  = "Mei";
+		} elseif ($month == "06") {
+			$month = "Juni";
+		} elseif ($month == "07") {
+			$month = "Juli";
+		} elseif ($month == "08") {
+			$month = "Agustus";
+		} elseif ($month == "09") {
+			$month = "September";
+		} elseif ($month == "10") {
+			$month = "Oktober";
+		} elseif ($month == "11") {
+			$month = "November";
+		} else {
+			$month = "Desember";
 		}
-		function convertMonthA($month)
-		{
-			$month = date('m', $month);
-			return $month;
-		}
+		return $month;
+	}
 
-		function convertMonthB($month)
-		{
-			if ($month == "01") {
-				$month = "Januari";
-			} elseif ($month == "02") {
-				$month = "Februari";
-			} elseif ($month == "03") {
-				$month = "Maret";
-			} elseif ($month == "04") {
-				$month = "April";
-			} elseif ($month == "05") {
-				$month  = "Mei";
-			} elseif ($month == "06") {
-				$month = "Juni";
-			} elseif ($month == "07") {
-				$month = "Juli";
-			} elseif ($month == "08") {
-				$month = "Agustus";
-			} elseif ($month == "09") {
-				$month = "September";
-			} elseif ($month == "10") {
-				$month = "Oktober";
-			} elseif ($month == "11") {
-				$month = "November";
-			} else {
-				$month = "Desember";
-			}
-			return $month;
-		}
-
-		function convertYear($year)
-		{
-			$year = date('y', $year);
-			$tahun = $year;
-			return $tahun;
-		}
+	function convertYear($year)
+	{
+		$year = date('y', $year);
+		$tahun = $year;
+		return $tahun;
+	}
 
 
-		?>
+	?>
 
 
-		<?php
-		$nama_all = array();
-		$nip_all = array();
-		$pangkat_all = array();
-		$golongan_all = array();
-		$jabatan_all = array();
-		$noSurat = "";
-		$tglSurat = "";
-		$tglMulai = "";
-		$tglSelesai = "";
-		$tujuan = "";
-		$maksud = "";
-		$kota = "";
+	<?php
+	$nama_all = array();
+	$nip_all = array();
+	$pangkat_all = array();
+	$golongan_all = array();
+	$jabatan_all = array();
+	$noSurat = "";
+	$tglSurat = "";
+	$tglMulai = "";
+	$tglSelesai = "";
+	$tujuan = "";
+	$maksud = "";
+	$kota = "";
 
 
 
-		foreach ($surat as $row) {
-			array_push($nama_all, $row->nama);
-			array_push($nip_all, $row->nip);
-			array_push($pangkat_all, $row->pangkat);
-			array_push($golongan_all, $row->golongan);
-			array_push($jabatan_all, $row->jabatan);
-			$noSurat = $row->noSuratTugas;
-			$tujuan = $row->kota;
-			$tglSurat = strtotime($row->tglSurat);
-			$tglMulai = strtotime($row->tglMulai);
-			$tglSelesai = strtotime($row->tglSelesai);
-			$maksud = $row->maksud;
-			$kota = $row->kota;
-		}
+	foreach ($surat as $row) {
+		array_push($nama_all, $row->nama);
+		array_push($nip_all, $row->nip);
+		array_push($pangkat_all, $row->pangkat);
+		array_push($golongan_all, $row->golongan);
+		array_push($jabatan_all, $row->jabatan);
+		$noSurat = $row->noSuratTugas;
+		$tujuan = $row->kota;
+		$tglSurat = strtotime($row->tglSurat);
+		$tglMulai = strtotime($row->tglMulai);
+		$tglSelesai = strtotime($row->tglSelesai);
+		$maksud = $row->maksud;
+		$kota = $row->kota;
+	}
 
-		$mk = 0;
-		$tmk = 0;
-		$nomor = 0;
+	$mk = 0;
+	$tmk = 0;
+	$nomor = 0;
 
+	$tglLhk2 = strtotime($tglLhk);
 
+	?>
 
-		?>
+	<div class="Section2">
 
-		<p align="center"><b>LAPORAN HASIL KEGIATAN </b></p>
-		<p><b><u>Yth:</u></b> Kepala Balai POM di Batam melalui PPK</p>
+		<p align="center" style="font-size: 12pt; font-family:Arial, Helvetica, sans-serif "><b>LAPORAN HASIL KEGIATAN </b></p>
+		<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif "><b><u>Yth:</u></b> Kepala Balai POM di Batam melalui PPK</p>
 		<table style="width:100%; font-family:arial;">
 
 			<tr>
 				<td>
-					<p><b>I.</b></p>
+					<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif "><b>I.</b></p>
 				</td>
 				<td>
-					<p class="satu"><b>DASAR PEMERIKSAAN :</b>
+					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><b>DASAR PEMERIKSAAN :</b>
 
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<p id="hilang">I</p>
+					<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">I</p>
 				</td>
 				<td>
-					<p class="satu">Surat Perintah Tugas Kepala Balai Pengawas Obat Makanan di Batam, Nomor <?php echo $noSurat  ?>, dilaksanakan pada tanggal <?php echo  convertDay($tglMulai) . " " . convertMonthB(convertMonthA($tglMulai)) . " " ."20". convertYear($tglMulai) ?> s.d. <?php echo  convertDay($tglSelesai) . " " . convertMonthB(convertMonthA($tglSelesai)) . " " . "20".convertYear($tglSelesai) ?></p>
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-					<p><b>II.</b></p>
-				</td>
-				<td>
-					<p class="satu"><b>TUJUAN PEMERIKSAAN :</b>
-
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<p id="hilang">I</p>
-				</td>
-				<td>
-					<p class="satu"><?php echo $maksud ?></p>
+					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Surat Perintah Tugas Kepala Balai Pengawas Obat Makanan di Batam, Nomor <?php echo $noSurat  ?>, Tanggal Surat Tugas <?php echo  convertDay($tglSurat) . " " . convertMonthB(convertMonthA($tglSurat)) . " " . "20" . convertYear($tglSurat) ?> , dilaksanakan pada tanggal <?php echo  convertDay($tglMulai) . " " . convertMonthB(convertMonthA($tglMulai)) . " " . "20" . convertYear($tglMulai) ?> s.d. <?php echo  convertDay($tglSelesai) . " " . convertMonthB(convertMonthA($tglSelesai)) . " " . "20" . convertYear($tglSelesai) ?></p>
 				</td>
 			</tr>
 
 			<tr>
 				<td>
-					<p><b>III.</b></p>
+					<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><b>II.</b></p>
 				</td>
 				<td>
-					<p class="satu"><b>DAERAH YANG DIKUNJUNGI :</b>
+					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><b>TUJUAN PEMERIKSAAN :</b>
 
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<p id="hilang">I</p>
+					<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">I</p>
 				</td>
 				<td>
-					<p class="satu"><?php echo $kota ?></p>
+					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><?php echo $maksud ?></p>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><b>III.</b></p>
+				</td>
+				<td>
+					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><b>DAERAH YANG DIKUNJUNGI :</b>
+
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">I</p>
+				</td>
+				<td>
+					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><?php echo $kota ?></p>
 				</td>
 			</tr>
 
 			<td>
-				<p><b>IV.</b></p>
+				<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><b>IV.</b></p>
 			</td>
 			<td>
-				<p class="satu"><b>YANG MELAKSANAKAN PEMERIKSAAN :</b>
+				<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><b>YANG MELAKSANAKAN PEMERIKSAAN :</b>
 
 		</table>
 
@@ -186,16 +189,16 @@ header("Content-Disposition: attachment; Filename=lhkPem-" . $filename)
 			for ($i = 0; $i < count($nama_all); $i++) { ?>
 				<tr>
 					<td width="1%">
-						<p><?php echo $huruf[$i]; ?></p>
+						<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><?php echo $huruf[$i]; ?></p>
 					</td>
 					<td width="22%">
-						<p class="satu">Nama / NIP</p>
+						<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Nama / NIP</p>
 					</td>
 					<td width="5%">
-						<p class="satu">:</p>
+						<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">:</p>
 					</td>
 					<td width="72%">
-						<p><?php echo $nama_all[$i]; ?> / <?php echo $nip_all[$i]; ?></p>
+						<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><?php echo $nama_all[$i]; ?> / <?php echo $nip_all[$i]; ?></p>
 					</td>
 				</tr>
 				<tr>
@@ -203,13 +206,13 @@ header("Content-Disposition: attachment; Filename=lhkPem-" . $filename)
 						<p> </p>
 					</td>
 					<td>
-						<p class="satu">Pangkat / Gol</p>
+						<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Pangkat / Gol</p>
 					</td>
 					<td>
-						<p class="satu"> :</p>
+						<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"> :</p>
 					</td>
 					<td>
-						<p><?php echo $pangkat_all[$i] . "/" . $golongan_all[$i]; ?></p>
+						<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><?php echo $pangkat_all[$i] . "/" . $golongan_all[$i]; ?></p>
 					</td>
 				</tr>
 				<tr>
@@ -217,13 +220,13 @@ header("Content-Disposition: attachment; Filename=lhkPem-" . $filename)
 						<p> </p>
 					</td>
 					<td>
-						<p class="satu">Jabatan</p>
+						<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Jabatan</p>
 					</td>
 					<td>
-						<p class="satu"> :</p>
+						<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"> :</p>
 					</td>
 					<td>
-						<p><?php echo $jabatan_all[$i]; ?></p>
+						<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><?php echo $jabatan_all[$i]; ?></p>
 					</td>
 				</tr>
 			<?php } ?>
@@ -233,296 +236,301 @@ header("Content-Disposition: attachment; Filename=lhkPem-" . $filename)
 
 			<tr>
 				<td width="3%">
-					<p><b>V.</b></p>
+					<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><b>V.</b></p>
 				</td>
 				<td width="97%">
-					<p class="satu"><b>HASIL PEMERIKSAAN :</b> </p>
+					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><b>HASIL PEMERIKSAAN :</b> </p>
 
 				</td>
 			</tr>
 
 		</table>
 
-		
-			<?php
-			foreach ($sarana as $value) {
-				foreach ($value as $item) {
-					foreach ($item as $row) {
-			?>
 
-			<table style="width:100%; font-family:arial;">
+		<?php
+		foreach ($sarana as $value) {
+			foreach ($value as $item) {
+				foreach ($item as $row) {
+		?>
+
+					<table style="width:100%; font-family:arial;">
 
 						<tr>
 							<td width="3%">
-								<p><?php echo $nomor + 1 ?>.</p>
+								<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><?php echo $nomor + 1 ?>.</p>
 							</td>
 							<td width="20%">
-								<p class="satu">Nama Sarana</p>
+								<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Nama Sarana</p>
 							</td>
 							<td width="5%">
-								<p class="satu">:</p>
+								<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">:</p>
 							</td>
 							<td width="36%">
-								<p class="satu"><?php echo $row->namaSarana ?> </p>
+								<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><?php echo $row->namaSarana ?> </p>
 							</td>
 							<td width="19%">
-								<p>Temuan : </p>
+								<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Temuan : </p>
 							</td>
 							<td width="17%">
-								<p>Tindak Lanjut: </p>
+								<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Tindak Lanjut: </p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p id="hilang">1</p>
+								<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">1</p>
 							</td>
 							<td>
-								<p class="satu">Alamat</p>
+								<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Alamat</p>
 							</td>
 							<td>
-								<p class="satu"> : </p>
+								<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"> : </p>
 							</td>
 							<td>
-								<p class="satu"><?php echo $row->alamatSarana ?> </p>
+								<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><?php echo $row->alamatSarana ?> </p>
 							</td>
 							<td>
 
-								<p><?php $temuann = explode( ",", $temuan[$nomor]) ; foreach($temuann as $value){
-									echo $value."<br>";
-								} ?></p>
+								<p><?php $temuann = explode(",", $temuan[$nomor]);
+									foreach ($temuann as $value) {
+										echo $value . "<br>";
+									} ?></p>
 							</td>
 							<td>
-								<p><?php echo $tl[$nomor]; ?></p>
-							</td>
-						</tr>
-
-						<tr>
-							<td>
-								<p id="hilang">1</p>
-							</td>
-							<td>
-								<p class="satu">Kategori Sarana</p>
-							</td>
-							<td>
-								<p class="satu"> : </p>
-							</td>
-							<td>
-								<p class="satu"><?php echo $row->kategoriSarana ?> </p>
-							</td>
-							<td>
-								<p id="hilang">1</p>
-							</td>
-							<td>
-								<p id="hilang">1</p>
+								<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><?php echo $tl[$nomor]; ?></p>
 							</td>
 						</tr>
 
 						<tr>
 							<td>
-								<p id="hilang">1</p>
+								<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">1</p>
 							</td>
 							<td>
-								<p class="satu">Jenis Sarana</p>
+								<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Kategori Sarana</p>
 							</td>
 							<td>
-								<p class="satu"> : </p>
+								<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"> : </p>
 							</td>
 							<td>
-								<p class="satu"><?php echo $row->jenisSarana ?> </p>
+								<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><?php echo $row->kategoriSarana ?> </p>
 							</td>
 							<td>
-								<p id="hilang">1</p>
+								<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">1</p>
 							</td>
 							<td>
-								<p id="hilang">1</p>
+								<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">1</p>
 							</td>
 						</tr>
 
 						<tr>
 							<td>
-								<p id="hilang">1</p>
+								<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">1</p>
 							</td>
 							<td>
-								<p class="satu">Kesimpulan</p>
+								<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Jenis Sarana</p>
 							</td>
 							<td>
-								<p class="satu"> :
+								<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"> : </p>
+							</td>
+							<td>
+								<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><?php echo $row->jenisSarana ?> </p>
+							</td>
+							<td>
+								<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">1</p>
+							</td>
+							<td>
+								<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">1</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">1</p>
+							</td>
+							<td>
+								<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Kesimpulan</p>
+							</td>
+							<td>
+								<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"> :
 
 								</p>
 							</td>
 							<td>
-								<p class="satu"><?php if ($kesimpulan[$nomor] == "1") {
-													echo "MK";
-													$mk += 1;
-												} else {
-													echo "TMK";
-													$tmk += 1;
-												} ?> </p>
+								<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><?php if ($kesimpulan[$nomor] == "1") {
+																																			echo "MK";
+																																			$mk += 1;
+																																		} else {
+																																			echo "TMK";
+																																			$tmk += 1;
+																																		} ?> </p>
 							</td>
 							<td>
-								<p id="hilang">1</p>
+								<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">1</p>
 							</td>
 							<td>
-								<p id="hilang">1</p>
+								<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">1</p>
 							</td>
 						</tr>
 
 						<tr>
 							<td>
-								<p id="hilang">1</p>
+								<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">1</p>
 							</td>
 							<td>
-								<p class="satu">Keterangan</p>
+								<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Keterangan</p>
 							</td>
 							<td>
-								<p class="satu"> : </p>
+								<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"> : </p>
 							</td>
 							<td>
-								<p class="satu"> </p>
+								<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"> </p>
 							</td>
 							<td>
-								<p id="hilang">1</p>
+								<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">1</p>
 							</td>
 							<td>
-								<p id="hilang">1</p>
+								<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">1</p>
 							</td>
 						</tr>
 
-		</table>
+					</table>
 
-		<?php echo $keterangan[$nomor] ;
-						$nomor += 1;
-					}
+		<?php echo $keterangan[$nomor];
+					$nomor += 1;
 				}
 			}
-?>
+		}
+		?>
 
 
-<table style="width:100%; font-family:arial;">
+		<table style="width:100%; font-family:arial;">
 
-	<tr>
-		<td>
-			<p><b>VI.</b></p>
-		</td>
-		<td>
-			<p class="satu"><b>PENGESAHAN :</b></p>
-		</td>
-	</tr>
+			<tr>
+				<td>
+					<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><b>VI.</b></p>
+				</td>
+				<td>
+					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><b>PENGESAHAN :</b></p>
+				</td>
+			</tr>
 
-	<tr>
-		<td>
-			<p id="hilang"><b>VI.</b></p>
-		</td>
-		<td>
-			<p class="satu">- SPPD disahkan oleh : <?php echo $sppd ?> </p>
-		</td>
-	</tr>
+			<tr>
+				<td>
+					<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><b>VI.</b></p>
+				</td>
+				<td>
+					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">- SPPD disahkan oleh : <?php echo $sppd ?> </p>
+				</td>
+			</tr>
 
-	<tr>
-		<td>
-			<p id="hilang"><b>VI.</b></p>
-		</td>
-		<td>
-			<p class="satu">- Kwitansi disahkan oleh : <?php echo $kwitansi ?> </p>
-		</td>
-	</tr>
+			<tr>
+				<td>
+					<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><b>VI.</b></p>
+				</td>
+				<td>
+					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">- Kwitansi disahkan oleh : <?php echo $kwitansi ?> </p>
+				</td>
+			</tr>
 
-	<tr>
-		<td>
-			<p id="hilang"><b>VI.</b></p>
-		</td>
-		<td>
-			<p class="satu">- Form 8 Jam disahkan oleh : <?php echo $form ?> </p>
-		</td>
-	</tr>
+			<tr>
+				<td>
+					<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><b>VI.</b></p>
+				</td>
+				<td>
+					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">- Form 8 Jam disahkan oleh : <?php echo $form ?> </p>
+				</td>
+			</tr>
 
-	<tr>
-		<td>
-			<p><b>VII.</b></p>
-		</td>
-		<td>
-			<p class="satu"><b>KESIMPULAN</b></p>
-		</td>
-	</tr>
+			<tr>
+				<td>
+					<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><b>VII.</b></p>
+				</td>
+				<td>
+					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><b>KESIMPULAN</b></p>
+				</td>
+			</tr>
 
-	<tr>
-		<td>
-			<p id="hilang"><b>VI.</b></p>
-		</td>
-		<td>
-			<p class="satu">Dari <?php echo $nomor ?> sarana yang diperiksa, ditemukan <?php echo $mk ?> sarana yang memenuhi ketentuan dan <?php echo $tmk ?> sarana yang tidak memenuhi ketentuan. </p>
-		</td>
-	</tr>
+			<tr>
+				<td>
+					<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><b>VI.</b></p>
+				</td>
+				<td>
+					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Dari <?php echo $nomor ?> sarana yang diperiksa, ditemukan <?php echo $mk ?> sarana yang memenuhi ketentuan dan <?php echo $tmk ?> sarana yang tidak memenuhi ketentuan. </p>
+				</td>
+			</tr>
 
-</table>
-
-
+		</table>
 
 
+		<table style="width:100%; font-family:arial;">
+			<tr>
+				<th>
+					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Menyetujui</p>
+				</th>
+				<th>
+					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif ">Batam, <?php echo  convertDay($tglLhk2) . " " . convertMonthB(convertMonthA($tglLhk2)) . " 20" . convertYear($tglLhk2) ?></p>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<p></p>
+				</td>
+				<td>
+					<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Petugas,</p>
+				</td>
+			</tr>
+			<?php for ($i = 0; $i < count($nama_all); $i++) { ?>
+				<tr>
+					<td>
+						<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Cobacabicobacabicobacabicobacabi</p>
+					</td>
+					<td>
+						<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><?php echo ($i + 1) . "." . $nama_all[$i] ?></p>
+					</td>
+				</tr>
+			<?php } ?>
 
-<table style="width:100%; font-family:arial;">
-	<tr>
-		<th>
-			<p class="satu">Menyetujui</p>
-		</th>
-		<th>
-			<p class="satu">Batam, <?php echo $tglLhk ?> </p>
-		</th>
-	</tr>
-	<tr>
-		<td>
-			<p></p>
-		</td>
-		<td>
-			<p>Petugas,</p>
-		</td>
-	</tr>
-	<?php for ($i = 0; $i < count($nama_all); $i++) { ?>
-		<tr>
-			<td>
-				<p id="hilang">Cobacabicobacabicobacabicobacabi</p>
-			</td>
-			<td>
-				<p><?php echo ($i + 1) . "." . $nama_all[$i] ?></p>
-			</td>
-		</tr>
-	<?php } ?>
+			<tr>
+				<td>
+					<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify"><u>Ruth Deseyanti Purba, S.Si., Apt.</u></p>
+				</td>
+				<td>
+					<p><u></u></p>
+				</td>
+			</tr>
 
-	<tr>
-		<td>
-			<p><u>Ruth Deseyanti Purba, S.Si., Apt.</u></p>
-		</td>
-		<td>
-			<p><u></u></p>
-		</td>
-	</tr>
+			<tr>
+				<td>
+					<p style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">NIP. 198112292009122002</p>
+				</td>
+				<td>
+					<p></p>
+				</td>
+			</tr>
 
-	<tr>
-		<td>
-			<p>NIP. 198112292009122002</p>
-		</td>
-		<td>
-			<p></p>
-		</td>
-	</tr>
+		</table>
 
-</table>
+		<table style="width:90%">
+			<tr>
+				<p align="center" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif ">Mengetahui,</p>
+			</tr>
+			<tr>
+				<p align="center" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif ">Kepala Balai POM di Batam</p>
+			</tr>
+			<tr>
+				<p id="hilang" align="center" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif ">Cobacabicobacabicobacabicobacabi</p>
+			</tr>
+			<tr>
+				<p id="hilang" align="center" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif ">Cobacabicobacabicobacabicobacabi</p>
+			</tr>
+			<tr>
+				<p align="center" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif "><u>Bagus Heri Purnomo, S.Si., Apt.</u></p>
+			</tr>
+			<tr>
+				<p align="center" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif ">NIP. 19691222 200012 1 001</p>
+			</tr>
+		</table>
 
-<p align="center">Mengetahui,</p>
-<p align="center">Kepala Balai POM di Batam</p>
-<p id="hilang" align="center">Cobacabicobacabicobacabicobacabi</p>
-<p id="hilang" align="center">Cobacabicobacabicobacabicobacabi</p>
-<p id="hilang" align="center">Cobacabicobacabicobacabicobacabi</p>
-<p align="center"><u>Bagus Heri Purnomo, S.Si., Apt.</u></p>
-<p align="center">NIP. 19691222 200012 1 001</p>
-
-
-
-
-
-
-
-
+	</div>
 
 
 </body>

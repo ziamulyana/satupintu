@@ -25,14 +25,14 @@ class EksporDataAdmin extends CI_Controller
     {
         $data['anggaran']= $this->Laporan_model->getLaporanAnggaran();
         
-        $this->template->load('layouts/admin_template', 'admin/tarikDataAnggaran', $data);
+        $this->template->load('layouts/admin_template', 'admin/tarikdataAnggaran', $data);
     }
 
     public function tarikAnggaran()
     {
         $data['anggaran']= $this->Laporan_model->getLaporanAnggaran();
         
-        $this->load->view('admin/isiLaporanAnggaran', $data, FALSE);
+        $this->load->view('admin/isilaporananggaran', $data, FALSE);
     }
 
     public function tarikSurat()

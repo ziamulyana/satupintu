@@ -173,10 +173,10 @@
                 <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
               </div>
               <div class="modal-body" id="hapusData">
-                <form role="form" method="post" action="<?= base_url('admin/Feedback/hapus_suratFeedback') ?>">
+                <form role="form" method="post" action="<?=  base_url('petugas/surat_capa/hapusCapa') ?>">
                   <div class="box-body">
                     <div class="form-group" style="text-align:center">Anda yakin akan menghapus Surat Feedback CAPA ini ?</label>
-                      <input type="hidden" id="idFeedback" name="idFeedback">
+                      <input type="hidden" id="idCapa" name="idCapa">
 
                     </div>
                   </div><!-- /.box-body -->
@@ -189,7 +189,7 @@
                 <script type="text/javascript">
                   $(document).on("click", "#hapusFed", function() {
                     var id = $(this).data('id');
-                    $("#hapusData #idFeedback").val(id);
+                    $("#hapusData #idCapa").val(id);
                   });
                 </script>
               </div>

@@ -123,7 +123,6 @@
                      <thead>
                        <tr>
                          <th class="dt-center">Nomor Surat Peringatan</th>
-                         <th class="dt-center">Tanggal Surat</th>
                          <th class="dt-center">Nama Sarana</th>
                          <th class="dt-center">Jenis TL</th>
                          <th class="dt-center">Aksi</th>
@@ -139,49 +138,39 @@
 
                             echo "<tr>";
                             echo "<td class='dt-center'>" . $row->noSuratPeringatan . "</td>";
-                            echo "<td class='dt-center'>" . $row->tglSuratPeringatan . "</td>";
                             echo "<td class='dt-center'>" . $row->namaSarana . "</td>";
                             echo "<td class='dt-center'>" . $row->jenisTl . "</td>";
                             echo "<td class='dt-center'>" ?>
-                             <a href="<?=site_url('petugas/surat_peringatan/c_surat_peringatan/edit_peringatan/'. $row->idPeringatan)?>" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editSur" ><i class="fa fa-edit"></i></a>
+                           <a href="<?= site_url('petugas/surat_peringatan/c_surat_peringatan/edit_peringatan/' . $row->idPeringatan) ?>" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editSur"><i class="fa fa-edit"></i></a>
 
                            <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusPer" data-id="<?= $row->idPeringatan ?>" data-toggle="modal" data-target="#hapusPeringatan"><i class="fa fa-trash"></i></a>
 
-                           <?php 
-                           $dataTarget = "";  
-                           if($row->jenisPeringatan == "pbf"){
-                            $dataTarget = "#printSuratPbf"; } else if ($row->jenisPeringatan == "apt"){
+                           <?php
+                            $dataTarget = "";
+                            if ($row->jenisPeringatan == "pbf") {
+                              $dataTarget = "#printSuratPbf";
+                            } else if ($row->jenisPeringatan == "apt") {
                               $dataTarget = "#printSuratApt";
-                            }
-                            else if ($row->jenisPeringatan == "rs"){
+                            } else if ($row->jenisPeringatan == "rs") {
                               $dataTarget = "#printSuratRs";
-                            }
-                            else if ($row->jenisPeringatan == "klinik"){
+                            } else if ($row->jenisPeringatan == "klinik") {
                               $dataTarget = "#printSuratKlinik";
-                            }
-
-                            else if ($row->jenisPeringatan == "puskesmas"){
+                            } else if ($row->jenisPeringatan == "puskesmas") {
                               $dataTarget = "#printSuratPuskesmas";
-                            }
-
-                            else if ($row->jenisPeringatan == "obat"){
+                            } else if ($row->jenisPeringatan == "obat") {
                               $dataTarget = "#printSuratObat";
-                            }
-
-                            else if ($row->jenisPeringatan == "pangan"){
+                            } else if ($row->jenisPeringatan == "pangan") {
                               $dataTarget = "#printSuratPangan";
-                            }
-
-                            else if ($row->jenisPeringatan == "kosmetik"){
+                            } else if ($row->jenisPeringatan == "kosmetik") {
                               $dataTarget = "#printSuratKosmetik";
-                            }else{
-                               $dataTarget = "#printSuratKemasan";
+                            } else {
+                              $dataTarget = "#printSuratKemasan";
                             }
                             ?>
 
 
                            <a href="#" class="btn btn-info btn-sm" data-tooltip="tooltip" title="Print" id="printSur" data-toggle="modal" data-target="<?= $dataTarget ?>" data-id="<?= $row->idPeringatan ?>">
-                              <i class="fa fa-print"></i></a>
+                             <i class="fa fa-print"></i></a>
 
                            <!-- <?php if ($row->filePeringatan != 0) { ?>
                              <a href="../../assets/uploads/files/peringatan/suratPeringatan-<?php echo $row->idPeringatan ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
@@ -191,7 +180,7 @@
                              <a href="#" data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" disabled><i class="fa fa-eye"></i></a>
                            <?php } ?> -->
 
-                               <!-- <?php if ($row->filePeringatan != 0) { ?>
+                           <!-- <?php if ($row->filePeringatan != 0) { ?>
                                  <a href="../../assets/uploads/files/peringatan/suratPeringatan-<?php echo $row->idPeringatan ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
 
                                <?php  } else {
@@ -345,321 +334,321 @@
    <!-- Hapus Peringatan -->
 
    <!-- Print Surat Peringatan PBF -->
-  <div id="printSuratPbf" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
-        </div>
-        <div class="modal-body" id=panelSurPbf>
-          <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_pbf/surat') ?>">
-            <div class="box-body">
-              <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan PBF</label>
-                <input type="hidden" id="idPeringatan" name="idPeringatan">
+   <div id="printSuratPbf" class="modal fade" role="dialog">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
+         </div>
+         <div class="modal-body" id=panelSurPbf>
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_pbf/surat') ?>">
+             <div class="box-body">
+               <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan PBF</label>
+                 <input type="hidden" id="idPeringatan" name="idPeringatan">
 
-              </div>
-            </div><!-- /.box-body -->
-            <div class="modal-footer">
-              <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-              <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
-            </div>
-          </form>
-          <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
-          <script type="text/javascript">
-            $(document).on("click", "#printSur", function() {
-              var id = $(this).data('id');
+               </div>
+             </div><!-- /.box-body -->
+             <div class="modal-footer">
+               <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+               <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
+             </div>
+           </form>
+           <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
+           <script type="text/javascript">
+             $(document).on("click", "#printSur", function() {
+               var id = $(this).data('id');
 
-              $("#panelSurPbf #idPeringatan").val(id);
-            });
-          </script>
-        </div>
+               $("#panelSurPbf #idPeringatan").val(id);
+             });
+           </script>
+         </div>
 
-      </div>
-    </div>
-  </div>
+       </div>
+     </div>
+   </div>
 
-
-  <!-- Print Surat Peringatan apt -->
-  <div id="printSuratApt" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
-        </div>
-        <div class="modal-body" id=panelSurApt>
-          <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_apotek/surat') ?>">
-            <div class="box-body">
-              <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan APT </label>
-                <input type="hidden" id="idPeringatan" name="idPeringatan">
-
-              </div>
-            </div><!-- /.box-body -->
-            <div class="modal-footer">
-              <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-              <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
-            </div>
-          </form>
-          <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
-          <script type="text/javascript">
-            $(document).on("click", "#printSur", function() {
-              var id = $(this).data('id');
-
-              $("#panelSurApt #idPeringatan").val(id);
-            });
-          </script>
-        </div>
-
-      </div>
-    </div>
-  </div>
 
    <!-- Print Surat Peringatan apt -->
-  <div id="printSuratRs" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
-        </div>
-        <div class="modal-body" id=panelSurRs>
-          <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_rs/surat') ?>">
-            <div class="box-body">
-              <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan RS </label>
-                <input type="hidden" id="idPeringatan" name="idPeringatan">
+   <div id="printSuratApt" class="modal fade" role="dialog">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
+         </div>
+         <div class="modal-body" id=panelSurApt>
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_apotek/surat') ?>">
+             <div class="box-body">
+               <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan APT </label>
+                 <input type="hidden" id="idPeringatan" name="idPeringatan">
 
-              </div>
-            </div><!-- /.box-body -->
-            <div class="modal-footer">
-              <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-              <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
-            </div>
-          </form>
-          <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
-          <script type="text/javascript">
-            $(document).on("click", "#printSur", function() {
-              var id = $(this).data('id');
+               </div>
+             </div><!-- /.box-body -->
+             <div class="modal-footer">
+               <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+               <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
+             </div>
+           </form>
+           <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
+           <script type="text/javascript">
+             $(document).on("click", "#printSur", function() {
+               var id = $(this).data('id');
 
-              $("#panelSurRs #idPeringatan").val(id);
-            });
-          </script>
-        </div>
+               $("#panelSurApt #idPeringatan").val(id);
+             });
+           </script>
+         </div>
 
-      </div>
-    </div>
-  </div>
+       </div>
+     </div>
+   </div>
+
+   <!-- Print Surat Peringatan apt -->
+   <div id="printSuratRs" class="modal fade" role="dialog">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
+         </div>
+         <div class="modal-body" id=panelSurRs>
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_rs/surat') ?>">
+             <div class="box-body">
+               <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan RS </label>
+                 <input type="hidden" id="idPeringatan" name="idPeringatan">
+
+               </div>
+             </div><!-- /.box-body -->
+             <div class="modal-footer">
+               <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+               <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
+             </div>
+           </form>
+           <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
+           <script type="text/javascript">
+             $(document).on("click", "#printSur", function() {
+               var id = $(this).data('id');
+
+               $("#panelSurRs #idPeringatan").val(id);
+             });
+           </script>
+         </div>
+
+       </div>
+     </div>
+   </div>
 
 
-     <!-- Print Surat Peringatan apt -->
-  <div id="printSuratKlinik" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
-        </div>
-        <div class="modal-body" id=panelSurKlinik>
-          <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_klinik/surat') ?>">
-            <div class="box-body">
-              <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan Klinik </label>
-                <input type="hidden" id="idPeringatan" name="idPeringatan">
+   <!-- Print Surat Peringatan apt -->
+   <div id="printSuratKlinik" class="modal fade" role="dialog">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
+         </div>
+         <div class="modal-body" id=panelSurKlinik>
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_klinik/surat') ?>">
+             <div class="box-body">
+               <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan Klinik </label>
+                 <input type="hidden" id="idPeringatan" name="idPeringatan">
 
-              </div>
-            </div><!-- /.box-body -->
-            <div class="modal-footer">
-              <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-              <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
-            </div>
-          </form>
-          <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
-          <script type="text/javascript">
-            $(document).on("click", "#printSur", function() {
-              var id = $(this).data('id');
+               </div>
+             </div><!-- /.box-body -->
+             <div class="modal-footer">
+               <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+               <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
+             </div>
+           </form>
+           <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
+           <script type="text/javascript">
+             $(document).on("click", "#printSur", function() {
+               var id = $(this).data('id');
 
-              $("#panelSurKlinik #idPeringatan").val(id);
-            });
-          </script>
-        </div>
+               $("#panelSurKlinik #idPeringatan").val(id);
+             });
+           </script>
+         </div>
 
-      </div>
-    </div>
-  </div>
+       </div>
+     </div>
+   </div>
 
 
-      <!-- Print Surat Peringatan apt -->
-  <div id="printSuratPuskesmas" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
-        </div>
-        <div class="modal-body" id=panelSurPuskesmas>
-          <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_puskesmas/surat') ?>">
-            <div class="box-body">
-              <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan Puskesmas </label>
-                <input type="hidden" id="idPeringatan" name="idPeringatan">
+   <!-- Print Surat Peringatan apt -->
+   <div id="printSuratPuskesmas" class="modal fade" role="dialog">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
+         </div>
+         <div class="modal-body" id=panelSurPuskesmas>
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_puskesmas/surat') ?>">
+             <div class="box-body">
+               <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan Puskesmas </label>
+                 <input type="hidden" id="idPeringatan" name="idPeringatan">
 
-              </div>
-            </div><!-- /.box-body -->
-            <div class="modal-footer">
-              <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-              <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
-            </div>
-          </form>
-          <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
-          <script type="text/javascript">
-            $(document).on("click", "#printSur", function() {
-              var id = $(this).data('id');
+               </div>
+             </div><!-- /.box-body -->
+             <div class="modal-footer">
+               <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+               <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
+             </div>
+           </form>
+           <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
+           <script type="text/javascript">
+             $(document).on("click", "#printSur", function() {
+               var id = $(this).data('id');
 
-              $("#panelSurPuskesmas #idPeringatan").val(id);
-            });
-          </script>
-        </div>
+               $("#panelSurPuskesmas #idPeringatan").val(id);
+             });
+           </script>
+         </div>
 
-      </div>
-    </div>
-  </div>
+       </div>
+     </div>
+   </div>
 
-  <!-- Print Surat Peringatan apt -->
-  <div id="printSuratObat" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
-        </div>
-        <div class="modal-body" id=panelSurObat>
-          <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_puskesmas/surat') ?>">
-            <div class="box-body">
-              <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan Toko Obat </label>
-                <input type="hidden" id="idPeringatan" name="idPeringatan">
+   <!-- Print Surat Peringatan apt -->
+   <div id="printSuratObat" class="modal fade" role="dialog">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
+         </div>
+         <div class="modal-body" id=panelSurObat>
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_puskesmas/surat') ?>">
+             <div class="box-body">
+               <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan Toko Obat </label>
+                 <input type="hidden" id="idPeringatan" name="idPeringatan">
 
-              </div>
-            </div><!-- /.box-body -->
-            <div class="modal-footer">
-              <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-              <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
-            </div>
-          </form>
-          <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
-          <script type="text/javascript">
-            $(document).on("click", "#printSur", function() {
-              var id = $(this).data('id');
+               </div>
+             </div><!-- /.box-body -->
+             <div class="modal-footer">
+               <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+               <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
+             </div>
+           </form>
+           <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
+           <script type="text/javascript">
+             $(document).on("click", "#printSur", function() {
+               var id = $(this).data('id');
 
-              $("#panelSurObat #idPeringatan").val(id);
-            });
-          </script>
-        </div>
+               $("#panelSurObat #idPeringatan").val(id);
+             });
+           </script>
+         </div>
 
-      </div>
-    </div>
-  </div>
+       </div>
+     </div>
+   </div>
 
-  <!-- Print Surat Peringatan apt -->
-  <div id="printSuratPangan" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
-        </div>
-        <div class="modal-body" id=panelSurPangan>
-          <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_pangan/surat') ?>">
-            <div class="box-body">
-              <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan Pangan </label>
-                <input type="hidden" id="idPeringatan" name="idPeringatan">
+   <!-- Print Surat Peringatan apt -->
+   <div id="printSuratPangan" class="modal fade" role="dialog">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
+         </div>
+         <div class="modal-body" id=panelSurPangan>
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_pangan/surat') ?>">
+             <div class="box-body">
+               <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan Pangan </label>
+                 <input type="hidden" id="idPeringatan" name="idPeringatan">
 
-              </div>
-            </div><!-- /.box-body -->
-            <div class="modal-footer">
-              <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-              <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
-            </div>
-          </form>
-          <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
-          <script type="text/javascript">
-            $(document).on("click", "#printSur", function() {
-              var id = $(this).data('id');
+               </div>
+             </div><!-- /.box-body -->
+             <div class="modal-footer">
+               <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+               <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
+             </div>
+           </form>
+           <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
+           <script type="text/javascript">
+             $(document).on("click", "#printSur", function() {
+               var id = $(this).data('id');
 
-              $("#panelSurPangan #idPeringatan").val(id);
-            });
-          </script>
-        </div>
+               $("#panelSurPangan #idPeringatan").val(id);
+             });
+           </script>
+         </div>
 
-      </div>
-    </div>
-  </div>
+       </div>
+     </div>
+   </div>
 
- <!-- Print Surat Peringatan apt -->
-  <div id="printSuratKosmetik" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
-        </div>
-        <div class="modal-body" id=panelSurKosmetik>
-          <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_kosmetik/surat') ?>">
-            <div class="box-body">
-              <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan Kosmetik </label>
-                <input type="hidden" id="idPeringatan" name="idPeringatan">
+   <!-- Print Surat Peringatan apt -->
+   <div id="printSuratKosmetik" class="modal fade" role="dialog">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
+         </div>
+         <div class="modal-body" id=panelSurKosmetik>
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_kosmetik/surat') ?>">
+             <div class="box-body">
+               <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan Kosmetik </label>
+                 <input type="hidden" id="idPeringatan" name="idPeringatan">
 
-              </div>
-            </div><!-- /.box-body -->
-            <div class="modal-footer">
-              <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-              <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
-            </div>
-          </form>
-          <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
-          <script type="text/javascript">
-            $(document).on("click", "#printSur", function() {
-              var id = $(this).data('id');
+               </div>
+             </div><!-- /.box-body -->
+             <div class="modal-footer">
+               <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+               <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
+             </div>
+           </form>
+           <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
+           <script type="text/javascript">
+             $(document).on("click", "#printSur", function() {
+               var id = $(this).data('id');
 
-              $("#panelSurKosmetik #idPeringatan").val(id);
-            });
-          </script>
-        </div>
+               $("#panelSurKosmetik #idPeringatan").val(id);
+             });
+           </script>
+         </div>
 
-      </div>
-    </div>
-  </div>
+       </div>
+     </div>
+   </div>
 
- <!-- Print Surat Peringatan apt -->
-  <div id="printSuratKemasan" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
-        </div>
-        <div class="modal-body" id=panelSurKemasan>
-          <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_kemasan/surat') ?>">
-            <div class="box-body">
-              <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan Kemasan </label>
-                <input type="hidden" id="idPeringatan" name="idPeringatan">
+   <!-- Print Surat Peringatan apt -->
+   <div id="printSuratKemasan" class="modal fade" role="dialog">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
+         </div>
+         <div class="modal-body" id=panelSurKemasan>
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_kemasan/surat') ?>">
+             <div class="box-body">
+               <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan Kemasan </label>
+                 <input type="hidden" id="idPeringatan" name="idPeringatan">
 
-              </div>
-            </div><!-- /.box-body -->
-            <div class="modal-footer">
-              <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-              <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
-            </div>
-          </form>
-          <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
-          <script type="text/javascript">
-            $(document).on("click", "#printSur", function() {
-              var id = $(this).data('id');
+               </div>
+             </div><!-- /.box-body -->
+             <div class="modal-footer">
+               <button type="reset" class="btn btn-default pull-left" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+               <button type="submit" class="btn btn-success" name="delete"><i class="fa fa-print"></i> Cetak</button>
+             </div>
+           </form>
+           <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.0.min.js" type="text/javascript"></script>
+           <script type="text/javascript">
+             $(document).on("click", "#printSur", function() {
+               var id = $(this).data('id');
 
-              $("#panelSurKemasan #idPeringatan").val(id);
-            });
-          </script>
-        </div>
+               $("#panelSurKemasan #idPeringatan").val(id);
+             });
+           </script>
+         </div>
 
-      </div>
-    </div>
-  </div>
+       </div>
+     </div>
+   </div>
 
  </section>

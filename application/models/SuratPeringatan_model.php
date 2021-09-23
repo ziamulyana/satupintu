@@ -36,8 +36,9 @@ class SuratPeringatan_model extends CI_Model
     return $query;
   }
 
-  public function getPeringatanEdit($id){
-    $this->db->select('tbl_peringatan.idPeringatan, tbl_peringatan.tglSuratPeringatan, tbl_peringatan.noSuratPeringatan, tbl_peringatan.tglPeriksa,tbl_peringatan.noIzin, tbl_peringatan.namaPimpinan, tbl_peringatan.namaPj, tbl_peringatan.noSipa,tbl_peringatan.nib, tbl_peringatan.noHp,   tbl_peringatan.idTl, tbl_surattl.idSarana, tbl_surattl.deskripsiTemuan, tbl_sarana.namaSarana, tbl_surattugas.noSuratTugas');
+  public function getPeringatanEdit($id)
+  {
+    $this->db->select('tbl_peringatan.idPeringatan, tbl_peringatan.tglSuratPeringatan, tbl_peringatan.noSuratPeringatan, tbl_peringatan.tglPeriksa,tbl_peringatan.noIzin, tbl_peringatan.namaPimpinan, tbl_peringatan.namaPj, tbl_peringatan.noSipa,tbl_peringatan.nib, tbl_peringatan.noHp,tbl_peringatan.idTl, tbl_peringatan.detailPeringatan, tbl_peringatan.pasalPeringatan, tbl_surattl.idSarana, tbl_surattl.deskripsiTemuan, tbl_sarana.namaSarana, tbl_surattugas.noSuratTugas');
     $this->db->from('tbl_peringatan');
     $this->db->join('tbl_surattl', 'tbl_surattl.idTl = tbl_peringatan.idTl');
     $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
@@ -76,7 +77,8 @@ class SuratPeringatan_model extends CI_Model
     return $query->num_rows();
   }
 
-  public function jenisPeringatan($id){
+  public function jenisPeringatan($id)
+  {
     $this->db->select('jenisPeringatan');
     $this->db->from('tbl_peringatan');
     $this->db->where('idPeringatan= ', $id);
@@ -84,28 +86,31 @@ class SuratPeringatan_model extends CI_Model
     return $query->result();
   }
 
-  public function getTemuan($tbl){
+  public function getTemuan($tbl)
+  {
     $this->db->select('*');
-     $this->db->from($tbl);
-     $query = $this->db->get('');
+    $this->db->from($tbl);
+    $query = $this->db->get('');
     return $query->result();
-    }
+  }
 
-    public function getTemuanId($id){
+  public function getTemuanId($id)
+  {
     $this->db->select('pasalPeringatan');
-     $this->db->from('tbl_peringatan');
-      $this->db->where('idPeringatan= ', $id);
-     $query = $this->db->get('');
+    $this->db->from('tbl_peringatan');
+    $this->db->where('idPeringatan= ', $id);
+    $query = $this->db->get('');
     return $query->result();
-    }
+  }
 
-    public function getTemuanDetail($id, $tbl){
+  public function getTemuanDetail($id, $tbl)
+  {
     $this->db->select('*');
-     $this->db->from($tbl);
-      $this->db->where('id= ', $id);
-     $query = $this->db->get('');
+    $this->db->from($tbl);
+    $this->db->where('id= ', $id);
+    $query = $this->db->get('');
     return $query->result();
-    }
+  }
 
   public function fileCapa()
   {
@@ -153,7 +158,7 @@ class SuratPeringatan_model extends CI_Model
     return $output;
   }
 
-  
+
 
 
 
@@ -167,7 +172,7 @@ class SuratPeringatan_model extends CI_Model
     return $query->result();
   }
 
-   public function getEditCapa($id)
+  public function getEditCapa($id)
   {
 
     $this->db->select('tbl_surattugas.noSuratTugas,tbl_peringatan.idPeringatan,tbl_peringatan.tglSuratPeringatan, tbl_peringatan.noSuratPeringatan, tbl_peringatan.jenisPeringatan, tbl_peringatan.isiCapa, tbl_peringatan.pembuatCapa, tbl_sarana.namaSarana, tbl_sarana.alamatSarana, tbl_sarana.kotaSarana');
@@ -189,20 +194,20 @@ class SuratPeringatan_model extends CI_Model
     $this->db->join('tbl_surattl', 'tbl_surattl.idTl = tbl_peringatan.idTl');
     $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana');
     $this->db->where('tbl_peringatan.jenisPeringatan', "eval");
-     $this->db->or_where('tbl_peringatan.jenisPeringatan', "closed");
+    $this->db->or_where('tbl_peringatan.jenisPeringatan', "closed");
     $query = $this->db->get('');
     return $query;
   }
 
-  public function updateSuratCapa($data){
+  public function updateSuratCapa($data)
+  {
     $this->db->set('tglSuratPeringatan', $data['tglSuratPeringatan']);
     $this->db->set('noSuratPeringatan', $data['noSuratPeringatan']);
 
     $this->db->set('jenisPeringatan', $data['jenisPeringatan']);
-     $this->db->set('pembuatCapa', $data['pembuatCapa']);
-     $this->db->set('isiCapa', $data['isiCapa']);
+    $this->db->set('pembuatCapa', $data['pembuatCapa']);
+    $this->db->set('isiCapa', $data['isiCapa']);
     $this->db->where('idPeringatan', $data['idPeringatan']);
     $query = $this->db->update('tbl_peringatan');
-
   }
 }

@@ -78,6 +78,16 @@ header("Content-Disposition: attachment; filename=LaporanSuratTugas-" . $filenam
     $noSuratPeringatan_all = array();
     $tglSuratPeringatan_all = array();
 
+    function normalisasi($a)
+    {
+        if ($a == null) {
+            $b = "-";
+        } else {
+            $b = $a;
+        }
+        return $b;
+    }
+
 
 
     foreach ($laporanSurat as $row) {
@@ -86,15 +96,15 @@ header("Content-Disposition: attachment; filename=LaporanSuratTugas-" . $filenam
         array_push($kota_all, $row->kota);
         array_push($tglMulai_all, $row->tglMulai);
         array_push($tglSelesai_all, $row->tglSelesai);
-        array_push($namaSarana_all, $row->namaSarana);
-        array_push($alamatSarana_all, $row->alamatSarana);
-        array_push($jenisSarana_all, $row->jenisSarana);
-        array_push($statusBalai_all, $row->statusBalai);
-        array_push($jenisTl_all, $row->jenisTl);
-        array_push($deskripsi_all, $row->deskripsiTemuan);
-        array_push($temuan_all, $row->temuan);
-        array_push($noSuratPeringatan_all, $row->noSuratPeringatan);
-        array_push($tglSuratPeringatan_all, $row->tglSuratPeringatan);
+        array_push($namaSarana_all, normalisasi($row->namaSarana));
+        array_push($alamatSarana_all,  normalisasi($row->alamatSarana));
+        array_push($jenisSarana_all,  normalisasi($row->jenisSarana));
+        array_push($statusBalai_all,  normalisasi($row->statusBalai));
+        array_push($jenisTl_all,  normalisasi($row->jenisTl));
+        array_push($deskripsi_all,  normalisasi($row->deskripsiTemuan));
+        array_push($temuan_all,  normalisasi($row->temuan));
+        array_push($noSuratPeringatan_all,  normalisasi($row->noSuratPeringatan));
+        array_push($tglSuratPeringatan_all,  normalisasi($row->tglSuratPeringatan));
     }
 
 
@@ -139,7 +149,7 @@ header("Content-Disposition: attachment; filename=LaporanSuratTugas-" . $filenam
         </thead>
         <tr>
             <?php
-            for ($i = 0; $i < count($namaSarana_all); $i++) { ?>
+            for ($i = 0; $i < count($noSuratTugas_all); $i++) { ?>
                 <td><?php echo $noSuratTugas_all[$i]; ?></td>
                 <td><?php echo $maksud_all[$i]; ?></td>
                 <td><?php echo $kota_all[$i]; ?></td>
@@ -163,10 +173,12 @@ header("Content-Disposition: attachment; filename=LaporanSuratTugas-" . $filenam
                 <td><?php echo $namaSarana_all[$i]; ?></td>
                 <td><?php echo $alamatSarana_all[$i]; ?></td>
                 <td><?php echo $jenisSarana_all[$i]; ?></td>
-                <?php if ($statusBalai_all[$i] == 0) {
-                    $status = "TMK";
-                } else {
+                <?php if ($statusBalai_all[$i] == "-") {
+                    $status = "-";
+                } else if ($statusBalai_all[$i] == 1) {
                     $status = "MK";
+                } else {
+                    $status = "TMK";
                 } ?>
                 <td><?php echo $status; ?></td>
                 <td><?php echo $jenisTl_all[$i]; ?></td>
@@ -198,11 +210,9 @@ header("Content-Disposition: attachment; filename=LaporanSuratTugas-" . $filenam
                 ?>
                         <td><?php echo $row->noSuratPeringatan; ?></td>
                         <td><?php echo $row->tglSuratPeringatan; ?></td>
-                        <td><?php echo $row->namaPembuat; ?></td>
                 <?php
                     }
                 }
-
                 ?>
 
 

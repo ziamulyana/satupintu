@@ -65,19 +65,6 @@
         </ul>
       </li>
 
-      <li class="treeview" style="height: auto;">
-        <a href="#">
-          <i class="fa fa-share"></i> <span>Tindak Lanjut</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu" style="display: none;">
-          <li><a href="<?= base_url('admin/surat_peringatan/c_surat_peringatan') ?>"><i class="fa fa-circle-o"></i>Buat Tindak Lanjut</a></li>
-          <li><a href="<?= base_url('admin/surat_capa') ?>"><i class="fa fa-circle-o"></i>Buat Feedback CAPA</a></li>
-        </ul>
-      </li>
-
 
       <li class="active"><a href="<?php echo base_url('admin/Feedback') ?>"><i class="fa fa-share"></i> <span>Feedback CAPA</span></a></li>
 

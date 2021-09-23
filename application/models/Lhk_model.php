@@ -44,8 +44,8 @@ class Lhk_model extends CI_Model
     $this->db->select('tbl_lhk.idLhk, tbl_lhk.tglLhk, tbl_lhk.jenisLhk, tbl_lhk.pejabatDituju, tbl_lhk.pengesahSppd, tbl_lhk.pengesahKwitansi, tbl_lhk.pengesahForm, tbl_lhk.rincianSampling, tbl_lhk.deskripsi, tbl_surattugas.noSuratTugas, tbl_surattugas.idSurat, tbl_surattl.idSarana, tbl_surattl.statusBalai, tbl_surattl.isMk, tbl_surattl.temuan, tbl_surattl.deskripsiTemuan, tbl_surattl.jenisTl, tbl_sarana.namaSarana');
     $this->db->from('tbl_lhk');
     $this->db->join('tbl_surattugas', 'tbl_lhk.idSuratTugas = tbl_surattugas.idSurat');
-    $this->db->join('tbl_surattl', 'tbl_surattugas.idSurat = tbl_surattl.idSuratTugas',"left");
-    $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana',"left");
+    $this->db->join('tbl_surattl', 'tbl_surattugas.idSurat = tbl_surattl.idSuratTugas', "left");
+    $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana', "left");
     $this->db->where('tbl_lhk.idLhk', $id);
     $query = $this->db->get();
     return $query->result();
@@ -57,8 +57,8 @@ class Lhk_model extends CI_Model
     $this->db->select('tbl_lhk.idLhk, tbl_lhk.tglLhk, tbl_lhk.jenisLhk, tbl_lhk.pejabatDituju, tbl_lhk.pengesahSppd, tbl_lhk.pengesahKwitansi, tbl_lhk.pengesahForm, tbl_lhk.rincianSampling, tbl_lhk.deskripsi, tbl_surattugas.noSuratTugas, tbl_surattugas.idSurat, tbl_surattl.idSarana, tbl_surattl.statusBalai, tbl_surattl.isMk, tbl_surattl.temuan, tbl_surattl.deskripsiTemuan, tbl_surattl.jenisTl, tbl_sarana.namaSarana');
     $this->db->from('tbl_lhk');
     $this->db->join('tbl_surattugas', 'tbl_lhk.idSuratTugas = tbl_surattugas.idSurat');
-    $this->db->join('tbl_surattl', 'tbl_surattugas.idSurat = tbl_surattl.idSuratTugas',"left");
-    $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana',"left");
+    $this->db->join('tbl_surattl', 'tbl_surattugas.idSurat = tbl_surattl.idSuratTugas', "left");
+    $this->db->join('tbl_sarana', 'tbl_surattl.idSarana = tbl_sarana.idSarana', "left");
     $this->db->where('tbl_lhk.idSuratTugas', $id);
     $query = $this->db->get();
     return $query->result();
@@ -116,21 +116,22 @@ class Lhk_model extends CI_Model
     return $query->result();
   }
 
-  public function getSaranaPem(){
+  public function getSaranaPem()
+  {
     $this->db->select('*');
     $this->db->from('tbl_sarana');
     $query = $this->db->get();
     $json = $query->result();
     echo json_encode($json);
- //    $output = '<option value="">Pilih Sarana</option>';
- //    foreach($query->result() as $row)
- //    {
- //     $output .= '<option value="'.$row->idSarana.'">'.$row->namaSarana.'</option>';
- // }
- // return $output;
+    //    $output = '<option value="">Pilih Sarana</option>';
+    //    foreach($query->result() as $row)
+    //    {
+    //     $output .= '<option value="'.$row->idSarana.'">'.$row->namaSarana.'</option>';
+    // }
+    // return $output;
 
 
-}
+  }
 
 
   public function getSarana2($id)
@@ -146,7 +147,7 @@ class Lhk_model extends CI_Model
   {
     $this->db->set('tglLhk', $data['tglLhk']);
     $this->db->set('pejabatDituju', $data['pejabat']);
-    $this->db->set('pengesahSppd',$data['sppd']);
+    $this->db->set('pengesahSppd', $data['sppd']);
     $this->db->set('pengesahKwitansi', $data['kwitansi']);
     $this->db->set('pengesahForm', $data['form']);
     $this->db->set('rincianSampling', $data['sampling']);
@@ -167,10 +168,11 @@ class Lhk_model extends CI_Model
   public function hapusLhk($id)
   {
     $sql = "DELETE tbl_lhk, tbl_surattl, tbl_peringatan , tbl_feedback from tbl_lhk left JOIN tbl_surattl on tbl_surattl.idSuratTugas = tbl_lhk.idSuratTugas left JOIN tbl_peringatan on tbl_surattl.idTl = tbl_peringatan.idTl left JOIN  tbl_feedback on tbl_feedback.idSuratPeringatan = tbl_peringatan.idPeringatan where tbl_lhk.idLhk = ?";
-     $this->db->query($sql, array($id));
+    $this->db->query($sql, array($id));
   }
 
-  public function hapusDetailSarana ($id){
+  public function hapusDetailSarana($id)
+  {
     $this->db->delete("tbl_surattl", array("idSuratTugas" => $id));
   }
 }

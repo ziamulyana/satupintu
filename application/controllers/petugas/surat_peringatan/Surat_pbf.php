@@ -25,11 +25,12 @@
 				$this->template->load('layouts/petugas_template', 'petugas/surat_peringatan/surat_pbf/form', $data);
 			}
 
-			
 
-			public function simpanPeringatan(){
 
-					function convertMonths($month)
+			public function simpanPeringatan()
+			{
+
+				function convertMonths($month)
 				{
 					$month = date('m', $month);
 					return $month;
@@ -41,7 +42,7 @@
 					return $year;
 				}
 
-				$tanggal =  $this->input->post('tanggal');
+
 				$noSurat =  $this->input->post('noSurat');
 				$idSurat = $this->input->post('suratTugas');
 				// detil sarana
@@ -53,24 +54,11 @@
 				$noSip =  $this->input->post('noSip');
 				$noHp =  $this->input->post('noHp');
 				// detil temuan
-				$pilihPasal = $this->input->post('pilihPasal');
+				$detPelanggaran = $this->input->post('detPelanggaran');
+				$detPasal = $this->input->post('detPasal');
 
-
-				$tanggalolah  = strtotime($tanggal);
-
-				$noSuratFix = "T-PW.01.12.9A.9A2." . convertMonths($tanggalolah) . "." . convertYears($tanggalolah) . "." . $noSurat;
+				$noSuratFix = "T-PW.01.12.9A.9A2." . $noSurat;
 				echo $noSuratFix;
-
-
-
-				$pasal_peringatan = implode( ", ", $pilihPasal  ) ;
-				
-
-
-				// $temuan = $this->SuratPeringatan_model->getTemuan($idSarana);
-				// foreach ($temuan as $tm) {
-				// 	$detailTemuan = $tm->deskripsiTemuan;
-				// }
 
 
 
@@ -88,33 +76,35 @@
 
 
 				$data_db = array(
-
-					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSuratFix,
+					'tglPeriksa' => $tglMulaiperiksa,
 					'noIzin' => $noIzin,
-					'namaPimpinan' =>$namaPimpinan,
+					'namaPimpinan' => $namaPimpinan,
 					'namaPj' => $namaPj,
 					'noSipa' => $noSip,
 					'noHp' => $noHp,
-					'pasalPeringatan' => $pasal_peringatan,
 					'jenisPeringatan' => "pbf",
 					'idTl' => $idTl,
+					'detailPeringatan' => $detPelanggaran,
+					'pasalPeringatan' => $detPasal,
 					'status' => 0
 				);
 
 				$checkvalidation = $this->SuratPeringatan_model->checkDuplicate($noSuratFix);
+
+
 				if ($checkvalidation == true) {
 					$this->db->insert('tbl_peringatan', $data_db);
 					// $this->session->set_flashdata('success', 'Surat Peringatan Berhasil dibuat');
 					redirect('petugas/surat_peringatan/C_surat_peringatan');
-					
 				} else {
 					$this->session->set_flashdata('failed', 'Maaf, Data tidak diproses karena duplikat');
 					redirect('petugas/surat_peringatan/Surat_pbf', 'refresh');
 				}
 			}
 
-			public function editPeringatan(){
+			public function editPeringatan()
+			{
 				$idPeringatan = $this->input->post('idPeringatan');
 				$tanggal =  $this->input->post('tanggalSurat');
 				$noSurat =  $this->input->post('noSurat');
@@ -128,8 +118,8 @@
 				// detil temuan
 				$pilihPasal = $this->input->post('pilihPasal');
 
-				
-				$pasal_peringatan = implode( ", ", $pilihPasal) ;
+
+				$pasal_peringatan = implode(", ", $pilihPasal);
 
 
 
@@ -137,24 +127,22 @@
 					'idPeringatan' => $idPeringatan,
 					'tglSuratPeringatan' => $tanggal,
 					'noSuratPeringatan' => $noSurat,
-					'tglPeriksa' =>$tglMulaiperiksa,
+					'tglPeriksa' => $tglMulaiperiksa,
 					'noIzin' => $noIzin,
-					'namaPimpinan' =>$namaPimpinan,
+					'namaPimpinan' => $namaPimpinan,
 					'namaPj' => $namaPj,
 					'noSipa' => $noSip,
 					'noHp' => $noHp,
 					'pasalPeringatan' => $pasal_peringatan,
-					
+
 				);
 
-				
-					$this->SuratPeringatan_model->updateSuratPeringatan($data_edit);
 
-					redirect('petugas/surat_peringatan/C_surat_peringatan');
-					
-				
+				$this->SuratPeringatan_model->updateSuratPeringatan($data_edit);
+
+				redirect('petugas/surat_peringatan/C_surat_peringatan');
 			}
-			
+
 
 
 
@@ -162,26 +150,25 @@
 			public function surat()
 			{
 
-			$idPeringatan = $this->input->post('idPeringatan');
-			$detail = $this->SuratPeringatan_model->getPeringatanEdit($idPeringatan);
+				$idPeringatan = $this->input->post('idPeringatan');
+				$detail = $this->SuratPeringatan_model->getPeringatanEdit($idPeringatan);
 
-			foreach($detail as $row){
-				$tanggal = $row->tglSuratPeringatan;
-				$noSuratFix = $row->noSuratPeringatan;
-				$tglMulaiperiksa = $row->tglPeriksa;
-				$noIzin = $row->noIzin;
-			    $namaPimpinan = $row->namaPimpinan;
-                $namaPj = $row ->namaPj;
-                $noSip = $row->noSipa;
-				$noHp = $row->noHp;
-				$pasal = $row->pasalPeringatan;
-				$idSarana = $row->idSarana;
-				$detailTemuan = $row->deskripsiTemuan;
+				foreach ($detail as $row) {
+					$tanggal = $row->tglSuratPeringatan;
+					$noSuratFix = $row->noSuratPeringatan;
+					$tglMulaiperiksa = $row->tglPeriksa;
+					$noIzin = $row->noIzin;
+					$namaPimpinan = $row->namaPimpinan;
+					$namaPj = $row->namaPj;
+					$noSip = $row->noSipa;
+					$noHp = $row->noHp;
+					$pasal = $row->pasalPeringatan;
+					$idSarana = $row->idSarana;
+					$detailTemuan = $row->deskripsiTemuan;
+				}
 
-			}
 
-
-			$pasal_peringatan = explode( ", ", $pilihPasal) ;
+				$pasal_peringatan = explode(", ", $pilihPasal);
 
 
 				$pasal_peringatan = array();
@@ -225,8 +212,7 @@
 				);
 
 
-					$this->load->view('petugas/surat_peringatan/surat_pbf/isiSurat', $data, FALSE);
-				
+				$this->load->view('petugas/surat_peringatan/surat_pbf/isiSurat', $data, FALSE);
 			}
 		}
 

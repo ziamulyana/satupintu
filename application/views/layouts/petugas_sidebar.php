@@ -32,10 +32,13 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">HEADER</li>
       <!-- Optionally, you can add icons to the links -->
-      <li class="active"><a href="<?=base_url()?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-       <li class="active"><a href="<?php echo base_url('petugas/lhk/list_lhk_c')?>"><i class="fa fa-book"></i> <span>LHK</span></a></li>
+      <li class="active"><a href="<?= base_url() ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+      <!--  -->
+      <li class="active"><a href="<?= base_url('petugas/Master/data_sarana') ?>"><i class="fa fa-database"></i> <span>Data Sarana</span></a></li>
+      <!--  -->
+      <li class="active"><a href="<?php echo base_url('petugas/lhk/List_lhk_c') ?>"><i class="fa fa-book"></i> <span>LHK</span></a></li>
 
-   
+
       <li class="treeview" style="height: auto;">
         <a href="#">
           <i class="fa fa-share"></i> <span>Tindak Lanjut</span>
@@ -44,13 +47,13 @@
           </span>
         </a>
         <ul class="treeview-menu" style="display: none;">
-          <li><a href="<?=base_url('petugas/surat_peringatan/c_surat_peringatan')?>"><i class="fa fa-circle-o"></i>Buat Tindak Lanjut</a></li>
-          <li><a href="<?=base_url('petugas/surat_capa') ?>"><i class="fa fa-circle-o"></i>Buat Feedback CAPA</a></li>
+          <li><a href="<?= base_url('petugas/surat_peringatan/c_surat_peringatan') ?>"><i class="fa fa-circle-o"></i>Buat Tindak Lanjut</a></li>
+          <li><a href="<?= base_url('petugas/surat_capa') ?>"><i class="fa fa-circle-o"></i>Buat Feedback CAPA</a></li>
         </ul>
       </li>
 
-       <!-- sub 5 -->
-       <li class="treeview" style="height: auto;">
+      <!-- sub 5 -->
+      <li class="treeview" style="height: auto;">
         <a href="#">
           <i class="fa fa-history"></i> <span>UMPAN BALIK</span>
           <span class="pull-right-container">
@@ -58,15 +61,15 @@
           </span>
         </a>
         <ul class="treeview-menu" style="display: none;">
-          <li><a href="<?=base_url('petugas/feedback')?>"><i class="fa fa-circle-o"></i>Lihat Feedback</a></li>
-          <li><a href="<?=base_url('petugas/umpan_balik')?>"><i class="fa fa-circle-o"></i>Lihat Riwayat CAPA</a></li>
- 
+          <li><a href="<?= base_url('petugas/feedback') ?>"><i class="fa fa-circle-o"></i>Lihat Feedback</a></li>
+          <li><a href="<?= base_url('petugas/umpan_balik') ?>"><i class="fa fa-circle-o"></i>Lihat Riwayat CAPA</a></li>
+
         </ul>
       </li>
 
-     <!--  <li class="active"><a href="<?php echo base_url('petugas/eksporData')?>"><i class="fa fa-download"></i> <span>Ekspor Data</span></a></li> -->
+      <!--  <li class="active"><a href="<?php echo base_url('petugas/eksporData') ?>"><i class="fa fa-download"></i> <span>Ekspor Data</span></a></li> -->
 
-    <!--    <li class="treeview" style="height: auto;">
+      <!--    <li class="treeview" style="height: auto;">
         <a href="#">
           <i class="fa fa-share"></i> <span>REPORT</span>
           <span class="pull-right-container">
@@ -80,7 +83,7 @@
         </ul>
       </li> -->
 
-      
+
     </ul>
     <!-- /.sidebar-menu -->
   </section>
