@@ -112,13 +112,8 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 		<table style="width:100%">
 			<tr>
 				<th>
-					<p style="font-family:arial;" class="satu"><b>Yth.</b></p>
+					<p style="font-family:arial;" class="satu"><b>Yth. Pimpinan / Penanggung Jawab</b></p>
 				</th>
-			</tr>
-			<tr>
-				<td>
-					<p style="font-family:arial;"><b>Pimpinan / Penanggung Jawab</b></p>
-				</td>
 			</tr>
 			<tr>
 				<td>
@@ -141,58 +136,65 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 		<p style="font-family:arial;" class="paragraf">Berdasarkan hasil pemeriksaan petugas Balai POM di Batam pada tanggal <?php echo convertDay($tglMulaiperiksa) . " " . convertMonthB(convertMonthA($tglMulaiperiksa)) . " " . convertYear($tglMulaiperiksa) ?>
 			, terhadap sarana: </p>
 		<!-- paragraf 2 -->
-		<table style="width:100%">
+		<table width="100%" style="margin-left:20px">
 			<tr>
 				<th class="a">
-					<p style="font-family:arial;" class="satu" id="space2">Nama</p>
+					<p style="font-family:arial;" class="satu">Nama</p>
 				</th>
+				<td>:</td>
 				<th class="b">
-					<p style="font-family:arial;" class="satu">: <?php echo $namaSarana; ?></p>
+					<p style="font-family:arial;" class="satu"> <?php echo $namaSarana; ?></p>
 				</th>
 			</tr>
 
 			<tr>
 				<td>
-					<p style="font-family:arial;" id="space2">Alamat</p>
+					<p style="font-family:arial;">Alamat</p>
 				</td>
+				<td>:</td>
 				<td>
-					<p style="font-family:arial;">: <?php echo $alamatSarana; ?></p>
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-					<p style="font-family:arial;" id="space2">Nomor Izin</p>
-				</td>
-				<td>
-					<p style="font-family:arial;">: <?php echo $noIzin; ?></p>
+					<p style="font-family:arial;"> <?php echo $alamatSarana; ?></p>
 				</td>
 			</tr>
 
 			<tr>
 				<td>
-					<p style="font-family:arial;" id="space2" id="space2">Nama Penanggung Jawab</p>
+					<p style="font-family:arial;">Nomor Izin</p>
 				</td>
+				<td>:</td>
 				<td>
-					<p style="font-family:arial;">: <?php echo $namaPj; ?></p>
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-					<p style="font-family:arial;" id="space2">Nomor SIPTTK</p>
-				</td>
-				<td>
-					<p style="font-family:arial;">: <?php echo $noSip; ?></p>
+					<p style="font-family:arial;"> <?php echo $noIzin; ?></p>
 				</td>
 			</tr>
 
 			<tr>
 				<td>
-					<p style="font-family:arial;" id="space2">Nomor Telepon </p>
+					<p style="font-family:arial;">Nama Penanggung Jawab</p>
+					
 				</td>
+				<td>:</td>
 				<td>
-					<p style="font-family:arial;">: <?php echo $noHp; ?></p>
+					<p style="font-family:arial;"> <?php echo $namaPj; ?></p>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<p style="font-family:arial;">Nomor SIPTTK</p>
+				</td>
+				<td>:</td>
+				<td>
+					<p style="font-family:arial;"> <?php echo $noSip; ?></p>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<p style="font-family:arial;">Nomor Telepon </p>
+				</td>
+				<td>:</td>
+				<td>
+					<p style="font-family:arial;"> <?php echo $noHp; ?></p>
 				</td>
 			</tr>
 
@@ -200,20 +202,12 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 		<!-- paragraf 3 -->
 		<br>
 		<p style="font-family:arial;" class="paragraf">Ditemukan pelanggaran sebagai berikut: </p>
-		<p style="font-family:arial;" class="paragraf"><?php echo "<p class='paragraf'>" . $detailTemuan . "</p>" ?></p>
+		<p style="font-family:arial;" class="paragraf"><?php echo $detailPeringatan; ?></p>
 		<!-- paragraf 4 -->
 		<p style="font-family:arial;" class="paragraf">Hal ini merupakan pelanggaran terhadap: </p>
-		<p style="font-family:arial;" class="paragraf">
+		<p style="font-family:arial;" class="paragraf"><?php echo $pasalPeringatan; ?></p>
 		<ol>
-			<?php
-			foreach ($pilihPasal as $value) {
-				foreach ($value as $item) {
-					foreach ($item as $key) {
-						echo "<li><p class='paragraf'>" . $key->uu . " tentang " . $key->tentang . " " . $key->pasal . "</p></li>";
-					}
-				}
-			}
-			?>
+			
 		</ol>
 		</p>
 		<!-- paragraf 5 -->
@@ -383,7 +377,6 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 		echo "<li>Direktur Pengawasan Distribusi dan Pelayanan Obat, Narkotika, Psikotropika, dan Prekursor Badan POM RI di - <b>Jakarta</b></li>";
 		echo "<p class='paragraf'>" . dinkes($kotaSurat) . "</p>";
 		echo "<li>Ketua PD Ikatan Apoteker Provinsi Kepri di - <b>Batam</b></li>";
-		echo "<li>Arsip</li>";
 		echo "</ol>";
 		echo "</p>";
 

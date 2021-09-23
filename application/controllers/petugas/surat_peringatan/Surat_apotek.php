@@ -165,21 +165,12 @@
                 $namaPj = $row ->namaPj;
                 $noSip = $row->noSipa;
 				$noHp = $row->noHp;
-				$pasal = $row->pasalPeringatan;
+				$detailPeringatan = $row->detailPeringatan;
 				$idSarana = $row->idSarana;
 				$detailTemuan = $row->deskripsiTemuan;
+				$pasalPeringatan = $row->pasalPeringatan;
 
 			}
-
-
-			$pasal_peringatan = explode( ", ", $pilihPasal) ;
-
-
-				$pasal_peringatan = array();
-				foreach ($pilihPasal as $num) {
-					$pasal['data'] = $this->SuratPbf_model->getPasal($num);
-					array_push($pasal_peringatan, $pasal);
-				}
 
 
 				$dataSarana = $this->SuratPeringatan_model->getSarana($idSarana);
@@ -213,7 +204,9 @@
 				// detil temuan
 				'detailTemuan' => $detailTemuan,
 				// ganti ke db
-				'pilihPasal' => $pasal_peringatan
+				'pasalPeringatan' => $pasalPeringatan,
+				'detailPeringatan' =>$detailPeringatan
+
 			);
 
 
