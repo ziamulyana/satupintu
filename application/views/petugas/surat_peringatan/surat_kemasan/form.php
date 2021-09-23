@@ -43,12 +43,12 @@
 
 
                 <!-- tanggal surat -->
-                <div class="form-group row">
+                <!-- <div class="form-group row">
                   <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal Surat<span class="wajib"> *</span></label>
                   <div class="col-sm-12">
                     <input class="form-control" type="date" name="tanggal" id="tanggal" placeholder="Tanggal" required>
                   </div>
-                </div>
+                </div> -->
 
                 <!-- nomor surat -->
                 <div class="form-group row">
@@ -173,19 +173,36 @@
 
 
               <!-- Pelanggaran -->
-              <div class="form-group row">
-                <label for="pilihPasal" class="col-sm-3 col-form-label">Pasal Pelanggaran<span class="wajib"> *</span></label>
-                <div class="col-md-12">
-                  <select class="category related-post form-control" name="pilihPasal[]" id="pilihPasal" multiple="multiple" data-placeholder="Pilih Pasal" style="width: 100%;" required>
-                    <?php
-                    foreach ($temuan_kemasan as $temuan) {
-                      echo "<option value=" . $temuan->id . ">" . $temuan->temuan . "</option>";
-                    }
-                    ?>
 
-                  </select>
+              <div class="form-group row">
+                <label for="" class="col-sm-3 col-form-label">Detail Pelanggaran<span class="wajib"> *</span></label>
+                <div class="col-md-12">
+                  <!-- /.card-header -->
+                  <div class="box-body pad">
+                    <div class="">
+                      <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." name="detPelanggaran" id="detPelanggaran" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
+
+                    </div>
+                  </div>
                 </div>
               </div>
+
+
+              <!-- Pelanggaran -->
+
+              <div class="form-group row">
+                <label for="" class="col-sm-3 col-form-label">Pasal <span class="wajib"> *</span></label>
+                <div class="col-md-12">
+                  <!-- /.card-header -->
+                  <div class="box-body pad">
+                    <div class="">
+                      <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." name="detPasal" id="detPasal" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
 
 
               <div class="box-footer">

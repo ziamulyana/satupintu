@@ -42,13 +42,13 @@
                 </div>
 
 
-                <!-- tanggal surat -->
+                <!-- tanggal surat
                 <div class="form-group row">
                   <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal Surat<span class="wajib"> *</span></label>
                   <div class="col-sm-12">
                     <input class="form-control" type="date" name="tanggal" id="tanggal" placeholder="Tanggal" required>
                   </div>
-                </div>
+                </div> -->
 
                 <!-- nomor surat -->
                 <div class="form-group row">
