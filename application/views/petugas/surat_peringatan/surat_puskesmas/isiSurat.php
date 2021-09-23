@@ -369,7 +369,7 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 			echo "<p class='paragraf'>" . walikota($kotaSurat) . "</p>";
 			echo "<li>Direktur Pengawasan Distribusi dan Pelayanan Obat, Narkotika, Psikotropika, dan Prekursor Badan POM RI di - <b>Jakarta</b></li>";
 			echo "<p class='paragraf'>" . dinkes($kotaSurat) . "</p>";
-			echo "<li>Ketua PD Ikatan Apoteker Provinsi Kepri di - <b>Batam</b></li>";
+			echo "<li>Ketua PD Ikatan Apoteker Provinsi Kepri dia - <b>Batam</b></li>";
 			echo "</ol>";
 			echo "</p>";
 
