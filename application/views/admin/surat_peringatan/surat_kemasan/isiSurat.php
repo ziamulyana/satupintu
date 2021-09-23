@@ -112,13 +112,8 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 		<table style="width:100%">
 			<tr>
 				<th>
-					<p style="font-family:arial;" class="satu"><b>Yth.</b></p>
+					<p style="font-family:arial;" class="satu"><b>Yth. Pimpinan / Penanggung Jawab</b></p>
 				</th>
-			</tr>
-			<tr>
-				<td>
-					<p style="font-family:arial;"><b>Pimpinan / Penanggung Jawab</b></p>
-				</td>
 			</tr>
 			<tr>
 				<td>
@@ -193,10 +188,10 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 		</table>
 		<p style="font-family:arial;"></p> -->
 
-		<table style="width:100%">
+		<table width="100%" style="margin-left:20px">
 			<tr>
 				<th class="a">
-					<p style="font-family:arial;" class="satu" id="space2">Nama Pimpinan</p>
+					<p style="font-family:arial;" class="satu">Nama Pimpinan</p>
 				</th>
 				<th class="b">
 					<p style="font-family:arial;" class="satu">: <?php echo $namaPimpinan; ?></p>
@@ -204,7 +199,7 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 			</tr>
 			<tr>
 				<td>
-					<p style="font-family:arial;" id="space2">Penanggung Jawab Produksi</p>
+					<p style="font-family:arial;">Penanggung Jawab Produksi</p>
 				</td>
 				<td>
 					<p style="font-family:arial;">: <?php echo $namaPj; ?></p>
@@ -215,20 +210,12 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 		<!-- paragraf 3 -->
 		<br>
 		<p style="font-family:arial;" class="paragraf">Ditemukan pelanggaran sebagai berikut: </p>
-		<p style="font-family:arial;" class="paragraf"><?php echo "<p class='paragraf'>" . $detailTemuan . "</p>" ?></p>
+		<p style="font-family:arial;" class="paragraf"><?php echo $detailPeringatan; ?></p>
 		<!-- paragraf 4 -->
 		<p style="font-family:arial;" class="paragraf">Hal ini merupakan pelanggaran terhadap: </p>
-		<p style="font-family:arial;" class="paragraf">
+		<p style="font-family:arial;" class="paragraf"><?php echo $pasalPeringatan; ?></p>
 		<ol>
-			<?php
-			foreach ($pilihPasal as $value) {
-				foreach ($value as $item) {
-					foreach ($item as $key) {
-						echo "<li><p style='font-family:arial;' class='paragraf'>" . $key->uu . " tentang " . $key->tentang . " " . $key->pasal . "</p></li>";
-					}
-				}
-			}
-			?>
+
 		</ol>
 		</p>
 		<!-- paragraf 5 -->
@@ -397,7 +384,6 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 		echo "<li>Direktur Pengawasan Produksi Pangan Olahan Badan POM RI di - <b>Jakarta</b></li>";
 		echo "<p class='paragraf'>" . dinper($kotaSurat) . "</p>";
 		echo "<p class='paragraf'>" . din_industri($kotaSurat) . "</p>";
-		echo "<li>Arsip</li>";
 		echo "</ol>";
 		echo "</p>";
 

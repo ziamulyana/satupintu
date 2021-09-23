@@ -13,7 +13,7 @@
   <section class="content">
     <div class="row">
       <div class="col-md-12">
-        <form role="form" action="<?php echo base_url('admin/surat_peringatan/surat_kemasan/simpanPeringatan') ?>" method="post">
+        <form role="form" action="<?php echo base_url('petugas/surat_peringatan/surat_kemasan/simpanPeringatan') ?>" method="post">
           <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Form Pembuatan Surat Tindak Lanjut</h3>
@@ -193,7 +193,7 @@
                 <button type="reset" value="reset" class="btn btn-danger"><i class="fa fa-refresh" aria-hidden="true"></i> Reset Form</button>
 
 
-                <a class="btn btn-primary pull-right" href=<?php echo base_url() . "admin/surat_peringatan/c_surat_peringatan" ?>> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali ke daftar peringatan</a>
+                <a class="btn btn-primary pull-right" href=<?php echo base_url() . "petugas/surat_peringatan/c_surat_peringatan" ?>> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali ke daftar peringatan</a>
               </div>
             </div>
           </div>
@@ -238,7 +238,7 @@
         var idPer = $('#suratTugas').val();
         if (idPer != '') {
           $.ajax({
-            url: "<?php echo base_url(); ?>admin/surat_peringatan/c_surat_peringatan/getSaranaPer",
+            url: "<?php echo base_url(); ?>petugas/surat_peringatan/c_surat_peringatan/getSaranaPer",
             method: "POST",
             data: {
               idPer: idPer

@@ -13,7 +13,7 @@
   <section class="content">
     <div class="row">
       <div class="col-md-12">
-        <form role="form" action="<?php echo base_url('admin/surat_peringatan/surat_pbf/simpanPeringatan') ?>" method="post">
+        <form role="form" action="<?php echo base_url('petugas/surat_peringatan/surat_pbf/simpanPeringatan') ?>" method="post">
           <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Form Pembuatan Surat Tindak Lanjut</h3>
@@ -55,13 +55,6 @@
 
 
 
-                <!-- tanggal surat -->
-                <div class="form-group row">
-                  <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal Surat<span class="wajib"> *</span></label>
-                  <div class="col-sm-12">
-                    <input class="form-control" type="date" name="tanggal" id="tanggal" placeholder="Tanggal" required>
-                  </div>
-                </div>
 
                 <!-- nomor surat -->
                 <div class="form-group row">
@@ -186,32 +179,49 @@
               </div>
 
               <hr>
-              <h4>Detail Pasal Pelanggaran</h4>
-              <hr>
 
 
               <!-- Pelanggaran -->
-              <div class="form-group row">
-                <label for="pilihPasal" class="col-sm-3 col-form-label">Pasal Pelanggaran<span class="wajib"> *</span></label>
-                <div class="col-md-12">
-                  <select class="category related-post form-control" name="pilihPasal[]" id="pilihPasal" multiple="multiple" data-placeholder="Pilih Pasal" style="width: 100%;" required>
-                    <?php
-                    foreach ($temuan_pbf as $temuan) {
-                      echo "<option value=" . $temuan->id . ">" . $temuan->temuan . "</option>";
-                    }
-                    ?>
 
-                  </select>
+              <div class="form-group row">
+                <label for="" class="col-sm-3 col-form-label">Detail Pelanggaran<span class="wajib"> *</span></label>
+                <div class="col-md-12">
+                  <!-- /.card-header -->
+                  <div class="box-body pad">
+                    <div class="">
+                      <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." name="detPelanggaran" id="detPelanggaran" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
+
+                    </div>
+                  </div>
                 </div>
               </div>
 
+
+
+
+
+
+              <!-- Pelanggaran -->
+
+              <div class="form-group row">
+                <label for="" class="col-sm-3 col-form-label">Pasal <span class="wajib"> *</span></label>
+                <div class="col-md-12">
+                  <!-- /.card-header -->
+                  <div class="box-body pad">
+                    <div class="">
+                      <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." name="detPasal" id="detPasal" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></td>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
 
 
               <div class="box-footer">
                 <button type="submit" value="submit" class="btn btn-success"><i class="fa fa-save"></i> Save Document</button>
                 <button type="reset" value="reset" class="btn btn-danger"><i class="fa fa-refresh" aria-hidden="true"></i> Reset Form</button>
 
-                <a class="btn btn-primary pull-right" href=<?php echo base_url() . "admin/surat_peringatan/c_surat_peringatan" ?>> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali ke daftar peringatan</a>
+                <a class="btn btn-primary pull-right" href=<?php echo base_url() . "petugas/surat_peringatan/c_surat_peringatan" ?>> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali ke daftar peringatan</a>
 
 
 
@@ -260,7 +270,7 @@
         var idPer = $('#suratTugas').val();
         if (idPer != '') {
           $.ajax({
-            url: "<?php echo base_url(); ?>admin/surat_peringatan/c_surat_peringatan/getSaranaPer",
+            url: "<?php echo base_url(); ?>petugas/surat_peringatan/c_surat_peringatan/getSaranaPer",
             method: "POST",
             data: {
               idPer: idPer

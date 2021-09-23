@@ -38,7 +38,7 @@
                  <div class="icon">
                    <i class="fa fa-plus-square"></i>
                  </div>
-                 <a href="<?php echo base_url('admin/surat_peringatan/c_surat_peringatan/sub_obat') ?>" class="small-box-footer">
+                 <a href="<?php echo base_url('petugas/surat_peringatan/c_surat_peringatan/sub_obat') ?>" class="small-box-footer">
                    Buat Surat Tindak Lanjut <i class="fa fa-arrow-circle-right"></i>
                  </a>
                </div>
@@ -56,7 +56,7 @@
                  <div class="icon">
                    <i class="fa fa-magic"></i>
                  </div>
-                 <a href="<?php echo base_url('admin/surat_peringatan/surat_pangan') ?>" class="small-box-footer">
+                 <a href="<?php echo base_url('petugas/surat_peringatan/surat_pangan') ?>" class="small-box-footer">
                    Buat Surat Tindak Lanjut<i class="fa fa-arrow-circle-right"></i>
                  </a>
                </div>
@@ -74,7 +74,7 @@
                  <div class="icon">
                    <i class="fa fa-briefcase"></i>
                  </div>
-                 <a href="<?php echo base_url('admin/surat_peringatan/surat_kosmetik') ?>" class="small-box-footer">
+                 <a href="<?php echo base_url('petugas/surat_peringatan/surat_kosmetik') ?>" class="small-box-footer">
                    Buat Surat Tindak Lanjut<i class="fa fa-arrow-circle-right"></i>
                  </a>
                </div>
@@ -93,7 +93,7 @@
                  <div class="icon">
                    <i class="fa fa-building"></i>
                  </div>
-                 <a href="<?php echo base_url('admin/surat_peringatan/surat_kemasan') ?>" class="small-box-footer">
+                 <a href="<?php echo base_url('petugas/surat_peringatan/surat_kemasan') ?>" class="small-box-footer">
                    Buat Surat Tindak Lanjut <i class="fa fa-arrow-circle-right"></i>
                  </a>
                </div>
@@ -123,7 +123,6 @@
                      <thead>
                        <tr>
                          <th class="dt-center">Nomor Surat Peringatan</th>
-                         <th class="dt-center">Tanggal Surat</th>
                          <th class="dt-center">Nama Sarana</th>
                          <th class="dt-center">Jenis TL</th>
                          <th class="dt-center">Aksi</th>
@@ -139,11 +138,10 @@
 
                             echo "<tr>";
                             echo "<td class='dt-center'>" . $row->noSuratPeringatan . "</td>";
-                            echo "<td class='dt-center'>" . $row->tglSuratPeringatan . "</td>";
                             echo "<td class='dt-center'>" . $row->namaSarana . "</td>";
                             echo "<td class='dt-center'>" . $row->jenisTl . "</td>";
                             echo "<td class='dt-center'>" ?>
-                           <a href="<?= site_url('admin/surat_peringatan/c_surat_peringatan/edit_peringatan/' . $row->idPeringatan) ?>" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editSur"><i class="fa fa-edit"></i></a>
+                           <a href="<?= site_url('petugas/surat_peringatan/c_surat_peringatan/edit_peringatan/' . $row->idPeringatan) ?>" class="btn btn-success btn-sm" data-tooltip="tooltip" title="Edit" id="editSur"><i class="fa fa-edit"></i></a>
 
                            <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusPer" data-id="<?= $row->idPeringatan ?>" data-toggle="modal" data-target="#hapusPeringatan"><i class="fa fa-trash"></i></a>
 
@@ -243,7 +241,7 @@
            <h4 class="modal-title"><i class="icon fa fa-edit"></i> Edit Data Surat Peringatan</h4>
          </div>
          <div class="modal-body" id=editData>
-           <form action="<?= base_url('admin/surat_peringatan/c_surat_peringatan/ubah_suratPeringatan') ?>" method="post" enctype="multipart/form-data">
+           <form action="<?= base_url('petugas/surat_peringatan/c_surat_peringatan/ubah_suratPeringatan') ?>" method="post" enctype="multipart/form-data">
              <div class="box box-success">
                <div class="box-body">
 
@@ -309,7 +307,7 @@
            <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
          </div>
          <div class="modal-body" id="hapusData">
-           <form role="form" method="post" action="<?= base_url('admin/surat_peringatan/c_surat_peringatan/hapus_suratPeringatan') ?>">
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/c_surat_peringatan/hapus_suratPeringatan') ?>">
              <div class="box-body">
                <div class="form-group" style="text-align:center">Anda yakin akan menghapus Surat Peringatan ini ?</label>
                  <input type="hidden" id="idPeringatan" name="idPeringatan">
@@ -344,7 +342,7 @@
            <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
          </div>
          <div class="modal-body" id=panelSurPbf>
-           <form role="form" method="post" action="<?= base_url('admin/surat_peringatan/surat_pbf/surat') ?>">
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_pbf/surat') ?>">
              <div class="box-body">
                <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan PBF</label>
                  <input type="hidden" id="idPeringatan" name="idPeringatan">
@@ -380,7 +378,7 @@
            <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
          </div>
          <div class="modal-body" id=panelSurApt>
-           <form role="form" method="post" action="<?= base_url('admin/surat_peringatan/surat_apotek/surat') ?>">
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_apotek/surat') ?>">
              <div class="box-body">
                <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan APT </label>
                  <input type="hidden" id="idPeringatan" name="idPeringatan">
@@ -415,7 +413,7 @@
            <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
          </div>
          <div class="modal-body" id=panelSurRs>
-           <form role="form" method="post" action="<?= base_url('admin/surat_peringatan/surat_rs/surat') ?>">
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_rs/surat') ?>">
              <div class="box-body">
                <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan RS </label>
                  <input type="hidden" id="idPeringatan" name="idPeringatan">
@@ -451,7 +449,7 @@
            <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
          </div>
          <div class="modal-body" id=panelSurKlinik>
-           <form role="form" method="post" action="<?= base_url('admin/surat_peringatan/surat_klinik/surat') ?>">
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_klinik/surat') ?>">
              <div class="box-body">
                <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan Klinik </label>
                  <input type="hidden" id="idPeringatan" name="idPeringatan">
@@ -487,7 +485,7 @@
            <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
          </div>
          <div class="modal-body" id=panelSurPuskesmas>
-           <form role="form" method="post" action="<?= base_url('admin/surat_peringatan/surat_puskesmas/surat') ?>">
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_puskesmas/surat') ?>">
              <div class="box-body">
                <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan Puskesmas </label>
                  <input type="hidden" id="idPeringatan" name="idPeringatan">
@@ -522,7 +520,7 @@
            <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
          </div>
          <div class="modal-body" id=panelSurObat>
-           <form role="form" method="post" action="<?= base_url('admin/surat_peringatan/surat_puskesmas/surat') ?>">
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_puskesmas/surat') ?>">
              <div class="box-body">
                <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan Toko Obat </label>
                  <input type="hidden" id="idPeringatan" name="idPeringatan">
@@ -557,7 +555,7 @@
            <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
          </div>
          <div class="modal-body" id=panelSurPangan>
-           <form role="form" method="post" action="<?= base_url('admin/surat_peringatan/surat_pangan/surat') ?>">
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_pangan/surat') ?>">
              <div class="box-body">
                <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan Pangan </label>
                  <input type="hidden" id="idPeringatan" name="idPeringatan">
@@ -592,7 +590,7 @@
            <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
          </div>
          <div class="modal-body" id=panelSurKosmetik>
-           <form role="form" method="post" action="<?= base_url('admin/surat_peringatan/surat_kosmetik/surat') ?>">
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_kosmetik/surat') ?>">
              <div class="box-body">
                <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan Kosmetik </label>
                  <input type="hidden" id="idPeringatan" name="idPeringatan">
@@ -627,7 +625,7 @@
            <h4 class="modal-title"><i class="icon fa fa-ban"></i> ALert !</h4>
          </div>
          <div class="modal-body" id=panelSurKemasan>
-           <form role="form" method="post" action="<?= base_url('admin/surat_peringatan/surat_kemasan/surat') ?>">
+           <form role="form" method="post" action="<?= base_url('petugas/surat_peringatan/surat_kemasan/surat') ?>">
              <div class="box-body">
                <div class="form-group" style="text-align:center">Anda Akan Mencetak Surat Peringatan Kemasan </label>
                  <input type="hidden" id="idPeringatan" name="idPeringatan">

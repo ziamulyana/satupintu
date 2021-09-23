@@ -13,7 +13,7 @@
 <section class="content">
   <div class="row">
     <div class="col-md-12">
-      <form role="form" action="<?php echo base_url('admin/surat_capa/simpanCapa') ?>" method="post">
+      <form role="form" action="<?php echo base_url('petugas/surat_capa/simpanCapa') ?>" method="post">
         <div class="box box-primary">
           <div class="box-header with-border">
             <h3 class="box-title"><?php echo $title; ?></h3>
@@ -208,7 +208,7 @@
       var idPer = $('#suratTugas').val();
       if (idPer != '') {
         $.ajax({
-          url: "<?php echo base_url(); ?>admin/surat_capa/getSaranaPer",
+          url: "<?php echo base_url(); ?>petugas/surat_capa/getSaranaPer",
           method: "POST",
           data: {
             idPer: idPer
