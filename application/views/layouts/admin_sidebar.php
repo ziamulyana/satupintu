@@ -74,7 +74,7 @@
         </a>
         <ul class="treeview-menu" style="display: none;">
           <li><a href="<?= base_url('admin/surat_peringatan/c_surat_peringatan') ?>"><i class="fa fa-circle-o"></i>Buat Tindak Lanjut</a></li>
-          <li><a href="<?= base_url('admin/surat_capa') ?>"><i class="fa fa-circle-o"></i>Buat Feedback CAPA</a></li>
+          <li><a href="<?= base_url('admin/surat_capa') ?>"><i class="fa fa-circle-o"></i>Edit Feedback CAPA</a></li>
         </ul>
       </li>
 

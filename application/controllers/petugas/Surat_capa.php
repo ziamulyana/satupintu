@@ -40,7 +40,7 @@ class Surat_capa extends CI_Controller
 			return $year;
 		}
 
-		$tanggal =  $this->input->post('tanggal');
+		// $tanggal =  $this->input->post('tanggal');
 		$noSurat =  $this->input->post('noSurat');
 		$halSurat = $this->input->post('halSurat');
 		$idSurat = $this->input->post('suratTugas');
@@ -74,7 +74,7 @@ class Surat_capa extends CI_Controller
 		if ($halSurat == "Close CAPA") {
 			$data_db = array(
 
-				'tglSuratPeringatan' => $tanggal,
+				// 'tglSuratPeringatan' => $tanggal,
 				'noSuratPeringatan' => $noSuratFix,
 				'jenisPeringatan' => $halSurat,
 				'pembuatCapa' => $pembuat,
@@ -84,7 +84,7 @@ class Surat_capa extends CI_Controller
 			);
 		} else {
 			$data_db = array(
-				'tglSuratPeringatan' => $tanggal,
+				// 'tglSuratPeringatan' => $tanggal,
 				'noSuratPeringatan' => $noSuratFix,
 				'jenisPeringatan' => $halSurat,
 				'isiCapa' =>$detailTemuan,
@@ -113,7 +113,7 @@ class Surat_capa extends CI_Controller
 
 	public function simpanEditCapa(){
 		$id = $this->input->post('idPeringatan');
-		$tanggal =  $this->input->post('tanggalSurat');
+		// $tanggal =  $this->input->post('tanggalSurat');
 		$noSurat =  $this->input->post('noSurat');
 		$halSurat = $this->input->post('halSurat');
 		// detil sarana
@@ -123,7 +123,7 @@ class Surat_capa extends CI_Controller
 		$detailTemuan =  $this->input->post('detailTemuan');
 
 		$data_edit = array(
-				'tglSuratPeringatan' => $tanggal,
+				// 'tglSuratPeringatan' => $tanggal,
 				'noSuratPeringatan' => $noSurat,
 				'jenisPeringatan' => $halSurat,
 				'pembuatCapa' => $pembuat,
@@ -161,7 +161,7 @@ class Surat_capa extends CI_Controller
 
 		$data = array(
 			'title' => 'Cetak surat tugas',
-			'tanggal' => $tanggal,
+			// 'tanggal' => $tanggal,
 			'noSurat' => $noSurat,
 			'halSurat' => $halSurat,
 			'penerimaSurat' => $namaSarana,

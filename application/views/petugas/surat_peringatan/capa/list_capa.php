@@ -45,7 +45,7 @@
                     <tr>
                       <th>Nomor Surat Peringatan</th>
                       <th>Nama Sarana</th>
-                      <th>Tgl CAPA </th>
+                      <!-- <th>Tgl CAPA </th> -->
                       <th>Jenis CAPA</th>
                       <th>Aksi</th>
 
@@ -58,7 +58,7 @@
                         echo "<tr>";
                         echo "<td>" . $row->noSuratPeringatan . "</td>";
                         echo "<td>" . $row->namaSarana . "</td>";
-                        echo "<td>" . $row->tglSuratPeringatan . "</td>";
+                        // echo "<td>" . $row->tglSuratPeringatan . "</td>";
                         if($row->jenisPeringatan == "eval"){
                            echo "<td>" . "Evaluasi CAPA" . "</td>";
                         }else{

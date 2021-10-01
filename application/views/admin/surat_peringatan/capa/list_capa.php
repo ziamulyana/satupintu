@@ -27,7 +27,7 @@
 
 
 
-      <div class="pull-right">
+      <!-- <div class="pull-right">
         <ul>
           <a class="btn btn-primary" href="<?php echo base_url('admin/surat_capa/buatCapa') ?>">
             <i class="fa fa-plus"></i>&nbsp; Tambah Data
@@ -36,7 +36,7 @@
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <div class="box">
+          <div class="box"> -->
 
             <!-- /.box-header -->
             <div class="box-body">
