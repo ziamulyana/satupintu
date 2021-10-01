@@ -108,7 +108,7 @@
 		public function editPeringatan()
 		{
 			$idPeringatan = $this->input->post('idPeringatan');
-			$tanggal =  $this->input->post('tanggalSurat');
+			// $tanggal =  $this->input->post('tanggalSurat');
 			$noSurat =  $this->input->post('noSurat');
 			// detil sarana
 			$tglMulaiperiksa = $this->input->post('tglMulaiperiksa');
@@ -117,10 +117,11 @@
 			$noSip =  $this->input->post('noSip');
 			$noHp =  $this->input->post('noHp');
 			// detil temuan
-			$pilihPasal = $this->input->post('pilihPasal');
+			$detPelanggaran = $this->input->post('detPelanggaran');
+			$detPasal = $this->input->post('detPasal');
 
-
-			$pasal_peringatan = implode(", ", $pilihPasal);
+			$noSuratFix = "T-PW.01.12.9A.9A2." . $noSurat;
+			echo $noSuratFix;
 
 
 
@@ -134,7 +135,9 @@
 				'namaPj' => $namaPj,
 				'noSipa' => $noSip,
 				'noHp' => $noHp,
-				'pasalPeringatan' => $pasal_peringatan,
+				'detailPeringatan' => $detPelanggaran,
+				'pasalPeringatan' => $detPasal
+
 
 			);
 

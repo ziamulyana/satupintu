@@ -51,6 +51,7 @@
                   <option>PFM Ahli Madya</option>
                   <option>PFM Ahli Muda</option>
                   <option>PFM Ahli Pertama</option>
+                  <option>PFM Terampil</option>
                   <option>PFM Terampil Pelaksana</option>
                   <option>PFM Terampil Pelaksana Lanjutan</option>
                   <option>Perencana Ahli Pertama</option>
@@ -61,6 +62,7 @@
                   <option>Analis Pengadaan Barang dan Jasa</option>
                   <option>Bendahara</option>
                   <option>Pengadministrasi Umum</option>
+                   <option>Staff Administrasi</option>
                 </select>
               </div>
             </div>

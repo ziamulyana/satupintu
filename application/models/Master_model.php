@@ -81,4 +81,18 @@ public function hapus_dataAnggaran($id){
    $this->db->delete("tbl_anggaran",array("idAnggaran"=>$id));
  }
 
+ public function getKomoditi($index1,$index2,$index3,$index4,$index5){
+     $this->db->select('*');
+     $this->db->from('tbl_sarana');
+     $this->db->join('tbl_surattl', 'tbl_sarana.idSarana = tbl_surattl.idSarana');
+     $this->db->where('tbl_sarana.jenisSarana',$index1);
+     $this->db->or_where('tbl_sarana.jenisSarana',$index2);
+     $this->db->or_where('tbl_sarana.jenisSarana',$index3);
+     $this->db->or_where('tbl_sarana.jenisSarana',$index4);
+      $this->db->or_where('tbl_sarana.jenisSarana',$index5);
+      $query = $this->db->get('');
+     $count_row = $query->num_rows();
+     return $count_row;
+ }
+
 }

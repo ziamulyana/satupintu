@@ -1,11 +1,11 @@
   <section class="content-header">
     <h1>
-      Buat Surat Tindak Lanjut Untuk Kemasan
+      Buat Surat Tindak Lanjut Untuk Apotek
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
       <li><a href="#">Tindak Lanjut</a></li>
-      <li><a href="#">Surat Kemasan</a></li>
+      <li><a href="#">Surat Obat</a></li>
     </ol>
   </section>
 
@@ -13,11 +13,12 @@
   <section class="content">
     <div class="row">
       <div class="col-md-12">
-        <form role="form" action="<?php echo base_url('petugas/surat_peringatan/surat_kemasan/simpanPeringatan') ?>" method="post">
+        <form role="form" action="<?php echo base_url('petugas/surat_peringatan/surat_apotek/simpanPeringatan') ?>" method="post">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Form Pembuatan Surat Tindak Lanjut</h3>
+              <h3 class="box-title"><?php echo $title; ?></h3>
               <p><span class="wajib">* wajib diisi</span></p>
+
               <div class="col-md-6">
                 <h4>Informasi Kepala Surat</h4>
                 <hr>
@@ -41,7 +42,6 @@
                 </div>
 
 
-
                 <!-- tanggal surat -->
                 <!-- <div class="form-group row">
                   <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal Surat<span class="wajib"> *</span></label>
@@ -63,13 +63,13 @@
 
 
 
+
               </div>
 
 
               <div class="col-md-6">
                 <h4>Detail Sarana</h4>
                 <hr>
-
 
                 <!-- nama sarana -->
                 <div class="form-group row">
@@ -83,6 +83,7 @@
                     </div>
                   </div>
                 </div>
+
 
 
                 <!-- tanggal periksa mulai -->
@@ -119,17 +120,40 @@
                 </script>
 
 
-                <!-- nib-->
+                <!-- no izin -->
                 <div class="form-group row">
-                  <label for="noSurat" class="col-sm-5 col-form-label">NIB<span class="wajib"> *</span></label>
+                  <label for="noSurat" class="col-sm-4 col-form-label">Nomor izin<span class="wajib"> *</span></label>
                   <div class="col-sm-12">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                      <input type="text" class="form-control" name="nib" id="nib" placeholder="NIB" required>
+                      <input type="text" class="form-control" name="noIzin" id="noIzin" placeholder="Nomor Izin" required>
                     </div>
                   </div>
                 </div>
 
+
+
+                <!-- nama PJ-->
+                <div class="form-group row">
+                  <label for="noSurat" class="col-sm-6 col-form-label">Nama Penanggung Jawab<span class="wajib"> *</span></label>
+                  <div class="col-sm-12">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                      <input type="text" class="form-control" name="namaPj" id="namaPj" placeholder="Nama Penanggung Jawab" required>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- nomor SIPTTK-->
+                <div class="form-group row">
+                  <label for="noSurat" class="col-sm-5 col-form-label">No. SIPTTK<span class="wajib"> *</span></label>
+                  <div class="col-sm-12">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                      <input type="text" class="form-control" name="noSip" id="noSip" placeholder="No. SIPTTK" required>
+                    </div>
+                  </div>
+                </div>
 
                 <!-- nomor HP-->
                 <div class="form-group row">
@@ -142,36 +166,12 @@
                   </div>
                 </div>
 
-                <!-- nama pimpinan -->
-                <div class="form-group row">
-                  <label for="noSurat" class="col-sm-5 col-form-label">Nama Pimpinan<span class="wajib"> *</span></label>
-                  <div class="col-sm-12">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                      <input type="text" class="form-control" name="namaPimpinan" id="namaPimpinan" placeholder="Nama Pemilik" required>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- nama pimpinan -->
-                <div class="form-group row">
-                  <label for="noSurat" class="col-sm-5 col-form-label">Nama PJ<span class="wajib"> *</span></label>
-                  <div class="col-sm-12">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                      <input type="text" class="form-control" name="namaPj" id="namaPj" placeholder="Nama Penanggung Jawab Produksi" required>
-                    </div>
-                  </div>
-                </div>
-
               </div>
 
 
               <hr>
               <h4>Detail Pasal Pelanggaran</h4>
               <hr>
-
-
               <!-- Pelanggaran -->
 
               <div class="form-group row">
@@ -204,11 +204,9 @@
               </div>
 
 
-
               <div class="box-footer">
                 <button type="submit" value="submit" onclick="return chk_date()" class="btn btn-info"><i class="fa fa-print"></i> Save Document</button>
                 <button type="reset" value="reset" class="btn btn-danger"><i class="fa fa-refresh" aria-hidden="true"></i> Reset Form</button>
-
 
                 <a class="btn btn-primary pull-right" href=<?php echo base_url() . "petugas/surat_peringatan/c_surat_peringatan" ?>> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali ke daftar peringatan</a>
               </div>

@@ -20,6 +20,7 @@ header("Content-Disposition: attachment; Filename=lhkUmum-" . $filename)
 
 <body onload="window.print()">
 
+
 	<?php
 
 	function convertDay($day)
@@ -69,8 +70,10 @@ header("Content-Disposition: attachment; Filename=lhkUmum-" . $filename)
 		$tahun = $year;
 		return $tahun;
 	}
+    
 
 	?>
+
 
 	<?php
 	$nama_all = array();
@@ -85,6 +88,8 @@ header("Content-Disposition: attachment; Filename=lhkUmum-" . $filename)
 	$tujuan = "";
 	$maksud = "";
 	$kota = "";
+
+
 
 	foreach ($surat as $row) {
 		array_push($nama_all, $row->nama);
@@ -101,8 +106,10 @@ header("Content-Disposition: attachment; Filename=lhkUmum-" . $filename)
 		$kota = $row->kota;
 	}
 
+
 	$nomor = 0;
-	$tglLhk2 = strtotime($tglLhk);
+$tglLhk2 = strtotime($tglLhk);
+
 
 	?>
 
@@ -126,7 +133,7 @@ header("Content-Disposition: attachment; Filename=lhkUmum-" . $filename)
 					<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif ">I</p>
 				</td>
 				<td>
-					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Surat Perintah Tugas Kepala Balai Pengawas Obat Makanan di Batam, Nomor <?php echo $noSurat  ?>, dilaksanakan pada tanggal <?php echo  convertDay($tglMulai) . " " . convertMonthB(convertMonthA($tglMulai)) . " " . convertYear($tglMulai) ?> s.d. <?php echo  convertDay($tglSelesai) . " " . convertMonthB(convertMonthA($tglSelesai)) . " " . convertYear($tglSelesai) ?></p>
+					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Surat Perintah Tugas Kepala Balai Pengawas Obat Makanan di Batam, Nomor <?php echo $noSurat  ?> dan tanggal Surat Tugas <?php echo  convertDay($tglSurat) . " " . convertMonthB(convertMonthA($tglSurat)) . " " . "20" . convertYear($tglSurat) ?> yang dilaksanakan pada tanggal <?php echo  convertDay($tglMulai) . " " . convertMonthB(convertMonthA($tglMulai)) . " 20" . convertYear($tglMulai) ?> s.d. <?php echo  convertDay($tglSelesai) . " " . convertMonthB(convertMonthA($tglSelesai)) . " 20" . convertYear($tglSelesai) ?></p>
 				</td>
 			</tr>
 
@@ -317,6 +324,7 @@ header("Content-Disposition: attachment; Filename=lhkUmum-" . $filename)
 			</tr>
 
 
+
 		</table>
 		<br>
 		<table style="width:100%">
@@ -389,6 +397,15 @@ header("Content-Disposition: attachment; Filename=lhkUmum-" . $filename)
 		</table>
 
 	</div>
+
+
+
+
+
+
+
+
+
 
 </body>
 

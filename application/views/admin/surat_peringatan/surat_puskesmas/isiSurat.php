@@ -113,8 +113,13 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 			<table style="width:100%">
 				<tr>
 					<th>
-						<p style="font-family:arial;" class="satu"><b>Yth. Pimpinan / Penanggung Jawab</b></p>
+						<p style="font-family:arial;" class="satu"><b>Yth.</b></p>
 					</th>
+				</tr>
+				<tr>
+					<td>
+						<p style="font-family:arial;"><b>Pimpinan / Penanggung Jawab</b></p>
+					</td>
 				</tr>
 				<tr>
 					<td>
@@ -136,10 +141,10 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 			<br>
 			<p style="font-family:arial;" class="paragraf">Berdasarkan hasil pemeriksaan petugas Balai POM di Batam pada tanggal <?php echo convertDay($tglMulaiperiksa) . " " . convertMonthB(convertMonthA($tglMulaiperiksa)) . " " . convertYear($tglMulaiperiksa) ?>, terhadap sarana: </p>
 			<!-- paragraf 2 -->
-			<table width="100%" style="margin-left:20px">
+			<table style="width:100%">
 				<tr>
 					<th class="a">
-						<p style="font-family:arial;" class="satu">Nama</p>
+						<p style="font-family:arial;" class="satu" id="space2">Nama</p>
 					</th>
 					<th class="b">
 						<p style="font-family:arial;" class="satu">: <?php echo $namaSarana; ?></p>
@@ -148,7 +153,7 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 
 				<tr>
 					<td>
-						<p style="font-family:arial;">Alamat</p>
+						<p style="font-family:arial;" id="space2">Alamat</p>
 					</td>
 					<td>
 						<p style="font-family:arial;">: <?php echo $alamatSarana; ?></p>
@@ -157,7 +162,7 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 
 				<tr>
 					<td>
-						<p style="font-family:arial;">Nomor Izin</p>
+						<p style="font-family:arial;" id="space2">Nomor Izin</p>
 					</td>
 					<td>
 						<p style="font-family:arial;">: <?php echo $noIzin; ?></p>
@@ -166,7 +171,7 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 
 				<tr>
 					<td>
-						<p style="font-family:arial;">Nama Penanggung Jawab</p>
+						<p style="font-family:arial;" id="space2">Nama Penanggung Jawab</p>
 					</td>
 					<td>
 						<p style="font-family:arial;">: <?php echo $namaPj; ?></p>
@@ -175,7 +180,7 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 
 				<tr>
 					<td>
-						<p style="font-family:arial;">Nomor SIPTTK</p>
+						<p style="font-family:arial;" id="space2">Nomor SIPTTK</p>
 					</td>
 					<td>
 						<p style="font-family:arial;">: <?php echo $noSip; ?></p>
@@ -184,7 +189,7 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 
 				<tr>
 					<td>
-						<p style="font-family:arial;">Nomor Telepon </p>
+						<p style="font-family:arial;" id="space2">Nomor Telepon </p>
 					</td>
 					<td>
 						<p style="font-family:arial;">: <?php echo $noHp; ?></p>
@@ -195,12 +200,20 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 			<!-- paragraf 3 -->
 			<br>
 			<p style="font-family:arial;" class="paragraf">Ditemukan pelanggaran sebagai berikut: </p>
-			<p style="font-family:arial;" class="paragraf"><?php echo $detailPeringatan; ?></p>
+			<p style="font-family:arial;" class="paragraf"><?php echo "<p class='paragraf'>" . $detailTemuan . "</p>" ?></p>
 			<!-- paragraf 4 -->
 			<p style="font-family:arial;" class="paragraf">Hal ini merupakan pelanggaran terhadap: </p>
-			<p style="font-family:arial;" class="paragraf"><?php echo $pasalPeringatan; ?></p>
+			<p style="font-family:arial;" class="paragraf">
 			<ol>
-
+				<?php
+				foreach ($pilihPasal as $value) {
+					foreach ($value as $item) {
+						foreach ($item as $key) {
+							echo "<li><p class='paragraf'>" . $key->uu . " tentang " . $key->tentang . " " . $key->pasal . "</p></li>";
+						}
+					}
+				}
+				?>
 			</ol>
 			</p>
 			<!-- paragraf 5 -->
@@ -370,6 +383,7 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 			echo "<li>Direktur Pengawasan Distribusi dan Pelayanan Obat, Narkotika, Psikotropika, dan Prekursor Badan POM RI di - <b>Jakarta</b></li>";
 			echo "<p class='paragraf'>" . dinkes($kotaSurat) . "</p>";
 			echo "<li>Ketua PD Ikatan Apoteker Provinsi Kepri di - <b>Batam</b></li>";
+			echo "<li>Arsip</li>";
 			echo "</ol>";
 			echo "</p>";
 

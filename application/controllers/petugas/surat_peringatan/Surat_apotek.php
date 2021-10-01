@@ -58,15 +58,6 @@
 			echo $noSuratFix;
 
 
-
-
-			// $temuan = $this->SuratPeringatan_model->getTemuan($idSarana);
-			// foreach ($temuan as $tm) {
-			// 	$detailTemuan = $tm->deskripsiTemuan;
-			// }
-
-
-
 			$dataSarana = $this->SuratPeringatan_model->getSarana($idSarana);
 
 			foreach ($dataSarana as $row) {
@@ -108,7 +99,7 @@
 		public function editPeringatan()
 		{
 			$idPeringatan = $this->input->post('idPeringatan');
-			$tanggal =  $this->input->post('tanggalSurat');
+			// $tanggal =  $this->input->post('tanggalSurat');
 			$noSurat =  $this->input->post('noSurat');
 			// detil sarana
 			$tglMulaiperiksa = $this->input->post('tglMulaiperiksa');
@@ -117,16 +108,15 @@
 			$noSip =  $this->input->post('noSip');
 			$noHp =  $this->input->post('noHp');
 			// detil temuan
-			$pilihPasal = $this->input->post('pilihPasal');
+			$detPelanggaran = $this->input->post('detPelanggaran');
+			$detPasal = $this->input->post('detPasal');
 
-
-			$pasal_peringatan = implode(", ", $pilihPasal);
-
-
+			$noSuratFix = "T-PW.01.12.9A.9A2." . $noSurat;
+			echo $noSuratFix;
 
 			$data_edit = array(
 				'idPeringatan' => $idPeringatan,
-				'tglSuratPeringatan' => $tanggal,
+				// 'tglSuratPeringatan' => $tanggal,
 				'noSuratPeringatan' => $noSurat,
 				'tglPeriksa' => $tglMulaiperiksa,
 				'noIzin' => $noIzin,
@@ -135,6 +125,8 @@
 				'noSipa' => $noSip,
 				'noHp' => $noHp,
 				'pasalPeringatan' => $pasal_peringatan,
+				'detailPeringatan' => $detPelanggaran,
+				'pasalPeringatan' => $detPasal
 
 			);
 

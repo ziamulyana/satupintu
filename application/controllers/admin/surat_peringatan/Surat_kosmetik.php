@@ -118,10 +118,14 @@
 
 			$noHp =  $this->input->post('noHp');
 			// detil temuan
-			$pilihPasal = $this->input->post('pilihPasal');
+			$detPelanggaran = $this->input->post('detPelanggaran');
+			$detPasal = $this->input->post('detPasal');
+
+			$noSuratFix = "T-PW.01.12.9A.9A2." . $noSurat;
+			echo $noSuratFix;
 
 
-			$pasal_peringatan = implode(", ", $pilihPasal);
+
 
 
 
@@ -130,12 +134,16 @@
 				'tglSuratPeringatan' => $tanggal,
 				'noSuratPeringatan' => $noSurat,
 				'tglPeriksa' => $tglMulaiperiksa,
-				'noIzin' => "-",
-				'namaPimpinan' => $namaPimpinan,
+				'noIzin' => $noIzin,
+				'namaPimpinan' => "$namaPimpinan",
+
 				'noHp' => $noHp,
-				'pasalPeringatan' => $pasal_peringatan,
+				'detailPeringatan' => $detPelanggaran,
+				'pasalPeringatan' => $detPasal
 
 			);
+
+
 
 
 			$this->SuratPeringatan_model->updateSuratPeringatan($data_edit);

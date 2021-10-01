@@ -135,6 +135,113 @@
       <!-- /.col -->
     </div>
     <!-- /.row -->
+
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-xs-12">
+
+        <div class="box box-primary collapsed-box box-solid">
+          <div class="box-header with-border">
+            <h3 class="box-title">Tabel Pemeriksaan </h3>
+
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+              </button>
+            </div>
+            <!-- /.box-tools -->
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Nomor</th>
+      <th scope="col">Komoditi</th>
+      <th scope="col">Jumlah Pemeriksaan</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>PBF</td>
+      <td><?php  echo $pbf; ?></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Apotek</td>
+      <td><?php  echo $apotek; ?></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Toko Obat</td>
+      <td><?php  echo $toko_obat; ?></td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Klinik</td>
+      <td><?php  echo $klinik; ?></td>
+    </tr>
+
+    <tr>
+      <th scope="row">5</th>
+      <td>Rumah Sakit</td>
+      <td><?php  echo $rs; ?></td>
+    </tr>
+
+    <tr>
+      <th scope="row">6</th>
+      <td>IFK</td>
+      <td><?php  echo $ifk; ?></td>
+    </tr>
+
+        <tr>
+      <th scope="row">7</th>
+      <td>Produksi OT</td>
+      <td><?php  echo $prod_ot; ?></td>
+    </tr>
+
+      <tr>
+      <th scope="row">8</th>
+      <td>Distribusi OT</td>
+      <td><?php  echo $dist_ot; ?></td>
+    </tr>
+  
+      <tr>
+      <th scope="row">9</th>
+      <td>Produksi Kosmetik</td>
+      <td><?php  echo $prod_kos; ?></td>
+    </tr>
+
+      <tr>
+      <th scope="row">10</th>
+      <td>Distribusi Kosmetik</td>
+      <td><?php  echo $dist_kos; ?></td>
+    </tr>
+
+       <tr>
+      <th scope="row">11</th>
+      <td>Produksi Pangan</td>
+      <td><?php  echo $prod_pangan; ?></td>
+    </tr>
+
+       <tr>
+      <th scope="row">11</th>
+      <td>Distribusi Pangan</td>
+      <td><?php  echo $dist_pangan; ?></td>
+    </tr>
+
+  </tbody>
+</table>
+          </div>
+        </div>
+
+        <!-- /.box -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
 </section>
 <!-- /.content -->
 </div>

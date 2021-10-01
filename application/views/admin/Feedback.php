@@ -90,9 +90,9 @@
 
                          <a href="#" data-tooltip="tooltip" title="Hapus" class="btn btn-danger btn-sm" id="hapusFed" data-id =  "<?=$row->idFeedback ?>" data-toggle="modal" data-target="#hapusFeedback"><i class="fa fa-trash"></i></a>
 
-                        <?php if(isset ($row->file_feedback)){ ?>
+                      <!--   <?php if(isset ($row->file_feedback)){ ?>
                         <a href="../assets/uploads/files/feedback/feedback-<?php echo $row ->noSuratFeedback ?>.pdf " data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" ><i class="fa fa-eye"></i></a>
-
+ -->
                         <?php  } else{
                           ?>
                           <a href="#" data-tooltip="tooltip" title="Lihat" class="btn btn-primary btn-sm" disabled><i class="fa fa-eye"></i></a>

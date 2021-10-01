@@ -14,7 +14,7 @@
   <section class="content">
     <div class="row">
       <div class="col-md-12">
-        <form role="form" action="<?php echo base_url('petugas/surat_peringatan/surat_puskesmas/editPeringatan') ?>" method="post">
+        <form role="form" action="<?php echo base_url('admin/surat_peringatan/surat_puskesmas/editPeringatan') ?>" method="post">
           <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Form Edit Surat Tindak Lanjut</h3>
@@ -36,8 +36,8 @@
                 <hr>
 
                 <?php
-                $noSuratTugas= "";
-                foreach($peringatan as $row){
+                $noSuratTugas = "";
+                foreach ($peringatan as $row) {
                   $idPeringatan = $row->idPeringatan;
                   $noSuratTugas = $row->noSuratTugas;
                   $tglSurat = $row->tglSuratPeringatan;
@@ -46,35 +46,36 @@
                   $tglPeriksa = $row->tglPeriksa;
                   $noIzin = $row->noIzin;
                   $namaPimpinan = $row->namaPimpinan;
-                  $namaPj=$row->namaPj;
+                  $namaPj = $row->namaPj;
                   $noSipa = $row->noSipa;
                   $noHp = $row->noHp;
-
+                  $detailPeringatan = $row->detailPeringatan;
+                  $pasalPeringatan = $row->pasalPeringatan;
                 }
                 ?>
 
                 <div class="form-group">
-                  <input type="hidden" class="form-control" name="idPeringatan" id="idPeringatan" value="<?=$idPeringatan?>">
+                  <input type="hidden" class="form-control" name="idPeringatan" id="idPeringatan" value="<?= $idPeringatan ?>">
                 </div>
 
                 <!-- nomor surat tugas -->
-               <div class="form-group row">
+                <div class="form-group row">
                   <label for="noSurat" class="col-sm-4 col-form-label">Nomor Surat Tugas<span class="wajib"> *</span></label>
                   <div class="col-sm-12">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                      <input type="text" class="form-control" placeholder="Nomor Surat" name="noSuratTugas" value="<?=$noSuratTugas?>" readonly>
+                      <input type="text" class="form-control" placeholder="Nomor Surat" name="noSuratTugas" value="<?= $noSuratTugas ?>" readonly>
                     </div>
                   </div>
                 </div>
-                 
+
 
 
                 <!-- tanggal surat -->
                 <div class="form-group row">
                   <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal Surat<span class="wajib"> *</span></label>
                   <div class="col-sm-12">
-                    <input class="form-control" type="date" name="tanggalSurat" value="<?=$tglSurat?>" required>
+                    <input class="form-control" type="date" name="tanggalSurat" value="<?= $tglSurat ?>" required>
                   </div>
                 </div>
 
@@ -84,7 +85,7 @@
                   <div class="col-sm-12">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                      <input type="text" class="form-control" placeholder="Nomor Surat" name="noSurat" value="<?=$noSuratPeringatan ?>"  required>
+                      <input type="text" class="form-control" placeholder="Nomor Surat" name="noSurat" value="<?= $noSuratPeringatan ?>" required>
                     </div>
                   </div>
                 </div>
@@ -104,7 +105,7 @@
                   <div class="col-sm-12">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                      <input type="text" class="form-control" placeholder="namaSarana" name="namaSarana" value="<?=$namaSarana ?>"  readonly>
+                      <input type="text" class="form-control" placeholder="namaSarana" name="namaSarana" value="<?= $namaSarana ?>" readonly>
                     </div>
                   </div>
                 </div>
@@ -116,7 +117,7 @@
                 <div class="form-group row">
                   <label for="example-date-input" class="col-sm-6 col-form-label">Tanggal Periksa<span class="wajib"> *</span></label>
                   <div class="col-sm-12">
-                    <input class="form-control" type="date" name="tglMulaiperiksa" id="tglMulaiperiksa" value="<?=$tglPeriksa ?>"  required>
+                    <input class="form-control" type="date" name="tglMulaiperiksa" id="tglMulaiperiksa" value="<?= $tglPeriksa ?>" required>
                   </div>
                 </div>
 
@@ -126,21 +127,21 @@
                   <div class="col-sm-12">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                      <input type="text" class="form-control" name="noIzin" id="noIzin" value="<?=$noIzin?>"  required>
+                      <input type="text" class="form-control" name="noIzin" id="noIzin" value="<?= $noIzin ?>" required>
                     </div>
                   </div>
                 </div>
 
 
 
-              
+
                 <!-- nama pj-->
                 <div class="form-group row">
                   <label for="noSurat" class="col-sm-6 col-form-label">Nama Penanggung Jawab<span class="wajib"> *</span></label>
                   <div class="col-sm-12">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                      <input type="text" class="form-control" name="namaPj" id="namaPj" value="<?=$namaPj?>"  required>
+                      <input type="text" class="form-control" name="namaPj" id="namaPj" value="<?= $namaPj ?>" required>
                     </div>
                   </div>
                 </div>
@@ -151,7 +152,7 @@
                   <div class="col-sm-12">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                      <input type="text" class="form-control" name="noSip" id="noSip" value="<?=$noSipa?>" required>
+                      <input type="text" class="form-control" name="noSip" id="noSip" value="<?= $noSipa ?>" required>
                     </div>
                   </div>
                 </div>
@@ -162,7 +163,7 @@
                   <div class="col-sm-12">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-building"></i></span>
-                      <input type="text" class="form-control" name="noHp" id="noHp"  value="<?=$noHp?>" required>
+                      <input type="text" class="form-control" name="noHp" id="noHp" value="<?= $noHp ?>" required>
                     </div>
                   </div>
                 </div>
@@ -176,29 +177,31 @@
 
               <!-- Pelanggaran -->
               <div class="form-group row">
-                <label for="pilihPasal" class="col-sm-3 col-form-label">Pasal Pelanggaran<span class="wajib"> *</span></label>
+                <label for="" class="col-sm-3 col-form-label">Detail Pelanggaran<span class="wajib"> *</span></label>
                 <div class="col-md-12">
-                  <select class="category related-post form-control" name="pilihPasal[]" id="pilihPasal" multiple="multiple" data-placeholder="Pilih Pasal" style="width: 100%;" required>
+                  <!-- /.card-header -->
+                  <div class="box-body pad">
+                    <div class="">
+                      <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." name="detPelanggaran" id="detPelanggaran" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"><?php echo $detailPeringatan ?></textarea></td>
 
-                    <?php 
-                    foreach($temuanData as $temuan){
-                      foreach($temuan as $tm){
-                    ?>
-                     <option value="<?=$tm->id?>"  selected><?php echo $tm->temuan; ?></option>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-                    <?php   
-                    }
-                  }
 
-                    ?>
+              <!-- Pelanggaran -->
 
-                    <?php
-                    foreach ($temuanAll as $temuan) {
-                      echo "<option value=" . $temuan->id . ">" . $temuan->temuan . "</option>";
-                    }
-                    ?>
+              <div class="form-group row">
+                <label for="" class="col-sm-3 col-form-label">Pasal <span class="wajib"> *</span></label>
+                <div class="col-md-12">
+                  <!-- /.card-header -->
+                  <div class="box-body pad">
+                    <div class="">
+                      <td colspan="3"> <textarea class="textarea" placeholder="Keterangan." name="detPasal" id="detPasal" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"><?php echo $pasalPeringatan ?></textarea></td>
 
-                  </select>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -207,7 +210,7 @@
                 <button type="submit" value="submit" class="btn btn-success"><i class="fa fa-save"></i> Edit</button>
                 <button type="reset" value="reset" class="btn btn-danger"><i class="fa fa-refresh" aria-hidden="true"></i> Reset Form</button>
 
-                <a class="btn btn-primary pull-right" href=<?php echo base_url() . "petugas/surat_peringatan/c_surat_peringatan" ?>> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali ke daftar peringatan</a>
+                <a class="btn btn-primary pull-right" href=<?php echo base_url() . "admin/surat_peringatan/c_surat_peringatan" ?>> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali ke daftar peringatan</a>
 
 
 
@@ -249,5 +252,3 @@
     <!-- /.row -->
   </section>
   <!-- /.content -->
-
-  

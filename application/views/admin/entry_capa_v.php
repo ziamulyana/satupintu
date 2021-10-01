@@ -84,10 +84,10 @@
             </div>
             
             <!-- Upload File -->
-            <div class="form-group">
+          <!--   <div class="form-group">
                   <label for="uploadFile">Lampiran Feedback<span class="wajib"> *</span></label>
                   <input type="file" name="fileFeedback" id="fileFeedback">
-            </div>
+            </div> -->
 
             <br>
 

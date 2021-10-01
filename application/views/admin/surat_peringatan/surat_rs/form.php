@@ -13,7 +13,7 @@
   <section class="content">
     <div class="row">
       <div class="col-md-12">
-        <form role="form" action="<?php echo base_url('petugas/surat_peringatan/surat_rs/simpanPeringatan') ?>" method="post">
+        <form role="form" action="<?php echo base_url('admin/surat_peringatan/surat_rs/simpanPeringatan') ?>" method="post">
           <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Form Pembuatan Surat Tindak Lanjut</h3>
@@ -44,12 +44,12 @@
 
 
                 <!-- tanggal surat -->
-                <!-- <div class="form-group row">
+                <div class="form-group row">
                   <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal Surat<span class="wajib"> *</span></label>
                   <div class="col-sm-12">
                     <input class="form-control" type="date" name="tanggal" id="tanggal" placeholder="Tanggal" required>
                   </div>
-                </div> -->
+                </div>
 
                 <!-- nomor surat -->
                 <div class="form-group row">
@@ -187,7 +187,7 @@
                 <button type="submit" value="submit" onclick="return chk_date()" class="btn btn-info"><i class="fa fa-print"></i> Save Document</button>
                 <button type="reset" value="reset" class="btn btn-danger"><i class="fa fa-refresh" aria-hidden="true"></i> Reset Form</button>
 
-                <a class="btn btn-primary pull-right" href=<?php echo base_url() . "petugas/surat_peringatan/c_surat_peringatan" ?>> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali ke daftar peringatan</a>
+                <a class="btn btn-primary pull-right" href=<?php echo base_url() . "admin/surat_peringatan/c_surat_peringatan" ?>> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Kembali ke daftar peringatan</a>
 
               </div>
             </div>
@@ -233,7 +233,7 @@
         var idPer = $('#suratTugas').val();
         if (idPer != '') {
           $.ajax({
-            url: "<?php echo base_url(); ?>petugas/surat_peringatan/c_surat_peringatan/getSaranaPer",
+            url: "<?php echo base_url(); ?>admin/surat_peringatan/c_surat_peringatan/getSaranaPer",
             method: "POST",
             data: {
               idPer: idPer

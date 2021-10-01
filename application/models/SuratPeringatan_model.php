@@ -61,6 +61,7 @@ class SuratPeringatan_model extends CI_Model
     $this->db->set('noSipa', $data['noSipa']);
     $this->db->set('nib', $data['nib']);
     $this->db->set('noHp', $data['noHp']);
+    $this->db->set('detailPeringatan', $data['detailPeringatan']);
     $this->db->set('pasalPeringatan', $data['pasalPeringatan']);
     $this->db->where('idPeringatan', $data['idPeringatan']);
     $query = $this->db->update('tbl_peringatan');

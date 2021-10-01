@@ -108,7 +108,6 @@ header("Content-Disposition: attachment; Filename=lhkSer-" . $filename)
 
 
 	$nomor = 0;
-
 	$tglLhk2 = strtotime($tglLhk);
 
 
@@ -134,7 +133,7 @@ header("Content-Disposition: attachment; Filename=lhkSer-" . $filename)
 					<p id="hilang" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif ">I</p>
 				</td>
 				<td>
-					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Surat Perintah Tugas Kepala Balai Pengawas Obat Makanan di Batam, Nomor <?php echo $noSurat  ?>, dilaksanakan pada tanggal <?php echo  convertDay($tglMulai) . " " . convertMonthB(convertMonthA($tglMulai)) . " " . convertYear($tglMulai) ?> s.d. <?php echo  convertDay($tglSelesai) . " " . convertMonthB(convertMonthA($tglSelesai)) . " " . convertYear($tglSelesai) ?></p>
+					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif; text-align:justify">Surat Perintah Tugas Kepala Balai Pengawas Obat Makanan di Batam, Nomor <?php echo $noSurat  ?> dan tanggal Surat Tugas <?php echo  convertDay($tglSurat) . " " . convertMonthB(convertMonthA($tglSurat)) . " " . "20" . convertYear($tglSurat) ?>, dilaksanakan pada tanggal <?php echo  convertDay($tglMulai) . " " . convertMonthB(convertMonthA($tglMulai)) . " 20" . convertYear($tglMulai) ?> s.d. <?php echo  convertDay($tglSelesai) . " " . convertMonthB(convertMonthA($tglSelesai)) . " 20" . convertYear($tglSelesai) ?></p>
 				</td>
 			</tr>
 
@@ -240,6 +239,7 @@ header("Content-Disposition: attachment; Filename=lhkSer-" . $filename)
 				<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif "><b>HASIL PEMERIKSAAN :</b> </p>
 
 			</td>
+
 
 		</table>
 
@@ -349,6 +349,7 @@ header("Content-Disposition: attachment; Filename=lhkSer-" . $filename)
 						</tr>
 
 			<?php
+
 						$nomor += 1;
 					}
 				}
@@ -453,7 +454,7 @@ header("Content-Disposition: attachment; Filename=lhkSer-" . $filename)
 					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif ">Menyetujui</p>
 				</th>
 				<th>
-					<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif ">Batam, <?php echo  convertDay($tglLhk2) . " " . convertMonthB(convertMonthA($tglLhk2)) . " 20" . convertYear($tglLhk2) ?></p>
+				<p class="satu" style="font-size: 11pt; font-family:Arial, Helvetica, sans-serif ">Batam, <?php echo  convertDay($tglLhk2) . " " . convertMonthB(convertMonthA($tglLhk2)) . " 20" . convertYear($tglLhk2) ?></p>
 				</th>
 			</tr>
 			<tr>
@@ -514,7 +515,14 @@ header("Content-Disposition: attachment; Filename=lhkSer-" . $filename)
 			</tr>
 		</table>
 
+
+
 	</div>
+
+
+
+
+
 
 </body>
 

@@ -37,121 +37,116 @@ class C_surat_peringatan extends CI_Controller
             $jenis = $row->jenisPeringatan;
         }
 
-        $temuan = $this->SuratPeringatan_model->getTemuanId($id);
-        foreach ($temuan as $row) {
-            $temuan = $row->pasalPeringatan;
-        }
-        $temuan_arr = explode(",", $temuan);
 
         $array_temuan = array();
 
         if ($jenis == "pbf") {
 
-            foreach ($temuan_arr as $num) {
-                $temuan2 = $this->SuratPeringatan_model->getTemuanDetail($num, "tbl_temuan_pbf");
-                array_push($array_temuan, $temuan2);
-            }
+            // foreach ($temuan_arr as $num) {
+            //     $temuan2 = $this->SuratPeringatan_model->getTemuanDetail($num, "tbl_temuan_pbf");
+            //     array_push($array_temuan, $temuan2);
+            // }
 
 
-            $data['temuanData'] = $array_temuan;
+            // $data['temuanData'] = $array_temuan;
 
-            $data["temuanAll"] = $this->SuratPeringatan_model->getTemuan("tbl_temuan_pbf");
+            // $data["temuanAll"] = $this->SuratPeringatan_model->getTemuan("tbl_temuan_pbf");
             $this->template->load('layouts/admin_template', 'admin/surat_peringatan/surat_pbf/edit', $data);
         } else if ($jenis == "apt") {
 
-            foreach ($temuan_arr as $num) {
-                $temuan2 = $this->SuratPeringatan_model->getTemuanDetail($num, "tbl_temuan_obat");
-                array_push($array_temuan, $temuan2);
-            }
+            // foreach ($temuan_arr as $num) {
+            //     $temuan2 = $this->SuratPeringatan_model->getTemuanDetail($num, "tbl_temuan_obat");
+            //     array_push($array_temuan, $temuan2);
+            // }
 
 
-            $data['temuanData'] = $array_temuan;
+            // $data['temuanData'] = $array_temuan;
 
-            $data["temuanAll"] = $this->SuratPeringatan_model->getTemuan("tbl_temuan_obat");
+            // $data["temuanAll"] = $this->SuratPeringatan_model->getTemuan("tbl_temuan_obat");
             $this->template->load('layouts/admin_template', 'admin/surat_peringatan/surat_apotek/edit', $data);
         } else if ($jenis == "rs") {
 
-            foreach ($temuan_arr as $num) {
-                $temuan2 = $this->SuratPeringatan_model->getTemuanDetail($num, "tbl_temuan_obat");
-                array_push($array_temuan, $temuan2);
-            }
+            // foreach ($temuan_arr as $num) {
+            //     $temuan2 = $this->SuratPeringatan_model->getTemuanDetail($num, "tbl_temuan_obat");
+            //     array_push($array_temuan, $temuan2);
+            // }
 
 
-            $data['temuanData'] = $array_temuan;
+            // $data['temuanData'] = $array_temuan;
 
-            $data["temuanAll"] = $this->SuratPeringatan_model->getTemuan("tbl_temuan_obat");
+            // $data["temuanAll"] = $this->SuratPeringatan_model->getTemuan("tbl_temuan_obat");
             $this->template->load('layouts/admin_template', 'admin/surat_peringatan/surat_rs/edit', $data);
         } else if ($jenis == "klinik") {
 
-            foreach ($temuan_arr as $num) {
-                $temuan2 = $this->SuratPeringatan_model->getTemuanDetail($num, "tbl_temuan_obat");
-                array_push($array_temuan, $temuan2);
-            }
+            // foreach ($temuan_arr as $num) {
+            //     $temuan2 = $this->SuratPeringatan_model->getTemuanDetail($num, "tbl_temuan_obat");
+            //     array_push($array_temuan, $temuan2);
+            // }
 
 
-            $data['temuanData'] = $array_temuan;
+            // $data['temuanData'] = $array_temuan;
 
-            $data["temuanAll"] = $this->SuratPeringatan_model->getTemuan("tbl_temuan_obat");
+            // $data["temuanAll"] = $this->SuratPeringatan_model->getTemuan("tbl_temuan_obat");
             $this->template->load('layouts/admin_template', 'admin/surat_peringatan/surat_klinik/edit', $data);
         } else if ($jenis == "obat") {
 
-            foreach ($temuan_arr as $num) {
-                $temuan2 = $this->SuratPeringatan_model->getTemuanDetail($num, "tbl_temuan_obat");
-                array_push($array_temuan, $temuan2);
-            }
+            // foreach ($temuan_arr as $num) {
+            //     $temuan2 = $this->SuratPeringatan_model->getTemuanDetail($num, "tbl_temuan_obat");
+            //     array_push($array_temuan, $temuan2);
+            // }
 
 
-            $data['temuanData'] = $array_temuan;
+            // $data['temuanData'] = $array_temuan;
 
-            $data["temuanAll"] = $this->SuratPeringatan_model->getTemuan("tbl_temuan_obat");
+            // $data["temuanAll"] = $this->SuratPeringatan_model->getTemuan("tbl_temuan_obat");
             $this->template->load('layouts/admin_template', 'admin/surat_peringatan/surat_obat/edit', $data);
         } else if ($jenis == "puskesmas") {
 
-            foreach ($temuan_arr as $num) {
-                $temuan2 = $this->SuratPeringatan_model->getTemuanDetail($num, "tbl_temuan_obat");
-                array_push($array_temuan, $temuan2);
-            }
+            // foreach ($temuan_arr as $num) {
+            //     $temuan2 = $this->SuratPeringatan_model->getTemuanDetail($num, "tbl_temuan_obat");
+            //     array_push($array_temuan, $temuan2);
+            // }
 
 
-            $data['temuanData'] = $array_temuan;
+            // $data['temuanData'] = $array_temuan;
 
-            $data["temuanAll"] = $this->SuratPeringatan_model->getTemuan("tbl_temuan_obat");
+            // $data["temuanAll"] = $this->SuratPeringatan_model->getTemuan("tbl_temuan_obat");
             $this->template->load('layouts/admin_template', 'admin/surat_peringatan/surat_puskesmas/edit', $data);
         } else if ($jenis == "pangan") {
 
-            foreach ($temuan_arr as $num) {
-                $temuan2 = $this->SuratPeringatan_model->getTemuanDetail($num, "tbl_temuan_pangan");
-                array_push($array_temuan, $temuan2);
-            }
+            // foreach ($temuan_arr as $num) {
+            //     $temuan2 = $this->SuratPeringatan_model->getTemuanDetail($num, "tbl_temuan_pangan");
+            //     array_push($array_temuan, $temuan2);
+            // }
 
 
-            $data['temuanData'] = $array_temuan;
+            // $data['temuanData'] = $array_temuan;
 
-            $data["temuanAll"] = $this->SuratPeringatan_model->getTemuan("tbl_temuan_pangan");
+            // $data["temuanAll"] = $this->SuratPeringatan_model->getTemuan("tbl_temuan_pangan");
             $this->template->load('layouts/admin_template', 'admin/surat_peringatan/surat_pangan/edit', $data);
         } else if ($jenis == "kosmetik") {
 
-            foreach ($temuan_arr as $num) {
-                $temuan2 = $this->SuratPeringatan_model->getTemuanDetail($num, "tbl_temuan_kosmetik");
-                array_push($array_temuan, $temuan2);
-            }
+            // foreach ($temuan_arr as $num) {
+            //     $temuan2 = $this->SuratPeringatan_model->getTemuanDetail($num, "tbl_temuan_kosmetik");
+            //     array_push($array_temuan, $temuan2);
+            // }
 
 
-            $data['temuanData'] = $array_temuan;
+            // $data['temuanData'] = $array_temuan;
 
-            $data["temuanAll"] = $this->SuratPeringatan_model->getTemuan("tbl_temuan_kosmetik");
+            // $data["temuanAll"] = $this->SuratPeringatan_model->getTemuan("tbl_temuan_kosmetik");
             $this->template->load('layouts/admin_template', 'admin/surat_peringatan/surat_kosmetik/edit', $data);
         } else {
 
-            foreach ($temuan_arr as $num) {
-                $temuan2 = $this->SuratPeringatan_model->getTemuanDetail($num, "tbl_temuan_kemasan");
-                array_push($array_temuan, $temuan2);
-            }
+            // foreach ($temuan_arr as $num) {
+            //     $temuan2 = $this->SuratPeringatan_model->getTemuanDetail($num, "tbl_temuan_kemasan");
+            //     array_push($array_temuan, $temuan2);
+            // }
 
 
-            $data['temuanData'] = $array_temuan;
+            // $data['temuanData'] = $array_temuan;
 
-            $data["temuanAll"] = $this->SuratPeringatan_model->getTemuan("tbl_temuan_kemasan");
+            // $data["temuanAll"] = $this->SuratPeringatan_model->getTemuan("tbl_temuan_kemasan");
             $this->template->load('layouts/admin_template', 'admin/surat_peringatan/surat_kemasan/edit', $data);
         }
     }

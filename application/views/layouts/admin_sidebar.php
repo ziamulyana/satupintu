@@ -91,6 +91,7 @@
         <ul class="treeview-menu" style="display: none;">
           <li><a href="<?php echo base_url('admin/eksporDataAdmin/surat') ?>"><i class="fa fa-circle-o"></i>Surat Tugas</a></li>
           <li><a href="<?php echo base_url('admin/eksporDataAdmin/anggaran') ?>"><i class="fa fa-circle-o"></i>Realisasi Anggaran</a></li>
+          <li><a href="<?php echo base_url('admin/eksporDataAdmin/pemeriksaan') ?>"><i class="fa fa-circle-o"></i>Hasil Pemeriksaan</a></li>
         </ul>
       </li>
     </ul>
