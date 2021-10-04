@@ -30,7 +30,7 @@
               foreach ($editCapa as $row) {
                 $idPeringatan = $row->idPeringatan;
                 $noSuratTugas = $row->noSuratTugas;
-                $tglSurat = $row->tglSuratPeringatan;
+                // $tglSurat = $row->tglSuratPeringatan;
                 $noSurat = $row->noSuratPeringatan;
                 $perihal = $row->jenisPeringatan;
                 $namaSarana = $row->namaSarana;
@@ -56,12 +56,12 @@
 
 
               <!-- tanggal surat -->
-              <div class="form-group row">
+              <!-- <div class="form-group row">
                 <label for="example-date-input" class="col-sm-4 col-form-label">Tanggal Surat<span class="wajib"> *</span></label>
                 <div class="col-sm-12">
                   <input class="form-control" type="date" name="tanggalSurat" value="<?= $tglSurat ?>" required>
                 </div>
-              </div>
+              </div> -->
 
               <!-- nomor surat -->
               <div class="form-group row">
@@ -148,7 +148,7 @@
                   <!-- /.card-header -->
                   <div class="card-body pad">
                     <div class="">
-                      <textarea class="textarea" name="detailTemuan" id="detailTemuan" value="<?= $detail ?>" style="width: 100%; height: 200px; font-size: 12px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" required> <?php echo $detail ?></textarea>
+                      <textarea class="textarea" name="detailTemuan" id="detailTemuan" value="<?= $detail ?>" style="width: 100%; height: 200px; font-size: 12px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" readonly> <?php echo $detail ?> </textarea>
                     </div>
                   </div>
                 </div>
