@@ -29,10 +29,8 @@
           
             <!-- nomor Surat Peringatan -->
             <div class="form-group">
-              <label>Surat Surat Peringatan</label><span class="wajib"> *</span></label>
-              <select name="noSuratPeringatan"  id="noSuratPeringatan" class="form-control input-sm" data-live-search="true" title="Select Category" required>
-
-                <option value="">Pilih Surat Peringatan</option>
+              <label>Surat Peringatan</label><span class="wajib"> *</span></label>
+              <select name="noSuratPeringatan"  id="noSuratPeringatan" class="form-control category" data-live-search="true"  required>
 
                 <?php
                 foreach ($peringatan as $pr) {
@@ -40,6 +38,7 @@
                 }
                 
                 ?>
+                <option selected="selected">Pilih Surat Peringatan</option>
 
               </select>
             </div>
