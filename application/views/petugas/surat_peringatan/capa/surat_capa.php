@@ -77,16 +77,18 @@ header("Content-Disposition: attachment; Filename=SuratCapa-".$filename)
 			<!-- tabel kop surat -->
 			<table style="width:100%">
 				<tr>
-					<!-- nomor surat -->
-					<th class="satu"><p style="font-family:arial;">Nomor	: <?php echo $noSurat ?></p></th>
+				  <th class="satu"><p style="font-family:arial;">Nomor	: <?php echo $noSurat ?></p></th>
+					
+				  <!-- nomor surat -->
+					<th class="satu"><p style="font-family:arial;">Batam,</p></th>
 					<!-- tanggal pembuatan surat -->
-					<th class="dua"><p style="font-family:arial;">Batam,&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</p></th> 
+					<th class="dua"><p style="font-family:arial;">&nbsp;</p></th> 
 				</tr>
 				<tr>
-					<td><p style="font-family:arial;">Lampiran: </p></td> 
+				  <td><p style="font-family:arial;">Lampiran: </p></td>
 				</tr>
 				<tr>
-
+				 
 					<?php if($halSurat == "eval"){
 						?>
 						<td><p style="font-family:arial;">Hal		: Evaluasi CAPA</p></td>
@@ -100,7 +102,7 @@ header("Content-Disposition: attachment; Filename=SuratCapa-".$filename)
 					
 				</tr>
 				<tr>
-					<td><p style="font-family:arial;"><?php echo " " ?></p></td>
+				  <td><p style="font-family:arial;"><?php echo " " ?></p></td>
 				</tr>
 			</table>
 
@@ -245,12 +247,11 @@ header("Content-Disposition: attachment; Filename=SuratCapa-".$filename)
 			echo "<li>Direktur Pengawasan Distribusi dan Pelayanan Obat, Narkotika, Psikotropika, dan Prekursor Badan POM RI di - <b>Jakarta</b></li>";
 			echo "<p class='paragraf'>".dinkes($kotaSurat)."</p>";
 			echo "<li>Ketua PD Ikatan Apoteker Provinsi Kepri di - <b>Batam</b></li>";
-			echo "<li>Arsip</li>";
 			echo "</ol>";
 			echo "</p>";
 
 			?>
-	</div>
+</div>
 	</div>
 </body>
 </html>

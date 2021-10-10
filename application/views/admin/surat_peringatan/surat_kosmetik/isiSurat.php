@@ -83,28 +83,33 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 			<table style="width:100%">
 				<tr>
 					<!-- nomor surat -->
-					<th class="satu">
+					<th width="58%" class="satu">
 						<p style="font-family:arial;">Nomor : <?php echo $noSurat ?></p>
 					</th>
+					<th width="21%" class="satu"> <p style="font-family:arial;">Batam,</p>
+				  </th>
 					<!-- tanggal pembuatan surat -->
-					<th class="dua">
-						<p style="font-family:arial;">Batam, <?php echo convertDay($tanggal) . " " . convertMonthB(convertMonthA($tanggal)) . " " . convertYear($tanggal) ?></p>
+					<th width="21%" class="dua">
+						<p style="font-family:arial;">&nbsp;</p>
 					</th>
 				</tr>
 				<tr>
 					<td>
 						<p style="font-family:arial;">Lampiran: </p>
 					</td>
+					<td>&nbsp;</td>
 				</tr>
 				<tr>
 					<td>
 						<p style="font-family:arial;">Hal : <?php echo $halSurat ?></p>
 					</td>
+					<td>&nbsp;</td>
 				</tr>
 				<tr>
 					<td>
 						<p style="font-family:arial;"><?php echo " " ?></p>
 					</td>
+					<td>&nbsp;</td>
 				</tr>
 			</table>
 
@@ -369,7 +374,7 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 			echo "</p>";
 
 			?>
-		</div>
+</div>
 </body>
 
 </html>

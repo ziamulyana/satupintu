@@ -82,28 +82,33 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 		<table style="width:100%">
 			<tr>
 				<!-- nomor surat -->
-				<th class="satu">
+				<th width="58%" class="satu">
 					<p style="font-family:arial;">Nomor : <?php echo $noSurat ?></p>
 				</th>
+				<th width="20%" class="satu"> <p style="font-family:arial;">Batam,</p>
+			  </th>
 				<!-- tanggal pembuatan surat -->
-				<th class="dua">
-					<p style="font-family:arial;">Batam, <?php echo convertDay($tanggal) . " " . convertMonthB(convertMonthA($tanggal)) . " " . convertYear($tanggal) ?></p>
+				<th width="22%" class="dua">
+					<p style="font-family:arial;">&nbsp;</p>
 				</th>
 			</tr>
 			<tr>
 				<td>
 					<p style="font-family:arial;">Lampiran: </p>
 				</td>
+				<td>&nbsp;</td>
 			</tr>
 			<tr>
 				<td>
 					<p style="font-family:arial;">Hal : <?php echo $halSurat ?></p>
 				</td>
+				<td>&nbsp;</td>
 			</tr>
 			<tr>
 				<td>
 					<p style="font-family:arial;"><?php echo " " ?></p>
 				</td>
+				<td>&nbsp;</td>
 			</tr>
 		</table>
 
@@ -238,18 +243,24 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 		<p style="font-family:arial;" id="space1">
 		<ol>
 			<li>
-				<p style="font-family:arial;" class="paragraf">Melakukan tindak lanjut terhadap temuan dengan membuat <i>Corrective Action</i> dan <i>Preventive Action</i> (CAPA)</p>
-			</li>
-			<li>
-				<p style="font-family:arial;" class="paragraf">Melaporkan hasil tindak lanjut dan CAPA tersebut paling lambat 21 (dua puluh satu) hari kerja sejak dilakukan pemeriksaan sarana dengan disertai data/dokumen pendukung Dinas Kesehatan Kota Batam
-				</p>
-			</li>
-			<li>
-				<p style="font-family:arial;" class="paragraf">Apabila CAPA tidak dilaporkan sesuai ketentuan dapat dikenakan sanksi bertingkat sesuai prosedur yang berlaku.</p>
-			</li>
-			<li>
-				<p style="font-family:arial;" class="paragraf">Agar mentaati peraturan perundang-undangan yang berlaku untuk jaminan mutu, keamanan dan khasiat obat</p>
-			</li>
+					<p style="font-family:arial;" class="paragraf">Melakukan tindak lanjut terhadap temuan dengan membuat <i>Corrective Action</i> dan <i>Preventive Action</i> (CAPA)</p>
+				</li>
+				<li>
+					<p style="font-family:arial;" class="paragraf">Melaporkan hasil tindak lanjut dan CAPA tersebut paling lambat 21 (dua puluh satu) hari kerja sejak dilakukan pemeriksaan sarana dengan disertai data/dokumen pendukung Dinas Kesehatan Kota Batam
+					</p>
+				</li>
+				<li>
+					<p style="font-family:arial;" class="paragraf">Format CAPA dapat diunduh di bit.ly/formatCapaSarana21</p>
+				</li>
+				<li>
+					<p style="font-family:arial;" class="paragraf">Laporan agar dikirimkan ke alamat email pemserbpom@gmail.com atau pom_batam@yahoo.com atau melalui whatsapp nomor 082282049135</p>
+				</li>
+				<li>
+					<p style="font-family:arial;" class="paragraf">Apabila Corrective Action dan Preventive Action (CAPA) tidak dilaporkan maka akan dikenakan sanksi bertingkat sesuai dengan prosedur yang berlaku</p>
+				</li>
+				<li>
+					<p style="font-family:arial;" class="paragraf">Melakukan pelayanan kefarmasian sesuai dengan Standar Pelayanan Kefarmasian di Apotek dan peraturan perundang - undangan yang berlaku</p>
+				</li>
 		</ol>
 		</p>
 		<!-- paragraf 6 -->
@@ -402,7 +413,7 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 		echo "</p>";
 
 		?>
-	</div>
+</div>
 </body>
 
 </html>
