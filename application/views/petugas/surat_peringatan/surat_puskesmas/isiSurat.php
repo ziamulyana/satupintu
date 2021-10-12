@@ -25,7 +25,7 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 		<!-- formatting date -->
 		<?php
 
-		$tanggal  = strtotime($tanggal);
+		$tanggal  = strtotime('now');
 		$tglMulaiperiksa = strtotime($tglMulaiperiksa);
 
 
@@ -81,17 +81,16 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 		<div class="Section1">
 			<!-- tabel kop surat -->
 			<table style="width:100%">
-				<tr>
-					<!-- nomor surat -->
-					<th width="58%" class="satu">
-						<p style="font-family:arial;">Nomor : <?php echo $noSurat ?></p>
-					</th>
-					<th width="21%" class="satu"> <p style="font-family:arial;">Batam,</p>
-				  </th>
-					<!-- tanggal pembuatan surat -->
-					<th width="21%" class="dua">
-					<p style="font-family:arial;">&nbsp;</p></th>
-				</tr>
+			<tr>
+				<!-- nomor surat -->
+				<th width="63%" class="satu">
+					<p style="font-family:arial;">Nomor : T-PW.01.10.9A.9A2.<?php echo date('m') . "." . date('y') . "." ?></p>
+				</th>
+				<!-- tanggal pembuatan surat -->
+				<th width="21%" class="dua">
+					<p style="font-family:arial;">Batam, <?php echo convertMonthB(convertMonthA($tanggal)) . " " . convertYear($tanggal) ?></p>
+				</th>
+			</tr>
 				<tr>
 					<td>
 						<p style="font-family:arial;">Lampiran: </p>
@@ -393,7 +392,6 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 			echo "<li>Direktur Pengawasan Distribusi dan Pelayanan Obat, Narkotika, Psikotropika, dan Prekursor Badan POM RI di - <b>Jakarta</b></li>";
 			echo "<p class='paragraf'>" . dinkes($kotaSurat) . "</p>";
 			echo "<li>Ketua PD Ikatan Apoteker Provinsi Kepri di - <b>Batam</b></li>";
-			echo "<li>Arsip</li>";
 			echo "</ol>";
 			echo "</p>";
 

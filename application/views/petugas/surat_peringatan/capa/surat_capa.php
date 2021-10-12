@@ -24,7 +24,7 @@ header("Content-Disposition: attachment; Filename=SuratCapa-".$filename)
 			<!-- formatting date -->
 			<?php
 
-			$tanggal  = strtotime($tanggal);
+			$tanggal  = strtotime('now');
 			
 
 
@@ -76,17 +76,16 @@ header("Content-Disposition: attachment; Filename=SuratCapa-".$filename)
 
 			<!-- tabel kop surat -->
 			<table style="width:100%">
-				<tr>
-				  <th class="satu"><p style="font-family:arial;">Nomor	: <?php echo $noSurat ?></p></th>
-					
-				  <!-- nomor surat -->
-					<th class="satu"><p style="font-family:arial;">Batam,</p></th>
-					<!-- tanggal pembuatan surat -->
-					<th class="dua"><p style="font-family:arial;">&nbsp;</p></th> 
-				</tr>
-				<tr>
-				  <td><p style="font-family:arial;">Lampiran: </p></td>
-				</tr>
+			<tr>
+				<!-- nomor surat -->
+				<th width="67%" class="satu">
+					<p style="font-family:arial;">Nomor : T-PW.01.10.9A.9A2.<?php echo date('m') . "." . date('y') . "." ?></p>
+				</th>
+				<!-- tanggal pembuatan surat -->
+				<th width="33%" class="dua">
+					<p style="font-family:arial;">Batam, <?php echo convertMonthB(convertMonthA($tanggal)) . " " . convertYear($tanggal) ?></p>
+				</th>
+			</tr>
 				<tr>
 				 
 					<?php if($halSurat == "eval"){

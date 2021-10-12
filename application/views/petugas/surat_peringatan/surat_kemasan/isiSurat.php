@@ -23,7 +23,7 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 	<!-- formatting date -->
 	<?php
 
-	$tanggal  = strtotime($tanggal);
+	$tanggal  = strtotime('now');
 	$tglMulaiperiksa = strtotime($tglMulaiperiksa);
 
 
@@ -80,16 +80,14 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 
 		<!-- tabel kop surat -->
 		<table style="width:100%">
-			<tr>
+		<tr>
 				<!-- nomor surat -->
-				<th width="58%" class="satu">
-					<p style="font-family:arial;">Nomor : <?php echo $noSurat ?></p>
+				<th width="63%" class="satu">
+					<p style="font-family:arial;">Nomor : T-PW.01.10.9A.9A2.<?php echo date('m') . "." . date('y') . "." ?></p>
 				</th>
-				<th width="20%" class="satu"> <p style="font-family:arial;">Batam,</p>
-			  </th>
 				<!-- tanggal pembuatan surat -->
-				<th width="22%" class="dua">
-					<p style="font-family:arial;">&nbsp;</p>
+				<th width="21%" class="dua">
+					<p style="font-family:arial;">Batam, <?php echo convertMonthB(convertMonthA($tanggal)) . " " . convertYear($tanggal) ?></p>
 				</th>
 			</tr>
 			<tr>
@@ -408,7 +406,6 @@ header("Content-Disposition: attachment; Filename=SuratPeringatan-" . $filename)
 		echo "<li>Direktur Pengawasan Produksi Pangan Olahan Badan POM RI di - <b>Jakarta</b></li>";
 		echo "<p class='paragraf'>" . dinper($kotaSurat) . "</p>";
 		echo "<p class='paragraf'>" . din_industri($kotaSurat) . "</p>";
-		echo "<li>Arsip</li>";
 		echo "</ol>";
 		echo "</p>";
 
